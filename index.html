@@ -604,6 +604,61 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .zk-warn{font-size:.82rem;color:var(--muted);text-align:center;padding:6px 0;font-style:italic}
 .zk-calc-btn{width:100%;padding:13px;background:var(--gold);color:#0A0F0D;border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.92rem;cursor:pointer;margin-bottom:10px}
 .zk-calc-btn:active{opacity:.85}
+.ramadan-banner{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(42,138,106,.12));border:1px solid var(--gold);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px;cursor:pointer;transition:all .2s ease;position:relative;overflow:hidden}
+.ramadan-banner:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(212,175,55,.2)}
+.ramadan-banner-icon{font-size:1.6rem;flex-shrink:0}
+.ramadan-banner-body{flex:1;min-width:0}
+.ramadan-banner-title{font-size:.95rem;font-weight:700;color:var(--gold);margin-bottom:2px}
+.ramadan-banner-sub{font-size:.78rem;color:var(--text)}
+.ramadan-banner-chev{color:var(--gold);flex-shrink:0}
+.ramadan-banner-chev svg{width:16px;height:16px;stroke-width:2}
+.rm-header{text-align:center;padding:8px 0 14px}
+.rm-header-arabic{font-family:var(--font-arabic);font-size:2.4rem;color:var(--gold);line-height:1.1;margin-bottom:4px;text-shadow:0 0 30px rgba(212,175,55,.35)}
+.rm-header-title{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.rm-header-sub{font-size:.82rem;color:var(--muted)}
+.rm-countdown-card{background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(42,138,106,.12));border:1px solid var(--gold);border-radius:var(--radius-md);padding:20px 18px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
+.rm-countdown-card::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.12'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3C/g%3E%3C/svg%3E");background-size:40px 40px;pointer-events:none}
+.rm-countdown-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:8px;position:relative;z-index:1}
+.rm-countdown-arabic{font-family:var(--font-arabic);font-size:1.7rem;color:var(--text);margin-bottom:4px;position:relative;z-index:1}
+.rm-countdown-name{font-size:.88rem;color:var(--muted);margin-bottom:12px;position:relative;z-index:1}
+.rm-countdown-time{font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.02em;margin-bottom:6px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.rm-countdown-note{font-size:.8rem;color:var(--text);position:relative;z-index:1}
+.rm-progress-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px;margin-bottom:14px;text-align:center}
+.rm-progress-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-bottom:8px}
+.rm-progress-bar{height:8px;background:var(--divider);border-radius:999px;overflow:hidden;margin-bottom:8px}
+.rm-progress-fill{height:100%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:999px;transition:width .4s ease}
+.rm-progress-text{font-size:.82rem;color:var(--muted)}
+.rm-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px;margin-bottom:12px}
+.rm-section-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.rm-section-count{font-size:.75rem;color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+.rm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+.rm-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--divider);border-radius:8px;font-size:.75rem;color:var(--text);font-weight:600;cursor:pointer;transition:all .2s ease;user-select:none}
+.rm-day:active{transform:scale(.92)}
+.rm-day.marked{background:var(--gold);color:#0A0F0D;border-color:var(--gold);font-weight:700}
+.rm-day.today{outline:2px solid var(--emerald);outline-offset:-2px}
+.rm-day.future{opacity:.4;cursor:default}
+.rm-dua{background:var(--bg);border:1px solid var(--divider);border-radius:var(--radius-sm);padding:12px;margin-bottom:8px}
+.rm-dua:last-child{margin-bottom:0}
+.rm-dua-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:8px}
+.rm-dua-arabic{font-family:var(--font-arabic);font-size:1.2rem;color:var(--text);text-align:right;direction:rtl;line-height:1.8;margin-bottom:6px}
+.rm-dua-translit{font-size:.75rem;font-style:italic;color:var(--gold);margin-bottom:4px}
+.rm-dua-meaning{font-size:.8rem;color:var(--muted);line-height:1.5}
+.rm-last10{background:linear-gradient(135deg,rgba(212,175,55,.22),rgba(42,138,106,.1));border:2px solid var(--gold);border-radius:var(--radius-md);padding:14px;margin-bottom:12px}
+.rm-last10-title{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;text-align:center}
+.rm-last10-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:var(--text);text-align:center;direction:rtl;line-height:1.7;margin-bottom:6px}
+.rm-last10-translit{font-size:.78rem;font-style:italic;color:var(--gold);text-align:center;margin-bottom:4px}
+.rm-last10-meaning{font-size:.82rem;color:var(--text);text-align:center;margin-bottom:10px;line-height:1.5}
+.rm-last10-nights{font-size:.78rem;color:var(--muted);text-align:center;line-height:1.5}
+.rm-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.rm-quick-btn{background:var(--bg);border:1px solid var(--divider);border-radius:10px;padding:12px 10px;color:var(--text);font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s ease}
+.rm-quick-btn:hover{background:var(--card-hover);border-color:var(--gold)}
+.rm-disclaimer{background:rgba(42,138,106,.08);border:1px solid var(--divider);border-radius:var(--radius-sm);padding:10px 12px;font-size:.72rem;color:var(--muted);line-height:1.5;display:flex;gap:8px;align-items:flex-start}
+.rm-disclaimer svg{width:14px;height:14px;stroke-width:2;flex-shrink:0;margin-top:2px;color:var(--gold)}
+.rm-countdown-mode{text-align:center;padding:30px 10px}
+.rm-countdown-mode-icon{font-size:3.5rem;margin-bottom:14px;opacity:.7}
+.rm-countdown-mode-title{font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+.rm-countdown-mode-days{font-size:2.4rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.rm-countdown-mode-sub{font-size:.85rem;color:var(--muted);margin-bottom:18px}
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
@@ -637,6 +692,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <main class="app-main" id="app-main">
 
 <section class="page active" data-page="home">
+<div id="ramadan-banner-slot"></div>
 <div class="today-card" id="today-card">
 <div class="today-tabs">
 <button class="today-tab active" data-today="verse">📖 Verse</button>
@@ -784,7 +840,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="cat" data-cat="5">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="cat-title">Calendar &amp; Dates</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Hijri calendar</div><div class="tool-pill">Key Islamic dates</div><div class="tool-pill">Hijri converter</div><div class="tool-pill">Islamic months</div><div class="tool-pill wide">Ramadan mode</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Hijri calendar</div><div class="tool-pill">Key Islamic dates</div><div class="tool-pill">Hijri converter</div><div class="tool-pill">Islamic months</div><div class="tool-pill wide" data-tool="ramadanMode">🌙 Ramadan mode</div></div></div>
 </div>
 <div class="cat" data-cat="6">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span><span class="cat-title">Pilgrimage</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -904,6 +960,41 @@ const PRAYER_METHODS = {
   1: 'University of Karachi',
   0: 'Shia Ithna-Ashari'
 };
+
+/* ============ HIJRI HELPERS ============ */
+function getHijriParts(date){
+  const d = date || new Date();
+  try{
+    const fmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day:'numeric', month:'numeric', year:'numeric' });
+    const parts = fmt.formatToParts(d);
+    const get = t => parts.find(p=>p.type===t)?.value || '';
+    return {
+      day: parseInt(get('day')),
+      month: parseInt(get('month')),
+      year: parseInt(get('year').replace(' AH','').replace(/\D/g,''))
+    };
+  }catch(e){ return {day:1, month:1, year:1447}; }
+}
+function getHijriMonthLength(hy, hm){
+  try{
+    const probe = new Date();
+    for(let offset=0; offset<400; offset++){
+      const test = new Date(probe.getFullYear(), probe.getMonth(), probe.getDate() + offset);
+      const p = getHijriParts(test);
+      if(p.year === hy && p.month === hm){
+        let last = p.day;
+        for(let i=1; i<35; i++){
+          const t2 = new Date(test.getFullYear(), test.getMonth(), test.getDate() + i);
+          const p2 = getHijriParts(t2);
+          if(p2.year === hy && p2.month === hm){ last = p2.day; }
+          else break;
+        }
+        return last;
+      }
+    }
+  }catch(e){}
+  return 30;
+}
 
 const RECITER_INFO = {
   'ar.alafasy': { name: 'Mishary Rashid Alafasy', short: 'Mishary Alafasy', style: 'Murattal', bio: 'Kuwaiti qari and Imam of Masjid Al-Kabir. One of the most beloved voices in the modern Muslim world, known for his calm and melodious recitation.' },
@@ -1641,6 +1732,7 @@ setTimeout(hideSplash, 2500);
 
 function openQModal(title, contentHtml){
   if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  if(window.__ramadanTimer){ clearInterval(window.__ramadanTimer); window.__ramadanTimer = null; }
   const overlay = document.getElementById('q-modal');
   document.getElementById('q-modal-title').textContent = title;
   document.getElementById('q-modal-content').innerHTML = contentHtml;
@@ -1651,6 +1743,7 @@ function closeQModal(){
   document.getElementById('q-modal').classList.remove('show');
   document.body.style.overflow = '';
   if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  if(window.__ramadanTimer){ clearInterval(window.__ramadanTimer); window.__ramadanTimer = null; }
   if(window.__asmaAudio){ try{ window.__asmaAudio.pause(); }catch(e){} window.__asmaAudio = null; }
   updatePrayerTileStatus();
   try { refreshSettingsLocation(); } catch(e){ console.log('settings refresh deferred', e); }
@@ -2343,6 +2436,23 @@ function refreshSettingsLocation(){
 }
 try { refreshSettingsLocation(); } catch(e){ console.log('settings loc deferred', e); }
 
+/* ============ RAMADAN BANNER (home, month 9 only) ============ */
+function updateRamadanBanner(){
+  const slot = document.getElementById('ramadan-banner-slot');
+  if(!slot) return;
+  const p = getHijriParts(new Date());
+  if(p.month !== 9){ slot.innerHTML = ''; return; }
+  slot.innerHTML = `<div class="ramadan-banner" onclick="openTool('ramadanMode')">
+    <div class="ramadan-banner-icon">🌙</div>
+    <div class="ramadan-banner-body">
+      <div class="ramadan-banner-title">Ramadan Kareem</div>
+      <div class="ramadan-banner-sub">Day ${p.day} · Tap to open Ramadan mode</div>
+    </div>
+    <div class="ramadan-banner-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+  </div>`;
+}
+updateRamadanBanner();
+
 loadSurahList().then(() => { renderLastRead(); });
 
 /* ============ QIBLA COMPASS ============ */
@@ -2499,14 +2609,12 @@ async function renderPrayerTracker(){
   });
 }
 
-/* ============ FASTING TRACKER ============ */
+/* ============ FASTING TRACKER (dynamic 29/30) ============ */
 function renderFastingTracker(){
   const today = new Date();
-  const hFmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day:'numeric', month:'numeric', year:'numeric' });
-  const parts = hFmt.formatToParts(today);
-  const hDay = parseInt(parts.find(p=>p.type==='day').value);
-  const hMonth = parseInt(parts.find(p=>p.type==='month').value);
-  const hYear = parseInt(parts.find(p=>p.type==='year').value.replace(' AH',''));
+  const p = getHijriParts(today);
+  const hDay = p.day, hMonth = p.month, hYear = p.year;
+  const daysInMonth = getHijriMonthLength(hYear, hMonth);
   const hMonthName = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{month:'long'}).format(today);
   const state = JSON.parse(localStorage.getItem(`fasting-${hYear}-${hMonth}`) || '{}');
   const total = Object.values(state).filter(Boolean).length;
@@ -2514,7 +2622,7 @@ function renderFastingTracker(){
   const offset = day1.getDay();
   const cells = [];
   for(let i=0;i<offset;i++) cells.push({empty:true});
-  for(let d=1; d<=30; d++){
+  for(let d=1; d<=daysInMonth; d++){
     const g = new Date(day1); g.setDate(g.getDate() + (d-1));
     const wd = g.getDay();
     cells.push({d, rec: wd===1||wd===4||d===13||d===14||d===15, fasted: !!state[d], today: d===hDay});
@@ -3629,6 +3737,261 @@ function renderZakatAlFitr(){
   if(perPerson) calc();
 }
 
+/* ============ CATEGORY 5 — RAMADAN MODE ============ */
+const RAMADAN_DUAS = {
+  suhoor: {ar:'نَوَيْتُ أَنْ أَصُومَ غَدًا مِنْ شَهْرِ رَمَضَانَ', translit:'Nawaytu an asuma ghadan min shahri Ramadan', meaning:'I intend to fast tomorrow in the month of Ramadan.'},
+  iftar: {ar:'ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ', translit:'Dhahaba az-zama\'u wabtallatil-\'urooqu wa thabatal-ajru in shaa Allah', meaning:'The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills. (Abu Dawud)'},
+  moonsight: {ar:'اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ', translit:'Allahumma ahillahu \'alayna bil-yumni wal-iman was-salamati wal-Islam', meaning:'O Allah, let this moon appear on us with security and faith, with safety and Islam. (Tirmidhi)'}
+};
+
+async function renderRamadanMode(){
+  const p = getHijriParts(new Date());
+  if(p.month !== 9){ renderRamadanCountdownMode(p); return; }
+  const daysInMonth = getHijriMonthLength(p.year, p.month);
+  const today = p.day;
+  const pct = Math.round((today / daysInMonth) * 100);
+  const lat = parseFloat(localStorage.getItem('prayer-lat') || '0');
+  const lng = parseFloat(localStorage.getItem('prayer-lng') || '0');
+  const city = localStorage.getItem('prayer-city');
+  const country = localStorage.getItem('prayer-country');
+  const method = parseInt(localStorage.getItem('prayer-method') || '3');
+  const todayDate = new Date();
+  const dateStr = `${String(todayDate.getDate()).padStart(2,'0')}-${String(todayDate.getMonth()+1).padStart(2,'0')}-${todayDate.getFullYear()}`;
+
+  let timings = null;
+  if(lat || city){
+    const cacheKey = `prayer-cache-${dateStr}-${lat?`${lat}-${lng}`:`${city}-${country}`}-${method}`;
+    const cached = localStorage.getItem(cacheKey);
+    if(cached){ try{ timings = JSON.parse(cached); }catch(e){} }
+    if(!timings){
+      try{
+        let url;
+        if(lat && lng) url = `https://api.aladhan.com/v1/timings/${dateStr}?latitude=${lat}&longitude=${lng}&method=${method}`;
+        else url = `https://api.aladhan.com/v1/timingsByCity/${dateStr}?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=${method}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if(data.code === 200){ timings = data.data.timings; localStorage.setItem(cacheKey, JSON.stringify(timings)); }
+      }catch(e){}
+    }
+  }
+
+  const taraweehLog = JSON.parse(localStorage.getItem(`taraweeh-${p.year}-${p.month}`) || '{}');
+  const taraweehCount = Object.values(taraweehLog).filter(Boolean).length;
+  const fastingLog = JSON.parse(localStorage.getItem(`fasting-${p.year}-${p.month}`) || '{}');
+  const fastingCount = Object.values(fastingLog).filter(Boolean).length;
+
+  const taraweehCells = [];
+  for(let d=1; d<=daysInMonth; d++){
+    const marked = !!taraweehLog[d];
+    const isToday = d === today;
+    const future = d > today;
+    const cls = ['rm-day', marked?'marked':'', isToday?'today':'', future?'future':''].filter(Boolean).join(' ');
+    taraweehCells.push(`<div class="${cls}" data-td="${d}">${d}</div>`);
+  }
+
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="rm-header">
+        <div class="rm-header-arabic">رمضان كريم</div>
+        <div class="rm-header-title">Ramadan Kareem</div>
+        <div class="rm-header-sub">Day ${today} of ${daysInMonth} · ${p.year} AH</div>
+      </div>
+
+      <div class="rm-countdown-card">
+        <div class="rm-countdown-label" id="rm-cd-label">${getRamadanNextLabel(timings)}</div>
+        <div class="rm-countdown-arabic" id="rm-cd-arabic">${getRamadanNextArabic(timings)}</div>
+        <div class="rm-countdown-name" id="rm-cd-name">${getRamadanNextName(timings)}</div>
+        <div class="rm-countdown-time" id="rm-cd-time">—</div>
+        <div class="rm-countdown-note" id="rm-cd-note">Loading…</div>
+      </div>
+
+      <div class="rm-progress-card">
+        <div class="rm-progress-label">Month progress</div>
+        <div class="rm-progress-bar"><div class="rm-progress-fill" style="width:${pct}%"></div></div>
+        <div class="rm-progress-text">${today} / ${daysInMonth} days</div>
+      </div>
+
+      <div class="rm-section">
+        <div class="rm-section-title"><span>🍽 Fasting</span><span class="rm-section-count">${fastingCount} / ${daysInMonth}</span></div>
+        <div class="rm-grid">
+          ${Array.from({length:daysInMonth},(_,i)=>{
+            const d = i+1;
+            const marked = !!fastingLog[d];
+            const isToday = d === today;
+            const future = d > today;
+            const cls = ['rm-day', marked?'marked':'', isToday?'today':'', future?'future':''].filter(Boolean).join(' ');
+            return `<div class="${cls}" data-fd="${d}">${d}</div>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <div class="rm-section">
+        <div class="rm-section-title"><span>🕌 Taraweeh Tracker</span><span class="rm-section-count">${taraweehCount} / ${daysInMonth}</span></div>
+        <div class="rm-grid">${taraweehCells.join('')}</div>
+        <div class="tool-hint" style="padding:10px 0 0;font-size:.72rem">8 or 20 rak'ahs — both valid. Tap a night to mark it.</div>
+      </div>
+
+      <div class="rm-section">
+        <div class="rm-section-title">🤲 Duas</div>
+        <div class="rm-dua">
+          <div class="rm-dua-label">Suhoor intention</div>
+          <div class="rm-dua-arabic">${RAMADAN_DUAS.suhoor.ar}</div>
+          <div class="rm-dua-translit">${RAMADAN_DUAS.suhoor.translit}</div>
+          <div class="rm-dua-meaning">${RAMADAN_DUAS.suhoor.meaning}</div>
+        </div>
+        <div class="rm-dua">
+          <div class="rm-dua-label">Breaking the fast</div>
+          <div class="rm-dua-arabic">${RAMADAN_DUAS.iftar.ar}</div>
+          <div class="rm-dua-translit">${RAMADAN_DUAS.iftar.translit}</div>
+          <div class="rm-dua-meaning">${RAMADAN_DUAS.iftar.meaning}</div>
+        </div>
+        <div class="rm-dua">
+          <div class="rm-dua-label">On sighting the moon</div>
+          <div class="rm-dua-arabic">${RAMADAN_DUAS.moonsight.ar}</div>
+          <div class="rm-dua-translit">${RAMADAN_DUAS.moonsight.translit}</div>
+          <div class="rm-dua-meaning">${RAMADAN_DUAS.moonsight.meaning}</div>
+        </div>
+      </div>
+
+      ${today >= 21 ? `
+      <div class="rm-last10">
+        <div class="rm-last10-title">🌟 The Last 10 Nights</div>
+        <div class="rm-last10-arabic">اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</div>
+        <div class="rm-last10-translit">Allahumma innaka \'Afuwwun tuhibbul-\'afwa fa\'fu \'anni</div>
+        <div class="rm-last10-meaning">O Allah, You are Most Forgiving, and You love forgiveness; so forgive me. (Tirmidhi)</div>
+        <div class="rm-last10-nights">Seek Laylat al-Qadr on the odd nights: 21 · 23 · 25 · 27 · 29</div>
+      </div>` : ''}
+
+      <div class="rm-quick">
+        <button class="rm-quick-btn" onclick="closeQModal(); showPage('quran')">📖 Open Quran</button>
+        <button class="rm-quick-btn" onclick="closeQModal(); openTool('tasbih')">📿 Tasbih</button>
+        <button class="rm-quick-btn" onclick="closeQModal(); openTool('prayerTimes')">🕌 Prayer Times</button>
+        <button class="rm-quick-btn" onclick="closeQModal(); openTool('customDhikr')">🤲 Duas</button>
+      </div>
+
+      <div class="rm-disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Calendar-based estimate (Umm al-Qura). The actual start of Ramadan depends on moon sighting and may differ by 1–2 days.</span>
+      </div>
+    </div>`;
+
+  document.querySelectorAll('[data-fd]').forEach(el => {
+    el.addEventListener('click', () => {
+      const d = parseInt(el.dataset.fd);
+      if(d > today) return;
+      fastingLog[d] = !fastingLog[d];
+      localStorage.setItem(`fasting-${p.year}-${p.month}`, JSON.stringify(fastingLog));
+      renderRamadanMode();
+    });
+  });
+  document.querySelectorAll('[data-td]').forEach(el => {
+    el.addEventListener('click', () => {
+      const d = parseInt(el.dataset.td);
+      if(d > today) return;
+      taraweehLog[d] = !taraweehLog[d];
+      localStorage.setItem(`taraweeh-${p.year}-${p.month}`, JSON.stringify(taraweehLog));
+      if(taraweehLog[d] && navigator.vibrate) navigator.vibrate(30);
+      renderRamadanMode();
+    });
+  });
+
+  startRamadanCountdown(timings);
+}
+
+function getRamadanNextLabel(timings){
+  if(!timings) return 'Live countdown';
+  const now = new Date();
+  const cm = now.getHours()*60 + now.getMinutes();
+  const fajr = timings.Fajr ? hhmmToMins(timings.Fajr) : 0;
+  const maghrib = timings.Maghrib ? hhmmToMins(timings.Maghrib) : 0;
+  if(cm < fajr) return 'Suhoor ends in';
+  if(cm < maghrib) return 'Iftar in';
+  return 'Ramadan · after Iftar';
+}
+function getRamadanNextArabic(timings){
+  if(!timings) return '🌙';
+  const now = new Date();
+  const cm = now.getHours()*60 + now.getMinutes();
+  const fajr = timings.Fajr ? hhmmToMins(timings.Fajr) : 0;
+  const maghrib = timings.Maghrib ? hhmmToMins(timings.Maghrib) : 0;
+  if(cm < fajr) return 'السحور';
+  if(cm < maghrib) return 'الإفطار';
+  return '🌙';
+}
+function getRamadanNextName(timings){
+  if(!timings) return 'Set location to see Suhoor & Iftar times';
+  const now = new Date();
+  const cm = now.getHours()*60 + now.getMinutes();
+  const fajr = timings.Fajr ? hhmmToMins(timings.Fajr) : 0;
+  const maghrib = timings.Maghrib ? hhmmToMins(timings.Maghrib) : 0;
+  if(cm < fajr) return `at ${timings.Fajr}`;
+  if(cm < maghrib) return `at ${timings.Maghrib}`;
+  return `Tomorrow's Suhoor at ${timings.Fajr}`;
+}
+function hhmmToMins(s){
+  const t = (s || '00:00').split(':');
+  return parseInt(t[0])*60 + parseInt(t[1]);
+}
+function startRamadanCountdown(timings){
+  if(window.__ramadanTimer){ clearInterval(window.__ramadanTimer); window.__ramadanTimer = null; }
+  if(!timings) return;
+  const tick = () => {
+    const now = new Date();
+    const cm = now.getHours()*3600 + now.getMinutes()*60 + now.getSeconds();
+    const fajrM = hhmmToMins(timings.Fajr)*60;
+    const maghribM = hhmmToMins(timings.Maghrib)*60;
+    let target, diff;
+    if(cm < fajrM){ target = fajrM; }
+    else if(cm < maghribM){ target = maghribM; }
+    else { target = fajrM + 24*3600; }
+    diff = target - cm;
+    if(diff < 0) diff += 24*3600;
+    const h = Math.floor(diff/3600);
+    const m = Math.floor((diff%3600)/60);
+    const s = diff%60;
+    const el = document.getElementById('rm-cd-time');
+    const note = document.getElementById('rm-cd-note');
+    if(el){
+      if(h > 0) el.textContent = `${h}h ${m}m ${s}s`;
+      else if(m > 0) el.textContent = `${m}m ${s}s`;
+      else el.textContent = `${s}s`;
+    }
+    if(note){
+      const cur = cm;
+      if(cur < fajrM) note.textContent = 'Stop eating before Fajr time.';
+      else if(cur < maghribM) note.textContent = 'May Allah accept your fast today.';
+      else note.textContent = 'Iftar has passed. Rest well, and rise for Suhoor.';
+    }
+  };
+  tick();
+  window.__ramadanTimer = setInterval(tick, 1000);
+}
+
+function renderRamadanCountdownMode(p){
+  let daysUntil = 0, nextYear = p.year;
+  if(p.month < 9){ daysUntil = (9 - p.month) * 30 - p.day; }
+  else { daysUntil = (12 - p.month + 9) * 30 + (30 - p.day); nextYear = p.year + 1; }
+  if(daysUntil < 0) daysUntil = 0;
+
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="rm-countdown-mode">
+        <div class="rm-countdown-mode-icon">🌙</div>
+        <div class="rm-countdown-mode-title">Ramadan Mode</div>
+        <div class="rm-countdown-mode-days">~${daysUntil}</div>
+        <div class="rm-countdown-mode-sub">days until Ramadan ${nextYear} AH</div>
+      </div>
+      <div class="rm-disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Calendar-based estimate (Umm al-Qura). The actual start of Ramadan depends on moon sighting and may differ by 1–2 days. Ramadan Mode activates automatically when month 9 begins.</span>
+      </div>
+      <div class="rm-quick" style="margin-top:14px">
+        <button class="rm-quick-btn" onclick="closeQModal(); openTool('fastingTracker')">🌙 Fasting tracker</button>
+        <button class="rm-quick-btn" onclick="closeQModal(); openTool('qibla')">🧭 Qibla</button>
+      </div>
+    </div>`;
+}
+
 /* ============ TOOLS REGISTRY ============ */
 const TOOLS = {
   qibla: {title:'🧭 Qibla Compass', render:renderQibla},
@@ -3643,7 +4006,8 @@ const TOOLS = {
   arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet},
   asmaUlHusna: {title:'✨ Asma ul-Husna', render:renderAsmaUlHusna},
   zakatCalculator: {title:'💰 Zakat Calculator', render:renderZakatCalculator},
-  zakatAlFitr: {title:'🌙 Zakat al-Fitr', render:renderZakatAlFitr}
+  zakatAlFitr: {title:'🌙 Zakat al-Fitr', render:renderZakatAlFitr},
+  ramadanMode: {title:'🌙 Ramadan Mode', render:renderRamadanMode}
 };
 </script>
 </body>
