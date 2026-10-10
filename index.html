@@ -97,7 +97,7 @@ main.app-main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrollin
 .more-chev svg{width:16px;height:16px;stroke-width:2}
 .version{text-align:center;font-size:.75rem;color:var(--muted-2);margin-top:20px;letter-spacing:.05em}
 nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-height) + env(safe-area-inset-bottom,0));padding-bottom:env(safe-area-inset-bottom,0);background:var(--bg);border-top:1px solid var(--divider);display:flex;align-items:stretch;z-index:100;transition:background .4s ease,border-color .4s ease}
-.nav-item{flex:1;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted-2);font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:color .25s ease;padding:6px 0 4px;position:relative}
+.nav-item{flex:1;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted-2);font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:color .25s ease;padding:6px 0 4px}
 .nav-item svg{width:22px;height:22px;stroke-width:1.7;transition:transform .25s ease}
 .nav-item.active{color:var(--gold)}
 .nav-item.active svg{transform:translateY(-1px)}
@@ -122,7 +122,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .toggle.on::after{transform:translateX(18px)}
 .toast{position:fixed;bottom:calc(var(--nav-height) + env(safe-area-inset-bottom,0) + 20px);left:50%;transform:translateX(-50%);background:var(--emerald);color:#fff;padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:toastIn .3s ease;max-width:80vw;text-align:center}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
-/* ==== QURAN (list + reader) ==== */
 .q-tabs{display:flex;gap:4px;background:var(--card);border:1px solid var(--card-border);border-radius:999px;padding:5px;margin-bottom:14px}
 .q-tab{flex:1;padding:9px 10px;border-radius:999px;border:none;background:transparent;color:var(--muted);font-family:var(--font-body);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .25s ease}
 .q-tab.active{background:var(--gold);color:#0A0F0D}
@@ -130,13 +129,11 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .q-quickrow{display:flex;gap:8px}
 .q-quickfield{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
 .q-quickfield label{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
-.q-quickfield select,.q-quickfield input{width:100%;padding:9px 10px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:9px;font-family:var(--font-body);font-size:.85rem;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A8B0A8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
-.q-quickfield input{background-image:none;padding-right:10px}
+.q-quickfield select{width:100%;padding:9px 10px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:9px;font-family:var(--font-body);font-size:.85rem;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A8B0A8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
 .mode-select{display:flex;gap:4px;background:var(--bg);border-radius:10px;padding:4px}
 .mode-select button{flex:1;border:none;background:transparent;color:var(--muted);font-family:var(--font-body);font-size:.75rem;font-weight:600;padding:8px 6px;border-radius:8px;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:4px}
 .mode-select button.active{background:var(--gold);color:#0A0F0D}
 .mode-select button svg{width:13px;height:13px;stroke-width:2}
-/* Last Read card */
 .last-read-card{background:linear-gradient(135deg,rgba(42,138,106,.35),rgba(212,175,55,.18));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:14px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .last-read-card:hover{transform:translateY(-1px);border-color:var(--gold)}
 .last-read-body{flex:1;min-width:0}
@@ -146,18 +143,15 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .last-read-sub{font-size:.78rem;color:var(--muted)}
 .last-read-chev{color:var(--gold);flex-shrink:0}
 .last-read-chev svg{width:18px;height:18px;stroke-width:2}
-/* Surah list */
 .q-list{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);overflow:hidden}
 .surah-item{display:flex;align-items:center;gap:14px;padding:13px 14px;border-bottom:1px solid var(--divider);cursor:pointer;transition:background .2s ease}
 .surah-item:last-child{border-bottom:none}
 .surah-item:hover,.surah-item:active{background:var(--card-hover)}
-.surah-num-badge{flex-shrink:0;width:38px;height:38px;border-radius:12px;background:var(--emerald-soft);border:1.5px solid var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:.85rem;font-family:var(--font-body);position:relative}
-.surah-num-badge::before{content:'';position:absolute;inset:3px;border:1px solid var(--gold-soft);border-radius:8px;opacity:.5}
+.surah-num-badge{flex-shrink:0;width:38px;height:38px;border-radius:12px;background:var(--emerald-soft);border:1.5px solid var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:.85rem;font-family:var(--font-body)}
 .surah-info{flex:1;min-width:0}
 .surah-name{font-size:.96rem;font-weight:700;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .surah-meta{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
 .surah-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);text-align:right;line-height:1.2;flex-shrink:0;white-space:nowrap}
-/* Reader */
 .reader-topbar{display:flex;align-items:center;gap:12px;padding:6px 4px 14px}
 .reader-topbar-title{font-size:1.05rem;font-weight:700;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .surah-banner{background:linear-gradient(160deg,#0B3D2E 0%,#1A5C45 60%,#0B3D2E 100%);border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:22px 16px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden}
@@ -183,14 +177,12 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .q-btn{padding:10px 18px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--text);font-family:var(--font-body);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;gap:6px}
 .q-btn:hover{border-color:var(--gold);color:var(--gold)}
 .q-btn.primary{background:var(--gold);color:#0A0F0D;border-color:var(--gold)}
-.q-btn.primary:hover{opacity:.9;color:#0A0F0D}
 .q-btn svg{width:14px;height:14px;stroke-width:2}
 .q-loading{text-align:center;padding:40px 20px;color:var(--muted-2)}
 .q-loading-spinner{width:36px;height:36px;border:2px solid var(--divider);border-top-color:var(--gold);border-radius:50%;margin:0 auto 12px;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .q-scroll-pause{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:10px;font-size:.78rem;color:var(--muted)}
 .q-scroll-pause .toggle{transform:scale(.75);margin:0 2px}
-/* ==== HADITH ==== */
 .h-coll-grid{display:grid;grid-template-columns:1fr;gap:10px}
 .h-coll{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;cursor:pointer;transition:all .2s ease}
 .h-coll:hover{background:var(--card-hover);border-color:var(--gold-soft);transform:translateY(-1px)}
@@ -229,7 +221,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .h-random-btn{width:100%;padding:12px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:var(--radius-md);color:var(--gold);font-family:var(--font-body);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s ease;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px}
 .h-random-btn:hover{background:var(--gold);color:#0A0F0D}
 .h-random-btn svg{width:16px;height:16px;stroke-width:2}
-/* ==== DHIKR ==== */
 .dk-tabs{display:flex;gap:5px;background:var(--card);border:1px solid var(--card-border);border-radius:999px;padding:5px;margin-bottom:14px}
 .dk-tab{flex:1;padding:9px 10px;border-radius:999px;border:none;background:transparent;color:var(--muted);font-family:var(--font-body);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .25s ease;white-space:nowrap}
 .dk-tab.active{background:var(--gold);color:#0A0F0D}
@@ -274,7 +265,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .dk-plant.partial{background:rgba(42,138,106,.18)}
 .dk-plant.empty{color:var(--muted-2);opacity:.5}
 .dk-garden-hint{text-align:center;font-size:.72rem;color:var(--muted);font-style:italic}
-/* ==== GIVE ==== */
 .gv-heading{font-size:.78rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin:16px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--divider)}
 .gv-heading:first-of-type{margin-top:0}
 .gv-card{display:block;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;text-decoration:none;color:var(--text);transition:all .2s ease;margin-bottom:10px}
@@ -314,7 +304,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 
 <main class="app-main" id="app-main">
 
-<!-- HOME -->
 <section class="page active" data-page="home">
 <div class="tile" data-nav="jumuah">
 <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 6c-3 0-5 2-5 5v8h10v-8c0-3-2-5-5-5z"/><path d="M4 22h16"/><circle cx="12" cy="4" r="1.5"/></svg></div>
@@ -348,9 +337,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
-<!-- QURAN -->
 <section class="page" data-page="quran">
-<!-- LIST VIEW -->
 <div id="quran-list-view">
 <div class="q-quickbar">
 <div class="q-quickrow">
@@ -389,13 +376,11 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </div>
 </div>
-
 <div class="q-tabs">
 <button class="q-tab active" data-qt="surah">Surah</button>
 <button class="q-tab" data-qt="juz">Juz</button>
 <button class="q-tab" data-qt="bookmark">Bookmark</button>
 </div>
-
 <div class="last-read-card" id="last-read-card" style="display:none" onclick="openLastRead()">
 <div class="last-read-body">
 <div class="last-read-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Last Read</div>
@@ -404,13 +389,10 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="last-read-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
-
 <div id="quran-list-content">
 <div class="q-loading"><div class="q-loading-spinner"></div>Loading surahs…</div>
 </div>
 </div>
-
-<!-- READER VIEW -->
 <div id="quran-reader-view" style="display:none">
 <div class="reader-topbar">
 <button class="back-btn" onclick="backToSurahList()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -420,12 +402,10 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
-<!-- HADITH -->
 <section class="page" data-page="hadith">
 <div id="hadith-content"></div>
 </section>
 
-<!-- DHIKR -->
 <section class="page" data-page="dhikr">
 <div class="dk-garden" id="dk-garden"></div>
 <div class="dk-tabs">
@@ -437,12 +417,10 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <div id="dk-list"></div>
 </section>
 
-<!-- GIVE -->
 <section class="page" data-page="give">
 <div id="give-content"></div>
 </section>
 
-<!-- TOOLS -->
 <section class="page" data-page="tools">
 <div class="cat open" data-cat="1">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M4.93 19.07l2.12-2.12M12 22v-3M19.07 19.07l-2.12-2.12M22 12h-3M19.07 4.93l-2.12 2.12"/></svg></span><span class="cat-title">Worship &amp; Prayer</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -478,7 +456,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
-<!-- BOOKMARKS -->
 <section class="page" data-page="bookmarks">
 <div class="bm-tabs">
 <button class="bm-tab active" data-bm="verses">Verses</button>
@@ -496,7 +473,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
-<!-- MORE -->
 <section class="page" data-page="more">
 <div class="more-item" data-action="about"><div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="more-body"><div class="more-title">About Al-Jumu'ah</div><div class="more-sub">Our mission and what we offer</div></div><div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div></div>
 <div class="more-item" data-action="website"><div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="more-body"><div class="more-title">Visit our website</div><div class="more-sub">fc-sumits.github.io/Al--jumuah</div></div><div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div></div>
@@ -508,7 +484,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <div class="version">Version 1.0.0</div>
 </section>
 
-<!-- SETTINGS -->
 <section class="page" data-page="settings">
 <div class="settings-header">
 <button class="back-btn" id="back-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -559,6 +534,9 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </nav>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
@@ -703,7 +681,6 @@ async function saveUserBookmarks(){
   }catch(e){ console.log('save bookmarks failed', e); }
 }
 
-// ============ QURAN ============
 const QURAN = {
   surah: parseInt(localStorage.getItem('quran-last-surah') || '1'),
   script: localStorage.getItem('quran-script') || 'quran-uthmani',
@@ -715,13 +692,12 @@ const QURAN = {
   audio: null,
   currentAyah: null,
   autoScroll: true,
-  view: 'list',
 };
 
 function reciterAudioUrl(reciter, surahNum, ayahNum, globalAyah){
   const s = String(surahNum).padStart(3,'0');
   const a = String(ayahNum).padStart(3,'0');
-  if(reciter === 'saoodshuraym') return `https://everyayah.com/data/Saood_Ash-Shuraym_128kbps/${s}${a}.mp3`;
+  if(reciter === 'saoodshuraym') return `https://everyayah.com/data/Saood_ash-Shuraym_128kbps/${s}${a}.mp3`;
   if(reciter === 'ar.abdurrahmaansudais') return `https://everyayah.com/data/Abdurrahmaan_As-Sudais_64kbps/${s}${a}.mp3`;
   return `https://cdn.islamic.network/quran/audio/128/${reciter}/${globalAyah}.mp3`;
 }
@@ -761,7 +737,7 @@ function renderQuranList(){
   renderLastRead();
 }
 
-async function renderLastRead(){
+function renderLastRead(){
   const card = document.getElementById('last-read-card');
   if(!card) return;
   const lastSurah = parseInt(localStorage.getItem('quran-last-surah') || '0');
@@ -899,18 +875,16 @@ function stopQuranAudio(){
   document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
 }
 
-// Quran tabs
 document.querySelectorAll('.q-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.q-tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     if(tab.dataset.qt === 'surah') renderQuranList();
-    else if(tab.dataset.qt === 'juz') document.getElementById('quran-list-content').innerHTML = '<div class="q-loading">Juz selector — Step 4</div>';
+    else if(tab.dataset.qt === 'juz') document.getElementById('quran-list-content').innerHTML = '<div class="q-loading">Juz selector — coming soon</div>';
     else if(tab.dataset.qt === 'bookmark') document.getElementById('quran-list-content').innerHTML = '<div class="q-loading">Bookmarks — coming soon</div>';
   });
 });
 
-// Quick select
 document.getElementById('quick-surah-select').addEventListener('change', e => {
   const n = parseInt(e.target.value);
   if(n) openSurah(n);
@@ -921,7 +895,7 @@ document.getElementById('script-select').addEventListener('change', e => {
   QURAN.script = e.target.value;
   localStorage.setItem('quran-script', QURAN.script);
   stopQuranAudio();
-  if(QURAN.view === 'reader' || document.getElementById('quran-reader-view').style.display === 'block') loadSurah(QURAN.surah);
+  if(document.getElementById('quran-reader-view').style.display === 'block') loadSurah(QURAN.surah);
 });
 document.getElementById('reciter-select').value = QURAN.reciter;
 document.getElementById('reciter-select').addEventListener('change', e => {
@@ -941,7 +915,6 @@ document.querySelectorAll('#mode-select button').forEach(btn => {
   });
 });
 
-// ============ BOOKMARKS ============
 async function loadBookmarks(){
   const versesPanel = document.getElementById('bm-verses');
   if(!window.__currentUser){
@@ -983,7 +956,6 @@ async function loadBookmarks(){
   }catch(e){ versesPanel.innerHTML = '<div class="bm-empty">Could not load saved verses.</div>'; }
 }
 
-// ============ HADITH ============
 const HADITH_COLLECTIONS = [
   {id:'eng-bukhari',name:'Sahih al-Bukhari',arabic:'صحيح البخاري',count:7554,desc:'The most authentic collection, compiled by Imam al-Bukhari.'},
   {id:'eng-muslim',name:'Sahih Muslim',arabic:'صحيح مسلم',count:7360,desc:'The second most authentic collection, compiled by Imam Muslim.'},
@@ -1159,7 +1131,6 @@ class HadithBrowser {
 }
 window.hadithBrowser = new HadithBrowser();
 
-// ============ DHIKR ============
 const DHIKR_DATA = {
   daily:[
     {id:'d1',arabic:'سُبْحَانَ اللَّهِ',translit:'SubhanAllah',translation:'Glory be to Allah',virtue:'Whoever says it 100 times a day, his sins are wiped away even if they are like the foam of the sea. (Bukhari & Muslim)',target:33},
@@ -1351,11 +1322,10 @@ class GardenManager {
     if(!window.__currentUser || !db) return;
     const today = this.dateKey(new Date());
     const dm = window.dhikrManager;
-    const dailyItems = DHIKR_DATA.daily, morningItems = DHIKR_DATA.morning, eveningItems = DHIKR_DATA.evening;
     let dailyCount = 0, morningCount = 0, eveningCount = 0, totalTaps = 0;
-    dailyItems.forEach(d => { if(dm.getCount(d.id) >= d.target) dailyCount++; });
-    morningItems.forEach(d => { if(dm.getCount(d.id) >= d.target) morningCount++; });
-    eveningItems.forEach(d => { if(dm.getCount(d.id) >= d.target) eveningCount++; });
+    DHIKR_DATA.daily.forEach(d => { if(dm.getCount(d.id) >= d.target) dailyCount++; });
+    DHIKR_DATA.morning.forEach(d => { if(dm.getCount(d.id) >= d.target) morningCount++; });
+    DHIKR_DATA.evening.forEach(d => { if(dm.getCount(d.id) >= d.target) eveningCount++; });
     Object.values(dm.counts.counts).forEach(v => totalTaps += v);
     try{
       await db.collection('users').doc(window.__currentUser.uid).collection('dhikrLog').doc(today).set({
@@ -1439,8 +1409,5 @@ window.addEventListener('load', () => {
   }, 1500);
 });
 </script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 </body>
-                                                                                                                                                                                   </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </html>
