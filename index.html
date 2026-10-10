@@ -154,13 +154,44 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .surah-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);text-align:right;line-height:1.2;flex-shrink:0;white-space:nowrap}
 .reader-topbar{display:flex;align-items:center;gap:12px;padding:6px 4px 14px}
 .reader-topbar-title{font-size:1.05rem;font-weight:700;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.surah-banner{background:linear-gradient(160deg,#0B3D2E 0%,#1A5C45 60%,#0B3D2E 100%);border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:22px 16px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden}
+.surah-banner{background:linear-gradient(160deg,#0B3D2E 0%,#1A5C45 60%,#0B3D2E 100%);border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:22px 16px;margin-bottom:12px;text-align:center;position:relative;overflow:hidden}
 .surah-banner::before{content:'';position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='0.8'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30 Z'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/svg%3E");background-size:60px 60px;pointer-events:none}
 .surah-banner-arabic{font-family:var(--font-arabic);font-size:2.2rem;color:var(--gold);line-height:1.3;margin-bottom:6px;position:relative;z-index:1;text-shadow:0 2px 20px rgba(212,175,55,.3)}
 .surah-banner-english{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:3px;position:relative;z-index:1}
 .surah-banner-meaning{font-size:.82rem;color:rgba(232,228,220,.75);margin-bottom:14px;position:relative;z-index:1}
 .surah-banner-meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .surah-banner-meta span{padding:4px 12px;background:rgba(0,0,0,.25);border:1px solid var(--gold-soft);border-radius:999px;font-size:.68rem;color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+/* RECITER CARD */
+.reciter-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.reciter-card:hover{border-color:var(--gold-soft)}
+.reciter-card-avatar{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--font-arabic);font-size:1.3rem;font-weight:700}
+.reciter-card-body{flex:1;min-width:0}
+.reciter-card-name{font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reciter-card-style{font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.reciter-card-chev{color:var(--muted-2);flex-shrink:0;transition:transform .3s ease}
+.reciter-card-chev svg{width:16px;height:16px;stroke-width:2}
+.reciter-card.open .reciter-card-chev{transform:rotate(180deg)}
+.reciter-card-bio{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:.82rem;color:var(--muted);line-height:1.6}
+.reciter-card.open .reciter-card-bio{max-height:200px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--divider)}
+.reciter-card.open{flex-wrap:wrap}
+.reciter-card.open .reciter-card-avatar,.reciter-card.open .reciter-card-body,.reciter-card.open .reciter-card-chev{flex-shrink:0}
+.reciter-card.open .reciter-card-bio{width:100%;flex-basis:100%}
+/* DOWNLOAD SECTION */
+.download-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px}
+.download-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.download-info{flex:1;min-width:0}
+.download-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:3px}
+.download-title{font-size:.88rem;font-weight:700;color:var(--text)}
+.download-title.done{color:var(--gold)}
+.download-btn{padding:9px 16px;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--font-body);font-weight:700;font-size:.82rem;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;gap:6px;flex-shrink:0}
+.download-btn:hover{background:var(--gold);color:#0A0F0D}
+.download-btn svg{width:14px;height:14px;stroke-width:2.2}
+.download-btn.done{background:var(--gold);color:#0A0F0D}
+.download-progress{margin-top:10px;display:none}
+.download-progress.show{display:block}
+.download-progress-bar{height:6px;background:var(--divider);border-radius:999px;overflow:hidden;margin-bottom:6px}
+.download-progress-fill{height:100%;width:0%;background:var(--gold);border-radius:999px;transition:width .25s ease}
+.download-progress-text{font-size:.72rem;color:var(--muted);text-align:center}
 .bismillah{text-align:center;font-family:var(--font-arabic);font-size:1.3rem;color:var(--gold);padding:14px 10px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);margin-bottom:10px}
 .q-verse{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px;margin-bottom:10px;transition:border-color .3s ease,box-shadow .3s ease,background .3s ease;scroll-margin-top:80px}
 .q-verse.playing{border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,175,55,.25),0 0 22px rgba(212,175,55,.15);background:var(--card-hover)}
@@ -238,7 +269,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .dk-reset{width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid var(--divider);color:var(--muted);cursor:pointer;font-size:1rem;transition:all .2s ease}
 .dk-reset:hover{border-color:var(--gold);color:var(--gold)}
 .dk-tap{width:88px;height:88px;border-radius:50%;border:3px solid var(--emerald);background:transparent;color:var(--emerald);font-family:var(--font-body);font-size:1.6rem;font-weight:700;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;position:relative;user-select:none}
-[data-theme="light"] .dk-tap{border-color:var(--emerald);color:var(--emerald)}
 .dk-tap:active{transform:scale(.92)}
 .dk-tap.completed{background:var(--gold);color:#0A0F0D;border-color:var(--gold);animation:dkPop 1.4s cubic-bezier(.34,1.56,.64,1)}
 @keyframes dkPop{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,.7)}40%{transform:scale(1.22);box-shadow:0 0 0 26px rgba(212,175,55,.25),0 0 55px 18px rgba(212,175,55,.35)}70%{transform:scale(1.08);box-shadow:0 0 0 55px rgba(212,175,55,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,0)}}
@@ -512,9 +542,8 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="settings-group">
 <div class="settings-group-title">Storage &amp; Audio</div>
-<div class="setting-row"><span class="setting-label">Audio quality</span><span class="setting-value">64 kbps</span></div>
-<div class="setting-row"><span class="setting-label">Downloaded audio</span><span class="setting-value">0 MB</span></div>
-<div class="setting-row"><span class="setting-label">Clear cache</span><span class="setting-value">›</span></div>
+<div class="setting-row" id="clear-downloads-row"><span class="setting-label">Downloaded audio</span><span class="setting-value" id="downloads-size">0 surahs</span></div>
+<div class="setting-row" id="clear-cache-row"><span class="setting-label">Clear all downloads</span><span class="setting-value">›</span></div>
 </div>
 <div class="settings-group">
 <div class="settings-group-title">About</div>
@@ -540,6 +569,17 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <script>
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
+const AUDIO_CACHE = 'quran-audio-v1';
+
+const RECITER_INFO = {
+  'ar.alafasy': { name: 'Mishary Rashid Alafasy', short: 'Mishary Alafasy', style: 'Murattal', bio: 'Kuwaiti qari and Imam of Masjid Al-Kabir. One of the most beloved voices in the modern Muslim world, known for his calm and melodious recitation.' },
+  'ar.abdurrahmaansudais': { name: 'Abdurrahman As-Sudais', short: 'As-Sudais', style: 'Murattal', bio: 'Imam of the Grand Mosque in Makkah. Renowned for his calm, moving, and dignified recitation that has reached millions worldwide.' },
+  'ar.mahermuaiqly': { name: 'Maher Al Muaiqly', short: 'Maher Al Muaiqly', style: 'Murattal', bio: 'Imam of the Grand Mosque in Makkah, known for his heartfelt and expressive voice, especially in the night prayers of Ramadan.' },
+  'ar.husary': { name: 'Mahmoud Khalil Al-Husary', short: 'Al-Husary', style: 'Murattal · Tajweed', bio: 'Egyptian qari and master of Tajweed. His recitations are used as a reference for learners around the world because of their precision.' },
+  'ar.hudhaify': { name: 'Ali Al-Hudhaify', short: 'Al-Hudhaify', style: 'Murattal', bio: 'Imam of Masjid an-Nabawi in Madinah. A gentle and quiet voice, often chosen for reflection and memorization.' },
+  'ar.minshawi': { name: 'Muhammad Siddiq Al-Minshawi', short: 'Al-Minshawi', style: 'Murattal', bio: 'Egyptian qari celebrated for his pure and emotional recitation. His voice is often described as carrying the sorrow of the heart.' },
+  'saoodshuraym': { name: 'Saud Al-Shuraim', short: 'Al-Shuraim', style: 'Murattal', bio: 'Imam of the Grand Mosque in Makkah. Known for his powerful, distinct voice and strong presence in Taraweeh prayers.' }
+};
 
 const themeSeg = document.getElementById('theme-seg');
 const sizeSeg = document.getElementById('size-seg');
@@ -623,9 +663,32 @@ document.querySelectorAll('.setting-row').forEach(row=>{
       if(navigator.share) navigator.share({ title:"Al-Jumu'ah", text:'Check out this app', url:WEBSITE_URL }).catch(()=>{});
       else navigator.clipboard.writeText(WEBSITE_URL).then(()=>showToast('Link copied'));
     } else if(row.querySelector('.toggle')){ row.querySelector('.toggle').classList.toggle('on'); }
+    else if(row.id === 'clear-cache-row'){ clearAllDownloads(); }
     else if(action){ showToast('Coming soon'); }
   });
 });
+
+document.getElementById('clear-downloads-row').addEventListener('click', updateDownloadsSize);
+async function updateDownloadsSize(){
+  const el = document.getElementById('downloads-size');
+  if(!el) return;
+  const dl = JSON.parse(localStorage.getItem('quran-downloads') || '{}');
+  let count = 0;
+  Object.values(dl).forEach(arr => count += arr.length);
+  el.textContent = `${count} surah${count === 1 ? '' : 's'}`;
+}
+updateDownloadsSize();
+
+async function clearAllDownloads(){
+  if(!confirm('Delete all downloaded audio?')) return;
+  try{
+    await caches.delete(AUDIO_CACHE);
+    localStorage.removeItem('quran-downloads');
+    updateDownloadsSize();
+    if(QURAN.data) renderSurah();
+    showToast('Downloads cleared');
+  }catch(e){ showToast('Could not clear'); }
+}
 
 document.querySelectorAll('.bm-tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
@@ -692,7 +755,20 @@ const QURAN = {
   audio: null,
   currentAyah: null,
   autoScroll: true,
+  downloading: false,
+  downloaded: {}
 };
+try { QURAN.downloaded = JSON.parse(localStorage.getItem('quran-downloads') || '{}'); } catch(e){ QURAN.downloaded = {}; }
+
+function isSurahDownloaded(reciter, surahNum){
+  return !!(QURAN.downloaded[reciter] && QURAN.downloaded[reciter].includes(surahNum));
+}
+function markSurahDownloaded(reciter, surahNum){
+  if(!QURAN.downloaded[reciter]) QURAN.downloaded[reciter] = [];
+  if(!QURAN.downloaded[reciter].includes(surahNum)) QURAN.downloaded[reciter].push(surahNum);
+  localStorage.setItem('quran-downloads', JSON.stringify(QURAN.downloaded));
+  updateDownloadsSize();
+}
 
 function reciterAudioUrl(reciter, surahNum, ayahNum, globalAyah){
   const s = String(surahNum).padStart(3,'0');
@@ -725,10 +801,11 @@ function renderQuranList(){
   const c = document.getElementById('quran-list-content');
   c.innerHTML = `<div class="q-list">${QURAN.surahList.map(s => {
     const rev = s.revelationType === 'Meccan' ? 'Meccan' : 'Medinan';
+    const dl = isSurahDownloaded(QURAN.reciter, s.number) ? ' ⬇' : '';
     return `<div class="surah-item" onclick="openSurah(${s.number})">
       <div class="surah-num-badge">${s.number}</div>
       <div class="surah-info">
-        <div class="surah-name">${s.englishName}</div>
+        <div class="surah-name">${s.englishName}${dl}</div>
         <div class="surah-meta">${rev} · ${s.numberOfAyahs} verses</div>
       </div>
       <div class="surah-arabic">${s.name}</div>
@@ -792,17 +869,128 @@ function renderSurah(){
   const container = document.getElementById('quran-content');
   const ar = QURAN.data.arabic, en = QURAN.data.english, mode = QURAN.mode;
   const rev = ar.revelationType === 'Meccan' ? 'Meccan' : 'Medinan';
+  const info = RECITER_INFO[QURAN.reciter] || RECITER_INFO['ar.alafasy'];
+  const isDl = isSurahDownloaded(QURAN.reciter, ar.number);
+
   let html = `<div class="surah-banner"><div class="surah-banner-arabic">${ar.name}</div><div class="surah-banner-english">${ar.englishName}</div><div class="surah-banner-meaning">${ar.englishNameTranslation}</div><div class="surah-banner-meta"><span>${rev}</span><span>${ar.numberOfAyahs} verses</span></div></div>`;
+
+  /* RECITER CARD */
+  html += `<div class="reciter-card" id="reciter-card" onclick="this.classList.toggle('open')">
+    <div class="reciter-card-avatar">🎙</div>
+    <div class="reciter-card-body">
+      <div class="reciter-card-name">${info.name}</div>
+      <div class="reciter-card-style">${info.style}</div>
+    </div>
+    <div class="reciter-card-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="reciter-card-bio">${info.bio}</div>
+  </div>`;
+
+  /* DOWNLOAD SECTION */
+  html += `<div class="download-section">
+    <div class="download-head">
+      <div class="download-info">
+        <div class="download-label">Offline Audio</div>
+        <div class="download-title ${isDl?'done':''}" id="dl-title">${isDl ? '✓ Downloaded — plays offline' : 'Save this surah for offline'}</div>
+      </div>
+      <button class="download-btn ${isDl?'done':''}" id="download-btn" onclick="downloadSurah()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        ${isDl ? 'Remove' : 'Download'}
+      </button>
+    </div>
+    <div class="download-progress" id="dl-progress">
+      <div class="download-progress-bar"><div class="download-progress-fill" id="dl-fill"></div></div>
+      <div class="download-progress-text" id="dl-text">Preparing…</div>
+    </div>
+  </div>`;
+
   if(ar.number !== 1 && ar.number !== 9) html += `<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
+
   html += `<div class="q-controls"><button class="q-btn primary" id="q-play-all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>${mode === 'perverse' ? 'Play from start' : 'Play Surah'}</button><button class="q-btn" id="q-stop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>Stop</button></div>`;
+
   if(mode === 'synced') html += `<div class="q-scroll-pause"><span>Auto-scroll</span><div class="toggle ${QURAN.autoScroll?'on':''}" id="autoscroll-toggle"></div></div>`;
+
   ar.ayahs.forEach((ayah, i) => {
     const eng = en.ayahs[i];
     const saved = userBookmarks.verses.includes(`${ar.number}:${ayah.numberInSurah}`);
     html += `<div class="q-verse" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" id="q-verse-${ayah.numberInSurah}"><div class="q-verse-head"><span class="q-verse-num">${ayah.numberInSurah}</span><div class="q-verse-actions"><button class="q-act play-ayah" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="q-act bookmark-ayah ${saved?'active':''}" data-ayah="${ayah.numberInSurah}"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><p class="q-arabic">${ayah.text}</p><p class="q-translation">${eng.text}</p></div>`;
   });
+
   container.innerHTML = html;
   attachQuranListeners();
+}
+
+async function downloadSurah(){
+  if(!QURAN.data) return;
+  const reciter = QURAN.reciter;
+  const surahNum = QURAN.data.arabic.number;
+  const isDl = isSurahDownloaded(reciter, surahNum);
+
+  if(isDl){
+    if(!confirm('Remove downloaded audio for this surah?')) return;
+    try{
+      const cache = await caches.open(AUDIO_CACHE);
+      const ar = QURAN.data.arabic;
+      for(const ayah of ar.ayahs){
+        const url = reciterAudioUrl(reciter, surahNum, ayah.numberInSurah, ayah.number);
+        await cache.delete(url);
+      }
+      QURAN.downloaded[reciter] = (QURAN.downloaded[reciter] || []).filter(n => n !== surahNum);
+      localStorage.setItem('quran-downloads', JSON.stringify(QURAN.downloaded));
+      updateDownloadsSize();
+      renderSurah();
+      showToast('Removed from offline');
+    }catch(e){ showToast('Could not remove'); }
+    return;
+  }
+
+  if(QURAN.downloading){ showToast('Download already in progress'); return; }
+  QURAN.downloading = true;
+  const btn = document.getElementById('download-btn');
+  if(btn){ btn.disabled = true; btn.style.opacity = '.6'; }
+  const progressEl = document.getElementById('dl-progress');
+  const fillEl = document.getElementById('dl-fill');
+  const textEl = document.getElementById('dl-text');
+  if(progressEl) progressEl.classList.add('show');
+
+  try{
+    const cache = await caches.open(AUDIO_CACHE);
+    const ar = QURAN.data.arabic;
+    const total = ar.ayahs.length;
+    let done = 0, failed = 0;
+
+    for(const ayah of ar.ayahs){
+      const url = reciterAudioUrl(reciter, surahNum, ayah.numberInSurah, ayah.number);
+      const existing = await cache.match(url);
+      if(!existing){
+        try{
+          const res = await fetch(url, { mode: 'cors' });
+          if(res.ok) await cache.put(url, res.clone());
+          else failed++;
+        }catch(e){ failed++; }
+      }
+      done++;
+      if(fillEl) fillEl.style.width = `${Math.round((done / total) * 100)}%`;
+      if(textEl) textEl.textContent = `Downloading ${done} of ${total}…`;
+    }
+
+    if(failed > 0 && failed < total){
+      markSurahDownloaded(reciter, surahNum);
+      showToast(`Saved (${total - failed}/${total} verses)`);
+    } else if(failed === total){
+      showToast('Could not download — check connection');
+    } else {
+      markSurahDownloaded(reciter, surahNum);
+      showToast('Downloaded — plays offline');
+    }
+    if(progressEl) progressEl.classList.remove('show');
+    renderSurah();
+  }catch(e){
+    console.log('download failed', e);
+    showToast('Download failed');
+    if(progressEl) progressEl.classList.remove('show');
+  }finally{
+    QURAN.downloading = false;
+  }
 }
 
 function attachQuranListeners(){
@@ -839,7 +1027,7 @@ function attachQuranListeners(){
   if(autoT) autoT.addEventListener('click', () => { QURAN.autoScroll = !QURAN.autoScroll; autoT.classList.toggle('on', QURAN.autoScroll); });
 }
 
-function playAyah(ayahNum, globalAyah, autoAdvance){
+async function playAyah(ayahNum, globalAyah, autoAdvance){
   if(QURAN.audio){ QURAN.audio.pause(); QURAN.audio = null; }
   document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
   document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
@@ -853,10 +1041,22 @@ function playAyah(ayahNum, globalAyah, autoAdvance){
   QURAN.currentAyah = ayahNum;
   localStorage.setItem('quran-last-ayah', ayahNum);
   const url = reciterAudioUrl(QURAN.reciter, QURAN.data.arabic.number, ayahNum, globalAyah);
-  const audio = new Audio(url);
+
+  let playUrl = url;
+  try{
+    const cache = await caches.open(AUDIO_CACHE);
+    const cached = await cache.match(url);
+    if(cached){
+      const blob = await cached.blob();
+      playUrl = URL.createObjectURL(blob);
+    }
+  }catch(e){ /* cache miss — use network */ }
+
+  const audio = new Audio(playUrl);
   QURAN.audio = audio;
   audio.play().then(() => {
     audio.onended = () => {
+      if(playUrl.startsWith('blob:')) URL.revokeObjectURL(playUrl);
       if(autoAdvance && QURAN.playing && ayahNum < QURAN.data.arabic.numberOfAyahs){
         setTimeout(() => {
           if(!QURAN.playing) return;
@@ -902,6 +1102,7 @@ document.getElementById('reciter-select').addEventListener('change', e => {
   QURAN.reciter = e.target.value;
   localStorage.setItem('quran-reciter', QURAN.reciter);
   stopQuranAudio();
+  if(QURAN.data) renderSurah();
 });
 document.querySelectorAll('#mode-select button').forEach(btn => {
   if(btn.dataset.mode === QURAN.mode) btn.classList.add('active'); else btn.classList.remove('active');
@@ -1410,4 +1611,4 @@ window.addEventListener('load', () => {
 });
 </script>
 </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </html>
+                                                                                                                                                                                                                                                                                                                                   </html>
