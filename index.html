@@ -323,6 +323,40 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .word-info{flex:1;min-width:0}
 .word-en{font-size:.88rem;color:var(--text);font-weight:600;margin-bottom:2px}
 .word-translit{font-size:.72rem;color:var(--muted);font-style:italic}
+/* ============ TODAY CARD (Home) ============ */
+.today-card{background:linear-gradient(135deg,rgba(42,138,106,.28),rgba(212,175,55,.12));border:1px solid var(--gold);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:14px;position:relative;overflow:hidden}
+.today-tabs{display:flex;gap:6px;margin-bottom:12px;position:relative;z-index:1}
+.today-tab{flex:1;padding:7px 10px;border-radius:999px;border:1px solid transparent;background:rgba(0,0,0,.2);color:var(--muted);font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s ease;letter-spacing:.03em}
+.today-tab.active{background:var(--gold);color:#0A0F0D;border-color:var(--gold)}
+.today-content{position:relative;z-index:1;min-height:120px;display:flex;flex-direction:column;justify-content:center}
+.today-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:8px}
+.today-arabic{font-family:var(--font-arabic);font-size:1.35rem;line-height:1.9;text-align:right;direction:rtl;color:var(--text);margin-bottom:8px}
+.today-text{font-size:.85rem;line-height:1.6;color:var(--text);margin-bottom:6px}
+.today-meta{font-size:.72rem;color:var(--muted);font-style:italic}
+.today-actions{display:flex;gap:8px;margin-top:12px;position:relative;z-index:1}
+.today-action{flex:1;padding:8px 12px;border-radius:999px;border:1px solid var(--gold-soft);background:rgba(0,0,0,.25);color:var(--gold);font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:5px}
+.today-action:hover{background:var(--gold-soft)}
+.today-action svg{width:13px;height:13px;stroke-width:2}
+/* ============ ASMA UL-HUSNA ============ */
+.as-intro{font-size:.85rem;color:var(--muted);text-align:center;padding:6px 4px 14px;line-height:1.5}
+.as-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.as-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s ease}
+.as-card:active{transform:scale(.94)}
+.as-card:hover{border-color:var(--gold);background:var(--card-hover)}
+.as-card-num{font-size:.62rem;color:var(--muted);letter-spacing:.05em;font-weight:600;margin-bottom:4px}
+.as-card-ar{font-family:var(--font-arabic);font-size:1.6rem;color:var(--gold);line-height:1.1;margin-bottom:4px}
+.as-card-translit{font-size:.62rem;color:var(--text);font-weight:600;letter-spacing:.02em;line-height:1.2}
+.as-detail{text-align:center;padding:6px 0}
+.as-detail-num{font-size:.72rem;color:var(--muted);letter-spacing:.08em;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+.as-detail-ar{font-family:var(--font-arabic);font-size:5rem;color:var(--gold);line-height:1;margin:8px 0 8px;text-shadow:0 0 40px rgba(212,175,55,.35)}
+.as-detail-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:.02em}
+.as-detail-meaning{font-size:.92rem;color:var(--muted);margin-bottom:20px;line-height:1.6;font-style:italic}
+.as-detail-note{background:linear-gradient(135deg,rgba(42,138,106,.12),rgba(212,175,55,.06));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:14px;font-size:.85rem;color:var(--text);line-height:1.65;text-align:left;margin-bottom:18px}
+.as-nav{display:flex;justify-content:space-between;gap:10px}
+.as-nav-btn{flex:1;background:var(--card);border:1px solid var(--card-border);color:var(--text);padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:6px}
+.as-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
+.as-nav-btn:disabled{opacity:.35;cursor:default}
+.as-nav-btn svg{width:14px;height:14px;stroke-width:2}
 /* ============ WORSHIP & PRAYER TOOLS ============ */
 .tool-view{padding-bottom:6px}
 .tool-hint{font-size:.8rem;color:var(--muted);text-align:center;padding:16px;line-height:1.6}
@@ -427,7 +461,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .cd-cancel{background:var(--card);color:var(--text);border:1px solid var(--divider)!important}
 .cd-empty{text-align:center;padding:40px 20px;color:var(--muted-2);font-size:.88rem;line-height:1.7}
 .cd-empty-icon{font-size:2rem;margin-bottom:10px;opacity:.5}
-/* ============ PRAYER TIMES ============ */
 .pt2-loc-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding:12px 14px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm)}
 .pt2-loc-info{flex:1;min-width:0}
 .pt2-loc-label{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:3px}
@@ -462,7 +495,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .pt2-city-form input:focus{outline:none;border-color:var(--gold)}
 .pt2-city-form button{background:var(--gold);color:#0A0F0D;border:none;padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.88rem;cursor:pointer}
 .pt2-loading{text-align:center;padding:30px 20px;color:var(--muted-2);font-size:.88rem}
-/* ============ KHATM TRACKER ============ */
 .kh-wrap{text-align:center;padding:6px 0}
 .kh-ring-wrap{position:relative;width:200px;height:200px;margin:6px auto 14px}
 .kh-ring{width:100%;height:100%;transform:rotate(-90deg)}
@@ -490,7 +522,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .kh-complete-msg{margin-top:12px;padding:12px;background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(212,175,55,.05));border:1px solid var(--gold);border-radius:var(--radius-sm);text-align:center;animation:dkMsgIn .5s ease}
 .kh-complete-msg .dua{font-family:var(--font-arabic);font-size:1.2rem;color:var(--gold);display:block;margin-bottom:3px}
 .kh-complete-msg .en{font-size:.85rem;color:var(--text);font-weight:600}
-/* ============ TAJWEED BASICS ============ */
 .tj-intro{font-size:.85rem;color:var(--muted);line-height:1.6;text-align:center;padding:10px 6px 14px}
 .tj-list{display:flex;flex-direction:column;gap:10px}
 .tj-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);overflow:hidden;transition:border-color .25s ease}
@@ -511,7 +542,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .tj-example-arabic .tj-highlight{color:var(--gold);font-weight:700}
 .tj-example-translit{font-size:.78rem;font-style:italic;color:var(--gold);margin-bottom:4px}
 .tj-example-meaning{font-size:.8rem;color:var(--muted);line-height:1.5}
-/* ============ ARABIC ALPHABET ============ */
 .aa-intro{font-size:.85rem;color:var(--muted);text-align:center;padding:6px 4px 14px;line-height:1.5}
 .aa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .aa-letter{aspect-ratio:1;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:6px;gap:2px}
@@ -541,7 +571,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
-  </head>
+</head>
 
   <body>
 
@@ -572,6 +602,18 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <main class="app-main" id="app-main">
 
 <section class="page active" data-page="home">
+<div class="today-card" id="today-card">
+<div class="today-tabs">
+<button class="today-tab active" data-today="verse">📖 Verse</button>
+<button class="today-tab" data-today="hadith">📚 Hadith</button>
+<button class="today-tab" data-today="dua">🤲 Dua</button>
+</div>
+<div class="today-content" id="today-content"></div>
+<div class="today-actions">
+<button class="today-action" id="today-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button>
+<button class="today-action" id="today-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+</div>
+</div>
 <div class="tile" data-nav="jumuah">
 <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 6c-3 0-5 2-5 5v8h10v-8c0-3-2-5-5-5z"/><path d="M4 22h16"/><circle cx="12" cy="4" r="1.5"/></svg></div>
 <div class="tile-body"><div class="tile-title">Jumu'ah</div><div class="tile-sub">Friday special menu</div><div class="tile-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span id="jumuah-status">Opens Friday</span></div></div>
@@ -715,7 +757,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="cat" data-cat="7">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></span><span class="cat-title">Calculators</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Zakat calculator</div><div class="tool-pill">Zakat al-Fitr</div><div class="tool-pill wide">Asma ul-Husna</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Zakat calculator</div><div class="tool-pill">Zakat al-Fitr</div><div class="tool-pill wide" data-tool="asmaUlHusna">Asma ul-Husna</div></div></div>
 </div>
 <div class="cat" data-cat="8">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span class="cat-title">Extra</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -819,6 +861,15 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
 const AUDIO_CACHE = 'quran-audio-v1';
+
+const PRAYER_METHODS = {
+  3: 'Muslim World League',
+  2: 'ISNA (North America)',
+  4: 'Umm al-Qura (Makkah)',
+  5: 'Egyptian General Authority',
+  1: 'University of Karachi',
+  0: 'Shia Ithna-Ashari'
+};
 
 const RECITER_INFO = {
   'ar.alafasy': { name: 'Mishary Rashid Alafasy', short: 'Mishary Alafasy', style: 'Murattal', bio: 'Kuwaiti qari and Imam of Masjid Al-Kabir. One of the most beloved voices in the modern Muslim world, known for his calm and melodious recitation.' },
@@ -947,20 +998,6 @@ document.querySelectorAll('.setting-row').forEach(row=>{
     else if(action){ showToast('Coming soon'); }
   });
 });
-
-function refreshSettingsLocation(){
-  const lat = localStorage.getItem('prayer-lat');
-  const city = localStorage.getItem('prayer-city');
-  const country = localStorage.getItem('prayer-country');
-  let locText = 'Not set';
-  if(city) locText = `${city}${country?', '+country:''}`;
-  else if(lat) locText = 'GPS location';
-  const lv = document.getElementById('settings-loc-value');
-  if(lv) lv.textContent = locText;
-  const method = parseInt(localStorage.getItem('prayer-method') || '3');
-  const mv = document.getElementById('settings-method-value');
-  if(mv) mv.textContent = PRAYER_METHODS[method] || 'Muslim World League';
-}
 
 document.getElementById('clear-downloads-row').addEventListener('click', updateDownloadsSize);
 async function updateDownloadsSize(){
@@ -1383,6 +1420,286 @@ function stopQuranAudio(){
 }
 
   
+/* ============ TODAY CARD (Verse / Hadith / Dua of the day) ============ */
+const TODAY_DATA = {
+  verse: [
+    {arabic:'فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ', translation:'So remember Me; I will remember you. And be grateful to Me and do not deny Me.', ref:'Al-Baqarah 2:152'},
+    {arabic:'لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا', translation:'Allah does not burden a soul beyond what it can bear.', ref:'Al-Baqarah 2:286'},
+    {arabic:'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا', translation:'Our Lord, do not let our hearts deviate after You have guided us.', ref:'Aal-i-Imraan 3:8'},
+    {arabic:'وَلَا تَهِنُوا وَلَا تَحْزَنُوا وَأَنتُمُ الْأَعْلَوْنَ إِن كُنتُم مُّؤْمِنِينَ', translation:'Do not lose heart nor grieve, for you will be superior if you are true believers.', ref:'Aal-i-Imraan 3:139'},
+    {arabic:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', translation:'Allah is sufficient for us, and He is the best Disposer of affairs.', ref:'Aal-i-Imraan 3:173'},
+    {arabic:'يَا أَيُّهَا الَّذِينَ آمَنُوا اصْبِرُوا وَصَابِرُوا وَرَابِطُوا', translation:'O you who believe, be patient, persevere, and remain stationed.', ref:'Aal-i-Imraan 3:200'},
+    {arabic:'وَأَطِيعُوا اللَّهَ وَرَسُولَهُ وَلَا تَنَازَعُوا', translation:'And obey Allah and His Messenger, and do not dispute with one another.', ref:'Al-Anfaal 8:46'},
+    {arabic:'وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ', translation:'My success is only through Allah; upon Him I rely, and to Him I turn.', ref:'Hood 11:88'},
+    {arabic:'أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ', translation:'Verily, in the remembrance of Allah do hearts find rest.', ref:'Ar-Ra\'d 13:28'},
+    {arabic:'لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ', translation:'If you are grateful, I will surely increase you [in favour].', ref:'Ibrahim 14:7'},
+    {arabic:'إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا وَّالَّذِينَ هُم مُّحْسِنُونَ', translation:'Indeed, Allah is with those who fear Him and those who are doers of good.', ref:'An-Nahl 16:128'},
+    {arabic:'رَّبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ', translation:'My Lord, cause me to enter a sound entrance and to exit a sound exit.', ref:'Al-Israa 17:80'},
+    {arabic:'رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا', translation:'Our Lord, grant us mercy from Yourself and guide us rightly in our affair.', ref:'Al-Kahf 18:10'},
+    {arabic:'رَّبِّ زِدْنِي عِلْمًا', translation:'My Lord, increase me in knowledge.', ref:'Ta-Ha 20:114'},
+    {arabic:'اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ', translation:'Allah is the Light of the heavens and the earth.', ref:'An-Nur 24:35'},
+    {arabic:'رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ', translation:'Our Lord, grant us from among our spouses and offspring comfort to our eyes.', ref:'Al-Furqan 25:74'},
+    {arabic:'وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا', translation:'And those who strive for Us — We will surely guide them to Our ways.', ref:'Al-Ankaboot 29:69'},
+    {arabic:'يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا', translation:'O you who believe, remember Allah with much remembrance.', ref:'Al-Ahzaab 33:41'},
+    {arabic:'إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ', translation:'Indeed, Allah and His angels send blessings upon the Prophet.', ref:'Al-Ahzaab 33:56'},
+    {arabic:'لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ', translation:'Do not despair of the mercy of Allah.', ref:'Az-Zumar 39:53'},
+    {arabic:'ادْعُونِي أَسْتَجِبْ لَكُمْ', translation:'Call upon Me; I will respond to you.', ref:'Ghafir 40:60'},
+    {arabic:'إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ', translation:'If you support Allah, He will support you and plant your feet firmly.', ref:'Muhammad 47:7'},
+    {arabic:'إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ', translation:'Indeed, the most noble of you in the sight of Allah is the most righteous of you.', ref:'Al-Hujuraat 49:13'},
+    {arabic:'فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ', translation:'So which of the favours of your Lord would you deny?', ref:'Ar-Rahman 55:13'},
+    {arabic:'وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ', translation:'And He is with you wherever you are.', ref:'Al-Hadid 57:4'},
+    {arabic:'وَمَن يُؤْمِن بِاللَّهِ يَهْدِ قَلْبَهُ', translation:'And whoever believes in Allah — He will guide his heart.', ref:'At-Taghaabun 64:11'},
+    {arabic:'وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا', translation:'And whoever fears Allah — He will make a way out for him.', ref:'At-Talaaq 65:2'},
+    {arabic:'وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ', translation:'And your Lord is going to give you, and you will be satisfied.', ref:'Ad-Duhaa 93:5'},
+    {arabic:'إِنَّ مَعَ الْعُسْرِ يُسْرًا', translation:'Indeed, with hardship comes ease.', ref:'Ash-Sharh 94:6'},
+    {arabic:'وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ', translation:'And they enjoin upon one another truth and enjoin upon one another patience.', ref:'Al-Asr 103:3'}
+  ],
+  hadith: [
+    {translation:'Actions are but by intention, and every person shall have what he intended.', ref:'Bukhari & Muslim'},
+    {translation:'The best of you are those who learn the Quran and teach it.', ref:'Sahih al-Bukhari'},
+    {translation:'None of you truly believes until he loves for his brother what he loves for himself.', ref:'Bukhari & Muslim'},
+    {translation:'Whoever believes in Allah and the Last Day, let him speak good or remain silent.', ref:'Bukhari & Muslim'},
+    {translation:'The strong man is not the one who can wrestle, but the one who controls himself while in anger.', ref:'Sahih al-Bukhari'},
+    {translation:'Allah is Beautiful and He loves beauty.', ref:'Sahih Muslim'},
+    {translation:'The most beloved deeds to Allah are those done consistently, even if they are small.', ref:'Bukhari & Muslim'},
+    {translation:'Whoever relieves a believer\'s distress, Allah will relieve his distress on the Day of Judgement.', ref:'Sahih Muslim'},
+    {translation:'Do not consider any act of goodness insignificant, even meeting your brother with a cheerful face.', ref:'Sahih Muslim'},
+    {translation:'The best of you are those who are best to their families.', ref:'Jami\' at-Tirmidhi'},
+    {translation:'He who does not thank people, does not thank Allah.', ref:'Jami\' at-Tirmidhi'},
+    {translation:'The believer\'s shade on the Day of Judgement will be his charity.', ref:'Jami\' at-Tirmidhi'},
+    {translation:'Make things easy and do not make them difficult. Give good tidings and do not repel people.', ref:'Sahih al-Bukhari'},
+    {translation:'Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.', ref:'Sahih Muslim'},
+    {translation:'The one who is not merciful to others will not be shown mercy.', ref:'Bukhari & Muslim'},
+    {translation:'He who believes in Allah and the Last Day, let him be good to his neighbour.', ref:'Bukhari & Muslim'},
+    {translation:'Whoever is not grateful to people is not grateful to Allah.', ref:'Musnad Ahmad'},
+    {translation:'Gentleness is not found in anything without beautifying it, and is not removed from anything without disfiguring it.', ref:'Sahih Muslim'},
+    {translation:'Allah is gentle and He loves gentleness in all matters.', ref:'Bukhari & Muslim'},
+    {translation:'Whoever treads a path seeking knowledge, Allah will make easy for him the path to Paradise.', ref:'Sahih Muslim'},
+    {translation:'A Muslim is one from whose tongue and hand other Muslims are safe.', ref:'Sahih al-Bukhari'},
+    {translation:'Beware of envy, for envy consumes good deeds as fire consumes wood.', ref:'Sunan Abi Dawud'},
+    {translation:'Do not become angry.', ref:'Sahih al-Bukhari'},
+    {translation:'The most complete of the believers in faith is the one with the best character.', ref:'Jami\' at-Tirmidhi'},
+    {translation:'Righteousness is good character, and sin is what troubles your heart.', ref:'Sahih Muslim'},
+    {translation:'Every act of kindness is charity.', ref:'Sahih al-Bukhari'},
+    {translation:'Whoever believes in Allah and the Last Day, let him honour his guest.', ref:'Bukhari & Muslim'},
+    {translation:'The one who cares for the widow and the poor is like a warrior in the way of Allah.', ref:'Sahih al-Bukhari'},
+    {translation:'Eat, drink, give charity, and dress without extravagance or arrogance.', ref:'Sahih al-Bukhari'},
+    {translation:'Verily, Allah is Kind and He loves kindness in all matters.', ref:'Bukhari & Muslim'}
+  ],
+  dua: [
+    {arabic:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', translit:'Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina \'adhab an-nar', translation:'Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.', ref:'Al-Baqarah 2:201'},
+    {arabic:'رَبِّ زِدْنِي عِلْمًا', translit:'Rabbi zidni \'ilma', translation:'My Lord, increase me in knowledge.', ref:'Ta-Ha 20:114'},
+    {arabic:'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا', translit:'Rabbana la tuzigh qulubana ba\'da idh hadaytana', translation:'Our Lord, do not let our hearts deviate after You have guided us.', ref:'Aal-i-Imraan 3:8'},
+    {arabic:'رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ', translit:'Rabbana hab lana min azwajina wa dhurriyyatina qurrata a\'yun', translation:'Our Lord, grant us from among our spouses and offspring comfort to our eyes.', ref:'Al-Furqan 25:74'},
+    {arabic:'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي', translit:'Rabbish-rah li sadri wa yassir li amri', translation:'My Lord, expand for me my chest and ease for me my task.', ref:'Ta-Ha 20:25-26'},
+    {arabic:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', translit:'Hasbunallahu wa ni\'mal-wakil', translation:'Allah is sufficient for us, and He is the best Disposer of affairs.', ref:'Aal-i-Imraan 3:173'},
+    {arabic:'لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ', translit:'La ilaha illa anta subhanaka inni kuntu minaz-zalimin', translation:'There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.', ref:'Al-Anbiya 21:87'},
+    {arabic:'رَبَّنَا اغْفِرْ لَنَا وَلِوَالِدَيْنَا', translit:'Rabbana-ghfir lana wa liwalidayna', translation:'Our Lord, forgive us and our parents.', ref:'Traditional supplication'},
+    {arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَىٰ وَالتُّقَىٰ وَالْعَفَافَ وَالْغِنَىٰ', translit:'Allahumma inni as\'aluka al-huda wat-tuqa wal-\'afafa wal-ghina', translation:'O Allah, I ask You for guidance, piety, chastity, and contentment.', ref:'Sahih Muslim'},
+    {arabic:'اللَّهُمَّ أَعِنِّي عَلَىٰ ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ', translit:'Allahumma a\'inni \'ala dhikrika wa shukrika wa husni \'ibadatik', translation:'O Allah, help me to remember You, to thank You, and to worship You well.', ref:'Sunan Abi Dawud'},
+    {arabic:'رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا', translit:'Rabbana atina min ladunka rahmatan wa hayyi\' lana min amrina rashada', translation:'Our Lord, grant us mercy from Yourself and guide us rightly in our affair.', ref:'Al-Kahf 18:10'},
+    {arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي', translit:'Allahumma \'afini fi badani, Allahumma \'afini fi sam\'i, Allahumma \'afini fi basari', translation:'O Allah, grant my body health, my hearing health, my sight health.', ref:'Sunan Abi Dawud'},
+    {arabic:'رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا', translit:'Rabbana la tu\'akhidhna in nasina aw akhta\'na', translation:'Our Lord, do not take us to task if we forget or make a mistake.', ref:'Al-Baqarah 2:286'},
+    {arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ', translit:'Allahumma inni a\'udhu bika minal-hammi wal-hazan', translation:'O Allah, I seek refuge in You from worry and sorrow.', ref:'Sahih al-Bukhari'},
+    {arabic:'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ', translit:'Allahumma-kfini bihalalika \'an haramik', translation:'O Allah, suffice me with what You have made lawful against what You have made unlawful.', ref:'Jami\' at-Tirmidhi'},
+    {arabic:'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ', translit:'Ya Hayyu ya Qayyum birahmatika astaghith', translation:'O Ever-Living, O Sustainer, by Your mercy I seek relief.', ref:'Jami\' at-Tirmidhi'},
+    {arabic:'اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي', translit:'Allahumma aslih li dini alladhi huwa \'ismatu amri', translation:'O Allah, set right my religion which is the safeguard of my affairs.', ref:'Sahih Muslim'},
+    {arabic:'رَبَّنَا آمَنَّا فَاغْفِرْ لَنَا وَارْحَمْنَا وَأَنتَ خَيْرُ الرَّاحِمِينَ', translit:'Rabbana amanna faghfir lana warhamna wa anta khayrur-rahimin', translation:'Our Lord, we have believed, so forgive us and have mercy on us; You are the best of the merciful.', ref:'Al-Mu\'minun 23:109'},
+    {arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ', translit:'Allahumma inni as\'alukal-jannata wa a\'udhu bika minan-nar', translation:'O Allah, I ask You for Paradise and seek refuge in You from the Fire.', ref:'Sunan Abi Dawud'},
+    {arabic:'اللَّهُمَّ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ', translit:'Allahumma thabbit qalbi \'ala dinik', translation:'O Allah, make my heart firm upon Your religion.', ref:'Jami\' at-Tirmidhi'},
+    {arabic:'اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ', translit:'Allahumma-hdini fiman hadayt', translation:'O Allah, guide me among those You have guided.', ref:'Jami\' at-Tirmidhi'},
+    {arabic:'رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ', translit:'Rabbana-ghfir lana wa li\'ikhwanina alladhina sabaquna bil-iman', translation:'Our Lord, forgive us and our brothers who preceded us in faith.', ref:'Al-Hashr 59:10'},
+    {arabic:'رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ', translit:'Rabbana taqabbal minna innaka antas-Sami\'ul-\'Alim', translation:'Our Lord, accept this from us, indeed You are the All-Hearing, the All-Knowing.', ref:'Al-Baqarah 2:127'},
+    {arabic:'رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ', translit:'Rabbi awzi\'ni an ashkura ni\'mataka allati an\'amta \'alayya', translation:'My Lord, enable me to be grateful for Your favour which You have bestowed upon me.', ref:'Al-Ahqaf 46:15'},
+    {arabic:'رَبَّنَا لَا تَجْعَلْنَا مَعَ الْقَوْمِ الظَّالِمِينَ', translit:'Rabbana la taj\'alna ma\'al-qawmiz-zalimin', translation:'Our Lord, do not place us with the wrongdoing people.', ref:'Al-A\'raaf 7:47'},
+    {arabic:'رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي', translit:'Rabbi-j\'alni muqimas-salati wa min dhurriyyati', translation:'My Lord, make me an establisher of prayer, and from my descendants.', ref:'Ibrahim 14:40'},
+    {arabic:'رَبَّنَا وَسِعْتَ كُلَّ شَيْءٍ رَّحْمَةً وَعِلْمًا', translit:'Rabbana wasi\'ta kulla shay\'in rahmatan wa \'ilma', translation:'Our Lord, You have encompassed all things in mercy and knowledge.', ref:'Ghafir 40:7'},
+    {arabic:'رَبَّنَا هَبْ لَنَا مِنْ لَّدُنكَ ذُرِّيَّةً طَيِّبَةً', translit:'Rabbana hab lana min ladunka dhurriyyatan tayyibah', translation:'Our Lord, grant us from Yourself righteous offspring.', ref:'Aal-i-Imraan 3:38'},
+    {arabic:'اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ', translit:'Allahumma-j\'alni minat-tawwabin waj\'alni minal-mutatahhirin', translation:'O Allah, make me among those who repent and among those who purify themselves.', ref:'Jami\' at-Tirmidhi'},
+    {arabic:'رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ', translit:'Rabbi la tadarni fardan wa anta khayrul-warithin', translation:'My Lord, do not leave me alone, and You are the best of inheritors.', ref:'Al-Anbiya 21:89'}
+  ]
+};
+
+let currentTodayTab = 'verse';
+
+function getTodayIndex(len){
+  const d = new Date();
+  const start = new Date(d.getFullYear(), 0, 0);
+  const diff = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  return dayOfYear % len;
+}
+
+function renderTodayCard(){
+  const content = document.getElementById('today-content');
+  if(!content) return;
+  const list = TODAY_DATA[currentTodayTab];
+  if(!list || !list.length) return;
+  const item = list[getTodayIndex(list.length)];
+  if(currentTodayTab === 'verse'){
+    content.innerHTML = `
+      <div class="today-label">Verse of the day</div>
+      <div class="today-arabic">${item.arabic}</div>
+      <div class="today-text">${item.translation}</div>
+      <div class="today-meta">— ${item.ref}</div>`;
+  } else if(currentTodayTab === 'hadith'){
+    content.innerHTML = `
+      <div class="today-label">Hadith of the day</div>
+      ${item.arabic ? `<div class="today-arabic">${item.arabic}</div>` : ''}
+      <div class="today-text">${item.translation}</div>
+      <div class="today-meta">— ${item.ref}</div>`;
+  } else if(currentTodayTab === 'dua'){
+    content.innerHTML = `
+      <div class="today-label">Dua of the day</div>
+      <div class="today-arabic">${item.arabic}</div>
+      <div class="today-text" style="font-style:italic;color:var(--gold);font-size:.8rem">${item.translit}</div>
+      <div class="today-text">${item.translation}</div>
+      <div class="today-meta">— ${item.ref}</div>`;
+  }
+}
+
+function getTodayShareText(){
+  const list = TODAY_DATA[currentTodayTab];
+  const item = list[getTodayIndex(list.length)];
+  const lines = [];
+  if(item.arabic) lines.push(item.arabic);
+  if(item.translit) lines.push(item.translit);
+  if(item.translation) lines.push(item.translation);
+  lines.push(`— ${item.ref} (Al-Jumu'ah)`);
+  return lines.join('\n\n');
+}
+
+function setupTodayCard(){
+  const card = document.getElementById('today-card');
+  if(!card) return;
+  document.querySelectorAll('.today-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.today-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentTodayTab = tab.dataset.today;
+      renderTodayCard();
+    });
+  });
+  const shareBtn = document.getElementById('today-share');
+  if(shareBtn) shareBtn.addEventListener('click', () => {
+    const text = getTodayShareText();
+    if(navigator.share){ navigator.share({ title:"Today's content", text }).catch(()=>{}); }
+    else { navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy')); }
+  });
+  const copyBtn = document.getElementById('today-copy');
+  if(copyBtn) copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(getTodayShareText()).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+  });
+  renderTodayCard();
+}
+setupTodayCard();
+
+function hideSplash(){
+  const s = document.getElementById('splash');
+  if(!s || s.classList.contains('hide')) return;
+  s.classList.add('hide');
+  setTimeout(() => { const el = document.getElementById('splash'); if(el) el.remove(); }, 900);
+}
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1200));
+setTimeout(hideSplash, 2500);
+
+/* ============ STEP 3 — VERSE MODAL, SHARE, TAFSIR, WORD-BY-WORD ============ */
+
+function openQModal(title, contentHtml){
+  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  const overlay = document.getElementById('q-modal');
+  document.getElementById('q-modal-title').textContent = title;
+  document.getElementById('q-modal-content').innerHTML = contentHtml;
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeQModal(){
+  document.getElementById('q-modal').classList.remove('show');
+  document.body.style.overflow = '';
+  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  updatePrayerTileStatus();
+  try { refreshSettingsLocation(); } catch(e){ console.log('settings refresh deferred', e); }
+}
+
+function getVerseText(ayahNum){
+  if(!QURAN.data) return '';
+  const ar = QURAN.data.arabic.ayahs.find(a => a.numberInSurah === ayahNum);
+  const en = QURAN.data.english.ayahs.find(a => a.numberInSurah === ayahNum);
+  if(!ar || !en) return '';
+  return { arabic: ar.text, english: en.text, surah: QURAN.data.arabic.englishName, surahNum: QURAN.data.arabic.number, ayah: ayahNum };
+}
+
+async function shareVerse(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const text = `${v.arabic}\n\n"${v.english}"\n\n— ${v.surah} ${v.surahNum}:${v.ayah} (Al-Jumu'ah)`;
+  try{
+    if(navigator.share){
+      await navigator.share({ title: `Quran ${v.surahNum}:${v.ayah}`, text });
+    } else {
+      await navigator.clipboard.writeText(text);
+      showToast('Verse copied');
+    }
+  }catch(e){
+    try{ await navigator.clipboard.writeText(text); showToast('Verse copied'); }catch(_){ showToast('Could not copy'); }
+  }
+}
+
+async function openTafsir(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const verseKey = `${v.surahNum}:${ayahNum}`;
+  openQModal('📖 Tafsir — Ibn Kathir', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading tafsir…</div>`);
+
+  if(!navigator.onLine){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Tafsir needs an internet connection. Please reconnect and try again.</div>`;
+    return;
+  }
+
+  try{
+    const res = await fetch(`https://api.quran.com/api/v4/tafsirs/169/by_ayah/${verseKey}`);
+    if(!res.ok) throw new Error('bad');
+    const data = await res.json();
+    let text = data?.tafsir?.text || '';
+    if(!text) throw new Error('empty');
+    text = text.replace(/<sup[^>]*>.*?<\/sup>/g, '').replace(/<[^>]+>/g, m => /<\/?(p|h[1-6]|em|strong|br|i|b)\b/i.test(m) ? m : '');
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-body-text">${text}</div>`;
+  }catch(e){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Tafsir unavailable</strong>Could not load tafsir for this verse. Please try again later.</div>`;
+  }
+}
+
+async function openWordByWord(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const verseKey = `${v.surahNum}:${ayahNum}`;
+  openQModal('🔤 Word by Word', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading words…</div>`);
+
+  if(!navigator.onLine){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Word-by-word needs an internet connection. Please reconnect and try again.</div>`;
+    return;
+  }
+
+  try{
+    const res = await fetch(`https://api.quran.com/api/v4/verses/by_key/${verseKey}?words=true&word_fields=text_uthmani&word_translation_language=en`);
+    if(!res.ok) throw new Error('bad');
+    const data = await res.json();
+    const words = (data?.verse?.words || []).filter(w => w.char_type_name === 'word');
+    if(words.length === 0) throw new Error('empty');
+    const rows = words.map(w => {
+      const arabic = w.text_uthmani || w.text || '';
+      const english = w.translation?.text || '';
+      const translit = w.transliteration?.text || '';
+      return `<div class="word-row"><div class="word-arabic">${arabic}</div><div class="word-info"><div class="word-en">${english}</div>${translit ? `<div class="word-translit">${translit}</div>` : ''}</div></div>`;
+    }).join('');
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="word-list">${rows}</div>`;
+  }catch(e){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Word-by-word unavailable</strong>Could not load the words for this verse. Please try again later.</div>`;
+  }
+}
+
+/* ============ JUZ + QURAN BOOKMARKS ============ */
 const JUZ_STARTS = [
   {n:1,surah:1,ayah:1,name:'Al-Fatiha'},
   {n:2,surah:2,ayah:142,name:'Al-Baqarah'},
@@ -1517,47 +1834,8 @@ document.querySelectorAll('#mode-select button').forEach(btn => {
   });
 });
 
-async function loadBookmarks(){
-  const versesPanel = document.getElementById('bm-verses');
-  if(!window.__currentUser){
-    versesPanel.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>Sign in on the website to save and sync bookmarks.</div>';
-    return;
-  }
-  if(userBookmarks.verses.length === 0){
-    versesPanel.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>No saved verses yet.<br>Star a verse while reading to save it here.</div>';
-    return;
-  }
-  versesPanel.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading saved verses…</div>';
-  try{
-    const keys = userBookmarks.verses.slice();
-    const bySurah = {};
-    keys.forEach(k => { const [s,a] = k.split(':'); if(!bySurah[s]) bySurah[s] = []; bySurah[s].push(parseInt(a)); });
-    let html = '';
-    for(const surahNum of Object.keys(bySurah).sort((a,b) => a-b)){
-      const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih`);
-      const data = await res.json();
-      const ar = data.data[0], en = data.data[1];
-      bySurah[surahNum].forEach(ayahNum => {
-        const ay = ar.ayahs.find(x => x.numberInSurah === ayahNum);
-        const ey = en.ayahs.find(x => x.numberInSurah === ayahNum);
-        if(!ay || !ey) return;
-        html += `<div class="bm-item"><div class="bm-item-head"><span class="bm-ref">${ar.englishName} · ${surahNum}:${ayahNum}</span><span class="bm-star" data-key="${surahNum}:${ayahNum}"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div><p class="bm-arabic">${ay.text}</p><p class="bm-text">${ey.text}</p></div>`;
-      });
-    }
-    versesPanel.innerHTML = html;
-    versesPanel.querySelectorAll('.bm-star').forEach(el => {
-      el.addEventListener('click', async () => {
-        const key = el.dataset.key;
-        const idx = userBookmarks.verses.indexOf(key);
-        if(idx >= 0) userBookmarks.verses.splice(idx, 1);
-        await saveUserBookmarks();
-        showToast('Removed');
-        loadBookmarks();
-      });
-    });
-  }catch(e){ versesPanel.innerHTML = '<div class="bm-empty">Could not load saved verses.</div>'; }
-}
-
+  
+/* ============ HADITH BROWSER ============ */
 const HADITH_COLLECTIONS = [
   {id:'eng-bukhari',name:'Sahih al-Bukhari',arabic:'صحيح البخاري',count:7554,desc:'The most authentic collection, compiled by Imam al-Bukhari.'},
   {id:'eng-muslim',name:'Sahih Muslim',arabic:'صحيح مسلم',count:7360,desc:'The second most authentic collection, compiled by Imam Muslim.'},
@@ -1733,7 +2011,7 @@ class HadithBrowser {
 }
 window.hadithBrowser = new HadithBrowser();
 
-  
+/* ============ DHIKR ============ */
 const DHIKR_DATA = {
   daily:[
     {id:'d1',arabic:'سُبْحَانَ اللَّهِ',translit:'SubhanAllah',translation:'Glory be to Allah',virtue:'Whoever says it 100 times a day, his sins are wiped away even if they are like the foam of the sea. (Bukhari & Muslim)',target:33},
@@ -1769,7 +2047,7 @@ const DHIKR_DATA = {
     {id:'e9',arabic:'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا',translit:'Raditu billahi Rabban, wa bil-Islami dinan',translation:'I am pleased with Allah as my Lord, with Islam as my religion.',virtue:'Whoever says it 3 times in the evening, Allah will surely please him. (Abu Dawud)',target:3},
     {id:'e10',arabic:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',translit:'SubhanAllahi wa bihamdih',translation:'Glory be to Allah and praise be to Him',virtue:'Whoever says it 100 times in the evening, no one will come on the Day of Judgement with anything better. (Muslim)',target:100},
     {id:'e11',arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ',translit:'La ilaha illallahu wahdahu la sharika lah',translation:'There is no god but Allah alone, with no partner.',virtue:'A protection and a treasure from the treasures of Paradise. (Bukhari)',target:10},
-    {id:'e12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'An evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
+    {id:'e12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'An evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
   ]
 };
 
@@ -1893,6 +2171,7 @@ document.querySelectorAll('.dk-tab').forEach(tab => {
   tab.addEventListener('click', () => window.dhikrManager.switchTab(tab.dataset.tab));
 });
 
+/* ============ GARDEN (Streak & Dhikr log) ============ */
 class GardenManager {
   constructor(){ this.log = {}; this.streak = 0; this.totalDhikr = 0; this.saveTimer = null; }
   dateKey(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
@@ -1973,6 +2252,7 @@ class GardenManager {
 }
 window.gardenManager = new GardenManager();
 
+/* ============ GIVE ============ */
 function renderGive(){
   const c = document.getElementById('give-content');
   if(!c) return;
@@ -1991,6 +2271,7 @@ function renderGive(){
   `;
 }
 
+/* ============ TOP-LEVEL INITIALISERS ============ */
 function updateJumuahStatus(){
   const el = document.getElementById('jumuah-status');
   if(!el) return;
@@ -2013,117 +2294,26 @@ function updatePrayerTileStatus(){
   else el.textContent = 'Tap to set location';
 }
 updatePrayerTileStatus();
-refreshSettingsLocation();
+
+function refreshSettingsLocation(){
+  const lat = localStorage.getItem('prayer-lat');
+  const city = localStorage.getItem('prayer-city');
+  const country = localStorage.getItem('prayer-country');
+  let locText = 'Not set';
+  if(city) locText = `${city}${country?', '+country:''}`;
+  else if(lat) locText = 'GPS location';
+  const lv = document.getElementById('settings-loc-value');
+  if(lv) lv.textContent = locText;
+  const method = parseInt(localStorage.getItem('prayer-method') || '3');
+  const mv = document.getElementById('settings-method-value');
+  if(mv) mv.textContent = PRAYER_METHODS[method] || 'Muslim World League';
+}
+try { refreshSettingsLocation(); } catch(e){ console.log('settings loc deferred', e); }
 
 loadSurahList().then(() => { renderLastRead(); });
 
-function hideSplash(){
-  const s = document.getElementById('splash');
-  if(!s || s.classList.contains('hide')) return;
-  s.classList.add('hide');
-  setTimeout(() => { const el = document.getElementById('splash'); if(el) el.remove(); }, 900);
-}
-document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1200));
-setTimeout(hideSplash, 2500);
-
-/* ============ STEP 3 — VERSE MODAL, SHARE, TAFSIR, WORD-BY-WORD ============ */
-
-function openQModal(title, contentHtml){
-  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
-  const overlay = document.getElementById('q-modal');
-  document.getElementById('q-modal-title').textContent = title;
-  document.getElementById('q-modal-content').innerHTML = contentHtml;
-  overlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-function closeQModal(){
-  document.getElementById('q-modal').classList.remove('show');
-  document.body.style.overflow = '';
-  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
-  updatePrayerTileStatus();
-  refreshSettingsLocation();
-}
-
-function getVerseText(ayahNum){
-  if(!QURAN.data) return '';
-  const ar = QURAN.data.arabic.ayahs.find(a => a.numberInSurah === ayahNum);
-  const en = QURAN.data.english.ayahs.find(a => a.numberInSurah === ayahNum);
-  if(!ar || !en) return '';
-  return { arabic: ar.text, english: en.text, surah: QURAN.data.arabic.englishName, surahNum: QURAN.data.arabic.number, ayah: ayahNum };
-}
-
-async function shareVerse(ayahNum){
-  const v = getVerseText(ayahNum);
-  if(!v) return;
-  const text = `${v.arabic}\n\n"${v.english}"\n\n— ${v.surah} ${v.surahNum}:${v.ayah} (Al-Jumu'ah)`;
-  try{
-    if(navigator.share){
-      await navigator.share({ title: `Quran ${v.surahNum}:${v.ayah}`, text });
-    } else {
-      await navigator.clipboard.writeText(text);
-      showToast('Verse copied');
-    }
-  }catch(e){
-    try{ await navigator.clipboard.writeText(text); showToast('Verse copied'); }catch(_){ showToast('Could not copy'); }
-  }
-}
-
-async function openTafsir(ayahNum){
-  const v = getVerseText(ayahNum);
-  if(!v) return;
-  const verseKey = `${v.surahNum}:${ayahNum}`;
-  openQModal('📖 Tafsir — Ibn Kathir', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading tafsir…</div>`);
-
-  if(!navigator.onLine){
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Tafsir needs an internet connection. Please reconnect and try again.</div>`;
-    return;
-  }
-
-  try{
-    const res = await fetch(`https://api.quran.com/api/v4/tafsirs/169/by_ayah/${verseKey}`);
-    if(!res.ok) throw new Error('bad');
-    const data = await res.json();
-    let text = data?.tafsir?.text || '';
-    if(!text) throw new Error('empty');
-    text = text.replace(/<sup[^>]*>.*?<\/sup>/g, '').replace(/<[^>]+>/g, m => /<\/?(p|h[1-6]|em|strong|br|i|b)\b/i.test(m) ? m : '');
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-body-text">${text}</div>`;
-  }catch(e){
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Tafsir unavailable</strong>Could not load tafsir for this verse. Please try again later.</div>`;
-  }
-}
-
-async function openWordByWord(ayahNum){
-  const v = getVerseText(ayahNum);
-  if(!v) return;
-  const verseKey = `${v.surahNum}:${ayahNum}`;
-  openQModal('🔤 Word by Word', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading words…</div>`);
-
-  if(!navigator.onLine){
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Word-by-word needs an internet connection. Please reconnect and try again.</div>`;
-    return;
-  }
-
-  try{
-    const res = await fetch(`https://api.quran.com/api/v4/verses/by_key/${verseKey}?words=true&word_fields=text_uthmani&word_translation_language=en`);
-    if(!res.ok) throw new Error('bad');
-    const data = await res.json();
-    const words = (data?.verse?.words || []).filter(w => w.char_type_name === 'word');
-    if(words.length === 0) throw new Error('empty');
-    const rows = words.map(w => {
-      const arabic = w.text_uthmani || w.text || '';
-      const english = w.translation?.text || '';
-      const translit = w.transliteration?.text || '';
-      return `<div class="word-row"><div class="word-arabic">${arabic}</div><div class="word-info"><div class="word-en">${english}</div>${translit ? `<div class="word-translit">${translit}</div>` : ''}</div></div>`;
-    }).join('');
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="word-list">${rows}</div>`;
-  }catch(e){
-    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Word-by-word unavailable</strong>Could not load the words for this verse. Please try again later.</div>`;
-  }
-  }
-
   
-/* ============ CATEGORY 1 — WORSHIP & PRAYER TOOLS ============ */
-
+/* ============ QIBLA COMPASS ============ */
 async function renderQibla(){
   document.getElementById('q-modal-content').innerHTML = `
     <div class="tool-view">
@@ -2166,7 +2356,6 @@ async function renderQibla(){
     const needle = document.getElementById('qibla-needle');
     needle.style.transform = `translate(-50%,-100%) rotate(${deg}deg)`;
 
-    /* Live compass — rotates arrow as you turn the phone */
     if(window.DeviceOrientationEvent){
       let hasLiveCompass = false;
       const applyOrientation = (ev) => {
@@ -2206,6 +2395,7 @@ async function renderQibla(){
   }
 }
 
+/* ============ PRAYER TRACKER ============ */
 async function renderPrayerTracker(){
   const now = new Date();
   const todayKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -2277,6 +2467,7 @@ async function renderPrayerTracker(){
   });
 }
 
+/* ============ FASTING TRACKER ============ */
 function renderFastingTracker(){
   const today = new Date();
   const hFmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day:'numeric', month:'numeric', year:'numeric' });
@@ -2329,6 +2520,7 @@ function renderFastingTracker(){
   });
 }
 
+/* ============ TASBIH ============ */
 const TASBIH_PRESETS = [
   {id:'subhanallah', arabic:'سُبْحَانَ اللَّهِ', translit:'SubhanAllah', meaning:'Glory be to Allah', target:33},
   {id:'alhamdulillah', arabic:'الْحَمْدُ لِلَّهِ', translit:'Alhamdulillah', meaning:'All praise is to Allah', target:33},
@@ -2420,6 +2612,7 @@ function renderTasbih(){
   });
 }
 
+/* ============ TASBIH SOUNDS ============ */
 function renderTasbihSounds(){
   const current = localStorage.getItem('tasbih-sound-type') || 'click';
   document.getElementById('q-modal-content').innerHTML = `
@@ -2459,6 +2652,7 @@ function renderTasbihSounds(){
   });
 }
 
+/* ============ CUSTOM DHIKR ============ */
 function getCustomDhikr(){ try{ return JSON.parse(localStorage.getItem('custom-dhikr') || '[]'); }catch(e){ return []; } }
 function saveCustomDhikr(list){ localStorage.setItem('custom-dhikr', JSON.stringify(list)); }
 
@@ -2577,16 +2771,7 @@ function startCustomDhikr(i){
   document.getElementById('cds-back').addEventListener('click', () => renderCustomDhikr());
 }
 
-/* ============ PRAYER TIMES TOOL ============ */
-const PRAYER_METHODS = {
-  3: 'Muslim World League',
-  2: 'ISNA (North America)',
-  4: 'Umm al-Qura (Makkah)',
-  5: 'Egyptian General Authority',
-  1: 'University of Karachi',
-  0: 'Shia Ithna-Ashari'
-};
-
+/* ============ PRAYER TIMES ============ */
 const PRAYER_NAMES = {
   Fajr: {en:'Fajr', ar:'الفجر', icon:'🌅'},
   Sunrise: {en:'Sunrise', ar:'الشروق', icon:'🌄'},
@@ -2763,10 +2948,10 @@ function renderPrayerMethodPicker(){
       renderPrayerTimes();
     });
   });
-    }
-  
-/* ============ CATEGORY 2 — QURAN & MEMORIZATION TOOLS ============ */
+}
 
+  
+/* ============ CATEGORY 2 — KHATM TRACKER ============ */
 function renderKhatmTracker(){
   const state = JSON.parse(localStorage.getItem('khatm-state') || '{}');
   if(!state.juzRead) state.juzRead = new Array(30).fill(false);
@@ -2848,6 +3033,7 @@ function renderKhatmTracker(){
   });
 }
 
+/* ============ CATEGORY 2 — TAJWEED BASICS ============ */
 const TAJWEED_RULES = [
   {name:'Izhar', ar:'الإظهار', desc:'When a Noon Sakinah (نْ) or Tanween is followed by one of the six throat letters (ء ه ع ح غ خ), the Noon is pronounced clearly without any nasal sound.', ex:{ar:'مَنْ آمَنَ', translit:'man aamana', meaning:'Whoever believes', hl:'نْ'}},
   {name:'Idgham', ar:'الإدغام', desc:'When Noon Sakinah or Tanween is followed by one of the letters ي ر م ل و ن, the Noon is merged into the following letter. With ي ن م و it is pronounced with ghunnah (nasal sound). With ل ر without ghunnah.', ex:{ar:'مِنْ نِعْمَةٍ', translit:'min ni\'matin', meaning:'From a blessing', hl:'نْ'}},
@@ -2892,6 +3078,7 @@ function renderTajweed(){
   });
 }
 
+/* ============ CATEGORY 2 — ARABIC ALPHABET ============ */
 const ARABIC_LETTERS = [
   {ar:'ا', name:'Alif', sound:'a / ā', isolated:'ا', initial:'ا', medial:'ـا', final:'ـا', ex:{ar:'أَرْض', translit:'ard', meaning:'Earth'}},
   {ar:'ب', name:'Ba', sound:'b', isolated:'ب', initial:'بـ', medial:'ـبـ', final:'ـب', ex:{ar:'بَاب', translit:'bāb', meaning:'Door'}},
@@ -2988,6 +3175,165 @@ function renderArabicLetterDetail(){
   document.getElementById('aa-grid').addEventListener('click', renderArabicAlphabet);
 }
 
+/* ============ CATEGORY 7 — ASMA UL-HUSNA ============ */
+const ASMA_NAMES = [
+  {ar:'الرَّحْمَٰن', name:'Ar-Rahman', meaning:'The Most Compassionate'},
+  {ar:'الرَّحِيم', name:'Ar-Raheem', meaning:'The Most Merciful'},
+  {ar:'الْمَلِك', name:'Al-Malik', meaning:'The King, Sovereign'},
+  {ar:'الْقُدُّوس', name:'Al-Quddus', meaning:'The Most Holy'},
+  {ar:'السَّلَام', name:'As-Salam', meaning:'The Source of Peace'},
+  {ar:'الْمُؤْمِن', name:'Al-Mu\'min', meaning:'The Guarantor of Faith'},
+  {ar:'الْمُهَيْمِن', name:'Al-Muhaymin', meaning:'The Guardian'},
+  {ar:'الْعَزِيز', name:'Al-Aziz', meaning:'The Almighty'},
+  {ar:'الْجَبَّار', name:'Al-Jabbar', meaning:'The Compeller'},
+  {ar:'الْمُتَكَبِّر', name:'Al-Mutakabbir', meaning:'The Supreme'},
+  {ar:'الْخَالِق', name:'Al-Khaliq', meaning:'The Creator'},
+  {ar:'الْبَارِئ', name:'Al-Bari', meaning:'The Originator'},
+  {ar:'الْمُصَوِّر', name:'Al-Musawwir', meaning:'The Fashioner'},
+  {ar:'الْغَفَّار', name:'Al-Ghaffar', meaning:'The Ever-Forgiving'},
+  {ar:'الْقَهَّار', name:'Al-Qahhar', meaning:'The All-Subduer'},
+  {ar:'الْوَهَّاب', name:'Al-Wahhab', meaning:'The Bestower'},
+  {ar:'الرَّزَّاق', name:'Ar-Razzaq', meaning:'The Provider'},
+  {ar:'الْفَتَّاح', name:'Al-Fattah', meaning:'The Opener'},
+  {ar:'الْعَلِيم', name:'Al-Alim', meaning:'The All-Knowing'},
+  {ar:'الْقَابِض', name:'Al-Qabid', meaning:'The Withholder'},
+  {ar:'الْبَاسِط', name:'Al-Basit', meaning:'The Extender'},
+  {ar:'الْخَافِض', name:'Al-Khafid', meaning:'The Abaser'},
+  {ar:'الرَّافِع', name:'Ar-Rafi', meaning:'The Exalter'},
+  {ar:'الْمُعِز', name:'Al-Mu\'izz', meaning:'The Bestower of Honour'},
+  {ar:'الْمُذِل', name:'Al-Mudhill', meaning:'The Humiliator'},
+  {ar:'السَّمِيع', name:'As-Sami', meaning:'The All-Hearing'},
+  {ar:'الْبَصِير', name:'Al-Basir', meaning:'The All-Seeing'},
+  {ar:'الْحَكَم', name:'Al-Hakam', meaning:'The Judge'},
+  {ar:'الْعَدْل', name:'Al-Adl', meaning:'The Just'},
+  {ar:'اللَّطِيف', name:'Al-Latif', meaning:'The Subtle, Most Gentle'},
+  {ar:'الْخَبِير', name:'Al-Khabir', meaning:'The All-Aware'},
+  {ar:'الْحَلِيم', name:'Al-Halim', meaning:'The Most Forbearing'},
+  {ar:'الْعَظِيم', name:'Al-Azim', meaning:'The Magnificent'},
+  {ar:'الْغَفُور', name:'Al-Ghafur', meaning:'The All-Forgiving'},
+  {ar:'الشَّكُور', name:'Ash-Shakur', meaning:'The Most Appreciative'},
+  {ar:'الْعَلِي', name:'Al-Ali', meaning:'The Most High'},
+  {ar:'الْكَبِير', name:'Al-Kabir', meaning:'The Most Great'},
+  {ar:'الْحَفِيظ', name:'Al-Hafiz', meaning:'The Preserver'},
+  {ar:'الْمُقِيت', name:'Al-Muqit', meaning:'The Sustainer'},
+  {ar:'الْحَسِيب', name:'Al-Hasib', meaning:'The Reckoner'},
+  {ar:'الْجَلِيل', name:'Al-Jalil', meaning:'The Majestic'},
+  {ar:'الْكَرِيم', name:'Al-Karim', meaning:'The Most Generous'},
+  {ar:'الرَّقِيب', name:'Ar-Raqib', meaning:'The Ever-Watchful'},
+  {ar:'الْمُجِيب', name:'Al-Mujib', meaning:'The Responsive'},
+  {ar:'الْوَاسِع', name:'Al-Wasi', meaning:'The All-Encompassing'},
+  {ar:'الْحَكِيم', name:'Al-Hakim', meaning:'The All-Wise'},
+  {ar:'الْوَدُود', name:'Al-Wadud', meaning:'The Most Loving'},
+  {ar:'الْمَجِيد', name:'Al-Majid', meaning:'The Most Glorious'},
+  {ar:'الْبَاعِث', name:'Al-Ba\'ith', meaning:'The Resurrector'},
+  {ar:'الشَّهِيد', name:'Ash-Shahid', meaning:'The Witness'},
+  {ar:'الْحَق', name:'Al-Haqq', meaning:'The Truth'},
+  {ar:'الْوَكِيل', name:'Al-Wakil', meaning:'The Trustee'},
+  {ar:'الْقَوِي', name:'Al-Qawi', meaning:'The Most Strong'},
+  {ar:'الْمَتِين', name:'Al-Matin', meaning:'The Firm, Steadfast'},
+  {ar:'الْوَلِي', name:'Al-Wali', meaning:'The Protecting Friend'},
+  {ar:'الْحَمِيد', name:'Al-Hamid', meaning:'The Praiseworthy'},
+  {ar:'الْمُحْصِي', name:'Al-Muhsi', meaning:'The All-Enumerating'},
+  {ar:'الْمُبْدِئ', name:'Al-Mubdi', meaning:'The Originator'},
+  {ar:'الْمُعِيد', name:'Al-Mu\'id', meaning:'The Restorer'},
+  {ar:'الْمُحْيِي', name:'Al-Muhyi', meaning:'The Giver of Life'},
+  {ar:'الْمُمِيت', name:'Al-Mumit', meaning:'The Bringer of Death'},
+  {ar:'الْحَي', name:'Al-Hayy', meaning:'The Ever-Living'},
+  {ar:'الْقَيُّوم', name:'Al-Qayyum', meaning:'The Self-Subsisting'},
+  {ar:'الْوَاجِد', name:'Al-Wajid', meaning:'The Perceiver'},
+  {ar:'الْمَاجِد', name:'Al-Majid', meaning:'The Noble'},
+  {ar:'الْوَاحِد', name:'Al-Wahid', meaning:'The One'},
+  {ar:'الْأَحَد', name:'Al-Ahad', meaning:'The Unique'},
+  {ar:'الصَّمَد', name:'As-Samad', meaning:'The Eternal, Self-Sufficient'},
+  {ar:'الْقَادِر', name:'Al-Qadir', meaning:'The All-Able'},
+  {ar:'الْمُقْتَدِر', name:'Al-Muqtadir', meaning:'The Omnipotent'},
+  {ar:'الْمُقَدِّم', name:'Al-Muqaddim', meaning:'The Expediter'},
+  {ar:'الْمُؤَخِّر', name:'Al-Mu\'akhkhir', meaning:'The Delayer'},
+  {ar:'الْأَوَّل', name:'Al-Awwal', meaning:'The First'},
+  {ar:'الْآخِر', name:'Al-Akhir', meaning:'The Last'},
+  {ar:'الظَّاهِر', name:'Az-Zahir', meaning:'The Manifest'},
+  {ar:'الْبَاطِن', name:'Al-Batin', meaning:'The Hidden'},
+  {ar:'الْوَالِي', name:'Al-Wali', meaning:'The Governor'},
+  {ar:'الْمُتَعَالِي', name:'Al-Muta\'ali', meaning:'The Most Exalted'},
+  {ar:'الْبَر', name:'Al-Barr', meaning:'The Source of Goodness'},
+  {ar:'التَّوَّاب', name:'At-Tawwab', meaning:'The Acceptor of Repentance'},
+  {ar:'الْمُنْتَقِم', name:'Al-Muntaqim', meaning:'The Avenger'},
+  {ar:'الْعَفُو', name:'Al-Afuww', meaning:'The Pardoner'},
+  {ar:'الرَّءُوف', name:'Ar-Ra\'uf', meaning:'The Most Kind'},
+  {ar:'مَالِكُ الْمُلْك', name:'Malik-ul-Mulk', meaning:'Master of the Kingdom'},
+  {ar:'ذُو الْجَلَالِ وَالْإِكْرَام', name:'Dhul-Jalali-wal-Ikram', meaning:'Lord of Majesty and Honour'},
+  {ar:'الْمُقْسِط', name:'Al-Muqsit', meaning:'The Equitable'},
+  {ar:'الْجَامِع', name:'Al-Jami', meaning:'The Gatherer'},
+  {ar:'الْغَنِي', name:'Al-Ghani', meaning:'The Self-Sufficient'},
+  {ar:'الْمُغْنِي', name:'Al-Mughni', meaning:'The Enricher'},
+  {ar:'الْمَانِع', name:'Al-Mani', meaning:'The Withholder'},
+  {ar:'الضَّار', name:'Ad-Darr', meaning:'The Distresser'},
+  {ar:'النَّافِع', name:'An-Nafi', meaning:'The Benefactor'},
+  {ar:'النُّور', name:'An-Nur', meaning:'The Light'},
+  {ar:'الْهَادِي', name:'Al-Hadi', meaning:'The Guide'},
+  {ar:'الْبَدِيع', name:'Al-Badi', meaning:'The Incomparable Originator'},
+  {ar:'الْبَاقِي', name:'Al-Baqi', meaning:'The Everlasting'},
+  {ar:'الْوَارِث', name:'Al-Warith', meaning:'The Inheritor'},
+  {ar:'الرَّشِيد', name:'Ar-Rashid', meaning:'The Guide to the Right Path'},
+  {ar:'الصَّبُور', name:'As-Sabur', meaning:'The Most Patient'}
+];
+
+let currentAsmaIndex = 0;
+
+function renderAsmaUlHusna(){
+  currentAsmaIndex = 0;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="as-intro">The 99 Beautiful Names of Allah. Tap any name to see its Arabic, transliteration, and meaning.</div>
+      <div class="as-grid">
+        ${ASMA_NAMES.map((n,i)=>`
+          <div class="as-card" data-asma="${i}">
+            <div class="as-card-num">${i+1}</div>
+            <div class="as-card-ar">${n.ar}</div>
+            <div class="as-card-translit">${n.name}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  document.querySelectorAll('.as-card').forEach(el => {
+    el.addEventListener('click', () => {
+      currentAsmaIndex = parseInt(el.dataset.asma);
+      renderAsmaDetail();
+    });
+  });
+}
+
+function renderAsmaDetail(){
+  const n = ASMA_NAMES[currentAsmaIndex];
+  const total = ASMA_NAMES.length;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="as-detail">
+        <div class="as-detail-num">Name ${currentAsmaIndex+1} of ${total}</div>
+        <div class="as-detail-ar">${n.ar}</div>
+        <div class="as-detail-name">${n.name}</div>
+        <div class="as-detail-meaning">${n.meaning}</div>
+        <div class="as-detail-note">"And to Allah belong the best names, so invoke Him by them." — Al-A'raaf 7:180</div>
+        <div class="as-nav">
+          <button class="as-nav-btn" id="as-prev" ${currentAsmaIndex === 0 ? 'disabled' : ''}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Prev
+          </button>
+          <button class="as-nav-btn" id="as-grid">All names</button>
+          <button class="as-nav-btn" id="as-next" ${currentAsmaIndex === total-1 ? 'disabled' : ''}>
+            Next
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  const prev = document.getElementById('as-prev');
+  const next = document.getElementById('as-next');
+  if(prev && !prev.disabled) prev.addEventListener('click', () => { currentAsmaIndex--; renderAsmaDetail(); });
+  if(next && !next.disabled) next.addEventListener('click', () => { currentAsmaIndex++; renderAsmaDetail(); });
+  document.getElementById('as-grid').addEventListener('click', renderAsmaUlHusna);
+}
+
+/* ============ TOOLS REGISTRY ============ */
 const TOOLS = {
   qibla: {title:'🧭 Qibla Compass', render:renderQibla},
   prayerTracker: {title:'🕌 Prayer Tracker', render:renderPrayerTracker},
@@ -2998,9 +3344,9 @@ const TOOLS = {
   prayerTimes: {title:'🕌 Prayer Times', render:renderPrayerTimes},
   khatmTracker: {title:'📖 Quran Khatm Tracker', render:renderKhatmTracker},
   tajweed: {title:'📚 Tajweed Basics', render:renderTajweed},
-  arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet}
+  arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet},
+  asmaUlHusna: {title:'✨ Asma ul-Husna', render:renderAsmaUlHusna}
 };
 </script>
 </body>
 </html>
-  
