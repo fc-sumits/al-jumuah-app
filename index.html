@@ -323,6 +323,110 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .word-info{flex:1;min-width:0}
 .word-en{font-size:.88rem;color:var(--text);font-weight:600;margin-bottom:2px}
 .word-translit{font-size:.72rem;color:var(--muted);font-style:italic}
+/* ============ WORSHIP & PRAYER TOOLS ============ */
+.tool-view{padding-bottom:6px}
+.tool-hint{font-size:.8rem;color:var(--muted);text-align:center;padding:16px;line-height:1.6}
+.tool-section-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px}
+.qibla-wrap{text-align:center;padding:6px 0}
+.qibla-compass{position:relative;width:240px;height:240px;margin:6px auto 18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--card) 0%,var(--bg) 70%);border:2px solid var(--gold-soft);box-shadow:inset 0 0 40px rgba(212,175,55,.08),0 8px 30px rgba(0,0,0,.4)}
+.qibla-needle{position:absolute;top:50%;left:50%;width:4px;height:100px;background:linear-gradient(to top,transparent 0%,var(--gold) 40%,var(--gold) 100%);transform-origin:bottom center;transform:translate(-50%,-100%) rotate(0deg);transition:transform .6s ease;border-radius:2px;box-shadow:0 0 12px rgba(212,175,55,.7)}
+.qibla-needle::after{content:'';position:absolute;top:-11px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--gold);filter:drop-shadow(0 0 8px rgba(212,175,55,.7))}
+.qibla-center{position:absolute;top:50%;left:50%;width:12px;height:12px;background:var(--gold);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 15px rgba(212,175,55,.9);z-index:3}
+.qibla-n,.qibla-e,.qibla-s,.qibla-w{position:absolute;font-size:.78rem;font-weight:700;color:var(--muted);letter-spacing:.05em}
+.qibla-n{top:8px;left:50%;transform:translateX(-50%);color:var(--gold)}
+.qibla-s{bottom:8px;left:50%;transform:translateX(-50%)}
+.qibla-e{right:10px;top:50%;transform:translateY(-50%)}
+.qibla-w{left:10px;top:50%;transform:translateY(-50%)}
+.qibla-degree{font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:4px;line-height:1}
+.qibla-label{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.pt-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.pt-date{font-size:.85rem;color:var(--muted)}
+.pt-progress{font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1}
+.pt-progress span{font-size:.9rem;color:var(--muted);font-weight:500}
+.pt-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.pt-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:all .25s ease;gap:10px}
+.pt-item:active{transform:scale(.98)}
+.pt-item.done{border-color:var(--gold);background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(42,138,106,.06))}
+.pt-item-left{display:flex;align-items:center;gap:12px}
+.pt-check{width:28px;height:28px;border-radius:50%;border:2px solid var(--divider);display:flex;align-items:center;justify-content:center;transition:all .25s ease;flex-shrink:0}
+.pt-item.done .pt-check{background:var(--gold);border-color:var(--gold)}
+.pt-check svg{width:16px;height:16px;stroke-width:3;opacity:0;stroke:#0A0F0D}
+.pt-item.done .pt-check svg{opacity:1}
+.pt-name{font-size:.95rem;font-weight:600;color:var(--text)}
+.pt-arabic{font-family:var(--font-arabic);font-size:1.15rem;color:var(--gold);opacity:.75;line-height:1}
+.pt-history{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px}
+.pt-history-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pt-history-grid{display:flex;gap:4px;justify-content:space-between}
+.pt-history-day{flex:1;text-align:center}
+.pt-history-bar{height:40px;background:var(--bg);border-radius:6px;overflow:hidden;position:relative;margin-bottom:4px}
+.pt-history-fill{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--emerald),var(--gold));transition:height .4s ease;border-radius:6px}
+.pt-history-label{font-size:.62rem;color:var(--muted);font-weight:600}
+.ft-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.ft-month{font-size:1rem;font-weight:700;color:var(--gold)}
+.ft-total{font-size:.78rem;color:var(--muted)}
+.ft-legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:.72rem;color:var(--muted);margin-bottom:12px}
+.ft-legend-item{display:flex;align-items:center;gap:5px}
+.ft-legend-swatch{width:14px;height:14px;border-radius:4px;border:1px solid var(--divider)}
+.ft-legend-swatch.fasted{background:var(--gold);border-color:var(--gold)}
+.ft-legend-swatch.recommended{background:rgba(212,175,55,.15);border-color:var(--gold-soft)}
+.ft-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px}
+.ft-dayhead{text-align:center;font-size:.65rem;color:var(--muted);font-weight:700;padding:4px 0}
+.ft-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--card-border);border-radius:8px;font-size:.78rem;color:var(--text);cursor:pointer;transition:all .2s ease;font-weight:600}
+.ft-day.empty{background:transparent;border:none;cursor:default}
+.ft-day.recommended{border-color:var(--gold-soft);background:rgba(212,175,55,.06)}
+.ft-day.fasted{background:var(--gold);color:#0A0F0D;border-color:var(--gold);font-weight:700}
+.ft-day.today{outline:2px solid var(--emerald);outline-offset:-2px}
+.tsb-wrap{text-align:center;padding:4px 0}
+.tsb-target-badge{display:inline-block;font-size:.7rem;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--divider);color:var(--muted);font-weight:600;margin-bottom:10px}
+.tsb-arabic{font-family:var(--font-arabic);font-size:1.55rem;color:var(--gold);margin-bottom:6px;line-height:1.7}
+.tsb-translit{font-size:.82rem;font-style:italic;color:var(--muted);margin-bottom:18px}
+.tsb-big-tap{width:190px;height:190px;border-radius:50%;border:4px solid var(--emerald);background:radial-gradient(circle at 50% 30%,rgba(42,138,106,.15) 0%,transparent 70%);color:var(--emerald);font-family:var(--font-body);font-size:3.2rem;font-weight:700;cursor:pointer;transition:all .15s ease;display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto 18px;user-select:none;box-shadow:inset 0 -6px 20px rgba(0,0,0,.3),0 8px 24px rgba(42,138,106,.15)}
+.tsb-big-tap:active{transform:scale(.94)}
+.tsb-big-tap.complete{background:var(--gold);color:#0A0F0D;border-color:var(--gold);animation:tsbPulse 1.2s ease-out}
+@keyframes tsbPulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.6)}100%{box-shadow:0 0 0 40px rgba(212,175,55,0)}}
+.tsb-controls{display:flex;justify-content:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.tsb-ctrl-btn{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-family:var(--font-body);font-size:.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s ease}
+.tsb-ctrl-btn:hover{border-color:var(--gold);color:var(--gold)}
+.tsb-ctrl-btn svg{width:14px;height:14px;stroke-width:2}
+.tsb-presets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.tsb-preset{padding:10px 8px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:var(--font-body);font-size:.75rem;font-weight:600;cursor:pointer;text-align:center;transition:all .2s ease}
+.tsb-preset.active{background:var(--gold-soft);border-color:var(--gold);color:var(--gold)}
+.snd-list{display:flex;flex-direction:column;gap:10px}
+.snd-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:all .2s ease;gap:10px}
+.snd-item.active{border-color:var(--gold);background:linear-gradient(135deg,rgba(212,175,55,.08),transparent)}
+.snd-item-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.snd-icon{width:38px;height:38px;border-radius:10px;background:var(--emerald-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex-shrink:0}
+.snd-name{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.snd-desc{font-size:.72rem;color:var(--muted)}
+.snd-preview{background:transparent;border:1px solid var(--divider);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);cursor:pointer;flex-shrink:0}
+.snd-preview svg{width:14px;height:14px;stroke-width:2}
+.snd-preview:hover{background:var(--gold-soft)}
+.cd-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px}
+.cd-add-btn{background:var(--gold);color:#0A0F0D;border:none;border-radius:999px;padding:8px 16px;font-family:var(--font-body);font-weight:700;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:5px;flex-shrink:0}
+.cd-add-btn svg{width:14px;height:14px;stroke-width:3}
+.cd-list{display:flex;flex-direction:column;gap:10px}
+.cd-item{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;position:relative}
+.cd-item-head{display:flex;justify-content:flex-end;margin-bottom:8px}
+.cd-item-target{font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--gold-soft);color:var(--gold);font-weight:700}
+.cd-item-arabic{font-family:var(--font-arabic);font-size:1.35rem;line-height:1.9;text-align:right;direction:rtl;color:var(--text);margin-bottom:6px}
+.cd-item-translit{font-size:.78rem;font-style:italic;color:var(--gold);margin-bottom:4px}
+.cd-item-translation{font-size:.85rem;color:var(--muted);line-height:1.5}
+.cd-item-actions{display:flex;gap:8px;margin-top:12px;padding-top:10px;border-top:1px dashed var(--divider);flex-wrap:wrap}
+.cd-action{background:transparent;border:1px solid var(--divider);color:var(--muted);border-radius:999px;padding:5px 12px;font-family:var(--font-body);font-size:.72rem;font-weight:600;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;gap:4px}
+.cd-action:hover{border-color:var(--gold);color:var(--gold)}
+.cd-action svg{width:12px;height:12px;stroke-width:2}
+.cd-action.danger:hover{border-color:#d9534f;color:#d9534f}
+.cd-form{display:flex;flex-direction:column;gap:12px}
+.cd-form label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:4px;display:block}
+.cd-form input,.cd-form textarea{width:100%;padding:11px 12px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.9rem;box-sizing:border-box}
+.cd-form input:focus,.cd-form textarea:focus{outline:none;border-color:var(--gold)}
+.cd-form textarea{resize:vertical;min-height:70px;font-family:var(--font-arabic);font-size:1.15rem;text-align:right;direction:rtl}
+.cd-form-actions{display:flex;gap:10px;margin-top:4px}
+.cd-form-actions button{flex:1;padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;border:none}
+.cd-save{background:var(--gold);color:#0A0F0D}
+.cd-cancel{background:var(--card);color:var(--text);border:1px solid var(--divider)!important}
+.cd-empty{text-align:center;padding:40px 20px;color:var(--muted-2);font-size:.88rem;line-height:1.7}
+.cd-empty-icon{font-size:2rem;margin-bottom:10px;opacity:.5}
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
@@ -476,7 +580,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <section class="page" data-page="tools">
 <div class="cat open" data-cat="1">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M4.93 19.07l2.12-2.12M12 22v-3M19.07 19.07l-2.12-2.12M22 12h-3M19.07 4.93l-2.12 2.12"/></svg></span><span class="cat-title">Worship &amp; Prayer</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Qibla compass</div><div class="tool-pill">Prayer tracker</div><div class="tool-pill">Fasting tracker</div><div class="tool-pill">Tasbih counter</div><div class="tool-pill">Tasbih sounds</div><div class="tool-pill">Custom dhikr</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill" data-tool="qibla">Qibla compass</div><div class="tool-pill" data-tool="prayerTracker">Prayer tracker</div><div class="tool-pill" data-tool="fastingTracker">Fasting tracker</div><div class="tool-pill" data-tool="tasbih">Tasbih counter</div><div class="tool-pill" data-tool="tasbihSounds">Tasbih sounds</div><div class="tool-pill" data-tool="customDhikr">Custom dhikr</div></div></div>
 </div>
 <div class="cat" data-cat="2">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="cat-title">Quran &amp; Memorization</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -693,8 +797,20 @@ document.querySelectorAll('.tile').forEach(tile=>{
   });
 });
 document.querySelectorAll('.tool-pill').forEach(pill=>{
-  pill.addEventListener('click', ()=>showToast(`${pill.textContent} — coming soon`));
+  const toolId = pill.dataset.tool;
+  if(toolId){ pill.addEventListener('click', ()=>openTool(toolId)); }
+  else { pill.addEventListener('click', ()=>showToast(`${pill.textContent} — coming soon`)); }
 });
+
+/* ============ WORSHIP & PRAYER TOOLS — REGISTRY ============ */
+function openTool(name){
+  const t = TOOLS[name];
+  if(!t){ showToast('Coming soon'); return; }
+  openQModal(t.title, '<div class="q-loading"><div class="q-loading-spinner"></div>Loading…</div>');
+  setTimeout(() => {
+    try { t.render(); } catch(e){ console.error(e); document.getElementById('q-modal-content').innerHTML = '<div class="modal-error"><strong>Error</strong>Could not open this tool.</div>'; }
+  }, 30);
+}
 
 document.querySelectorAll('.more-item').forEach(item=>{
   item.addEventListener('click', ()=>{
@@ -1774,6 +1890,7 @@ function hideSplash(){
 document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1200));
 setTimeout(hideSplash, 2500);
 
+  
 /* ============ STEP 3 — VERSE MODAL, SHARE, TAFSIR, WORD-BY-WORD ============ */
 
 function openQModal(title, contentHtml){
@@ -1864,7 +1981,441 @@ async function openWordByWord(ayahNum){
     document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Word-by-word unavailable</strong>Could not load the words for this verse. Please try again later.</div>`;
   }
 }
+
+/* ============ CATEGORY 1 — WORSHIP & PRAYER TOOLS ============ */
+
+/* QIBLA */
+async function renderQibla(){
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="qibla-wrap">
+        <div class="qibla-compass">
+          <span class="qibla-n">N</span><span class="qibla-e">E</span><span class="qibla-s">S</span><span class="qibla-w">W</span>
+          <div class="qibla-needle" id="qibla-needle"></div>
+          <div class="qibla-center"></div>
+        </div>
+        <div class="qibla-degree" id="qibla-degree">—°</div>
+        <div class="qibla-label" id="qibla-label">Detecting your location…</div>
+      </div>
+      <div class="tool-hint" id="qibla-hint"></div>
+    </div>`;
+  let lat = parseFloat(localStorage.getItem('prayer-lat') || '0');
+  let lng = parseFloat(localStorage.getItem('prayer-lng') || '0');
+  if(!lat || !lng){
+    if(navigator.geolocation){
+      try{
+        const pos = await new Promise((res, rej) => navigator.geolocation.getCurrentPosition(res, rej, { timeout: 8000 }));
+        lat = pos.coords.latitude; lng = pos.coords.longitude;
+        localStorage.setItem('prayer-lat', lat); localStorage.setItem('prayer-lng', lng);
+      }catch(e){
+        document.getElementById('qibla-label').textContent = 'Location unavailable';
+        document.getElementById('qibla-hint').textContent = 'Enable location access in your browser, then reopen this tool.';
+        return;
+      }
+    } else {
+      document.getElementById('qibla-label').textContent = 'Location not supported';
+      document.getElementById('qibla-hint').textContent = 'Your browser does not support geolocation.';
+      return;
+    }
+  }
+  try{
+    const res = await fetch(`https://api.aladhan.com/v1/qibla/${lat}/${lng}`);
+    const data = await res.json();
+    const deg = data.data.direction;
+    document.getElementById('qibla-degree').textContent = deg.toFixed(1) + '°';
+    document.getElementById('qibla-label').textContent = 'Qibla direction from your location';
+    document.getElementById('qibla-hint').innerHTML = `The gold arrow points toward the Kaaba — <b>${deg.toFixed(1)}° from true North</b>.<br>Hold your phone flat and rotate until the arrow points up.`;
+    document.getElementById('qibla-needle').style.transform = `translate(-50%,-100%) rotate(${deg}deg)`;
+  }catch(e){
+    document.getElementById('qibla-label').textContent = 'Could not compute qibla';
+    document.getElementById('qibla-hint').textContent = 'Check your internet connection and try again.';
+  }
+}
+
+/* PRAYER TRACKER */
+async function renderPrayerTracker(){
+  const now = new Date();
+  const todayKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  const trackKey = `prayer-tracker-${todayKey}`;
+  let state = {};
+  try{ state = JSON.parse(localStorage.getItem(trackKey) || '{}'); }catch(e){}
+  if(window.__currentUser && db){
+    try{
+      const doc = await db.collection('users').doc(window.__currentUser.uid).collection('prayerLog').doc(todayKey).get();
+      if(doc.exists && doc.data().prayers) state = doc.data().prayers;
+    }catch(e){}
+  }
+  const prayers = [
+    {id:'fajr', name:'Fajr', arabic:'الفجر'},
+    {id:'dhuhr', name:'Dhuhr', arabic:'الظهر'},
+    {id:'asr', name:'Asr', arabic:'العصر'},
+    {id:'maghrib', name:'Maghrib', arabic:'المغرب'},
+    {id:'isha', name:'Isha', arabic:'العشاء'}
+  ];
+  const history = [];
+  for(let i=6;i>=0;i--){
+    const d = new Date(); d.setDate(d.getDate()-i);
+    const k = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    let c = 0;
+    try{ const s = JSON.parse(localStorage.getItem(`prayer-tracker-${k}`) || '{}'); c = Object.values(s).filter(Boolean).length; }catch(e){}
+    history.push({label:['S','M','T','W','T','F','S'][d.getDay()], count:c});
+  }
+  const count = Object.values(state).filter(Boolean).length;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="pt-header">
+        <div class="pt-date">${now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'})}</div>
+        <div class="pt-progress" id="pt-progress">${count}<span>/5</span></div>
+      </div>
+      <div class="pt-grid" id="pt-grid">
+        ${prayers.map(p=>`
+          <div class="pt-item ${state[p.id]?'done':''}" data-prayer="${p.id}">
+            <div class="pt-item-left">
+              <div class="pt-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="pt-name">${p.name}</div>
+            </div>
+            <div class="pt-arabic">${p.arabic}</div>
+          </div>`).join('')}
+      </div>
+      <div class="pt-history">
+        <div class="pt-history-title">Last 7 days</div>
+        <div class="pt-history-grid">
+          ${history.map(h=>`<div class="pt-history-day"><div class="pt-history-bar"><div class="pt-history-fill" style="height:${(h.count/5)*100}%"></div></div><div class="pt-history-label">${h.label}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  document.getElementById('pt-grid').addEventListener('click', async e => {
+    const item = e.target.closest('.pt-item');
+    if(!item) return;
+    const id = item.dataset.prayer;
+    state[id] = !state[id];
+    item.classList.toggle('done', state[id]);
+    localStorage.setItem(trackKey, JSON.stringify(state));
+    const c = Object.values(state).filter(Boolean).length;
+    document.getElementById('pt-progress').innerHTML = `${c}<span>/5</span>`;
+    if(state[id] && window.gardenManager) window.gardenManager.scheduleSave();
+    if(window.__currentUser && db){
+      try{
+        await db.collection('users').doc(window.__currentUser.uid).collection('prayerLog').doc(todayKey).set({
+          prayers: state, updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, {merge:true});
+      }catch(e){}
+    }
+  });
+}
+
+/* FASTING TRACKER */
+function renderFastingTracker(){
+  const today = new Date();
+  const hFmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day:'numeric', month:'numeric', year:'numeric' });
+  const parts = hFmt.formatToParts(today);
+  const hDay = parseInt(parts.find(p=>p.type==='day').value);
+  const hMonth = parseInt(parts.find(p=>p.type==='month').value);
+  const hYear = parseInt(parts.find(p=>p.type==='year').value.replace(' AH',''));
+  const hMonthName = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{month:'long'}).format(today);
+  const state = JSON.parse(localStorage.getItem(`fasting-${hYear}-${hMonth}`) || '{}');
+  const total = Object.values(state).filter(Boolean).length;
+  const day1 = new Date(today); day1.setDate(day1.getDate() - (hDay-1));
+  const offset = day1.getDay();
+  const cells = [];
+  for(let i=0;i<offset;i++) cells.push({empty:true});
+  for(let d=1; d<=30; d++){
+    const g = new Date(day1); g.setDate(g.getDate() + (d-1));
+    const wd = g.getDay();
+    cells.push({d, rec: wd===1||wd===4||d===13||d===14||d===15, fasted: !!state[d], today: d===hDay});
+  }
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="ft-header">
+        <div class="ft-month">${hMonthName} ${hYear}</div>
+        <div class="ft-total" id="ft-total">${total} fast${total===1?'':'s'}</div>
+      </div>
+      <div class="ft-legend">
+        <div class="ft-legend-item"><div class="ft-legend-swatch fasted"></div>Fasted</div>
+        <div class="ft-legend-item"><div class="ft-legend-swatch recommended"></div>Recommended</div>
+      </div>
+      <div class="ft-grid">
+        ${['S','M','T','W','T','F','S'].map(d=>`<div class="ft-dayhead">${d}</div>`).join('')}
+        ${cells.map(c=>{
+          if(c.empty) return `<div class="ft-day empty"></div>`;
+          const cls = ['ft-day', c.rec?'recommended':'', c.fasted?'fasted':'', c.today?'today':''].filter(Boolean).join(' ');
+          return `<div class="${cls}" data-day="${c.d}">${c.d}</div>`;
+        }).join('')}
+      </div>
+      <div class="tool-hint">Tap any day to mark it as fasted. Recommended days (Mon, Thu, and 13th–15th) are highlighted in gold.</div>
+    </div>`;
+  document.querySelector('.ft-grid').addEventListener('click', e => {
+    const cell = e.target.closest('.ft-day');
+    if(!cell || cell.classList.contains('empty')) return;
+    const d = parseInt(cell.dataset.day);
+    state[d] = !state[d];
+    cell.classList.toggle('fasted', state[d]);
+    localStorage.setItem(`fasting-${hYear}-${hMonth}`, JSON.stringify(state));
+    const t = Object.values(state).filter(Boolean).length;
+    document.getElementById('ft-total').textContent = `${t} fast${t===1?'':'s'}`;
+    if(state[d] && window.gardenManager) window.gardenManager.scheduleSave();
+  });
+}
+
+/* TASBIH COUNTER */
+const TASBIH_PRESETS = [
+  {id:'subhanallah', arabic:'سُبْحَانَ اللَّهِ', translit:'SubhanAllah', meaning:'Glory be to Allah', target:33},
+  {id:'alhamdulillah', arabic:'الْحَمْدُ لِلَّهِ', translit:'Alhamdulillah', meaning:'All praise is to Allah', target:33},
+  {id:'allahuakbar', arabic:'اللَّهُ أَكْبَرُ', translit:'Allahu Akbar', meaning:'Allah is the Greatest', target:34},
+  {id:'lailaha', arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ', translit:'La ilaha illallah', meaning:'There is no god but Allah', target:100},
+  {id:'astaghfirullah', arabic:'أَسْتَغْفِرُ اللَّهَ', translit:'Astaghfirullah', meaning:'I seek forgiveness from Allah', target:100},
+  {id:'durood', arabic:'اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ', translit:'Durood', meaning:'Peace be upon him', target:10}
+];
+
+let tasbihAudioCtx = null;
+const TASBIH_SOUNDS = [
+  {id:'click', name:'Soft click', desc:'A subtle click sound', freq:1200, type:'sine', dur:0.08},
+  {id:'wood', name:'Wood block', desc:'Dry wooden tap', freq:800, type:'triangle', dur:0.08},
+  {id:'chime', name:'Chime', desc:'Gentle high chime', freq:1800, type:'sine', dur:0.35},
+  {id:'silent', name:'Silent', desc:'Vibration only, no sound', freq:0, type:'sine', dur:0}
+];
+
+function playSpecificSound(id){
+  const s = TASBIH_SOUNDS.find(x => x.id === id);
+  if(!s || s.freq === 0) return;
+  try{
+    if(!tasbihAudioCtx) tasbihAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const ctx = tasbihAudioCtx;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.frequency.value = s.freq; osc.type = s.type;
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + s.dur);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + s.dur);
+  }catch(e){}
+}
+function playTasbihSound(){
+  const type = localStorage.getItem('tasbih-sound-type') || 'click';
+  playSpecificSound(type);
+}
+
+function renderTasbih(){
+  const state = JSON.parse(localStorage.getItem('tasbih-state') || '{"preset":"subhanallah","count":0}');
+  const preset = TASBIH_PRESETS.find(p => p.id === state.preset) || TASBIH_PRESETS[0];
+  const soundOn = localStorage.getItem('tasbih-sound') !== 'off';
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tsb-wrap">
+        <div class="tsb-target-badge">Target: ${preset.target}</div>
+        <div class="tsb-arabic">${preset.arabic}</div>
+        <div class="tsb-translit">${preset.translit} · ${preset.meaning}</div>
+        <button class="tsb-big-tap" id="tsb-tap">${state.count}</button>
+        <div class="tsb-controls">
+          <button class="tsb-ctrl-btn" id="tsb-reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>Reset</button>
+          <button class="tsb-ctrl-btn" id="tsb-sound">${soundOn?'🔔 Sound on':'🔕 Sound off'}</button>
+        </div>
+        <div class="tool-section-title" style="text-align:left">Choose dhikr</div>
+        <div class="tsb-presets">
+          ${TASBIH_PRESETS.map(p=>`<button class="tsb-preset ${p.id===preset.id?'active':''}" data-preset="${p.id}">${p.translit}</button>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  let count = state.count;
+  const tapBtn = document.getElementById('tsb-tap');
+  if(count >= preset.target) tapBtn.classList.add('complete');
+  tapBtn.addEventListener('click', () => {
+    count++;
+    tapBtn.textContent = count;
+    if(count >= preset.target){
+      tapBtn.classList.add('complete');
+      if(navigator.vibrate) navigator.vibrate([50,30,50]);
+    } else if(navigator.vibrate) navigator.vibrate(15);
+    if(soundOn) playTasbihSound();
+    localStorage.setItem('tasbih-state', JSON.stringify({preset:preset.id, count}));
+    if(window.gardenManager) window.gardenManager.scheduleSave();
+  });
+  document.getElementById('tsb-reset').addEventListener('click', () => {
+    count = 0; tapBtn.textContent = '0'; tapBtn.classList.remove('complete');
+    localStorage.setItem('tasbih-state', JSON.stringify({preset:preset.id, count:0}));
+  });
+  document.getElementById('tsb-sound').addEventListener('click', () => {
+    const on = localStorage.getItem('tasbih-sound') === 'off';
+    localStorage.setItem('tasbih-sound', on ? 'on' : 'off');
+    document.getElementById('tsb-sound').innerHTML = on ? '🔔 Sound on' : '🔕 Sound off';
+    if(on) playTasbihSound();
+  });
+  document.querySelectorAll('.tsb-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.preset;
+      localStorage.setItem('tasbih-state', JSON.stringify({preset:id, count:0}));
+      renderTasbih();
+    });
+  });
+}
+
+/* TASBIH SOUNDS */
+function renderTasbihSounds(){
+  const current = localStorage.getItem('tasbih-sound-type') || 'click';
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tool-hint" style="padding:6px 0 14px">Choose the sound that plays when you tap the Tasbih counter.</div>
+      <div class="snd-list">
+        ${TASBIH_SOUNDS.map(s=>`
+          <div class="snd-item ${s.id===current?'active':''}" data-sound="${s.id}">
+            <div class="snd-item-left">
+              <div class="snd-icon">${s.id==='silent'?'🔕':'🔔'}</div>
+              <div>
+                <div class="snd-name">${s.name}</div>
+                <div class="snd-desc">${s.desc}</div>
+              </div>
+            </div>
+            ${s.id!=='silent' ? `<button class="snd-preview" data-preview="${s.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>`;
+  document.querySelectorAll('.snd-item').forEach(item => {
+    item.addEventListener('click', e => {
+      if(e.target.closest('.snd-preview')) return;
+      const id = item.dataset.sound;
+      document.querySelectorAll('.snd-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      localStorage.setItem('tasbih-sound-type', id);
+      localStorage.setItem('tasbih-sound', id === 'silent' ? 'off' : 'on');
+      showToast('Sound set');
+      if(id !== 'silent') playSpecificSound(id);
+    });
+  });
+  document.querySelectorAll('.snd-preview').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      playSpecificSound(btn.dataset.preview);
+    });
+  });
+}
+
+/* CUSTOM DHIKR */
+function getCustomDhikr(){ try{ return JSON.parse(localStorage.getItem('custom-dhikr') || '[]'); }catch(e){ return []; } }
+function saveCustomDhikr(list){ localStorage.setItem('custom-dhikr', JSON.stringify(list)); }
+
+function renderCustomDhikr(){
+  const list = getCustomDhikr();
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="cd-header">
+        <div style="font-size:.85rem;color:var(--muted)">${list.length} custom dhikr${list.length===1?'':'s'}</div>
+        <button class="cd-add-btn" id="cd-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add</button>
+      </div>
+      <div id="cd-body"></div>
+    </div>`;
+  document.getElementById('cd-add').addEventListener('click', () => renderCustomDhikrForm());
+  renderCustomDhikrList();
+}
+
+function renderCustomDhikrList(){
+  const list = getCustomDhikr();
+  const body = document.getElementById('cd-body');
+  if(!list.length){
+    body.innerHTML = `<div class="cd-empty"><div class="cd-empty-icon">📝</div>No custom dhikr yet.<br>Tap "Add" to create your first one.</div>`;
+    return;
+  }
+  body.innerHTML = `<div class="cd-list">${list.map((d,i)=>`
+    <div class="cd-item">
+      <div class="cd-item-head"><div class="cd-item-target">${d.target}x</div></div>
+      ${d.arabic?`<div class="cd-item-arabic">${d.arabic}</div>`:''}
+      ${d.translit?`<div class="cd-item-translit">${d.translit}</div>`:''}
+      ${d.translation?`<div class="cd-item-translation">${d.translation}</div>`:''}
+      <div class="cd-item-actions">
+        <button class="cd-action" data-act="start" data-idx="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Start</button>
+        <button class="cd-action" data-act="edit" data-idx="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Edit</button>
+        <button class="cd-action danger" data-act="del" data-idx="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg>Delete</button>
+      </div>
+    </div>`).join('')}</div>`;
+  body.querySelectorAll('.cd-action').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.idx);
+      const act = btn.dataset.act;
+      if(act === 'start') startCustomDhikr(i);
+      else if(act === 'edit') renderCustomDhikrForm(i);
+      else if(act === 'del') deleteCustomDhikr(i);
+    });
+  });
+}
+
+function renderCustomDhikrForm(editIndex = null){
+  const list = getCustomDhikr();
+  const editing = editIndex !== null ? list[editIndex] : null;
+  document.getElementById('cd-body').innerHTML = `
+    <div class="cd-form">
+      <div><label>Arabic (optional)</label><textarea id="cd-arabic" placeholder="سُبْحَانَ اللَّهِ">${editing?.arabic||''}</textarea></div>
+      <div><label>Transliteration (optional)</label><input id="cd-translit" type="text" placeholder="SubhanAllah" value="${editing?.translit||''}"></div>
+      <div><label>Translation / Note (optional)</label><input id="cd-translation" type="text" placeholder="Glory be to Allah" value="${editing?.translation||''}"></div>
+      <div><label>Target count</label><input id="cd-target" type="number" inputmode="numeric" min="1" max="1000" value="${editing?.target||33}"></div>
+      <div class="cd-form-actions">
+        <button class="cd-cancel" id="cd-cancel">Cancel</button>
+        <button class="cd-save" id="cd-save">${editing?'Save':'Add'}</button>
+      </div>
+    </div>`;
+  document.getElementById('cd-cancel').addEventListener('click', () => renderCustomDhikrList());
+  document.getElementById('cd-save').addEventListener('click', () => {
+    const arabic = document.getElementById('cd-arabic').value.trim();
+    const translit = document.getElementById('cd-translit').value.trim();
+    const translation = document.getElementById('cd-translation').value.trim();
+    const target = parseInt(document.getElementById('cd-target').value) || 33;
+    if(!arabic && !translit && !translation){ showToast('Please fill at least one field'); return; }
+    const item = {arabic, translit, translation, target};
+    const l = getCustomDhikr();
+    if(editing) l[editIndex] = item; else l.push(item);
+    saveCustomDhikr(l);
+    showToast(editing ? 'Updated' : 'Added');
+    renderCustomDhikrList();
+  });
+}
+
+function deleteCustomDhikr(i){
+  if(!confirm('Delete this custom dhikr?')) return;
+  const l = getCustomDhikr(); l.splice(i, 1);
+  saveCustomDhikr(l);
+  showToast('Deleted');
+  renderCustomDhikrList();
+}
+
+function startCustomDhikr(i){
+  const list = getCustomDhikr();
+  const d = list[i];
+  if(!d) return;
+  const soundOn = localStorage.getItem('tasbih-sound') !== 'off';
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tsb-wrap">
+        <div class="tsb-target-badge">Target: ${d.target}</div>
+        ${d.arabic?`<div class="tsb-arabic">${d.arabic}</div>`:''}
+        ${d.translit||d.translation?`<div class="tsb-translit">${d.translit}${d.translit&&d.translation?' · ':''}${d.translation}</div>`:''}
+        <button class="tsb-big-tap" id="cds-tap">0</button>
+        <div class="tsb-controls">
+          <button class="tsb-ctrl-btn" id="cds-reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>Reset</button>
+          <button class="tsb-ctrl-btn" id="cds-back">← Back</button>
+        </div>
+      </div>
+    </div>`;
+  let count = 0;
+  const tap = document.getElementById('cds-tap');
+  tap.addEventListener('click', () => {
+    count++;
+    tap.textContent = count;
+    if(count >= d.target){
+      tap.classList.add('complete');
+      if(navigator.vibrate) navigator.vibrate([50,30,50]);
+    } else if(navigator.vibrate) navigator.vibrate(15);
+    if(soundOn) playTasbihSound();
+  });
+  document.getElementById('cds-reset').addEventListener('click', () => { count = 0; tap.textContent = '0'; tap.classList.remove('complete'); });
+  document.getElementById('cds-back').addEventListener('click', () => renderCustomDhikr());
+}
+
+const TOOLS = {
+  qibla: {title:'🧭 Qibla Compass', render:renderQibla},
+  prayerTracker: {title:'🕌 Prayer Tracker', render:renderPrayerTracker},
+  fastingTracker: {title:'🌙 Fasting Tracker', render:renderFastingTracker},
+  tasbih: {title:'📿 Tasbih Counter', render:renderTasbih},
+  tasbihSounds: {title:'🔔 Tasbih Sounds', render:renderTasbihSounds},
+  customDhikr: {title:'✍️ Custom Dhikr', render:renderCustomDhikr}
+};
 </script>
 </body>
 </html>
-  
