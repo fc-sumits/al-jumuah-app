@@ -323,7 +323,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .word-info{flex:1;min-width:0}
 .word-en{font-size:.88rem;color:var(--text);font-weight:600;margin-bottom:2px}
 .word-translit{font-size:.72rem;color:var(--muted);font-style:italic}
-/* ============ TODAY CARD (Home) ============ */
 .today-card{background:linear-gradient(135deg,rgba(42,138,106,.28),rgba(212,175,55,.12));border:1px solid var(--gold);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:14px;position:relative;overflow:hidden}
 .today-tabs{display:flex;gap:6px;margin-bottom:12px;position:relative;z-index:1}
 .today-tab{flex:1;padding:7px 10px;border-radius:999px;border:1px solid transparent;background:rgba(0,0,0,.2);color:var(--muted);font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s ease;letter-spacing:.03em}
@@ -337,7 +336,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .today-action{flex:1;padding:8px 12px;border-radius:999px;border:1px solid var(--gold-soft);background:rgba(0,0,0,.25);color:var(--gold);font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:5px}
 .today-action:hover{background:var(--gold-soft)}
 .today-action svg{width:13px;height:13px;stroke-width:2}
-/* ============ ASMA UL-HUSNA ============ */
 .as-intro{font-size:.85rem;color:var(--muted);text-align:center;padding:6px 4px 14px;line-height:1.5}
 .as-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .as-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s ease}
@@ -357,7 +355,22 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .as-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
 .as-nav-btn:disabled{opacity:.35;cursor:default}
 .as-nav-btn svg{width:14px;height:14px;stroke-width:2}
-/* ============ WORSHIP & PRAYER TOOLS ============ */
+.as-audio-card{background:linear-gradient(135deg,rgba(42,138,106,.2),rgba(212,175,55,.1));border:1px solid var(--gold);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px}
+.as-audio-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px;flex-wrap:wrap}
+.as-audio-label{font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.03em}
+.as-audio-dl{background:transparent;border:1px solid var(--gold-soft);color:var(--gold);border-radius:999px;padding:6px 12px;font-family:var(--font-body);font-size:.72rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .2s ease}
+.as-audio-dl:hover{background:var(--gold-soft)}
+.as-audio-dl.done{background:var(--gold);color:#0A0F0D;border-color:var(--gold)}
+.as-audio-dl:disabled{opacity:.55;cursor:default}
+.as-audio-player{display:flex;align-items:center;gap:12px}
+.as-audio-play{flex-shrink:0;width:46px;height:46px;border-radius:50%;border:none;background:var(--gold);color:#0A0F0D;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;box-shadow:0 4px 12px rgba(212,175,55,.35)}
+.as-audio-play:active{transform:scale(.92)}
+.as-audio-play svg{width:20px;height:20px}
+.as-audio-progress{flex:1;min-width:0}
+.as-audio-progress input[type=range]{width:100%;height:6px;-webkit-appearance:none;appearance:none;background:var(--divider);border-radius:999px;outline:none;cursor:pointer;margin-bottom:4px}
+.as-audio-progress input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 6px rgba(212,175,55,.6)}
+.as-audio-progress input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold);cursor:pointer;border:none}
+.as-audio-times{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .tool-view{padding-bottom:6px}
 .tool-hint{font-size:.8rem;color:var(--muted);text-align:center;padding:16px;line-height:1.6}
 .tool-section-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px}
@@ -544,15 +557,21 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .tj-example-meaning{font-size:.8rem;color:var(--muted);line-height:1.5}
 .aa-intro{font-size:.85rem;color:var(--muted);text-align:center;padding:6px 4px 14px;line-height:1.5}
 .aa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.aa-letter{aspect-ratio:1;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:6px;gap:2px}
+.aa-letter{position:relative;aspect-ratio:1;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:6px;gap:2px}
 .aa-letter:active{transform:scale(.94)}
 .aa-letter:hover{border-color:var(--gold);background:var(--card-hover)}
 .aa-letter-ar{font-family:var(--font-arabic);font-size:2rem;color:var(--gold);line-height:1;font-weight:400}
 .aa-letter-name{font-size:.6rem;color:var(--muted);letter-spacing:.03em;font-weight:600;text-align:center;line-height:1.1}
+.aa-speak-badge{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.35);border:1px solid rgba(212,175,55,.4);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:all .2s ease}
+.aa-speak-badge:hover{background:var(--gold);color:#0A0F0D;border-color:var(--gold)}
+.aa-speak-badge svg{width:11px;height:11px;stroke-width:2.5}
 .aa-detail{text-align:center;padding:6px 0}
 .aa-detail-ar{font-family:var(--font-arabic);font-size:6rem;color:var(--gold);line-height:1;margin:8px 0 4px;text-shadow:0 0 40px rgba(212,175,55,.35)}
 .aa-detail-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:2px}
-.aa-detail-sound{font-size:.85rem;color:var(--muted);margin-bottom:20px;font-style:italic}
+.aa-detail-sound{font-size:.85rem;color:var(--muted);margin-bottom:14px;font-style:italic}
+.aa-listen-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0A0F0D;border:none;border-radius:999px;padding:10px 20px;font-family:var(--font-body);font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:18px;box-shadow:0 4px 14px rgba(212,175,55,.3);transition:all .2s ease}
+.aa-listen-btn:active{transform:scale(.95)}
+.aa-listen-btn svg{width:16px;height:16px;stroke-width:2.2}
 .aa-forms-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-bottom:10px;text-align:center}
 .aa-forms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
 .aa-form{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px 6px;text-align:center}
@@ -1618,6 +1637,7 @@ function closeQModal(){
   document.getElementById('q-modal').classList.remove('show');
   document.body.style.overflow = '';
   if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  if(window.__asmaAudio){ try{ window.__asmaAudio.pause(); }catch(e){} window.__asmaAudio = null; }
   updatePrayerTileStatus();
   try { refreshSettingsLocation(); } catch(e){ console.log('settings refresh deferred', e); }
 }
@@ -2047,7 +2067,7 @@ const DHIKR_DATA = {
     {id:'e9',arabic:'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا',translit:'Raditu billahi Rabban, wa bil-Islami dinan',translation:'I am pleased with Allah as my Lord, with Islam as my religion.',virtue:'Whoever says it 3 times in the evening, Allah will surely please him. (Abu Dawud)',target:3},
     {id:'e10',arabic:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',translit:'SubhanAllahi wa bihamdih',translation:'Glory be to Allah and praise be to Him',virtue:'Whoever says it 100 times in the evening, no one will come on the Day of Judgement with anything better. (Muslim)',target:100},
     {id:'e11',arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ',translit:'La ilaha illallahu wahdahu la sharika lah',translation:'There is no god but Allah alone, with no partner.',virtue:'A protection and a treasure from the treasures of Paradise. (Bukhari)',target:10},
-    {id:'e12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'An evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
+    {id:'e12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'An evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
   ]
 };
 
@@ -2171,7 +2191,7 @@ document.querySelectorAll('.dk-tab').forEach(tab => {
   tab.addEventListener('click', () => window.dhikrManager.switchTab(tab.dataset.tab));
 });
 
-/* ============ GARDEN (Streak & Dhikr log) ============ */
+/* ============ GARDEN ============ */
 class GardenManager {
   constructor(){ this.log = {}; this.streak = 0; this.totalDhikr = 0; this.saveTimer = null; }
   dateKey(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
@@ -2948,7 +2968,7 @@ function renderPrayerMethodPicker(){
       renderPrayerTimes();
     });
   });
-}
+  }
 
   
 /* ============ CATEGORY 2 — KHATM TRACKER ============ */
@@ -3078,7 +3098,7 @@ function renderTajweed(){
   });
 }
 
-/* ============ CATEGORY 2 — ARABIC ALPHABET ============ */
+/* ============ CATEGORY 2 — ARABIC ALPHABET (with TTS) ============ */
 const ARABIC_LETTERS = [
   {ar:'ا', name:'Alif', sound:'a / ā', isolated:'ا', initial:'ا', medial:'ـا', final:'ـا', ex:{ar:'أَرْض', translit:'ard', meaning:'Earth'}},
   {ar:'ب', name:'Ba', sound:'b', isolated:'ب', initial:'بـ', medial:'ـبـ', final:'ـب', ex:{ar:'بَاب', translit:'bāb', meaning:'Door'}},
@@ -3111,24 +3131,63 @@ const ARABIC_LETTERS = [
 ];
 
 let currentArabicLetter = 0;
+let arabicVoices = [];
+
+function loadArabicVoices(){
+  try{
+    const all = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    arabicVoices = all.filter(v => v.lang && v.lang.toLowerCase().startsWith('ar'));
+  }catch(e){ arabicVoices = []; }
+}
+if(window.speechSynthesis){
+  loadArabicVoices();
+  window.speechSynthesis.onvoiceschanged = loadArabicVoices;
+}
+
+function speakArabicLetter(letter){
+  if(!window.speechSynthesis){ showToast('Speech not supported'); return; }
+  try{
+    window.speechSynthesis.cancel();
+    if(arabicVoices.length === 0) loadArabicVoices();
+    const u = new SpeechSynthesisUtterance(letter.name + ' — ' + letter.ar);
+    if(arabicVoices.length > 0){
+      u.voice = arabicVoices[0];
+      u.lang = arabicVoices[0].lang;
+    } else {
+      u.lang = 'ar-SA';
+    }
+    u.rate = 0.75;
+    u.pitch = 1;
+    window.speechSynthesis.speak(u);
+  }catch(e){ showToast('Could not play audio'); }
+}
 
 function renderArabicAlphabet(){
   currentArabicLetter = 0;
   document.getElementById('q-modal-content').innerHTML = `
     <div class="tool-view">
-      <div class="aa-intro">Tap any letter to learn its name, sound, all four forms, and an example word.</div>
+      <div class="aa-intro">Tap any letter to learn its name, sound, all four forms, and an example word. Tap the 🔊 badge to hear the letter's name.</div>
       <div class="aa-grid">
         ${ARABIC_LETTERS.map((l,i)=>`
           <div class="aa-letter" data-letter="${i}">
             <div class="aa-letter-ar">${l.ar}</div>
             <div class="aa-letter-name">${l.name}</div>
+            <button class="aa-speak-badge" data-speak="${i}" aria-label="Play sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
           </div>`).join('')}
       </div>
     </div>`;
   document.querySelectorAll('.aa-letter').forEach(el => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', e => {
+      if(e.target.closest('.aa-speak-badge')) return;
       currentArabicLetter = parseInt(el.dataset.letter);
       renderArabicLetterDetail();
+    });
+  });
+  document.querySelectorAll('.aa-speak-badge').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const i = parseInt(btn.dataset.speak);
+      speakArabicLetter(ARABIC_LETTERS[i]);
     });
   });
 }
@@ -3142,6 +3201,7 @@ function renderArabicLetterDetail(){
         <div class="aa-detail-ar">${l.ar}</div>
         <div class="aa-detail-name">${l.name}</div>
         <div class="aa-detail-sound">Sound: ${l.sound}</div>
+        <button class="aa-listen-btn" id="aa-listen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>Listen</button>
         <div class="aa-forms-title">Positional forms</div>
         <div class="aa-forms">
           <div class="aa-form"><div class="aa-form-ar">${l.isolated}</div><div class="aa-form-label">Isolated</div></div>
@@ -3168,6 +3228,7 @@ function renderArabicLetterDetail(){
         </div>
       </div>
     </div>`;
+  document.getElementById('aa-listen').addEventListener('click', () => speakArabicLetter(l));
   const prev = document.getElementById('aa-prev');
   const next = document.getElementById('aa-next');
   if(prev && !prev.disabled) prev.addEventListener('click', () => { currentArabicLetter--; renderArabicLetterDetail(); });
@@ -3175,7 +3236,7 @@ function renderArabicLetterDetail(){
   document.getElementById('aa-grid').addEventListener('click', renderArabicAlphabet);
 }
 
-/* ============ CATEGORY 7 — ASMA UL-HUSNA ============ */
+/* ============ CATEGORY 7 — ASMA UL-HUSNA (with audio + offline) ============ */
 const ASMA_NAMES = [
   {ar:'الرَّحْمَٰن', name:'Ar-Rahman', meaning:'The Most Compassionate'},
   {ar:'الرَّحِيم', name:'Ar-Raheem', meaning:'The Most Merciful'},
@@ -3279,11 +3340,48 @@ const ASMA_NAMES = [
 ];
 
 let currentAsmaIndex = 0;
+const ASMA_AUDIO_URL = 'https://archive.org/download/AudioAsmaUlHusna/Asma%20Ul%20Husna.mp3';
+const ASMA_CACHE = 'asma-audio-v1';
+const ASMA_OFFLINE_KEY = 'asma-offline-ready';
 
-function renderAsmaUlHusna(){
+function formatAudioTime(s){
+  if(!isFinite(s) || s < 0) s = 0;
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${String(sec).padStart(2,'0')}`;
+}
+
+async function isAsmaDownloaded(){
+  try{
+    const cache = await caches.open(ASMA_CACHE);
+    const match = await cache.match(ASMA_AUDIO_URL);
+    return !!match;
+  }catch(e){ return false; }
+}
+
+async function renderAsmaUlHusna(){
   currentAsmaIndex = 0;
+  const downloaded = await isAsmaDownloaded();
   document.getElementById('q-modal-content').innerHTML = `
     <div class="tool-view">
+      <div class="as-audio-card">
+        <div class="as-audio-head">
+          <div class="as-audio-label">🎧 99 Names — Chant</div>
+          <button class="as-audio-dl ${downloaded?'done':''}" id="as-dl-btn" data-downloaded="${downloaded}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            ${downloaded ? 'Downloaded' : 'Save offline'}
+          </button>
+        </div>
+        <div class="as-audio-player">
+          <button class="as-audio-play" id="as-play" aria-label="Play">
+            <svg id="as-play-icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </button>
+          <div class="as-audio-progress">
+            <input type="range" id="as-seek" min="0" max="100" value="0" step="0.1">
+            <div class="as-audio-times"><span id="as-time-cur">0:00</span><span id="as-time-total">0:00</span></div>
+          </div>
+        </div>
+      </div>
       <div class="as-intro">The 99 Beautiful Names of Allah. Tap any name to see its Arabic, transliteration, and meaning.</div>
       <div class="as-grid">
         ${ASMA_NAMES.map((n,i)=>`
@@ -3300,6 +3398,88 @@ function renderAsmaUlHusna(){
       renderAsmaDetail();
     });
   });
+  setupAsmaAudioPlayer();
+  const dlBtn = document.getElementById('as-dl-btn');
+  dlBtn.addEventListener('click', () => handleAsmaDownload(dlBtn));
+}
+
+function setupAsmaAudioPlayer(){
+  const playBtn = document.getElementById('as-play');
+  const playIcon = document.getElementById('as-play-icon');
+  const seek = document.getElementById('as-seek');
+  const cur = document.getElementById('as-time-cur');
+  const tot = document.getElementById('as-time-total');
+  if(!playBtn) return;
+
+  if(!window.__asmaAudio || window.__asmaAudio.src !== ASMA_AUDIO_URL){
+    if(window.__asmaAudio){ try{ window.__asmaAudio.pause(); }catch(e){} }
+    window.__asmaAudio = new Audio(ASMA_AUDIO_URL);
+    window.__asmaAudio.preload = 'metadata';
+  }
+  const audio = window.__asmaAudio;
+
+  audio.onloadedmetadata = () => { tot.textContent = formatAudioTime(audio.duration); };
+  audio.ontimeupdate = () => {
+    if(audio.duration > 0){ seek.value = (audio.currentTime / audio.duration) * 100; }
+    cur.textContent = formatAudioTime(audio.currentTime);
+  };
+  audio.onended = () => {
+    playIcon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>';
+    seek.value = 0;
+    cur.textContent = '0:00';
+  };
+  audio.onerror = () => { playIcon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>'; };
+
+  if(audio.duration) tot.textContent = formatAudioTime(audio.duration);
+  if(audio.currentTime) cur.textContent = formatAudioTime(audio.currentTime);
+
+  playBtn.onclick = async () => {
+    if(audio.paused){
+      try{ await audio.play(); playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'; }catch(e){ showToast('Could not play'); }
+    } else {
+      audio.pause();
+      playIcon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>';
+    }
+  };
+  seek.oninput = () => {
+    if(audio.duration > 0) audio.currentTime = (seek.value / 100) * audio.duration;
+  };
+}
+
+async function handleAsmaDownload(btn){
+  const already = btn.dataset.downloaded === 'true';
+  if(already){
+    if(!confirm('Remove downloaded audio? You will need internet to play again.')) return;
+    try{
+      const cache = await caches.open(ASMA_CACHE);
+      await cache.delete(ASMA_AUDIO_URL);
+      localStorage.removeItem(ASMA_OFFLINE_KEY);
+      btn.dataset.downloaded = 'false';
+      btn.classList.remove('done');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Save offline`;
+      showToast('Removed offline copy');
+    }catch(e){ showToast('Could not remove'); }
+    return;
+  }
+  btn.disabled = true;
+  btn.innerHTML = `<div style="width:12px;height:12px;border:2px solid var(--gold);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite"></div>Saving…`;
+  try{
+    const cache = await caches.open(ASMA_CACHE);
+    const res = await fetch(ASMA_AUDIO_URL, { mode: 'cors' });
+    if(!res.ok) throw new Error('bad');
+    await cache.put(ASMA_AUDIO_URL, res.clone());
+    localStorage.setItem(ASMA_OFFLINE_KEY, '1');
+    btn.dataset.downloaded = 'true';
+    btn.classList.add('done');
+    btn.disabled = false;
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><polyline points="20 6 9 17 4 12"/></svg>Downloaded`;
+    showToast('Saved for offline');
+  }catch(e){
+    console.error(e);
+    btn.disabled = false;
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Save offline`;
+    showToast('Download failed — check connection');
+  }
 }
 
 function renderAsmaDetail(){
