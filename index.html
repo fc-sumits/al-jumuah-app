@@ -329,7 +329,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .tool-section-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px}
 .qibla-wrap{text-align:center;padding:6px 0}
 .qibla-compass{position:relative;width:240px;height:240px;margin:6px auto 18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--card) 0%,var(--bg) 70%);border:2px solid var(--gold-soft);box-shadow:inset 0 0 40px rgba(212,175,55,.08),0 8px 30px rgba(0,0,0,.4)}
-.qibla-needle{position:absolute;top:50%;left:50%;width:4px;height:100px;background:linear-gradient(to top,transparent 0%,var(--gold) 40%,var(--gold) 100%);transform-origin:bottom center;transform:translate(-50%,-100%) rotate(0deg);transition:transform .6s ease;border-radius:2px;box-shadow:0 0 12px rgba(212,175,55,.7)}
+.qibla-needle{position:absolute;top:50%;left:50%;width:4px;height:100px;background:linear-gradient(to top,transparent 0%,var(--gold) 40%,var(--gold) 100%);transform-origin:bottom center;transform:translate(-50%,-100%) rotate(0deg);transition:transform .25s ease-out;border-radius:2px;box-shadow:0 0 12px rgba(212,175,55,.7)}
 .qibla-needle::after{content:'';position:absolute;top:-11px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--gold);filter:drop-shadow(0 0 8px rgba(212,175,55,.7))}
 .qibla-center{position:absolute;top:50%;left:50%;width:12px;height:12px;background:var(--gold);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 15px rgba(212,175,55,.9);z-index:3}
 .qibla-n,.qibla-e,.qibla-s,.qibla-w{position:absolute;font-size:.78rem;font-weight:700;color:var(--muted);letter-spacing:.05em}
@@ -427,10 +427,121 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .cd-cancel{background:var(--card);color:var(--text);border:1px solid var(--divider)!important}
 .cd-empty{text-align:center;padding:40px 20px;color:var(--muted-2);font-size:.88rem;line-height:1.7}
 .cd-empty-icon{font-size:2rem;margin-bottom:10px;opacity:.5}
+/* ============ PRAYER TIMES ============ */
+.pt2-loc-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding:12px 14px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm)}
+.pt2-loc-info{flex:1;min-width:0}
+.pt2-loc-label{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:3px}
+.pt2-loc-name{font-size:.9rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt2-loc-btn{background:transparent;border:1px solid var(--divider);color:var(--gold);padding:7px 12px;border-radius:999px;font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;flex-shrink:0}
+.pt2-loc-btn:hover{background:var(--gold-soft)}
+.pt2-next-card{background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(42,138,106,.1));border:1px solid var(--gold);border-radius:var(--radius-md);padding:20px 18px;text-align:center;margin-bottom:16px;position:relative;overflow:hidden}
+.pt2-next-card::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.6' opacity='0.15'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3C/g%3E%3C/svg%3E");background-size:40px 40px;pointer-events:none}
+.pt2-next-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:6px;position:relative;z-index:1}
+.pt2-next-name{font-family:var(--font-arabic);font-size:2rem;color:var(--text);margin-bottom:2px;position:relative;z-index:1}
+.pt2-next-en{font-size:.85rem;color:var(--muted);margin-bottom:12px;position:relative;z-index:1}
+.pt2-next-time{font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.02em;margin-bottom:6px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.pt2-next-count{font-size:.9rem;color:var(--text);font-weight:600;position:relative;z-index:1}
+.pt2-list{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:14px}
+.pt2-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--divider);gap:12px;transition:background .2s ease}
+.pt2-row:last-child{border-bottom:none}
+.pt2-row.passed{opacity:.5}
+.pt2-row.next{background:linear-gradient(90deg,rgba(212,175,55,.08),transparent);border-left:3px solid var(--gold)}
+.pt2-row-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.pt2-row-icon{font-size:1.3rem;flex-shrink:0}
+.pt2-row-info{flex:1;min-width:0}
+.pt2-row-name{font-size:.94rem;font-weight:700;color:var(--text);margin-bottom:1px}
+.pt2-row-arabic{font-family:var(--font-arabic);font-size:.85rem;color:var(--gold);opacity:.8}
+.pt2-row-time{font-size:1rem;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+.pt2-row.next .pt2-row-time{color:var(--gold)}
+.pt2-method-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);margin-bottom:14px;cursor:pointer}
+.pt2-method-label{font-size:.8rem;color:var(--muted)}
+.pt2-method-value{font-size:.85rem;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:6px}
+.pt2-method-value svg{width:14px;height:14px;stroke-width:2}
+.pt2-city-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.pt2-city-form input{width:100%;padding:12px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.92rem;box-sizing:border-box}
+.pt2-city-form input:focus{outline:none;border-color:var(--gold)}
+.pt2-city-form button{background:var(--gold);color:#0A0F0D;border:none;padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.88rem;cursor:pointer}
+.pt2-loading{text-align:center;padding:30px 20px;color:var(--muted-2);font-size:.88rem}
+/* ============ KHATM TRACKER ============ */
+.kh-wrap{text-align:center;padding:6px 0}
+.kh-ring-wrap{position:relative;width:200px;height:200px;margin:6px auto 14px}
+.kh-ring{width:100%;height:100%;transform:rotate(-90deg)}
+.kh-ring-track{fill:none;stroke:var(--divider);stroke-width:10}
+.kh-ring-fill{fill:none;stroke:url(#khGrad);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.4,1)}
+.kh-ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.kh-ring-count{font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.kh-ring-total{font-size:.75rem;color:var(--muted);letter-spacing:.05em;margin-top:2px}
+.kh-ring-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-top:6px}
+.kh-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px}
+.kh-stat{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px 8px;text-align:center}
+.kh-stat-v{font-size:1.3rem;font-weight:700;color:var(--gold);line-height:1.1}
+.kh-stat-l{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;font-weight:600}
+.kh-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.kh-juz{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--card-border);border-radius:10px;font-size:.82rem;color:var(--text);font-weight:700;cursor:pointer;transition:all .2s ease;user-select:none}
+.kh-juz:active{transform:scale(.92)}
+.kh-juz.read{background:var(--gold);color:#0A0F0D;border-color:var(--gold);animation:khJuzPop .35s ease}
+@keyframes khJuzPop{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+.kh-juz.next{border-color:var(--emerald);border-width:2px}
+.kh-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.kh-action{background:var(--card);border:1px solid var(--card-border);color:var(--text);border-radius:999px;padding:9px 16px;font-family:var(--font-body);font-size:.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s ease}
+.kh-action:hover{border-color:var(--gold);color:var(--gold)}
+.kh-action svg{width:14px;height:14px;stroke-width:2}
+.kh-action.danger:hover{border-color:#d9534f;color:#d9534f}
+.kh-complete-msg{margin-top:12px;padding:12px;background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(212,175,55,.05));border:1px solid var(--gold);border-radius:var(--radius-sm);text-align:center;animation:dkMsgIn .5s ease}
+.kh-complete-msg .dua{font-family:var(--font-arabic);font-size:1.2rem;color:var(--gold);display:block;margin-bottom:3px}
+.kh-complete-msg .en{font-size:.85rem;color:var(--text);font-weight:600}
+/* ============ TAJWEED BASICS ============ */
+.tj-intro{font-size:.85rem;color:var(--muted);line-height:1.6;text-align:center;padding:10px 6px 14px}
+.tj-list{display:flex;flex-direction:column;gap:10px}
+.tj-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);overflow:hidden;transition:border-color .25s ease}
+.tj-card.open{border-color:var(--gold)}
+.tj-card-head{padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tj-card-head-left{flex:1;min-width:0}
+.tj-name{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.tj-name-ar{font-family:var(--font-arabic);font-size:.9rem;color:var(--gold);opacity:.85;line-height:1.3}
+.tj-chev{color:var(--muted-2);transition:transform .3s ease;flex-shrink:0}
+.tj-chev svg{width:16px;height:16px;stroke-width:2}
+.tj-card.open .tj-chev{transform:rotate(180deg)}
+.tj-body{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 16px}
+.tj-card.open .tj-body{max-height:800px;padding-bottom:16px}
+.tj-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:12px;padding-top:10px;border-top:1px dashed var(--divider)}
+.tj-example{background:var(--bg);border:1px solid var(--divider);border-radius:var(--radius-sm);padding:14px}
+.tj-example-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:8px}
+.tj-example-arabic{font-family:var(--font-arabic);font-size:1.5rem;color:var(--text);text-align:right;direction:rtl;line-height:1.8;margin-bottom:6px}
+.tj-example-arabic .tj-highlight{color:var(--gold);font-weight:700}
+.tj-example-translit{font-size:.78rem;font-style:italic;color:var(--gold);margin-bottom:4px}
+.tj-example-meaning{font-size:.8rem;color:var(--muted);line-height:1.5}
+/* ============ ARABIC ALPHABET ============ */
+.aa-intro{font-size:.85rem;color:var(--muted);text-align:center;padding:6px 4px 14px;line-height:1.5}
+.aa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.aa-letter{aspect-ratio:1;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:6px;gap:2px}
+.aa-letter:active{transform:scale(.94)}
+.aa-letter:hover{border-color:var(--gold);background:var(--card-hover)}
+.aa-letter-ar{font-family:var(--font-arabic);font-size:2rem;color:var(--gold);line-height:1;font-weight:400}
+.aa-letter-name{font-size:.6rem;color:var(--muted);letter-spacing:.03em;font-weight:600;text-align:center;line-height:1.1}
+.aa-detail{text-align:center;padding:6px 0}
+.aa-detail-ar{font-family:var(--font-arabic);font-size:6rem;color:var(--gold);line-height:1;margin:8px 0 4px;text-shadow:0 0 40px rgba(212,175,55,.35)}
+.aa-detail-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.aa-detail-sound{font-size:.85rem;color:var(--muted);margin-bottom:20px;font-style:italic}
+.aa-forms-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-bottom:10px;text-align:center}
+.aa-forms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.aa-form{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px 6px;text-align:center}
+.aa-form-ar{font-family:var(--font-arabic);font-size:1.7rem;color:var(--text);line-height:1.2;margin-bottom:6px}
+.aa-form-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.aa-example{background:linear-gradient(135deg,rgba(42,138,106,.12),rgba(212,175,55,.06));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:16px;text-align:center}
+.aa-example-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:10px}
+.aa-example-ar{font-family:var(--font-arabic);font-size:2rem;color:var(--gold);line-height:1.4;margin-bottom:6px;direction:rtl}
+.aa-example-translit{font-size:.85rem;font-style:italic;color:var(--muted);margin-bottom:4px}
+.aa-example-meaning{font-size:.85rem;color:var(--text);font-weight:600}
+.aa-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.aa-nav-btn{flex:1;background:var(--card);border:1px solid var(--card-border);color:var(--text);padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:6px}
+.aa-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
+.aa-nav-btn:disabled{opacity:.35;cursor:default}
+.aa-nav-btn svg{width:14px;height:14px;stroke-width:2}
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
-</head>
+  </head>
 
   <body>
 
@@ -488,7 +599,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="tile glow" data-nav="prayer">
 <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M3 21h18"/><path d="M5 21V12a7 7 0 0 1 14 0v9"/><path d="M12 12v3"/><circle cx="12" cy="6" r="1.5"/></svg></div>
-<div class="tile-body"><div class="tile-title">Prayer Times</div><div class="tile-sub">Daily prayers</div><div class="tile-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Set your location</span></div></div>
+<div class="tile-body"><div class="tile-title">Prayer Times</div><div class="tile-sub">Daily prayers</div><div class="tile-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span id="prayer-tile-status">Tap to set location</span></div></div>
 <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
 </section>
@@ -584,7 +695,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="cat" data-cat="2">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="cat-title">Quran &amp; Memorization</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill wide">Quran khatm tracker</div><div class="tool-pill">Tajweed basics</div><div class="tool-pill">Arabic alphabet</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill wide" data-tool="khatmTracker">Quran khatm tracker</div><div class="tool-pill" data-tool="tajweed">Tajweed basics</div><div class="tool-pill" data-tool="arabicAlphabet">Arabic alphabet</div></div></div>
 </div>
 <div class="cat" data-cat="3">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><span class="cat-title">Learning &amp; Guidance</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -662,8 +773,8 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="settings-group">
 <div class="settings-group-title">Prayer</div>
-<div class="setting-row"><span class="setting-label">Location</span><span class="setting-value">Not set</span></div>
-<div class="setting-row"><span class="setting-label">Calculation method</span><span class="setting-value">MWL</span></div>
+<div class="setting-row" id="settings-loc-row"><span class="setting-label">Location</span><span class="setting-value" id="settings-loc-value">Not set</span></div>
+<div class="setting-row" id="settings-method-row"><span class="setting-label">Calculation method</span><span class="setting-value" id="settings-method-value">Muslim World League</span></div>
 <div class="setting-row"><span class="setting-label">Asr madhab</span><span class="setting-value">Standard</span></div>
 </div>
 <div class="settings-group">
@@ -793,6 +904,7 @@ document.querySelectorAll('.tile').forEach(tile=>{
   tile.addEventListener('click', ()=>{
     const target = tile.dataset.nav;
     if(['quran','hadith','dhikr','give'].includes(target)){ showPage(target); return; }
+    if(target === 'prayer'){ openTool('prayerTimes'); return; }
     showToast(`${target.charAt(0).toUpperCase()+target.slice(1)} — coming in a later round`);
   });
 });
@@ -802,7 +914,6 @@ document.querySelectorAll('.tool-pill').forEach(pill=>{
   else { pill.addEventListener('click', ()=>showToast(`${pill.textContent} — coming soon`)); }
 });
 
-/* ============ WORSHIP & PRAYER TOOLS — REGISTRY ============ */
 function openTool(name){
   const t = TOOLS[name];
   if(!t){ showToast('Coming soon'); return; }
@@ -831,9 +942,25 @@ document.querySelectorAll('.setting-row').forEach(row=>{
       else navigator.clipboard.writeText(WEBSITE_URL).then(()=>showToast('Link copied'));
     } else if(row.querySelector('.toggle')){ row.querySelector('.toggle').classList.toggle('on'); }
     else if(row.id === 'clear-cache-row'){ clearAllDownloads(); }
+    else if(row.id === 'settings-loc-row'){ openTool('prayerTimes'); }
+    else if(row.id === 'settings-method-row'){ openTool('prayerTimes'); }
     else if(action){ showToast('Coming soon'); }
   });
 });
+
+function refreshSettingsLocation(){
+  const lat = localStorage.getItem('prayer-lat');
+  const city = localStorage.getItem('prayer-city');
+  const country = localStorage.getItem('prayer-country');
+  let locText = 'Not set';
+  if(city) locText = `${city}${country?', '+country:''}`;
+  else if(lat) locText = 'GPS location';
+  const lv = document.getElementById('settings-loc-value');
+  if(lv) lv.textContent = locText;
+  const method = parseInt(localStorage.getItem('prayer-method') || '3');
+  const mv = document.getElementById('settings-method-value');
+  if(mv) mv.textContent = PRAYER_METHODS[method] || 'Muslim World League';
+}
 
 document.getElementById('clear-downloads-row').addEventListener('click', updateDownloadsSize);
 async function updateDownloadsSize(){
@@ -1256,7 +1383,6 @@ function stopQuranAudio(){
 }
 
   
-/* ============ PRIORITY 3 — JUZ TAB ============ */
 const JUZ_STARTS = [
   {n:1,surah:1,ayah:1,name:'Al-Fatiha'},
   {n:2,surah:2,ayah:142,name:'Al-Baqarah'},
@@ -1309,7 +1435,6 @@ function openJuz(juzNum){
   openSurahAtVerse(j.surah, j.ayah);
 }
 
-/* ============ PRIORITY 3 — QURAN BOOKMARK TAB ============ */
 async function renderQuranBookmarks(){
   const c = document.getElementById('quran-list-content');
   if(!window.__currentUser){
@@ -1878,9 +2003,20 @@ function updateJumuahStatus(){
 }
 updateJumuahStatus();
 
+function updatePrayerTileStatus(){
+  const el = document.getElementById('prayer-tile-status');
+  if(!el) return;
+  const city = localStorage.getItem('prayer-city');
+  const lat = localStorage.getItem('prayer-lat');
+  if(city) el.textContent = city;
+  else if(lat) el.textContent = 'GPS location set';
+  else el.textContent = 'Tap to set location';
+}
+updatePrayerTileStatus();
+refreshSettingsLocation();
+
 loadSurahList().then(() => { renderLastRead(); });
 
-/* ============ SPLASH — hides without waiting for Firebase ============ */
 function hideSplash(){
   const s = document.getElementById('splash');
   if(!s || s.classList.contains('hide')) return;
@@ -1890,10 +2026,10 @@ function hideSplash(){
 document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1200));
 setTimeout(hideSplash, 2500);
 
-  
 /* ============ STEP 3 — VERSE MODAL, SHARE, TAFSIR, WORD-BY-WORD ============ */
 
 function openQModal(title, contentHtml){
+  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
   const overlay = document.getElementById('q-modal');
   document.getElementById('q-modal-title').textContent = title;
   document.getElementById('q-modal-content').innerHTML = contentHtml;
@@ -1903,6 +2039,9 @@ function openQModal(title, contentHtml){
 function closeQModal(){
   document.getElementById('q-modal').classList.remove('show');
   document.body.style.overflow = '';
+  if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+  updatePrayerTileStatus();
+  refreshSettingsLocation();
 }
 
 function getVerseText(ayahNum){
@@ -1980,11 +2119,11 @@ async function openWordByWord(ayahNum){
   }catch(e){
     document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Word-by-word unavailable</strong>Could not load the words for this verse. Please try again later.</div>`;
   }
-}
+  }
 
+  
 /* ============ CATEGORY 1 — WORSHIP & PRAYER TOOLS ============ */
 
-/* QIBLA */
 async function renderQibla(){
   document.getElementById('q-modal-content').innerHTML = `
     <div class="tool-view">
@@ -2024,15 +2163,49 @@ async function renderQibla(){
     const deg = data.data.direction;
     document.getElementById('qibla-degree').textContent = deg.toFixed(1) + '°';
     document.getElementById('qibla-label').textContent = 'Qibla direction from your location';
-    document.getElementById('qibla-hint').innerHTML = `The gold arrow points toward the Kaaba — <b>${deg.toFixed(1)}° from true North</b>.<br>Hold your phone flat and rotate until the arrow points up.`;
-    document.getElementById('qibla-needle').style.transform = `translate(-50%,-100%) rotate(${deg}deg)`;
+    const needle = document.getElementById('qibla-needle');
+    needle.style.transform = `translate(-50%,-100%) rotate(${deg}deg)`;
+
+    /* Live compass — rotates arrow as you turn the phone */
+    if(window.DeviceOrientationEvent){
+      let hasLiveCompass = false;
+      const applyOrientation = (ev) => {
+        let heading = null;
+        if(typeof ev.webkitCompassHeading === 'number'){ heading = ev.webkitCompassHeading; }
+        else if(typeof ev.alpha === 'number'){ heading = 360 - ev.alpha; }
+        if(heading === null) return;
+        hasLiveCompass = true;
+        const pointer = (deg - heading + 360) % 360;
+        needle.style.transform = `translate(-50%,-100%) rotate(${pointer}deg)`;
+      };
+      if(typeof DeviceOrientationEvent.requestPermission === 'function'){
+        document.getElementById('qibla-hint').innerHTML = `<button id="enable-compass-btn" style="background:var(--gold);color:#0A0F0D;border:none;border-radius:999px;padding:9px 18px;font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;margin-bottom:10px">Enable live compass</button><br>Tap to allow compass access. The arrow will then rotate live as you turn your phone.`;
+        document.getElementById('enable-compass-btn').addEventListener('click', async () => {
+          try{
+            const p = await DeviceOrientationEvent.requestPermission();
+            if(p === 'granted'){ window.addEventListener('deviceorientation', applyOrientation); showToast('Live compass on'); }
+            else { document.getElementById('qibla-hint').textContent = 'Compass permission denied.'; }
+          }catch(e){ document.getElementById('qibla-hint').textContent = 'Could not enable compass.'; }
+        });
+      } else {
+        window.addEventListener('deviceorientation', applyOrientation);
+        setTimeout(() => {
+          if(!hasLiveCompass){
+            document.getElementById('qibla-hint').innerHTML = `The gold arrow points toward the Kaaba — <b>${deg.toFixed(1)}° from true North</b>.<br><br><b>Live compass not available in this browser.</b><br>Open in <b>Samsung Internet</b> or <b>Chrome</b> for a rotating arrow.`;
+          } else {
+            document.getElementById('qibla-hint').innerHTML = `🔄 <b>Live compass on</b> — turn your phone and the gold arrow will follow the qibla direction.`;
+          }
+        }, 1200);
+      }
+    } else {
+      document.getElementById('qibla-hint').innerHTML = `The gold arrow points toward the Kaaba — <b>${deg.toFixed(1)}° from true North</b>.<br><br>Your browser does not support live compass. Try Samsung Internet or Chrome.`;
+    }
   }catch(e){
     document.getElementById('qibla-label').textContent = 'Could not compute qibla';
     document.getElementById('qibla-hint').textContent = 'Check your internet connection and try again.';
   }
 }
 
-/* PRAYER TRACKER */
 async function renderPrayerTracker(){
   const now = new Date();
   const todayKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -2104,7 +2277,6 @@ async function renderPrayerTracker(){
   });
 }
 
-/* FASTING TRACKER */
 function renderFastingTracker(){
   const today = new Date();
   const hFmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day:'numeric', month:'numeric', year:'numeric' });
@@ -2157,7 +2329,6 @@ function renderFastingTracker(){
   });
 }
 
-/* TASBIH COUNTER */
 const TASBIH_PRESETS = [
   {id:'subhanallah', arabic:'سُبْحَانَ اللَّهِ', translit:'SubhanAllah', meaning:'Glory be to Allah', target:33},
   {id:'alhamdulillah', arabic:'الْحَمْدُ لِلَّهِ', translit:'Alhamdulillah', meaning:'All praise is to Allah', target:33},
@@ -2249,7 +2420,6 @@ function renderTasbih(){
   });
 }
 
-/* TASBIH SOUNDS */
 function renderTasbihSounds(){
   const current = localStorage.getItem('tasbih-sound-type') || 'click';
   document.getElementById('q-modal-content').innerHTML = `
@@ -2289,7 +2459,6 @@ function renderTasbihSounds(){
   });
 }
 
-/* CUSTOM DHIKR */
 function getCustomDhikr(){ try{ return JSON.parse(localStorage.getItem('custom-dhikr') || '[]'); }catch(e){ return []; } }
 function saveCustomDhikr(list){ localStorage.setItem('custom-dhikr', JSON.stringify(list)); }
 
@@ -2408,14 +2577,430 @@ function startCustomDhikr(i){
   document.getElementById('cds-back').addEventListener('click', () => renderCustomDhikr());
 }
 
+/* ============ PRAYER TIMES TOOL ============ */
+const PRAYER_METHODS = {
+  3: 'Muslim World League',
+  2: 'ISNA (North America)',
+  4: 'Umm al-Qura (Makkah)',
+  5: 'Egyptian General Authority',
+  1: 'University of Karachi',
+  0: 'Shia Ithna-Ashari'
+};
+
+const PRAYER_NAMES = {
+  Fajr: {en:'Fajr', ar:'الفجر', icon:'🌅'},
+  Sunrise: {en:'Sunrise', ar:'الشروق', icon:'🌄'},
+  Dhuhr: {en:'Dhuhr', ar:'الظهر', icon:'☀️'},
+  Asr: {en:'Asr', ar:'العصر', icon:'🌤️'},
+  Maghrib: {en:'Maghrib', ar:'المغرب', icon:'🌇'},
+  Isha: {en:'Isha', ar:'العشاء', icon:'🌙'}
+};
+
+function renderPrayerTimes(){
+  const lat = parseFloat(localStorage.getItem('prayer-lat') || '0');
+  const city = localStorage.getItem('prayer-city');
+  if(!lat && !city){ renderPrayerLocationPicker(); return; }
+  renderPrayerTimesContent();
+}
+
+function renderPrayerLocationPicker(){
+  const currentCity = localStorage.getItem('prayer-city') || '';
+  const currentCountry = localStorage.getItem('prayer-country') || '';
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tool-hint" style="padding:6px 0 16px">We need your location to show accurate prayer times. Use GPS or enter your city manually.</div>
+      <button class="pt2-loc-btn" id="pt-use-gps" style="width:100%;padding:14px;font-size:.9rem;margin-bottom:16px;border-color:var(--gold);color:var(--gold);border-width:1.5px">📍 Use my current location (GPS)</button>
+      <div style="text-align:center;color:var(--muted-2);font-size:.8rem;margin-bottom:14px">— or enter manually —</div>
+      <div class="pt2-city-form">
+        <input type="text" id="pt-city-input" placeholder="City (e.g. Lagos, Cairo, London)" value="${currentCity}">
+        <input type="text" id="pt-country-input" placeholder="Country (e.g. Nigeria, Egypt, UK)" value="${currentCountry}">
+        <button id="pt-save-city">Save and load prayer times</button>
+      </div>
+    </div>`;
+  document.getElementById('pt-use-gps').addEventListener('click', async () => {
+    if(!navigator.geolocation){ showToast('Geolocation not supported'); return; }
+    document.getElementById('q-modal-content').innerHTML = '<div class="pt2-loading"><div class="q-loading-spinner"></div>Detecting location…</div>';
+    try{
+      const pos = await new Promise((res, rej) => navigator.geolocation.getCurrentPosition(res, rej, { timeout: 10000 }));
+      localStorage.setItem('prayer-lat', pos.coords.latitude);
+      localStorage.setItem('prayer-lng', pos.coords.longitude);
+      localStorage.removeItem('prayer-city');
+      localStorage.removeItem('prayer-country');
+      renderPrayerTimes();
+    }catch(e){
+      document.getElementById('q-modal-content').innerHTML = '<div class="modal-error"><strong>Location denied</strong>Could not get GPS location. <button class="pt2-loc-btn" id="pt-retry-manual" style="margin-top:14px">Try manually</button></div>';
+      document.getElementById('pt-retry-manual').addEventListener('click', () => renderPrayerLocationPicker());
+    }
+  });
+  document.getElementById('pt-save-city').addEventListener('click', () => {
+    const c = document.getElementById('pt-city-input').value.trim();
+    const co = document.getElementById('pt-country-input').value.trim();
+    if(!c){ showToast('Please enter a city'); return; }
+    localStorage.setItem('prayer-city', c);
+    localStorage.setItem('prayer-country', co);
+    localStorage.removeItem('prayer-lat');
+    localStorage.removeItem('prayer-lng');
+    renderPrayerTimes();
+  });
+}
+
+async function renderPrayerTimesContent(){
+  const lat = parseFloat(localStorage.getItem('prayer-lat') || '0');
+  const lng = parseFloat(localStorage.getItem('prayer-lng') || '0');
+  const city = localStorage.getItem('prayer-city');
+  const country = localStorage.getItem('prayer-country');
+  const method = parseInt(localStorage.getItem('prayer-method') || '3');
+  const today = new Date();
+  const dateStr = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
+  const cacheKey = `prayer-cache-${dateStr}-${lat?`${lat}-${lng}`:`${city}-${country}`}-${method}`;
+  let timings = null;
+  const cached = localStorage.getItem(cacheKey);
+  if(cached){ try{ timings = JSON.parse(cached); }catch(e){} }
+  if(!timings){
+    document.getElementById('q-modal-content').innerHTML = '<div class="pt2-loading"><div class="q-loading-spinner"></div>Loading prayer times…</div>';
+    try{
+      let url;
+      if(lat && lng){
+        url = `https://api.aladhan.com/v1/timings/${dateStr}?latitude=${lat}&longitude=${lng}&method=${method}`;
+      } else {
+        url = `https://api.aladhan.com/v1/timingsByCity/${dateStr}?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=${method}`;
+      }
+      const res = await fetch(url);
+      const data = await res.json();
+      if(data.code !== 200) throw new Error('bad');
+      timings = data.data.timings;
+      localStorage.setItem(cacheKey, JSON.stringify(timings));
+    }catch(e){
+      document.getElementById('q-modal-content').innerHTML = `<div class="modal-error"><strong>Could not load prayer times</strong>Check your internet connection.<br><br><button class="pt2-loc-btn" id="pt-retry-times" style="margin-top:10px">Try again</button></div>`;
+      document.getElementById('pt-retry-times').addEventListener('click', () => renderPrayerTimes());
+      return;
+    }
+  }
+  const now = new Date();
+  const currentMins = now.getHours() * 60 + now.getMinutes();
+  const order = ['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'];
+  const timeMins = {};
+  order.forEach(k => {
+    const t = (timings[k] || '00:00').split(':');
+    timeMins[k] = parseInt(t[0]) * 60 + parseInt(t[1]);
+  });
+  let nextKey = null;
+  for(const k of order){
+    if(timeMins[k] > currentMins){ nextKey = k; break; }
+  }
+  if(!nextKey) nextKey = 'Fajr';
+  const locName = city ? `${city}, ${country}` : `${lat.toFixed(2)}°, ${lng.toFixed(2)}°`;
+  const rows = order.map(k => {
+    const p = PRAYER_NAMES[k];
+    const passed = timeMins[k] < currentMins;
+    const isNext = k === nextKey;
+    const cls = ['pt2-row', passed?'passed':'', isNext?'next':''].filter(Boolean).join(' ');
+    return `<div class="${cls}"><div class="pt2-row-left"><div class="pt2-row-icon">${p.icon}</div><div class="pt2-row-info"><div class="pt2-row-name">${p.en}</div><div class="pt2-row-arabic">${p.ar}</div></div></div><div class="pt2-row-time">${timings[k]}</div></div>`;
+  }).join('');
+  const nextP = PRAYER_NAMES[nextKey];
+  const nextTime = timings[nextKey];
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="pt2-loc-header">
+        <div class="pt2-loc-info">
+          <div class="pt2-loc-label">Location</div>
+          <div class="pt2-loc-name">${locName}</div>
+        </div>
+        <button class="pt2-loc-btn" id="pt-change-loc">Change</button>
+      </div>
+      <div class="pt2-next-card">
+        <div class="pt2-next-label">Next Prayer</div>
+        <div class="pt2-next-name">${nextP.ar}</div>
+        <div class="pt2-next-en">${nextP.en}</div>
+        <div class="pt2-next-time">${nextTime}</div>
+        <div class="pt2-next-count" id="pt-countdown">—</div>
+      </div>
+      <div class="pt2-list">${rows}</div>
+      <div class="pt2-method-row" id="pt-method-row">
+        <div class="pt2-method-label">Calculation method</div>
+        <div class="pt2-method-value">${PRAYER_METHODS[method]} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    </div>`;
+  function tick(){
+    const n = new Date();
+    const cm = n.getHours() * 3600 + n.getMinutes() * 60 + n.getSeconds();
+    const target = timeMins[nextKey] * 60;
+    let diff = target - cm;
+    if(diff < 0) diff += 24 * 3600;
+    const h = Math.floor(diff / 3600);
+    const m = Math.floor((diff % 3600) / 60);
+    const s = diff % 60;
+    const el = document.getElementById('pt-countdown');
+    if(el){
+      if(h > 0) el.textContent = `in ${h}h ${m}m`;
+      else if(m > 0) el.textContent = `in ${m}m ${s}s`;
+      else el.textContent = `in ${s}s`;
+    }
+  }
+  tick();
+  window.__prayerTimer = setInterval(tick, 1000);
+  document.getElementById('pt-change-loc').addEventListener('click', () => {
+    if(window.__prayerTimer){ clearInterval(window.__prayerTimer); window.__prayerTimer = null; }
+    renderPrayerLocationPicker();
+  });
+  document.getElementById('pt-method-row').addEventListener('click', () => renderPrayerMethodPicker());
+}
+
+function renderPrayerMethodPicker(){
+  const current = parseInt(localStorage.getItem('prayer-method') || '3');
+  const methods = Object.entries(PRAYER_METHODS);
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tool-hint" style="padding:6px 0 14px">Choose the calculation method used in your region.</div>
+      <div class="snd-list">
+        ${methods.map(([id,name])=>`<div class="snd-item ${parseInt(id)===current?'active':''}" data-mid="${id}"><div class="snd-item-left"><div class="snd-icon">📐</div><div><div class="snd-name">${name}</div></div></div></div>`).join('')}
+      </div>
+    </div>`;
+  document.querySelectorAll('.snd-item').forEach(el => {
+    el.addEventListener('click', () => {
+      localStorage.setItem('prayer-method', el.dataset.mid);
+      Object.keys(localStorage).forEach(k => { if(k.startsWith('prayer-cache-')) localStorage.removeItem(k); });
+      renderPrayerTimes();
+    });
+  });
+    }
+  
+/* ============ CATEGORY 2 — QURAN & MEMORIZATION TOOLS ============ */
+
+function renderKhatmTracker(){
+  const state = JSON.parse(localStorage.getItem('khatm-state') || '{}');
+  if(!state.juzRead) state.juzRead = new Array(30).fill(false);
+  while(state.juzRead.length < 30) state.juzRead.push(false);
+  const totalRead = state.juzRead.filter(Boolean).length;
+  const pct = totalRead / 30;
+  const size = 200;
+  const radius = (size - 12) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - pct);
+  const firstUnread = state.juzRead.findIndex(v => !v);
+  const nextJuz = firstUnread === -1 ? -1 : firstUnread;
+  const today = new Date();
+  const startDate = state.started ? new Date(state.started) : null;
+  const daysSince = startDate ? Math.floor((today - startDate) / 86400000) + 1 : 0;
+  const pace = daysSince > 0 ? (totalRead / daysSince).toFixed(1) : '0';
+  const daysLeft = daysSince > 0 && totalRead > 0 ? Math.ceil((30 - totalRead) / (totalRead / daysSince)) : '—';
+  const grid = [];
+  for(let i=0;i<30;i++){
+    const read = !!state.juzRead[i];
+    const isNext = i === nextJuz;
+    const cls = ['kh-juz', read?'read':'', isNext?'next':''].filter(Boolean).join(' ');
+    grid.push(`<div class="${cls}" data-juz="${i}">${i+1}</div>`);
+  }
+  let completeMsg = '';
+  if(totalRead >= 30){
+    completeMsg = `<div class="kh-complete-msg"><span class="dua">بارك الله فيك</span><div class="en">Khatm complete — may Allah accept it 🤲</div></div>`;
+  }
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="kh-wrap">
+        <div class="kh-ring-wrap">
+          <svg class="kh-ring" viewBox="0 0 ${size} ${size}">
+            <defs><linearGradient id="khGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2A8A6A"/><stop offset="100%" stop-color="#D4AF37"/></linearGradient></defs>
+            <circle class="kh-ring-track" cx="${size/2}" cy="${size/2}" r="${radius}"/>
+            <circle class="kh-ring-fill" cx="${size/2}" cy="${size/2}" r="${radius}" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"/>
+          </svg>
+          <div class="kh-ring-inner">
+            <div class="kh-ring-count">${totalRead}</div>
+            <div class="kh-ring-total">of 30 Juz</div>
+            <div class="kh-ring-label">${pct >= 1 ? 'Complete' : 'In Progress'}</div>
+          </div>
+        </div>
+        <div class="kh-stats">
+          <div class="kh-stat"><div class="kh-stat-v">${daysSince || '—'}</div><div class="kh-stat-l">Days</div></div>
+          <div class="kh-stat"><div class="kh-stat-v">${pace}</div><div class="kh-stat-l">Juz/Day</div></div>
+          <div class="kh-stat"><div class="kh-stat-v">${daysLeft}</div><div class="kh-stat-l">Days Left</div></div>
+        </div>
+        <div class="kh-grid">${grid.join('')}</div>
+        <div class="kh-actions">
+          <button class="kh-action" id="kh-next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Mark next</button>
+          <button class="kh-action danger" id="kh-reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>Reset</button>
+        </div>
+        ${completeMsg}
+      </div>
+    </div>`;
+  document.querySelectorAll('.kh-juz').forEach(el => {
+    el.addEventListener('click', () => {
+      const i = parseInt(el.dataset.juz);
+      state.juzRead[i] = !state.juzRead[i];
+      if(!state.started && state.juzRead[i]) state.started = new Date().toISOString();
+      localStorage.setItem('khatm-state', JSON.stringify(state));
+      if(state.juzRead[i] && navigator.vibrate) navigator.vibrate(30);
+      renderKhatmTracker();
+    });
+  });
+  document.getElementById('kh-next').addEventListener('click', () => {
+    if(nextJuz === -1) return;
+    state.juzRead[nextJuz] = true;
+    if(!state.started) state.started = new Date().toISOString();
+    localStorage.setItem('khatm-state', JSON.stringify(state));
+    if(navigator.vibrate) navigator.vibrate(30);
+    renderKhatmTracker();
+  });
+  document.getElementById('kh-reset').addEventListener('click', () => {
+    if(!confirm('Reset your khatm progress?')) return;
+    localStorage.removeItem('khatm-state');
+    renderKhatmTracker();
+  });
+}
+
+const TAJWEED_RULES = [
+  {name:'Izhar', ar:'الإظهار', desc:'When a Noon Sakinah (نْ) or Tanween is followed by one of the six throat letters (ء ه ع ح غ خ), the Noon is pronounced clearly without any nasal sound.', ex:{ar:'مَنْ آمَنَ', translit:'man aamana', meaning:'Whoever believes', hl:'نْ'}},
+  {name:'Idgham', ar:'الإدغام', desc:'When Noon Sakinah or Tanween is followed by one of the letters ي ر م ل و ن, the Noon is merged into the following letter. With ي ن م و it is pronounced with ghunnah (nasal sound). With ل ر without ghunnah.', ex:{ar:'مِنْ نِعْمَةٍ', translit:'min ni\'matin', meaning:'From a blessing', hl:'نْ'}},
+  {name:'Iqlab', ar:'الإقلاب', desc:'When Noon Sakinah or Tanween is followed by the letter ب, the Noon sound is converted into a Meem (م) with ghunnah (2 counts).', ex:{ar:'مِنْ بَعْدِ', translit:'mim ba\'di', meaning:'From after', hl:'نْ'}},
+  {name:'Ikhfa', ar:'الإخفاء', desc:'When Noon Sakinah or Tanween is followed by any of the 15 Ikhfa letters, the Noon is concealed (partly pronounced) with a light nasal sound for 2 counts.', ex:{ar:'أَنْتُمْ', translit:'antum', meaning:'You (plural)', hl:'نْ'}},
+  {name:'Ikhfa Shafawi', ar:'الإخفاء الشفوي', desc:'When Meem Sakinah (مْ) is followed by the letter ب, the Meem is concealed with ghunnah for 2 counts.', ex:{ar:'تَرْمِيهِمْ بِحِجَارَةٍ', translit:'tarmīhim biḥijārah', meaning:'Striking them with stones', hl:'مْ'}},
+  {name:'Idgham Shafawi', ar:'الإدغام الشفوي', desc:'When Meem Sakinah is followed by another Meem (م), the two are merged into one emphasised Meem with ghunnah.', ex:{ar:'لَهُمْ مَا', translit:'lahum mā', meaning:'For them is what', hl:'مْ'}},
+  {name:'Izhar Shafawi', ar:'الإظهار الشفوي', desc:'When Meem Sakinah is followed by any letter other than ب or م, the Meem is pronounced clearly without ghunnah.', ex:{ar:'أَمْ لَمْ', translit:'am lam', meaning:'Or did not', hl:'مْ'}},
+  {name:'Qalqalah', ar:'القلقلة', desc:'The letters ق ط ب ج د, when they occur at the end of a word or have sukoon, are pronounced with a bouncing echo-like sound.', ex:{ar:'قُلْ أَعُوذُ', translit:'qul a\'ūdhu', meaning:'Say: I seek refuge', hl:'ق'}},
+  {name:'Madd', ar:'المد', desc:'Elongation of a vowel sound. Natural Madd is 2 counts. Secondary Madd (when followed by hamzah or sukoon) can extend 4–6 counts.', ex:{ar:'قَالَ', translit:'qāla', meaning:'He said', hl:'ا'}},
+  {name:'Ghunnah', ar:'الغنّة', desc:'A nasal sound that comes from the nose. It occurs on Noon Mushaddad (نّ) and Meem Mushaddad (مّ) for 2 counts.', ex:{ar:'إِنَّ', translit:'inna', meaning:'Indeed', hl:'نّ'}}
+];
+
+function renderTajweed(){
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tj-intro">Tap each rule to see its explanation and an example. Tajweed is the art of reciting the Quran correctly — one rule at a time.</div>
+      <div class="tj-list">
+        ${TAJWEED_RULES.map((r,i)=>`
+          <div class="tj-card" data-rule="${i}">
+            <div class="tj-card-head">
+              <div class="tj-card-head-left">
+                <div class="tj-name">${r.name}</div>
+                <div class="tj-name-ar">${r.ar}</div>
+              </div>
+              <div class="tj-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+            </div>
+            <div class="tj-body">
+              <div class="tj-desc">${r.desc}</div>
+              <div class="tj-example">
+                <div class="tj-example-label">Example</div>
+                <div class="tj-example-arabic">${r.ex.ar.replace(r.ex.hl, `<span class="tj-highlight">${r.ex.hl}</span>`)}</div>
+                <div class="tj-example-translit">${r.ex.translit}</div>
+                <div class="tj-example-meaning">${r.ex.meaning}</div>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  document.querySelectorAll('.tj-card').forEach(card => {
+    card.querySelector('.tj-card-head').addEventListener('click', () => card.classList.toggle('open'));
+  });
+}
+
+const ARABIC_LETTERS = [
+  {ar:'ا', name:'Alif', sound:'a / ā', isolated:'ا', initial:'ا', medial:'ـا', final:'ـا', ex:{ar:'أَرْض', translit:'ard', meaning:'Earth'}},
+  {ar:'ب', name:'Ba', sound:'b', isolated:'ب', initial:'بـ', medial:'ـبـ', final:'ـب', ex:{ar:'بَاب', translit:'bāb', meaning:'Door'}},
+  {ar:'ت', name:'Ta', sound:'t', isolated:'ت', initial:'تـ', medial:'ـتـ', final:'ـت', ex:{ar:'تِين', translit:'tīn', meaning:'Figs'}},
+  {ar:'ث', name:'Tha', sound:'th (as in "think")', isolated:'ث', initial:'ثـ', medial:'ـثـ', final:'ـث', ex:{ar:'ثَلَاثَة', translit:'thalāthah', meaning:'Three'}},
+  {ar:'ج', name:'Jim', sound:'j', isolated:'ج', initial:'جـ', medial:'ـجـ', final:'ـج', ex:{ar:'جَمَل', translit:'jamal', meaning:'Camel'}},
+  {ar:'ح', name:'Ha', sound:'ḥ (deep h from throat)', isolated:'ح', initial:'حـ', medial:'ـحـ', final:'ـح', ex:{ar:'حَمْد', translit:'ḥamd', meaning:'Praise'}},
+  {ar:'خ', name:'Kha', sound:'kh (as in Scottish "loch")', isolated:'خ', initial:'خـ', medial:'ـخـ', final:'ـخ', ex:{ar:'خَيْر', translit:'khayr', meaning:'Goodness'}},
+  {ar:'د', name:'Dal', sound:'d', isolated:'د', initial:'د', medial:'ـد', final:'ـد', ex:{ar:'دَار', translit:'dār', meaning:'House'}},
+  {ar:'ذ', name:'Dhal', sound:'dh (as in "this")', isolated:'ذ', initial:'ذ', medial:'ـذ', final:'ـذ', ex:{ar:'ذَهَب', translit:'dhahab', meaning:'Gold'}},
+  {ar:'ر', name:'Ra', sound:'r', isolated:'ر', initial:'ر', medial:'ـر', final:'ـر', ex:{ar:'رَبّ', translit:'rabb', meaning:'Lord'}},
+  {ar:'ز', name:'Zay', sound:'z', isolated:'ز', initial:'ز', medial:'ـز', final:'ـز', ex:{ar:'زَيْت', translit:'zayt', meaning:'Oil'}},
+  {ar:'س', name:'Sin', sound:'s', isolated:'س', initial:'سـ', medial:'ـسـ', final:'ـس', ex:{ar:'سَمَاء', translit:'samā\'', meaning:'Sky'}},
+  {ar:'ش', name:'Shin', sound:'sh', isolated:'ش', initial:'شـ', medial:'ـشـ', final:'ـش', ex:{ar:'شَمْس', translit:'shams', meaning:'Sun'}},
+  {ar:'ص', name:'Sad', sound:'ṣ (emphatic s)', isolated:'ص', initial:'صـ', medial:'ـصـ', final:'ـص', ex:{ar:'صَبْر', translit:'ṣabr', meaning:'Patience'}},
+  {ar:'ض', name:'Dad', sound:'ḍ (emphatic d)', isolated:'ض', initial:'ضـ', medial:'ـضـ', final:'ـض', ex:{ar:'ضَوْء', translit:'ḍaw\'', meaning:'Light'}},
+  {ar:'ط', name:'Ta (emphatic)', sound:'ṭ (emphatic t)', isolated:'ط', initial:'طـ', medial:'ـطـ', final:'ـط', ex:{ar:'طَيْر', translit:'ṭayr', meaning:'Bird'}},
+  {ar:'ظ', name:'Dha (emphatic)', sound:'ẓ (emphatic dh)', isolated:'ظ', initial:'ظـ', medial:'ـظـ', final:'ـظ', ex:{ar:'ظِلّ', translit:'ẓill', meaning:'Shadow'}},
+  {ar:'ع', name:'Ayn', sound:'ʿ (deep throat sound)', isolated:'ع', initial:'عـ', medial:'ـعـ', final:'ـع', ex:{ar:'عِلْم', translit:'ʿilm', meaning:'Knowledge'}},
+  {ar:'غ', name:'Ghayn', sound:'gh (gargled)', isolated:'غ', initial:'غـ', medial:'ـغـ', final:'ـغ', ex:{ar:'غَنَم', translit:'ghanam', meaning:'Sheep'}},
+  {ar:'ف', name:'Fa', sound:'f', isolated:'ف', initial:'فـ', medial:'ـفـ', final:'ـف', ex:{ar:'فَجْر', translit:'fajr', meaning:'Dawn'}},
+  {ar:'ق', name:'Qaf', sound:'q (deep k)', isolated:'ق', initial:'قـ', medial:'ـقـ', final:'ـق', ex:{ar:'قَلْب', translit:'qalb', meaning:'Heart'}},
+  {ar:'ك', name:'Kaf', sound:'k', isolated:'ك', initial:'كـ', medial:'ـكـ', final:'ـك', ex:{ar:'كِتَاب', translit:'kitāb', meaning:'Book'}},
+  {ar:'ل', name:'Lam', sound:'l', isolated:'ل', initial:'لـ', medial:'ـلـ', final:'ـل', ex:{ar:'لَيْل', translit:'layl', meaning:'Night'}},
+  {ar:'م', name:'Mim', sound:'m', isolated:'م', initial:'مـ', medial:'ـمـ', final:'ـم', ex:{ar:'مَاء', translit:'mā\'', meaning:'Water'}},
+  {ar:'ن', name:'Nun', sound:'n', isolated:'ن', initial:'نـ', medial:'ـنـ', final:'ـن', ex:{ar:'نَجْم', translit:'najm', meaning:'Star'}},
+  {ar:'ه', name:'Ha (soft)', sound:'h', isolated:'ه', initial:'هـ', medial:'ـهـ', final:'ـه', ex:{ar:'هَوَاء', translit:'hawā\'', meaning:'Air'}},
+  {ar:'و', name:'Waw', sound:'w / ū', isolated:'و', initial:'و', medial:'ـو', final:'ـو', ex:{ar:'وَرْد', translit:'ward', meaning:'Rose'}},
+  {ar:'ي', name:'Ya', sound:'y / ī', isolated:'ي', initial:'يـ', medial:'ـيـ', final:'ـي', ex:{ar:'يَد', translit:'yad', meaning:'Hand'}}
+];
+
+let currentArabicLetter = 0;
+
+function renderArabicAlphabet(){
+  currentArabicLetter = 0;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="aa-intro">Tap any letter to learn its name, sound, all four forms, and an example word.</div>
+      <div class="aa-grid">
+        ${ARABIC_LETTERS.map((l,i)=>`
+          <div class="aa-letter" data-letter="${i}">
+            <div class="aa-letter-ar">${l.ar}</div>
+            <div class="aa-letter-name">${l.name}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  document.querySelectorAll('.aa-letter').forEach(el => {
+    el.addEventListener('click', () => {
+      currentArabicLetter = parseInt(el.dataset.letter);
+      renderArabicLetterDetail();
+    });
+  });
+}
+
+function renderArabicLetterDetail(){
+  const l = ARABIC_LETTERS[currentArabicLetter];
+  const total = ARABIC_LETTERS.length;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="aa-detail">
+        <div class="aa-detail-ar">${l.ar}</div>
+        <div class="aa-detail-name">${l.name}</div>
+        <div class="aa-detail-sound">Sound: ${l.sound}</div>
+        <div class="aa-forms-title">Positional forms</div>
+        <div class="aa-forms">
+          <div class="aa-form"><div class="aa-form-ar">${l.isolated}</div><div class="aa-form-label">Isolated</div></div>
+          <div class="aa-form"><div class="aa-form-ar">${l.initial}</div><div class="aa-form-label">Initial</div></div>
+          <div class="aa-form"><div class="aa-form-ar">${l.medial}</div><div class="aa-form-label">Medial</div></div>
+          <div class="aa-form"><div class="aa-form-ar">${l.final}</div><div class="aa-form-label">Final</div></div>
+        </div>
+        <div class="aa-example">
+          <div class="aa-example-label">Example word</div>
+          <div class="aa-example-ar">${l.ex.ar}</div>
+          <div class="aa-example-translit">${l.ex.translit}</div>
+          <div class="aa-example-meaning">${l.ex.meaning}</div>
+        </div>
+        <div class="aa-nav">
+          <button class="aa-nav-btn" id="aa-prev" ${currentArabicLetter === 0 ? 'disabled' : ''}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Prev
+          </button>
+          <button class="aa-nav-btn" id="aa-grid">All letters</button>
+          <button class="aa-nav-btn" id="aa-next" ${currentArabicLetter === total-1 ? 'disabled' : ''}>
+            Next
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  const prev = document.getElementById('aa-prev');
+  const next = document.getElementById('aa-next');
+  if(prev && !prev.disabled) prev.addEventListener('click', () => { currentArabicLetter--; renderArabicLetterDetail(); });
+  if(next && !next.disabled) next.addEventListener('click', () => { currentArabicLetter++; renderArabicLetterDetail(); });
+  document.getElementById('aa-grid').addEventListener('click', renderArabicAlphabet);
+}
+
 const TOOLS = {
   qibla: {title:'🧭 Qibla Compass', render:renderQibla},
   prayerTracker: {title:'🕌 Prayer Tracker', render:renderPrayerTracker},
   fastingTracker: {title:'🌙 Fasting Tracker', render:renderFastingTracker},
   tasbih: {title:'📿 Tasbih Counter', render:renderTasbih},
   tasbihSounds: {title:'🔔 Tasbih Sounds', render:renderTasbihSounds},
-  customDhikr: {title:'✍️ Custom Dhikr', render:renderCustomDhikr}
+  customDhikr: {title:'✍️ Custom Dhikr', render:renderCustomDhikr},
+  prayerTimes: {title:'🕌 Prayer Times', render:renderPrayerTimes},
+  khatmTracker: {title:'📖 Quran Khatm Tracker', render:renderKhatmTracker},
+  tajweed: {title:'📚 Tajweed Basics', render:renderTajweed},
+  arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet}
 };
 </script>
 </body>
 </html>
+  
