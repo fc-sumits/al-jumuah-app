@@ -587,12 +587,28 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .aa-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
 .aa-nav-btn:disabled{opacity:.35;cursor:default}
 .aa-nav-btn svg{width:14px;height:14px;stroke-width:2}
+.zk-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px}
+.zk-section-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.zk-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--divider)}
+.zk-row:last-child{border-bottom:none}
+.zk-row label{font-size:.85rem;color:var(--text);flex:1;min-width:0}
+.zk-row input{width:130px;padding:8px 10px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:8px;font-family:var(--font-body);font-size:.88rem;text-align:right;-webkit-appearance:none;box-sizing:border-box}
+.zk-row input:focus{outline:none;border-color:var(--gold)}
+.zk-result{background:linear-gradient(135deg,rgba(42,138,106,.15),rgba(212,175,55,.08));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:12px}
+.zk-result:empty{display:none}
+.zk-line{display:flex;justify-content:space-between;font-size:.85rem;color:var(--text);padding:5px 0}
+.zk-line.strong{font-weight:700;color:var(--gold)}
+.zk-divider{height:1px;background:var(--divider);margin:8px 0}
+.zk-big-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;text-align:center;margin-top:6px}
+.zk-big{font-size:1.8rem;font-weight:700;color:var(--gold);text-align:center;margin-top:4px;line-height:1.1}
+.zk-warn{font-size:.82rem;color:var(--muted);text-align:center;padding:6px 0;font-style:italic}
+.zk-calc-btn{width:100%;padding:13px;background:var(--gold);color:#0A0F0D;border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.92rem;cursor:pointer;margin-bottom:10px}
+.zk-calc-btn:active{opacity:.85}
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
 </head>
-
-  <body>
+<body>
 
 <div id="splash">
 <span class="splash-arabic">الجمعة</span>
@@ -776,7 +792,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="cat" data-cat="7">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></span><span class="cat-title">Calculators</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Zakat calculator</div><div class="tool-pill">Zakat al-Fitr</div><div class="tool-pill wide" data-tool="asmaUlHusna">Asma ul-Husna</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill" data-tool="zakatCalculator">Zakat calculator</div><div class="tool-pill" data-tool="zakatAlFitr">Zakat al-Fitr</div><div class="tool-pill wide" data-tool="asmaUlHusna">Asma ul-Husna</div></div></div>
 </div>
 <div class="cat" data-cat="8">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span class="cat-title">Extra</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -875,7 +891,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
-    
 <script>
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
@@ -1438,7 +1453,6 @@ function stopQuranAudio(){
   document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
 }
 
-  
 /* ============ TODAY CARD (Verse / Hadith / Dua of the day) ============ */
 const TODAY_DATA = {
   verse: [
@@ -1854,7 +1868,6 @@ document.querySelectorAll('#mode-select button').forEach(btn => {
   });
 });
 
-  
 /* ============ HADITH BROWSER ============ */
 const HADITH_COLLECTIONS = [
   {id:'eng-bukhari',name:'Sahih al-Bukhari',arabic:'صحيح البخاري',count:7554,desc:'The most authentic collection, compiled by Imam al-Bukhari.'},
@@ -2332,7 +2345,6 @@ try { refreshSettingsLocation(); } catch(e){ console.log('settings loc deferred'
 
 loadSurahList().then(() => { renderLastRead(); });
 
-  
 /* ============ QIBLA COMPASS ============ */
 async function renderQibla(){
   document.getElementById('q-modal-content').innerHTML = `
@@ -2968,9 +2980,8 @@ function renderPrayerMethodPicker(){
       renderPrayerTimes();
     });
   });
-  }
+}
 
-  
 /* ============ CATEGORY 2 — KHATM TRACKER ============ */
 function renderKhatmTracker(){
   const state = JSON.parse(localStorage.getItem('khatm-state') || '{}');
@@ -3513,6 +3524,111 @@ function renderAsmaDetail(){
   document.getElementById('as-grid').addEventListener('click', renderAsmaUlHusna);
 }
 
+/* ============ CATEGORY 7 — ZAKAT CALCULATOR ============ */
+function renderZakatCalculator(){
+  let saved = {};
+  try{ saved = JSON.parse(localStorage.getItem('zakat-inputs') || '{}'); }catch(e){}
+  const cur = saved.currency || '₦';
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tool-hint" style="padding:6px 0 12px;text-align:left">Zakat = 2.5% of wealth held for one lunar year, if it exceeds the nisab (85g gold or 595g silver in value).</div>
+      <div class="zk-section">
+        <div class="zk-section-title">Currency &amp; Nisab</div>
+        <div class="zk-row"><label>Currency symbol</label><input type="text" id="zk-currency" maxlength="4" value="${cur}"></div>
+        <div class="zk-row"><label>Gold price / gram</label><input type="number" id="zk-gold-price" inputmode="decimal" value="${saved.goldPrice||''}" placeholder="e.g. 75000"></div>
+        <div class="zk-row"><label>Silver price / gram</label><input type="number" id="zk-silver-price" inputmode="decimal" value="${saved.silverPrice||''}" placeholder="e.g. 900"></div>
+      </div>
+      <div class="zk-section">
+        <div class="zk-section-title">Assets</div>
+        <div class="zk-row"><label>Cash &amp; bank</label><input type="number" id="zk-cash" inputmode="decimal" value="${saved.cash||''}"></div>
+        <div class="zk-row"><label>Gold (grams)</label><input type="number" id="zk-gold-g" inputmode="decimal" value="${saved.goldG||''}"></div>
+        <div class="zk-row"><label>Silver (grams)</label><input type="number" id="zk-silver-g" inputmode="decimal" value="${saved.silverG||''}"></div>
+        <div class="zk-row"><label>Investments / shares</label><input type="number" id="zk-invest" inputmode="decimal" value="${saved.invest||''}"></div>
+        <div class="zk-row"><label>Business stock</label><input type="number" id="zk-business" inputmode="decimal" value="${saved.business||''}"></div>
+        <div class="zk-row"><label>Money owed to you</label><input type="number" id="zk-receivable" inputmode="decimal" value="${saved.receivable||''}"></div>
+      </div>
+      <div class="zk-section">
+        <div class="zk-section-title">Deduct</div>
+        <div class="zk-row"><label>Debts you owe</label><input type="number" id="zk-debts" inputmode="decimal" value="${saved.debts||''}"></div>
+      </div>
+      <div class="zk-result" id="zk-result"></div>
+      <button class="zk-calc-btn" id="zk-calc">Calculate Zakat</button>
+      <div class="tool-hint" style="font-size:.72rem;text-align:left;padding-top:12px">Nisab uses whichever is lower between 85g gold and 595g silver value — safer for the poor.</div>
+    </div>`;
+  const calc = () => {
+    const cur = document.getElementById('zk-currency').value.trim() || '₦';
+    const goldPrice = parseFloat(document.getElementById('zk-gold-price').value) || 0;
+    const silverPrice = parseFloat(document.getElementById('zk-silver-price').value) || 0;
+    const cash = parseFloat(document.getElementById('zk-cash').value) || 0;
+    const goldG = parseFloat(document.getElementById('zk-gold-g').value) || 0;
+    const silverG = parseFloat(document.getElementById('zk-silver-g').value) || 0;
+    const invest = parseFloat(document.getElementById('zk-invest').value) || 0;
+    const business = parseFloat(document.getElementById('zk-business').value) || 0;
+    const receivable = parseFloat(document.getElementById('zk-receivable').value) || 0;
+    const debts = parseFloat(document.getElementById('zk-debts').value) || 0;
+    const goldValue = goldG * goldPrice;
+    const silverValue = silverG * silverPrice;
+    const totalAssets = cash + goldValue + silverValue + invest + business + receivable;
+    const netWealth = totalAssets - debts;
+    const nisabGold = goldPrice > 0 ? 85 * goldPrice : 0;
+    const nisabSilver = silverPrice > 0 ? 595 * silverPrice : 0;
+    let nisab = 0;
+    if(nisabGold > 0 && nisabSilver > 0) nisab = Math.min(nisabGold, nisabSilver);
+    else nisab = nisabGold || nisabSilver;
+    const meets = nisab > 0 && netWealth >= nisab;
+    const zakat = meets ? netWealth * 0.025 : 0;
+    const fmt = n => cur + n.toLocaleString(undefined, {maximumFractionDigits:2});
+    const resultEl = document.getElementById('zk-result');
+    if(nisab === 0){ resultEl.innerHTML = `<div class="zk-warn">Enter gold or silver price per gram to compute nisab.</div>`; return; }
+    resultEl.innerHTML = `
+      <div class="zk-line"><span>Total assets</span><span>${fmt(totalAssets)}</span></div>
+      <div class="zk-line"><span>Less debts</span><span>− ${fmt(debts)}</span></div>
+      <div class="zk-line strong"><span>Net wealth</span><span>${fmt(netWealth)}</span></div>
+      <div class="zk-line"><span>Nisab threshold</span><span>${fmt(nisab)}</span></div>
+      <div class="zk-divider"></div>
+      ${meets ? `<div class="zk-big-label">Zakat due (2.5%)</div><div class="zk-big">${fmt(zakat)}</div>` : `<div class="zk-warn">Your wealth is below the nisab. No zakat is due this year.</div>`}`;
+    localStorage.setItem('zakat-inputs', JSON.stringify({currency:cur, goldPrice, silverPrice, cash, goldG, silverG, invest, business, receivable, debts}));
+  };
+  document.getElementById('zk-calc').addEventListener('click', calc);
+  if(saved.goldPrice || saved.silverPrice) calc();
+}
+
+/* ============ CATEGORY 7 — ZAKAT AL-FITR ============ */
+function renderZakatAlFitr(){
+  let saved = {};
+  try{ saved = JSON.parse(localStorage.getItem('zakat-fitr') || '{}'); }catch(e){}
+  const cur = saved.currency || '₦';
+  const perPerson = saved.perPerson || '';
+  const people = saved.people || 1;
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="tool-hint" style="padding:6px 0 14px;text-align:left">Zakat al-Fitr is due before Eid al-Fitr prayer — about 2.5–3 kg of staple food per person, or its monetary value.</div>
+      <div class="zk-section">
+        <div class="zk-row"><label>Number of people</label><input type="number" id="zf-people" inputmode="numeric" min="1" value="${people}"></div>
+        <div class="zk-row"><label>Currency symbol</label><input type="text" id="zf-currency" maxlength="4" value="${cur}"></div>
+        <div class="zk-row"><label>Amount per person</label><input type="number" id="zf-per" inputmode="decimal" value="${perPerson}" placeholder="e.g. 2000"></div>
+      </div>
+      <div class="zk-result" id="zf-result"></div>
+      <div class="tool-hint" style="font-size:.72rem;text-align:left;padding-top:12px">Amount per person varies by country. Common estimates: Nigeria ₦2,000–₦4,000 · UK £5–£7 · US $10–$15. Confirm with your local mosque.</div>
+    </div>`;
+  const calc = () => {
+    const people = parseInt(document.getElementById('zf-people').value) || 0;
+    const per = parseFloat(document.getElementById('zf-per').value) || 0;
+    const cur = document.getElementById('zf-currency').value.trim() || '₦';
+    const total = people * per;
+    const fmt = n => cur + n.toLocaleString(undefined, {maximumFractionDigits:2});
+    document.getElementById('zf-result').innerHTML = `
+      <div class="zk-line"><span>${people} ${people===1?'person':'people'}</span><span>${fmt(per)} each</span></div>
+      <div class="zk-divider"></div>
+      <div class="zk-big-label">Total Zakat al-Fitr</div>
+      <div class="zk-big">${fmt(total)}</div>`;
+    localStorage.setItem('zakat-fitr', JSON.stringify({people, perPerson:per, currency:cur}));
+  };
+  document.getElementById('zf-people').addEventListener('input', calc);
+  document.getElementById('zf-per').addEventListener('input', calc);
+  if(perPerson) calc();
+}
+
 /* ============ TOOLS REGISTRY ============ */
 const TOOLS = {
   qibla: {title:'🧭 Qibla Compass', render:renderQibla},
@@ -3525,7 +3641,9 @@ const TOOLS = {
   khatmTracker: {title:'📖 Quran Khatm Tracker', render:renderKhatmTracker},
   tajweed: {title:'📚 Tajweed Basics', render:renderTajweed},
   arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet},
-  asmaUlHusna: {title:'✨ Asma ul-Husna', render:renderAsmaUlHusna}
+  asmaUlHusna: {title:'✨ Asma ul-Husna', render:renderAsmaUlHusna},
+  zakatCalculator: {title:'💰 Zakat Calculator', render:renderZakatCalculator},
+  zakatAlFitr: {title:'🌙 Zakat al-Fitr', render:renderZakatAlFitr}
 };
 </script>
 </body>
