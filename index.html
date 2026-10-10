@@ -597,7 +597,8 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-<script>
+
+  <script>
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
 const AUDIO_CACHE = 'quran-audio-v1';
@@ -1379,6 +1380,7 @@ class HadithBrowser {
 }
 window.hadithBrowser = new HadithBrowser();
 
+    
 const DHIKR_DATA = {
   daily:[
     {id:'d1',arabic:'سُبْحَانَ اللَّهِ',translit:'SubhanAllah',translation:'Glory be to Allah',virtue:'Whoever says it 100 times a day, his sins are wiped away even if they are like the foam of the sea. (Bukhari & Muslim)',target:33},
@@ -1627,4 +1629,129 @@ function renderGive(){
     <a class="gv-card" href="https://islamic-relief.org/palestine" target="_blank" rel="noopener"><div class="gv-card-icon">🇵🇸</div><div class="gv-card-name">Islamic Relief — Palestine</div><div class="gv-card-desc">Emergency relief, food, water, and medical aid for the people of Gaza.</div><span class="gv-tag">Emergency Aid</span></a>
     <div class="gv-heading">🤲 Zakat &amp; Sadaqah</div>
     <a class="gv-card" href="https://islamic-relief.org" target="_blank" rel="noopener"><div class="gv-card-icon">🕋</div><div class="gv-card-name">Islamic Relief</div><div class="gv-card-desc">One of the largest Muslim NGOs — zakat-eligible projects worldwide.</div><span class="gv-tag">Zakat Eligible</span></a>
-    <a class="gv-card" href="https://www.m
+    <a class="gv-card" href="https://www.muslimaid.org" target="_blank" rel="noopener"><div class="gv-card-icon">🌍</div><div class="gv-card-name">Muslim Aid</div><div class="gv-card-desc">Serving humanity since 1985 — food, water, orphan care, education.</div><span class="gv-tag">Zakat Eligible</span></a>
+    <a class="gv-card" href="https://pennyappeal.org" target="_blank" rel="noopener"><div class="gv-card-icon">💧</div><div class="gv-card-name">Penny Appeal</div><div class="gv-card-desc">Water wells, orphan sponsorship, food packs, and emergency relief.</div><span class="gv-tag">Zakat Eligible</span></a>
+    <a class="gv-card" href="https://humanappeal.org.uk" target="_blank" rel="noopener"><div class="gv-card-icon">🌙</div><div class="gv-card-name">Human Appeal</div><div class="gv-card-desc">Zakat-eligible projects in over 25 countries — orphans, water, food.</div><span class="gv-tag">Zakat Eligible</span></a>
+    <div class="gv-heading">🌐 Crowdfunding</div>
+    <a class="gv-card" href="https://www.launchgood.com" target="_blank" rel="noopener"><div class="gv-card-icon">🚀</div><div class="gv-card-name">LaunchGood</div><div class="gv-card-desc">Crowdfunding platform for Muslim projects worldwide.</div><span class="gv-tag">Crowdfunding</span></a>
+    <a class="gv-card" href="https://www.qurbani.com" target="_blank" rel="noopener"><div class="gv-card-icon">🐑</div><div class="gv-card-name">Qurbani.com</div><div class="gv-card-desc">Qurbani and aqiqah services with full transparency.</div><span class="gv-tag">Qurbani</span></a>
+  `;
+}
+
+function updateJumuahStatus(){
+  const el = document.getElementById('jumuah-status');
+  if(!el) return;
+  const day = new Date().getDay();
+  if(day === 5){ el.textContent = 'Open today — tap to read'; }
+  else{
+    const diff = (5 - day + 7) % 7 || 7;
+    el.textContent = `Opens in ${diff} day${diff===1?'':'s'} (Friday)`;
+  }
+}
+updateJumuahStatus();
+
+loadSurahList().then(() => { renderLastRead(); });
+
+/* ============ SPLASH — hides without waiting for Firebase ============ */
+function hideSplash(){
+  const s = document.getElementById('splash');
+  if(!s || s.classList.contains('hide')) return;
+  s.classList.add('hide');
+  setTimeout(() => { const el = document.getElementById('splash'); if(el) el.remove(); }, 900);
+}
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1200));
+setTimeout(hideSplash, 2500);
+
+/* ============ STEP 3 — VERSE MODAL, SHARE, TAFSIR, WORD-BY-WORD ============ */
+
+function openQModal(title, contentHtml){
+  const overlay = document.getElementById('q-modal');
+  document.getElementById('q-modal-title').textContent = title;
+  document.getElementById('q-modal-content').innerHTML = contentHtml;
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeQModal(){
+  document.getElementById('q-modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function getVerseText(ayahNum){
+  if(!QURAN.data) return '';
+  const ar = QURAN.data.arabic.ayahs.find(a => a.numberInSurah === ayahNum);
+  const en = QURAN.data.english.ayahs.find(a => a.numberInSurah === ayahNum);
+  if(!ar || !en) return '';
+  return { arabic: ar.text, english: en.text, surah: QURAN.data.arabic.englishName, surahNum: QURAN.data.arabic.number, ayah: ayahNum };
+}
+
+async function shareVerse(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const text = `${v.arabic}\n\n"${v.english}"\n\n— ${v.surah} ${v.surahNum}:${v.ayah} (Al-Jumu'ah)`;
+  try{
+    if(navigator.share){
+      await navigator.share({ title: `Quran ${v.surahNum}:${v.ayah}`, text });
+    } else {
+      await navigator.clipboard.writeText(text);
+      showToast('Verse copied');
+    }
+  }catch(e){
+    try{ await navigator.clipboard.writeText(text); showToast('Verse copied'); }catch(_){ showToast('Could not copy'); }
+  }
+}
+
+async function openTafsir(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const verseKey = `${v.surahNum}:${ayahNum}`;
+  openQModal('📖 Tafsir — Ibn Kathir', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading tafsir…</div>`);
+
+  if(!navigator.onLine){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Tafsir needs an internet connection. Please reconnect and try again.</div>`;
+    return;
+  }
+
+  try{
+    const res = await fetch(`https://api.quran.com/api/v4/tafsirs/169/by_ayah/${verseKey}`);
+    if(!res.ok) throw new Error('bad');
+    const data = await res.json();
+    let text = data?.tafsir?.text || '';
+    if(!text) throw new Error('empty');
+    text = text.replace(/<sup[^>]*>.*?<\/sup>/g, '').replace(/<[^>]+>/g, m => /<\/?(p|h[1-6]|em|strong|br|i|b)\b/i.test(m) ? m : '');
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-body-text">${text}</div>`;
+  }catch(e){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Tafsir unavailable</strong>Could not load tafsir for this verse. Please try again later.</div>`;
+  }
+}
+
+async function openWordByWord(ayahNum){
+  const v = getVerseText(ayahNum);
+  if(!v) return;
+  const verseKey = `${v.surahNum}:${ayahNum}`;
+  openQModal('🔤 Word by Word', `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-loading"><div class="q-loading-spinner"></div>Loading words…</div>`);
+
+  if(!navigator.onLine){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Online only</strong>Word-by-word needs an internet connection. Please reconnect and try again.</div>`;
+    return;
+  }
+
+  try{
+    const res = await fetch(`https://api.quran.com/api/v4/verses/by_key/${verseKey}?words=true&word_fields=text_uthmani&word_translation_language=en`);
+    if(!res.ok) throw new Error('bad');
+    const data = await res.json();
+    const words = (data?.verse?.words || []).filter(w => w.char_type_name === 'word');
+    if(words.length === 0) throw new Error('empty');
+    const rows = words.map(w => {
+      const arabic = w.text_uthmani || w.text || '';
+      const english = w.translation?.text || '';
+      const translit = w.transliteration?.text || '';
+      return `<div class="word-row"><div class="word-arabic">${arabic}</div><div class="word-info"><div class="word-en">${english}</div>${translit ? `<div class="word-translit">${translit}</div>` : ''}</div></div>`;
+    }).join('');
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="word-list">${rows}</div>`;
+  }catch(e){
+    document.getElementById('q-modal-content').innerHTML = `<div class="modal-verse-ref">${v.surah} · ${verseKey}</div><div class="modal-arabic">${v.arabic}</div><div class="modal-error"><strong>Word-by-word unavailable</strong>Could not load the words for this verse. Please try again later.</div>`;
+  }
+}
+</script>
+</body>
+</html>
