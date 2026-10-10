@@ -191,9 +191,9 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .bismillah{text-align:center;font-family:var(--font-arabic);font-size:1.3rem;color:var(--gold);padding:14px 10px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);margin-bottom:10px}
 .q-verse{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px;margin-bottom:10px;transition:border-color .3s ease,box-shadow .3s ease,background .3s ease;scroll-margin-top:80px}
 .q-verse.playing{border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,175,55,.25),0 0 22px rgba(212,175,55,.15);background:var(--card-hover)}
-.q-verse-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.q-verse-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px;flex-wrap:wrap}
 .q-verse-num{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 6px;border-radius:50%;background:var(--emerald-soft);color:var(--gold);font-size:.75rem;font-weight:700;border:1px solid var(--gold-soft)}
-.q-verse-actions{display:flex;gap:6px}
+.q-verse-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
 .q-act{width:32px;height:32px;border-radius:50%;background:transparent;border:1px solid var(--divider);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease}
 .q-act:hover{border-color:var(--gold);color:var(--gold)}
 .q-act.active{background:var(--gold);color:#0A0F0D;border-color:var(--gold)}
@@ -299,7 +299,32 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .gv-card-name{font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:4px}
 .gv-card-desc{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:8px}
 .gv-tag{display:inline-block;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--emerald-soft);color:var(--gold);font-weight:600;letter-spacing:.03em;border:1px solid var(--gold-soft)}
+.modal-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.7);display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-sheet{background:var(--card);border-top-left-radius:22px;border-top-right-radius:22px;width:100%;max-width:600px;max-height:85vh;overflow-y:auto;padding:20px 18px calc(24px + env(safe-area-inset-bottom,0));animation:sheetUp .3s cubic-bezier(.2,.8,.4,1);border:1px solid var(--card-border);border-bottom:none}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;position:sticky;top:-20px;background:var(--card);padding:8px 0 12px;margin-top:-8px;z-index:2}
+.modal-title{font-size:1.05rem;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:8px}
+.modal-close{width:34px;height:34px;border-radius:50%;background:var(--bg);border:1px solid var(--divider);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.modal-close svg{width:16px;height:16px;stroke-width:2.2}
+.modal-verse-ref{font-size:.72rem;color:var(--gold);text-align:center;padding:5px 12px;background:var(--emerald-soft);border-radius:999px;display:inline-block;margin:0 0 14px;border:1px solid var(--gold-soft);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.modal-arabic{font-family:var(--font-arabic);font-size:1.4rem;line-height:2;text-align:right;direction:rtl;color:var(--text);padding:14px;background:var(--bg);border-radius:var(--radius-sm);margin-bottom:14px;border:1px solid var(--divider)}
+.modal-body-text{font-size:.9rem;line-height:1.75;color:var(--text)}
+.modal-body-text p{margin-bottom:10px}
+.modal-body-text h1,.modal-body-text h2,.modal-body-text h3,.modal-body-text h4{color:var(--gold);font-size:1rem;margin:14px 0 8px;font-weight:700}
+.modal-body-text em{color:var(--muted);font-style:italic}
+.modal-loading{text-align:center;padding:30px 20px;color:var(--muted-2)}
+.modal-error{text-align:center;padding:24px 16px;color:var(--muted);font-size:.88rem}
+.modal-error strong{color:var(--gold);display:block;margin-bottom:6px}
+.word-list{display:flex;flex-direction:column;gap:8px}
+.word-row{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--bg);border:1px solid var(--divider);border-radius:var(--radius-sm)}
+.word-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);min-width:76px;text-align:right;direction:rtl;line-height:1.3}
+.word-info{flex:1;min-width:0}
+.word-en{font-size:.88rem;color:var(--text);font-weight:600;margin-bottom:2px}
+.word-translit{font-size:.72rem;color:var(--muted);font-style:italic}
 @media (max-width:420px){.q-quickrow{flex-direction:column}}
+@media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
 </head>
 <body>
@@ -557,6 +582,16 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <button class="nav-item" data-nav-tab="bookmarks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Bookmarks</span></button>
 <button class="nav-item" data-nav-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg><span>More</span></button>
 </nav>
+</div>
+
+<div class="modal-overlay" id="q-modal" onclick="if(event.target===this) closeQModal()">
+<div class="modal-sheet">
+<div class="modal-head">
+<div class="modal-title" id="q-modal-title">—</div>
+<button class="modal-close" onclick="closeQModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+</div>
+<div id="q-modal-content"></div>
+</div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -915,7 +950,7 @@ function renderSurah(){
   ar.ayahs.forEach((ayah, i) => {
     const eng = en.ayahs[i];
     const saved = userBookmarks.verses.includes(`${ar.number}:${ayah.numberInSurah}`);
-    html += `<div class="q-verse" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" id="q-verse-${ayah.numberInSurah}"><div class="q-verse-head"><span class="q-verse-num">${ayah.numberInSurah}</span><div class="q-verse-actions"><button class="q-act play-ayah" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="q-act bookmark-ayah ${saved?'active':''}" data-ayah="${ayah.numberInSurah}"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><p class="q-arabic">${ayah.text}</p><p class="q-translation">${eng.text}</p></div>`;
+    html += `<div class="q-verse" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" id="q-verse-${ayah.numberInSurah}"><div class="q-verse-head"><span class="q-verse-num">${ayah.numberInSurah}</span><div class="q-verse-actions"><button class="q-act play-ayah" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" title="Play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="q-act share-ayah" data-ayah="${ayah.numberInSurah}" title="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button><button class="q-act tafsir-ayah" data-ayah="${ayah.numberInSurah}" title="Tafsir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/></svg></button><button class="q-act word-ayah" data-ayah="${ayah.numberInSurah}" title="Word by word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></button><button class="q-act bookmark-ayah ${saved?'active':''}" data-ayah="${ayah.numberInSurah}" title="Bookmark"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><p class="q-arabic">${ayah.text}</p><p class="q-translation">${eng.text}</p></div>`;
   });
 
   container.innerHTML = html;
@@ -1028,6 +1063,15 @@ function attachQuranListeners(){
   document.getElementById('q-stop').addEventListener('click', stopQuranAudio);
   const autoT = document.getElementById('autoscroll-toggle');
   if(autoT) autoT.addEventListener('click', () => { QURAN.autoScroll = !QURAN.autoScroll; autoT.classList.toggle('on', QURAN.autoScroll); });
+  document.querySelectorAll('.share-ayah').forEach(btn => {
+    btn.addEventListener('click', () => shareVerse(parseInt(btn.dataset.ayah)));
+  });
+  document.querySelectorAll('.tafsir-ayah').forEach(btn => {
+    btn.addEventListener('click', () => openTafsir(parseInt(btn.dataset.ayah)));
+  });
+  document.querySelectorAll('.word-ayah').forEach(btn => {
+    btn.addEventListener('click', () => openWordByWord(parseInt(btn.dataset.ayah)));
+  });
 }
 
 async function playAyah(ayahNum, globalAyah, autoAdvance){
@@ -1583,35 +1627,4 @@ function renderGive(){
     <a class="gv-card" href="https://islamic-relief.org/palestine" target="_blank" rel="noopener"><div class="gv-card-icon">🇵🇸</div><div class="gv-card-name">Islamic Relief — Palestine</div><div class="gv-card-desc">Emergency relief, food, water, and medical aid for the people of Gaza.</div><span class="gv-tag">Emergency Aid</span></a>
     <div class="gv-heading">🤲 Zakat &amp; Sadaqah</div>
     <a class="gv-card" href="https://islamic-relief.org" target="_blank" rel="noopener"><div class="gv-card-icon">🕋</div><div class="gv-card-name">Islamic Relief</div><div class="gv-card-desc">One of the largest Muslim NGOs — zakat-eligible projects worldwide.</div><span class="gv-tag">Zakat Eligible</span></a>
-    <a class="gv-card" href="https://www.muslimaid.org" target="_blank" rel="noopener"><div class="gv-card-icon">🌍</div><div class="gv-card-name">Muslim Aid</div><div class="gv-card-desc">Serving humanity since 1985 — food, water, orphan care, education.</div><span class="gv-tag">Zakat Eligible</span></a>
-    <a class="gv-card" href="https://pennyappeal.org" target="_blank" rel="noopener"><div class="gv-card-icon">💧</div><div class="gv-card-name">Penny Appeal</div><div class="gv-card-desc">Water wells, orphan sponsorship, food packs, and emergency relief.</div><span class="gv-tag">Zakat Eligible</span></a>
-    <a class="gv-card" href="https://humanappeal.org.uk" target="_blank" rel="noopener"><div class="gv-card-icon">🌙</div><div class="gv-card-name">Human Appeal</div><div class="gv-card-desc">Zakat-eligible projects in over 25 countries — orphans, water, food.</div><span class="gv-tag">Zakat Eligible</span></a>
-    <div class="gv-heading">🌐 Crowdfunding</div>
-    <a class="gv-card" href="https://www.launchgood.com" target="_blank" rel="noopener"><div class="gv-card-icon">🚀</div><div class="gv-card-name">LaunchGood</div><div class="gv-card-desc">Crowdfunding platform for Muslim projects worldwide.</div><span class="gv-tag">Crowdfunding</span></a>
-    <a class="gv-card" href="https://www.qurbani.com" target="_blank" rel="noopener"><div class="gv-card-icon">🐑</div><div class="gv-card-name">Qurbani.com</div><div class="gv-card-desc">Qurbani and aqiqah services with full transparency.</div><span class="gv-tag">Qurbani</span></a>
-  `;
-}
-
-function updateJumuahStatus(){
-  const el = document.getElementById('jumuah-status');
-  if(!el) return;
-  const day = new Date().getDay();
-  if(day === 5){ el.textContent = 'Open today — tap to read'; }
-  else{
-    const diff = (5 - day + 7) % 7 || 7;
-    el.textContent = `Opens in ${diff} day${diff===1?'':'s'} (Friday)`;
-  }
-}
-updateJumuahStatus();
-
-loadSurahList().then(() => { renderLastRead(); });
-
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('splash').classList.add('hide');
-    setTimeout(() => document.getElementById('splash').remove(), 900);
-  }, 1500);
-});
-</script>
-</body>
-                            </html>
+    <a class="gv-card" href="https://www.m
