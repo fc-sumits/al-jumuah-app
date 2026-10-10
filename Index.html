@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B3D2E">
+<title>Al-Jumu'ah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#0A0F0D;
+--card:#16211C;
+--card-hover:#1c2a23;
+--card-border:rgba(212,175,55,0.12);
+--card-border-glow:rgba(212,175,55,0.45);
+--gold:#D4AF37;
+--gold-soft:rgba(212,175,55,0.15);
+--emerald:#2A8A6A;
+--emerald-soft:rgba(42,138,106,0.18);
+--text:#E8E4DC;
+--muted:#A8B0A8;
+--muted-2:#6f766f;
+--divider:rgba(212,175,55,0.08);
+--shadow:0 8px 24px rgba(0,0,0,0.35);
+--radius-sm:10px;
+--radius-md:16px;
+--radius-lg:22px;
+--font-arabic:'Amiri',serif;
+--font-body:'Nunito',sans-serif;
+--nav-height:70px;
+}
+[data-theme="light"]{
+--bg:#F5F0E8;
+--card:#FFFFFF;
+--card-hover:#FBF8F1;
+--card-border:rgba(11,61,46,0.10);
+--card-border-glow:rgba(201,162,39,0.55);
+--gold:#C9A227;
+--gold-soft:rgba(201,162,39,0.12);
+--emerald:#0B3D2E;
+--emerald-soft:rgba(11,61,46,0.06);
+--text:#1A1A1A;
+--muted:#4A4A4A;
+--muted-2:#8A8A8A;
+--divider:rgba(11,61,46,0.08);
+--shadow:0 8px 24px rgba(11,61,46,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{
+font-family:var(--font-body);
+background:var(--bg);
+color:var(--text);
+line-height:1.5;
+transition:background .4s ease,color .4s ease;
+user-select:none;
+-webkit-user-select:none;
+}
+::-webkit-scrollbar{width:0;height:0}
+
+/* ============ SPLASH ============ */
+#splash{
+position:fixed;inset:0;z-index:9999;
+background:linear-gradient(160deg,#0A1F19 0%,#0B3D2E 50%,#0A1F19 100%);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+gap:.5rem;
+transition:opacity .8s ease,visibility .8s ease;
+}
+#splash.hide{opacity:0;visibility:hidden}
+.splash-arabic{
+font-family:var(--font-arabic);
+font-size:4.5rem;
+color:#D4AF37;
+line-height:1;
+opacity:0;
+animation:splashIn .9s ease forwards;
+text-shadow:0 0 40px rgba(212,175,55,0.35);
+}
+.splash-name{
+font-family:var(--font-body);
+font-size:1.4rem;
+font-weight:600;
+color:#E8E4DC;
+letter-spacing:.05em;
+opacity:0;
+animation:splashIn .9s ease .35s forwards;
+}
+.splash-by{
+font-family:var(--font-body);
+font-size:.85rem;
+color:rgba(232,228,220,0.55);
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-top:.35rem;
+opacity:0;
+animation:splashIn .9s ease .7s forwards;
+}
+@keyframes splashIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ APP LAYOUT ============ */
+.app{
+position:fixed;inset:0;
+display:flex;flex-direction:column;
+overflow:hidden;
+}
+
+/* Header */
+header.app-header{
+flex-shrink:0;
+padding:calc(env(safe-area-inset-top,0) + 14px) 18px 12px;
+display:flex;align-items:center;justify-content:space-between;
+background:var(--bg);
+border-bottom:1px solid var(--divider);
+transition:background .4s ease,border-color .4s ease;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-arabic{
+font-family:var(--font-arabic);
+font-size:1.85rem;
+color:var(--gold);
+line-height:1;
+}
+.brand-divider{
+width:1px;height:24px;
+background:var(--divider);
+}
+.brand-name{
+font-family:var(--font-body);
+font-size:1.15rem;font-weight:700;
+color:var(--text);
+letter-spacing:.01em;
+}
+.icon-btn{
+background:transparent;border:none;
+width:42px;height:42px;
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+cursor:pointer;
+color:var(--muted);
+transition:background .2s ease,color .2s ease,transform .15s ease;
+}
+.icon-btn:active{transform:scale(.9)}
+.icon-btn:hover{background:var(--gold-soft);color:var(--gold)}
+.icon-btn svg{width:22px;height:22px;stroke-width:1.8}
+
+/* Greeting */
+.greeting{
+flex-shrink:0;
+padding:14px 18px 6px;
+display:flex;align-items:center;gap:10px;
+}
+.greeting-arabic{
+font-family:var(--font-arabic);
+font-size:1.05rem;
+color:var(--text);
+}
+.greeting-sep{color:var(--muted-2);font-size:.9rem}
+.greeting-date{
+font-size:.82rem;
+color:var(--muted);
+letter-spacing:.02em;
+}
+
+/* Main scroll area */
+main.app-main{
+flex:1;
+overflow-y:auto;
+overflow-x:hidden;
+-webkit-overflow-scrolling:touch;
+padding:8px 14px calc(var(--nav-height) + env(safe-area-inset-bottom,0) + 24px);
+scroll-behavior:smooth;
+}
+
+/* Pages */
+.page{display:none;animation:pageIn .28s ease}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ HOME TILES ============ */
+.tile{
+display:flex;align-items:center;gap:14px;
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius-md);
+padding:16px 16px 16px 14px;
+margin-bottom:10px;
+cursor:pointer;
+transition:background .2s ease,transform .15s ease,border-color .2s ease,box-shadow .3s ease;
+position:relative;
+}
+.tile:hover{background:var(--card-hover)}
+.tile:active{transform:scale(.985)}
+.tile.glow{
+border-color:var(--card-border-glow);
+box-shadow:0 0 0 1px rgba(212,175,55,0.15),0 0 26px rgba(212,175,55,0.14);
+}
+.tile.dimmed{opacity:.65}
+
+.tile-icon{
+flex-shrink:0;
+width:52px;height:52px;
+border-radius:14px;
+background:var(--emerald-soft);
+display:flex;align-items:center;justify-content:center;
+color:var(--gold);
+}
+.tile-icon svg{width:26px;height:26px;stroke-width:1.6}
+.tile.glow .tile-icon{background:var(--gold-soft)}
+
+.tile-body{flex:1;min-width:0}
+.tile-title{
+font-size:1.02rem;
+font-weight:700;
+color:var(--text);
+margin-bottom:2px;
+letter-spacing:.005em;
+}
+.tile-sub{
+font-size:.83rem;
+color:var(--muted);
+margin-bottom:5px;
+}
+.tile-status{
+font-size:.76rem;
+color:var(--gold);
+display:flex;align-items:center;gap:5px;
+font-weight:600;
+letter-spacing:.01em;
+}
+.tile-status svg{width:12px;height:12px;stroke-width:2}
+.tile-chevron{
+flex-shrink:0;
+color:var(--muted-2);
+opacity:.7;
+}
+.tile-chevron svg{width:18px;height:18px;stroke-width:2}
+
+/* ============ TOOLS CATEGORIES ============ */
+.cat{
+margin-bottom:12px;
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius-md);
+overflow:hidden;
+}
+.cat-head{
+display:flex;align-items:center;justify-content:space-between;
+padding:14px 16px;
+cursor:pointer;
+transition:background .2s ease;
+}
+.cat-head:hover{background:var(--card-hover)}
+.cat-head-left{display:flex;align-items:center;gap:10px}
+.cat-icon{color:var(--gold);display:flex;align-items:center}
+.cat-icon svg{width:20px;height:20px;stroke-width:1.7}
+.cat-title{
+font-size:.95rem;font-weight:700;color:var(--gold);
+letter-spacing:.01em;
+}
+.cat-chev{
+color:var(--muted-2);
+transition:transform .3s ease;
+}
+.cat-chev svg{width:16px;height:16px;stroke-width:2}
+.cat.open .cat-chev{transform:rotate(180deg)}
+.cat-body{
+max-height:0;
+overflow:hidden;
+transition:max-height .35s ease;
+}
+.cat.open .cat-body{max-height:600px}
+.cat-tools{
+padding:0 12px 12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+.tool-pill{
+padding:11px 12px;
+background:var(--bg);
+border:1px solid var(--divider);
+border-radius:10px;
+font-size:.82rem;
+color:var(--text);
+text-align:center;
+cursor:pointer;
+transition:background .2s ease,border-color .2s ease,transform .15s ease;
+font-weight:500;
+}
+.tool-pill:hover{background:var(--card-hover);border-color:var(--gold-soft)}
+.tool-pill:active{transform:scale(.95)}
+.tool-pill.wide{grid-column:1/-1}
+
+/* ============ BOOKMARKS ============ */
+.bm-tabs{
+display:flex;
+gap:6px;
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:999px;
+padding:5px;
+margin-bottom:14px;
+}
+.bm-tab{
+flex:1;
+padding:9px 12px;
+border-radius:999px;
+border:none;
+background:transparent;
+color:var(--muted);
+font-family:var(--font-body);
+font-size:.83rem;
+font-weight:600;
+cursor:pointer;
+transition:all .25s ease;
+}
+.bm-tab.active{
+background:var(--gold);
+color:#0A0F0D;
+}
+.bm-panel{display:none}
+.bm-panel.active{display:block;animation:pageIn .25s ease}
+
+.bm-item{
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius-md);
+padding:14px 16px;
+margin-bottom:10px;
+position:relative;
+}
+.bm-item-head{
+display:flex;justify-content:space-between;align-items:center;
+margin-bottom:8px;
+}
+.bm-ref{
+font-size:.76rem;font-weight:700;color:var(--gold);
+letter-spacing:.02em;
+}
+.bm-arabic{
+font-family:var(--font-arabic);
+font-size:1.15rem;line-height:1.9;
+text-align:right;direction:rtl;
+color:var(--text);
+margin-bottom:6px;
+}
+.bm-text{
+font-size:.85rem;line-height:1.6;
+color:var(--muted);
+}
+.bm-star{
+color:var(--gold);
+}
+.bm-star svg{width:16px;height:16px}
+.bm-empty{
+text-align:center;
+padding:50px 20px;
+color:var(--muted-2);
+font-size:.9rem;
+}
+.bm-empty-icon{
+display:block;margin:0 auto 14px;
+width:52px;height:52px;
+color:var(--muted-2);
+opacity:.4;
+}
+.bm-empty-icon svg{width:100%;height:100%;stroke-width:1.5}
+
+/* ============ MORE ============ */
+.more-item{
+display:flex;align-items:center;gap:14px;
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius-md);
+padding:14px 16px;
+margin-bottom:8px;
+cursor:pointer;
+transition:background .2s ease,transform .15s ease;
+}
+.more-item:active{transform:scale(.985)}
+.more-item:hover{background:var(--card-hover)}
+.more-icon{
+width:38px;height:38px;
+border-radius:10px;
+background:var(--emerald-soft);
+display:flex;align-items:center;justify-content:center;
+color:var(--gold);
+flex-shrink:0;
+}
+.more-icon svg{width:20px;height:20px;stroke-width:1.7}
+.more-body{flex:1;min-width:0}
+.more-title{font-size:.94rem;font-weight:600;color:var(--text)}
+.more-sub{font-size:.78rem;color:var(--muted);margin-top:1px;word-break:break-all}
+.more-chev{color:var(--muted-2)}
+.more-chev svg{width:16px;height:16px;stroke-width:2}
+.version{
+text-align:center;
+font-size:.75rem;
+color:var(--muted-2);
+margin-top:20px;
+letter-spacing:.05em;
+}
+
+/* ============ BOTTOM NAV ============ */
+nav.bottom-nav{
+position:absolute;
+left:0;right:0;bottom:0;
+height:calc(var(--nav-height) + env(safe-area-inset-bottom,0));
+padding-bottom:env(safe-area-inset-bottom,0);
+background:var(--bg);
+border-top:1px solid var(--divider);
+display:flex;
+align-items:stretch;
+z-index:100;
+transition:background .4s ease,border-color .4s ease;
+}
+.nav-item{
+flex:1;
+background:transparent;border:none;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+gap:3px;
+color:var(--muted-2);
+font-family:var(--font-body);
+font-size:.68rem;
+font-weight:600;
+letter-spacing:.02em;
+cursor:pointer;
+transition:color .25s ease;
+padding:6px 0 4px;
+position:relative;
+}
+.nav-item svg{width:22px;height:22px;stroke-width:1.7;transition:transform .25s ease}
+.nav-item.active{color:var(--gold)}
+.nav-item.active svg{transform:translateY(-1px)}
+.nav-item:active svg{transform:scale(.88)}
+
+/* ============ SETTINGS ============ */
+.settings-header{
+display:flex;align-items:center;gap:12px;
+padding:6px 4px 16px;
+}
+.back-btn{
+width:38px;height:38px;
+border-radius:50%;
+background:var(--card);
+border:1px solid var(--card-border);
+display:flex;align-items:center;justify-content:center;
+color:var(--text);
+cursor:pointer;
+}
+.back-btn svg{width:18px;height:18px;stroke-width:2}
+.settings-title{
+font-size:1.25rem;
+font-weight:700;
+color:var(--text);
+}
+.settings-group{
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius-md);
+margin-bottom:12px;
+overflow:hidden;
+}
+.settings-group-title{
+font-size:.7rem;
+font-weight:700;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--gold);
+padding:14px 16px 4px;
+}
+.setting-row{
+display:flex;align-items:center;justify-content:space-between;
+padding:13px 16px;
+border-top:1px solid var(--divider);
+cursor:pointer;
+transition:background .2s ease;
+gap:12px;
+}
+.setting-row:first-of-type{border-top:none}
+.setting-row:hover{background:var(--card-hover)}
+.setting-label{
+font-size:.9rem;
+color:var(--text);
+flex:1;
+min-width:0;
+}
+.setting-value{
+font-size:.82rem;
+color:var(--muted);
+text-align:right;
+max-width:55%;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+.setting-row.disabled{opacity:.5;cursor:not-allowed}
+
+/* Segmented control (theme, font size) */
+.segmented{
+display:flex;
+gap:4px;
+background:var(--bg);
+border-radius:10px;
+padding:3px;
+}
+.segmented button{
+border:none;
+background:transparent;
+color:var(--muted);
+font-family:var(--font-body);
+font-size:.78rem;
+font-weight:600;
+padding:6px 12px;
+border-radius:8px;
+cursor:pointer;
+transition:all .2s ease;
+}
+.segmented button.active{
+background:var(--gold);
+color:#0A0F0D;
+}
+
+/* Toggle switch */
+.toggle{
+width:44px;height:26px;
+border-radius:999px;
+background:var(--muted-2);
+position:relative;
+cursor:pointer;
+transition:background .25s ease;
+flex-shrink:0;
+}
+.toggle::after{
+content:'';
+position:absolute;
+top:3px;left:3px;
+width:20px;height:20px;
+border-radius:50%;
+background:#fff;
+transition:transform .25s ease;
+}
+.toggle.on{background:var(--gold)}
+.toggle.on::after{transform:translateX(18px)}
+
+/* ============ TOAST ============ */
+.toast{
+position:fixed;
+bottom:calc(var(--nav-height) + env(safe-area-inset-bottom,0) + 20px);
+left:50%;transform:translateX(-50%);
+background:var(--emerald);
+color:#fff;
+padding:.7rem 1.3rem;
+border-radius:999px;
+font-size:.85rem;
+z-index:99999;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+animation:toastIn .3s ease;
+max-width:80vw;text-align:center;
+}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+<span class="splash-arabic">الجمعة</span>
+<span class="splash-name">Al-Jumu'ah</span>
+<span class="splash-by">By FC</span>
+</div>
+
+<div class="app">
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-arabic">الجمعة</span>
+      <span class="brand-divider"></span>
+      <span class="brand-name">Al-Jumu'ah</span>
+    </div>
+    <button class="icon-btn" id="open-settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+  </header>
+
+  <div class="greeting" id="greeting">
+    <span class="greeting-arabic">السلام عليكم</span>
+    <span class="greeting-sep">·</span>
+    <span class="greeting-date" id="hijri-date">—</span>
+  </div>
+
+  <main class="app-main" id="app-main">
+
+    <!-- HOME -->
+    <section class="page active" data-page="home">
+      <div class="tile" data-nav="jumuah">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 6c-3 0-5 2-5 5v8h10v-8c0-3-2-5-5-5z"/><path d="M4 22h16"/><circle cx="12" cy="4" r="1.5"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Jumu'ah</div>
+          <div class="tile-sub">Friday special menu</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span id="jumuah-status">Opens Friday</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+
+      <div class="tile" data-nav="quran">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="10" y1="7" x2="16" y2="7"/><line x1="10" y1="11" x2="16" y2="11"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Quran</div>
+          <div class="tile-sub">Read, understand &amp; reflect</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Continue: Al-Kahf</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+
+      <div class="tile" data-nav="hadith">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/><path d="M8 10h8M8 14h6"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Hadith</div>
+          <div class="tile-sub">Search &amp; read with grades</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span>Random hadith today</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+
+      <div class="tile" data-nav="dhikr">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Dhikr</div>
+          <div class="tile-sub">Daily, morning &amp; evening</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8-4 8-4 8-4-4-4-8 4-8 4-8z"/></svg>
+            <span>Streak: 0 days 🔥</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+
+      <div class="tile" data-nav="give">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Give</div>
+          <div class="tile-sub">Sadaqah &amp; Zakat</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Support the Ummah</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+
+      <div class="tile glow" data-nav="prayer">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M3 21h18"/><path d="M5 21V12a7 7 0 0 1 14 0v9"/><path d="M12 12v3"/><circle cx="12" cy="6" r="1.5"/></svg>
+        </div>
+        <div class="tile-body">
+          <div class="tile-title">Prayer Times</div>
+          <div class="tile-sub">Daily prayers</div>
+          <div class="tile-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Set your location</span>
+          </div>
+        </div>
+        <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="page" data-page="tools">
+      <div class="cat open" data-cat="1">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M4.93 19.07l2.12-2.12M12 22v-3M19.07 19.07l-2.12-2.12M22 12h-3M19.07 4.93l-2.12 2.12"/></svg></span>
+            <span class="cat-title">Worship &amp; Prayer</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Qibla compass</div>
+          <div class="tool-pill">Prayer tracker</div>
+          <div class="tool-pill">Fasting tracker</div>
+          <div class="tool-pill">Tasbih counter</div>
+          <div class="tool-pill">Tasbih sounds</div>
+          <div class="tool-pill">Custom dhikr</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="2">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="cat-title">Quran &amp; Memorization</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill wide">Quran khatm tracker</div>
+          <div class="tool-pill">Tajweed basics</div>
+          <div class="tool-pill">Arabic alphabet</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="3">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <span class="cat-title">Learning &amp; Guidance</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Wudu guide</div>
+          <div class="tool-pill">Salah guide</div>
+          <div class="tool-pill">New Muslim</div>
+          <div class="tool-pill">Seerah timeline</div>
+          <div class="tool-pill">Prophets' stories</div>
+          <div class="tool-pill">Sahaba stories</div>
+          <div class="tool-pill wide">Islamic quiz</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="4">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-11a7 7 0 0 1 14 0c0 6.65-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="cat-title">Duas &amp; Adhkar</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Duas by category</div>
+          <div class="tool-pill">Dua of the day</div>
+          <div class="tool-pill">Adhkar library</div>
+          <div class="tool-pill">Verse of the day</div>
+          <div class="tool-pill">Hadith of the day</div>
+          <div class="tool-pill">Durood collection</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="5">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+            <span class="cat-title">Calendar &amp; Dates</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Hijri calendar</div>
+          <div class="tool-pill">Key Islamic dates</div>
+          <div class="tool-pill">Hijri converter</div>
+          <div class="tool-pill">Islamic months</div>
+          <div class="tool-pill wide">Ramadan mode</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="6">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span>
+            <span class="cat-title">Pilgrimage</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Umrah guide</div>
+          <div class="tool-pill">Hajj guide</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="7">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></span>
+            <span class="cat-title">Calculators</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Zakat calculator</div>
+          <div class="tool-pill">Zakat al-Fitr</div>
+          <div class="tool-pill wide">Asma ul-Husna</div>
+        </div></div>
+      </div>
+
+      <div class="cat" data-cat="8">
+        <div class="cat-head">
+          <div class="cat-head-left">
+            <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="cat-title">Extra</span>
+          </div>
+          <span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="cat-body"><div class="cat-tools">
+          <div class="tool-pill">Daily Islamic fact</div>
+          <div class="tool-pill">Visit our website</div>
+          <div class="tool-pill wide">About the app</div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- BOOKMARKS -->
+    <section class="page" data-page="bookmarks">
+      <div class="bm-tabs">
+        <button class="bm-tab active" data-bm="verses">Verses</button>
+        <button class="bm-tab" data-bm="hadith">Hadith</button>
+        <button class="bm-tab" data-bm="notes">Notes</button>
+      </div>
+      <div class="bm-panel active" data-bm-panel="verses">
+        <div class="bm-empty">
+          <span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          No saved verses yet.<br>Star a verse while reading to save it here.
+        </div>
+      </div>
+      <div class="bm-panel" data-bm-panel="hadith">
+        <div class="bm-empty">
+          <span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/></svg></span>
+          No saved hadith yet.<br>Star a hadith while reading to save it here.
+        </div>
+      </div>
+      <div class="bm-panel" data-bm-panel="notes">
+        <div class="bm-empty">
+          <span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          No notes yet.<br>Add a private reflection on any verse or hadith.
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE -->
+    <section class="page" data-page="more">
+      <div class="more-item" data-action="about">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">About Al-Jumu'ah</div>
+          <div class="more-sub">Our mission and what we offer</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="website">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Visit our website</div>
+          <div class="more-sub">fc-sumits.github.io/Al--jumuah</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="share">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Share the app</div>
+          <div class="more-sub">Help others benefit</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="support">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Support us</div>
+          <div class="more-sub">Sadaqah Jariyah</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="rate">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Rate us</div>
+          <div class="more-sub">Your feedback matters</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="privacy">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Privacy policy</div>
+          <div class="more-sub">Your data and privacy</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="more-item" data-action="contact">
+        <div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="more-body">
+          <div class="more-title">Contact</div>
+          <div class="more-sub">Get in touch</div>
+        </div>
+        <div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="version">Version 1.0.0</div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="page" data-page="settings">
+      <div class="settings-header">
+        <button class="back-btn" id="back-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <span class="settings-title">Settings</span>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Appearance</div>
+        <div class="setting-row">
+          <span class="setting-label">Theme</span>
+          <div class="segmented" id="theme-seg">
+            <button data-theme-opt="auto">Auto</button>
+            <button data-theme-opt="dark">Dark</button>
+            <button data-theme-opt="light">Light</button>
+          </div>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Text size</span>
+          <div class="segmented" id="size-seg">
+            <button data-size="small">S</button>
+            <button data-size="medium" class="active">M</button>
+            <button data-size="large">L</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Notifications</div>
+        <div class="setting-row">
+          <span class="setting-label">Prayer time reminders</span>
+          <div class="toggle" data-toggle="prayer-remind"></div>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Daily verse / hadith</span>
+          <div class="toggle" data-toggle="daily-remind"></div>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Friday reminder</span>
+          <div class="toggle on" data-toggle="friday-remind"></div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Account</div>
+        <div class="setting-row" data-action="signin">
+          <span class="setting-label">Sign in</span>
+          <span class="setting-value">Not signed in</span>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Prayer</div>
+        <div class="setting-row">
+          <span class="setting-label">Location</span>
+          <span class="setting-value">Not set</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Calculation method</span>
+          <span class="setting-value">MWL</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Asr madhab</span>
+          <span class="setting-value">Standard</span>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Storage &amp; Audio</div>
+        <div class="setting-row">
+          <span class="setting-label">Audio quality</span>
+          <span class="setting-value">64 kbps</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Downloaded audio</span>
+          <span class="setting-value">0 MB</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Clear cache</span>
+          <span class="setting-value">›</span>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">About</div>
+        <div class="setting-row">
+          <span class="setting-label">Version</span>
+          <span class="setting-value">1.0.0</span>
+        </div>
+        <div class="setting-row" data-action="website">
+          <span class="setting-label">Visit website</span>
+          <span class="setting-value">›</span>
+        </div>
+        <div class="setting-row" data-action="share">
+          <span class="setting-label">Share the app</span>
+          <span class="setting-value">›</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-nav-tab="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" data-nav-tab="tools">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <span>Tools</span>
+    </button>
+    <button class="nav-item" data-nav-tab="bookmarks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span>Bookmarks</span>
+    </button>
+    <button class="nav-item" data-nav-tab="more">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg>
+      <span>More</span>
+    </button>
+  </nav>
+</div>
+
+<script>
+// ============ CONFIG ============
+const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
+
+// ============ THEME ============
+const themeSeg = document.getElementById('theme-seg');
+const sizeSeg = document.getElementById('size-seg');
+
+function applyTheme(mode){
+  let resolved = mode;
+  if(mode === 'auto'){
+    resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', resolved);
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', resolved === 'dark' ? '#0B3D2E' : '#F5F0E8');
+  localStorage.setItem('app-theme', mode);
+  themeSeg.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.themeOpt === mode));
+}
+
+function applySize(size){
+  const sizes = { small:'14px', medium:'16px', large:'18px' };
+  document.documentElement.style.fontSize = sizes[size] || '16px';
+  localStorage.setItem('app-size', size);
+  sizeSeg.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.size === size));
+}
+
+themeSeg.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  applyTheme(btn.dataset.themeOpt);
+});
+sizeSeg.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  applySize(btn.dataset.size);
+});
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+  if(localStorage.getItem('app-theme') === 'auto') applyTheme('auto');
+});
+
+applyTheme(localStorage.getItem('app-theme') || 'auto');
+applySize(localStorage.getItem('app-size') || 'medium');
+
+// ============ HIJRI DATE ============
+function updateHijri(){
+  try{
+    const fmt = new Intl.DateTimeFormat('en-TN-u-ca-islamic-umalqura', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+    const parts = fmt.formatToParts(new Date());
+    const get = t => parts.find(p=>p.type===t)?.value || '';
+    document.getElementById('hijri-date').textContent = `${get('day')} ${get('month')} ${get('year').replace(' AH','')} AH`;
+  }catch(e){
+    document.getElementById('hijri-date').textContent = '—';
+  }
+}
+updateHijri();
+
+// ============ NAVIGATION ============
+const mainEl = document.getElementById('app-main');
+const allPages = document.querySelectorAll('.page');
+const navItems = document.querySelectorAll('.nav-item');
+
+function showPage(name){
+  allPages.forEach(p=>p.classList.toggle('active', p.dataset.page === name));
+  navItems.forEach(n=>{
+    if(n.dataset.navTab) n.classList.toggle('active', n.dataset.navTab === name);
+  });
+  mainEl.scrollTop = 0;
+}
+
+navItems.forEach(item=>{
+  item.addEventListener('click', ()=>{
+    if(item.dataset.navTab) showPage(item.dataset.navTab);
+  });
+});
+
+// ============ SETTINGS ============
+document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
+document.getElementById('back-btn').addEventListener('click', ()=>showPage('home'));
+
+// ============ TOOLS CATEGORIES ============
+document.querySelectorAll('.cat-head').forEach(head=>{
+  head.addEventListener('click', ()=>{
+    const cat = head.parentElement;
+    cat.classList.toggle('open');
+  });
+});
+
+// ============ BOOKMARKS TABS ============
+document.querySelectorAll('.bm-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.bm-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.bm-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`[data-bm-panel="${tab.dataset.bm}"]`).classList.add('active');
+  });
+});
+
+// ============ TILES + ACTIONS ============
+document.querySelectorAll('.tile').forEach(tile=>{
+  tile.addEventListener('click', ()=>{
+    const target = tile.dataset.nav;
+    showToast(`${target.charAt(0).toUpperCase()+target.slice(1)} — coming in Round 2`);
+  });
+});
+
+document.querySelectorAll('.tool-pill').forEach(pill=>{
+  pill.addEventListener('click', ()=>{
+    showToast(`${pill.textContent} — coming soon`);
+  });
+});
+
+document.querySelectorAll('.more-item').forEach(item=>{
+  item.addEventListener('click', ()=>{
+    const action = item.dataset.action;
+    if(action === 'website'){
+      window.open(WEBSITE_URL, '_blank');
+    } else if(action === 'share'){
+      if(navigator.share){
+        navigator.share({ title: 'Al-Jumu\'ah', text: 'Check out this app', url: WEBSITE_URL }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(WEBSITE_URL).then(()=>showToast('Link copied'));
+      }
+    } else {
+      showToast(`${item.querySelector('.more-title').textContent} — coming soon`);
+    }
+  });
+});
+
+document.querySelectorAll('.setting-row').forEach(row=>{
+  row.addEventListener('click', ()=>{
+    if(row.classList.contains('disabled')) return;
+    const action = row.dataset.action;
+    if(action === 'website'){
+      window.open(WEBSITE_URL, '_blank');
+    } else if(action === 'share'){
+      if(navigator.share){
+        navigator.share({ title: 'Al-Jumu\'ah', text: 'Check out this app', url: WEBSITE_URL }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(WEBSITE_URL).then(()=>showToast('Link copied'));
+      }
+    } else if(row.querySelector('.toggle')){
+      row.querySelector('.toggle').classList.toggle('on');
+    } else if(action){
+      showToast('Coming soon');
+    }
+  });
+});
+
+// ============ TOAST ============
+let toastTimer;
+function showToast(msg){
+  let existing = document.querySelector('.toast');
+  if(existing) existing.remove();
+  clearTimeout(toastTimer);
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  toastTimer = setTimeout(()=>t.remove(), 2200);
+}
+
+// ============ SPLASH ============
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{
+    document.getElementById('splash').classList.add('hide');
+    setTimeout(()=>document.getElementById('splash').remove(), 900);
+  }, 1500);
+});
+</script>
+</body>
+  </html>
