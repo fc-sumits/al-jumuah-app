@@ -641,7 +641,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .rm-dua:last-child{margin-bottom:0}
 .rm-dua-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:8px}
 .rm-dua-arabic{font-family:var(--font-arabic);font-size:1.2rem;color:var(--text);text-align:right;direction:rtl;line-height:1.8;margin-bottom:6px}
-.rm-dua-translit{font-size:.75rem;font-style:italic;color:var(--gold);margin-bottom:4px}
+.rm-dua-translit{font-size:.75rem;font-style:italic;color:var(--gold);margin-bottom:4px;line-height:1.5}
 .rm-dua-meaning{font-size:.8rem;color:var(--muted);line-height:1.5}
 .rm-last10{background:linear-gradient(135deg,rgba(212,175,55,.22),rgba(42,138,106,.1));border:2px solid var(--gold);border-radius:var(--radius-md);padding:14px;margin-bottom:12px}
 .rm-last10-title{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;text-align:center}
@@ -732,10 +732,53 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .dr-btn{flex:1;background:transparent;border:1px solid var(--divider);color:var(--gold);border-radius:999px;padding:8px 12px;font-family:var(--font-body);font-size:.75rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .2s ease}
 .dr-btn:hover{border-color:var(--gold);background:var(--gold-soft)}
 .dr-btn svg{width:13px;height:13px;stroke-width:2}
-@media (max-width:420px){.q-quickrow{flex-direction:column}}
+.pg-intro{background:linear-gradient(135deg,rgba(42,138,106,.12),rgba(212,175,55,.06));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:14px;margin-bottom:14px;font-size:.85rem;color:var(--text);line-height:1.65}
+.pg-progress{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:14px}
+.pg-progress-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.pg-progress-bar{height:6px;background:var(--divider);border-radius:999px;overflow:hidden}
+.pg-progress-fill{height:100%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:999px;transition:width .4s ease}
+.pg-step{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:10px;transition:border-color .25s ease,background .25s ease}
+.pg-step.open{border-color:var(--gold)}
+.pg-step.done{border-color:var(--emerald);background:linear-gradient(135deg,rgba(42,138,106,.06),transparent)}
+.pg-step-head{display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer;transition:background .2s ease}
+.pg-step-head:hover{background:var(--card-hover)}
+.pg-step-icon{flex-shrink:0;width:50px;height:50px;border-radius:12px;background:var(--bg);border:1.5px solid var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);cursor:pointer;transition:all .25s ease;padding:9px}
+.pg-step-icon:hover{border-color:var(--gold);background:var(--gold-soft);transform:scale(1.05)}
+.pg-step-icon:active{transform:scale(.94)}
+.pg-step-icon.pulse{animation:pgPulse .5s ease}
+@keyframes pgPulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.55)}100%{box-shadow:0 0 0 16px rgba(212,175,55,0)}}
+.pg-step-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pg-step-body{flex:1;min-width:0}
+.pg-step-num{font-size:.6rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.pg-step-title{font-size:.94rem;font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.25}
+.pg-step-sub{font-size:.74rem;color:var(--muted);line-height:1.3}
+.pg-step-check{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:2px solid var(--divider);display:flex;align-items:center;justify-content:center;transition:all .2s ease;cursor:pointer;background:transparent}
+.pg-step.done .pg-step-check{background:var(--gold);border-color:var(--gold)}
+.pg-step-check svg{width:14px;height:14px;stroke:#0A0F0D;stroke-width:3;opacity:0;fill:none}
+.pg-step.done .pg-step-check svg{opacity:1}
+.pg-step-chev{flex-shrink:0;color:var(--muted-2);transition:transform .3s ease;margin-left:2px}
+.pg-step-chev svg{width:16px;height:16px;stroke-width:2}
+.pg-step.open .pg-step-chev{transform:rotate(180deg)}
+.pg-step-content{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s ease;padding:0 14px}
+.pg-step.open .pg-step-content{max-height:3000px;padding:0 14px 14px}
+.pg-step-content p{font-size:.88rem;line-height:1.75;color:var(--text);margin-bottom:12px}
+.pg-step-content p:last-child{margin-bottom:0}
+.pg-step-content strong{color:var(--gold);font-weight:700}
+.pg-step-content ul{list-style:none;padding:0;margin:0 0 12px 0}
+.pg-step-content li{position:relative;padding-left:22px;font-size:.86rem;line-height:1.7;color:var(--text);margin-bottom:8px}
+.pg-step-content li::before{content:'';position:absolute;left:6px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.pg-warn{background:rgba(212,175,55,.08);border-left:3px solid var(--gold);border-radius:6px;padding:10px 12px;font-size:.78rem;color:var(--muted);line-height:1.55;margin-top:12px}
+.pg-warn strong{color:var(--gold);display:block;margin-bottom:3px;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.pg-reset{width:100%;padding:11px;background:transparent;border:1px solid var(--divider);color:var(--muted);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;margin-top:10px;transition:all .2s ease}
+.pg-reset:hover{border-color:#d9534f;color:#d9534f}
+.pg-pillars{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.pg-pillar{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px;text-align:center}
+.pg-pillar-icon{font-size:1.3rem;margin-bottom:4px}
+.pg-pillar-name{font-size:.76rem;font-weight:700;color:var(--gold);line-height:1.2}
+@media (max-width:420px){.q-quickrow{flex-direction:column}.pg-step-icon{width:44px;height:44px;padding:8px}}
 @media (max-width:380px){.q-act{width:28px;height:28px}.q-act svg{width:13px;height:13px}}
 </style>
-  </head>
+</head>
 <body>
 
 <div id="splash">
@@ -917,7 +960,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 <div class="cat" data-cat="6">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span><span class="cat-title">Pilgrimage</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Umrah guide</div><div class="tool-pill">Hajj guide</div></div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill" data-tool="umrahGuide">🕋 Umrah guide</div><div class="tool-pill" data-tool="hajjGuide">🕋 Hajj guide</div></div></div>
 </div>
 <div class="cat" data-cat="7">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></span><span class="cat-title">Calculators</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -4431,6 +4474,7 @@ function renderDuaCategoryList(key){
       ${cat.duas.map((d,i)=>`
         <div class="dc-item" data-dc-item="${i}">
           <div class="dc-item-arabic">${d.ar}</div>
+          <div style="font-size:.78rem;font-style:italic;color:var(--gold);margin-bottom:5px;line-height:1.5">${d.translit}</div>
           <div class="dc-item-meaning">${d.en}</div>
         </div>
       `).join('')}
@@ -4664,6 +4708,309 @@ function shareTodayFromModal(type){
   else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>{});
 }
 
+/* ============ CATEGORY 6 — UMRAH GUIDE ============ */
+const UMRAH_ICONS = {
+  ihram:'<svg viewBox="0 0 24 24"><path d="M3 4c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M3 9c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M3 14c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/></svg>',
+  tawaf:'<svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6"/><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 2.34-5.66"/><polyline points="4 8 6 6 8 8"/></svg>',
+  maqam:'<svg viewBox="0 0 24 24"><path d="M6 20V10l6-6 6 6v10"/><path d="M6 20h12"/><circle cx="12" cy="14" r="1.5"/></svg>',
+  sai:'<svg viewBox="0 0 24 24"><path d="M2 18l4-8 4 8"/><path d="M14 18l4-8 4 8"/><line x1="9" y1="14" x2="15" y2="14"/></svg>',
+  halq:'<svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="20" y2="16"/><line x1="8.5" y1="16.5" x2="20" y2="8"/></svg>',
+  done:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>'
+};
+
+const UMRAH_STEPS = [
+  {key:'ihram', num:1, title:'Ihram', sub:'Niyyah & Talbiyah', content:`
+    <p><strong>Ihram</strong> is the sacred state a pilgrim enters before crossing the Miqat (the boundary around Makkah). It is both a physical and spiritual state — you wear simple clothing and commit to avoiding certain things until you complete Umrah.</p>
+    <p><strong>When to enter:</strong> before crossing the Miqat. If flying, most airlines announce shortly before the boundary — wear your Ihram garments before then and make your intention.</p>
+    <p><strong>The Niyyah (intention):</strong> in your heart, intend to perform Umrah for the sake of Allah. No need to say it loudly — a silent intention is valid.</p>
+    <p><strong>The Talbiyah</strong> is recited from the moment of Ihram until you begin Tawaf:</p>
+    <div class="rm-dua">
+      <div class="rm-dua-arabic">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</div>
+      <div class="rm-dua-translit">Labbayk Allahumma labbayk, labbayka la sharika laka labbayk, innal-hamda wan-ni\'mata laka wal-mulk, la sharika lak</div>
+      <div class="rm-dua-meaning">Here I am, O Allah, here I am. Here I am, You have no partner, here I am. Verily all praise, grace, and sovereignty belong to You. You have no partner.</div>
+    </div>
+    <p><strong>Restrictions of Ihram:</strong> no cutting hair or nails, no perfume, no marital relations, no hunting, no wearing stitched clothing (for men), no covering the head (for men), no face-veil or gloves (for women per most scholars).</p>
+    <div class="pg-warn"><strong>Common mistake</strong>Many pilgrims cross the Miqat without Ihram and then have to offer a penalty. Be prepared before the plane announces the boundary.</div>
+  `},
+  {key:'tawaf', num:2, title:'Tawaf', sub:'7 circuits of the Kaaba', content:`
+    <p><strong>Tawaf</strong> is the act of circling the Kaaba seven times, starting and ending at the Black Stone (Hajar al-Aswad), moving counterclockwise.</p>
+    <p><strong>Starting point:</strong> position yourself so the Black Stone is on your right shoulder. Point toward it and say: <em>"Bismillah, Allahu Akbar"</em>. If you can kiss it without harming anyone, do so — otherwise just point from a distance.</p>
+    <p><strong>The 7 circuits:</strong> each complete circle around the Kaaba counts as one. Between the Yemeni corner and the Black Stone, recite:</p>
+    <div class="rm-dua">
+      <div class="rm-dua-arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
+      <div class="rm-dua-translit">Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina \'adhab an-nar</div>
+      <div class="rm-dua-meaning">Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.</div>
+    </div>
+    <p>There is no fixed dua for the rest of the circuit — you may recite Quran, make personal dua, or say any dhikr.</p>
+    <div class="pg-warn"><strong>Common mistake</strong>Some pilgrims think each circuit needs a specific dua. That's not true — any dua is fine. Focus on presence of heart, not formulas.</div>
+  `},
+  {key:'maqam', num:3, title:'Prayer at Maqam Ibrahim', sub:'Two rak\'ahs after Tawaf', content:`
+    <p>After completing the 7 circuits of Tawaf, pray <strong>two rak'ahs</strong> behind Maqam Ibrahim (the station of Ibrahim). If it's too crowded (which is common), you may pray anywhere in Masjid al-Haram.</p>
+    <p><strong>What to recite:</strong> it's recommended to recite Surah Al-Kafirun in the first rak'ah and Surah Al-Ikhlas in the second. If you don't know them, any surah will do.</p>
+    <p>After the prayer, it's recommended to drink Zamzam water.</p>
+    <div class="pg-warn"><strong>Note</strong>There is no requirement to touch or kiss Maqam Ibrahim — praying behind it (or anywhere) is what matters.</div>
+  `},
+  {key:'sai', num:4, title:'Sa\'i', sub:'7 trips between Safa & Marwa', content:`
+    <p><strong>Sa'i</strong> is the walking between the hills of Safa and Marwa, in remembrance of Hajar's search for water for her son Ismail (AS).</p>
+    <p><strong>Starting at Safa:</strong> as you approach Safa, recite:</p>
+    <div class="rm-dua">
+      <div class="rm-dua-arabic">إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ</div>
+      <div class="rm-dua-translit">Innas-Safa wal-Marwata min sha\'a\'irillah</div>
+      <div class="rm-dua-meaning">Indeed, Safa and Marwa are among the symbols of Allah. (Quran 2:158)</div>
+    </div>
+    <p>Then face the Kaaba and say: <em>"Allahu Akbar"</em> and make dua. Then walk toward Marwa.</p>
+    <p><strong>The 7 trips:</strong> Safa → Marwa is trip 1. Marwa → Safa is trip 2. Continue until you have completed 7, ending at Marwa. Men jog lightly in the marked green-lit section between the two hills.</p>
+    <p>On each trip you may recite Quran, dhikr, and make personal dua.</p>
+    <div class="pg-warn"><strong>Common mistake</strong>People often miscount and stop at Safa after 7 trips. The 7th trip ends at <strong>Marwa</strong>.</div>
+  `},
+  {key:'halq', num:5, title:'Halq or Taqsir', sub:'Shaving or trimming the hair', content:`
+    <p>After Sa'i, men should shave their head (<strong>halq</strong>) or trim their hair (<strong>taqsir</strong>). Shaving is better for men, per the majority of scholars.</p>
+    <p>Women should trim a small amount — about a fingertip's length — from the ends of their hair.</p>
+    <p>This act marks the <strong>end of Ihram</strong>. After it, all the restrictions of Ihram are lifted.</p>
+    <div class="pg-warn"><strong>Common mistake</strong>Do not shave or trim before Sa'i is completed — the correct order is Tawaf → Maqam prayer → Sa'i → Halq.</div>
+  `},
+  {key:'done', num:6, title:'Completion', sub:'Umrah is complete', content:`
+    <p><strong>Alhamdulillah</strong> — your Umrah is now complete. All the restrictions of Ihram are lifted. You may return to your normal clothes, cut your nails, use perfume, etc.</p>
+    <p>Take a moment to thank Allah for allowing you to complete this journey. Make dua for yourself, your family, and the Ummah.</p>
+    <p>If you wish, you may perform multiple Umrahs, but they require re-entering Ihram from the nearest Miqat (e.g. Masjid Aisha in Makkah) — not from inside the Haram.</p>
+    <p style="text-align:center;font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);margin-top:14px;margin-bottom:6px">تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ</p>
+    <p style="text-align:center;font-size:.85rem;color:var(--muted);font-style:italic">May Allah accept it from us and from you.</p>
+  `}
+];
+
+function getUmrahProgress(){
+  try{ return JSON.parse(localStorage.getItem('umrah-progress') || '{}'); }catch(e){ return {}; }
+}
+function saveUmrahProgress(p){ localStorage.setItem('umrah-progress', JSON.stringify(p)); }
+
+let umrahOpenStep = -1;
+
+function renderUmrahGuide(){
+  const progress = getUmrahProgress();
+  const completed = UMRAH_STEPS.filter(s => progress[s.key]).length;
+  const total = UMRAH_STEPS.length;
+  const pct = Math.round((completed / total) * 100);
+
+  const stepsHtml = UMRAH_STEPS.map((s, i) => {
+    const done = !!progress[s.key];
+    const open = umrahOpenStep === i;
+    return `<div class="pg-step ${open?'open':''} ${done?'done':''}" data-us="${i}">
+      <div class="pg-step-head">
+        <div class="pg-step-icon" data-us-icon="${i}" title="Tap to expand">${UMRAH_ICONS[s.key]}</div>
+        <div class="pg-step-body">
+          <div class="pg-step-num">Step ${s.num} of ${total}</div>
+          <div class="pg-step-title">${s.title}</div>
+          <div class="pg-step-sub">${s.sub}</div>
+        </div>
+        <div class="pg-step-check" data-us-check="${i}"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="pg-step-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="pg-step-content">${s.content}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="pg-intro">🕋 <strong>Umrah</strong> is a short pilgrimage to Makkah that can be performed at any time of year. It involves four core rites: Ihram, Tawaf, Sa'i, and Halq/Taqsir.</div>
+      <div class="pg-progress">
+        <div class="pg-progress-head"><span>Progress</span><span>${completed} / ${total}</span></div>
+        <div class="pg-progress-bar"><div class="pg-progress-fill" style="width:${pct}%"></div></div>
+      </div>
+      ${stepsHtml}
+      <button class="pg-reset" id="umrah-reset">↺ Reset progress</button>
+      <div class="rm-disclaimer" style="margin-top:14px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>General guide only. For specific rulings, check with a qualified scholar or your local mosque.</span>
+      </div>
+    </div>`;
+
+  document.querySelectorAll('[data-us]').forEach(card => {
+    const i = parseInt(card.dataset.us);
+    card.querySelector('.pg-step-head').addEventListener('click', e => {
+      if(e.target.closest('[data-us-check]')) return;
+      umrahOpenStep = umrahOpenStep === i ? -1 : i;
+      renderUmrahGuide();
+    });
+    const iconEl = card.querySelector('[data-us-icon]');
+    if(iconEl){
+      iconEl.addEventListener('click', e => {
+        e.stopPropagation();
+        iconEl.classList.add('pulse');
+        setTimeout(() => iconEl.classList.remove('pulse'), 500);
+        umrahOpenStep = umrahOpenStep === i ? -1 : i;
+        setTimeout(() => renderUmrahGuide(), 350);
+      });
+    }
+    const checkEl = card.querySelector('[data-us-check]');
+    if(checkEl){
+      checkEl.addEventListener('click', e => {
+        e.stopPropagation();
+        const key = UMRAH_STEPS[i].key;
+        const p = getUmrahProgress();
+        p[key] = !p[key];
+        saveUmrahProgress(p);
+        if(p[key] && navigator.vibrate) navigator.vibrate(30);
+        renderUmrahGuide();
+      });
+    }
+  });
+
+  document.getElementById('umrah-reset').addEventListener('click', () => {
+    if(!confirm('Reset all Umrah progress?')) return;
+    localStorage.removeItem('umrah-progress');
+    umrahOpenStep = -1;
+    renderUmrahGuide();
+  });
+}
+
+/* ============ CATEGORY 6 — HAJJ GUIDE ============ */
+const HAJJ_ICONS = {
+  day8:'<svg viewBox="0 0 24 24"><path d="M12 5l7 9H5z"/><line x1="12" y1="5" x2="12" y2="14"/><line x1="5" y1="14" x2="19" y2="14"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+  day9:'<svg viewBox="0 0 24 24"><path d="M3 20l6-12 4 8 3-5 5 9"/><circle cx="18" cy="5" r="2"/></svg>',
+  day10:'<svg viewBox="0 0 24 24"><rect x="4" y="10" width="2" height="8"/><rect x="11" y="10" width="2" height="8"/><rect x="18" y="10" width="2" height="8"/><line x1="2" y1="19" x2="22" y2="19"/></svg>',
+  day11:'<svg viewBox="0 0 24 24"><rect x="4" y="8" width="3" height="10"/><rect x="10.5" y="8" width="3" height="10"/><rect x="17" y="8" width="3" height="10"/><line x1="2" y1="19" x2="22" y2="19"/></svg>',
+  day12:'<svg viewBox="0 0 24 24"><rect x="4" y="8" width="3" height="10"/><rect x="10.5" y="8" width="3" height="10"/><rect x="17" y="8" width="3" height="10"/><line x1="2" y1="19" x2="22" y2="19"/><circle cx="20" cy="5" r="1.5"/></svg>',
+  day13:'<svg viewBox="0 0 24 24"><rect x="4" y="8" width="3" height="10"/><rect x="10.5" y="8" width="3" height="10"/><rect x="17" y="8" width="3" height="10"/><line x1="2" y1="19" x2="22" y2="19"/><polyline points="17 5 19 3 21 5"/></svg>'
+};
+
+const HAJJ_DAYS = [
+  {key:'day8', num:'Day 8', date:'8 Dhul-Hijjah', title:'Yawm al-Tarwiyah', sub:'Departure to Mina', content:`
+    <p><strong>Yawm al-Tarwiyah</strong> ("the day of watering") is when pilgrims traditionally departed for Mina to prepare for Arafah.</p>
+    <ul>
+      <li>Enter Ihram (if not already in it) and make intention for Hajj</li>
+      <li>Recite the Talbiyah abundantly</li>
+      <li>Proceed to Mina (about 5 km from Makkah)</li>
+      <li>Pray Dhuhr, Asr, Maghrib, Isha, and Fajr there — each at its proper time, but shortened (Qasr) — 4 rak'ah prayers shortened to 2</li>
+      <li>Spend the night in Mina in prayer, dhikr, and rest</li>
+    </ul>
+    <div class="pg-warn"><strong>Tip</strong>This is a relatively calm day. Use it to prepare mentally and physically for Arafah — the most important day of Hajj.</div>
+  `},
+  {key:'day9', num:'Day 9', date:'9 Dhul-Hijjah', title:'Yawm al-Arafah', sub:'Arafah + Muzdalifah — the most important day', content:`
+    <p><strong>Yawm al-Arafah</strong> is the most important day of Hajj. The Prophet ﷺ said: <em>"Hajj is Arafah."</em> Whoever misses standing at Arafah has missed Hajj.</p>
+    <ul>
+      <li>After sunrise, depart from Mina to Arafah</li>
+      <li>Pray Dhuhr and Asr combined at Masjid Namirah (or in your tent)</li>
+      <li>Stand (or sit) in Arafah from Dhuhr until sunset — making dua, dhikr, and Quran recitation</li>
+      <li>The best dua of the year is made on this day</li>
+    </ul>
+    <div class="rm-dua">
+      <div class="rm-dua-arabic">لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
+      <div class="rm-dua-translit">La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa Huwa \'ala kulli shay\'in qadir</div>
+      <div class="rm-dua-meaning">There is no god but Allah alone, He has no partner. His is the dominion and His is the praise, and He is Able to do all things.</div>
+    </div>
+    <p><strong>After sunset:</strong> move to Muzdalifah without praying Maghrib at Arafah.</p>
+    <ul>
+      <li>At Muzdalifah, pray Maghrib and Isha combined</li>
+      <li>Spend the night under the open sky (or in tents)</li>
+      <li>Collect pebbles for the Jamarat (7 for the first day; more if you stay additional days)</li>
+      <li>Pray Fajr at Muzdalifah and make dua until just before sunrise</li>
+    </ul>
+    <div class="pg-warn"><strong>Common mistake</strong>Leaving Arafah before sunset. The Prophet ﷺ stayed until the sun had fully set.</div>
+  `},
+  {key:'day10', num:'Day 10', date:'10 Dhul-Hijjah', title:'Yawm al-Nahr', sub:'Eid day — the busiest day of Hajj', content:`
+    <p><strong>Yawm al-Nahr</strong> (the Day of Sacrifice) is Eid al-Adha and the most action-packed day of Hajj. The order of rites:</p>
+    <ul>
+      <li><strong>Jamarat al-Aqabah:</strong> stone the largest pillar with 7 pebbles, saying "Allahu Akbar" with each throw</li>
+      <li><strong>Sacrifice (Qurbani):</strong> sacrifice a sheep, or share in a cow/camel. Many pilgrims pay a service to do this on their behalf</li>
+      <li><strong>Halq or Taqsir:</strong> shave or trim the hair — this partially exits Ihram</li>
+      <li><strong>Tawaf al-Ifadah:</strong> the obligatory Tawaf of Hajj — 7 circuits of the Kaaba</li>
+      <li><strong>Sa'i:</strong> if not done on arrival (Tawaf al-Qudum), do it here</li>
+    </ul>
+    <p>After Tawaf al-Ifadah and Sa'i, all Ihram restrictions are fully lifted.</p>
+    <div class="pg-warn"><strong>Order is flexible</strong>The Prophet ﷺ said the order can vary — if you stone, sacrifice, shave, or do Tawaf in a different order, it's still valid.</div>
+  `},
+  {key:'day11', num:'Day 11', date:'11 Dhul-Hijjah', title:'First Day of Tashriq', sub:'Mina — stoning all three Jamarat', content:`
+    <p><strong>Days of Tashriq</strong> (11, 12, 13 Dhul-Hijjah) are spent in Mina.</p>
+    <ul>
+      <li>Stay overnight in Mina</li>
+      <li>After Dhuhr, stone all three Jamarat in order: small (Sughra), middle (Wusta), large (Kubra)</li>
+      <li>Each pillar receives 7 pebbles with "Allahu Akbar" per throw</li>
+      <li>Make dua after the small and middle pillars; the large one has no dua after</li>
+    </ul>
+    <div class="pg-warn"><strong>Tip</strong>Avoid the hottest part of the day if crowds are heavy. Many pilgrims stone after Asr or in the evening.</div>
+  `},
+  {key:'day12', num:'Day 12', date:'12 Dhul-Hijjah', title:'Second Day of Tashriq', sub:'Final stoning or prepare to leave', content:`
+    <p>The second day of Tashriq follows the same pattern as the first:</p>
+    <ul>
+      <li>Overnight in Mina</li>
+      <li>After Dhuhr, stone all three Jamarat again in order</li>
+      <li>You have two choices after stoning:
+        <ul>
+          <li><strong>Leave Mina</strong> before sunset (this is called <em>Ta\'ajjul</em> — the permissible shortcut)</li>
+          <li><strong>Stay</strong> for the final day</li>
+        </ul>
+      </li>
+    </ul>
+    <p>If you leave before sunset on the 12th, you must perform the <strong>Farewell Tawaf</strong> (Tawaf al-Wida) before leaving Makkah.</p>
+    <div class="pg-warn"><strong>Note</strong>If sunset arrives and you are still in Mina, you must stay for the 13th.</div>
+  `},
+  {key:'day13', num:'Day 13', date:'13 Dhul-Hijjah', title:'Third Day of Tashriq', sub:'Final stoning & Farewell Tawaf', content:`
+    <p>Only if you stayed in Mina past sunset on the 12th:</p>
+    <ul>
+      <li>Stone all three Jamarat after Dhuhr, in order</li>
+      <li>Depart Mina for Makkah</li>
+      <li>Perform the <strong>Farewell Tawaf</strong> (Tawaf al-Wida) — 7 circuits of the Kaaba, then leave</li>
+    </ul>
+    <p>And with that, your Hajj is complete.</p>
+    <p style="text-align:center;font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);margin-top:14px;margin-bottom:6px">تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ</p>
+    <p style="text-align:center;font-size:.85rem;color:var(--muted);font-style:italic">May Allah accept it from us and from you.</p>
+  `}
+];
+
+let hajjOpenDay = -1;
+
+function renderHajjGuide(){
+  const daysHtml = HAJJ_DAYS.map((d, i) => {
+    const open = hajjOpenDay === i;
+    return `<div class="pg-step ${open?'open':''}" data-hd="${i}">
+      <div class="pg-step-head">
+        <div class="pg-step-icon" data-hd-icon="${i}" title="Tap to expand">${HAJJ_ICONS[d.key]}</div>
+        <div class="pg-step-body">
+          <div class="pg-step-num">${d.num} · ${d.date}</div>
+          <div class="pg-step-title">${d.title}</div>
+          <div class="pg-step-sub">${d.sub}</div>
+        </div>
+        <div class="pg-step-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="pg-step-content">${d.content}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="pg-intro">🕋 <strong>Hajj</strong> is the fifth pillar of Islam — obligatory once in a lifetime for those who are able. It takes place during the first 10 days of Dhul-Hijjah.</div>
+      <div class="pg-pillars">
+        <div class="pg-pillar"><div class="pg-pillar-icon">🤍</div><div class="pg-pillar-name">Ihram</div></div>
+        <div class="pg-pillar"><div class="pg-pillar-icon">🕋</div><div class="pg-pillar-name">Tawaf al-Ifadah</div></div>
+        <div class="pg-pillar"><div class="pg-pillar-icon">🏃</div><div class="pg-pillar-name">Sa'i</div></div>
+        <div class="pg-pillar"><div class="pg-pillar-icon">⛰</div><div class="pg-pillar-name">Arafah</div></div>
+      </div>
+      ${daysHtml}
+      <div class="rm-disclaimer" style="margin-top:14px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>General guide only. For specific rulings, check with a qualified scholar or your local mosque.</span>
+      </div>
+    </div>`;
+
+  document.querySelectorAll('[data-hd]').forEach(card => {
+    const i = parseInt(card.dataset.hd);
+    card.querySelector('.pg-step-head').addEventListener('click', () => {
+      hajjOpenDay = hajjOpenDay === i ? -1 : i;
+      renderHajjGuide();
+    });
+    const iconEl = card.querySelector('[data-hd-icon]');
+    if(iconEl){
+      iconEl.addEventListener('click', e => {
+        e.stopPropagation();
+        iconEl.classList.add('pulse');
+        setTimeout(() => iconEl.classList.remove('pulse'), 500);
+        hajjOpenDay = hajjOpenDay === i ? -1 : i;
+        setTimeout(() => renderHajjGuide(), 350);
+      });
+    }
+  });
+}
+
 /* ============ TOOLS REGISTRY ============ */
 const TOOLS = {
   qibla: {title:'🧭 Qibla Compass', render:renderQibla},
@@ -4689,7 +5036,9 @@ const TOOLS = {
   duroodCollection: {title:'☪ Durood Collection', render:renderDuroodCollection},
   duaOfTheDay: {title:'🤲 Dua of the Day', render:() => renderTodayDedicated('dua')},
   verseOfTheDay: {title:'📖 Verse of the Day', render:() => renderTodayDedicated('verse')},
-  hadithOfTheDay: {title:'📚 Hadith of the Day', render:() => renderTodayDedicated('hadith')}
+  hadithOfTheDay: {title:'📚 Hadith of the Day', render:() => renderTodayDedicated('hadith')},
+  umrahGuide: {title:'🕋 Umrah Guide', render:renderUmrahGuide},
+  hajjGuide: {title:'🕋 Hajj Guide', render:renderHajjGuide}
 };
 </script>
 </body>
