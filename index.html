@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -43,7 +43,6 @@ main.app-main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrollin
 .tile:hover{background:var(--card-hover)}
 .tile:active{transform:scale(.985)}
 .tile.glow{border-color:var(--card-border-glow);box-shadow:0 0 0 1px rgba(212,175,55,0.15),0 0 26px rgba(212,175,55,0.14)}
-.tile.dimmed{opacity:.65}
 .tile-icon{flex-shrink:0;width:52px;height:52px;border-radius:14px;background:var(--emerald-soft);display:flex;align-items:center;justify-content:center;color:var(--gold)}
 .tile-icon svg{width:26px;height:26px;stroke-width:1.6}
 .tile.glow .tile-icon{background:var(--gold-soft)}
@@ -98,7 +97,7 @@ main.app-main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrollin
 .more-chev svg{width:16px;height:16px;stroke-width:2}
 .version{text-align:center;font-size:.75rem;color:var(--muted-2);margin-top:20px;letter-spacing:.05em}
 nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-height) + env(safe-area-inset-bottom,0));padding-bottom:env(safe-area-inset-bottom,0);background:var(--bg);border-top:1px solid var(--divider);display:flex;align-items:stretch;z-index:100;transition:background .4s ease,border-color .4s ease}
-.nav-item{flex:1;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted-2);font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:color .25s ease;padding:6px 0 4px;position:relative}
+.nav-item{flex:1;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted-2);font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:color .25s ease;padding:6px 0 4px}
 .nav-item svg{width:22px;height:22px;stroke-width:1.7;transition:transform .25s ease}
 .nav-item.active{color:var(--gold)}
 .nav-item.active svg{transform:translateY(-1px)}
@@ -123,6 +122,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .toggle.on::after{transform:translateX(18px)}
 .toast{position:fixed;bottom:calc(var(--nav-height) + env(safe-area-inset-bottom,0) + 20px);left:50%;transform:translateX(-50%);background:var(--emerald);color:#fff;padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:toastIn .3s ease;max-width:80vw;text-align:center}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+/* ============ QURAN ============ */
 .quran-bar{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px;margin-bottom:12px;display:flex;flex-direction:column;gap:10px}
 .quran-row{display:flex;gap:8px}
 .quran-field{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
@@ -147,7 +147,6 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .q-act svg{width:15px;height:15px;stroke-width:2}
 .q-arabic{font-family:var(--font-arabic);font-size:clamp(1.25rem,3.6vw,1.7rem);line-height:2;text-align:right;direction:rtl;color:var(--text);margin-bottom:8px}
 .q-translation{font-size:.9rem;line-height:1.65;color:var(--muted);padding-top:8px;border-top:1px dashed var(--divider)}
-.q-translit{font-size:.82rem;font-style:italic;color:var(--gold);margin:6px 0;opacity:.85}
 .q-controls{display:flex;justify-content:center;gap:8px;margin:14px 0;flex-wrap:wrap}
 .q-btn{padding:10px 18px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--text);font-family:var(--font-body);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;gap:6px}
 .q-btn:hover{border-color:var(--gold);color:var(--gold)}
@@ -159,6 +158,106 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 @keyframes spin{to{transform:rotate(360deg)}}
 .q-scroll-pause{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:10px;font-size:.78rem;color:var(--muted)}
 .q-scroll-pause .toggle{transform:scale(.75);margin:0 2px}
+/* ============ HADITH ============ */
+.h-coll-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.h-coll{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;cursor:pointer;transition:all .2s ease;position:relative;overflow:hidden}
+.h-coll:hover{background:var(--card-hover);border-color:var(--gold-soft);transform:translateY(-1px)}
+.h-coll-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;gap:10px}
+.h-coll-title{font-size:.98rem;font-weight:700;color:var(--text);line-height:1.3}
+.h-coll-arabic{font-family:var(--font-arabic);font-size:1.1rem;color:var(--gold);text-align:right;line-height:1.2;white-space:nowrap}
+.h-coll-count{font-size:.76rem;color:var(--gold);font-weight:600;margin-bottom:4px}
+.h-coll-desc{font-size:.8rem;color:var(--muted);line-height:1.5}
+.h-search{display:flex;gap:8px;margin-bottom:12px;position:relative}
+.h-search input{flex:1;padding:11px 12px;background:var(--card);color:var(--text);border:1px solid var(--card-border);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.9rem;-webkit-appearance:none}
+.h-search input:focus{outline:none;border-color:var(--gold)}
+.h-search button{padding:0 16px;background:var(--gold);color:#0A0F0D;border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;transition:opacity .2s ease}
+.h-search button:hover{opacity:.9}
+.h-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:10px}
+.h-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.h-num{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:28px;padding:0 8px;border-radius:8px;background:var(--emerald-soft);color:var(--gold);font-size:.78rem;font-weight:700;border:1px solid var(--gold-soft)}
+.h-grades{display:flex;gap:6px;flex-wrap:wrap}
+.h-grade{padding:3px 9px;border-radius:6px;font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.h-grade.sahih{background:rgba(42,138,106,.25);color:#5fc99b}
+.h-grade.hasan{background:rgba(80,130,200,.25);color:#7fb0e6}
+.h-grade.daif{background:rgba(200,160,50,.25);color:#e6c569}
+.h-grade.maudu{background:rgba(200,80,80,.25);color:#e69090}
+.h-text{font-size:.92rem;line-height:1.7;color:var(--text);margin-bottom:12px}
+.h-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--divider);padding-top:10px;flex-wrap:wrap;gap:8px}
+.h-toggle{background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:5px}
+.h-toggle svg{width:14px;height:14px;stroke-width:2}
+.h-comments{margin-top:12px;padding-top:12px;border-top:1px dashed var(--divider);display:none}
+.h-comments.open{display:block}
+.h-cmt-list{margin-bottom:10px}
+.h-cmt{padding:10px 12px;background:var(--bg);border-radius:var(--radius-sm);margin-bottom:6px;font-size:.85rem;border:1px solid var(--divider)}
+.h-cmt-meta{font-size:.68rem;color:var(--muted-2);margin-bottom:4px}
+.h-cmt-meta a{color:#d9534f;text-decoration:underline;cursor:pointer;margin-left:6px}
+.h-cmt-text{color:var(--text);line-height:1.5}
+.h-form{display:flex;flex-direction:column;gap:8px}
+.h-form textarea{width:100%;padding:10px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.88rem;resize:vertical;min-height:64px;box-sizing:border-box}
+.h-form textarea:focus{outline:none;border-color:var(--gold)}
+.h-form-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.h-radio{display:flex;align-items:center;gap:4px;cursor:pointer}
+.h-submit{margin-left:auto;padding:7px 16px;background:var(--gold);color:#0A0F0D;border:none;border-radius:999px;font-family:var(--font-body);font-weight:700;font-size:.8rem;cursor:pointer}
+.h-submit:hover{opacity:.9}
+.h-signin-msg{font-size:.82rem;color:var(--muted);padding:12px;background:var(--bg);border-radius:var(--radius-sm);text-align:center;border:1px solid var(--divider)}
+.h-signin-msg a{color:var(--gold);cursor:pointer;font-weight:700;text-decoration:underline}
+.h-random-btn{width:100%;padding:12px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:var(--radius-md);color:var(--gold);font-family:var(--font-body);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s ease;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.h-random-btn:hover{background:var(--gold);color:#0A0F0D}
+.h-random-btn svg{width:16px;height:16px;stroke-width:2}
+/* ============ DHIKR ============ */
+.dk-tabs{display:flex;gap:5px;background:var(--card);border:1px solid var(--card-border);border-radius:999px;padding:5px;margin-bottom:14px}
+.dk-tab{flex:1;padding:9px 10px;border-radius:999px;border:none;background:transparent;color:var(--muted);font-family:var(--font-body);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .25s ease;white-space:nowrap}
+.dk-tab.active{background:var(--gold);color:#0A0F0D}
+.dk-summary{text-align:center;padding:12px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);margin-bottom:14px;font-size:.85rem;color:var(--muted)}
+.dk-summary strong{color:var(--gold);font-size:1.05rem}
+.dk-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:16px;margin-bottom:12px;position:relative;transition:all .3s ease}
+.dk-card.completed{border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,175,55,.15),0 0 26px rgba(212,175,55,.12)}
+.dk-card.completed::before{content:'✓ Done';position:absolute;top:12px;right:12px;background:var(--gold);color:#0A0F0D;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.04em}
+.dk-badge{display:inline-block;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--divider);margin-bottom:10px;font-weight:600}
+.dk-arabic{font-family:var(--font-arabic);font-size:clamp(1.3rem,4vw,1.7rem);line-height:2;text-align:right;direction:rtl;color:var(--text);margin-bottom:6px}
+.dk-translit{font-size:.84rem;font-style:italic;color:var(--gold);margin-bottom:6px;line-height:1.6}
+.dk-translation{font-size:.9rem;line-height:1.65;color:var(--muted);margin-bottom:12px}
+.dk-virtue{font-size:.8rem;line-height:1.55;color:var(--muted);padding:9px 12px;background:var(--bg);border-radius:var(--radius-sm);border-left:3px solid var(--gold);margin-bottom:14px}
+.dk-counter{display:flex;align-items:center;justify-content:center;gap:14px}
+.dk-reset{width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid var(--divider);color:var(--muted);cursor:pointer;font-size:1rem;transition:all .2s ease}
+.dk-reset:hover{border-color:var(--gold);color:var(--gold)}
+.dk-tap{width:88px;height:88px;border-radius:50%;border:3px solid var(--emerald);background:transparent;color:var(--emerald);font-family:var(--font-body);font-size:1.6rem;font-weight:700;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;position:relative;user-select:none}
+[data-theme="light"] .dk-tap{border-color:var(--emerald);color:var(--emerald)}
+.dk-tap:active{transform:scale(.92)}
+.dk-tap.completed{background:var(--gold);color:#0A0F0D;border-color:var(--gold);animation:dkPop 1.4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes dkPop{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,.7)}40%{transform:scale(1.22);box-shadow:0 0 0 26px rgba(212,175,55,.25),0 0 55px 18px rgba(212,175,55,.35)}70%{transform:scale(1.08);box-shadow:0 0 0 55px rgba(212,175,55,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,0)}}
+.dk-tap.completed::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--gold);animation:dkRing 1.4s cubic-bezier(.2,.8,.4,1);pointer-events:none}
+@keyframes dkRing{0%{transform:scale(.9);opacity:1;border-width:6px}100%{transform:scale(2.2);opacity:0;border-width:1px}}
+.dk-target{text-align:center;font-size:.8rem;color:var(--muted)}
+.dk-target strong{display:block;font-size:1.2rem;color:var(--gold);font-weight:700}
+.dk-confetti{position:absolute;width:9px;height:9px;background:radial-gradient(circle at 30% 30%,#F4D77B,var(--gold));border-radius:50%;pointer-events:none;box-shadow:0 0 8px rgba(212,175,55,.9);animation:confettiFly 1.4s cubic-bezier(.2,.7,.4,1) forwards;z-index:5}
+@keyframes confettiFly{0%{transform:translate(0,0) scale(1);opacity:1}60%{opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(.2);opacity:0}}
+.dk-msg{margin-top:12px;padding:11px 13px;background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(212,175,55,.03));border:1px solid var(--gold);border-radius:var(--radius-sm);text-align:center;animation:dkMsgIn .5s ease}
+@keyframes dkMsgIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.dk-msg .dua{font-family:var(--font-arabic);font-size:1.2rem;color:var(--gold);display:block;margin-bottom:3px}
+.dk-msg .en{font-size:.85rem;color:var(--text);font-weight:600;margin-bottom:6px}
+.dk-msg .virtue{font-size:.76rem;color:var(--muted);font-style:italic;line-height:1.5}
+.dk-copy{background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:.78rem;cursor:pointer;padding:8px 0 0;display:block;margin:0 auto;text-decoration:underline;text-underline-offset:3px}
+.dk-garden{background:linear-gradient(135deg,rgba(42,138,106,.12),rgba(212,175,55,.06));border:1px solid var(--gold);border-radius:var(--radius-md);padding:14px;margin-bottom:14px}
+.dk-garden-stats{display:flex;justify-content:space-around;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.dk-stat{text-align:center;flex:1;min-width:90px}
+.dk-stat-v{font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1.1}
+.dk-stat-l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.dk-grid{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;padding:8px;background:var(--card);border-radius:var(--radius-sm);margin-bottom:8px}
+.dk-plant{font-size:1.2rem;line-height:1;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg);transition:all .3s ease}
+.dk-plant.full{background:linear-gradient(135deg,rgba(212,175,55,.28),rgba(212,175,55,.1));box-shadow:0 0 10px rgba(212,175,55,.25)}
+.dk-plant.partial{background:rgba(42,138,106,.18)}
+.dk-plant.empty{color:var(--muted-2);opacity:.5}
+.dk-garden-hint{text-align:center;font-size:.72rem;color:var(--muted);font-style:italic}
+/* ============ GIVE ============ */
+.gv-heading{font-size:.78rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin:16px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--divider)}
+.gv-heading:first-of-type{margin-top:0}
+.gv-card{display:block;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:14px 16px;text-decoration:none;color:var(--text);transition:all .2s ease;margin-bottom:10px}
+.gv-card:hover{border-color:var(--gold-soft);transform:translateY(-1px)}
+.gv-card-icon{font-size:1.6rem;margin-bottom:6px}
+.gv-card-name{font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:4px}
+.gv-card-desc{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:8px}
+.gv-tag{display:inline-block;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--emerald-soft);color:var(--gold);font-weight:600;letter-spacing:.03em;border:1px solid var(--gold-soft)}
 @media (max-width:420px){.quran-row{flex-direction:column}}
 </style>
 </head>
@@ -190,6 +289,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 
 <main class="app-main" id="app-main">
 
+<!-- HOME -->
 <section class="page active" data-page="home">
 <div class="tile" data-nav="jumuah">
 <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 6c-3 0-5 2-5 5v8h10v-8c0-3-2-5-5-5z"/><path d="M4 22h16"/><circle cx="12" cy="4" r="1.5"/></svg></div>
@@ -226,7 +326,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <div class="tile-body">
 <div class="tile-title">Dhikr</div>
 <div class="tile-sub">Daily, morning &amp; evening</div>
-<div class="tile-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8-4 8-4 8-4-4-4-8 4-8 4-8z"/></svg><span>Streak: 0 days 🔥</span></div>
+<div class="tile-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8-4 8-4 8-4-4-4-8 4-8 4-8z"/></svg><span id="dhikr-streak-tile">Streak: 0 days 🔥</span></div>
 </div>
 <div class="tile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
 </div>
@@ -252,6 +352,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
+<!-- QURAN -->
 <section class="page" data-page="quran">
 <div class="quran-bar">
 <div class="quran-row">
@@ -290,18 +391,36 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </div>
 </div>
-
-<div id="quran-content">
-<div class="q-loading"><div class="q-loading-spinner"></div>Loading surahs…</div>
-</div>
+<div id="quran-content"><div class="q-loading"><div class="q-loading-spinner"></div>Loading surahs…</div></div>
 </section>
 
+<!-- HADITH -->
+<section class="page" data-page="hadith">
+<div id="hadith-content"></div>
+</section>
+
+<!-- DHIKR -->
+<section class="page" data-page="dhikr">
+<div class="dk-garden" id="dk-garden"></div>
+<div class="dk-tabs">
+<button class="dk-tab active" data-tab="daily">🌙 Daily</button>
+<button class="dk-tab" data-tab="morning">🌅 Morning</button>
+<button class="dk-tab" data-tab="evening">🌆 Evening</button>
+</div>
+<div class="dk-summary" id="dk-summary"></div>
+<div id="dk-list"></div>
+</section>
+
+<!-- GIVE -->
+<section class="page" data-page="give">
+<div id="give-content"></div>
+</section>
+
+<!-- TOOLS -->
 <section class="page" data-page="tools">
 <div class="cat open" data-cat="1">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M4.93 19.07l2.12-2.12M12 22v-3M19.07 19.07l-2.12-2.12M22 12h-3M19.07 4.93l-2.12 2.12"/></svg></span><span class="cat-title">Worship &amp; Prayer</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-<div class="cat-body"><div class="cat-tools">
-<div class="tool-pill">Qibla compass</div><div class="tool-pill">Prayer tracker</div><div class="tool-pill">Fasting tracker</div><div class="tool-pill">Tasbih counter</div><div class="tool-pill">Tasbih sounds</div><div class="tool-pill">Custom dhikr</div>
-</div></div>
+<div class="cat-body"><div class="cat-tools"><div class="tool-pill">Qibla compass</div><div class="tool-pill">Prayer tracker</div><div class="tool-pill">Fasting tracker</div><div class="tool-pill">Tasbih counter</div><div class="tool-pill">Tasbih sounds</div><div class="tool-pill">Custom dhikr</div></div></div>
 </div>
 <div class="cat" data-cat="2">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="cat-title">Quran &amp; Memorization</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -333,6 +452,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
+<!-- BOOKMARKS -->
 <section class="page" data-page="bookmarks">
 <div class="bm-tabs">
 <button class="bm-tab active" data-bm="verses">Verses</button>
@@ -350,6 +470,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 </div>
 </section>
 
+<!-- MORE -->
 <section class="page" data-page="more">
 <div class="more-item" data-action="about"><div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="more-body"><div class="more-title">About Al-Jumu'ah</div><div class="more-sub">Our mission and what we offer</div></div><div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div></div>
 <div class="more-item" data-action="website"><div class="more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="more-body"><div class="more-title">Visit our website</div><div class="more-sub">fc-sumits.github.io/Al--jumuah</div></div><div class="more-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div></div>
@@ -361,6 +482,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 <div class="version">Version 1.0.0</div>
 </section>
 
+<!-- SETTINGS -->
 <section class="page" data-page="settings">
 <div class="settings-header">
 <button class="back-btn" id="back-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -415,6 +537,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
 
+// ============ THEME ============
 const themeSeg = document.getElementById('theme-seg');
 const sizeSeg = document.getElementById('size-seg');
 function applyTheme(mode){
@@ -437,6 +560,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=
 applyTheme(localStorage.getItem('app-theme') || 'auto');
 applySize(localStorage.getItem('app-size') || 'medium');
 
+// ============ HIJRI ============
 function updateHijri(){
   try{
     const fmt = new Intl.DateTimeFormat('en-TN-u-ca-islamic-umalqura', { day:'numeric', month:'long', year:'numeric' });
@@ -447,6 +571,7 @@ function updateHijri(){
 }
 updateHijri();
 
+// ============ NAVIGATION ============
 const mainEl = document.getElementById('app-main');
 const allPages = document.querySelectorAll('.page');
 const navItems = document.querySelectorAll('.nav-item');
@@ -455,6 +580,9 @@ function showPage(name){
   navItems.forEach(n=>{ if(n.dataset.navTab) n.classList.toggle('active', n.dataset.navTab === name); });
   mainEl.scrollTop = 0;
   if(name === 'bookmarks') loadBookmarks();
+  if(name === 'hadith' && window.hadithBrowser) window.hadithBrowser.renderRoot();
+  if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
+  if(name === 'give') renderGive();
 }
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
@@ -467,7 +595,7 @@ document.querySelectorAll('.cat-head').forEach(head=>{
 document.querySelectorAll('.tile').forEach(tile=>{
   tile.addEventListener('click', ()=>{
     const target = tile.dataset.nav;
-    if(target === 'quran'){ showPage('quran'); return; }
+    if(['quran','hadith','dhikr','give'].includes(target)){ showPage(target); return; }
     showToast(`${target.charAt(0).toUpperCase()+target.slice(1)} — coming in a later round`);
   });
 });
@@ -475,6 +603,7 @@ document.querySelectorAll('.tool-pill').forEach(pill=>{
   pill.addEventListener('click', ()=>showToast(`${pill.textContent} — coming soon`));
 });
 
+// ============ MORE / SETTINGS ACTIONS ============
 document.querySelectorAll('.more-item').forEach(item=>{
   item.addEventListener('click', ()=>{
     const action = item.dataset.action;
@@ -497,6 +626,7 @@ document.querySelectorAll('.setting-row').forEach(row=>{
   });
 });
 
+// ============ BOOKMARKS TABS ============
 document.querySelectorAll('.bm-tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
     document.querySelectorAll('.bm-tab').forEach(t=>t.classList.remove('active'));
@@ -506,6 +636,7 @@ document.querySelectorAll('.bm-tab').forEach(tab=>{
   });
 });
 
+// ============ TOAST ============
 let toastTimer;
 function showToast(msg){
   let existing = document.querySelector('.toast'); if(existing) existing.remove();
@@ -515,7 +646,7 @@ function showToast(msg){
   toastTimer = setTimeout(()=>t.remove(), 2200);
 }
 
-let firebaseReady = false;
+// ============ FIREBASE ============
 let db = null;
 function initFirebase(){
   if(!window.firebase){ setTimeout(initFirebase, 200); return; }
@@ -526,8 +657,8 @@ function initFirebase(){
     const status = document.getElementById('account-status');
     if(status) status.textContent = u ? (u.displayName || u.email) : 'Not signed in';
     if(u) loadUserBookmarks();
+    if(u && window.gardenManager) window.gardenManager.load();
   });
-  firebaseReady = true;
 }
 initFirebase();
 
@@ -552,6 +683,7 @@ async function saveUserBookmarks(){
   }catch(e){ console.log('save bookmarks failed', e); }
 }
 
+// ============ QURAN ============
 const QURAN = {
   surah: parseInt(localStorage.getItem('quran-last-surah') || '1'),
   script: localStorage.getItem('quran-script') || 'quran-uthmani',
@@ -583,9 +715,7 @@ async function loadSurahList(){
     const data = await res.json();
     sel.innerHTML = data.data.map(s=>`<option value="${s.number}">${s.number}. ${s.englishName} — ${s.name}</option>`).join('');
     sel.value = QURAN.surah;
-  }catch(e){
-    sel.innerHTML = '<option value="">Could not load surahs</option>';
-  }
+  }catch(e){ sel.innerHTML = '<option value="">Could not load surahs</option>'; }
 }
 
 async function loadSurah(n){
@@ -599,9 +729,7 @@ async function loadSurah(n){
     const data = await res.json();
     QURAN.data = { arabic: data.data[0], english: data.data[1] };
     renderSurah();
-  }catch(e){
-    container.innerHTML = '<div class="q-loading">Could not load this surah. Check your connection.</div>';
-  }
+  }catch(e){ container.innerHTML = '<div class="q-loading">Could not load this surah.</div>'; }
 }
 
 function surahShortName(n){
@@ -611,40 +739,16 @@ function surahShortName(n){
 
 function renderSurah(){
   const container = document.getElementById('quran-content');
-  const ar = QURAN.data.arabic;
-  const en = QURAN.data.english;
-  const mode = QURAN.mode;
-
+  const ar = QURAN.data.arabic, en = QURAN.data.english, mode = QURAN.mode;
   let html = `<div class="quran-header"><div class="quran-header-arabic">${ar.name}</div><div class="quran-header-name">${ar.number}. ${ar.englishName} · ${ar.numberOfAyahs} verses</div></div>`;
-  if(ar.number !== 1 && ar.number !== 9){
-    html += `<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
-  }
-
-  html += `<div class="q-controls">
-    <button class="q-btn primary" id="q-play-all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>${mode === 'perverse' ? 'Play from start' : 'Play Surah'}</button>
-    <button class="q-btn" id="q-stop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>Stop</button>
-  </div>`;
-
-  if(mode === 'synced'){
-    html += `<div class="q-scroll-pause"><span>Auto-scroll</span><div class="toggle ${QURAN.autoScroll?'on':''}" id="autoscroll-toggle"></div></div>`;
-  }
-
+  if(ar.number !== 1 && ar.number !== 9) html += `<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
+  html += `<div class="q-controls"><button class="q-btn primary" id="q-play-all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>${mode === 'perverse' ? 'Play from start' : 'Play Surah'}</button><button class="q-btn" id="q-stop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>Stop</button></div>`;
+  if(mode === 'synced') html += `<div class="q-scroll-pause"><span>Auto-scroll</span><div class="toggle ${QURAN.autoScroll?'on':''}" id="autoscroll-toggle"></div></div>`;
   ar.ayahs.forEach((ayah, i)=>{
     const eng = en.ayahs[i];
     const saved = userBookmarks.verses.includes(`${ar.number}:${ayah.numberInSurah}`);
-    html += `<div class="q-verse" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" id="q-verse-${ayah.numberInSurah}">
-      <div class="q-verse-head">
-        <span class="q-verse-num">${ayah.numberInSurah}</span>
-        <div class="q-verse-actions">
-          <button class="q-act play-ayah" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-          <button class="q-act bookmark-ayah ${saved?'active':''}" data-ayah="${ayah.numberInSurah}"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
-        </div>
-      </div>
-      <p class="q-arabic">${ayah.text}</p>
-      <p class="q-translation">${eng.text}</p>
-    </div>`;
+    html += `<div class="q-verse" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}" id="q-verse-${ayah.numberInSurah}"><div class="q-verse-head"><span class="q-verse-num">${ayah.numberInSurah}</span><div class="q-verse-actions"><button class="q-act play-ayah" data-ayah="${ayah.numberInSurah}" data-global="${ayah.number}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="q-act bookmark-ayah ${saved?'active':''}" data-ayah="${ayah.numberInSurah}"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><p class="q-arabic">${ayah.text}</p><p class="q-translation">${eng.text}</p></div>`;
   });
-
   container.innerHTML = html;
   attachQuranListeners();
 }
@@ -673,28 +777,20 @@ function attachQuranListeners(){
       showToast(idx < 0 ? 'Verse saved' : 'Verse removed');
     });
   });
-
   document.getElementById('q-play-all').addEventListener('click', ()=>{
     if(QURAN.playing){ stopQuranAudio(); return; }
     QURAN.playing = true;
     QURAN.mode === 'perverse' ? playAyah(1, QURAN.data.arabic.ayahs[0].number, false) : playAyah(1, QURAN.data.arabic.ayahs[0].number, true);
   });
   document.getElementById('q-stop').addEventListener('click', stopQuranAudio);
-
   const autoT = document.getElementById('autoscroll-toggle');
-  if(autoT){
-    autoT.addEventListener('click', ()=>{
-      QURAN.autoScroll = !QURAN.autoScroll;
-      autoT.classList.toggle('on', QURAN.autoScroll);
-    });
-  }
+  if(autoT) autoT.addEventListener('click', ()=>{ QURAN.autoScroll = !QURAN.autoScroll; autoT.classList.toggle('on', QURAN.autoScroll); });
 }
 
 function playAyah(ayahNum, globalAyah, autoAdvance){
   if(QURAN.audio){ QURAN.audio.pause(); QURAN.audio = null; }
   document.querySelectorAll('.q-verse').forEach(v=>v.classList.remove('playing'));
   document.querySelectorAll('.play-ayah').forEach(b=>{ b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
-
   const verseEl = document.getElementById(`q-verse-${ayahNum}`);
   if(verseEl){
     verseEl.classList.add('playing');
@@ -703,7 +799,6 @@ function playAyah(ayahNum, globalAyah, autoAdvance){
     if(playBtn) playBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>';
   }
   QURAN.currentAyah = ayahNum;
-
   const url = reciterAudioUrl(QURAN.reciter, QURAN.data.arabic.number, ayahNum, globalAyah);
   const audio = new Audio(url);
   QURAN.audio = audio;
@@ -715,14 +810,9 @@ function playAyah(ayahNum, globalAyah, autoAdvance){
           const next = QURAN.data.arabic.ayahs[ayahNum];
           if(next) playAyah(ayahNum + 1, next.number, true);
         }, 250);
-      } else {
-        QURAN.playing = false;
-      }
+      } else QURAN.playing = false;
     };
-  }).catch(()=>{
-    showToast('Audio unavailable — check connection');
-    QURAN.playing = false;
-  });
+  }).catch(()=>{ showToast('Audio unavailable'); QURAN.playing = false; });
 }
 
 function stopQuranAudio(){
@@ -753,6 +843,7 @@ document.querySelectorAll('#mode-select button').forEach(btn=>{
   });
 });
 
+// ============ BOOKMARKS ============
 async function loadBookmarks(){
   const versesPanel = document.getElementById('bm-verses');
   if(!window.__currentUser){
@@ -777,11 +868,7 @@ async function loadBookmarks(){
         const ay = ar.ayahs.find(x=>x.numberInSurah === ayahNum);
         const ey = en.ayahs.find(x=>x.numberInSurah === ayahNum);
         if(!ay || !ey) return;
-        html += `<div class="bm-item">
-          <div class="bm-item-head"><span class="bm-ref">${ar.englishName} · ${surahNum}:${ayahNum}</span><span class="bm-star" data-key="${surahNum}:${ayahNum}"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
-          <p class="bm-arabic">${ay.text}</p>
-          <p class="bm-text">${ey.text}</p>
-        </div>`;
+        html += `<div class="bm-item"><div class="bm-item-head"><span class="bm-ref">${ar.englishName} · ${surahNum}:${ayahNum}</span><span class="bm-star" data-key="${surahNum}:${ayahNum}"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div><p class="bm-arabic">${ay.text}</p><p class="bm-text">${ey.text}</p></div>`;
       });
     }
     versesPanel.innerHTML = html;
@@ -798,6 +885,581 @@ async function loadBookmarks(){
   }catch(e){ versesPanel.innerHTML = '<div class="bm-empty">Could not load saved verses.</div>'; }
 }
 
+// ============ HADITH ============
+const HADITH_COLLECTIONS = [
+  {id:'eng-bukhari',name:'Sahih al-Bukhari',arabic:'صحيح البخاري',count:7554,desc:'The most authentic collection, compiled by Imam al-Bukhari.'},
+  {id:'eng-muslim',name:'Sahih Muslim',arabic:'صحيح مسلم',count:7360,desc:'The second most authentic collection, compiled by Imam Muslim.'},
+  {id:'eng-nasai',name:'Sunan an-Nasa\'i',arabic:'سنن النسائي',count:5679,desc:'One of the six canonical books, known for its rigorous criteria.'},
+  {id:'eng-abudawud',name:'Sunan Abi Dawud',arabic:'سنن أبي داود',count:5272,desc:'A canonical collection focused on the hadith of legal rulings.'},
+  {id:'eng-tirmidhi',name:'Jami` at-Tirmidhi',arabic:'جامع الترمذي',count:3926,desc:'A canonical collection that records the grade of each narration.'},
+  {id:'eng-ibnmajah',name:'Sunan Ibn Majah',arabic:'سنن ابن ماجه',count:4340,desc:'The sixth of the canonical books (Kutub al-Sittah).'},
+  {id:'eng-malik',name:'Muwatta Malik',arabic:'موطأ مالك',count:1818,desc:'The earliest collection, compiled by Imam Malik ibn Anas.'},
+  {id:'eng-nawawi',name:'An-Nawawi\'s 40 Hadith',arabic:'الأربعون النووية',count:42,desc:'Forty foundational hadith gathered by Imam an-Nawawi.'},
+  {id:'eng-qudsi',name:'40 Hadith Qudsi',arabic:'الأربعون القدسية',count:40,desc:'Forty sacred narrations of the words of Allah on the Prophet\'s tongue.'}
+];
+
+class HadithBrowser {
+  constructor(){
+    this.currentCollectionId = null;
+    this.currentSectionNumber = 1;
+    this.comments = {};
+    this.renderRoot();
+  }
+
+  escapeHtml(text){ const d=document.createElement('div'); d.textContent=text; return d.innerHTML; }
+
+  renderRoot(){
+    const c = document.getElementById('hadith-content');
+    if(!c) return;
+    c.innerHTML = `
+      <button class="h-random-btn" onclick="window.hadithBrowser.randomHadith()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>🎲 Random Hadith</button>
+      <div class="h-coll-grid" id="h-coll-grid"></div>
+    `;
+    const grid = document.getElementById('h-coll-grid');
+    grid.innerHTML = HADITH_COLLECTIONS.map(col => `
+      <div class="h-coll" onclick="window.hadithBrowser.openCollection('${col.id}')">
+        <div class="h-coll-head">
+          <div class="h-coll-title">${col.name}</div>
+          <div class="h-coll-arabic">${col.arabic}</div>
+        </div>
+        <div class="h-coll-count">${col.count.toLocaleString()} hadith</div>
+        <div class="h-coll-desc">${col.desc}</div>
+      </div>
+    `).join('');
+  }
+
+  async loadCommentsForKeys(keys){
+    this.comments = {};
+    if(!db || !keys || keys.length === 0) return;
+    try{
+      const chunks = [];
+      for(let i=0;i<keys.length;i+=10) chunks.push(keys.slice(i,i+10));
+      const results = await Promise.all(chunks.map(chunk => db.collection('comments').where('hadithKey','in',chunk).get()));
+      results.forEach(snap => snap.forEach(doc => {
+        const data = doc.data();
+        const isMine = window.__currentUser && data.userId === window.__currentUser.uid;
+        if(data.isPublic || isMine){
+          if(!this.comments[data.hadithKey]) this.comments[data.hadithKey] = [];
+          let ts = data.timestamp;
+          if(ts && typeof ts.toDate === 'function') ts = ts.toDate().getTime();
+          this.comments[data.hadithKey].push({...data, id:doc.id, timestamp:ts||Date.now()});
+        }
+      }));
+    }catch(e){ console.log('comments load failed', e); }
+  }
+
+  openCollection(id){
+    this.currentCollectionId = id;
+    this.currentSectionNumber = 1;
+    const info = HADITH_COLLECTIONS.find(c=>c.id===id);
+    const c = document.getElementById('hadith-content');
+    c.innerHTML = `
+      <div class="settings-header"><button class="back-btn" onclick="window.hadithBrowser.renderRoot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><span class="settings-title" style="font-size:1.1rem">${info.name}</span></div>
+      <div class="h-search"><input type="number" id="h-search-input" placeholder="Go to hadith number..." inputmode="numeric" style="width:100%"><button onclick="window.hadithBrowser.searchHadith()">Go</button></div>
+      <div id="h-list" class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>
+    `;
+    this.loadSection(id, 1);
+  }
+
+  async loadSection(collectionId, sectionNumber){
+    this.currentSectionNumber = sectionNumber;
+    const c = document.getElementById('h-list');
+    if(!c) return;
+    c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>';
+    try{
+      const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${collectionId}/sections/${sectionNumber}.json`;
+      const res = await fetch(url);
+      const data = await res.json();
+      if(data.hadiths && data.hadiths.length > 0){
+        const keys = data.hadiths.map(h => `${collectionId}-${h.hadithnumber}`);
+        await this.loadCommentsForKeys(keys);
+      }
+      this.renderHadiths(data, collectionId, sectionNumber);
+    }catch(e){ c.innerHTML = '<div class="q-loading">Could not load hadith.</div>'; }
+  }
+
+  async randomHadith(){
+    const col = HADITH_COLLECTIONS[Math.floor(Math.random()*HADITH_COLLECTIONS.length)];
+    const num = Math.floor(Math.random()*col.count) + 1;
+    this.currentCollectionId = col.id;
+    const c = document.getElementById('hadith-content');
+    c.innerHTML = `<div class="settings-header"><button class="back-btn" onclick="window.hadithBrowser.renderRoot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><span class="settings-title" style="font-size:1.1rem">🎲 Random Hadith</span></div><div id="h-list" class="q-loading"><div class="q-loading-spinner"></div>Picking a random hadith…</div>`;
+    try{
+      const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${col.id}/${num}.min.json`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('nf');
+      const data = await res.json();
+      if(!data.hadiths || data.hadiths.length === 0) throw new Error('empty');
+      const key = `${col.id}-${data.hadiths[0].hadithnumber}`;
+      await this.loadCommentsForKeys([key]);
+      this.renderHadiths({hadiths:[data.hadiths[0]], metadata:data.metadata||{}}, col.id, null, `<div style="text-align:center;margin-bottom:10px;font-size:.82rem;color:var(--muted)">From ${col.name}</div>`);
+    }catch(e){ document.getElementById('h-list').innerHTML = '<div class="q-loading">Could not fetch a random hadith. Try again.</div>'; }
+  }
+
+  async searchHadith(){
+    const val = document.getElementById('h-search-input').value.trim();
+    if(!val) return;
+    const collectionId = this.currentCollectionId;
+    if(!collectionId) return;
+    const c = document.getElementById('h-list');
+    c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Searching…</div>';
+    try{
+      const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${collectionId}/${val}.min.json`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('Not found');
+      const data = await res.json();
+      if(!data.hadiths || data.hadiths.length === 0){ c.innerHTML = `<div class="q-loading">Hadith #${val} not found.</div>`; return; }
+      const keys = data.hadiths.map(h => `${collectionId}-${h.hadithnumber}`);
+      await this.loadCommentsForKeys(keys);
+      const backBtn = `<div style="margin-bottom:12px"><button class="back-btn" onclick="window.hadithBrowser.loadSection('${collectionId}', ${this.currentSectionNumber})" style="width:100%;border-radius:var(--radius-sm);padding:10px;font-size:.85rem;display:flex;align-items:center;justify-content:center;gap:6px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;stroke-width:2"><polyline points="15 18 9 12 15 6"/></svg>Back to Section ${this.currentSectionNumber}</button></div>`;
+      this.renderHadiths(data, collectionId, null, backBtn);
+    }catch(e){ c.innerHTML = `<div class="q-loading">Hadith #${val} not found.</div>`; }
+  }
+
+  getGrade(collectionId){
+    if(collectionId === 'eng-bukhari' || collectionId === 'eng-muslim') return 'sahih';
+    if(collectionId === 'eng-tirmidhi' || collectionId === 'eng-abudawud') return 'hasan';
+    return 'sahih';
+  }
+
+  renderHadiths(data, collectionId, sectionNumber, customHeader = ''){
+    const c = document.getElementById('h-list');
+    if(!c) return;
+    let html = customHeader;
+    if(sectionNumber){
+      const name = data.metadata?.section?.[sectionNumber] || data.metadata?.section?.[String(sectionNumber)] || `Book ${sectionNumber}`;
+      html += `<div style="text-align:center;font-size:.82rem;color:var(--muted);margin-bottom:10px">Section: ${name}</div>`;
+    }
+    if(!data.hadiths || data.hadiths.length === 0){ c.innerHTML = html + '<div class="q-loading">No hadiths found.</div>'; return; }
+    const isSignedIn = !!window.__currentUser;
+    const grade = this.getGrade(collectionId);
+    const gradeLabel = {sahih:'Sahih',hasan:'Hasan'}[grade] || 'Sahih';
+
+    data.hadiths.forEach(h => {
+      const key = `${collectionId}-${h.hadithnumber}`;
+      const comments = this.comments[key] || [];
+      const cmtsHtml = comments.map(cm => {
+        const isMine = window.__currentUser && cm.userId === window.__currentUser.uid;
+        const when = cm.timestamp ? new Date(cm.timestamp).toLocaleDateString() : '';
+        return `<div class="h-cmt"><div class="h-cmt-meta">${cm.isPublic?'🌍':'🔒'} ${this.escapeHtml(cm.userName||'Anonymous')} · ${when}${isMine?`<a onclick="window.hadithBrowser.deleteComment('${cm.id}','${key}')">Delete</a>`:''}</div><div class="h-cmt-text">${this.escapeHtml(cm.text)}</div></div>`;
+      }).join('');
+
+      const formHtml = isSignedIn
+        ? `<div class="h-form"><textarea id="h-input-${key}" placeholder="Share your reflection..."></textarea><div class="h-form-row"><label class="h-radio"><input type="radio" name="h-vis-${key}" value="public" checked>🌍 Public</label><label class="h-radio"><input type="radio" name="h-vis-${key}" value="private">🔒 Private</label><button class="h-submit" onclick="window.hadithBrowser.submitComment('${key}')">Post</button></div></div>`
+        : `<div class="h-signin-msg">Please <a onclick="window.open('${WEBSITE_URL}','_blank')">sign in on the website</a> to leave a reflection.</div>`;
+
+      html += `
+        <div class="h-card" data-key="${key}">
+          <div class="h-card-head">
+            <span class="h-num">${h.hadithnumber}</span>
+            <span class="h-grade ${grade}">${gradeLabel}</span>
+          </div>
+          <p class="h-text">${this.escapeHtml(h.text)}</p>
+          <div class="h-foot">
+            <button class="h-toggle" onclick="window.hadithBrowser.toggleComments('${key}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Thoughts (${comments.length})</button>
+          </div>
+          <div class="h-comments" id="h-comments-${key}">
+            <div class="h-cmt-list">${cmtsHtml || '<div style="font-size:.8rem;color:var(--muted-2);padding:8px 0">No thoughts yet.</div>'}</div>
+            ${formHtml}
+          </div>
+        </div>`;
+    });
+    c.innerHTML = html;
+  }
+
+  toggleComments(key){
+    const el = document.getElementById(`h-comments-${key}`);
+    if(el) el.classList.toggle('open');
+  }
+
+  async submitComment(key){
+    if(!window.__currentUser){ showToast('Sign in on the website to comment'); return; }
+    if(!db){ showToast('Comments unavailable'); return; }
+    const input = document.getElementById(`h-input-${key}`);
+    if(!input) return;
+    const vis = document.querySelector(`input[name="h-vis-${key}"]:checked`).value;
+    const text = input.value.trim();
+    if(!text) return;
+    try{
+      const docRef = await db.collection('comments').add({
+        hadithKey: key,
+        text,
+        isPublic: vis === 'public',
+        userId: window.__currentUser.uid,
+        userName: window.__currentUser.displayName || 'Anonymous',
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      if(!this.comments[key]) this.comments[key] = [];
+      this.comments[key].push({id:docRef.id, text, isPublic: vis==='public', userId:window.__currentUser.uid, userName:window.__currentUser.displayName||'Anonymous', timestamp:Date.now()});
+      this.renderHadiths({hadiths:[{hadithnumber:key.split('-').pop(), text: document.querySelector(`[data-key="${key}"] .h-text`).textContent}], metadata:{}}, key.split('-')[0], null, '');
+      showToast('Posted');
+    }catch(e){ console.log(e); showToast('Could not save'); }
+  }
+
+  async deleteComment(commentId, hadithKey){
+    if(!db || !window.__currentUser) return;
+    if(!confirm('Delete this comment?')) return;
+    try{
+      await db.collection('comments').doc(commentId).delete();
+      const arr = this.comments[hadithKey] || [];
+      const idx = arr.findIndex(c => c.id === commentId);
+      if(idx >= 0) arr.splice(idx, 1);
+      showToast('Deleted');
+      this.renderHadiths({hadiths:[{hadithnumber:hadithKey.split('-').pop(), text: document.querySelector(`[data-key="${hadithKey}"] .h-text`).textContent}], metadata:{}}, hadithKey.split('-')[0], null, '');
+    }catch(e){ showToast('Could not delete'); }
+  }
+}
+window.hadithBrowser = new HadithBrowser();
+
+// ============ DHIKR ============
+const DHIKR_DATA = {
+  daily:[
+    {id:'d1',arabic:'سُبْحَانَ اللَّهِ',translit:'SubhanAllah',translation:'Glory be to Allah',virtue:'Whoever says it 100 times a day, his sins are wiped away even if they are like the foam of the sea. (Bukhari & Muslim)',target:33},
+    {id:'d2',arabic:'الْحَمْدُ لِلَّهِ',translit:'Alhamdulillah',translation:'All praise is due to Allah',virtue:'It fills the scales on the Day of Judgement. (Muslim)',target:33},
+    {id:'d3',arabic:'اللَّهُ أَكْبَرُ',translit:'Allahu Akbar',translation:'Allah is the Greatest',virtue:'It fills what is between the heavens and the earth. (Muslim)',target:34},
+    {id:'d4',arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',translit:'La ilaha illallahu wahdahu la sharika lah',translation:'There is no god but Allah alone, He has no partner. His is the dominion and His is the praise, and He is Able to do all things.',virtue:'Whoever says it 100 times a day gets the reward of freeing 100 slaves, 100 good deeds recorded, 100 sins erased, and it is a protection from Shaytan that day. (Bukhari & Muslim)',target:10},
+    {id:'d5',arabic:'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',translit:'Astaghfirullaha wa atubu ilayh',translation:'I seek the forgiveness of Allah and I turn to Him in repentance',virtue:'The Prophet ﷺ said: "O people, repent to Allah, for I repent to Him 100 times a day." (Muslim)',target:100},
+    {id:'d6',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَىٰ نَبِيِّنَا مُحَمَّدٍ',translit:'Allahumma salli wa sallim \'ala nabiyyina Muhammad',translation:'O Allah, send prayers and peace upon our Prophet Muhammad',virtue:'Whoever sends one salah upon me, Allah sends ten upon him. (Muslim)',target:10}
+  ],
+  morning:[
+    {id:'m1',arabic:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ',translit:'Ayat al-Kursi (2:255)',translation:'Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence...',virtue:'Whoever recites it in the morning is protected from jinn until the evening. (al-Hakim)',target:1},
+    {id:'m2',arabic:'قُلْ هُوَ اللَّهُ أَحَدٌ ۝ قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ قُلْ أَعُوذُ بِرَبِّ النَّاسِ',translit:'Al-Ikhlas, Al-Falaq, An-Nas',translation:'Three short surahs of protection',virtue:'Reciting them three times in the morning and evening suffices you against everything. (Abu Dawud & Tirmidhi)',target:3},
+    {id:'m3',arabic:'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ',translit:'Asbahna wa asbahal-mulku lillah, walhamdulillah',translation:'We have entered a new morning and with it all dominion belongs to Allah. Praise be to Allah.',virtue:'A morning supplication taught by the Prophet ﷺ. (Muslim)',target:1},
+    {id:'m4',arabic:'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ',translit:'Allahumma bika asbahna, wa bika amsayna',translation:'O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the final return.',virtue:'A comprehensive morning dua taught by the Prophet ﷺ. (Tirmidhi)',target:1},
+    {id:'m5',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ',translit:'Sayyidul Istighfar',translation:'O Allah, You are my Lord, there is no god but You...',virtue:'Whoever says it in the morning with conviction and dies that day enters Paradise. (Bukhari)',target:1},
+    {id:'m6',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ',translit:'Allahumma inni as\'aluka al-\'afwa wal-\'afiyah',translation:'O Allah, I ask You for forgiveness and well-being.',virtue:'The Prophet ﷺ never left this dua in the morning or evening. (Abu Dawud)',target:1},
+    {id:'m7',arabic:'حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ',translit:'Hasbiyallahu la ilaha illa Huwa',translation:'Allah is sufficient for me. There is no god but He.',virtue:'Whoever says it 7 times, Allah will suffice him for whatever concerns him. (Abu Dawud)',target:7},
+    {id:'m8',arabic:'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ',translit:'Bismillahil-ladhi la yadurru ma\'asmihi shay\'',translation:'In the Name of Allah, with whose Name nothing can cause harm.',virtue:'Whoever says it 3 times in the morning, nothing will harm him that day. (Tirmidhi)',target:3},
+    {id:'m9',arabic:'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا',translit:'Raditu billahi Rabban, wa bil-Islami dinan',translation:'I am pleased with Allah as my Lord, with Islam as my religion.',virtue:'Whoever says it 3 times in the morning and evening, Allah will surely please him on the Day of Judgement. (Abu Dawud)',target:3},
+    {id:'m10',arabic:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',translit:'SubhanAllahi wa bihamdih',translation:'Glory be to Allah and praise be to Him',virtue:'Whoever says it 100 times in the morning, no one will come on the Day of Judgement with anything better. (Muslim)',target:100},
+    {id:'m11',arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ',translit:'La ilaha illallahu wahdahu la sharika lah',translation:'There is no god but Allah alone, with no partner.',virtue:'Whoever says it 10 times in the morning gets the reward of freeing a slave. (Bukhari)',target:10},
+    {id:'m12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'A morning and evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
+  ],
+  evening:[
+    {id:'e1',arabic:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ',translit:'Ayat al-Kursi (2:255)',translation:'Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence...',virtue:'Whoever recites it in the evening is protected from jinn until the morning. (al-Hakim)',target:1},
+    {id:'e2',arabic:'قُلْ هُوَ اللَّهُ أَحَدٌ ۝ قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ قُلْ أَعُوذُ بِرَبِّ النَّاسِ',translit:'Al-Ikhlas, Al-Falaq, An-Nas',translation:'Three short surahs of protection',virtue:'Reciting them three times in the morning and evening suffices you against everything. (Abu Dawud & Tirmidhi)',target:3},
+    {id:'e3',arabic:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ',translit:'Amsayna wa amsal-mulku lillah, walhamdulillah',translation:'We have entered a new evening and with it all dominion belongs to Allah. Praise be to Allah.',virtue:'An evening supplication taught by the Prophet ﷺ. (Muslim)',target:1},
+    {id:'e4',arabic:'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا',translit:'Allahumma bika amsayna, wa bika asbahna',translation:'O Allah, by You we enter the evening and by You we enter the morning.',virtue:'A comprehensive evening dua taught by the Prophet ﷺ. (Tirmidhi)',target:1},
+    {id:'e5',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ',translit:'Sayyidul Istighfar',translation:'O Allah, You are my Lord, there is no god but You...',virtue:'Whoever says it in the evening with conviction and dies that night enters Paradise. (Bukhari)',target:1},
+    {id:'e6',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ',translit:'Allahumma inni as\'aluka al-\'afwa wal-\'afiyah',translation:'O Allah, I ask You for forgiveness and well-being.',virtue:'The Prophet ﷺ never left this dua in the morning or evening. (Abu Dawud)',target:1},
+    {id:'e7',arabic:'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ',translit:'A\'udhu bikalimatillahit-tammati',translation:'I seek refuge in the perfect words of Allah.',virtue:'Whoever says it 3 times in the evening, no harm will come to him that night. (Muslim)',target:3},
+    {id:'e8',arabic:'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ',translit:'Bismillahil-ladhi la yadurru ma\'asmihi shay\'',translation:'In the Name of Allah, with whose Name nothing can cause harm.',virtue:'Whoever says it 3 times in the evening, nothing will harm him that night. (Tirmidhi)',target:3},
+    {id:'e9',arabic:'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا',translit:'Raditu billahi Rabban, wa bil-Islami dinan',translation:'I am pleased with Allah as my Lord, with Islam as my religion.',virtue:'Whoever says it 3 times in the evening, Allah will surely please him. (Abu Dawud)',target:3},
+    {id:'e10',arabic:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',translit:'SubhanAllahi wa bihamdih',translation:'Glory be to Allah and praise be to Him',virtue:'Whoever says it 100 times in the evening, no one will come on the Day of Judgement with anything better. (Muslim)',target:100},
+    {id:'e11',arabic:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ',translit:'La ilaha illallahu wahdahu la sharika lah',translation:'There is no god but Allah alone, with no partner.',virtue:'A protection and a treasure from the treasures of Paradise. (Bukhari)',target:10},
+    {id:'e12',arabic:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي',translit:'Allahumma \'afini fi badani, wa fi sam\'i',translation:'O Allah, grant my body health. O Allah, grant my hearing health.',virtue:'An evening dua taught by the Prophet ﷺ. (Abu Dawud)',target:3}
+  ]
+};
+
+class DhikrManager {
+  constructor(){
+    this.currentTab = 'daily';
+    this.todayKey = this.getTodayKey();
+    this.counts = this.loadCounts();
+    this.render();
+  }
+  getTodayKey(){
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  }
+  loadCounts(){
+    try{
+      const stored = JSON.parse(localStorage.getItem('dhikr-counts') || '{}');
+      if(stored.date !== this.todayKey) return {date:this.todayKey, counts:{}};
+      return stored;
+    }catch(e){ return {date:this.todayKey, counts:{}}; }
+  }
+  saveCounts(){ localStorage.setItem('dhikr-counts', JSON.stringify(this.counts)); }
+  getCount(id){ return this.counts.counts[id] || 0; }
+  increment(id, target){
+    const current = this.getCount(id);
+    if(current >= target) return;
+    this.counts.counts[id] = current + 1;
+    this.saveCounts();
+    const justCompleted = (current + 1) >= target;
+    this.updateCard(id, target, justCompleted);
+    this.updateSummary();
+    if(window.gardenManager) window.gardenManager.scheduleSave();
+  }
+  reset(id, target){
+    this.counts.counts[id] = 0;
+    this.saveCounts();
+    this.updateCard(id, target, false);
+    this.updateSummary();
+    if(window.gardenManager) window.gardenManager.scheduleSave();
+  }
+  switchTab(tab){
+    this.currentTab = tab;
+    document.querySelectorAll('.dk-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    this.renderList();
+    this.updateSummary();
+  }
+  render(){ this.renderList(); this.updateSummary(); }
+  renderList(){
+    const list = document.getElementById('dk-list');
+    if(!list) return;
+    const items = DHIKR_DATA[this.currentTab] || [];
+    list.innerHTML = items.map(d => {
+      const count = this.getCount(d.id);
+      const completed = count >= d.target;
+      const msg = completed ? `<div class="dk-msg"><span class="dua">بارك الله فيك</span><div class="en">May Allah accept your dhikr</div><div class="virtue">${d.virtue}</div></div>` : '';
+      return `<div class="dk-card ${completed?'completed':''}" data-id="${d.id}">
+        <div class="dk-badge">Target: ${d.target}x</div>
+        <p class="dk-arabic">${d.arabic}</p>
+        <p class="dk-translit">${d.translit}</p>
+        <p class="dk-translation">${d.translation}</p>
+        <div class="dk-virtue">✨ ${d.virtue}</div>
+        <div class="dk-counter">
+          <button class="dk-reset" onclick="window.dhikrManager.reset('${d.id}', ${d.target})">↺</button>
+          <button class="dk-tap ${completed?'completed':''}" data-id="${d.id}" data-target="${d.target}" onclick="window.dhikrManager.increment('${d.id}', ${d.target})">${count}</button>
+          <div class="dk-target"><strong>${d.target}</strong><span>target</span></div>
+        </div>
+        ${msg}
+        <button class="dk-copy" onclick="window.dhikrManager.copyDhikr('${d.id}')">📋 Copy this dhikr</button>
+      </div>`;
+    }).join('');
+  }
+  copyDhikr(id){
+    const items = DHIKR_DATA[this.currentTab] || [];
+    const d = items.find(x => x.id === id);
+    if(!d) return;
+    const text = `${d.arabic}\n\n${d.translit}\n\n"${d.translation}"\n\nVirtue: ${d.virtue}`;
+    navigator.clipboard.writeText(text).then(()=>showToast('Dhikr copied')).catch(()=>{});
+  }
+  updateCard(id, target, justCompleted){
+    const card = document.querySelector(`[data-id="${id}"]`);
+    if(!card) return;
+    const btn = card.querySelector('.dk-tap');
+    if(!btn) return;
+    const count = this.getCount(id);
+    btn.textContent = count;
+    const completed = count >= target;
+    btn.classList.toggle('completed', completed);
+    card.classList.toggle('completed', completed);
+    if(justCompleted){
+      btn.classList.remove('completed');
+      void btn.offsetWidth;
+      btn.classList.add('completed');
+      this.spawnConfetti(btn);
+    }
+    const oldMsg = card.querySelector('.dk-msg');
+    const items = DHIKR_DATA[this.currentTab] || [];
+    const dhikr = items.find(d => d.id === id);
+    if(completed && dhikr){
+      if(!oldMsg){
+        const msg = document.createElement('div');
+        msg.className = 'dk-msg';
+        msg.innerHTML = `<span class="dua">بارك الله فيك</span><div class="en">May Allah accept your dhikr</div><div class="virtue">${dhikr.virtue}</div>`;
+        const copyBtn = card.querySelector('.dk-copy');
+        card.insertBefore(msg, copyBtn);
+      }
+    } else if(!completed && oldMsg){ oldMsg.remove(); }
+  }
+  spawnConfetti(btn){
+    for(let i=0;i<8;i++){
+      const angle = (Math.PI * 2 * i) / 8 - Math.PI/2;
+      const distance = 55 + Math.random() * 25;
+      const tx = Math.cos(angle) * distance;
+      const ty = Math.sin(angle) * distance;
+      const p = document.createElement('span');
+      p.className = 'dk-confetti';
+      p.style.setProperty('--tx', tx + 'px');
+      p.style.setProperty('--ty', ty + 'px');
+      p.style.left = '50%'; p.style.top = '50%';
+      p.style.marginLeft = '-5px'; p.style.marginTop = '-5px';
+      btn.appendChild(p);
+      setTimeout(()=>p.remove(), 1500);
+    }
+  }
+  updateSummary(){
+    const items = DHIKR_DATA[this.currentTab] || [];
+    let completed = 0;
+    items.forEach(d => { if(this.getCount(d.id) >= d.target) completed++; });
+    const summary = document.getElementById('dk-summary');
+    if(summary) summary.innerHTML = `Progress today: <strong>${completed} / ${items.length}</strong> completed`;
+  }
+}
+window.dhikrManager = new DhikrManager();
+
+document.querySelectorAll('.dk-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>window.dhikrManager.switchTab(tab.dataset.tab));
+});
+
+// ============ GARDEN ============
+class GardenManager {
+  constructor(){
+    this.log = {};
+    this.streak = 0;
+    this.totalDhikr = 0;
+    this.saveTimer = null;
+  }
+  dateKey(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+  async load(){
+    if(!window.__currentUser || !db){ this.render(); return; }
+    try{
+      const snap = await db.collection('users').doc(window.__currentUser.uid).collection('dhikrLog').limit(60).get();
+      this.log = {};
+      let total = 0;
+      snap.forEach(doc => {
+        const data = doc.data();
+        this.log[doc.id] = data;
+        total += (data.totalTaps || 0);
+      });
+      this.totalDhikr = total;
+      this.computeStreak();
+      this.render();
+    }catch(e){ console.log('garden load failed', e); this.render(); }
+  }
+  computeStreak(){
+    const today = new Date();
+    let streak = 0;
+    for(let i=0;i<90;i++){
+      const d = new Date(today);
+      d.setDate(d.getDate()-i);
+      const key = this.dateKey(d);
+      const entry = this.log[key];
+      if(entry && entry.dailyCount >= 6){ streak++; }
+      else if(i === 0) continue;
+      else break;
+    }
+    this.streak = streak;
+  }
+  async recordProgress(){
+    if(!window.__currentUser || !db) return;
+    const today = this.dateKey(new Date());
+    const dm = window.dhikrManager;
+    const dailyItems = DHIKR_DATA.daily, morningItems = DHIKR_DATA.morning, eveningItems = DHIKR_DATA.evening;
+    let dailyCount = 0, morningCount = 0, eveningCount = 0, totalTaps = 0;
+    dailyItems.forEach(d => { if(dm.getCount(d.id) >= d.target) dailyCount++; });
+    morningItems.forEach(d => { if(dm.getCount(d.id) >= d.target) morningCount++; });
+    eveningItems.forEach(d => { if(dm.getCount(d.id) >= d.target) eveningCount++; });
+    Object.values(dm.counts.counts).forEach(v => totalTaps += v);
+    try{
+      await db.collection('users').doc(window.__currentUser.uid).collection('dhikrLog').doc(today).set({
+        dailyCount, morningCount, eveningCount, totalTaps,
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      }, {merge:true});
+      this.log[today] = {dailyCount, morningCount, eveningCount, totalTaps};
+      this.computeStreak();
+      let total = 0;
+      Object.values(this.log).forEach(e => total += (e.totalTaps || 0));
+      this.totalDhikr = total;
+      this.render();
+      const tileStatus = document.getElementById('dhikr-streak-tile');
+      if(tileStatus) tileStatus.textContent = `Streak: ${this.streak} days 🔥`;
+    }catch(e){ console.log('garden save failed', e); }
+  }
+  scheduleSave(){
+    if(this.saveTimer) clearTimeout(this.saveTimer);
+    this.saveTimer = setTimeout(()=>{ this.saveTimer = null; this.recordProgress(); }, 2500);
+  }
+  render(){
+    const el = document.getElementById('dk-garden');
+    if(!el) return;
+    if(!window.__currentUser){
+      el.innerHTML = `<div style="text-align:center;padding:4px;color:var(--muted);font-size:.8rem">🌱 Sign in on the website to grow your dhikr garden</div>`;
+      return;
+    }
+    const days = [];
+    const today = new Date();
+    for(let i=13;i>=0;i--){
+      const d = new Date(today);
+      d.setDate(d.getDate()-i);
+      const key = this.dateKey(d);
+      const entry = this.log[key];
+      let icon = '·', cls = 'empty';
+      if(entry){
+        if(entry.dailyCount >= 6){ icon = '🌳'; cls = 'full'; }
+        else if(entry.totalTaps > 0){ icon = '🌿'; cls = 'partial'; }
+      }
+      days.push({icon, cls, key});
+    }
+    el.innerHTML = `
+      <div class="dk-garden-stats">
+        <div class="dk-stat"><div class="dk-stat-v">${this.streak} 🔥</div><div class="dk-stat-l">Day Streak</div></div>
+        <div class="dk-stat"><div class="dk-stat-v">${this.totalDhikr} 🌱</div><div class="dk-stat-l">Total Dhikr</div></div>
+      </div>
+      <div class="dk-grid">${days.map(d=>`<span class="dk-plant ${d.cls}" title="${d.key}">${d.icon}</span>`).join('')}</div>
+      <div class="dk-garden-hint">Complete all 6 daily dhikr to grow a 🌳</div>
+    `;
+  }
+}
+window.gardenManager = new GardenManager();
+
+// ============ GIVE ============
+function renderGive(){
+  const c = document.getElementById('give-content');
+  if(!c) return;
+  c.innerHTML = `
+    <div class="gv-heading">🇵🇸 Palestine &amp; Gaza</div>
+    <a class="gv-card" href="https://share.google/ClWPFamutpeCcRnsR" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🌳</div>
+      <div class="gv-card-name">Plant een Olijfboom</div>
+      <div class="gv-card-desc">Plant an olive tree in Palestine — a sadaqah jariyah for you or a loved one.</div>
+      <span class="gv-tag">Sadaqah Jariyah</span>
+    </a>
+    <a class="gv-card" href="https://islamic-relief.org/palestine" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🇵🇸</div>
+      <div class="gv-card-name">Islamic Relief — Palestine</div>
+      <div class="gv-card-desc">Emergency relief, food, water, and medical aid for the people of Gaza.</div>
+      <span class="gv-tag">Emergency Aid</span>
+    </a>
+    <div class="gv-heading">🤲 Zakat &amp; Sadaqah</div>
+    <a class="gv-card" href="https://islamic-relief.org" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🕋</div>
+      <div class="gv-card-name">Islamic Relief</div>
+      <div class="gv-card-desc">One of the largest Muslim NGOs — zakat-eligible projects worldwide.</div>
+      <span class="gv-tag">Zakat Eligible</span>
+    </a>
+    <a class="gv-card" href="https://www.muslimaid.org" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🌍</div>
+      <div class="gv-card-name">Muslim Aid</div>
+      <div class="gv-card-desc">Serving humanity since 1985 — food, water, orphan care, education.</div>
+      <span class="gv-tag">Zakat Eligible</span>
+    </a>
+    <a class="gv-card" href="https://pennyappeal.org" target="_blank" rel="noopener">
+      <div class="gv-card-icon">💧</div>
+      <div class="gv-card-name">Penny Appeal</div>
+      <div class="gv-card-desc">Water wells, orphan sponsorship, food packs, and emergency relief.</div>
+      <span class="gv-tag">Zakat Eligible</span>
+    </a>
+    <a class="gv-card" href="https://humanappeal.org.uk" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🌙</div>
+      <div class="gv-card-name">Human Appeal</div>
+      <div class="gv-card-desc">Zakat-eligible projects in over 25 countries — orphans, water, food.</div>
+      <span class="gv-tag">Zakat Eligible</span>
+    </a>
+    <div class="gv-heading">🌐 Crowdfunding</div>
+    <a class="gv-card" href="https://www.launchgood.com" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🚀</div>
+      <div class="gv-card-name">LaunchGood</div>
+      <div class="gv-card-desc">Crowdfunding platform for Muslim projects worldwide.</div>
+      <span class="gv-tag">Crowdfunding</span>
+    </a>
+    <a class="gv-card" href="https://www.qurbani.com" target="_blank" rel="noopener">
+      <div class="gv-card-icon">🐑</div>
+      <div class="gv-card-name">Qurbani.com</div>
+      <div class="gv-card-desc">Qurbani and aqiqah services with full transparency.</div>
+      <span class="gv-tag">Qurbani</span>
+    </a>
+  `;
+}
+
+// ============ JUMU'AH TILE STATUS ============
+function updateJumuahStatus(){
+  const el = document.getElementById('jumuah-status');
+  if(!el) return;
+  const day = new Date().getDay();
+  if(day === 5){ el.textContent = 'Open today — tap to read'; }
+  else{
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const diff = (5 - day + 7) % 7 || 7;
+    el.textContent = `Opens in ${diff} day${diff===1?'':'s'} (Friday)`;
+  }
+}
+updateJumuahStatus();
+
+// ============ BOOT ============
 loadSurahList().then(()=>loadSurah(QURAN.surah));
 document.getElementById('quran-continue').textContent = `Continue: ${surahShortName(QURAN.surah)}`;
 
@@ -812,4 +1474,4 @@ window.addEventListener('load', ()=>{
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 </body>
-                         </html>
+  </html>
