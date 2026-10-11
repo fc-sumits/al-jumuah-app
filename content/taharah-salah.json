@@ -1,0 +1,61 @@
+{
+  "taharah": {
+    "hero": {
+      "arabic": "الطهارة",
+      "title": "Taharah",
+      "sub": "Purification in Islam",
+      "desc": "Purity is half of faith"
+    },
+    "sections": [
+      {
+        "id": "basics", "num": "A",
+        "title": "The Basics",
+        "sub": "What is taharah, its importance and general rules.",
+        "steps": [
+          { "id":"definition","icon":"drop","arabic":"الطهارة","title":"What is Taharah?","body":"Taharah is the state of ritual purity required before certain acts of worship — most importantly, the five daily prayers. It means both physical cleanliness and a spiritual state of readiness to stand before Allah.","warn":"Taharah is not the same as ordinary cleanliness. A person can be physically clean but still impure in the Islamic sense (e.g. after using the toilet, until Wudu is made)." },
+          { "id":"importance","icon":"heart","arabic":"الطهور شطر الإيمان","title":"Why It Matters","body":"The Prophet ﷺ said: <strong>\"Purity is half of faith.\"</strong> (Muslim). Prayer without purity is not accepted. Taharah is therefore the first practical step of every act of worship — it prepares the heart and body to meet Allah." },
+          { "id":"types","icon":"water","arabic":"أنواع الطهارة","title":"Types of Purification","body":"There are three primary forms: <strong>Wudu</strong> (ablution for prayer and other acts), <strong>Ghusl</strong> (full bath after major impurity), and <strong>Tayammum</strong> (dry ablution with clean earth when water is unavailable or harmful)." },
+          { "id":"when","icon":"clock","arabic":"متى تجب الطهارة","title":"When Is It Required?","body":"Wudu is required before prayer, before touching the Quran, before Tawaf, and after using the toilet, passing wind, deep sleep, or losing consciousness. Ghusl is required after menstruation, postnatal bleeding, ejaculation, and embracing Islam." }
+        ]
+      },
+      {
+        "id": "wudu", "num": "B",
+        "title": "Wudu · Ablution",
+        "sub": "The complete step-by-step guide to wudu.",
+        "steps": [
+          { "id":"niyyah","icon":"niyyah","arabic":"النية والبسملة","title":"Niyyah & Bismillah","body":"In your heart, intend to perform Wudu for the sake of Allah. Then say <strong>\"Bismillah\"</strong>. The intention does not need to be spoken aloud.","warn":"Wudu is invalid without the intention — even if all physical acts are performed." },
+          { "id":"hands","icon":"hands","arabic":"غسل الكفين","title":"Wash the Hands","body":"Wash both hands up to the wrists three times, starting with the right. Rub between the fingers to ensure no part is left dry.","warn":"Rings and watches should be removed or moved so water reaches the skin beneath." },
+          { "id":"mouth","icon":"mouth","arabic":"المضمضة","title":"Rinse the Mouth","body":"Take water into the mouth and rinse thoroughly three times. If fasting, be careful not to swallow. Use the right hand to scoop water.","warn":"The mouth should be rinsed to the back, but not so far as to risk swallowing water while fasting." },
+          { "id":"nose","icon":"nose","arabic":"الاستنشاق","title":"Rinse the Nose","body":"Sniff water into the nostrils three times and blow it out. Use the right hand to take water and the left hand to clean the nose.","warn":"Do not sniff too deeply while fasting — this may break the fast." },
+          { "id":"face","icon":"face","arabic":"غسل الوجه","title":"Wash the Face","body":"Wash the face three times, from the hairline (forehead) to the chin, and from ear to ear. Water should reach every part of the skin.","warn":"Only washing part of the face — or missing the hairline — invalidates this step. Include the beard and eyebrows." },
+          { "id":"arms","icon":"arms","arabic":"غسل اليدين إلى المرفقين","title":"Wash the Arms","body":"Wash the right arm from fingertips to above the elbow three times, then the left arm the same way. Ensure water reaches the elbow fully.","warn":"Common mistake: stopping at the elbow. Water must cover the elbow joint itself." },
+          { "id":"head","icon":"head","arabic":"مسح الرأس والأذنين","title":"Wipe the Head & Ears","body":"With wet hands, wipe over the entire head once — from front to back and back to front. Then wipe the ears once: index fingers inside, thumbs behind.","warn":"Wiping is done once, not three times. New water is not taken for the ears — use the same wet hands." },
+          { "id":"feet","icon":"feet","arabic":"غسل القدمين إلى الكعبين","title":"Wash the Feet","body":"Wash the right foot up to and including the ankle three times, then the left foot the same. Rub between the toes with the little finger.","warn":"The ankles and heels must be fully washed. Missing even a small patch leaves the Wudu invalid." }
+        ]
+      },
+      {
+        "id": "ghusl", "num": "C",
+        "title": "Ghusl · Full Bath",
+        "sub": "When it's required and how to perform it.",
+        "steps": [
+          { "id":"niyyah","icon":"niyyah","arabic":"النية","title":"Intention","body":"Make the intention in your heart to perform Ghusl to purify yourself for the sake of Allah. Then say \"Bismillah\".","warn":"Like Wudu, Ghusl is invalid without the intention — it must be a conscious act of worship, not just a shower." },
+          { "id":"wash-hands","icon":"hands","arabic":"غسل اليدين","title":"Wash the Hands","body":"Wash both hands three times, cleaning between the fingers. Then wash the private parts thoroughly with the left hand.","warn":"Use a separate cloth or your hand only. Do not touch the private parts with the right hand if avoidable." },
+          { "id":"wudu","icon":"water","arabic":"الوضوء","title":"Perform Wudu","body":"Perform a complete Wudu as you would before prayer. This covers most of the body in purification before the full bath.","warn":"If you are standing in a place where water drains, ensure the feet are washed last to avoid standing in used water." },
+          { "id":"head","icon":"head","arabic":"غسل الرأس","title":"Pour Water Over the Head","body":"Pour water over the head three times, massaging it into the roots of the hair. Ensure water reaches the scalp, not just the surface of the hair.","warn":"For women with braided hair, water must reach the roots — but the braids themselves do not need to be undone." },
+          { "id":"body","icon":"body","arabic":"غسل سائر الجسد","title":"Wash the Entire Body","body":"Pour water over the right side three times, then the left side three times. Ensure water reaches every part — including behind the ears, under the arms, the navel, and between the toes.","warn":"Any dry spot — even the size of a pinpoint — invalidates the Ghusl. Be thorough." }
+        ]
+      },
+      {
+        "id": "tayammum", "num": "D",
+        "title": "Tayammum · Dry Ablution",
+        "sub": "The alternative when water is not available.",
+        "steps": [
+          { "id":"when","icon":"info","arabic":"متى يجوز التيمم","title":"When Is It Permitted?","body":"Tayammum is permitted when water is unavailable, when using water would harm you (illness, extreme cold), or when water is too scarce to share. It is a mercy from Allah, not a lesser option.","warn":"If water is available and safe, Tayammum is not valid — you must use water." },
+          { "id":"niyyah","icon":"niyyah","arabic":"النية","title":"Intention","body":"Make the intention in your heart to perform Tayammum for purification. Say \"Bismillah\". Then face the Qibla if convenient.","warn":"Tayammum is invalid without the intention, just like Wudu and Ghusl." },
+          { "id":"strike","icon":"earth","arabic":"ضرب الكفين على التراب","title":"Strike the Clean Earth","body":"Strike both palms on clean earth (or stone, sand, or a clean surface with dust). Then blow lightly to remove excess dust so it doesn't smear.","warn":"The surface must be clean (tahir). If it has visible impurity on it, it cannot be used." },
+          { "id":"face-hands","icon":"face","arabic":"مسح الوجه واليدين","title":"Wipe the Face & Hands","body":"Wipe the entire face with both palms once, then wipe the right hand up to the wrist with the left palm, and the left hand with the right palm.","warn":"Only one strike is required. Wiping is once, not three times, and the arms are wiped only to the wrists — not to the elbows." }
+        ]
+      }
+    ]
+  }
+          }
