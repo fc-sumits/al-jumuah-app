@@ -1,0 +1,823 @@
+{
+  "prophets": [
+    {
+      "id": "yunus",
+      "num": 21,
+      "name": "Yunus",
+      "arabic": "يونس",
+      "subtitle": "13 Lessons",
+      "image": "images/prophet-21-yunus.webp",
+      "tier": "major",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Prophet of Nineveh",
+          "thumb": "nineveh",
+          "body": "<p>Yunus (AS) was sent to the city of Nineveh — a great metropolis in the region of Mosul, in modern-day Iraq. Some narrations say it held over a hundred thousand people, perhaps more. Others say it was larger still. It was one of the great cities of the ancient world.</p><p>The people of Nineveh were idolaters. They worshipped statues, carved gods, and the sun and moon. They had no scripture, no prophet before Yunus, and no memory of tawhid. They had inherited their religion from their ancestors — and their ancestors had been wrong.</p><p>Yunus called them to Allah. He warned them of the punishment. He called them to abandon their idols. And they refused. Day after day, week after week — nothing. They mocked him. They dismissed him. They continued in their shirk.</p><p>Yunus had delivered the message. He had warned them again and again. And when they still refused, he made a decision that would change the course of his life: he left. Not because Allah commanded him to — but because he was frustrated. He had had enough.</p><p>This is the beginning of the story of Yunus — the only prophet in the Quran whose story is named after him, and one of the most beloved stories in all of Islam.</p>",
+          "dialogue": {
+            "arabic": "وَإِنَّ يُونُسَ لَمِنَ الْمُرْسَلِينَ ۝ إِذْ أَبَقَ إِلَى الْفُلْكِ الْمَشْحُونِ",
+            "translation": "And indeed, Yunus was among the messengers. When he ran away to the laden ship.",
+            "ref": "As-Saffat 37:139-140"
+          },
+          "didYouKnow": "Nineveh is one of the oldest cities in the world — its ruins are near modern Mosul in Iraq. The Quran calls Yunus's departure <em>abq</em>, a word used for a slave running away from his master. It was not a dignified exit — it was a flight.",
+          "takeaway": "Even a prophet can become frustrated — but frustration is not permission to abandon the mission."
+        },
+        {
+          "num": 2,
+          "title": "The Departure",
+          "thumb": "departure",
+          "body": "<p>Yunus left Nineveh. He did not ask Allah for permission. He did not wait for a command. He simply walked out — angry at his people, angry at their stubbornness, and perhaps angry at his own inability to change them.</p><p>The Quran uses the word <em>abq</em> — fleeing like a runaway slave. Yunus fled from his mission. He fled from his people. He fled from the responsibility that Allah had given him. And he thought that he could escape — that by leaving Nineveh, he could leave behind the burden of prophethood.</p><p>He walked until he reached the sea. There, a ship was preparing to depart. He boarded it — without asking where it was going, without caring where it would take him. He just wanted to be somewhere else. Anywhere but Nineveh.</p><p>But the Quran says something quietly ominous: <em>And indeed, Yunus was among the messengers.</em> He was still a prophet. He was still sent by Allah. And no matter how far he ran, he could not run from his Lord. Because his Lord was with him on the ship, in the sea, and in the belly of the whale — everywhere he went.</p><p>This is the first lesson of Yunus's story: you cannot escape the mission of Allah. You can leave a place. You can leave a people. You can leave a responsibility. But you cannot leave Allah. He is wherever you are — and His plan for you follows you wherever you go.</p>",
+          "dialogue": {
+            "arabic": "وَذَا النُّونِ إِذ ذَّهَبَ مُغَاضِبًا فَظَنَّ أَن لَّن نَّقْدِرَ عَلَيْهِ",
+            "translation": "And Dhun-Nun, when he went off in anger and thought that We would not decree anything upon him.",
+            "ref": "Al-Anbiya 21:87"
+          },
+          "didYouKnow": "The title <em>Dhun-Nun</em> means 'the companion of the fish' — one of the names given to Yunus in the Quran. Another title is <em>Ṣāḥib al-Ḥūt</em> — 'the companion of the whale.' Both refer to the most famous moment of his life.",
+          "takeaway": "You cannot run from Allah — you can only run deeper into His plan."
+        },
+        {
+          "num": 3,
+          "title": "The Casting of Lots",
+          "thumb": "lots",
+          "body": "<p>The ship sailed. And then, as often happens at sea, a storm arose. The waves grew. The ship was overloaded. The captain realised they had to lighten the load — someone had to be thrown overboard.</p><p>The Quran says: <em>And the ship was heavily laden. And he drew lots and was among the losers.</em> They drew lots, and the lot fell on Yunus. Three times the Quran refers to this moment — and each time, the lot fell on Yunus. He was chosen to be thrown.</p><p>Look at the moment. Yunus had fled Nineveh to escape his mission. He had boarded a ship to escape his responsibility. And now, the sea itself demanded him. The waves rose, the ship groaned, and the lot fell — again and again — on the very man who had tried to run.</p><p>Some scholars say the sailors were reluctant to throw him. They had seen his dignity, his character. They cast lots a second time, then a third — and each time, the lot fell on Yunus. Finally, Yunus himself told them: <em>I am the one. Throw me overboard.</em> He did not argue. He did not beg. He accepted the decree of Allah — even the decree that meant drowning.</p><p>He was thrown into the sea. And the sea was not done with him yet. Because waiting beneath the waves was something prepared for him from before he was born — a whale.</p>",
+          "dialogue": {
+            "arabic": "فَسَاهَمَ فَكَانَ مِنَ الْمُدْحَضِينَ ۝ فَالْتَقَمَهُ الْحُوتُ وَهُوَ مُلِيمٌ",
+            "translation": "And he drew lots and was among the losers. Then the whale swallowed him, and he was to blame.",
+            "ref": "As-Saffat 37:141-142"
+          },
+          "didYouKnow": "The Arabic word <em>al-mudḥaḍīn</em> — 'the losers' — is used specifically for those who lose in a draw. The image is vivid: Yunus drew lots three times, and each time, he lost. And it was not really a loss — it was the beginning of his rescue.",
+          "takeaway": "What looks like losing the draw may actually be the hand of Allah choosing you for something you cannot yet imagine."
+        },
+        {
+          "num": 4,
+          "title": "The Belly of the Whale",
+          "thumb": "whale",
+          "body": "<p>The whale swallowed Yunus. The Quran says: <em>Then the whale swallowed him, and he was to blame.</em> Blameworthy — because he had left his mission without permission. He had fled from the task Allah had given him. And now he was in the belly of a whale, in the darkness of the sea, in a place no human being had ever been before.</p><p>Think about what Yunus saw. No light. No sound except the ocean around him. No hope of escape. He was in the belly of a creature of the deep, deep under the water, with nothing but his own thoughts and his own duas.</p><p>The classical scholars describe the layers of darkness surrounding Yunus. The darkness of the whale's belly. The darkness of the ocean. The darkness of the night. Three layers of blackness — no light from any direction. Total, absolute, hopeless darkness.</p><p>And then — in that place where no one could hear him, no one could help him, no one could even know where he was — Yunus made a dua. And that dua would be preserved in the Quran forever. It would become the dua of every desperate believer, in every generation, in every kind of darkness.</p>",
+          "dialogue": {
+            "arabic": "فَالْتَقَمَهُ الْحُوتُ وَهُوَ مُلِيمٌ",
+            "translation": "Then the whale swallowed him, and he was to blame.",
+            "ref": "As-Saffat 37:142"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>Do not ask me about the whale that swallowed Yunus — it was a whale of the sea, and it swallowed him in the darkness of the deep.</em> The story is preserved in revelation exactly because it teaches something the Prophet ﷺ wanted every Muslim to remember.",
+          "takeaway": "Sometimes Allah has to take you to the darkest place you have ever been before you can see the light."
+        },
+        {
+          "num": 5,
+          "title": "The Dua of the Whale",
+          "thumb": "dua",
+          "body": "<p>In the belly of the whale, in three layers of darkness, Yunus made a dua. And it is one of the shortest duas in the Quran — and one of the most powerful:</p><p><em>La ilaha illa anta subhanaka inni kuntu minaz-zalimin.</em></p><p>There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers.</p><p>Three sentences. A testimony of tawhid. A declaration of Allah's perfection. And an admission of his own fault. Yunus did not blame his people. He did not blame the whale. He did not blame the sea or the storm or the sailors. He blamed himself. <em>Inni kuntu minaz-zalimin</em> — I have wronged myself.</p><p>The Prophet ﷺ said that no one who calls upon Allah with this dua will be left unanswered — because it contains everything a servant needs to say. It affirms the Oneness of Allah. It glorifies Him. It humbles the one who says it. It accepts responsibility. It does not shift blame. It does not justify. It simply says: <em>My Lord, I have wronged myself — and there is no god but You.</em></p><p>In the darkest possible place, in the most hopeless possible moment, Yunus found the exact words that every soul needs to say to its Lord. And Allah heard him.</p>",
+          "dialogue": {
+            "arabic": "فَنَادَىٰ فِي الظُّلُمَاتِ أَن لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+            "translation": "So he called out in the darknesses: There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers.",
+            "ref": "Al-Anbiya 21:87"
+          },
+          "didYouKnow": "This dua — <em>La ilaha illa anta subhanaka inni kuntu minaz-zalimin</em> — is called <em>Duʿāʾ Yunus</em> and is one of the most beloved duas in Islamic tradition. The Prophet ﷺ said that no Muslim says it in supplication for anything except that Allah answers him.",
+          "takeaway": "The best dua in your darkest moment is the one that glorifies Allah and admits your own fault."
+        },
+        {
+          "num": 6,
+          "title": "The Command to the Whale",
+          "thumb": "command",
+          "body": "<p>The dua was answered. The Quran says: <em>So We responded to him and saved him from the distress. And thus do We save the believers.</em></p><p>Notice the order. Yunus called. Allah answered. The whale — an enormous creature with no reason to spit out its food — obeyed the command of its Lord and released him. The sea, which had accepted the whale's swallow, gave Yunus back to the shore. And Yunus emerged onto dry land — exhausted, naked, and completely raw.</p><p>The Quran says: <em>Then We cast him onto the bare shore while he was ill.</em> He was sick. His skin had been affected by the acids of the whale's stomach. His body was weak. He was a man reduced to nothing — no mission, no people, no dignity, no strength.</p><p>And then Allah did something tender: <em>And We caused a gourd vine to grow over him.</em> A plant grew to give him shade. Its broad leaves covered his naked body. Its fruit gave him food. In the middle of a barren shore, Allah provided shelter for the prophet He had just saved.</p><p>This is the mercy of Allah for His servants. He does not just save you from the whale — He gives you shade on the shore. He does not just answer your dua — He provides for you after the answer. Every step of Yunus's recovery was a gift from his Lord.</p>",
+          "dialogue": {
+            "arabic": "فَاسْتَجَبْنَا لَهُ وَنَجَّيْنَاهُ مِنَ الْغَمِّ ۚ وَكَذَٰلِكَ نُنجِي الْمُؤْمِنِينَ",
+            "translation": "So We responded to him and saved him from the distress. And thus do We save the believers.",
+            "ref": "Al-Anbiya 21:88"
+          },
+          "didYouKnow": "The classical scholars say the gourd plant that Allah grew for Yunus was a <em>yaqṭīn</em> — a broad-leafed plant whose leaves give shade without attracting insects. It was the perfect provision for a prophet who had lost everything.",
+          "takeaway": "Allah does not just save you — He provides for you after He saves you."
+        },
+        {
+          "num": 7,
+          "title": "The Plant and the Prophet",
+          "thumb": "plant",
+          "body": "<p>When Yunus recovered, the Quran says: <em>And We sent him to a hundred thousand or more. And they believed, so We gave them enjoyment for a time.</em></p><p>Wait — is this the same Nineveh? Yes. When Yunus left Nineveh, he did not know it — but his departure had shaken the people. They had seen a prophet leave them. Some narrations say they had seen the signs of punishment beginning to appear in the sky. And they had realised — too late, they thought — that Yunus had been telling the truth.</p><p>The entire city repented. Every man, woman, and child. They turned to Allah. They abandoned their idols. They cried out for forgiveness. And Allah — the Most Merciful — accepted them. The punishment was lifted. The city that had mocked its prophet for years became a city of believers overnight.</p><p>Yunus — who had fled Nineveh because he thought his people would never believe — returned to a city that had already believed. He had given up on them, but Allah had not. He had fled the mission, but Allah had finished it in his absence. His fear that his people would never turn was proven wrong by the very people he had abandoned.</p><p>This is the lesson. The change of hearts is not in our hands. We call. We warn. We invite. And then Allah — who owns every heart — does the work. Sometimes He does it in front of us. Sometimes He does it after we have left. But He never stops.</p>",
+          "dialogue": {
+            "arabic": "فَآمَنُوا فَمَتَّعْنَاهُمْ إِلَىٰ حِينٍ",
+            "translation": "And they believed, so We gave them enjoyment for a time.",
+            "ref": "As-Saffat 37:148"
+          },
+          "didYouKnow": "The people of Nineveh are the only nation in the Quran who were spared after the punishment had already been decreed. Allah says: <em>Then why was there not a city that believed and benefited from its faith except the people of Yunus?</em> (Yunus 10:98) Their repentance is unique in revelation.",
+          "takeaway": "The change of hearts is not in our hands — Allah can turn a nation overnight, whether we are there or not."
+        },
+        {
+          "num": 8,
+          "title": "The Only Reprieved Nation",
+          "thumb": "reprieved",
+          "body": "<p>Among all the nations mentioned in the Quran — the people of Nuh, the 'Ad, the Thamud, the people of Lut, the people of Shuayb, the people of Musa and Fir'awn — only one nation ever avoided the punishment after it had been decreed. And it was the people of Yunus.</p><p>The Quran says: <em>Then why was there not a city that believed and benefited from its faith except the people of Yunus? When they believed, We removed from them the punishment of disgrace in worldly life and gave them enjoyment for a time.</em></p><p>Look carefully at what this means. The other nations — every one of them — were given warnings. They were given messengers. They were given years to respond. And they refused. So the punishment came. But Nineveh was different. When Nineveh finally believed — after Yunus had already left, after the punishment was already at their door — Allah relented. He lifted it. He forgave them.</p><p>This is the mercy of Allah. Even when the punishment has been decreed, even when the prophet has already walked away, even when the city has been marked for destruction — the door of tawbah remains open until the very last moment. The people of Nineveh proved that no one is beyond forgiveness — as long as they are still alive to ask for it.</p>",
+          "dialogue": {
+            "arabic": "فَلَوْلَا كَانَتْ قَرْيَةٌ آمَنَتْ فَنَفَعَهَا إِيمَانُهَا إِلَّا قَوْمَ يُونُسَ لَمَّا آمَنُوا كَشَفْنَا عَنْهُمْ عَذَابَ الْخِزْيِ فِي الْحَيَاةِ الدُّنْيَا",
+            "translation": "Then why was there not a city that believed and benefited from its faith except the people of Yunus? When they believed, We removed from them the punishment of disgrace in worldly life.",
+            "ref": "Yunus 10:98"
+          },
+          "didYouKnow": "The repentance of Nineveh is celebrated in Surah Yunus (chapter 10), which is named after the prophet. It is the only surah named after a prophet whose entire story is about a nation's repentance.",
+          "takeaway": "The door of tawbah is open until the very last moment — never assume anyone is beyond forgiveness."
+        },
+        {
+          "num": 9,
+          "title": "The Lesson of Patience",
+          "thumb": "patience",
+          "body": "<p>The Quran does not condemn Yunus for leaving Nineveh. It records it — but it treats it as a moment of human weakness, not as a sin. And then it gives us the lesson: <em>So be patient, O Muhammad, as were the messengers of strong will, and do not be like the companion of the whale.</em></p><p>This is the Quran's lesson from Yunus's life. The Prophet ﷺ was told: <em>Do not be like the companion of the whale.</em> Do not leave your people in frustration. Do not give up on them because they did not respond. Do not assume that because your message is not working, the mission is over.</p><p>Yunus's impatience was real. His frustration was understandable. But it was not the way of the prophets of strong will — Ibrahim, Nuh, Musa, and Muhammad ﷺ. They did not leave. They did not give up. They did not flee. They stayed with their people for decades, through mockery and rejection, through every frustration — because they knew that the harvest belonged to Allah, not to them.</p><p>The Prophet ﷺ himself lived this. When he was driven out of Ta'if — stoned, bleeding, mocked — he did not curse the city. He said: <em>Perhaps Allah will bring from their descendants those who will worship Him alone.</em> Yunus fled in frustration; the Prophet ﷺ stayed in hope. This is the difference between the companion of the whale and the Prophet of mercy.</p>",
+          "dialogue": {
+            "arabic": "فَاصْبِرْ كَمَا صَبَرَ أُولُو الْعَزْمِ مِنَ الرُّسُلِ وَلَا تَكُن كَصَاحِبِ الْحُوتِ",
+            "translation": "So be patient, as were the messengers of strong will, and do not be like the companion of the whale.",
+            "ref": "Al-Ahqaf 46:35"
+          },
+          "didYouKnow": "The <em>ulū al-ʿazm</em> — messengers of strong will — are generally considered to be Nuh, Ibrahim, Musa, Isa, and Muhammad ﷺ. These are the prophets whose patience was the most extraordinary, and whose missions lasted the longest.",
+          "takeaway": "The mission of a believer is patience — not because success is guaranteed, but because the outcome belongs to Allah."
+        },
+        {
+          "num": 10,
+          "title": "The Prophet of the Fish",
+          "thumb": "fish",
+          "body": "<p>Yunus is called <em>Ṣāḥib al-Ḥūt</em> — the companion of the whale. It is one of the most famous titles in Islamic tradition — a name that reminds us of the darkest moment of his life. And yet, it is a title of honour. Because in that dark moment, Yunus said the words that every believer in distress has repeated since: <em>La ilaha illa anta subhanaka inni kuntu minaz-zalimin.</em></p><p>The Prophet ﷺ said: <em>Shall I not teach you the dua of Yunus?</em> And he taught it to his Companions. He told them that whoever says it in any moment of distress — in any whale, in any darkness, in any hopeless place — Allah will answer him. Because the dua of Yunus was not just a dua for a specific moment — it was the model for all distress.</p><p>Since that day, Muslims have said this dua in hospitals, in prisons, in wars, in famines, in grief, in loneliness, in every kind of darkness. And every time it has been said, Allah has heard it — because the dua of His prophet carries a special weight. He who was saved from the belly of the whale teaches us the prayer of salvation.</p><p>Yunus is the prophet whose darkness became the light of every believer in distress. His moment of greatest weakness became the means of every believer's greatest strength.</p>",
+          "dialogue": {
+            "arabic": "لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+            "translation": "There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers.",
+            "ref": "Al-Anbiya 21:87"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>The dua of Dhun-Nun, when he called out in the belly of the whale, was heard by Allah — and if a Muslim calls out with it in any distress, Allah will answer him.</em> It is one of the most powerful duas in Islamic tradition.",
+          "takeaway": "The dua of a prophet in his darkest moment becomes the light of every believer who comes after him."
+        },
+        {
+          "num": 11,
+          "title": "The Repentance of a Prophet",
+          "thumb": "tawbah",
+          "body": "<p>There is a striking detail in the story of Yunus that deserves its own reflection. When Yunus made his dua in the whale, he did not say: <em>My Lord, save me.</em> He said: <em>I have wronged myself.</em> He did not ask for rescue. He did not ask for forgiveness. He did not ask for anything. He simply admitted the truth.</p><p>And Allah saved him. Not because of the request — because there was no request. Not because of the words — because the words were an admission, not a plea. Allah saved him because Yunus had returned to the very foundation of faith: the recognition of who he was before his Lord.</p><p>This is the deepest lesson of tawbah. Repentance is not a transaction. It is not 'I will do X if You give me Y.' It is not a negotiation. It is a return. It is the soul turning back toward its Maker. And when the soul returns — when it genuinely, humbly, wholeheartedly acknowledges its own wrongness before Allah — then everything else follows.</p><p>Yunus did not bargain with Allah from the belly of the whale. He did not promise good deeds if Allah saved him. He simply said: <em>I have wronged myself.</em> And that was enough. Because when the servant says the truth about himself, Allah responds with the truth about Himself: <em>I am the Forgiving, the Merciful.</em></p>",
+          "dialogue": {
+            "arabic": "إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+            "translation": "Indeed, I have been of the wrongdoers.",
+            "ref": "Al-Anbiya 21:87"
+          },
+          "didYouKnow": "The scholars say Yunus's dua is a model of tawbah because it contains no request. It is pure admission. This is the highest form of repentance — when the servant returns to Allah not to ask for anything, but simply because he has recognised the truth.",
+          "takeaway": "The truest tawbah is the one that asks for nothing — and returns simply because Allah deserves to be returned to."
+        },
+        {
+          "num": 12,
+          "title": "The Second Chance",
+          "thumb": "second",
+          "body": "<p>When Yunus returned to Nineveh, he found a city transformed. The people who had mocked him for years were now prostrating to Allah. The idols had been broken. The temples had been abandoned. The nation that had rejected him had come to faith — and he had missed the moment of their conversion.</p><p>Yunus had wanted to be the one who converted them. He had wanted to see the fruits of his labour. He had wanted to be there when the light dawned on his people. But Allah had reserved that moment for His own timing — and it had happened while Yunus was in the belly of the whale.</p><p>This is another lesson from Yunus's story. The outcome we desire is not always given to us in the way we want it. Sometimes the harvest comes after we have left the field. Sometimes the joy of the conversion is not for us to witness. Sometimes Allah reserves the reward for the Hereafter, not for this world.</p><p>But the reward is still ours. Yunus did not see the conversion of Nineveh — but every person who believed through his message was a reward credited to him. The Prophet ﷺ said: <em>Whoever guides someone to good will have a reward like the one who did it.</em> Yunus guided a nation — and he will be rewarded for every soul.</p><p>His patience, his obedience, his return to Nineveh after the whale — all of it was accepted. And his place among the messengers is secure. Even when he could not see the fruits, the fruits were given to him by the One who sees all.</p>",
+          "dialogue": {
+            "arabic": "مَنْ دَلَّ عَلَىٰ خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ",
+            "translation": "Whoever guides someone to good will have a reward like the one who did it.",
+            "ref": "Sahih Muslim"
+          },
+          "didYouKnow": "Yunus returned to Nineveh and continued to guide the people for the rest of his life. Some narrations say he lived long, ruling the city with justice and teaching the people the way of tawhid. His story does not end with the whale — it ends with a faithful prophet guiding a believing nation.",
+          "takeaway": "The reward for guiding others is credited to you even if you never see the harvest."
+        },
+        {
+          "num": 13,
+          "title": "The Legacy of Yunus",
+          "thumb": "legacy",
+          "body": "<p>Yunus's story is one of the most complete in the Quran — a prophet who fled from his mission, was swallowed by a whale, made a dua from the depths, was saved, returned to his people, and found them already guided. Every stage of the story is a lesson.</p><p>The Prophet ﷺ said: <em>No one should say that I am better than Yunus ibn Matta.</em> This is a strange statement — the Prophet ﷺ, the greatest of creation, saying he is not better than Yunus? The scholars explain: it was said to prevent people from using Yunus's mistakes to belittle him. The Prophet ﷺ did not want anyone to think less of Yunus because of his flight from Nineveh. Because even a prophet who runs from his mission is still a prophet of Allah.</p><p>The Prophet ﷺ also said: <em>Do not say that I am better than Yunus.</em> Not because the Prophet ﷺ was not the greatest — he was — but because the comparison itself is wrong. The prophets are not ranked by their mistakes. They are ranked by their obedience. And Yunus, in his darkest moment, was obedient to the very foundation of faith — he testified to the Oneness of Allah and he acknowledged his own fault.</p><p>Yunus's legacy is a legacy of hope. It is the hope that says: even the darkest place is not beyond the reach of Allah's mercy. Even the deepest ocean is not beyond His sight. Even the belly of a whale is a place where a servant can call upon his Lord and be heard. Yunus's story is the standing proof that <em>there is no darkness that Allah cannot reach.</em></p><p>May Allah grant us the humility of Yunus in his darkness, the hope of Yunus in his distress, and the return of Yunus to his mission. Ameen.</p>",
+          "dialogue": {
+            "arabic": "لَا يَقُولَنَّ أَحَدٌ أَنَا خَيْرٌ مِنْ يُونُسَ بْنِ مَتَّى",
+            "translation": "No one should say that I am better than Yunus ibn Matta.",
+            "ref": "Sahih al-Bukhari"
+          },
+          "didYouKnow": "Yunus is called <em>Yunus ibn Matta</em> — 'Yunus son of Matta' — in the Quran. His father's name is preserved in revelation. He was a prophet of Nineveh, and his story is one of the most beloved in Islamic tradition.",
+          "takeaway": "No darkness is beyond the reach of Allah — no despair is beyond the reach of His mercy."
+        }
+      ]
+    },{
+  "id": "zakariyya",
+  "num": 22,
+  "name": "Zakariyya",
+  "arabic": "زكريا",
+  "subtitle": "9 Lessons",
+  "image": "images/prophet-22-zakariyya.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Guardian of Maryam",
+      "thumb": "guardian",
+      "body": "<p>Zakariyya (AS) was a prophet of the Children of Israel, a descendant of Harun, and the guardian of Maryam — the mother of Isa. He was a righteous man, a carpenter by trade, and the caretaker of the temple in Jerusalem. His life was quiet, humble, and devoted to the worship of Allah.</p><p>The Quran introduces him with tenderness: <em>And her Lord accepted her with good acceptance and caused her to grow in a good manner and put her in the care of Zakariyya.</em> Maryam's mother had dedicated her child to the service of the temple — and Allah gave her to Zakariyya.</p><p>Every time Zakariyya entered the chamber where Maryam worshipped, he found something that made his heart stop: <em>Every time Zakariyya entered upon her in the prayer chamber, he found with her provision. He said: O Maryam, from where is this? She said: It is from Allah. Indeed, Allah provides for whom He wills without account.</em></p><p>Maryam was a young girl, but she was not eating from the temple's stores. She was receiving provision directly from Allah — food that appeared in her chamber, in a locked room, where no human could have placed it. Her guardian, the prophet Zakariyya, was witnessing miracles in his own household.</p>",
+      "dialogue": {
+        "arabic": "كُلَّمَا دَخَلَ عَلَيْهَا زَكَرِيَّا الْمِحْرَابَ وَجَدَ عِندَهَا رِزْقًا ۖ قَالَ يَا مَرْيَمُ أَنَّىٰ لَكِ هَٰذَا ۖ قَالَتْ هُوَ مِنْ عِندِ اللَّهِ",
+        "translation": "Every time Zakariyya entered upon her in the prayer chamber, he found with her provision. He said: O Maryam, from where is this? She said: It is from Allah.",
+        "ref": "Aal-i-Imraan 3:37"
+      },
+      "didYouKnow": "Maryam's mother had promised to dedicate her child to the service of Allah before she was born. The Quran says: <em>My Lord, I have dedicated what is in my womb to You, freed from worldly work, so accept this from me.</em> Maryam was the only woman in the Quran with this honour.",
+      "takeaway": "The greatest gift a parent can give a child is dedication to Allah."
+    },
+    {
+      "num": 2,
+      "title": "The Secret Dua",
+      "thumb": "secret",
+      "body": "<p>Zakariyya watched Maryam's miracles with wonder. He saw the provision from Allah arriving in her chamber. He saw a young girl given miracles that a grown prophet was not given. And something in his heart began to stir — a hope he had suppressed for years.</p><p>He was old. His wife was barren. He had no children. He had served the temple his whole life, and now he was approaching the end of his years without an heir — without a son to carry on his prophethood, without a descendant to continue his mission.</p><p>And so he made a dua. But not the kind of dua that most people make. He made it <em>in secret</em>. The Quran says: <em>When he called to his Lord a private supplication. He said: My Lord, indeed my bones have weakened and my head has flared up with white hair, but never have I been in my supplication to You, my Lord, disappointed.</em></p><p>Look at the structure of this dua. He began by acknowledging his weakness — bones weakened, hair turned white. He did not pretend to be strong. He did not approach Allah with a sense of entitlement. He approached with the humility of an old man who knew his own limits.</p><p>And then he added: <em>Never have I been in my supplication to You, my Lord, disappointed.</em> He reminded Allah of His own generosity. Not because Allah needs reminding — but because Zakariyya needed to affirm his trust.</p>",
+      "dialogue": {
+        "arabic": "إِذْ نَادَىٰ رَبَّهُ نِدَاءً خَفِيًّا ۝ قَالَ رَبِّ إِنِّي وَهَنَ الْعَظْمُ مِنِّي وَاشْتَعَلَ الرَّأْسُ شَيْبًا وَلَمْ أَكُن بِدُعَائِكَ رَبِّ شَقِيًّا",
+        "translation": "When he called to his Lord a private supplication. He said: My Lord, indeed my bones have weakened and my head has flared up with white hair, but never have I been in my supplication to You, my Lord, disappointed.",
+        "ref": "Maryam 19:3-4"
+      },
+      "didYouKnow": "The Arabic phrase <em>nidāʾan khafiyyā</em> — 'a private supplication' — is used uniquely for Zakariyya's dua. It describes a whisper, a voice so low that only Allah could hear. This is the etiquette of dua at its highest — private, sincere, and unheard by anyone but Allah.",
+      "takeaway": "The most powerful dua is the one whispered so quietly that only Allah can hear."
+    },
+    {
+      "num": 3,
+      "title": "The Request for an Heir",
+      "thumb": "heir",
+      "body": "<p>Then Zakariyya made his specific request: <em>And indeed, I fear my relatives after me, and my wife has been barren. So give me from Yourself an heir who will inherit me and inherit from the family of Yaqub. And make him, my Lord, pleasing to You.</em></p><p>Look carefully at the reasoning behind the request. Zakariyya was not asking for a son because he wanted to keep his wealth in the family. He was not asking for a son because he wanted prestige. He was asking for a son because he feared for the future of the faith after his death.</p><p>The phrase <em>I fear my relatives after me</em> refers to the fact that his relatives would not carry on his mission. His brothers, his cousins, his tribe — none of them shared his prophethood, his mission, his devotion. If he died without an heir, the guidance he had given to the people would die with him. There would be no one to continue the message.</p><p>His request for a son was a request for a spiritual heir — someone who would inherit his prophethood, his knowledge, and his mission. Not his house. Not his wealth. Not his name. His <em>mission</em>. This is the dua of a prophet who had devoted his whole life to the guidance of his people and wanted the guidance to continue after his death.</p>",
+      "dialogue": {
+        "arabic": "وَإِنِّي خِفْتُ الْمَوَالِيَ مِن وَرَائِي وَكَانَتِ امْرَأَتِي عَاقِرًا فَهَبْ لِي مِن لَّدُنكَ وَلِيًّا ۝ يَرِثُنِي وَيَرِثُ مِنْ آلِ يَعْقُوبَ ۖ وَاجْعَلْهُ رَبِّ رَضِيًّا",
+        "translation": "And indeed, I fear my relatives after me, and my wife has been barren. So give me from Yourself an heir who will inherit me and inherit from the family of Yaqub. And make him, my Lord, pleasing to You.",
+        "ref": "Maryam 19:5-6"
+      },
+      "didYouKnow": "The Arabic word <em>waliyy</em> — 'heir' — in Zakariyya's dua is the same word used for a spiritual guardian or protector. He was not asking for a biological heir in the ordinary sense — he was asking for a successor in the mission.",
+      "takeaway": "The greatest inheritance is not wealth — it is the continuation of the mission."
+    },
+    {
+      "num": 4,
+      "title": "The Angels' Announcement",
+      "thumb": "announcement",
+      "body": "<p>Zakariyya's dua was answered immediately. The Quran says: <em>So We responded to him and gave him Yahya, and We cured for him his wife. Indeed, they used to hasten to good deeds and supplicate Us in hope and fear, and they were to Us humbly submissive.</em></p><p>The answer came while Zakariyya was standing in the prayer chamber, praying. The Quran describes the moment: <em>Then the angels called to him as he stood praying in the chamber: Indeed, Allah gives you good tidings of Yahya, confirming a word from Allah and honourable and chaste and a prophet from among the righteous.</em></p><p>The angel gave five descriptions of the son who was to be born. <strong>Yahya</strong> — his name, given by Allah. <strong>Confirming a word from Allah</strong> — he would bear witness to Isa as a prophet. <strong>Honourable</strong> — a man of dignity. <strong>Chaste</strong> — pure from sin. <strong>A prophet from among the righteous</strong> — the ultimate title.</p><p>Five honours, all announced before the child was born. And all of them given because his father had asked — and had asked with the right intention. Zakariyya did not ask for a son to comfort his old age. He asked for a son to serve the faith. And Allah gave him a son who would be one of the greatest prophets of the Children of Israel.</p>",
+      "dialogue": {
+        "arabic": "فَنَادَتْهُ الْمَلَائِكَةُ وَهُوَ قَائِمٌ يُصَلِّي فِي الْمِحْرَابِ أَنَّ اللَّهَ يُبَشِّرُكَ بِيَحْيَىٰ مُصَدِّقًا بِكَلِمَةٍ مِّنَ اللَّهِ وَسَيِّدًا وَحَصُورًا وَنَبِيًّا مِّنَ الصَّالِحِينَ",
+        "translation": "Then the angels called to him while he was standing, praying in the chamber: Indeed, Allah gives you good tidings of Yahya, confirming a word from Allah, honourable and chaste and a prophet from among the righteous.",
+        "ref": "Aal-i-Imraan 3:39"
+      },
+      "didYouKnow": "The name <em>Yahya</em> — John in English — was given by Allah Himself, without any human intervening. The Quran says: <em>O Zakariyya, indeed We give you good tidings of a boy whose name will be Yahya. We have not assigned this name to anyone before him.</em>",
+      "takeaway": "The child born to a faithful parent becomes a gift to the entire Ummah."
+    },
+    {
+      "num": 5,
+      "title": "The Sign",
+      "thumb": "sign",
+      "body": "<p>Zakariyya was overwhelmed. He asked: <em>My Lord, how will I have a boy when I have reached old age and my wife is barren?</em> This was not doubt — it was wonder. He believed the message, but he wanted to know how the impossible would happen.</p><p>Allah gave him a sign: <em>Your sign is that you will not speak to the people for three nights, though you are sound.</em> Zakariyya would lose the ability to speak — not because of illness, but because Allah had taken his speech away. For three days and three nights, he would be unable to communicate with anyone by words. He could gesture, he could signal, but he could not speak.</p><p>The sign was designed to be unmistakable. A healthy old man — a prophet, in fact — losing his speech for three days was not something that could be dismissed as coincidence. It was a divine sign, given to strengthen Zakariyya's certainty in the announcement he had received.</p><p>And Zakariyya accepted the sign. He did not argue. He did not ask for a different sign. He simply obeyed. And when the sign came — when his speech left him for three days — he used that time not to panic, but to worship. The Quran says: <em>So he came out to his people from the chamber and signaled to them to exalt Allah in the morning and the afternoon.</em> Even in the middle of a divine sign, Zakariyya kept his heart on Allah.</p>",
+      "dialogue": {
+        "arabic": "قَالَ رَبِّ اجْعَل لِّي آيَةً ۚ قَالَ آيَتُكَ أَلَّا تُكَلِّمَ النَّاسَ ثَلَاثَ لَيَالٍ سَوِيًّا",
+        "translation": "He said: My Lord, make for me a sign. He said: Your sign is that you will not speak to the people for three nights, though you are sound.",
+        "ref": "Maryam 19:10"
+      },
+      "didYouKnow": "The sign of silence was not a punishment — it was a blessing. Some scholars say that during those three days, Zakariyya was so overwhelmed by the presence of Allah that he could not speak to people. His silence was a form of intimate communion with his Lord.",
+      "takeaway": "When Allah gives you a sign, respond with worship — not with questions."
+    },
+    {
+      "num": 6,
+      "title": "The Birth of Yahya",
+      "thumb": "birth",
+      "body": "<p>Yahya was born. The Quran does not describe the birth itself — but it tells us the response of his father, and it gives us one of the most beautiful dialogues between Allah and a newborn prophet.</p><p>The Quran says: <em>O Yahya, take the Scripture with determination. And We gave him judgement while still a boy. And affection from Us and purity, and he was fearing of Allah, and dutiful to his parents, and he was not a tyrant or rebellious. And peace be upon him the day he was born and the day he dies and the day he will be raised alive.</em></p><p>Look at the language of this verse. Allah does not just describe Yahya — He sends peace upon him. Three times: on the day of his birth, on the day of his death, and on the day of his resurrection. These are the same words the Quran uses for Isa — and only Isa and Yahya receive this triple blessing.</p><p>And notice the first words: <em>O Yahya, take the Scripture with determination.</em> Allah was speaking directly to a newborn. Some scholars say Yahya was given understanding of the Torah while still an infant — that he could read and understand the scripture before most children can speak. He was a prophet from his earliest years.</p>",
+      "dialogue": {
+        "arabic": "يَا يَحْيَىٰ خُذِ الْكِتَابَ بِقُوَّةٍ ۖ وَآتَيْنَاهُ الْحُكْمَ صَبِيًّا ۝ وَسَلَامٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ حَيًّا",
+        "translation": "O Yahya, take the Scripture with determination. And We gave him judgement while still a boy. And peace be upon him the day he was born and the day he dies and the day he will be raised alive.",
+        "ref": "Maryam 19:12, 15"
+      },
+      "didYouKnow": "Only two prophets in the Quran receive this triple blessing of peace — Yahya and Isa. Both were born miraculously, both were given divine wisdom from childhood, and both faced martyrdom for their faith.",
+      "takeaway": "Every child is a gift from Allah — but some are gifted with the very light of prophethood."
+    },
+    {
+      "num": 7,
+      "title": "The Dutiful Son",
+      "thumb": "dutiful",
+      "body": "<p>The Quran describes Yahya with three qualities that every parent dreams of: <em>And affection from Us and purity, and he was fearing of Allah, and dutiful to his parents, and he was not a tyrant or rebellious.</em></p><p>Look at the order of the qualities. First: affection from Allah — he was loved by his Lord. Second: purity — his heart and actions were clean. Third: <em>taqwa</em> — awareness of Allah. Fourth: <em>birr al-walidayn</em> — kindness to his parents. And finally: he was not arrogant or rebellious.</p><p>Zakariyya had asked for an heir who would carry on his mission. Allah gave him more: a son who would be a prophet, and who would also be the kind of son any parent would pray for. Yahya did not just fulfil his mission — he honoured his parents. He was dutiful. He was loving. He was humble.</p><p>And then the final phrase: <em>he was not a tyrant or rebellious</em>. This is a striking description. The Quran is telling us that Yahya — a prophet who was given divine wisdom from infancy, who received peace from Allah three times over, who was the answer to his father's dua — was also humble. His greatness did not make him proud. His prophethood did not make him distant from his parents. He remained a son.</p>",
+      "dialogue": {
+        "arabic": "وَبَرًّا بِوَالِدَيْهِ وَلَمْ يَكُن جَبَّارًا عَصِيًّا",
+        "translation": "And dutiful to his parents, and he was not a tyrant or rebellious.",
+        "ref": "Maryam 19:14"
+      },
+      "didYouKnow": "Yahya is one of only a few prophets in the Quran whose kindness to parents is specifically praised. The Quran says: <em>And We have enjoined upon man, to his parents, good treatment.</em> (Al-Ankabut 29:8) — Yahya embodied this from the very beginning.",
+      "takeaway": "Greatness in the eyes of Allah includes kindness to your parents."
+    },
+    {
+      "num": 8,
+      "title": "The Death of Zakariyya",
+      "thumb": "death",
+      "body": "<p>The Quran does not record the death of Zakariyya. But the classical narrations say he was martyred — killed by the very people he had spent his life trying to guide. The Children of Israel had grown corrupt, and Zakariyya had refused to compromise his message. He was killed for his refusal.</p><p>Some narrations say he was killed while fleeing from those who sought to harm him. Others say he was killed in the temple itself — the very temple he had served his whole life, the very temple where he had raised Maryam, the very temple where the angels had announced the birth of his son.</p><p>Whatever the details, the ending was the same. Zakariyya died a martyr for his faith — a prophet who had been promised a son in his old age, had seen that son grow into one of the greatest prophets of the Children of Israel, and had then been killed by the corruption he had spent his life fighting.</p><p>But the Quran honours him with words that no murderer can take away. It calls him <em>a righteous servant</em>. It calls him a man whose duas were answered. It calls him the guardian of Maryam — a role that no other prophet was given. His reward was not in this world. It was in the next.</p><p>The Prophet ﷺ said: <em>The best of people are those who live long and do good deeds.</em> Zakariyya lived long and did good deeds. His old age was not wasted — it was given to the service of Allah and the raising of a prophet.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ زَكَرِيَّا ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا",
+        "translation": "And mention in the Book, Zakariyya. Indeed, he was a man of truth, a prophet.",
+        "ref": "Maryam 19:41"
+      },
+      "didYouKnow": "Zakariyya is one of the few prophets whose martyrdom is preserved in Islamic tradition. The narrations say he was killed for refusing to compromise on the truth — a model of a scholar who did not sell his faith for his life.",
+      "takeaway": "A prophet's reward is not in how he dies — it is in how he lived."
+    },
+    {
+      "num": 9,
+      "title": "The Legacy of Zakariyya",
+      "thumb": "legacy",
+      "body": "<p>Zakariyya's legacy is the legacy of a man who trusted Allah with the impossible. He was old. His wife was barren. He had no children. And yet he asked Allah for a son — because he knew that Allah could do what no human could.</p><p>His dua was answered. His son became a prophet. And his trust became a template for every believer who faces impossible odds. Zakariyya is the standing example in Islam that <em>no request is too big for Allah.</em> The Prophet ﷺ said: <em>Nothing is impossible for Allah.</em> Zakariyya lived that truth. He asked for what no one thought he could have — and he received it.</p><p>And his deeper legacy is his role as the guardian of Maryam. He was not just a prophet — he was the caretaker of the woman who would become the mother of Isa. He saw her miracles. He witnessed her provision from Allah. He was the first person in history to understand that Maryam was being prepared for something extraordinary.</p><p>Zakariyya is remembered for his prayer. He is honoured for his service. He is celebrated for his trust. And his name is preserved in the Quran as a model for every believer who dares to ask Allah for the impossible — and who trusts Him to answer.</p><p>May Allah grant us the trust of Zakariyya — and the answered prayers that follow. Ameen.</p>",
+      "dialogue": {
+        "arabic": "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ",
+        "translation": "My Lord, do not leave me alone, and You are the best of inheritors.",
+        "ref": "Al-Anbiya 21:89"
+      },
+      "didYouKnow": "This dua — <em>rabbi la tadharni fardan wa anta khayrul-warithin</em> — is preserved in the Quran as one of Zakariyya's duas. It captures the humility of a prophet who knew that everything he had was given by Allah — and that without Him, he would have nothing.",
+      "takeaway": "No request is too big for Allah — but every request must be made with trust and humility."
+    }
+  ]
+},
+{
+  "id": "yahya",
+  "num": 23,
+  "name": "Yahya",
+  "arabic": "يحيى",
+  "subtitle": "10 Lessons",
+  "image": "images/prophet-23-yahya.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Miraculous Birth",
+      "thumb": "birth",
+      "body": "<p>Yahya (AS) was the son of Zakariyya — born to a father well past the age of fatherhood and a mother who had been barren her whole life. His very existence was a miracle, announced by angels before his birth.</p><p>The Quran says: <em>So We responded to him and gave him Yahya, and We cured for him his wife.</em> The mother who could not conceive was healed. The father who was old was given strength. And the child who was born was named by Allah Himself — <em>Yahya</em> — a name that had never been given to anyone before him.</p><p>But there is something else in Yahya's story that makes his birth extraordinary. The angels did not just announce a son — they announced a prophet. Before Yahya was born, Allah gave him five honours: <em>Yahya</em> (his name), <em>confirming a word from Allah</em> (a witness to Isa), <em>honourable</em> (a man of dignity), <em>chaste</em> (pure from sin), and <em>a prophet from among the righteous</em>. Five honours, given before his first breath.</p><p>And his father Zakariyya had not asked for a son to comfort his old age. He had asked for an heir to the mission — a spiritual successor who would carry on the guidance of the Children of Israel. Allah answered with a son who exceeded the request — a prophet, a man of purity, a witness to Isa.</p>",
+      "dialogue": {
+        "arabic": "يَا زَكَرِيَّا إِنَّا نُبَشِّرُكَ بِغُلَامٍ اسْمُهُ يَحْيَىٰ لَمْ نَجْعَل لَّهُ مِن قَبْلُ سَمِيًّا",
+        "translation": "O Zakariyya, indeed We give you good tidings of a boy whose name will be Yahya. We have not assigned this name to anyone before him.",
+        "ref": "Maryam 19:7"
+      },
+      "didYouKnow": "The name <em>Yahya</em> comes from the root <em>ḥ-y-y</em>, meaning life. Some scholars say Allah named him Yahya because he was the means by which the faith of the Children of Israel came to life again — and because he was a witness to the life-giving word of Allah, Isa ibn Maryam.",
+      "takeaway": "Allah's answers to prayer are always greater than the prayer itself."
+    },
+    {
+      "num": 2,
+      "title": "The Gift of Understanding",
+      "thumb": "understanding",
+      "body": "<p>Yahya was given understanding of the Torah while still a child. The Quran says: <em>O Yahya, take the Scripture with determination. And We gave him judgement while still a boy.</em></p><p>The Arabic phrase <em>al-ḥukm ṣabiyyā</em> — 'judgement while a boy' — is unique. It means that Yahya was given the ability to understand, to judge, to reason, to interpret the scripture from a very young age. He was not just a child who memorised — he was a child who understood. He was not just a student — he was a teacher of the other children. Allah had placed a light in his heart that burned brighter than the light of any ordinary child.</p><p>The classical scholars say Yahya could read the Torah and understand its deep meanings before he was ten years old. Some narrations say he was given prophethood as a young boy — one of the youngest prophets in history. He did not have the long preparation that Musa had. He did not have the decades of revelation that Muhammad ﷺ received. He was simply given the truth directly — and he received it with determination.</p><p>The command <em>take the Scripture with determination</em> is a command we should all take to heart. Yahya did not receive the Torah lazily. He did not read it casually. He took it with <em>quwwah</em> — with strength, with power, with seriousness. He lived his scripture.</p>",
+      "dialogue": {
+        "arabic": "يَا يَحْيَىٰ خُذِ الْكِتَابَ بِقُوَّةٍ ۖ وَآتَيْنَاهُ الْحُكْمَ صَبِيًّا",
+        "translation": "O Yahya, take the Scripture with determination. And We gave him judgement while still a boy.",
+        "ref": "Maryam 19:12"
+      },
+      "didYouKnow": "Yahya is one of only two prophets in the Quran who received divine wisdom as children — the other being Isa. Both were given understanding of the Scripture at an age when most children are still learning to read.",
+      "takeaway": "The gift of understanding is given by Allah — but it must be received with determination."
+    },
+    {
+      "num": 3,
+      "title": "The Marks of Prophethood",
+      "thumb": "marks",
+      "body": "<p>The Quran describes Yahya with a series of qualities that every believer should aspire to. And they are given in a specific order — as if they are the marks of a truly righteous soul.</p><p><em>And affection from Us — and purity. And he was fearing of Allah. And dutiful to his parents. And he was not a tyrant or rebellious.</em></p><p>Look at each one carefully. <strong>Affection from Us</em> — Yahya was loved by Allah. This was not affection Yahya earned — it was affection Allah granted. <strong>Purity</em> — his soul was clean from sin, from corruption, from impurity. <strong>Fearing of Allah</strong> — he was aware of Allah's presence and power. <strong>Dutiful to parents</strong> — despite being a prophet, he honoured his human parents. <strong>Not tyrannical or rebellious</em> — he was humble, gentle, obedient.</p><p>These five qualities describe a soul that was balanced between heaven and earth. Yahya was loved by Allah, pure from sin, aware of his Lord, kind to his parents, and humble in his interactions with everyone. He was not just a prophet — he was a complete human being, perfected by his Lord.</p><p>The Prophet ﷺ said: <em>The best of you are those who are best to their families.</em> Yahya lived this from his earliest years. He was a prophet, and he was a son.</p>",
+      "dialogue": {
+        "arabic": "وَحَنَانًا مِّن لَّدُنَّا وَزَكَاةً ۖ وَكَانَ تَقِيًّا ۝ وَبَرًّا بِوَالِدَيْهِ وَلَمْ يَكُن جَبَّارًا عَصِيًّا",
+        "translation": "And affection from Us and purity, and he was fearing of Allah. And dutiful to his parents, and he was not a tyrant or rebellious.",
+        "ref": "Maryam 19:13-14"
+      },
+      "didYouKnow": "The Arabic word <em>ḥanān</em> — translated as 'affection' — is a rare word in the Quran. It refers to a tender, merciful love that comes from the depths of the heart. It is used only for Yahya and for Isa's birth — as a special gift of tenderness from Allah.",
+      "takeaway": "The greatest souls are those who combine devotion to Allah with kindness to people."
+    },
+    {
+      "num": 4,
+      "title": "The Peace That Follows",
+      "thumb": "peace",
+      "body": "<p>There is a verse in the Quran about Yahya that few prophets received. It is a blessing Allah gave directly to him — a statement that carries the deepest comfort any human being can imagine:</p><p><em>Peace be upon him the day he was born and the day he dies and the day he will be raised alive.</em></p><p>Three days. Three moments. Three blessings. Allah is telling us that Yahya was safe at his birth — protected from the evil that surrounds the newly born. He would be safe at his death — protected from the despair and suffering that often precede it. And he would be safe at his resurrection — protected from the terrors of the Day of Judgement.</p><p>This is one of the highest honours given to any prophet in the Quran. Only Isa — the cousin of Yahya — receives the same three blessings in the same words. Both were born miraculously. Both were given wisdom in childhood. Both received the peace of Allah at every stage of their existence.</p><p>The Prophet ﷺ said that Yahya's peace will continue forever — that he is one of the greatest prophets of the Children of Israel, and that his name is a reminder of how Allah protects those who are faithful to Him.</p>",
+      "dialogue": {
+        "arabic": "وَسَلَامٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ حَيًّا",
+        "translation": "And peace be upon him the day he was born and the day he dies and the day he will be raised alive.",
+        "ref": "Maryam 19:15"
+      },
+      "didYouKnow": "Only two prophets receive this three-fold blessing in the Quran — Yahya and Isa. The blessing covers the three most vulnerable moments of human existence: birth, death, and resurrection.",
+      "takeaway": "The peace of Allah covers every stage of a believer's existence — from birth to resurrection."
+    },
+    {
+      "num": 5,
+      "title": "The Preacher of Truth",
+      "thumb": "preacher",
+      "body": "<p>Yahya grew into a prophet — but a specific kind of prophet. He was not a lawgiver like Musa. He was not a king like Dawud. He was a preacher. His mission was to call the Children of Israel back to their covenant with Allah, to warn them against corruption, and to prepare the way for the coming of Isa.</p><p>He preached boldly. He was not afraid of the powerful. He was not afraid of the scholars. He was not afraid of the crowds. He stood in the temples and the marketplaces of Jerusalem and warned the people of their sins with a voice that echoed across the hills of Judea.</p><p>The classical scholars describe Yahya as a man of extreme simplicity. He wore clothes of camel hair. He ate only the simplest food. He lived in the wilderness, away from the corruption of the cities. He did not accumulate wealth. He did not seek luxury. He did not wish for status. He simply lived the message he preached — a living example of what it means to surrender to Allah.</p><p>The Prophet ﷺ said about him: <em>Yahya was a man who was not concerned with the world. He was concerned only with the pleasure of his Lord.</em> This is the essence of Yahya's preaching. It did not come from someone who was seeking anything from the world. It came from a man whose heart had no room for anything but Allah.</p>",
+      "dialogue": {
+        "arabic": "إِنَّا أَخْلَصْنَاهُمْ بِخَالِصَةٍ ذِكْرَى الدَّارِ",
+        "translation": "Indeed, We purified them with a pure quality — the remembrance of the Home.",
+        "ref": "Sad 38:46 (meaning)"
+      },
+      "didYouKnow": "Yahya is one of the few prophets whose preaching is specifically described as <em>preparing the way</em> for another prophet — he was the forerunner of Isa, sent to soften the hearts of the Children of Israel so they would be ready for the message of Isa.",
+      "takeaway": "The one who preaches truth with sincerity is more powerful than the one who preaches with eloquence alone."
+    },
+    {
+      "num": 6,
+      "title": "The Witness to Isa",
+      "thumb": "witness",
+      "body": "<p>One of the five honours Allah gave Yahya at his birth was that he would be <em>confirming a word from Allah</em> — <em>muṣaddiqan bi kalimatin min Allah</em>. This refers specifically to Yahya's role as a witness to Isa ibn Maryam.</p><p>Yahya and Isa were cousins — their mothers Maryam and Elizabeth were close relatives. Yahya was born shortly before Isa. And from his earliest years, Yahya recognised something special about his younger cousin. The narrations say that when Isa was born, Yahya's father Zakariyya told him about the child, and Yahya knew immediately that this was the prophet the Torah had foretold.</p><p>Yahya did not just affirm Isa's prophethood — he prepared the way for it. He was the last prophet of the old covenant, sent to renew the faith of the Children of Israel and to prepare them for the messenger who would come after him. He was, in a sense, the bridge between the era of Musa and the era of Isa.</p><p>And when Isa began his ministry, Yahya stood with him. He did not fear that Isa would overshadow him. He did not worry that his own followers would abandon him for his younger cousin. He simply did what he was sent to do: <em>confirm the word of Allah</em>. The one who was born a prophet bowed to the one who was born of a virgin. Both served the same Lord.</p>",
+      "dialogue": {
+        "arabic": "وَمُصَدِّقًا بِكَلِمَةٍ مِّنَ اللَّهِ وَسَيِّدًا وَحَصُورًا وَنَبِيًّا مِّنَ الصَّالِحِينَ",
+        "translation": "Confirming a word from Allah, and honourable and chaste and a prophet from among the righteous.",
+        "ref": "Aal-i-Imraan 3:39"
+      },
+      "didYouKnow": "Yahya is called <em>muṣaddiqan bi kalimatin min Allah</em> — 'confirming a word from Allah.' The 'word' is Isa, whose name appears in the Quran as <em>kalimah min Allah</em> — a word from Allah. Yahya's mission was to affirm the prophethood of Isa before the world knew it.",
+      "takeaway": "The great servants of Allah do not compete — they confirm one another."
+    },
+    {
+      "num": 7,
+      "title": "The Rejection of the Court",
+      "thumb": "rejection",
+      "body": "<p>Yahya's preaching brought him into direct conflict with the rulers of his time. Herod — the governor of Judea under Roman authority — had committed a sin that the Torah forbade. The details are preserved in both the Quranic tradition and the classical narrations: Herod had married the wife of his own brother while his brother was still alive.</p><p>Yahya could not remain silent. He stood before the people and declared the truth — that this marriage was unlawful, that it violated the law of Allah, and that it was a corruption that could not be tolerated. He did not care that Herod was powerful. He did not care that the courts and the priests had accepted Herod's sin. He cared only about the truth.</p><p>And Herod's wife — who had married her brother-in-law — hated Yahya for this. She demanded his death. She was jealous of his influence. She was furious at his condemnation. And she would not rest until Yahya was destroyed.</p><p>The classical scholars say the wife of Herod schemed until she convinced her husband to have Yahya executed. She wanted him beheaded — publicly — so that the people would see what happened to anyone who spoke the truth against the powerful. Yahya was killed for one reason: he refused to be silent about the truth.</p>",
+      "dialogue": {
+        "arabic": "وَلَا تَقُولُوا لِمَا تَصِفُ أَلْسِنَتُكُمُ الْكَذِبَ هَٰذَا حَلَالٌ وَهَٰذَا حَرَامٌ",
+        "translation": "And do not say about what your tongues assert of untruth: This is lawful and this is unlawful.",
+        "ref": "An-Nahl 16:116"
+      },
+      "didYouKnow": "The killing of Yahya is one of the earliest recorded examples of a prophet executed for speaking the truth to power. The Prophet ﷺ said that on the Day of Judgement, Yahya will stand as a witness against those who killed him — and his blood will testify against the tyrants of every generation.",
+      "takeaway": "Speaking the truth against the powerful is one of the hardest forms of worship — and one of the greatest."
+    },
+    {
+      "num": 8,
+      "title": "The Sacrifice of Martyrdom",
+      "thumb": "martyrdom",
+      "body": "<p>Yahya was killed — some narrations say he was beheaded, others say he was killed in another manner. But whatever the method, the outcome was the same: a prophet of Allah was martyred by the tyrants of his time.</p><p>The Prophet ﷺ said about Yahya: <em>He was a prophet, and he was killed as a martyr. His head was brought to the tyrant's wife, and she rejoiced at his death.</em> The narrations tell us that when Yahya was killed, his blood continued to bubble on the earth — a miracle that testified to his innocence and to the anger of Allah against those who killed him.</p><p>His martyrdom was not a defeat. It was a victory. Because when the tyrant thought he had silenced the prophet, the prophet's words lived on. His message continued. His example inspired. And his death became a witness against the tyrants of every generation.</p><p>The Prophet ﷺ said: <em>The best of martyrs are the prophets — those who were killed in the path of Allah for the sake of the truth.</em> Yahya was the ultimate example of this. He did not compromise. He did not bow to power. He did not sell his faith for his life. And for that, he was honoured by Allah with a peace that no executioner could take away.</p>",
+      "dialogue": {
+        "arabic": "وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا ۚ بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ",
+        "translation": "And never think of those who have been killed in the cause of Allah as dead. Rather, they are alive with their Lord, receiving provision.",
+        "ref": "Aal-i-Imraan 3:169"
+      },
+      "didYouKnow": "The death of Yahya is one of the most tragic events in prophetic history. He was killed by a man whose sin he had simply named. The lesson is severe: truth-telling can cost you your life, and Allah honours those who pay that price.",
+      "takeaway": "The martyr's blood is more powerful than the tyrant's sword."
+    },
+    {
+      "num": 9,
+      "title": "The Enduring Peace",
+      "thumb": "enduring",
+      "body": "<p>When Yahya was born, Allah said: <em>Peace be upon him the day he was born.</em> When Yahya was killed, that peace did not end. Because the peace of Allah is not the peace of this world — it is a peace that continues into the next world and the next.</p><p>The Quran says: <em>And peace be upon him the day he dies and the day he will be raised alive.</em> These are the two final stages of Yahya's existence. The day of his death was a day of peace — because he died as a martyr, in the way of Allah. The day of his resurrection will be a day of peace — because he will be raised among the prophets and the righteous.</p><p>His life was brief by the standards of the other prophets. He did not live to old age. He did not build a kingdom. He did not lead an army. He did not see the full fruits of his mission. And yet, the Quran honours him with a peace that even the greatest kings of his time did not receive.</p><p>This is the eternal lesson of Yahya's life. Allah does not measure us by the length of our days or the size of our achievements. He measures us by our faithfulness. Yahya was faithful for the short time he had — and Allah gave him a peace that will never end.</p>",
+      "dialogue": {
+        "arabic": "وَسَلَامٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ حَيًّا",
+        "translation": "And peace be upon him the day he was born and the day he dies and the day he will be raised alive.",
+        "ref": "Maryam 19:15"
+      },
+      "didYouKnow": "The peace that Allah pronounced over Yahya is described by the scholars as <em>salam 'azīm</em> — a great peace. It is not just a greeting — it is a divine protection that follows him through every stage of existence.",
+      "takeaway": "The peace of Allah is not limited by the length of your life — it is measured by the quality of your faith."
+    },
+    {
+      "num": 10,
+      "title": "The Legacy of Yahya",
+      "thumb": "legacy",
+      "body": "<p>Yahya's legacy is the legacy of a pure soul. He was one of the youngest prophets. He was one of the shortest-lived. And yet, he is one of the most honoured in the Quran.</p><p>He was given a name by Allah before he was born. He was given wisdom as a child. He was given the mission of confirming Isa. He was given the peace of Allah at his birth, at his death, and at his resurrection. He was given a place among the righteous — the highest company in the universe.</p><p>The Prophet ﷺ said that Yahya is one of the four prophets whose names Allah has honoured the most in revelation. He is mentioned in every Friday prayer that Muslims recite when they send salam on the prophets. His name is spoken by every generation of believers who praise Allah for His servants.</p><p>Yahya did not live long. He did not rule a nation. He did not lead an army. He did not leave behind any wealth. He left behind only the truth he had spoken — and the life he had lived in service of Allah. And that was enough for Allah to honour him forever.</p><p>The Prophet ﷺ said: <em>The best of people are those who live long and do good — but the most honoured are those who die in the way of Allah.</em> Yahya lived a short life and did good. Yahya died a martyr for his faith. Both are the marks of the honoured.</p><p>May Allah make us among those He honours — with peace in life, peace in death, and peace in the resurrection. Ameen.</p>",
+      "dialogue": {
+        "arabic": "وَعَلَىٰ أَهْلِ الْبَيْتِ وَعَلَىٰ آلِ يَاسِينَ",
+        "translation": "And upon the family of the house and upon the family of Yasin.",
+        "ref": "As-Saffat 37:130 (meaning)"
+      },
+      "didYouKnow": "Yahya is called <em>Yahya ibn Zakariyya</em> — 'Yahya son of Zakariyya' — in the Quran. His father's prophethood and his own prophethood make the father-son pair one of only two in the Quran — the other being Imran and Maryam, and the grand pairing of Ibrahim and Ishaq.",
+      "takeaway": "A short life lived faithfully is worth more than a long life lived without purpose."
+    }
+  ]
+},{
+  "id": "isa",
+  "num": 24,
+  "name": "Isa",
+  "arabic": "عيسى",
+  "subtitle": "17 Lessons",
+  "image": "images/prophet-24-isa.webp",
+  "tier": "major",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Dedicated Mother",
+      "thumb": "dedicated",
+      "body": "<p>The story of Isa (a.s) does not begin with Isa (a.s) — it begins with his mother. And the Quran honours Maryam (a.s) with more mentions than any other woman in revelation. She is the only woman named in the Quran by name. She is the only woman whose story is told in an entire surah — Surah Maryam. And she is one of the four perfect women of Paradise, along with Khadijah, Fatimah, and Asiya.</p><p>Her story begins before her birth. Her mother — the wife of Imran — was pregnant and made a vow: <em>My Lord, indeed I have pledged to You what is in my womb, consecrated to Your service. So accept this from me. Indeed, You are the Hearing, the Knowing.</em></p><p>She had hoped for a son — a boy who would serve the temple, a boy who would dedicate his life to worship. But when she delivered, she found she had given birth to a girl. And she said: <em>My Lord, indeed I have delivered a female.</em> Not in complaint — in wonder, in surrender. Because the child she had been given was not the child she had expected. And the child she had been given would surpass every son she could have imagined.</p><p>Allah accepted her vow. Allah accepted Maryam. And from the very beginning, Maryam was set apart — not because she was born into a special family, but because her mother had dedicated her to Allah before she drew her first breath.</p>",
+      "dialogue": {
+        "arabic": "رَبِّ إِنِّي نَذَرْتُ لَكَ مَا فِي بَطْنِي مُحَرَّرًا فَتَقَبَّلْ مِنِّي ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        "translation": "My Lord, indeed I have pledged to You what is in my womb, consecrated to Your service. So accept this from me. Indeed, You are the Hearing, the Knowing.",
+        "ref": "Aal-i-Imraan 3:35"
+      },
+      "didYouKnow": "Maryam is the only woman mentioned by name in the Quran — 34 times, more than most prophets. She is honoured in Surah Maryam (chapter 19) and Surah Aal-i-Imraan (chapter 3). Her name is recited in every Muslim prayer.",
+      "takeaway": "The greatest gift a parent can give a child is dedication to Allah before the child is even born."
+    },
+    {
+      "num": 2,
+      "title": "The Growth in the Temple",
+      "thumb": "growth",
+      "body": "<p>Maryam (a.s) was given into the care of Zakariyya (a.s) — her uncle, the guardian of the temple in Jerusalem. And there, in the sacred precincts, she grew. But her growth was not ordinary growth. The Quran says: <em>And her Lord accepted her with good acceptance and caused her to grow in a good manner.</em></p><p>Every time Zakariyya (a.s) entered her chamber, he found her with provision. Food that appeared from nowhere. Fruit out of season. Water that no one had brought. And when he asked her where it came from, her answer was: <em>It is from Allah. Indeed, Allah provides for whom He wills without account.</em></p><p>Maryam (a.s) did not become pious through the teaching of a scholar. She did not become righteous by reading books. She became righteous because Allah Himself was her teacher. She was raised by angels, nourished by miracles, and kept safe from every impurity. She was the first great female worshipper — the first woman who dedicated her life entirely to the worship of Allah.</p><p>And her chamber in the temple became a sanctuary. It was not a place of learning, not a place of community, not a place of teaching — it was a place of worship. Maryam (a.s) did not leave her chamber to be seen by the world. She stayed inside, praising Allah in the silence of her own heart. And that silence was heard by the heavens.</p>",
+      "dialogue": {
+        "arabic": "كُلَّمَا دَخَلَ عَلَيْهَا زَكَرِيَّا الْمِحْرَابَ وَجَدَ عِندَهَا رِزْقًا ۖ قَالَ يَا مَرْيَمُ أَنَّىٰ لَكِ هَٰذَا ۖ قَالَتْ هُوَ مِنْ عِندِ اللَّهِ",
+        "translation": "Every time Zakariyya entered upon her in the prayer chamber, he found with her provision. He said: O Maryam, from where is this? She said: It is from Allah.",
+        "ref": "Aal-i-Imraan 3:37"
+      },
+      "didYouKnow": "Maryam (a.s) is honoured in the Quran as <em>qaʿidah</em> and <em>ṣāliḥah</em> — devout and righteous. She is called <em>al-ṣiddīqah</em> — the truthful one — and <em>al-sājidah</em> — the one who prostrates. Her devotion is unlike any other woman in revelation.",
+      "takeaway": "True devotion does not require an audience — Allah sees the worship of a heart even when it is done in silence."
+    },
+    {
+      "num": 3,
+      "title": "The Annunciation",
+      "thumb": "annunciation",
+      "body": "<p>One day, Maryam (a.s) was alone in her chamber when a visitor came. The Quran describes the moment: <em>And mention in the Book, Maryam, when she withdrew from her family to a place toward the east. And she took, in seclusion from them, a screen. Then We sent to her Our Angel, and he represented himself to her as a well-proportioned man.</em></p><p>She was terrified. A stranger had appeared in her chamber — a place where no one was supposed to enter. She said: <em>Indeed, I seek refuge in the Most Merciful from you, if you should be fearing of Allah.</em></p><p>And the angel answered: <em>I am only the messenger of your Lord to give you good tidings of a pure boy.</em></p><p>Read that again. Maryam (a.s) — a young woman who had never touched a man, who had dedicated her whole life to worship, who was known for her purity — was told she would have a son. Not just any son. A <em>pure boy</em>. A boy who would be immaculate, who would carry the word of Allah into the world.</p><p>Her response reveals her heart: <em>My Lord, how will I have a boy when no man has touched me?</em> She was not doubting — she was asking. She was not refusing — she was wondering. Because Maryam (a.s) knew the laws of nature. She knew that a woman without a husband does not have a child. And she wanted to understand.</p>",
+      "dialogue": {
+        "arabic": "قَالَ إِنَّمَا أَنَا رَسُولُ رَبِّكِ لِأَهَبَ لَكِ غُلَامًا زَكِيًّا",
+        "translation": "He said: I am only the messenger of your Lord to give you good tidings of a pure boy.",
+        "ref": "Maryam 19:19"
+      },
+      "didYouKnow": "The angel Jibril (Gabriel) appeared to Maryam (a.s) in human form — the same angel who would later bring revelation to Muhammad ﷺ. He is mentioned four times in the Quran and appears in the annunciation to both Maryam (a.s) and Zakariyya (a.s).",
+      "takeaway": "When Allah announces something that seems impossible, He is not bound by the rules of the natural world — He is the One who made them."
+    },
+    {
+      "num": 4,
+      "title": "The Word and the Spirit",
+      "thumb": "word-spirit",
+      "body": "<p>The angel gave Maryam (a.s) the explanation: <em>Thus said your Lord: It is easy for Me. And We will make him a sign for the people and a mercy from Us. And it is a matter already decreed.</em></p><p>Look at the structure of that announcement. <em>It is easy for Me.</em> Allah is not bound by the ordinary — what is impossible for humans is simple for Him. <em>A sign for the people.</em> Isa (a.s) would not just be a prophet — he would be a miracle in himself. And <em>a mercy from Us.</em> His birth was not a punishment — it was a gift to all of humanity.</p><p>The Quran gives Isa (a.s) two titles that no other prophet received. He is called <em>Rūḥun minhu</em> — a spirit from Allah. And he is called <em>Kalimatuhu</em> — the word of Allah. Both of these titles point to the extraordinary nature of his creation. He was not created through the ordinary process of human generation. He was created by the command <em>Kun</em> — <em>Be</em> — the same command that created Adam (a.s) from clay and the universe from nothing.</p><p>The Quran says: <em>Indeed, the example of Isa with Allah is like that of Adam. He created him from dust; then He said to him: Be — and he was.</em> Both were created without the ordinary means. Both were direct creations of Allah. And both were sent as prophets to their people.</p>",
+      "dialogue": {
+        "arabic": "إِنَّ مَثَلَ عِيسَىٰ عِندَ اللَّهِ كَمَثَلِ آدَمَ ۖ خَلَقَهُ مِن تُرَابٍ ثُمَّ قَالَ لَهُ كُن فَيَكُونُ",
+        "translation": "Indeed, the example of Isa with Allah is like that of Adam. He created him from dust; then He said to him: Be — and he was.",
+        "ref": "Aal-i-Imraan 3:59"
+      },
+      "didYouKnow": "Isa (a.s) is called <em>Rūḥun minhu</em> and <em>Kalimatun minhu</em> in the Quran. Both titles describe his miraculous creation — he was created by the divine command 'Be', not through the ordinary process of human generation. This is the Islamic understanding of Isa's (a.s) nature.",
+      "takeaway": "Allah creates however He wills — with means or without, from dust or from a word."
+    },
+    {
+      "num": 5,
+      "title": "The Birth of Isa",
+      "thumb": "birth",
+      "body": "<p>The Quran describes the birth of Isa (a.s) with the tenderness of a mother's story. Maryam (a.s), overwhelmed by the weight of what was happening, withdrew to a distant place — a palm tree in the desert, far from her people. And there, in the pain of labour, she cried out: <em>Oh, I wish I had died before this and was a thing long forgotten!</em></p><p>She was not complaining. She was not despairing. She was in the throes of childbirth — alone, afraid, and aware that she would face shame when she returned. She had no husband. She had no family with her. She had no one to help her bring a child into the world. And she was a woman whose purity was her greatest honour — and now that honour would be questioned by everyone who saw her.</p><p>And then, Allah answered. A voice called out from beneath her: <em>Do not grieve. Your Lord has provided beneath you a stream. And shake toward you the trunk of the palm tree; it will drop upon you ripe, fresh dates. So eat and drink and be contented. And if you see from among humanity anyone, say: Indeed, I have vowed to the Most Merciful abstention, so I will not speak today to any man.</em></p><p>Water. Dates. Silence. Three gifts from Allah in the moment of Maryam's (a.s) greatest need. The stream would nourish her. The dates would strengthen her. And the vow of silence would protect her from the accusations of her people.</p>",
+      "dialogue": {
+        "arabic": "فَأَجَاءَهَا الْمَخَاضُ إِلَىٰ جِذْعِ النَّخْلَةِ قَالَتْ يَا لَيْتَنِي مِتُّ قَبْلَ هَٰذَا وَكُنتُ نَسْيًا مَّنسِيًّا",
+        "translation": "And the pains of childbirth drove her to the trunk of a palm tree. She said: Oh, I wish I had died before this and was a thing long forgotten!",
+        "ref": "Maryam 19:23"
+      },
+      "didYouKnow": "The Quran records Maryam's (a.s) cry of distress — <em>I wish I had died before this</em> — as a moment of her humanity. She was not a stoic, unfeeling saint. She was a woman in pain, and her honesty is preserved in revelation. This is the mercy of Allah — He accepts the honesty of His servants even in their weakest moments.",
+      "takeaway": "The mercy of Allah does not require you to hide your pain — it only requires you to trust Him while you feel it."
+    },
+    {
+      "num": 6,
+      "title": "The Speaking Infant",
+      "thumb": "infant",
+      "body": "<p>Maryam (a.s) returned to her people carrying the infant Isa (a.s). And as she had feared, they accused her. The Quran records their words: <em>O Maryam, you have certainly done a thing unprecedented. O sister of Harun, your father was not a man of evil, nor was your mother unchaste.</em></p><p>They did not attack her. They did not stone her. They asked her questions that cut deeper than stones — questions that accused her without accusing. <em>Your father was not a man of evil. Your mother was not unchaste.</em> In other words: <em>So what have you done?</em></p><p>Maryam (a.s) did not answer. She had been commanded to observe silence, and she obeyed. Instead, she pointed to the baby in her arms. And the people were shocked — how could she ask them to speak to an infant? But then, Isa (a.s) spoke.</p><p>The Quran says: <em>He said: Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet. And He has made me blessed wherever I am, and has enjoined upon me prayer and zakah as long as I remain alive. And made me dutiful to my mother, and He has not made me a wretched tyrant. And peace is on me the day I was born and the day I will die and the day I am raised alive.</em></p><p>An infant — a newborn baby, still in his mother's arms — spoke with the eloquence of a prophet. He affirmed his servanthood to Allah. He accepted his prophethood. He declared his mission. And in one sentence, he cleared his mother of every accusation that had been made against her.</p>",
+      "dialogue": {
+        "arabic": "قَالَ إِنِّي عَبْدُ اللَّهِ آتَانِيَ الْكِتَابَ وَجَعَلَنِي نَبِيًّا",
+        "translation": "He said: Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet.",
+        "ref": "Maryam 19:30"
+      },
+      "didYouKnow": "The first words of Isa (a.s) in the Quran were a declaration of servitude to Allah — <em>ʿabduLlāh</em>. His very first act was to deny his own divinity and affirm that he was a servant. This is the Islamic understanding of Isa (a.s): a prophet, a servant of Allah, and nothing more.",
+      "takeaway": "The first truth Isa (a.s) spoke was the most important — that he was a servant of Allah."
+    },
+    {
+      "num": 7,
+      "title": "The Boy in the Temple",
+      "thumb": "temple-boy",
+      "body": "<p>Isa (a.s) grew up in the care of his mother Maryam (a.s), in the sacred land of Palestine. The Quran does not describe his childhood in detail — but it tells us enough. He was a prophet from the cradle. He was given the Scripture — the Injil — while still a young man. He grew in wisdom and in prophethood.</p><p>The classical narrations say Isa (a.s) was deeply devoted to the worship of Allah. He fasted during the day, prayed during the night, and spoke with wisdom beyond his years. He was known in the temple of Jerusalem as a boy of extraordinary insight — a child who could answer questions that even the priests struggled with.</p><p>The Quran says about him: <em>And He will teach him writing and wisdom and the Torah and the Gospel.</em> Isa (a.s) was not taught by human teachers alone — Allah Himself was his teacher. He was given the Torah of Musa (a.s) and the Injil in their pure forms. He understood the Scriptures better than the scholars of his time, and he lived them more faithfully than the priests.</p><p>His mother Maryam (a.s) raised him alone. She had no husband to support her. She faced the whispers of the town every day. And yet, she raised the greatest prophet of her era — a prophet who would speak the truth so powerfully that the corrupt religious establishment of his time would want him dead.</p>",
+      "dialogue": {
+        "arabic": "وَيُعَلِّمُهُ الْكِتَابَ وَالْحِكْمَةَ وَالتَّوْرَاةَ وَالْإِنجِيلَ",
+        "translation": "And He will teach him writing and wisdom and the Torah and the Gospel.",
+        "ref": "Aal-i-Imraan 3:48"
+      },
+      "didYouKnow": "The Injil — the Gospel of Isa (a.s) — is one of the four revealed books mentioned in the Quran. It was a book of guidance given to Isa (a.s) for the Children of Israel. The version that exists today in the Bible is not the original Injil — it is a compilation written decades after Isa (a.s) by his followers.",
+      "takeaway": "The single mother who raises a prophet of Allah will be honoured by Allah forever."
+    },
+    {
+      "num": 8,
+      "title": "The First Miracle",
+      "thumb": "first-miracle",
+      "body": "<p>Isa (a.s) began his public ministry with a declaration that no other prophet had ever made. He said: <em>Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet. And He has made me blessed wherever I am, and has enjoined upon me prayer and zakah as long as I remain alive.</em></p><p>And then he added: <em>And I came to you with a sign from your Lord. Indeed, I design for you from clay the shape of a bird, then I breathe into it and it becomes a bird by permission of Allah. And I cure the blind and the leper, and I give life to the dead — by permission of Allah. And I inform you of what you eat and what you store in your houses. Indeed, in that is a sign for you, if you are believers.</em></p><p>Five miracles, all announced in a single verse. Creating a bird from clay. Healing the blind. Healing the leper. Raising the dead. Telling people what they ate and stored in their homes. Five signs — given not to prove Isa's (a.s) divinity, but to prove his prophethood.</p><p>Look carefully at the last phrase: <em>by permission of Allah</em>. Every miracle was done by permission. Not by Isa's (a.s) own power. Not by any divinity. But by the command and permission of Allah. This is the Islamic understanding of miracles — they are gifts from Allah, not proofs of divine status. Every prophet performed miracles, and every miracle was by the permission of the One who sent them.</p>",
+      "dialogue": {
+        "arabic": "أَنِّي أَخْلُقُ لَكُم مِّنَ الطِّينِ كَهَيْئَةِ الطَّيْرِ فَأَنفُخُ فِيهِ فَيَكُونُ طَيْرًا بِإِذْنِ اللَّهِ",
+        "translation": "I design for you from clay the shape of a bird, then I breathe into it and it becomes a bird by permission of Allah.",
+        "ref": "Aal-i-Imraan 3:49"
+      },
+      "didYouKnow": "Isa's (a.s) miracles are almost identical to the miracles attributed to him in the Christian gospels — the bird from clay is mentioned in the apocryphal Infancy Gospel, and the healing of the blind and leper, and the raising of the dead, are preserved in the New Testament. The Quran confirms these miracles, but adds the essential qualifier: <em>by permission of Allah</em>.",
+      "takeaway": "Every miracle is by the permission of Allah — no prophet performed any miracle by his own power."
+    },
+    {
+      "num": 9,
+      "title": "The Call to Tawhid",
+      "thumb": "call",
+      "body": "<p>Isa (a.s) preached the same message every prophet had preached: <em>Indeed, Allah is my Lord and your Lord, so worship Him. That is the straight path.</em> One God. One worship. One path. The message had not changed since Adam (a.s). It had not changed since Ibrahim (a.s). It had not changed since Musa (a.s). And it would not change with Isa (a.s) — nor with Muhammad ﷺ.</p><p>The Quran says: <em>And when Isa brought clear proofs, he said: I have come to you with wisdom and to make clear to you some of that over which you differ. So fear Allah and obey me. Indeed, Allah is my Lord and your Lord, so worship Him. This is a straight path.</em></p><p>Look at the phrase <em>fear Allah and obey me</em>. Isa (a.s) did not ask people to obey him because he was divine. He asked them to obey him because he was a prophet — and obedience to a prophet is obedience to the One who sent him. He did not claim authority for himself; he claimed authority as the messenger of Allah.</p><p>The Children of Israel had grown corrupt in the centuries since Musa (a.s). They had added to the law, distorted the scripture, and turned the worship of Allah into a business of the priests. Isa (a.s) came to purify the faith — to bring the people back to the simple truth of tawhid that Ibrahim (a.s) had established, that Musa (a.s) had preached, and that every prophet before him had defended.</p>",
+      "dialogue": {
+        "arabic": "إِنَّ اللَّهَ رَبِّي وَرَبُّكُمْ فَاعْبُدُوهُ ۗ هَٰذَا صِرَاطٌ مُّسْتَقِيمٌ",
+        "translation": "Indeed, Allah is my Lord and your Lord, so worship Him. That is the straight path.",
+        "ref": "Aal-i-Imraan 3:51"
+      },
+      "didYouKnow": "Isa (a.s) is described in the Quran as a prophet sent specifically to the Children of Israel: <em>And I was sent to the Children of Israel.</em> His mission was not to the whole world — that would come with Muhammad ﷺ — but to a specific nation at a specific time.",
+      "takeaway": "Every prophet's message was the same — the differences were only in the laws and the peoples they were sent to."
+    },
+    {
+      "num": 10,
+      "title": "The Disciples",
+      "thumb": "disciples",
+      "body": "<p>Isa (a.s) gathered disciples — the <em>ḥawāriyyūn</em> — a small group of devoted followers who believed in his message and supported his mission. The Quran says: <em>And when I inspired the disciples: Believe in Me and in My messenger. They said: We have believed, and bear witness that we are Muslims.</em></p><p>The disciples were not scholars. They were not priests. They were ordinary men — fishermen, craftsmen, workers. And they were the first to accept Isa (a.s). The Quran honours them: <em>And We supported Isa with the Holy Spirit.</em> The disciples were given a special strength — the strength of faith in a message that the powerful were determined to destroy.</p><p>But there was one among them who wavered. The Quran does not name him — it merely says: <em>And when the disciples said: O Isa, is your Lord able to send down upon us a table from the heaven? He said: Fear Allah, if you should be believers.</em> Even the disciples wanted signs — a table from the sky, a public miracle. But Isa (a.s) taught them to trust.</p><p>The disciples represent every generation of believers. They were ordinary people — not scholars, not priests, not powerful men. They were the ones who believed when the religious establishment rejected. And Allah honoured them with a testimony in the Quran that will be recited until the end of time: <em>We have believed. Bear witness that we are Muslims.</em></p>",
+      "dialogue": {
+        "arabic": "وَإِذْ أَوْحَيْتُ إِلَى الْحَوَارِيِّينَ أَنْ آمِنُوا بِي وَبِرَسُولِي قَالُوا آمَنَّا وَاشْهَدْ بِأَنَّنَا مُسْلِمُونَ",
+        "translation": "And when I inspired the disciples: Believe in Me and in My messenger. They said: We have believed, and bear witness that we are Muslims.",
+        "ref": "Al-Ma'idah 5:111"
+      },
+      "didYouKnow": "The Arabic word <em>ḥawāriyyūn</em> — disciples — comes from <em>ḥawar</em>, meaning whiteness or purity. They are described in the Quran as the <em>anṣār</em> of Isa (a.s) — his helpers in the way of Allah, just as the Companions of Muhammad ﷺ were the <em>anṣār</em> of Madinah.",
+      "takeaway": "The first believers in any prophet are often the ordinary people — not the powerful, not the scholars, but the humble."
+    },
+    {
+      "num": 11,
+      "title": "The Table from Heaven",
+      "thumb": "table",
+      "body": "<p>The disciples wanted more than words. They wanted proof. They said: <em>O Isa, son of Maryam, is your Lord able to send down upon us a table from the heaven? He said: Fear Allah, if you should be believers. They said: We desire to eat from it and that our hearts be at rest, and that we know that you have been truthful to us, and that we be of its witnesses.</em></p><p>Notice the four reasons they gave for wanting the table. First, they wanted to eat from it — a physical experience. Second, they wanted their hearts to be at rest — certainty. Third, they wanted to know Isa (a.s) was truthful — verification. Fourth, they wanted to be witnesses — testimony. These were not idle requests. They were the requests of sincere souls who wanted to be absolutely sure.</p><p>Isa (a.s) prayed: <em>O Allah, our Lord, send down to us a table from the heaven to be for us a festival for the first of us and the last of us and a sign from You. And provide for us, and You are the best of providers.</em></p><p>And Allah answered: <em>Indeed, I will send it down to you, but whoever disbelieves after it, I will punish him with a punishment which I have not inflicted on anyone among the worlds.</em> The table came down. It was a sign for the disciples — a gift from Allah to strengthen their faith. But it was also a warning: those who saw the sign and still disbelieved would face a punishment unlike any other.</p><p>The table from heaven is a reminder that signs are not for entertainment. They are tests. Every sign that Allah sends is a mercy to those who believe and a judgment on those who refuse.</p>",
+      "dialogue": {
+        "arabic": "قَالَ عِيسَى ابْنُ مَرْيَمَ اللَّهُمَّ رَبَّنَا أَنزِلْ عَلَيْنَا مَائِدَةً مِّنَ السَّمَاءِ تَكُونُ لَنَا عِيدًا لِّأَوَّلِنَا وَآخِرِنَا وَآيَةً مِّنكَ",
+        "translation": "Said Isa, the son of Maryam: O Allah, our Lord, send down to us a table from the heaven to be for us a festival for the first of us and the last of us and a sign from You.",
+        "ref": "Al-Ma'idah 5:114"
+      },
+      "didYouKnow": "The story of the table from heaven is preserved in Surah Al-Ma'idah — the fifth chapter of the Quran, which is named after this table. The surah is one of the last revealed to Muhammad ﷺ and contains the final rulings of Islamic law.",
+      "takeaway": "Every sign from Allah is a test — a mercy for the believer and a judgment for the rejecter."
+    },
+    {
+      "num": 12,
+      "title": "The Plot Against Isa",
+      "thumb": "plot-isa",
+      "body": "<p>The religious establishment of Jerusalem — the priests, the scholars, the Sanhedrin — began to plot against Isa (a.s). He had exposed their corruption. He had called them out for adding to the law and distorting the scripture. He had gathered a following among the common people. And they feared him.</p><p>The Quran says: <em>And when Isa perceived disbelief from them, he said: Who will be my helpers to Allah? The disciples said: We will be the helpers of Allah. We have believed in Allah, and bear witness that we are Muslims.</em></p><p>Look at what Isa (a.s) asked. He did not ask for defenders. He did not ask for followers. He asked for <em>helpers to Allah</em>. His mission was not to protect himself — it was to spread the message of tawhid. And even as the plot against him grew, he continued to call for helpers who would carry the message forward.</p><p>But the plot grew darker. The priests decided that Isa (a.s) had to die. They went to the Roman authorities — the occupying power of Palestine at the time — and accused Isa (a.s) of rebellion against Rome. They wanted him executed. And Rome — always suspicious of popular leaders — agreed to investigate.</p>",
+      "dialogue": {
+        "arabic": "فَلَمَّا أَحَسَّ عِيسَىٰ مِنْهُمُ الْكُفْرَ قَالَ مَنْ أَنصَارِي إِلَى اللَّهِ ۖ قَالَ الْحَوَارِيُّونَ نَحْنُ أَنصَارُ اللَّهِ",
+        "translation": "And when Isa perceived disbelief from them, he said: Who will be my helpers to Allah? The disciples said: We will be the helpers of Allah.",
+        "ref": "Aal-i-Imraan 3:52"
+      },
+      "didYouKnow": "The plot against Isa (a.s) is one of the most documented events in the Quran. The Quran says: <em>And they plotted, and Allah planned. And Allah is the best of planners.</em> (Aal-i-Imraan 3:54) The plot against Isa (a.s) was real — but so was the plan of Allah.",
+      "takeaway": "Every plot against the faithful is met by the plan of Allah — and Allah's plan always prevails."
+    },
+    {
+      "num": 13,
+      "title": "The Substitution",
+      "thumb": "substitution",
+      "body": "<p>And then something extraordinary happened. Something so profound that the Quran says an entire group of people has been in confusion about it for two thousand years. Isa (a.s) did not die on the cross. He was not killed by his enemies. Allah raised him.</p><p>The Quran says: <em>And they did not kill him, nor did they crucify him; but it was made to appear so to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain. Rather, Allah raised him to Himself. And ever is Allah Exalted in Might and Wise.</em></p><p>Read that verse slowly. <em>They did not kill him, nor did they crucify him.</em> Not 'he was resurrected after being killed.' Not 'he was sacrificed for sins.' But: <em>they did not kill him.</em> Something was made to appear like the crucifixion. Someone else — most likely one of his betrayers — was crucified in his place. And Isa (a.s) was raised alive to Allah.</p><p>The Quran is emphatic: <em>And they did not kill him, for certain. Rather, Allah raised him to Himself.</em> The scholars of Islam have debated the details for centuries, but the Quranic position is clear: Isa (a.s) did not die on the cross. He was raised — body and soul — to Allah. He is alive in the heavens. And he will return before the Day of Judgment.</p>",
+      "dialogue": {
+        "arabic": "وَمَا قَتَلُوهُ وَمَا صَلَبُوهُ وَلَٰكِن شُبِّهَ لَهُمْ ۚ وَإِنَّ الَّذِينَ اخْتَلَفُوا فِيهِ لَفِي شَكٍّ مِّنْهُ ۚ وَمَا لَهُم بِهِ مِنْ عِلْمٍ إِلَّا اتِّبَاعَ الظَّنِّ ۚ وَمَا قَتَلُوهُ يَقِينًا ۝ بَل رَّفَعَهُ اللَّهُ إِلَيْهِ",
+        "translation": "And they did not kill him, nor did they crucify him; but it was made to appear so to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain. Rather, Allah raised him to Himself.",
+        "ref": "An-Nisa 4:157-158"
+      },
+      "didYouKnow": "The Islamic position on the crucifixion is one of the most distinctive in revelation. Isa (a.s) was not killed. He was raised alive to Allah — and he will return before the Day of Judgment to complete his mission and affirm the truth of Islam.",
+      "takeaway": "Allah always protects His prophets — sometimes in ways that even the believers cannot foresee."
+    },
+    {
+      "num": 14,
+      "title": "Raised to the Heavens",
+      "thumb": "raised",
+      "body": "<p>Where is Isa (a.s) now? The Quran says Allah raised him <em>to Himself</em>. The Prophet ﷺ told us more in the narrations of the Isra and Mi'raj — his own night journey to the heavens. He said that he met Isa (a.s) on the second heaven, along with his cousin Yahya (a.s).</p><p>Isa (a.s) is alive. He is in the heavens. He is worshipping Allah, waiting for the moment appointed for his return. The Prophet ﷺ said: <em>Isa (a.s) will descend before the Day of Judgment. He will marry, he will have children, he will live for forty years, and then he will die and be buried near me in Madinah.</em></p><p>The return of Isa (a.s) is one of the major signs of the Hour in Islam. When he returns, he will descend in Damascus, at the white minaret of the Umayyad Mosque. He will break the cross, kill the pig, and abolish the jizya. He will not bring a new religion — he will confirm the religion of Islam and rule by the Quran. He will lead the Muslims in prayer. He will fight the Dajjal (the Antichrist) and defeat him. And then he will die, and be buried in Madinah, next to the Prophet Muhammad ﷺ.</p><p>Isa (a.s) is the only prophet in the Quran who is explicitly described as being alive in the heavens. He is the only prophet whose return is a sign of the Hour. His story does not end with his earthly life — it continues into the present and will continue until the end of time.</p>",
+      "dialogue": {
+        "arabic": "وَإِن مِّنْ أَهْلِ الْكِتَابِ إِلَّا لَيُؤْمِنَنَّ بِهِ قَبْلَ مَوْتِهِ ۚ وَيَوْمَ الْقِيَامَةِ يَكُونُ عَلَيْهِمْ شَهِيدًا",
+        "translation": "And there is none from the People of the Scripture but that he will surely believe in him before his death. And on the Day of Resurrection he will be against them a witness.",
+        "ref": "An-Nisa 4:159"
+      },
+      "didYouKnow": "The Prophet ﷺ said about the return of Isa (a.s): <em>By Allah, the son of Maryam will surely descend as a just ruler. He will break the cross, kill the pig, and abolish the jizya. Wealth will be so abundant that no one will accept charity.</em> (Sahih al-Bukhari)",
+      "takeaway": "The story of Isa (a.s) is not over — the greatest chapter of it is still ahead."
+    },
+    {
+      "num": 15,
+      "title": "The Truth About Isa",
+      "thumb": "truth",
+      "body": "<p>The Quran is emphatic about the truth of Isa's (a.s) nature. He was not divine. He was not the son of God. He was not part of a trinity. He was a prophet — a servant of Allah — created by the command of Allah and sent to the Children of Israel.</p><p>The Quran says: <em>O People of the Scripture, do not exceed the limits in your religion, nor say of Allah anything but the truth. The Messiah, Isa, son of Maryam, was but a messenger of Allah and His word which He directed to Maryam and a soul from Him. So believe in Allah and His messengers. And do not say: Three. Desist — it is better for you. Indeed, Allah is but one God. Exalted is He above having a son.</em></p><p>Read that verse slowly. <em>The Messiah, Isa, son of Maryam, was but a messenger of Allah.</em> The Quran honours Isa (a.s) with the title <em>al-Masīḥ</em> — the Messiah. It honours him as a word from Allah and a soul from Allah. It honours him as one of the greatest prophets. But it stops short of divinity. Because Isa (a.s) himself never claimed to be divine. His very first words in the Quran were: <em>Indeed, I am the servant of Allah.</em></p><p>The Prophet ﷺ said: <em>Do not praise me excessively as the Christians praised Isa (a.s). I am only a servant. So say: The servant of Allah and His messenger.</em> The Prophet ﷺ foresaw the danger of exaggeration — of taking a beloved prophet and elevating him beyond his station. And he warned against it. He called himself what Isa (a.s) called himself: <em>ʿabduLlāh wa rasūluh</em> — the servant of Allah and His messenger.</p>",
+      "dialogue": {
+        "arabic": "إِنَّمَا الْمَسِيحُ عِيسَى ابْنُ مَرْيَمَ رَسُولُ اللَّهِ وَكَلِمَتُهُ أَلْقَاهَا إِلَىٰ مَرْيَمَ وَرُوحٌ مِّنْهُ",
+        "translation": "The Messiah, Isa, son of Maryam, was but a messenger of Allah and His word which He directed to Maryam and a soul from Him.",
+        "ref": "An-Nisa 4:171"
+      },
+      "didYouKnow": "The Quran honours Isa (a.s) with titles of the highest respect — <em>al-Masīḥ</em> (the Messiah), <em>Kalimatuhu</em> (His word), <em>Rūḥun minhu</em> (a soul from Him). But it explicitly forbids the claim that he was divine or the son of Allah. Isa (a.s) himself denied this in the Quran.",
+      "takeaway": "The truest way to honour a prophet is to describe him the way Allah described him — and nothing more."
+    },
+    {
+      "num": 16,
+      "title": "The Question on the Day of Judgment",
+      "thumb": "question",
+      "body": "<p>The Quran closes the story of Isa (a.s) with a scene from the Day of Judgment. A scene that brings tears to the eyes of every believer who reads it. Allah will ask Isa (a.s) directly: <em>O Isa, son of Maryam, did you say to the people: Take me and my mother as deities besides Allah?</em></p><p>And Isa (a.s) will answer with words of overwhelming humility: <em>Exalted are You! It was not for me to say that to which I have no right. If I had said it, You would have known it. You know what is within myself, and I do not know what is within Yourself. Indeed, it is You who is Knower of the unseen. I said not to them except what You commanded me: Worship Allah, my Lord and your Lord. And I was a witness over them as long as I was among them; but when You took me up, You were the Observer over them, and You are, over all things, Witness. If You should punish them — indeed they are Your servants; but if You forgive them — indeed it is You who is the Exalted in Might, the Wise.</em></p><p>Read that answer slowly. Isa (a.s) does not defend himself with excuses. He does not point fingers at his followers. He does not claim any right. He simply says: <em>I only said what You commanded. And now the matter is Yours.</em> His humility on the Day of Judgment will be perfect. The prophet who was worshipped by millions will stand before his Lord and say: <em>I only ever called them to worship You.</em></p><p>And Allah will respond with a declaration that ends the entire discussion of Isa's (a.s) nature: <em>This is the Day when the truthful will benefit from their truthfulness. For them are gardens beneath which rivers flow, wherein they will abide forever, Allah being pleased with them, and they with Him.</em></p>",
+      "dialogue": {
+        "arabic": "مَا قُلْتُ لَهُمْ إِلَّا مَا أَمَرْتَنِي بِهِ أَنِ اعْبُدُوا اللَّهَ رَبِّي وَرَبَّكُمْ",
+        "translation": "I said not to them except what You commanded me: Worship Allah, my Lord and your Lord.",
+        "ref": "Al-Ma'idah 5:117"
+      },
+      "didYouKnow": "This scene from Surah Al-Ma'idah (5:116-118) is one of the most important passages in the Quran about Isa (a.s). It preserves his final testimony about his own mission — that he called only to tawhid, and that he never claimed divinity.",
+      "takeaway": "On the Day of Judgment, the only defence a prophet needs is that he said only what Allah commanded."
+    },
+    {
+      "num": 17,
+      "title": "The Legacy of Isa",
+      "thumb": "legacy",
+      "body": "<p>Isa (a.s) is one of the greatest prophets of Allah — one of the five messengers of strong will (<em>ulū al-ʿazm</em>) along with Nuh, Ibrahim, Musa, and Muhammad ﷺ. He is the Messiah. He is the Word of Allah. He is a Spirit from Allah. He was born of a virgin, spoke as an infant, and performed miracles by the permission of Allah. He was raised alive to the heavens. He will return before the Day of Judgment. And he will die, and be buried in Madinah, next to the Prophet Muhammad ﷺ.</p><p>His legacy is a legacy of pure tawhid. He called the Children of Israel back to the worship of the One God — the same message every prophet had carried. He healed the sick, raised the dead, and gave sight to the blind — all by the permission of Allah. He was gentle, humble, and utterly devoted to his Lord.</p><p>The Quran honours him with a verse that appears in every Muslim prayer: <em>Peace be upon me the day I was born, the day I die, and the day I am raised alive.</em> Every Muslim who recites the tashahhud in prayer sends salam upon Isa (a.s) — because the Prophet ﷺ taught us to bless the family of Ibrahim (a.s), which includes Isa (a.s).</p><p>The greatest lesson of Isa (a.s) is his humility. He was a prophet whose birth was a miracle, whose life was a miracle, and whose future is a miracle. And yet his first words were: <em>Indeed, I am the servant of Allah.</em> And his last words to his people were: <em>I only said what You commanded — worship Allah, my Lord and your Lord.</em> He never claimed to be more than a servant. And because he was a perfect servant, Allah honoured him above all other prophets except Muhammad ﷺ.</p><p>May Allah grant us the humility of Isa (a.s), the purity of Maryam (a.s), and the devotion of the disciples. Ameen.</p>",
+      "dialogue": {
+        "arabic": "وَسَلَامٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ حَيًّا",
+        "translation": "And peace be upon him the day he was born and the day he dies and the day he will be raised alive.",
+        "ref": "Maryam 19:15 (about Isa and Yahya)"
+      },
+      "didYouKnow": "Isa (a.s) is mentioned 25 times in the Quran — more than any other prophet except Musa (a.s). He is called by 12 different names and titles in revelation. His story spans multiple surahs including Al-Imran, Maryam, Al-Ma'idah, and An-Nisa.",
+      "takeaway": "The greatest servants are those who never claim greatness — and Allah raises them the highest."
+    }
+  ]
+},    {
+      "id": "muhammad",
+      "num": 25,
+      "name": "Muhammad ﷺ",
+      "arabic": "محمد",
+      "subtitle": "10 Lessons",
+      "image": "images/prophet-25-muhammad.webp",
+      "tier": "pillar",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Orphan of Makkah",
+          "thumb": "orphan",
+          "body": "<p>Muhammad ﷺ was born in Makkah in the year 570 CE — in a city of idols, in a tribe that had forgotten the way of Ibrahim (a.s). His father, Abdullah, had died before he was born. His mother, Aminah, passed away when he was six years old. He was raised by his grandfather Abdul-Muttalib for two years, and then — when his grandfather also passed — by his uncle Abu Talib.</p><p>An orphan in a tribal society. A boy with no father to defend him, no mother to comfort him, no wealth to command respect. And yet, from his earliest years, the people of Makkah saw something extraordinary in him. They called him <em>al-Ṣādiq</em> — the truthful. And they called him <em>al-Amīn</em> — the trustworthy. Before he received any revelation, before he was a prophet, before anyone knew who he would become, his character had already made him the most respected young man in his city.</p><p>The Prophet ﷺ later said: <em>I was sent to perfect good character.</em> And this was no accident — his entire life before prophethood was a training in character. He learned patience as an orphan. He learned gratitude as a poor man. He learned leadership as a trusted shepherd. Allah prepared him through every trial before He called him to the greatest mission in human history.</p>",
+          "dialogue": {
+            "arabic": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+            "translation": "And indeed, you are of a great moral character.",
+            "ref": "Al-Qalam 68:4"
+          },
+          "didYouKnow": "The Prophet ﷺ never received any formal education. He could neither read nor write. He grew up as an orphan, in a city of idolaters, in a remote corner of the world. And yet he delivered the most eloquent revelation in human history — because his teacher was Allah Himself.",
+          "takeaway": "The trials of your childhood are not wasted — they are the training for your mission."
+        },
+        {
+          "num": 2,
+          "title": "The First Revelation",
+          "thumb": "revelation",
+          "body": "<p>At the age of forty, Muhammad ﷺ began retreating to the cave of Hira, on a mountain outside Makkah, to reflect on the corruption he saw around him. He had never worshipped idols. He had never participated in the shirk of his people. His heart was searching for the truth — the truth of Ibrahim (a.s), the truth of the one God his people had abandoned.</p><p>And then, one night in Ramadan, the Angel Jibril (Gabriel) came to him. The Prophet ﷺ described the moment: <em>He came to me while I was in the cave, and he said: 'Iqra — Read!' I said: 'I do not know how to read.' He seized me and squeezed me until I could bear it no longer. Then he released me and said: 'Iqra — Read!' I said: 'I do not know how to read.' He seized me again and squeezed me a second time until I could bear it no longer. Then he released me and said: 'Iqra — Read!' I said: 'I do not know how to read.' He seized me a third time, then released me and said: <em>Read in the name of your Lord who created — created man from a clinging substance. Read, and your Lord is the most Generous — who taught by the pen — taught man that which he knew not.</em></em></p><p>The first word of the Quran was <em>Iqra</em> — Read. The first command of the final revelation was not to pray, not to fast, not to fight. It was to read. To learn. To know. The religion of Islam begins with a call to knowledge, and the first revelation was the beginning of a book that would change the world.</p>",
+          "dialogue": {
+            "arabic": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ۝ اقْرَأْ وَرَبُّكَ الْأَكْرَمُ ۝ الَّذِي عَلَّمَ بِالْقَلَمِ",
+            "translation": "Read in the name of your Lord who created — created man from a clinging substance. Read, and your Lord is the most Generous — who taught by the pen.",
+            "ref": "Al-Alaq 96:1-4"
+          },
+          "didYouKnow": "The Prophet ﷺ was 40 years old when the first revelation came. He was in the cave of Hira on the mountain of light, near Makkah, in the month of Ramadan. The night is commemorated as <em>Laylat al-Qadr</em> — the Night of Power — which is celebrated every Ramadan.",
+          "takeaway": "The first word of the Quran was 'Read' — because the road to knowing Allah begins with seeking knowledge."
+        },
+        {
+          "num": 3,
+          "title": "The Three Years of Silence",
+          "thumb": "silence",
+          "body": "<p>The first revelation was followed by a period of silence. Some narrations say it lasted a few months; others say longer. During this time, the Prophet ﷺ waited. He had heard the voice of Jibril. He had received the first verses. And then — nothing. No new revelation. No new instructions. Just the silence of the cave and the weight of what he had experienced.</p><p>Some scholars say this silence was a mercy. The Prophet ﷺ needed time to process what had happened. He needed time to prepare for the enormous mission ahead. He needed time to understand that the revelation was not a single event — it was the beginning of a lifelong relationship with Allah.</p><p>And then, when the silence was at its heaviest, the revelation returned — and with it, a new command. The Prophet ﷺ was told: <em>O you who covers himself, arise and warn. And your Lord glorify. And your clothing purify. And uncleanliness avoid.</em></p><p>Look at the order. First: <em>arise</em>. He had been lying down, covered in a blanket, exhausted from the weight of the revelation. He was told to stand. Then: <em>warn</em>. His mission was to warn his people. Then: <em>glorify your Lord</em>. Then: <em>purify your clothing</em>. Then: <em>avoid uncleanliness</em>. Every command built on the one before. First the self, then the community, then the Lord. First purification, then proclamation.</p><p>This is the beginning of the public mission. The Prophet ﷺ stood up from the cave of Hira, walked into Makkah, and began to call his people to tawhid.</p>",
+          "dialogue": {
+            "arabic": "يَا أَيُّهَا الْمُدَّثِّرُ ۝ قُمْ فَأَنذِرْ ۝ وَرَبَّكَ فَكَبِّرْ ۝ وَثِيَابَكَ فَطَهِّرْ",
+            "translation": "O you who covers himself — arise and warn. And your Lord glorify. And your clothing purify.",
+            "ref": "Al-Muddathir 74:1-4"
+          },
+          "didYouKnow": "The surah that resumed revelation — Surah Al-Muddathir — is one of the shortest in the Quran. But it contains the entire blueprint of the Islamic mission: stand up, warn the people, glorify Allah, purify yourself, and avoid corruption.",
+          "takeaway": "Every mission begins with the purification of the self — you cannot call others to Allah if you are not first standing before Him."
+        },
+        {
+          "num": 4,
+          "title": "The Years of Persecution",
+          "thumb": "persecution",
+          "body": "<p>The Prophet ﷺ began his public mission by calling the people of Makkah to tawhid. At first, the response was cautious. But slowly, the message spread — and with it, the anger of the powerful. The Quraysh leaders realised that if the message of Muhammad ﷺ succeeded, their temples, their idols, and their entire economy would collapse.</p><p>So began thirteen years of persecution. Bilal (r.a) was dragged through the streets with a rope around his neck. Sumayyah (r.a) became the first martyr of Islam — she was killed for refusing to curse the Prophet ﷺ. Yasir (r.a) was tortured to death. The early Muslims were beaten, starved, imprisoned, and mocked. Some were boycotted by their own families. Others were driven out of their homes.</p><p>And through all of it, the Prophet ﷺ did not retaliate. He did not call for violence. He did not curse his enemies. He did not ask Allah to punish the people of Makkah. He simply continued to call them to tawhid — with patience, with mercy, and with a heart that never wavered.</p><p>The Prophet ﷺ was offered wealth if he would stop preaching. He was offered kingship. He was offered women. He refused all of it. He said: <em>By Allah, if they placed the sun in my right hand and the moon in my left to make me abandon this mission, I would not — until Allah makes it victorious or I perish in its cause.</em> This is the heart of a prophet — a heart that cannot be bought, bribed, or broken.</p>",
+          "dialogue": {
+            "arabic": "وَلَقَدْ نَعْلَمُ أَنَّكَ يَضِيقُ صَدْرُكَ بِمَا يَقُولُونَ",
+            "translation": "And We already know that your heart is strained by what they say.",
+            "ref": "Al-Hijr 15:97"
+          },
+          "didYouKnow": "The first martyr of Islam was Sumayyah bint Khayyat (r.a), the mother of Ammar ibn Yasir (r.a). She was killed by Abu Jahl for refusing to renounce her faith — the first blood spilled in the way of Allah for this Ummah.",
+          "takeaway": "The price of truth is often persecution — but the reward of truth is a place in the highest ranks of Paradise."
+        },
+        {
+          "num": 5,
+          "title": "The Year of Sorrow",
+          "thumb": "sorrow",
+          "body": "<p>In the tenth year of the mission, the Prophet ﷺ faced two losses that shook the very foundations of his life. His wife Khadijah (r.a) — his companion of twenty-five years, the first believer, the woman who had supported him through everything — passed away. And his uncle Abu Talib — the man who had protected him from the Quraysh for over a decade, the only reason he had survived the early years — also died.</p><p>The Prophet ﷺ called that year <em>ʿĀm al-Ḥuzn</em> — the Year of Sorrow. Two of the pillars of his life had fallen. His wife, who had comforted him when the entire world opposed him. His uncle, who had stood as a wall between him and the swords of the Quraysh. And now both were gone.</p><p>With Khadijah gone, the Prophet ﷺ lost his closest companion. The house that had been a place of peace became a place of memories. With Abu Talib gone, the Prophet ﷺ lost his protection. The Quraysh now had no reason to restrain themselves. The persecution grew worse. The stones grew larger. The threats grew louder.</p><p>And still, the Prophet ﷺ did not waver. He did not complain. He did not give up. He simply continued — carrying the weight of his losses, holding onto his faith, and trusting that Allah would not abandon him.</p><p>This is one of the most important lessons of the Prophet's life. Even the greatest of creation faced the deepest of sorrows. Even the Prophet ﷺ wept. Even the Prophet ﷺ grieved. And yet he never stopped turning to Allah. His grief did not become despair. His losses did not become excuses.</p>",
+          "dialogue": {
+            "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+            "translation": "For indeed, with hardship comes ease. Indeed, with hardship comes ease.",
+            "ref": "Ash-Sharh 94:5-6"
+          },
+          "didYouKnow": "Khadijah (r.a) was the Prophet's ﷺ first wife and the first Muslim. She supported him with her wealth, her patience, and her love for 25 years. The Prophet ﷺ said: <em>She believed in me when the people disbelieved. She was the mother of my children and the love of my heart.</em>",
+          "takeaway": "The grief you carry is not a sign that Allah has abandoned you — it is a sign that He is preparing you for something greater."
+        },
+        {
+          "num": 6,
+          "title": "The Night Journey",
+          "thumb": "isra",
+          "body": "<p>In the midst of the Year of Sorrow, Allah gave the Prophet ﷺ a gift that no other prophet had received. He was taken from Makkah to Jerusalem, and from Jerusalem to the seven heavens, in a single night. This is the <em>Isrā' wal-Miʿrāj</em> — the Night Journey and the Ascension.</p><p>The Quran says: <em>Exalted is He who took His Servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed, to show him of Our signs. Indeed, He is the Hearing, the Seeing.</em></p><p>The Prophet ﷺ was taken on the <em>Burāq</em> — a heavenly steed — from Makkah to Jerusalem. There, at the Al-Aqsa Mosque, he met all the prophets of Allah — Ibrahim, Musa, Isa, and every other prophet from the beginning of time. He led them in prayer. He was affirmed as the imam of the prophets, the final messenger, the seal of the line.</p><p>Then, from Jerusalem, he ascended through the seven heavens. In each heaven, he met a prophet — Adam (a.s) in the first, Isa (a.s) and Yahya (a.s) in the second, Yusuf (a.s) in the third, Idris (a.s) in the fourth, Harun (a.s) in the fifth, Musa (a.s) in the sixth, and Ibrahim (a.s) in the seventh. In each heaven, the prophets welcomed him. In each heaven, the ranks of the angels greeted him.</p><p>And then he was brought to the presence of his Lord. He was given three gifts: the five daily prayers, the final verses of Surah Al-Baqarah, and the promise that anyone who dies without associating partners with Allah will be forgiven. The Prophet ﷺ returned to Makkah that same night — but he returned with gifts that would carry the Ummah for the rest of time.</p>",
+          "dialogue": {
+            "arabic": "سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى",
+            "translation": "Exalted is He who took His Servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa.",
+            "ref": "Al-Isra 17:1"
+          },
+          "didYouKnow": "The five daily prayers were not brought down by an angel — they were given directly to the Prophet ﷺ by Allah in the heavens on the Night of Mi'raj. This is why they are called <em>ʿibādah rūḥiyyah</em> — the spiritual worship. Every Muslim who prays five times a day is honouring a gift given directly to the Prophet ﷺ.",
+          "takeaway": "The prayers you pray today were gifted to the Prophet ﷺ in the heavens — they are a treasure that only you can open."
+        },
+        {
+          "num": 7,
+          "title": "The Hijrah",
+          "thumb": "hijrah",
+          "body": "<p>After thirteen years of persecution in Makkah, Allah gave the Prophet ﷺ permission to migrate. The Muslims left their homes, their tribes, their wealth, and their memories — and travelled to Madinah, a city that had accepted Islam and welcomed the Prophet ﷺ as its leader.</p><p>The migration is called the <em>Hijrah</em>. It marks the beginning of the Islamic calendar. It marks the beginning of the Muslim community — the Ummah — as a political and social entity. And it marks the beginning of a new chapter in the history of Islam.</p><p>The Prophet ﷺ himself left Makkah in secret, with Abu Bakr (r.a) as his only companion. They hid in a cave — the cave of Thawr — while the Quraysh searched for them. The Quran describes the moment: <em>When they were in the cave, and he said to his companion: Do not grieve; indeed Allah is with us.</em></p><p>Look at the Prophet's ﷺ certainty. He had been driven from his city, hunted by his people, with a price on his head. And yet, sitting in a cave, with the enemy footsteps above them, he told Abu Bakr: <em>Do not grieve; indeed Allah is with us.</em> He did not say 'I hope Allah is with us.' He did not say 'perhaps Allah will help us.' He said: <em>Allah is with us.</em> Certainty. Unshakeable. Absolute.</p><p>The Hijrah was not a defeat — it was a strategy. The Prophet ﷺ did not leave Makkah because he was weak. He left because the mission needed a land where the message could grow. And Allah had prepared Madinah to receive him.</p>",
+          "dialogue": {
+            "arabic": "إِذْ يَقُولُ لِصَاحِبِهِ لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا",
+            "translation": "When he said to his companion: Do not grieve; indeed Allah is with us.",
+            "ref": "At-Tawbah 9:40"
+          },
+          "didYouKnow": "The Islamic calendar begins with the Hijrah — not with the birth of the Prophet ﷺ, not with the first revelation, but with the migration to Madinah. This shows how important the establishment of the Muslim community is in Islam.",
+          "takeaway": "Sometimes the greatest victories come from walking away from what you cannot change — and building something new."
+        },
+        {
+          "num": 8,
+          "title": "The Constitution of Madinah",
+          "thumb": "constitution",
+          "body": "<p>When the Prophet ﷺ arrived in Madinah, he did not just become the leader of the Muslims. He became the leader of an entire city — including Jews, pagans, and Muslims from different tribes. And he did something that had never been done before in Arabia: he wrote a constitution.</p><p>The <em>Ṣaḥīfah</em> — the document known as the Constitution of Madinah — laid out the rights and responsibilities of every citizen of the city. It guaranteed religious freedom for the Jews. It protected the rights of the pagans. It created a system of mutual defence. It established that every citizen — regardless of their religion — had the right to a fair trial. And it created the first truly pluralistic society in the history of Arabia.</p><p>This is one of the most important political documents in human history. It shows that Islam is not a religion that forces belief — it is a religion that guarantees the freedom of conscience. The Prophet ﷺ did not force the Jews of Madinah to accept Islam. He did not force the pagans to convert. He allowed them to worship as they wished. Because the Quran says: <em>There is no compulsion in religion.</em></p><p>And this is what the Muslims built in Madinah: a city where justice was for everyone. Where the weak were protected. Where the stranger was welcomed. Where the orphan was fed. Where the slave could become a leader. Where the man who had been driven from his home in Makkah could become the greatest leader Arabia had ever seen.</p>",
+          "dialogue": {
+            "arabic": "لَا إِكْرَاهَ فِي الدِّينِ ۖ قَد تَّبَيَّنَ الرُّشْدُ مِنَ الْغَيِّ",
+            "translation": "There is no compulsion in religion. The right course has become clear from the wrong.",
+            "ref": "Al-Baqarah 2:256"
+          },
+          "didYouKnow": "The Constitution of Madinah is one of the earliest known written constitutions in human history. It guaranteed rights to Jews, pagans, and Muslims alike — long before the concept of religious freedom became a modern political principle.",
+          "takeaway": "Islam is not a religion of force — it is a religion of invitation and free choice."
+        },
+        {
+          "num": 9,
+          "title": "The Conquest of Makkah",
+          "thumb": "conquest",
+          "body": "<p>After eight years in Madinah, the Prophet ﷺ returned to Makkah — not as a fugitive, but as a conqueror. He entered the city with an army of ten thousand Muslims. He entered without bloodshed, without vengeance, without retribution. He entered with his head bowed low on his camel — a gesture of humility before Allah, not pride before men.</p><p>The people of Makkah had tortured his companions. They had killed his family. They had driven him from his home. They had spent twenty years fighting against him. And now, they were at his mercy. They stood outside the Kaaba — the very house they had filled with idols — waiting for the Prophet's ﷺ judgement.</p><p>And the Prophet ﷺ asked them one question: <em>O Quraysh, what do you think I am going to do with you?</em></p><p>They answered: <em>We hope for good. You are a noble brother, the son of a noble brother.</em></p><p>And the Prophet ﷺ said the words that would echo through every generation of Muslims: <em>I say to you what Yusuf said to his brothers: No blame will be upon you today. Go — you are free.</em></p><p>No punishment. No bloodshed. No vengeance. Twenty years of persecution answered with total forgiveness. The Prophet ﷺ did not just conquer Makkah — he conquered the hearts of its people. And within days, the entire city had accepted Islam.</p>",
+          "dialogue": {
+            "arabic": "اذْهَبُوا فَأَنْتُمُ الطُّلَقَاءُ",
+            "translation": "Go, for you are free.",
+            "ref": "Sirah of the Prophet ﷺ"
+          },
+          "didYouKnow": "The Prophet ﷺ entered Makkah with his head bowed so low that his beard nearly touched his camel's saddle. He was not entering as a proud conqueror — he was entering as a humble servant of Allah, grateful for the victory his Lord had granted him.",
+          "takeaway": "The greatest victory is not the one that defeats your enemy — it is the one that makes them your friend."
+        },
+        {
+          "num": 10,
+          "title": "The Farewell Sermon",
+          "thumb": "farewell",
+          "body": "<p>In the final year of his life, the Prophet ﷺ performed the Hajj — his only Hajj after the Hijrah. Over one hundred thousand Muslims gathered at Mount Arafah to hear him speak one final time. And what he said was not about himself — it was about us. It was about the Ummah. It was about the legacy he was leaving behind.</p><p>He said:</p><p><em>O people, listen to my words, for I do not know whether I will meet you again after this year.</em></p><p><em>Your lives and your property are sacred — like the sacredness of this day, in this month, in this city.</em></p><p><em>Allah has forbidden you to take usury. So all interest obligations shall henceforth be waived.</em></p><p><em>Beware of Shaytan, for he has lost all hope of misleading you in great matters — but he is content to mislead you in small matters.</em></p><p><em>Worship Allah, establish your five daily prayers, fast in Ramadan, give the zakat, and perform the Hajj. Listen to your leaders — even if they are slaves from Abyssinia.</em></p><p><em>All mankind is from Adam and Eve. An Arab has no superiority over a non-Arab, nor a non-Arab over an Arab. A white person has no superiority over a black person, nor a black person over a white person — except by piety and good action.</em></p><p><em>I am leaving behind two things: the Book of Allah and the Sunnah of His Prophet. If you hold onto them, you will never go astray.</em></p><p><em>O people, your Lord is one. Your father is one. You are all the children of Adam — and Adam was from dust.</em></p><p>And then he said: <em>Have I delivered my message?</em></p><p>And the hundred thousand Companions replied: <em>Yes.</em></p><p>And the Prophet ﷺ raised his finger to the sky and said: <em>O Allah, bear witness.</em></p><p>Three months later, the Prophet ﷺ passed away. He was sixty-three years old. He had spent twenty-three years as a prophet. He had transformed a city of idolaters into the centre of tawhid. He had built the greatest community in human history. He had been given the Quran — the final, guarded, perfect word of Allah. And he had left behind a legacy that would be carried by Muslims until the end of time.</p><p>His final words, as he lay dying, were: <em>O Allah, with the highest companionship.</em></p><p>And he was buried in Madinah, in the room of Aishah (r.a), where his masjid still stands. Over one billion Muslims around the world face Makkah when they pray — but every Muslim who visits Madinah can say salam to him directly. He is still there. Waiting. Sleeping in peace.</p><p>And one day, we will hear his voice in the next world — as the greatest intercessor for the Ummah.</p><p><em>Peace be upon him, and upon all the prophets of Allah. Ameen.</em></p>",
+          "dialogue": {
+            "arabic": "يَا أَيُّهَا النَّاسُ إِنَّ رَبَّكُمْ وَاحِدٌ، وَإِنَّ أَبَاكُمْ وَاحِدٌ، كُلُّكُمْ لِآدَمَ وَآدَمُ مِنْ تُرَابٍ",
+            "translation": "O people, your Lord is one and your father is one. All of you are from Adam, and Adam was from dust.",
+            "ref": "The Farewell Sermon"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>I am the final prophet. There is no prophet after me.</em> And he said: <em>My Ummah is the best Ummah — you enjoin what is right and forbid what is wrong.</em> The Prophet ﷺ was the seal of the prophets — the final messenger of Allah to all of humanity.",
+          "takeaway": "The Prophet ﷺ did not leave us alone — he left us the Quran and the Sunnah, and promised we would never go astray if we held onto them."
+        }
+      ]
+    }
+  ]
+        }
