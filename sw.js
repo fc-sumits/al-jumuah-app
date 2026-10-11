@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v5';
+const CACHE_VERSION = 'aljumuah-v6';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -16,7 +16,8 @@ const PRECACHE_URLS = [
   './content/prophets-1.json', 
   './content/prophets-2.json',
   './content/prophets-3.json',
-  './content/prophets-4.json'
+  './content/prophets-4.json',
+  './content/prophets-5.json'
 ];
 
 self.addEventListener('install', (event) => {
