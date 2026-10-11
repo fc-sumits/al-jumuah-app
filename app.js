@@ -3446,4 +3446,12 @@ LEARN_BACK_HANDLERS['salahGuide'] = () => {
   }
   closeLearnOverlay();
   return true;
-};
+};document.addEventListener('click', (e) => {
+  const tab = e.target.closest('[data-slt]');
+  if(tab){
+    salahDetailState.view = 'list';
+    salahDetailState.posIdx = 0;
+    salahDetailState.prayerIdx = 0;
+    salahDetailState.walkStep = 0;
+  }
+}, true);
