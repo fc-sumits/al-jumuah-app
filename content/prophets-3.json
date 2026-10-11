@@ -1,0 +1,1135 @@
+{
+  "prophets": [
+    {
+      "id": "yusuf",
+      "num": 11,
+      "name": "Yusuf",
+      "arabic": "يوسف",
+      "subtitle": "25 Lessons",
+      "image": "images/prophet-11-yusuf.webp",
+      "tier": "pillar",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Dream of the Eleven Stars",
+          "thumb": "dream",
+          "body": "<p>Yusuf (AS) was the son of Yaqub — a prophet, and the father of the twelve tribes of Israel. Of all his sons, Yaqub loved Yusuf most deeply, because he sensed in the boy something extraordinary: the mark of prophethood.</p><p>One night, young Yusuf came to his father with news that would change the course of his life. He had seen a dream. <em>O my father, indeed I have seen eleven stars and the sun and the moon — I saw them prostrating to me.</em></p><p>Yaqub understood immediately. Eleven stars — his eleven other sons. The sun — himself. The moon — Yusuf's mother. The dream was a prophecy: Yusuf would one day be raised above the entire family. He would be given a station none of them would share.</p><p>But Yaqub knew what this meant. He knew his other sons were already jealous. He knew that if they heard of the dream, they would stop at nothing to prevent its fulfilment. And so he gave Yusuf the wisest advice a father can give a child: <em>O my son, do not relate your vision to your brothers, or they will devise a plot against you. Indeed, Shaytan is to man a clear enemy.</em></p><p>This was the beginning of a story that the Quran calls <em>aḥsan al-qaṣaṣ</em> — the most beautiful of stories. Not because it is easy, but because it is complete. Every pain, every injustice, every betrayal — all of it would be woven into a single thread of divine wisdom.</p>",
+          "dialogue": {
+            "arabic": "إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ",
+            "translation": "When Yusuf said to his father: O my father, indeed I have seen eleven stars and the sun and the moon — I saw them prostrating to me.",
+            "ref": "Yusuf 12:4"
+          },
+          "didYouKnow": "Surah Yusuf is the only surah in the Quran devoted entirely to a single prophet's story. Allah calls it <em>aḥsan al-qaṣaṣ</em> — 'the most beautiful of stories' — because it contains every lesson a believer needs: jealousy, patience, temptation, injustice, imprisonment, forgiveness, and reunion.",
+          "takeaway": "Every dream Allah gives is tested before it is fulfilled — the delay is part of the gift."
+        },
+        {
+          "num": 2,
+          "title": "The Brothers' Envy",
+          "thumb": "envy",
+          "body": "<p>The brothers noticed. They noticed that their father's heart leaned toward Yusuf and his younger brother Binyamin. And envy began to eat at them.</p><p>The Quran records their conversation: <em>When they said: Truly Yusuf and his brother are more beloved to our father than we, though we are a group. Indeed, our father is in clear error. Kill Yusuf or cast him out to some other land, so that the favour of your father may be given to you alone, and you will be after that a righteous people.</em></p><p>Look at the twisted logic. They were twelve strong men, capable, grown. Yusuf was a child. And yet they convinced themselves that their father's love was a finite resource that had been stolen from them — that the only way to get it back was to destroy the one who had it.</p><p>And notice their final phrase: <em>and you will be after that a righteous people.</em> They were planning a murder and calling themselves righteous in the same breath. This is how envy works — it blinds the conscience, rewrites the moral code, and lets the heart justify anything to satisfy its hunger.</p><p>Envy is one of the oldest sins in existence. It was the sin of Iblis. It was the sin of Qabil against Habil. And now it was the sin that would tear Yaqub's family apart and set in motion the most important story of the Quran.</p>",
+          "dialogue": {
+            "arabic": "اقْتُلُوا يُوسُفَ أَوِ اطْرَحُوهُ أَرْضًا يَخْلُ لَكُمْ وَجْهُ أَبِيكُمْ وَتَكُونُوا مِن بَعْدِهِ قَوْمًا صَالِحِينَ",
+            "translation": "Kill Yusuf or cast him out to some other land, so that the favour of your father may be given to you alone, and you will be after that a righteous people.",
+            "ref": "Yusuf 12:9"
+          },
+          "didYouKnow": "The Prophet ﷺ warned against envy in the strongest terms: <em>Beware of envy, for envy consumes good deeds the way fire consumes wood.</em> Yusuf's brothers were willing to commit murder because of a feeling — and that feeling came from a heart that had forgotten to be grateful.",
+          "takeaway": "Envy is the sin that justifies any crime to itself."
+        },
+        {
+          "num": 3,
+          "title": "The Plot",
+          "thumb": "plot",
+          "body": "<p>One of the brothers intervened. He did not want to save Yusuf for Yusuf's sake — he wanted to avoid the guilt of murder. So he proposed a middle path: <em>Do not kill Yusuf, but cast him into the bottom of the well. Some caravan will pick him up — if you must do something.</em></p><p>This was the compromise of the cowardly. They told themselves that abandoning a child in a well was somehow more merciful than killing him directly. As if the desert heat, the wild animals, or the long wait for death would be kinder. But they had already made their decision — Yusuf would disappear.</p><p>They went to their father with the plan dressed as innocence. <em>O our father, why do you not trust us with Yusuf, though we are truly his well-wishers? Send him with us tomorrow that he may enjoy himself and play. Indeed, we will be his guardians.</em></p><p>Yaqub saw through it immediately. He said: <em>Indeed, it saddens me that you should take him, and I fear that a wolf may eat him while you are unaware of him.</em> Yaqub did not accuse his sons of malice. He named his fear as if it were a harmless worry — a wolf, not a brother.</p><p>And they replied with the smoothness of practiced deceivers: <em>If a wolf should eat him while we are a strong group, indeed we would then be losers!</em> They had already rehearsed it. They had already prepared their defence. All that was left was the act.</p>",
+          "dialogue": {
+            "arabic": "قَالُوا يَا أَبَانَا مَا لَكَ لَا تَأْمَنَّا عَلَىٰ يُوسُفَ وَإِنَّا لَهُ لَنَاصِحُونَ",
+            "translation": "They said: O our father, why do you not trust us with Yusuf, though we are truly his well-wishers?",
+            "ref": "Yusuf 12:11"
+          },
+          "didYouKnow": "The brothers' plan — throwing Yusuf in a well — appears in the Quran but the well's location is not named. Some scholars identify it with a well along the trade route between Shaam and Egypt. The whole story is preserved as a warning against the seductive logic of 'just a small evil.'",
+          "takeaway": "There is no 'small evil' — the descent from murder to abandonment is only the coward's rewrite of the same crime."
+        },
+        {
+          "num": 4,
+          "title": "The Well",
+          "thumb": "well",
+          "body": "<p>They took Yusuf out into the wilderness. Far from their father's sight, far from help, far from the eyes of any witness. And then they did it. They stripped him of his shirt — the very shirt that his father had given him — and they threw him into the well.</p><p>The Quran says: <em>And they threw him into the bottom of the well. And We inspired him: You will surely inform them of this affair of theirs while they perceive not.</em></p><p>Read that verse again. It is one of the most extraordinary in the entire Quran. At the very moment of Yusuf's abandonment — alone, terrified, in the dark, at the bottom of a well — Allah inspired him. Not with comfort about the present, but with a promise about the future: <em>You will inform them of this affair of theirs while they perceive not.</em></p><p>Yusuf was told that one day he would confront his brothers. One day he would stand before them — but they would not recognise him. The promise was delivered in the darkest moment of his life. Before the caravan came. Before the slavery. Before the prison. Allah had already told him the ending.</p><p>This is the mercy of Allah for every believer who feels trapped at the bottom of a well. He does not always remove you from the trial immediately — but He reveals the meaning of it, or He places a certainty in your heart that the story is not over. The well was not the end. It was only the beginning.</p>",
+          "dialogue": {
+            "arabic": "وَأَلْقُوهُ فِي غَيَابَتِ الْجُبِّ ۚ وَأَوْحَيْنَا إِلَيْهِ لَتُنَبِّئَنَّهُم بِأَمْرِهِمْ هَٰذَا وَهُمْ لَا يَشْعُرُونَ",
+            "translation": "And they threw him into the bottom of the well. And We inspired him: You will surely inform them of this affair of theirs while they perceive not.",
+            "ref": "Yusuf 12:15"
+          },
+          "didYouKnow": "The classical scholars note that Allah inspired Yusuf with a promise <em>while he was at the bottom of a well</em>. Not after he was rescued — while he was still down there. This shows us that divine comfort does not always wait for the situation to change before arriving.",
+          "takeaway": "The darkest moment of your life may be the exact moment Allah speaks to you."
+        },
+        {
+          "num": 5,
+          "title": "The False Blood",
+          "thumb": "blood",
+          "body": "<p>They returned to Yaqub that night, weeping. The Quran says: <em>And they came to their father at night, weeping. They said: O our father, indeed we went racing each other and left Yusuf with our possessions, and a wolf ate him. But you will never believe us, even if we should be truthful.</em></p><p>Look at the craft of the lie. They prepared the story in advance. They chose the time — night, when the darkness hides the face. They brought the evidence — a shirt stained with false blood. They rehearsed the emotions — the tears, the trembling voices, the broken plea.</p><p>They even tried to pre-empt their father's doubt: <em>But you will never believe us.</em> As if to say, 'We know you will accuse us, but we are telling the truth this time.' They had practiced this — a stage performance designed to break the heart of an old man.</p><p>Yaqub looked at the shirt. He saw the blood. And he saw something else: the shirt was not torn. A wolf that tore into a boy's body would have ripped the shirt to shreds. And yet here was a whole shirt, unstained by struggle, only bloodied.</p><p>He said: <em>Rather, your souls have enticed you to something. So patience is most fitting. And Allah is the one sought for help against that which you describe.</em> He did not argue. He did not accuse. He did not demand the truth. He simply turned to Allah — and began the long patience that would define the rest of his life.</p>",
+          "dialogue": {
+            "arabic": "وَجَاءُوا عَلَىٰ قَمِيصِهِ بِدَمٍ كَذِبٍ ۚ قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ",
+            "translation": "And they brought upon his shirt false blood. He said: Rather, your souls have enticed you to something, so patience is most fitting.",
+            "ref": "Yusuf 12:18"
+          },
+          "didYouKnow": "The shirt becomes a recurring symbol in Yusuf's story. It is stolen from him at the well; it is used to falsely accuse him at the palace; and it is finally used to restore his father's sight at the reunion. The same garment carries his pain and his healing.",
+          "takeaway": "The one who has no power to change the situation must turn to the One who has all power."
+        },
+        {
+          "num": 6,
+          "title": "Sold into Slavery",
+          "thumb": "sold",
+          "body": "<p>A caravan passed by the well. A water-drawer lowered his bucket — and felt something heavy. He pulled it up, and there, gripping the rope, was a boy. <em>O good news! This is a boy!</em> He shouted. And the caravan drew near.</p><p>The Quran describes what happened next with painful economy: <em>And they sold him for a low price — a few dirhams. And they were, concerning him, of those content with little.</em></p><p>His brothers — the very ones who had thrown him into the well — heard the caravan passing and came to sell him. They did not want him back. They wanted him gone forever. So they sold him for a handful of silver coins. A few dirhams. That was the value they placed on their own flesh and blood.</p><p>And then the caravan carried Yusuf away — to Egypt. To a land he had never seen, in a language he did not speak, to a life he had never imagined. He was a young boy — betrayed by his brothers, torn from his father, sold as property. If there was ever a moment for despair, this was it.</p><p>But Allah had other plans. The Quran introduces the next verse with words that change everything: <em>And the one from Egypt who bought him said to his wife: Make his stay comfortable. Perhaps he will benefit us, or we will adopt him as a son. And thus We established Yusuf in the land, that We might teach him the interpretation of dreams. And Allah is predominant over His affair, but most of the people do not know.</em></p>",
+          "dialogue": {
+            "arabic": "وَشَرَوْهُ بِثَمَنٍ بَخْسٍ دَرَاهِمَ مَعْدُودَةٍ وَكَانُوا فِيهِ مِنَ الزَّاهِدِينَ",
+            "translation": "And they sold him for a low price — a few dirhams. And they were, concerning him, of those content with little.",
+            "ref": "Yusuf 12:20"
+          },
+          "didYouKnow": "The Arabic phrase <em>thamani bakhsin</em> — 'a low price' — implies the brothers were willing to accept anything to get rid of him. Some scholars say they sold him for eighteen dirhams; others say twenty. Either way, the price was insultingly small for a human soul.",
+          "takeaway": "When you are betrayed for almost nothing, remember — Allah has not priced you at their valuation."
+        },
+        {
+          "num": 7,
+          "title": "In the House of the Aziz",
+          "thumb": "palace",
+          "body": "<p>The man who bought Yusuf was the <em>Aziz</em> — the minister of Egypt, a man of great wealth and authority. He recognised something in the boy — his dignity, his intelligence, his honesty — and he told his wife: <em>Make his stay comfortable. Perhaps he will benefit us, or we will adopt him as a son.</em></p><p>Yusuf grew up in the palace of Egypt. He learned the language. He learned the customs. He learned the trades. He was educated, well-dressed, well-fed — a far cry from the well and the caravan. But he was still a slave. He had no freedom. His past was hidden. His family was unreachable.</p><p>And yet the Quran says: <em>And thus We established Yusuf in the land, that We might teach him the interpretation of dreams.</em> Every step of the way — the well, the caravan, the sale, the palace — was part of the education Allah was giving him. He was being prepared for a mission none of the people around him could have imagined.</p><p>This is the meaning of <em>taqdīr</em> — divine decree. Yusuf was not a victim of fate. He was being trained by it. Every humiliation he suffered was a lesson. Every injustice he endured was a preparation. The palace of the Aziz was not just a lucky break — it was a stage in a curriculum designed by his Lord.</p><p>And then the hardest test of his life arrived. Not in a well, not in a caravan, not in a desert. In the palace. From the woman who was supposed to be his caretaker.</p>",
+          "dialogue": {
+            "arabic": "وَكَذَٰلِكَ مَكَّنَّا لِيُوسُفَ فِي الْأَرْضِ وَلِنُعَلِّمَهُ مِن تَأْوِيلِ الْأَحَادِيثِ",
+            "translation": "And thus We established Yusuf in the land, that We might teach him the interpretation of dreams.",
+            "ref": "Yusuf 12:21"
+          },
+          "didYouKnow": "The word <em>tamkīn</em> in the Quran refers to establishing someone in a place of power and influence — always with the purpose of serving Allah's plan. Yusuf's establishment in Egypt was not a personal blessing alone; it was the preparation for saving an entire nation from famine.",
+          "takeaway": "Every trial is a lesson, and every lesson is a preparation for the mission you cannot yet see."
+        },
+        {
+          "num": 8,
+          "title": "The Temptation",
+          "thumb": "temptation",
+          "body": "<p>Yusuf reached the age of full manhood — strong, handsome, and renowned for his character. And the wife of the Aziz — his master's wife, the mistress of the house — set her eyes on him. The Quran describes the moment with unflinching honesty: <em>And she, in whose house he was, sought to seduce him. And she closed the doors and said: Come, you!</em></p><p>Every door was closed. Every witness was gone. Every protection was removed. It was just the two of them — she with power over him, he with no way out. What followed was one of the greatest tests any human being has ever faced.</p><p>Yusuf said: <em>I seek refuge in Allah! Indeed, he is my master, who has made my stay good. Indeed, the wrongdoers will never succeed.</em></p><p>Look at what he did not do. He did not reason with her. He did not play for time. He did not negotiate. He did not flirt back. He did not even consider it for a moment. He simply said: <em>I seek refuge in Allah.</em> Six words — the same words that every believer should have on their tongue when temptation arrives.</p><p>And the Quran says: <em>And she certainly intended him, and he would have intended her, were it not that he saw the proof of his Lord.</em> The proof of his Lord — a vision, a sign, an unveiling — something that Allah placed in front of him at that exact moment to keep him from falling. Yusuf was human. He felt what any man would feel. But Allah protected him — because Yusuf had spent his whole life seeking refuge in Him.</p>",
+          "dialogue": {
+            "arabic": "وَرَاوَدَتْهُ الَّتِي هُوَ فِي بَيْتِهَا عَن نَّفْسِهِ وَغَلَّقَتِ الْأَبْوَابَ وَقَالَتْ هَيْتَ لَكَ ۚ قَالَ مَعَاذَ اللَّهِ ۖ إِنَّهُ رَبِّي أَحْسَنَ مَثْوَايَ",
+            "translation": "And she, in whose house he was, sought to seduce him. And she closed the doors and said: Come, you! He said: I seek refuge in Allah! Indeed, he is my master, who has made my stay good.",
+            "ref": "Yusuf 12:23"
+          },
+          "didYouKnow": "The phrase <em>ma'ādha Allah</em> — 'I seek refuge in Allah' — is one of the most powerful protective formulas in Islamic tradition. The Prophet ﷺ taught us to use it against the whisperings of Shaytan, against anger, against fear — and, as Yusuf shows, against the strongest desires of the self.",
+          "takeaway": "The first answer to temptation is not argument — it is refuge in Allah."
+        },
+        {
+          "num": 9,
+          "title": "The Tearing of the Shirt",
+          "thumb": "shirt-torn",
+          "body": "<p>She chased him. The Quran says: <em>And they both raced to the door. And she tore his shirt from the back. And they found her husband at the door.</em></p><p>The scene changed in a second. The wife of the Aziz, moments ago in full pursuit, now switched to the role of the victim: <em>What is the recompense for one who intended evil against your wife, except prison or a painful punishment?</em> She accused Yusuf of assault — the man who had fled from her.</p><p>But Yusuf did not stay silent. <em>It was she who sought to seduce me.</em> And then — as always in the Quran — a witness from her own household spoke up. Someone in the house, perhaps a child or a trusted servant, offered the decisive evidence: <em>If his shirt is torn from the front, then she has told the truth and he is of the liars. But if his shirt is torn from the back, then she has lied and he is of the truthful.</em></p><p>The shirt was examined. It was torn from the back. The case was clear: Yusuf had been running away. She had been chasing him. He was innocent.</p><p>And the Aziz — her husband — delivered a verdict that was almost soft: <em>Indeed, it is of your womanly guile. Indeed, your guile is great. Yusuf, turn away from this. And you, seek forgiveness for your sin. Indeed, you are of the sinful.</em> The matter was buried — but not forgotten. The seed of doubt had been planted, and the household would never be the same again.</p>",
+          "dialogue": {
+            "arabic": "وَاسْتَبَقَا الْبَابَ وَقَدَّتْ قَمِيصَهُ مِن دُبُرٍ وَأَلْفَيَا سَيِّدَهَا لَدَى الْبَابِ",
+            "translation": "And they both raced to the door, and she tore his shirt from the back, and they found her husband at the door.",
+            "ref": "Yusuf 12:25"
+          },
+          "didYouKnow": "The shirt is examined, torn, and read as evidence twice in Yusuf's story — here, when it proves his innocence against the Aziz's wife; and decades later, when it is used to restore his father's sight. The same garment that witnessed his lowest moment witnessed his vindication.",
+          "takeaway": "Truth is not defeated by lies — but it sometimes takes a torn shirt to prove it."
+        },
+        {
+          "num": 10,
+          "title": "The Women of the City",
+          "thumb": "women",
+          "body": "<p>The story spread. In the salons and courtyards of Egypt, the women began to gossip about the wife of the Aziz: <em>The wife of the Aziz is seeking to seduce her slave boy. He has affected her deeply. Indeed, we see her in clear error.</em></p><p>The Aziz's wife heard the gossip. And she resolved to defend herself — not by honesty, but by another scheme. She invited the women of the city to a banquet. She gave each of them a knife to cut fruit. And then she called Yusuf to walk before them.</p><p>The Quran says: <em>And when they saw him, they greatly admired him and cut their hands. They said: Perfect is Allah! This is not a man — this is none but a noble angel!</em></p><p>They were so dazzled by Yusuf's appearance that they cut their own hands without noticing. The knife that was meant for fruit sliced into flesh — and they did not feel it. This was the point: <em>You blamed me for desiring him. Look at him. You have just cut your own hands for him and you did not even notice.</em></p><p>But the wife of the Aziz was not satisfied. She pressed further: <em>That is the one about whom you blamed me. And I certainly sought to seduce him, but he firmly refused. And if he does not do what I command him, he will surely be imprisoned, and will be of those debased.</em> She was publicly threatening him — before all the noble women of the city. And the response of Yusuf, the slave boy who had every reason to give in, was one of the most powerful duas in the Quran.</p>",
+          "dialogue": {
+            "arabic": "فَلَمَّا رَأَيْنَهُ أَكْبَرْنَهُ وَقَطَّعْنَ أَيْدِيَهُنَّ وَقُلْنَ حَاشَ لِلَّهِ مَا هَٰذَا بَشَرًا إِنْ هَٰذَا إِلَّا مَلَكٌ كَرِيمٌ",
+            "translation": "And when they saw him, they greatly admired him and cut their hands. They said: Perfect is Allah! This is not a man — this is none but a noble angel!",
+            "ref": "Yusuf 12:31"
+          },
+          "didYouKnow": "This scene became so famous in Islamic tradition that the expression 'to cut one's hands' became an idiom for being overwhelmed by awe or beauty. The women of Egypt had come to mock the Aziz's wife — and left as her allies, captivated by the very thing they had come to gossip about.",
+          "takeaway": "Those who mock others for the same desires they themselves carry cut their own hands without feeling it."
+        },
+        {
+          "num": 11,
+          "title": "The Dua for Prison",
+          "thumb": "prison-dua",
+          "body": "<p>Yusuf was trapped. The mistress of the house had publicly threatened him. The women of the city had been brought under her influence. And the Aziz — his own master — was clearly under pressure to act. Prison was no longer a threat; it was an inevitability.</p><p>And then Yusuf made a dua that reveals the depth of his faith: <em>My Lord, prison is more beloved to me than that to which they invite me. And if You do not avert from me their plan, I might incline toward them and thus be of the ignorant.</em></p><p>Read that slowly. Yusuf did not ask for freedom. He did not ask for vindication. He did not ask for the Aziz's wife to be punished. He asked for the strength to remain pure — even if it meant prison. He preferred the walls of a cell to the violation of his soul.</p><p>And then he said: <em>If You do not avert from me their plan, I might incline toward them.</em> Even a prophet, standing at the height of his faith, acknowledged that without Allah's protection he could fall. This is the humility of the righteous — they never trust their own strength; they trust only the strength of their Lord.</p><p>And Allah answered. The Quran says: <em>So his Lord responded to him and averted from him their plan. Indeed, He is the Hearing, the Knowing.</em> Yusuf did not get the freedom he might have hoped for — he got the purity he had asked for, and then he got prison. But even that was part of the plan.</p>",
+          "dialogue": {
+            "arabic": "قَالَ رَبِّ السِّجْنُ أَحَبُّ إِلَيَّ مِمَّا يَدْعُونَنِي إِلَيْهِ ۖ وَإِلَّا تَصْرِفْ عَنِّي كَيْدَهُنَّ أَصْبُ إِلَيْهِنَّ وَأَكُن مِّنَ الْجَاهِلِينَ",
+            "translation": "He said: My Lord, prison is more beloved to me than that to which they invite me. And if You do not avert from me their plan, I might incline toward them and thus be of the ignorant.",
+            "ref": "Yusuf 12:33"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>Allah will shade with His shade seven types of people on the Day when there is no shade but His</em> — and one of them is <em>a man who is invited to sin by a woman of rank and beauty, and he says: 'I fear Allah.'</em> Yusuf is the great example of this hadith.",
+          "takeaway": "The soul's purity is worth every price — even prison."
+        },
+        {
+          "num": 12,
+          "title": "Da'wah in Prison",
+          "thumb": "prison-dawah",
+          "body": "<p>Yusuf went to prison. The Quran describes it with the calm of a man who had accepted his fate: <em>Then it appeared to them after they had seen the signs, that they should surely imprison him for a time.</em> He did not resist. He did not fight. He did not try to escape. He submitted to the decree of his Lord.</p><p>But prison did not silence him. Prison became his mosque. Two young men were imprisoned with him — one the baker of the king, the other the cupbearer. They saw his character. They saw his patience. They saw that he did not complain, did not despair, did not curse. And when they had dreams they could not interpret, they brought them to Yusuf.</p><p>And Yusuf — instead of jumping straight to the interpretation — did something extraordinary. He used the opportunity to give dawah: <em>O my two companions of prison, are separate lords better or Allah, the One, the Prevailing? You worship not besides Him except names which you have named — you and your fathers — for which Allah has sent down no authority. Legislation is not but for Allah. He has commanded that you worship not except Him. That is the correct religion, but most of the people do not know.</em></p><p>Read that carefully. Yusuf was a prisoner, accused of a crime he did not commit, forgotten by the world. And the first thing he did when given an opportunity was to call his fellow prisoners to tawhid. He did not say, 'You know, I have been treated unfairly.' He did not say, 'Let me tell you about my troubles.' He said: <em>Are separate lords better or Allah, the One?</em> The man in prison was still the man calling to Allah.</p>",
+          "dialogue": {
+            "arabic": "أَأَرْبَابٌ مُّتَفَرِّقُونَ خَيْرٌ أَمِ اللَّهُ الْوَاحِدُ الْقَهَّارُ",
+            "translation": "Are separate lords better or Allah, the One, the Prevailing?",
+            "ref": "Yusuf 12:39"
+          },
+          "didYouKnow": "Yusuf's dawah in prison is one of the clearest examples of how a believer can turn any environment into a place of calling to Allah. He did not let the injustice of his situation distract him from the mission. Every circumstance became an opportunity.",
+          "takeaway": "You do not need a pulpit to give dawah — you only need a heart that remembers its mission."
+        },
+        {
+          "num": 13,
+          "title": "The Two Dreams",
+          "thumb": "two-dreams",
+          "body": "<p>Having called them to tawhid, Yusuf turned to their dreams. The first man — the cupbearer — had seen himself pressing grapes into wine for the king. The second — the baker — had seen himself carrying bread on his head, with birds eating from it.</p><p>Yusuf interpreted: <em>O my two companions of prison, as for one of you, he will pour out wine for his lord to drink. And as for the other, he will be crucified, and the birds will eat from his head. Thus is the case decided about which you ask.</em></p><p>Both interpretations came true. But before the cupbearer was released, Yusuf made one request — a request that reveals both his wisdom and his humanity: <em>Mention me to your lord.</em> Tell the king about me. Tell him about the innocent man in his prison.</p><p>And the Quran says: <em>But Shaytan made him forget to mention it to his lord. So he remained in prison for several years.</em></p><p>Years. More years of prison. Yusuf had done everything right. He had fled temptation. He had refused to sin. He had interpreted the dreams accurately. He had asked, politely, to be mentioned. And still, he remained forgotten.</p><p>But this was not abandonment. This was taqdīr. Yusuf had been promised, at the bottom of the well, that one day he would confront his brothers. The years in prison were years of preparation. And when the release finally came — it would come from the king himself, not from the forgotten cupbearer. Allah had bigger plans than Yusuf's own request.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ لِلَّذِي ظَنَّ أَنَّهُ نَاجٍ مِّنْهُمَا اذْكُرْنِي عِندَ رَبِّكَ فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ فَلَبِثَ فِي السِّجْنِ بِضْعَ سِنِينَ",
+            "translation": "And he said to the one whom he knew would be saved: Mention me to your lord. But Shaytan made him forget to mention it to his lord, so he remained in prison for several years.",
+            "ref": "Yusuf 12:42"
+          },
+          "didYouKnow": "The phrase <em>biḍ'a sinīn</em> — 'several years' — is generally understood to mean between three and nine years. Yusuf spent those years in prison even after being unjustly accused. This was Allah's way of teaching him patience at the deepest level before raising him to the highest.",
+          "takeaway": "Allah's delay is not His denial — He is preparing a moment you cannot yet imagine."
+        },
+        {
+          "num": 14,
+          "title": "The King's Dream",
+          "thumb": "king-dream",
+          "body": "<p>Years passed. And then, one night, the king of Egypt had a dream that would change the course of the nation — and of Yusuf's life. He saw seven fat cows being eaten by seven thin cows. He saw seven green ears of grain and seven dry ones. When he woke, he was troubled — and none of his advisors could interpret it.</p><p>The Quran records the dream: <em>And the king said: Indeed, I have seen seven fat cows being eaten by seven lean ones, and seven green ears of grain and seven dry ones. O eminent ones, explain to me my vision, if you should interpret visions.</em></p><p>His counsellors replied with the usual vagueness: <em>A muddled dream, and we are not learned in the interpretation of dreams.</em> They had no idea. The kingdom was confused. And then the cupbearer — the same man who had been in prison with Yusuf — remembered. <em>I will inform you of its interpretation, so send me forth.</em></p><p>He ran to the prison. He found Yusuf. And he asked for the meaning of the king's dream.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ الْمَلِكُ إِنِّي أَرَىٰ سَبْعَ بَقَرَاتٍ سِمَانٍ يَأْكُلُهُنَّ سَبْعٌ عِجَافٌ وَسَبْعَ سُنبُلَاتٍ خُضْرٍ وَأُخَرَ يَابِسَاتٍ",
+            "translation": "And the king said: Indeed, I have seen seven fat cows being eaten by seven lean ones, and seven green ears of grain and seven dry ones.",
+            "ref": "Yusuf 12:43"
+          },
+          "didYouKnow": "The king's dream was a prophecy of fourteen years: seven years of abundance followed by seven years of famine. Yusuf would not only interpret the dream, he would design the entire economic policy to survive it — one of the earliest examples of state-level planning in recorded history.",
+          "takeaway": "Allah uses the smallest memories and the longest waits to open the greatest doors."
+        },
+        {
+          "num": 15,
+          "title": "The Interpretation",
+          "thumb": "interpret",
+          "body": "<p>Yusuf, still in prison, delivered the interpretation with surgical precision: <em>You will plant for seven years consecutively. Whatever you harvest, leave it in its ear except for a little of what you eat. Then will come after that seven difficult years which will consume what you saved for them, except a little of what you have stored. Then will come after that a year in which the people will be given rain and in which they will press olives and grapes.</em></p><p>Look at the genius of this answer. Yusuf did not just interpret — he solved. He did not just explain the meaning of the dream — he created the strategy to survive it. Seven years of abundance: store everything. Seven years of famine: ration carefully. One final year of recovery: celebrate the harvest.</p><p>And then Yusuf made one request — not for himself, but for the situation: <em>Appoint me over the storehouses of the land. Indeed, I will be a knowing guardian.</em> He did not ask to be freed. He did not ask for wealth or status. He asked to be given responsibility over the grain stores — because he knew that no one else in the kingdom could be trusted with a task of this magnitude.</p><p>This is what it looks like when a person of taqwa is placed in a position of power. The job is not a prize. It is an <em>amanah</em> — a trust. Yusuf knew that he had the knowledge, the integrity, and the vision to save the nation — and he knew that if he did not step forward, no one else would.</p>",
+          "dialogue": {
+            "arabic": "اجْعَلْنِي عَلَىٰ خَزَائِنِ الْأَرْضِ ۖ إِنِّي حَفِيظٌ عَلِيمٌ",
+            "translation": "Appoint me over the storehouses of the land. Indeed, I will be a knowing guardian.",
+            "ref": "Yusuf 12:55"
+          },
+          "didYouKnow": "The classical scholars note that Yusuf's request to be appointed was not ambition for power — it was acceptance of responsibility. A qualified believer in a position of authority can do more good than a thousand qualified believers on the sidelines.",
+          "takeaway": "When you know you are the right person for a role that will benefit the Ummah, stepping forward is not ambition — it is duty."
+        },
+        {
+          "num": 16,
+          "title": "Exonerated and Risen",
+          "thumb": "risen",
+          "body": "<p>Before taking up the post, Yusuf did something extraordinary. He did not accept the appointment on the basis of a rumour-cleared name. He asked for an official investigation: <em>Return to your master and ask him: What is the case of the women who cut their hands? Indeed, my Lord is Knowing of their plot.</em></p><p>He wanted the record clear. Not for his own pride — but because a leader must have his integrity established beyond doubt. He could not serve the nation with the shadow of an accusation hanging over him. And so the king summoned the women — including the wife of the Aziz — and asked them what had happened.</p><p>The women confessed: <em>Perfect is Allah! We know of no evil in him.</em> And the wife of the Aziz — finally, after all those years — spoke the truth: <em>Now the truth has become evident. It was I who sought to seduce him, and indeed he is of the truthful. That is so al-Aziz will know that I did not betray him in his absence, and that Allah does not guide the plan of betrayers.</em></p><p>Yusuf was cleared. Publicly. Formally. Before the entire court of Egypt. And the king — seeing this young man's integrity, intelligence, and wisdom — appointed him to the highest office in the land.</p><p>From the bottom of a well to the storehouse of Egypt. From a slave to a minister. From a prisoner to the second most powerful man in the kingdom. And every step — every single step — had been taken in obedience to Allah.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ الْمَلِكُ ائْتُونِي بِهِ أَسْتَخْلِصْهُ لِنَفْسِي ۖ فَلَمَّا كَلَّمَهُ قَالَ إِنَّكَ الْيَوْمَ لَدَيْنَا مَكِينٌ أَمِينٌ",
+            "translation": "And the king said: Bring him to me; I will appoint him exclusively for myself. And when he spoke to him, he said: Indeed, you are today established and trusted with us.",
+            "ref": "Yusuf 12:54"
+          },
+          "didYouKnow": "Some scholars say Yusuf ruled Egypt for eighty years after this — as the second-in-command, or possibly as the effective ruler. His justice, wisdom, and administration became legendary, and Egypt was saved from famine because of the grain stores he had organised.",
+          "takeaway": "Allah raises those who lower themselves for Him — and the timeline is always His, not ours."
+        },
+        {
+          "num": 17,
+          "title": "The Brothers Arrive",
+          "thumb": "brothers-arrive",
+          "body": "<p>Seven years of abundance passed. And then the famine began. It struck all of Egypt, and it struck the surrounding lands — including Shaam, where Yaqub and his family still lived. Everyone needed Egyptian grain. Everyone came to Egypt to buy.</p><p>Yusuf's brothers came with the caravan. They did not recognise him. He was now a grown man, dressed in the finery of the Egyptian court, seated on a throne, surrounded by attendants. He spoke to them in Egyptian through an interpreter. And they — desperate for grain, exhausted from the journey — had no idea they were standing before the brother they had thrown into a well.</p><p>But Yusuf knew them. Instantly. The faces that had thrown him into the darkness decades ago were now before him, begging for help. The Quran says: <em>And Yusuf's brothers came and entered upon him. He recognised them, but they did not recognise him.</em></p><p>This was the moment Yusuf had been promised at the bottom of the well. <em>You will surely inform them of this affair of theirs while they perceive not.</em> The promise had been kept. He was looking at the men who had betrayed him. And they had no idea.</p><p>How did Yusuf respond? Did he reveal himself? Did he shout? Did he order their arrest? No. He stayed calm. He treated them with hospitality. He gave them grain. And he made one request: <em>Bring me your brother — the one from your father.</em> He wanted to see Binyamin, his younger brother. And he began a plan that would reunite his entire family.</p>",
+          "dialogue": {
+            "arabic": "وَجَاءَ إِخْوَةُ يُوسُفَ فَدَخَلُوا عَلَيْهِ فَعَرَفَهُمْ وَهُمْ لَهُ مُنكِرُونَ",
+            "translation": "And Yusuf's brothers came and entered upon him. He recognised them, but they did not recognise him.",
+            "ref": "Yusuf 12:58"
+          },
+          "didYouKnow": "Yusuf had been taken from his family when he was a young boy. The brothers were now grown men with families of their own. Only Allah could have arranged their reunion at the height of Yusuf's power, when he had the authority to forgive — and not a day before.",
+          "takeaway": "The reunion Allah prepares for the wronged is worth every day of waiting."
+        },
+        {
+          "num": 18,
+          "title": "The Silver Cup",
+          "thumb": "cup",
+          "body": "<p>Yusuf revealed the plan to reunite with his family. He sent his brothers back to Shaam with grain, but told them to bring Binyamin next time — otherwise they would not receive any more grain. When they returned with Binyamin, Yusuf received them as honoured guests, seated them at his table, and then set his plan in motion.</p><p>As the brothers were preparing to leave for Shaam, Yusuf had his silver drinking cup — the royal measure — placed inside Binyamin's luggage. Then he sent a herald after the caravan: <em>O caravan, indeed you are thieves!</em></p><p>The brothers were outraged. <em>By Allah, you certainly know we did not come to cause corruption in the land, and we are not thieves.</em> Yusuf's guards replied: <em>Then what is the penalty if you should be liars? They said: The penalty is that he in whose bag it is found, he is its recompense. Thus do we penalise the wrongdoers.</em></p><p>The bags were opened. Binyamin's bag was searched first — and then the others — and finally, the cup was found in Binyamin's. The brothers were devastated. They had brought their younger brother with them, and now he was going to be taken as a slave in Egypt. They had promised their father they would protect him. And Yusuf, watching from a distance, had orchestrated every detail.</p><p>Why? Because this was the only way to keep Binyamin in Egypt legally. Yusuf wanted his younger brother near him. And this was the one plan that would accomplish it without revealing who he was — or accusing the brothers of a crime they had not committed this time.</p>",
+          "dialogue": {
+            "arabic": "فَلَمَّا جَهَّزَهُم بِجَهَازِهِمْ جَعَلَ السِّقَايَةَ فِي رَحْلِ أَخِيهِ ثُمَّ أَذَّنَ مُؤَذِّنٌ أَيَّتُهَا الْعِيرُ إِنَّكُمْ لَسَارِقُونَ",
+            "translation": "So when he had furnished them with their supplies, he put the drinking cup into his brother's bag. Then a crier called out: O caravan, indeed you are thieves!",
+            "ref": "Yusuf 12:70"
+          },
+          "didYouKnow": "The classical scholars explain that Yusuf's plan was not a deception in the ordinary sense — it was divine inspiration. The Quran says: <em>Thus did We plan for Yusuf.</em> This was Allah's wisdom, not Yusuf's trickery. It was the plan that would set the stage for the final reunion.",
+          "takeaway": "Sometimes Allah's plan looks like a setback — but it is actually the doorway to reunion."
+        },
+        {
+          "num": 19,
+          "title": "The Grief of Yaqub",
+          "thumb": "grief",
+          "body": "<p>The brothers returned to Yaqub without Binyamin. And Yaqub's grief — already deep from losing Yusuf decades earlier — deepened beyond measure. He had lost Yusuf. Now he had lost Binyamin. Of his twelve sons, only ten remained, and the two he loved most were gone.</p><p>The brothers told their story. Yusuf — the Egyptian minister — had taken Binyamin as a slave. Yaqub, wise with decades of suffering, saw through it. He said: <em>Rather, your souls have enticed you to something. So patience is most fitting. Perhaps Allah will bring them to me all together. Indeed, it is He who is the Knowing, the Wise.</em></p><p>That was the second time Yaqub said <em>ṣabrun jamīl</em> — beautiful patience. The first was when Yusuf was lost. Now, decades later, the same grief visited him again — and the same response rose from his heart. He did not despair. He did not accuse. He did not break. He simply turned to his Lord and waited.</p><p>But the pain was real. The Quran says Yaqub wept so much that his eyes turned white — he lost his sight. His sons came to him and said: <em>By Allah, you will not cease remembering Yusuf until you become fatally ill or become of those who perish.</em> And Yaqub replied with the words that would define his whole life: <em>I only complain of my suffering and my grief to Allah, and I know from Allah that which you do not know.</em></p>",
+          "dialogue": {
+            "arabic": "إِنَّمَا أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ وَأَعْلَمُ مِنَ اللَّهِ مَا لَا تَعْلَمُونَ",
+            "translation": "I only complain of my suffering and my grief to Allah, and I know from Allah that which you do not know.",
+            "ref": "Yusuf 12:86"
+          },
+          "didYouKnow": "Yaqub is one of the very few figures in the Quran described as having wept so much that his eyes turned white from grief. And yet, in the same passage, the Quran praises him as <em>a suppressor of his grief</em> — meaning he did not make a public display of his pain. He wept alone before his Lord.",
+          "takeaway": "Some pain is too heavy for people to carry — but never too heavy for Allah to hear."
+        },
+        {
+          "num": 20,
+          "title": "The Shirt of Healing",
+          "thumb": "healing-shirt",
+          "body": "<p>Yusuf could have ended his brothers' suffering at any moment. But Allah was still working. And the next step in the divine plan was the restoration of his father's sight. Yusuf revealed himself to his brothers — at last — and gave them his shirt.</p><p>The Quran records the moment: <em>Go with this shirt of mine and cast it over the face of my father; he will become clear-sighted. And bring to me all your family.</em></p><p>The shirt. The same garment that had been torn from his back when he was taken to slavery. The same garment that had been stained with false blood when he was reported dead. The same garment that had been examined as evidence when the Aziz's wife accused him. That shirt — Yusuf's own shirt — was now to be the means by which his father's sight was restored.</p><p>And while the caravan was still travelling, Yaqub — still blind, still in Shaam — suddenly said: <em>Indeed, I sense the scent of Yusuf, unless you consider me weakened in mind.</em> His family around him thought he was hallucinating. But Yaqub knew what he felt. The scent of his son — the scent of hope — was on the breeze. It was the very first sign of the reunion that had been decades in the making.</p>",
+          "dialogue": {
+            "arabic": "اذْهَبُوا بِقَمِيصِي هَٰذَا فَأَلْقُوهُ عَلَىٰ وَجْهِ أَبِي يَأْتِ بَصِيرًا وَأْتُونِي بِأَهْلِكُمْ أَجْمَعِينَ",
+            "translation": "Go with this shirt of mine and cast it over the face of my father; he will become clear-sighted. And bring to me all your family.",
+            "ref": "Yusuf 12:93"
+          },
+          "didYouKnow": "The shirt of Yusuf is one of the most symbolic objects in the Quran. It carried his pain (stolen and stained with false blood), his vindication (torn from the back to prove his innocence), and finally his healing (restoring his father's sight). The same garment, in three different roles.",
+          "takeaway": "The thing that witnessed your lowest moment may one day witness your greatest healing."
+        },
+        {
+          "num": 21,
+          "title": "The Reunion",
+          "thumb": "reunion",
+          "body": "<p>The caravan arrived in Shaam. The shirt was placed over Yaqub's face. And his sight returned. The Quran says: <em>And when the bearer of good tidings came, he cast it over his face, and he returned to seeing. He said: Did I not tell you that I know from Allah that which you do not know?</em></p><p>Then the whole family prepared to leave for Egypt. And when they arrived — Yaqub, his wife, and all his sons with their families — Yusuf came out to meet them. He took his parents to himself. He embraced them. And then the family entered the palace together.</p><p>The Quran describes the final scene with astonishing tenderness: <em>And he raised his parents upon the throne, and they fell in prostration before him. And he said: O my father, this is the interpretation of my dream from before. My Lord has made it true. And He was good to me when He took me out of prison and brought you out of the desert — after Shaytan had caused dissension between me and my brothers. Indeed, my Lord is Subtle in what He wills. Indeed, it is He who is the Knowing, the Wise.</em></p><p>The dream was fulfilled. The eleven stars — his brothers. The sun — his father. The moon — his mother. All of them, bowing before Yusuf, not in worship, but in acknowledgement of Allah's favour upon him. The dream that had been given to a boy of seven had been fulfilled in a man of over eighty. And the wait, as long as it had been, was exactly the right length.</p>",
+          "dialogue": {
+            "arabic": "وَرَفَعَ أَبَوَيْهِ عَلَى الْعَرْشِ وَخَرُّوا لَهُ سُجَّدًا ۖ وَقَالَ يَا أَبَتِ هَٰذَا تَأْوِيلُ رُؤْيَايَ مِن قَبْلُ قَدْ جَعَلَهَا رَبِّي حَقًّا",
+            "translation": "And he raised his parents upon the throne, and they fell in prostration to him. And he said: O my father, this is the interpretation of my dream from before. My Lord has made it true.",
+            "ref": "Yusuf 12:100"
+          },
+          "didYouKnow": "The classical scholars say Yusuf's dream took approximately forty years to be fulfilled — from his childhood to his appointment as minister of Egypt. The delay was not a denial; it was the timetable Allah had set for the reunion.",
+          "takeaway": "Every dream Allah gives takes exactly as long as it takes for the meaning to be complete."
+        },
+        {
+          "num": 22,
+          "title": "The Forgiveness",
+          "thumb": "forgiveness",
+          "body": "<p>And then came the words that turned the entire story into a story of mercy. Yusuf turned to his brothers — the men who had thrown him into a well, sold him into slavery, lied to their father for decades — and said: <em>No blame will there be upon you today. May Allah forgive you. And He is the Most Merciful of the merciful.</em></p><p>No blame. No punishment. No demand for an accounting. No list of grievances. Just: <em>No blame upon you today.</em> His brothers had taken his childhood, his father, his freedom, and decades of his life. And Yusuf forgave them in one sentence.</p><p>Where did that forgiveness come from? From the same place all forgiveness comes from — an understanding that we ourselves need forgiveness from Allah. Yusuf had lived through the well, the slave market, the palace, and the prison. He had seen the worst of human beings. And he had also seen the mercy of Allah in every one of those places. And he knew that if he had been given such mercy, he could not withhold it from those who wronged him.</p><p>The Prophet ﷺ said: <em>Be merciful to those on the earth, and the One above the heavens will be merciful to you.</em> Yusuf had been shown mercy beyond measure. And so he gave it freely — to men who did not deserve it. Because that is what mercy is. It is not earned. It is given.</p>",
+          "dialogue": {
+            "arabic": "قَالَ لَا تَثْرِيبَ عَلَيْكُمُ الْيَوْمَ ۖ يَغْفِرُ اللَّهُ لَكُمْ ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ",
+            "translation": "He said: No blame will there be upon you today. May Allah forgive you. And He is the Most Merciful of the merciful.",
+            "ref": "Yusuf 12:92"
+          },
+          "didYouKnow": "The phrase <em>lā tathrība ʿalaykum</em> — 'no blame upon you' — is one of the most famous expressions of forgiveness in Islamic tradition. It is used by the Prophet ﷺ himself on the day of the conquest of Makkah, when he faced the very men who had tortured and driven him out.",
+          "takeaway": "The one who has been shown mercy cannot withhold it from others."
+        },
+        {
+          "num": 23,
+          "title": "The Final Dua",
+          "thumb": "final-dua",
+          "body": "<p>With his family restored, his enemies forgiven, his honour vindicated, his mission complete — Yusuf made one final dua. And it is one of the most extraordinary prayers in the Quran, because it asks not for reward but for the state of his death.</p><p><em>My Lord, You have given me from the sovereignty and taught me from the interpretation of dreams. Creator of the heavens and the earth, You are my protector in this world and the Hereafter. Cause me to die a Muslim, and join me with the righteous.</em></p><p>Read the structure of this dua carefully. Yusuf began by acknowledging the gifts of Allah — the kingdom, the wisdom, the interpretations. He confessed that every blessing he had came from his Lord. Then he called Allah <em>Fāṭir al-samāwāti wal-arḍ</em> — Creator of the heavens and the earth — the same phrase that captures the very foundation of tawhid. Then he confessed that Allah alone was his protector. And then he asked for the only thing that mattered at the end: <em>Cause me to die a Muslim, and join me with the righteous.</em></p><p>After everything — the well, the palace, the prison, the throne, the reunion — Yusuf's final prayer was not for more wealth, more power, or more time. It was simply: <em>Let me die upon Islam, and let me be with the righteous.</em> The man who had been given everything in the world asked for what he knew mattered more than the world.</p><p>This is the final lesson of Yusuf's life. All the honours of the earth — the throne, the grain stores, the family, the vindication — meant nothing compared to dying upon tawhid. And so his final words were not for the world, but for the meeting with his Lord.</p>",
+          "dialogue": {
+            "arabic": "رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِن تَأْوِيلِ الْأَحَادِيثِ ۚ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ أَنتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ ۖ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
+            "translation": "My Lord, You have given me from the sovereignty and taught me from the interpretation of dreams. Creator of the heavens and the earth, You are my protector in this world and the Hereafter. Cause me to die a Muslim, and join me with the righteous.",
+            "ref": "Yusuf 12:101"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>The most knowledgeable of people about dreams was Yusuf.</em> And he also said: <em>The best of stories is the story of Yusuf.</em> Yusuf's life in the Quran is described as the most complete narrative in revelation, containing every major theme of the Muslim's journey: patience, betrayal, temptation, injustice, and final victory.",
+          "takeaway": "The end of every blessing should be a dua to die upon tawhid — because that is the real goal of everything Allah gives us."
+        },
+        {
+          "num": 24,
+          "title": "The Lessons for Every Generation",
+          "thumb": "lessons",
+          "body": "<p>The story of Yusuf is called <em>aḥsan al-qaṣaṣ</em> — the most beautiful of stories — because it captures every stage of the believer's journey. Every one of us will, at some point, be in Yusuf's position in one form or another.</p><p>We will be betrayed by people we trust. We will be accused of things we did not do. We will be tempted in moments of weakness. We will be forgotten when we most need to be remembered. We will be in prisons of our own — some physical, some emotional, some circumstantial. And we will wonder, in those moments, whether the story will ever turn.</p><p>Yusuf's answer is: it will. Not on our schedule. Not in the way we imagined. Not necessarily with the people who wronged us coming back to apologise. But it will turn. Because Allah is <em>al-Ṣāni'</em> — the Maker — and the Maker does not abandon what He has created. He has a plan. He has a timeline. And when the moment is right, He brings together every thread of the story in a way that no human mind could have designed.</p><p>The well became a palace. The prison became a ministry. The abandoned boy became the saviour of nations. The brothers who threw him away ended up bowing before him. And his father, who had wept until he was blind, was given back his sight at the scent of his son's shirt.</p><p>Allah is the best of planners. Every injustice you suffer, every tear you shed, every day you wait — all of it is part of a story whose ending you cannot yet see, but whose Author has already written.</p>",
+          "dialogue": {
+            "arabic": "وَاللَّهُ غَالِبٌ عَلَىٰ أَمْرِهِ وَلَٰكِنَّ أَكْثَرَ النَّاسِ لَا يَعْلَمُونَ",
+            "translation": "And Allah is predominant over His affair, but most of the people do not know.",
+            "ref": "Yusuf 12:21"
+          },
+          "didYouKnow": "The story of Yusuf is preserved in Surah Yusuf (Chapter 12), the only surah in the Quran dedicated to a single narrative. It contains 111 verses and is the longest continuous story in revelation.",
+          "takeaway": "The story Allah writes for you is more beautiful than the one you would have written for yourself."
+        },
+        {
+          "num": 25,
+          "title": "The End and the Beginning",
+          "thumb": "end",
+          "body": "<p>The Quran does not record Yusuf's death. It ends his story at the peak of the reunion — his family around him, his brothers forgiven, his prayer on his lips. But the classical scholars say he lived long, ruled justly, and eventually returned to his Lord upon the faith of Ibrahim and Ishaq and Yaqub.</p><p>What Yusuf left behind was not just a nation saved from famine. He left behind a lesson that would be remembered until the end of time. Every generation of Muslims, when they face a trial, they remember Yusuf. When they are wronged, they remember Yusuf. When they are tempted, when they are betrayed, when they wait and wait and wait — they remember Yusuf.</p><p>Because Yusuf's story is not just his story. It is the story of every Muslim soul that has ever been tested. It is the story that says: your pain is not meaningless. Your waiting is not wasted. Your integrity is not forgotten. Your forgiveness is not weakness. And your reward is coming — in the timing of the One who wrote the story before you were born.</p><p>The Prophet ﷺ said: <em>The stories of the prophets are the best of stories, because in them is what rectifies the hearts.</em> Yusuf is the greatest of these stories. And the greatest lesson of Yusuf is that the story is never over until Allah says it is over.</p><p>May Allah grant us the patience of Yaqub, the integrity of Yusuf, and the reunion that follows the wait. Ameen.</p>",
+          "dialogue": {
+            "arabic": "لَقَدْ كَانَ فِي يُوسُفَ وَإِخْوَتِهِ آيَاتٌ لِّلسَّائِلِينَ",
+            "translation": "There were certainly in Yusuf and his brothers signs for those who ask.",
+            "ref": "Yusuf 12:7"
+          },
+          "didYouKnow": "Some scholars say the Prophet ﷺ recited Surah Yusuf every Friday in the mosque. And he told the Companions that the story of Yusuf contained lessons for every generation — that every Muslim would find themselves somewhere in its verses.",
+          "takeaway": "The story is never over until Allah says it is over."
+        }
+      ]
+    },{
+  "id": "ayyub",
+  "num": 12,
+  "name": "Ayyub",
+  "arabic": "أيوب",
+  "subtitle": "13 Lessons",
+  "image": "images/prophet-12-ayyub.webp",
+  "tier": "major",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Rich Man of the Desert",
+      "thumb": "rich",
+      "body": "<p>Ayyub (AS) was a prophet of Allah — and a man of extraordinary wealth. He had vast lands, herds of cattle, sheep, camels, and slaves. He had children — some narrations say seven sons and three daughters. He had a loving wife who believed in him and stood with him through everything. He was, by every measure, one of the most fortunate men of his age.</p><p>And yet, Ayyub was not like the rich men of his time. He did not hoard, he did not oppress, he did not forget his Lord. He was known across the land for his generosity — the orphans came to him, the widows came to him, the travellers came to him, and no one left empty-handed. He fed the hungry, clothed the naked, and stood up for the oppressed.</p><p>The Quran praises him in a single, extraordinary sentence: <em>Indeed, We found him patient, an excellent servant. Indeed, he was one repeatedly turning back to Allah.</em> This is the summary of Ayyub's life — patience in abundance, and constant return to his Lord. But this praise was earned through the most extraordinary trial in the history of prophethood.</p><p>Allah tested Ayyub in a way that would break most human beings. And Ayyub — through everything — remained faithful.</p>",
+      "dialogue": {
+        "arabic": "إِنَّا وَجَدْنَاهُ صَابِرًا ۚ نِّعْمَ الْعَبْدُ ۖ إِنَّهُ أَوَّابٌ",
+        "translation": "Indeed, We found him patient, an excellent servant. Indeed, he was one repeatedly turning back to Allah.",
+        "ref": "Sad 38:44"
+      },
+      "didYouKnow": "Ayyub is one of the few prophets in the Quran whose story is preserved not because of a dramatic event, but because of a dramatic lifetime. His patience was tested for years — some narrations say eighteen years — before relief came.",
+      "takeaway": "Wealth is not a sign of Allah's love — and neither is its loss a sign of His anger."
+    },
+    {
+      "num": 2,
+      "title": "The Trial Begins",
+      "thumb": "trial",
+      "body": "<p>The tests came in waves. One by one, everything Ayyub had was taken from him. His livestock died. His crops failed. His lands were destroyed. His slaves left. His children died — all of them, in a single catastrophe. And then his own body was struck with a severe illness that left him bedridden for years.</p><p>The illness was not just physical — it was social. His skin became diseased, and people began to avoid him. The townspeople who had once come to him for help now stayed away. Some even whispered that he must have committed some great sin to be punished so severely — because in their worldview, wealth was a blessing and poverty was a curse.</p><p>But Ayyub did not waver. He did not curse. He did not ask 'why me?' He did not resent his Lord. He simply continued to worship — from his bed, from his illness, from the depths of his loss.</p><p>The Quran says: <em>And Ayyub, when he called to his Lord: Indeed, adversity has touched me, and You are the Most Merciful of the merciful.</em> Notice what he did not say. He did not say, 'Why have You done this to me?' He did not complain about the loss. He did not list his good deeds and ask for reward. He simply acknowledged the trial — <em>adversity has touched me</em> — and reminded Allah of His own mercy — <em>You are the Most Merciful of the merciful.</em></p>",
+      "dialogue": {
+        "arabic": "وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُ أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+        "translation": "And Ayyub, when he called to his Lord: Indeed, adversity has touched me, and You are the Most Merciful of the merciful.",
+        "ref": "Al-Anbiya 21:83"
+      },
+      "didYouKnow": "The classical scholars say Ayyub's illness lasted eighteen years. His wife remained with him through all of it, caring for him, feeding him, and never once complaining about their situation. Her faith, like his, was extraordinary.",
+      "takeaway": "The trial you are in is not a sign that Allah has abandoned you — it may be the very sign of His love."
+    },
+    {
+      "num": 3,
+      "title": "The Whisperings of Shame",
+      "thumb": "whispers",
+      "body": "<p>The people's attitude toward Ayyub became one of the hardest parts of his test. The wealthy had abandoned him because he was no longer wealthy. The healthy avoided him because he was sick. And some began to spread the rumour that his suffering was a punishment from Allah for some secret sin.</p><p>This is one of the cruellest accusations a suffering person can face — the suggestion that their pain is deserved. And it is a lie. Suffering is not a sign of divine anger. Trials are not punishments. Sometimes they are the very means by which Allah raises a believer to a station they could not have reached any other way.</p><p>Ayyub did not defend himself against the accusations. He did not argue with the whispers. He did not try to prove that he had done nothing wrong. He simply continued to trust his Lord. And he continued to remember that Allah knew the truth — even if no one else did.</p><p>The Prophet ﷺ said: <em>The people most tested are the prophets, then those next in rank, then those next in rank. A man is tested according to his faith — if his faith is strong, his trial is severe; if his faith is weak, his trial is light.</em> Ayyub's trial was severe precisely because his faith was strong.</p>",
+      "dialogue": {
+        "arabic": "أَشَدُّ النَّاسِ بَلَاءً الْأَنْبِيَاءُ ثُمَّ الصَّالِحُونَ",
+        "translation": "The people most tested are the prophets, then the righteous.",
+        "ref": "Sunan Ibn Majah (meaning)"
+      },
+      "didYouKnow": "The Prophet ﷺ also said: <em>If Allah loves a people, He tests them. Whoever is content will have contentment, and whoever is displeased will have displeasure.</em> (Tirmidhi) The test is not a sign of abandonment — it is often the sign of love.",
+      "takeaway": "Suffering is not punishment — sometimes it is elevation."
+    },
+    {
+      "num": 4,
+      "title": "The Faithful Wife",
+      "thumb": "wife",
+      "body": "<p>While everyone else abandoned Ayyub, one person stayed. His wife. She remained with him through the loss of their children, their wealth, their home, and their health. She fed him. She bathed him. She tended his wounds. She did not complain. She did not blame him. She did not leave.</p><p>The Quran does not mention her by name — the classical narrations call her Rahma. But her role in the story is essential. Without her, Ayyub would have been alone. Without her faithfulness, the trial would have been unbearable. She is one of the great unremembered heroines of the Quran — a woman whose love and loyalty carried a prophet through the darkest years of his life.</p><p>She supported the family by working — some narrations say she served as a maid in the houses of the wealthy. And every day, she came home to her sick husband, tended to him, and gave him the food she had earned. She never stopped believing. She never stopped loving. She never stopped hoping.</p><p>The Prophet ﷺ said: <em>The best of women is the one who, when you look at her, pleases you; when you command her, she obeys you; and when you are away, she guards your honour and your wealth.</em> Ayyub's wife was all of this and more. She was a living example of what it means to stand with someone through everything.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ عِبَادَنَا إِبْرَاهِيمَ وَإِسْحَاقَ وَيَعْقُوبَ أُولِي الْأَيْدِي وَالْأَبْصَارِ",
+        "translation": "And remember Our servants Ibrahim, Ishaq, and Yaqub — people of strength and vision.",
+        "ref": "Sad 38:45"
+      },
+      "didYouKnow": "Ayyub's wife is one of the few women in the Quran whose faithfulness is preserved in the story of a prophet without being named. She is a witness that sometimes the greatest support in a believer's life is a spouse who will not leave.",
+      "takeaway": "The people who stay with you when everyone else leaves are the closest to Allah."
+    },
+    {
+      "num": 5,
+      "title": "The Sleepless Nights",
+      "thumb": "nights",
+      "body": "<p>Eighteen years. That is how long the classical scholars say Ayyub's trial lasted. Eighteen years of sickness, poverty, loneliness, and pain. Eighteen years of watching his wife work to feed them. Eighteen years of lying in bed, unable to stand, unable to work, unable to do anything but pray.</p><p>Some nights, in the deepest part of the darkness, Ayyub would call out to his Lord. Not demanding, not angry — just calling. The Quran says: <em>And Ayyub, when he called to his Lord: Indeed, adversity has touched me, and You are the Most Merciful of the merciful.</em></p><p>This was not a one-time cry. It was the pattern of eighteen years. Night after night, year after year, Ayyub called out to his Lord. And every time, he said the same thing — not 'why,' not 'how long,' but <em>You are the Most Merciful of the merciful.</em> His pain never turned into complaint. His suffering never turned into doubt. He held on to the mercy of Allah like a drowning man holds on to a rope.</p><p>This is the deepest form of tawakkul — trust that does not require an explanation. Ayyub did not know why he was being tested. He did not know how long it would last. He did not know if it would end at all. But he knew Allah. And that was enough.</p>",
+      "dialogue": {
+        "arabic": "وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُ أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+        "translation": "And Ayyub, when he called to his Lord: Indeed, adversity has touched me, and You are the Most Merciful of the merciful.",
+        "ref": "Al-Anbiya 21:83"
+      },
+      "didYouKnow": "The Arabic phrase <em>massaniya al-ḍurr</em> — 'adversity has touched me' — uses the word <em>massa</em>, meaning 'to touch lightly.' Ayyub minimised his suffering even in prayer. He did not describe his affliction as 'destroyed me' or 'crushed me' — just 'touched me.' This is the etiquette of the prophets.",
+      "takeaway": "The best dua is not the loudest — it is the one offered with the most patience."
+    },
+    {
+      "num": 6,
+      "title": "The Refusal to Complain",
+      "thumb": "refuse",
+      "body": "<p>Those who knew Ayyub watched his trial with wonder. They saw a man who had lost everything — wealth, children, health, social standing — and had not complained once. Not to them. Not to his wife. Not even in his most private moments with his Lord. He simply accepted what Allah had decreed and continued to worship.</p><p>Some of his own relatives came to him and said: <em>You have been sick for so long. Surely you must have sinned. If you asked Allah to forgive you, He would heal you.</em> They assumed his sickness was a punishment. They assumed his prayer had been rejected. And Ayyub — patient, humble, silent — said nothing in his own defence.</p><p>The Quran does not record Ayyub arguing with anyone about his innocence. He did not defend himself. He did not need to. He knew that Allah knew. And that was enough.</p><p>This is the dignity of a soul that has submitted completely. When you know who you are before Allah, you do not need to convince anyone else. When you trust His justice, you do not need to protest your innocence. When you understand that everything — including your suffering — is from Him, you stop arguing with the world.</p>",
+      "dialogue": {
+        "arabic": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ",
+        "translation": "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits. But give good tidings to the patient.",
+        "ref": "Al-Baqarah 2:155"
+      },
+      "didYouKnow": "The Prophet ﷺ said that if Ayyub had been tested with what most people consider unbearable, it was because he was among the most beloved of Allah's servants. The trials of the righteous are never without purpose, and never without limits.",
+      "takeaway": "The soul that knows who it is before Allah has no need to defend itself before people."
+    },
+    {
+      "num": 7,
+      "title": "The Dua of Relief",
+      "thumb": "dua-relief",
+      "body": "<p>After eighteen years, Ayyub made a dua. And this dua is one of the most beautiful in the Quran — because of what it did not ask for and what it did.</p><p><em>My Lord, indeed adversity has touched me, and You are the Most Merciful of the merciful.</em> Seven words. Two phrases. One request — but not a demand. He did not say, 'Remove my suffering.' He did not say, 'Give me back what I lost.' He did not say, 'Punish those who mocked me.' He simply said: <em>Adversity has touched me, and You are the Most Merciful of the merciful.</em></p><p>This is the highest form of dua. Ayyub did not tell Allah what to do. He did not negotiate. He did not bargain. He simply placed his situation before his Lord, acknowledged Allah's mercy, and let the response come from his Lord's wisdom. He did not ask for anything specific. He trusted that Allah would respond in the best way — because Allah is the Most Merciful.</p><p>And this is the lesson for every believer in pain. When you cannot find the words to ask for what you need, just say: <em>My Lord, adversity has touched me, and You are the Most Merciful of the merciful.</em> That is enough. Because the One you are speaking to already knows what you need — and He is more merciful than you can imagine.</p>",
+      "dialogue": {
+        "arabic": "رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+        "translation": "My Lord, indeed adversity has touched me, and You are the Most Merciful of the merciful.",
+        "ref": "Al-Anbiya 21:83"
+      },
+      "didYouKnow": "The scholars note that Ayyub's dua contained no specific request. He simply described his state and reminded Allah of His own mercy. This is the highest etiquette of dua — leaving the response to the One who knows best.",
+      "takeaway": "The best dua is not the one that tells Allah what to do — it is the one that trusts Him to do what is best."
+    },
+    {
+      "num": 8,
+      "title": "The Command to Strike",
+      "thumb": "strike",
+      "body": "<p>And then, the answer came. Not with a dramatic sign, not with an angel descending, but with a quiet command: <em>Strike the ground with your foot. This is a cool spring of water for bathing and drinking.</em></p><p>Look at the mercy hidden in that command. Allah did not send a healer. He did not send medicine. He did not send a miracle rain from the sky. He simply commanded Ayyub to strike the ground — an action that, for eighteen years, Ayyub could not do. He had been bedridden, unable to stand, unable to walk. And now — suddenly — Allah was telling him to stand up and stamp.</p><p>And Ayyub did. Not because he knew what would happen. Not because he understood the plan. But because Allah commanded, and that was enough. He stood. He stamped. And two springs gushed from the earth — one for bathing, one for drinking.</p><p>He bathed — and his skin was healed. He drank — and his body was refreshed. In a moment, eighteen years of suffering were ended. Not gradually, not partially — completely. And the same command that had tested Ayyub's patience was now the command that restored him.</p><p>This is what Allah does when He wants to heal. He does not always send medicine. Sometimes He simply says: <em>Stand up. Strike the ground. Try again.</em> And the healing comes the moment you obey.</p>",
+      "dialogue": {
+        "arabic": "ارْكُضْ بِرِجْلِكَ ۖ هَٰذَا مُغْتَسَلٌ بَارِدٌ وَشَرَابٌ",
+        "translation": "Strike the ground with your foot. This is a cool spring for bathing and drinking.",
+        "ref": "Sad 38:42"
+      },
+      "didYouKnow": "The location of these springs is said to be near the modern city of Al-Shaykh Sa'd in Jordan, where a shrine attributed to Ayyub stands to this day. The Quran does not specify the location, but the springs are the sign of his healing.",
+      "takeaway": "Allah's healing often comes through an action He asks you to take — not just a prayer He answers while you wait."
+    },
+    {
+      "num": 9,
+      "title": "The Restoration",
+      "thumb": "restoration",
+      "body": "<p>When Ayyub rose from the spring, he was healed. The Quran says: <em>And We gave him his family and the like thereof with them — as mercy from Us and a reminder to the worshippers.</em></p><p>Allah did not just give him back what he had lost. He gave him back his family — the children who had died — and the like of them again. His wealth was restored. His health was restored. His honour among the people was restored. Everything the trial had taken was given back — and then some.</p><p>Notice the word: <em>as mercy from Us</em>. The restoration was not a reward for Ayyub's patience. It was a mercy from Allah. Ayyub had not earned it; he had received it. And the same is true for every blessing we receive. We do not earn anything from Allah. He gives freely, in His mercy, because that is who He is.</p><p>And then, Allah added a purpose statement: <em>and a reminder to the worshippers.</em> The restoration of Ayyub was not just for Ayyub. It was a sign for every worshipper who came after him — a proof that patience is rewarded, that trials are temporary, that the mercy of Allah always arrives. Ayyub's suffering was eighteen years; his restoration was forever.</p>",
+      "dialogue": {
+        "arabic": "وَوَهَبْنَا لَهُ أَهْلَهُ وَمِثْلَهُم مَّعَهُمْ رَحْمَةً مِّنَّا وَذِكْرَىٰ لِأُولِي الْأَلْبَابِ",
+        "translation": "And We gave him his family and the like thereof with them — as mercy from Us and a reminder for those of understanding.",
+        "ref": "Sad 38:43"
+      },
+      "didYouKnow": "Some narrations say Allah restored Ayyub's children — the very ones he had lost — and then doubled them, giving him an equal number of additional children. The mercy of Allah did not just compensate for the loss; it multiplied beyond it.",
+      "takeaway": "Allah's restoration is not just equal to what was lost — it is greater."
+    },
+    {
+      "num": 10,
+      "title": "The Oath and Its Release",
+      "thumb": "oath",
+      "body": "<p>One story from Ayyub's life deserves its own lesson. During his illness, at one point his wife said something — some scholars say she suggested something she should not have said, out of exhaustion after eighteen years of care. And Ayyub, without thinking carefully, swore an oath that he would strike her a hundred times if he ever recovered.</p><p>When Allah healed him, Ayyub found himself bound by his own oath. He did not want to harm his wife — she had stood by him for eighteen years. But he had sworn, and an oath to Allah must be honoured. He was trapped between two duties: the duty of his oath and the duty of gratitude to the woman who had carried him.</p><p>And Allah, in His mercy, provided a way out: <em>And take in your hand a bundle of grass and strike with it, and do not break your oath.</em> Take a bundle of a hundred stems and strike once — one strike counts as a hundred, and the oath is fulfilled. The wife is not harmed. The oath is kept. And both duties are satisfied.</p><p>This is one of the most tender passages in the Quran. Allah did not just heal Ayyub — He protected his wife. He did not just restore his wealth — He restored his peace of mind. He resolved the oath in a way that spared the woman who had served her husband for eighteen years. Allah sees every detail. He remembers every kindness. And He provides a way out of every difficulty — if we trust Him to find it.</p>",
+      "dialogue": {
+        "arabic": "وَخُذْ بِيَدِكَ ضِغْثًا فَاضْرِب بِهِ وَلَا تَحْنَثْ ۗ إِنَّا وَجَدْنَاهُ صَابِرًا",
+        "translation": "And take in your hand a bundle of grass and strike with it, and do not break your oath. Indeed, We found him patient.",
+        "ref": "Sad 38:44"
+      },
+      "didYouKnow": "The classical scholars say Allah accepted the single strike with a bundle of stems as equivalent to a hundred strikes — fulfilling Ayyub's oath without harming his wife. This is one of the clearest examples of Allah's mercy finding a way out where human logic would say there is none.",
+      "takeaway": "Allah always provides a way out of the oath you regret — if you trust Him to find it."
+    },
+    {
+      "num": 11,
+      "title": "The Praise of Allah",
+      "thumb": "praise",
+      "body": "<p>At the end of Ayyub's story, Allah gives him a title that is reserved for only the greatest of His servants: <em>Indeed, We found him patient. An excellent servant. Indeed, he was one repeatedly turning back to Allah.</em></p><p>Three things. <em>Patient.</em> <em>Excellent servant.</em> <em>Repeatedly turning back.</em> Read those three phrases slowly, because they are the summary of Ayyub's entire life. Not his wealth. Not his prophethood. Not his miracles. Not his restoration. Just: patient, excellent servant, repeatedly turning back.</p><p>This is what Allah values. When the entire record of a life is summarised, the things He highlights are not the honours or the achievements — they are the character. Ayyub did not perform dramatic miracles. He did not build cities or kingdoms. He did not lead armies or convert nations. He just stayed faithful — for eighteen years — in the middle of a trial that would have broken anyone else.</p><p>The Prophet ﷺ said: <em>Be patient, for indeed patience is light.</em> Ayyub's patience was not a single act — it was eighteen years of a soul refusing to break. It was a thousand nights of calling out to Allah from a sickbed, without ever once doubting His mercy. And at the end of it all, Allah said: <em>An excellent servant.</em></p><p>That is the highest title any human being can receive — the testimony of their Lord that they were an excellent servant.</p>",
+      "dialogue": {
+        "arabic": "نِّعْمَ الْعَبْدُ ۖ إِنَّهُ أَوَّابٌ",
+        "translation": "An excellent servant. Indeed, he was one repeatedly turning back to Allah.",
+        "ref": "Sad 38:44"
+      },
+      "didYouKnow": "The Prophet ﷺ said that the best of people are those who live long and do good deeds — and Ayyub lived long after his trial, worshipping Allah with the same faithfulness he had shown during it. His restoration did not turn him away from his Lord; it drew him closer.",
+      "takeaway": "The title that matters most is the one Allah gives you — not the one people give."
+    },
+    {
+      "num": 12,
+      "title": "The Lesson of the Trial",
+      "thumb": "lesson",
+      "body": "<p>Why did Allah test Ayyub so severely? The Quran does not give a direct answer. And that is part of the lesson. Sometimes trials come without explanation. Sometimes suffering has no visible reason. And the believer is called to trust Allah — not because the reason is hidden, but because the One who gave the trial is known.</p><p>But the Quran does hint at one purpose. Allah says the restoration was <em>a reminder for those of understanding.</em> The trial of Ayyub was not just about Ayyub — it was about every believer who would come after him and face their own suffering. Ayyub's patience was a template. His dua was a template. His faithful trust in Allah through eighteen years of pain was a template.</p><p>And here is the deepest lesson of all: <em>Ayyub was never alone in his trial.</em> Allah saw. Allah heard. Allah remembered. The people who abandoned him did not know the truth. The friends who accused him did not know the truth. Even Ayyub himself did not know the full reason for his suffering. But Allah knew. And Allah's knowledge is enough.</p><p>The Prophet ﷺ said: <em>Whoever is tested with hardship and is patient will be given by Allah a reward greater than what the trial took from him.</em> Ayyub was tested with the loss of everything — and given back more than he had before. His story is the standing proof that no trial lasts forever, and no patience goes unpaid.</p>",
+      "dialogue": {
+        "arabic": "إِنَّمَا يُوَفَّى الصَّابِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍ",
+        "translation": "Indeed, the patient will be given their reward without account.",
+        "ref": "Az-Zumar 39:10"
+      },
+      "didYouKnow": "The Prophet ﷺ said: <em>No fatigue, no disease, no sorrow, no grief, no harm, no distress — not even a thorn that pricks a Muslim — but that Allah expiates by it some of his sins.</em> (Bukhari) Every moment of Ayyub's eighteen-year trial was a purification.",
+      "takeaway": "Your trial has a purpose — even if you never learn what it is in this life."
+    },
+    {
+      "num": 13,
+      "title": "The Model of Patience",
+      "thumb": "model",
+      "body": "<p>Ayyub is called <em>al-ṣābir al-shakūr</em> — the patient, the thankful. He is the standing example in Islamic tradition of what true patience looks like. When a Muslim faces illness, they remember Ayyub. When a Muslim loses a loved one, they remember Ayyub. When a Muslim faces a trial that seems endless, they remember Ayyub. His name is synonymous with <em>ṣabr</em> — patience — in every language of the Muslim world.</p><p>But the deeper lesson of Ayyub is not just patience in the face of pain. It is patience <em>with Allah.</em> Patience that does not question His wisdom. Patience that does not doubt His mercy. Patience that does not lose hope. Patience that keeps praying even when it seems nothing is changing. Patience that trusts that the Author of the story knows how it ends.</p><p>Ayyub's story ends not with his death, but with his praise. The Quran preserves his life as an example for every generation that comes after. And his final title — <em>an excellent servant</em> — is the reward of a man who trusted his Lord through eighteen years of darkness, and found light at the end.</p><p>May Allah make us among the patient, the grateful, and the ones who return to Him. Ameen.</p>",
+      "dialogue": {
+        "arabic": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+        "translation": "Indeed, Allah is with the patient.",
+        "ref": "Al-Baqarah 2:153"
+      },
+      "didYouKnow": "Ayyub is one of only four prophets mentioned by name in the Quran whose patience is specifically praised — the others being Ismail, Idris, and Dhul-Kifl. His patience was not just a quality; it was his identity.",
+      "takeaway": "Patience is not passive waiting — it is the most active form of worship."
+    }
+  ]
+},
+{
+  "id": "shuayb",
+  "num": 13,
+  "name": "Shuayb",
+  "arabic": "شعيب",
+  "subtitle": "10 Lessons",
+  "image": "images/prophet-13-shuayb.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The People of Madyan",
+      "thumb": "madyan",
+      "body": "<p>After the destruction of 'Ad and Thamud, the tribes of Arabia continued to multiply. And among them was a people who lived in the city of Madyan — a prosperous trading settlement on the route between Shaam and Yemen. They were wealthy, but their wealth was built on fraud.</p><p>The Quran describes their crime with precision: <em>And to Madyan, their brother Shuayb. He said: O my people, worship Allah; you have no deity other than Him. And do not decrease the measure and the weight. Indeed, I see you in prosperity, and indeed I fear for you the punishment of an encompassing Day.</em></p><p>They were cheating in trade. When they sold, they gave less than they claimed. When they bought, they took more than was owed. They used two sets of scales — one for customers, one for themselves. They manipulated the weights, mixed the goods, and hid the defects. And they justified all of it as 'business.'</p><p>What made their sin so serious was that they had wrapped it in the language of commerce. They were not murderers or adulterers. They were merchants who happened to be dishonest. And they did not see it as a religious problem.</p>",
+      "dialogue": {
+        "arabic": "وَيَا قَوْمِ أَوْفُوا الْمِكْيَالَ وَالْمِيزَانَ بِالْقِسْطِ ۖ وَلَا تَبْخَسُوا النَّاسَ أَشْيَاءَهُمْ",
+        "translation": "And O my people, give full measure and weight in justice and do not deprive the people of their due.",
+        "ref": "Hud 11:85"
+      },
+      "didYouKnow": "Madyan is mentioned in the Quran 10 times. It was a major trading hub — and it was the place where Musa (AS) would later flee, marry the daughter of a righteous man, and live for ten years as a shepherd. Shuayb's story and Musa's story are connected by geography.",
+      "takeaway": "Not every sin looks dramatic — sometimes the worst corruption happens in the merchant's ledger."
+    },
+    {
+      "num": 2,
+      "title": "The Sin of the Scales",
+      "thumb": "scales",
+      "body": "<p>The Quran returns to the sin of Madyan in Surah Al-Mutaffifin with a specific and pointed address: <em>Woe to those who give less than due — those who, when they take a measure from people, take in full. But if they give by measure or by weight to them, they cause loss.</em></p><p>Read that again. The sin is not that they cheated. The sin is that they cheated <em>selectively</em> — they took full measure for themselves, but gave short measure to others. They expected justice when they were owed, but gave less than justice when they owed. Their dishonesty was not just economic — it was a moral inversion. They wanted fairness for themselves, but not for others.</p><p>And this is the pattern of all injustice. The oppressor always wants a just system when they are the victim. The fraudster always wants strict rules when someone cheats them. The greedy always want more when they are owed, but less when they owe. The sin is not in the mathematics — it is in the double standard.</p><p>Shuayb saw it clearly, and he called it what it was. Not 'business.' Not 'negotiation.' <em>Injustice.</em> And the Quran warned the people of Madyan with a severity that should make every merchant and tradesperson tremble.</p>",
+      "dialogue": {
+        "arabic": "وَيْلٌ لِّلْمُطَفِّفِينَ ۝ الَّذِينَ إِذَا اكْتَالُوا عَلَى النَّاسِ يَسْتَوْفُونَ ۝ وَإِذَا كَالُوا أَوْ وَزَنُوا يُخْسِرُونَ",
+        "translation": "Woe to those who give less than due — those who, when they take a measure from people, take in full. But if they give by measure or by weight to them, they cause loss.",
+        "ref": "Al-Mutaffifin 83:1-3"
+      },
+      "didYouKnow": "The word <em>muṭaffifīn</em> — those who give less than due — comes from <em>ṭaffa</em>, meaning 'a small amount.' The sin is often small in each instance — a fraction of a gram, a coin, a slight of hand. But over thousands of transactions, small thefts become great corruption. And Allah's warning is severe because the crime is repeated.",
+      "takeaway": "Injustice is not measured by the size of what is taken — it is measured by the dishonesty of the heart."
+    },
+    {
+      "num": 3,
+      "title": "The Call of Shuayb",
+      "thumb": "call",
+      "body": "<p>Shuayb's message was the same as every prophet's: <em>Worship Allah; you have no deity other than Him.</em> But he added the specific correction for his people's specific sin: <em>And do not decrease the measure and the weight. Indeed, I see you in prosperity, and indeed I fear for you the punishment of an encompassing Day.</em></p><p>Look at the structure of Shuayb's call. He did not begin with the fraud. He did not begin with their cheating. He began with tawhid — the foundation of everything. Because the fraud was a symptom, not a root cause. When a people forgets Allah, every form of corruption becomes possible. When a people remembers Allah, even their business transactions become worship.</p><p>Then he addressed the specific issue: their scales. And notice the tenderness with which he did it. <em>O my people, give full measure and weight in justice.</em> He called them <em>my people</em> — he did not distance himself from them. He did not condemn them as a category. He addressed them as his own family — a brother speaking to brothers about a shared problem.</p><p>And then he reminded them of their blessing: <em>Indeed, I see you in prosperity.</em> You have plenty. You do not need to cheat. Your wealth is from Allah — why would you corrupt the gift with fraud? The reminder was meant to soften their hearts. But it did not work.</p>",
+      "dialogue": {
+        "arabic": "بَقِيَّتُ اللَّهِ خَيْرٌ لَّكُمْ إِن كُنتُم مُّؤْمِنِينَ ۚ وَمَا أَنَا عَلَيْكُم بِحَفِيظٍ",
+        "translation": "What remains from Allah is better for you, if you are believers. And I am not over you a guardian.",
+        "ref": "Hud 11:86"
+      },
+      "didYouKnow": "The phrase <em>baqiyyatullah</em> — 'what remains from Allah' — is one of the most beautiful in the Quran. It refers to the halal profit that remains after honest dealing. Shuayb was telling his people: the honest earnings you keep are better than the fraudulent wealth you hide. Truthful profit is a blessing from Allah.",
+      "takeaway": "The blessing is not in what you take — it is in what you are allowed to keep."
+    },
+    {
+      "num": 4,
+      "title": "The Mockery of Prayer",
+      "thumb": "mockery",
+      "body": "<p>The people of Madyan responded with an objection that reveals exactly how they saw faith: <em>O Shuayb, does your prayer command you that we should leave what our fathers worshipped or stop doing with our wealth what we please?</em></p><p>Read it slowly. They were mocking him for praying. <em>Does your prayer command you…</em> — as if prayer was some strange habit that had led Shuayb to impose on their business. They saw his connection with Allah as the source of an unreasonable demand. They wanted to keep their religion (the worship of idols) and their fraud (the corruption of the scales). And they could not see why prayer would have anything to do with commerce.</p><p>This is a pattern that repeats itself in every generation. People compartmentalise their religion. They will pray, fast, and give charity — but when it comes to their business, their contracts, their salaries, their taxes, their dealings with employees, they operate on a different code. As if Islam is a private devotion with no bearing on the public world.</p><p>Shuayb's reply was firm: <em>He said: O my people, have you considered if I should have a clear evidence from my Lord and He has provided me from Himself a good provision? And I do not intend to differ from you in that which I have forbidden you; I only intend reform as much as I am able. And my success is not but through Allah. Upon Him I have relied, and to Him I return.</em></p><p>He did not argue. He did not justify. He simply said: my prayer and my business are one. My religion and my life are one. That is what it means to be a Muslim.</p>",
+      "dialogue": {
+        "arabic": "قَالُوا يَا شُعَيْبُ أَصَلَاتُكَ تَأْمُرُكَ أَن نَّتْرُكَ مَا يَعْبُدُ آبَاؤُنَا أَوْ أَن نَّفْعَلَ فِي أَمْوَالِنَا مَا نَشَاءُ",
+        "translation": "They said: O Shuayb, does your prayer command you that we should leave what our fathers worshipped or stop doing with our wealth what we please?",
+        "ref": "Hud 11:87"
+      },
+      "didYouKnow": "The question 'does your prayer command you…' is one of the most cutting rebuttals in the Quran. It captures the exact attitude of people who want religion to stay in the mosque and out of the marketplace. Shuayb's answer — that his prayer and his business were one — is the Islamic answer to this division.",
+      "takeaway": "Islam is not a part of your life — it is your life."
+    },
+    {
+      "num": 5,
+      "title": "The Threat of Violence",
+      "thumb": "threat",
+      "body": "<p>Shuayb's message did not land. His call for justice in trade was rejected. And the people of Madyan moved from argument to threat. The Quran records their words: <em>They said: O Shuayb, we do not understand much of what you say, and indeed we think you are weak among us. And if it were not for your family, we would have stoned you. And you are not to us powerful.</em></p><p>Read that carefully. They mocked Shuayb for being weak. They threatened to stone him. They said the only reason they had not killed him was his family connections — not his prophethood, not his message, not his truth. His family protected him; his message did not.</p><p>And what was Shuayb's response? <em>He said: O my people, is my family more powerful with you than Allah? And you took Him behind your backs. Indeed, my Lord encompasses what you do.</em> This is one of the greatest statements of tawhid in the Quran. Shuayb was told that his life was saved only by his family's status. And he responded: <em>Is my family more powerful than Allah?</em></p><p>He did not argue. He did not bargain. He did not thank them for sparing him. He simply pointed out the absurdity — that they feared his human family more than they feared the Lord who created everything. Their respect for his relatives was a form of fear. Their disrespect for Allah was not. And that inversion was the very essence of their shirk.</p>",
+      "dialogue": {
+        "arabic": "قَالَ يَا قَوْمِ أَرَهْطِي أَعَزُّ عَلَيْكُم مِّنَ اللَّهِ وَاتَّخَذْتُمُوهُ وَرَاءَكُمْ ظِهْرِيًّا ۖ إِنَّ رَبِّي بِمَا تَعْمَلُونَ مُحِيطٌ",
+        "translation": "He said: O my people, is my family more powerful with you than Allah? And you took Him behind your backs. Indeed, my Lord encompasses what you do.",
+        "ref": "Hud 11:92"
+      },
+      "didYouKnow": "The Arabic phrase <em>wara'akum ẓihriyyan</em> — 'behind your backs' — refers to something thrown away, forgotten, tossed aside as worthless. Shuayb was telling his people: you have thrown Allah behind your backs while fearing men who have no power over your souls.",
+      "takeaway": "The greatest shirk is not worshipping other gods — it is fearing men more than fearing Allah."
+    },
+    {
+      "num": 6,
+      "title": "The Patience of Shuayb",
+      "thumb": "patience",
+      "body": "<p>Shuayb's call continued for years. The people did not listen. They mocked his prayer, threatened to stone him, and continued their fraudulent trade. And through all of it, Shuayb did not give up. He did not stop preaching. He did not walk away in frustration. He simply kept calling — with the same message, the same patience, the same love.</p><p>The Quran records his words: <em>And I do not intend to differ from you in that which I have forbidden you; I only intend reform as much as I am able. And my success is not but through Allah. Upon Him I have relied, and to Him I return.</em></p><p>This is a window into Shuayb's heart. He was not a prophet who imposed from above. He did not use his authority to force change. He simply said: <em>I want to reform what I can. That is all. My success is not in the outcome — it is in the obedience. My trust is in Allah, and to Him I turn.</em></p><p>Every caller to truth should memorise this verse. It is the philosophy of dawah in three sentences: I want to help, not to dominate. I trust in Allah, not in my arguments. I return to Him, not to my results. And if the people do not listen, that is not my failure — that is their choice.</p>",
+      "dialogue": {
+        "arabic": "إِنْ أُرِيدُ إِلَّا الْإِصْلَاحَ مَا اسْتَطَعْتُ ۚ وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ۚ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ",
+        "translation": "I only intend reform as much as I am able. And my success is not but through Allah. Upon Him I have relied, and to Him I return.",
+        "ref": "Hud 11:88"
+      },
+      "didYouKnow": "This verse contains three of the most powerful words in the Quran for a believer: <em>tawakkaltu</em> (I relied), <em>unīb</em> (I return), and <em>istiṭā'a</em> (what I am able). Shuayb's dawah was built on these three pillars — trust in Allah, constant return to Him, and honest effort within capacity.",
+      "takeaway": "Your job is not to change the outcome — it is to make the effort and leave the rest to Allah."
+    },
+    {
+      "num": 7,
+      "title": "The Warning",
+      "thumb": "warning",
+      "body": "<p>After years of rejection, Shuayb gave his people one final warning. The Quran records it with the same structure Nuh had used, the same structure Hud had used, the same structure every prophet before him had used: <em>So if you turn away, then I have already conveyed to you what I was sent to convey to you. And my Lord will replace you with another people, and you will not harm Him at all. Indeed, my Lord is over all things a Guardian.</em></p><p>Look carefully at what Shuayb did not say. He did not threaten fire from the sky. He did not name the punishment. He did not curse his people. He said: <em>If you turn away, I have done my part. My Lord will replace you with another people. You cannot harm Him.</em></p><p>This is the dignity of a prophet who has done his job. He does not need to see the punishment. He does not need to see his enemies destroyed. He simply needs to know that he delivered the message and trusted his Lord with the outcome.</p><p>And notice: <em>my Lord will replace you with another people.</em> This is the pattern of Allah's dealings with nations. Whenever a people abandons the truth, they are replaced. The tribe of Madyan would be replaced. The Children of Israel would be replaced. Every nation that rejects the message is eventually replaced by another that accepts it. The blessing of faith is not a birthright — it is a trust, and it can be transferred.</p>",
+      "dialogue": {
+        "arabic": "فَإِن تَوَلَّيْتُمْ فَقَدْ أَبْلَغْتُكُم مَّا أُرْسِلْتُ بِهِ إِلَيْكُمْ ۚ وَيَسْتَخْلِفُ رَبِّي قَوْمًا غَيْرَكُمْ",
+        "translation": "So if you turn away, then I have already conveyed to you what I was sent to convey to you. And my Lord will replace you with another people.",
+        "ref": "Hud 11:57"
+      },
+      "didYouKnow": "The replacement of a disbelieving nation by a believing one is one of the most consistent patterns in the Quran. Allah does not need any particular nation to carry His message. He simply chooses the ones who are willing.",
+      "takeaway": "The blessings of faith can be taken from one people and given to another — nothing about them is guaranteed."
+    },
+    {
+      "num": 8,
+      "title": "The Destruction of Madyan",
+      "thumb": "destruction",
+      "body": "<p>The people of Madyan did not turn back. They continued their fraud. They mocked their prophet. They went on with their double scales and their short measures, thinking that no one was watching. And then the punishment came.</p><p>The Quran describes it in two places. In Surah Al-A'raf: <em>So the earthquake seized them, and they became within their home fallen prone.</em> And in Surah Hud: <em>And the blast seized those who did wrong, and they became within their homes fallen prone — as if they had never lived there.</em></p><p>Two forms of punishment — an earthquake and a blast. Some say the earth shook beneath them. Others say the sky cried out above them. Either way, the effect was the same: an entire city, wiped out in a single moment. The fraudulent merchants were caught in their fraud. The men who had mocked their prophet lay dead on the floors of the shops where they had cheated their customers.</p><p>And the Quran records the final verdict on them with the same phrase it had used for the 'Ad and the Thamud: <em>Unquestionably, the people of Madyan were destroyed.</em> Not survivors. Not refugees. Destroyed. Erased. Just like the nations before them who had also chosen wealth over truth.</p><p>The lesson is severe: Allah does not permit fraud forever. He watches the ledgers. He hears the complaints of the cheated. And He may give years — decades even — of delay. But when the decree comes, it comes without warning, without mercy, and without exception.</p>",
+      "dialogue": {
+        "arabic": "فَأَخَذَهُمْ عَذَابُ يَوْمِ الظُّلَّةِ ۚ إِنَّهُ كَانَ عَذَابَ يَوْمٍ عَظِيمٍ",
+        "translation": "So the punishment of the day of the shadow seized them. Indeed, it was the punishment of a great day.",
+        "ref": "Ash-Shu'ara 26:189"
+      },
+      "didYouKnow": "Some scholars explain the 'day of the shadow' as a cloud that came over the city, blocking the sun for days. The people gathered under it, thinking it would bring rain. Instead, it brought a fire, an earthquake, and their destruction.",
+      "takeaway": "Allah's delays are not Allah's forgetfulness — they are His mercy, giving us time to turn back."
+    },
+    {
+      "num": 9,
+      "title": "The Saved Believers",
+      "thumb": "saved",
+      "body": "<p>Shuayb and the believers were saved. The Quran says: <em>And when Our command came, We saved Shuayb and those who believed with him by mercy from Us.</em></p><p>Not by their strength. Not by their numbers. Not by their cleverness. <em>By mercy from Us.</em> The same phrase used for Nuh, for Hud, for Salih, for Lut — every prophet and his faithful followers were saved by the mercy of Allah, and by nothing else.</p><p>The believers of Madyan were not the wealthy merchants. They were not the powerful traders. They were not the ones with the biggest shops and the largest accounts. They were the humble ones — the workers, the small traders, the ones who had refused to participate in the fraud even when everyone else was doing it.</p><p>And when the punishment came, they walked out with their prophet. They did not look back. They did not grab their belongings. They did not try to save their shops. They just left. Because they knew that everything they owned was worthless compared to the mercy of Allah.</p><p>This is the reward of integrity. The dishonest may seem to prosper for a time. The honest may seem to lose in the short run. But when the decree of Allah comes, the honest are saved and the fraudulent are destroyed. It is the oldest story in the Quran — and it will be the final story on the Day of Judgement.</p>",
+      "dialogue": {
+        "arabic": "فَأَنجَيْنَا شُعَيْبًا وَالَّذِينَ آمَنُوا مَعَهُ بِرَحْمَةٍ مِّنَّا",
+        "translation": "So We saved Shuayb and those who believed with him by mercy from Us.",
+        "ref": "Hud 11:94"
+      },
+      "didYouKnow": "The believers who were saved in every prophetic story were always the humble ones — the poor, the weak, the workers, the ones with nothing to lose by being honest. The wealthy almost always chose their wealth over the truth. And they almost always lost both.",
+      "takeaway": "The moment you choose Allah over your wealth is the moment your wealth stops being able to destroy you."
+    },
+    {
+      "num": 10,
+      "title": "The Legacy of Shuayb",
+      "thumb": "legacy",
+      "body": "<p>Shuayb is called <em>Khaṭīb al-Anbiya</em> — the orator of the prophets. His speeches in the Quran are the most eloquent, the most reasoned, the most carefully argued of any prophet. He did not just preach — he persuaded. He did not just warn — he explained. He engaged with his people's objections, addressed their concerns, and laid out the case for justice in a way that would convince any open heart.</p><p>But the deeper legacy of Shuayb is this: he showed us that honesty in business is a religious obligation. That the ledger is a book of worship. That every transaction is a transaction with Allah. That the merchant who cheats is not just a bad businessman — he is a transgressor against the One who provided the wealth in the first place.</p><p>The Prophet ﷺ later said: <em>The honest, trustworthy merchant will be with the prophets, the truthful, and the martyrs on the Day of Judgement.</em> This is one of the highest honours in Islam — to be gathered with the prophets themselves. And it comes not from extraordinary acts, but from ordinary honesty. From giving the full measure. From paying the full wage. From charging the fair price. From keeping the contract.</p><p>Shuayb's message is the message every generation needs to hear: <em>What you earn matters. How you earn it matters. And the One who provided you with the ability to earn is watching every scale you use.</em></p><p>May Allah make us among the honest merchants, the trustworthy workers, and the just dealers. Ameen.</p>",
+      "dialogue": {
+        "arabic": "التَّاجِرُ الصَّدُوقُ الْأَمِينُ مَعَ النَّبِيِّينَ وَالصِّدِّيقِينَ وَالشُّهَدَاءِ",
+        "translation": "The honest, trustworthy merchant will be with the prophets, the truthful, and the martyrs.",
+        "ref": "Sunan Ibn Majah (meaning)"
+      },
+      "didYouKnow": "Shuayb is one of the few prophets whose message centred specifically on economic justice. His people's sin was not idolatry alone — it was fraud. And the Quran's response shows us that cheating in business is not a minor sin, but a violation of the very foundations of community.",
+      "takeaway": "The most underrated form of worship is the honest transaction."
+    }
+  ]
+},{
+  "id": "musa",
+  "num": 14,
+  "name": "Musa",
+  "arabic": "موسى",
+  "subtitle": "25 Lessons",
+  "image": "images/prophet-14-musa.webp",
+  "tier": "pillar",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Tyrant of Egypt",
+      "thumb": "tyrant",
+      "body": "<p>Musa (AS) was born in the darkest period of Egypt's history. The king was Fir'awn — a tyrant who had gone beyond all bounds. He had declared himself a god. He had enslaved an entire nation. And he had begun a systematic campaign of killing the male children of the Children of Israel.</p><p>The Quran says: <em>Indeed, Fir'awn exalted himself in the land and made its people into factions, oppressing a sector among them — slaughtering their sons and keeping their women alive. Indeed, he was of the corrupters.</em></p><p>Fir'awn had a specific fear. He had heard a prophecy — some say from a dream, some say from his astrologers — that a boy would be born among the Children of Israel who would overthrow him. So he had ordered the killing of every newborn male. Thousands of infants died. The Nile carried their bodies. Mothers wept in every house. And the Children of Israel lived in terror.</p><p>This is the world Musa was born into. A world of tyranny, of mass murder, of a king who called himself divine. And Allah was about to send a messenger from within this very world — a baby born into the very terror that had been designed to prevent him.</p>",
+      "dialogue": {
+        "arabic": "إِنَّ فِرْعَوْنَ عَلَا فِي الْأَرْضِ وَجَعَلَ أَهْلَهَا شِيَعًا يَسْتَضْعِفُ طَائِفَةً مِّنْهُمْ يُذَبِّحُ أَبْنَاءَهُمْ وَيَسْتَحْيِي نِسَاءَهُمْ ۚ إِنَّهُ كَانَ مِنَ الْمُفْسِدِينَ",
+        "translation": "Indeed, Fir'awn exalted himself in the land and made its people into factions, oppressing a sector among them — slaughtering their sons and keeping their women alive. Indeed, he was of the corrupters.",
+        "ref": "Al-Qasas 28:4"
+      },
+      "didYouKnow": "Musa is mentioned 136 times in the Quran — more than any other prophet, including Muhammad ﷺ. His story is told across multiple surahs and his mission against Fir'awn is one of the most detailed narratives in revelation.",
+      "takeaway": "The darkest moments of history are often the moments just before Allah sends His greatest deliverances."
+    },
+    {
+      "num": 2,
+      "title": "The Mother's Courage",
+      "thumb": "mother",
+      "body": "<p>Musa's mother received a revelation from Allah — not the kind given to prophets, but the kind given to the saints of Allah who are inspired in times of crisis. The command was terrifying: <em>Place him in a chest and cast him into the river. And do not fear and do not grieve. Indeed, We will return him to you and will make him one of the messengers.</em></p><p>Put your baby in a box. Throw him into the Nile. Let the river carry him wherever it goes. And trust that Allah will bring him back.</p><p>Think about what this command meant. The river was full of crocodiles. The soldiers of Fir'awn were patrolling. Any boat that found a baby boy would kill him on the spot. And yet, the command was clear: <em>cast him into the river.</em> Not keep him safe. Not hide him in a cave. Cast him into the very river that carried the bodies of the slaughtered children.</p><p>She obeyed. She placed her infant son in a small wooden chest. She sealed it. She walked to the banks of the Nile. She held the chest in her arms. And she let go. The river took him. And the Quran says she was about to break — but Allah strengthened her heart: <em>Indeed, We will return him to you and will make him one of the messengers.</em></p><p>This is the deepest kind of trust — trust that obeys a command that seems impossible, because it trusts the One who gave it.</p>",
+      "dialogue": {
+        "arabic": "وَأَوْحَيْنَا إِلَىٰ أُمِّ مُوسَىٰ أَنْ أَرْضِعِيهِ ۖ فَإِذَا خِفْتِ عَلَيْهِ فَأَلْقِيهِ فِي الْيَمِّ وَلَا تَخَافِي وَلَا تَحْزَنِي ۖ إِنَّا رَادُّوهُ إِلَيْكِ وَجَاعِلُوهُ مِنَ الْمُرْسَلِينَ",
+        "translation": "And We inspired to the mother of Musa: Suckle him, but when you fear for him, cast him into the river and do not fear and do not grieve. Indeed, We will return him to you and will make him one of the messengers.",
+        "ref": "Al-Qasas 28:7"
+      },
+      "didYouKnow": "The classical scholars note that Musa's mother was shown in a dream or vision where her son's chest would drift, so she knew which direction to look. The Quran does not specify how she knew, but the account of revelation to her suggests Allah gave her certainty beyond what any human reason could provide.",
+      "takeaway": "Sometimes the safest thing to do is exactly what seems most dangerous — if Allah commanded it."
+    },
+    {
+      "num": 3,
+      "title": "The River's Gift",
+      "thumb": "river",
+      "body": "<p>The chest floated down the Nile. And the Quran describes what happened next with stunning irony: <em>And the family of Fir'awn picked him up — that he would be to them an enemy and a grief. Indeed, Fir'awn and Haman and their soldiers were sinners.</em></p><p>The very household of the tyrant — the king who had ordered the slaughter of every male infant — pulled the chest from the river and found the baby inside. And they did not kill him. They took him in. They loved him.</p><p>Fir'awn's wife — known in Islamic tradition as Asiya — saw the baby and her heart was moved. The Quran records her words: <em>A comfort of the eye for me and for you. Do not kill him; perhaps he may benefit us, or we may adopt him as a son.</em></p><p>And so Musa — the very boy Fir'awn had ordered killed — was raised in Fir'awn's own palace, under Fir'awn's own roof, at Fir'awn's own expense. He ate Fir'awn's food. He played in Fir'awn's gardens. He was called 'son of Fir'awn' by everyone in Egypt. And Fir'awn had no idea that the child he had adopted was the child he had been trying to kill.</p><p>This is Allah's plan. He protects whom He wills, in ways no one can predict. He took the baby destined to be murdered by the tyrant and placed him inside the tyrant's own home — the safest place in all of Egypt. And He did it through a river, a chest, and the tenderness of a woman's heart.</p>",
+      "dialogue": {
+        "arabic": "فَالْتَقَطَهُ آلُ فِرْعَوْنَ لِيَكُونَ لَهُمْ عَدُوًّا وَحَزَنًا ۗ إِنَّ فِرْعَوْنَ وَهَامَانَ وَجُنُودَهُمَا كَانُوا خَاطِئِينَ",
+        "translation": "And the family of Fir'awn picked him up — that he would be to them an enemy and a grief. Indeed, Fir'awn and Haman and their soldiers were sinners.",
+        "ref": "Al-Qasas 28:8"
+      },
+      "didYouKnow": "Asiya, the wife of Fir'awn, is mentioned in the Quran as one of the four greatest women of Paradise — along with Maryam, Khadijah, and Fatimah. She raised Musa in the palace of her husband, and she believed in Musa's message when she grew older — despite her husband's tyranny.",
+      "takeaway": "Allah protects whom He wills — sometimes in the very palace of the one who wants them dead."
+    },
+    {
+      "num": 4,
+      "title": "Returned to His Mother",
+      "thumb": "returned",
+      "body": "<p>Back home, Musa's mother was frantic. She had obeyed the command of Allah, but her heart was breaking. And then she sent Musa's sister to follow the chest from a distance — to see where it went, to see who found it, to see if her baby was alive.</p><p>The sister followed the chest to the palace. And there she saw something extraordinary: the household of Fir'awn had the baby, but the baby refused to nurse. He refused every wet nurse they brought. He cried and cried, refusing every breast, until the whole palace was in a panic.</p><p>The Quran says: <em>And We had forbidden him from wet nurses before. So she said: Shall I direct you to a household that will raise him for you while they are to him sincere advisors?</em></p><p>The sister — wise beyond her years — stepped forward and offered a solution. She knew a woman. A woman who had just lost a baby to the slaughter. A woman who was still lactating. A woman who would care for him like her own — because he was her own.</p><p>And so the family of Fir'awn handed Musa over to his mother. She nursed him. She raised him. She was paid for it — by the very palace that had tried to kill him. And every day, she woke in her own home, held her own son in her arms, and thanked Allah for the miracle He had performed.</p><p>The Quran says: <em>Thus We restored him to his mother, that her eyes might be cooled, and that she might not grieve, and that she might know that the promise of Allah is true. But most of them do not know.</em></p>",
+      "dialogue": {
+        "arabic": "فَرَدَدْنَاهُ إِلَىٰ أُمِّهِ كَيْ تَقَرَّ عَيْنُهَا وَلَا تَحْزَنَ وَلِتَعْلَمَ أَنَّ وَعْدَ اللَّهِ حَقٌّ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ",
+        "translation": "Thus We restored him to his mother, that her eyes might be cooled, and that she might not grieve, and that she might know that the promise of Allah is true. But most of them do not know.",
+        "ref": "Al-Qasas 28:13"
+      },
+      "didYouKnow": "The Quran's account of Musa's infancy is one of the most complete in revelation — from the prophecy of his birth, to his mother's inspiration, to the chest on the river, to the palace, to the refusal to nurse, to the reunion. Every step was part of Allah's plan.",
+      "takeaway": "When Allah promises to return what you have given up for His sake, He keeps that promise — but always in a way you could not have imagined."
+    },
+    {
+      "num": 5,
+      "title": "Growing in the Palace",
+      "thumb": "palace",
+      "body": "<p>Musa grew up in the palace of Fir'awn. He was raised as a prince of Egypt — educated in the sciences, trained in the arts of war, versed in the language and customs of the Egyptian court. He had everything the world could offer: wealth, status, privilege, education, power.</p><p>But the Quran tells us that Musa's heart was not at ease. He watched the way the Egyptians treated the Children of Israel — the whips, the cruelty, the casual brutality. He saw his own people — his biological people, the Israelites — living as slaves and servants in the very house that had raised him as a son.</p><p>And as he grew older, something else happened. Allah says: <em>And when he reached his full strength and was mature, We gave him wisdom and knowledge. And thus do we reward the doers of good.</em></p><p>Wisdom and knowledge. Not just the education of the Egyptian court — the <em>ḥukm</em> and <em>ʿilm</em> that come from Allah. Musa was being prepared. Every year in the palace, every lesson he learned, every injustice he witnessed, was part of a training curriculum designed by his Lord.</p><p>The palace was not where Musa belonged. But it was where Musa was educated. And the education would one day be used against the very kingdom that had provided it.</p>",
+      "dialogue": {
+        "arabic": "وَلَمَّا بَلَغَ أَشُدَّهُ وَاسْتَوَىٰ آتَيْنَاهُ حُكْمًا وَعِلْمًا ۚ وَكَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ",
+        "translation": "And when he reached his full strength and was mature, We gave him wisdom and knowledge. And thus do We reward the doers of good.",
+        "ref": "Al-Qasas 28:14"
+      },
+      "didYouKnow": "Musa is the only prophet in the Quran whose entire lifespan — infancy, youth, adulthood, prophethood, old age, and death — is narrated in detail across multiple surahs. His story spans from Surah Al-Baqarah to Surah Al-A'la.",
+      "takeaway": "Every skill Allah gives you in your youth will one day be needed for the mission He has planned for you."
+    },
+    {
+      "num": 6,
+      "title": "The Egyptian Slain",
+      "thumb": "slain",
+      "body": "<p>One day, Musa walked into the streets of Egypt and saw a scene that changed his life. An Egyptian was beating an Israelite — a member of Musa's own people — brutally. The Israelite cried out to Musa for help. And Musa, without thinking, struck the Egyptian.</p><p>The Quran says: <em>And he entered the city at a time of unawareness of its people, and he found there two men fighting — one of his party and the other of his enemies. And the one from his faction called for help to him against the one from his enemy. So Musa struck him with his fist and killed him. He said: This is of the work of Shaytan. Indeed, he is a manifest, misleading enemy.</em></p><p>The blow had been intended to defend. The death had not been intended at all. Musa had killed a man — accidentally, in defence of the oppressed, but with a fist that had turned out to be stronger than he realised.</p><p>And Musa's first response was not to hide the body. It was to turn to Allah: <em>My Lord, indeed I have wronged myself, so forgive me. And He forgave him. Indeed, it is He who is the Forgiving, the Merciful.</em></p><p>Look at the honesty of a prophet. He did not justify his action. He did not say, 'He deserved it.' He did not say, 'I was defending the weak.' He said: <em>My Lord, I have wronged myself, forgive me.</em> Even a prophet, in an act of partial defence, feared the possibility of crossing a line — and immediately returned to his Lord in tawbah.</p><p>And Allah forgave him. Because Musa was not a murderer. He was a young man with a strong fist and a soft heart, who had accidentally killed a man in defence of the weak. And Allah knew his intention.</p>",
+      "dialogue": {
+        "arabic": "فَوَكَزَهُ مُوسَىٰ فَقَضَىٰ عَلَيْهِ ۖ قَالَ هَٰذَا مِنْ عَمَلِ الشَّيْطَانِ ۖ إِنَّهُ عَدُوٌّ مُّضِلٌّ مُّبِينٌ ۝ رَبِّ إِنِّي ظَلَمْتُ نَفْسِي فَاغْفِرْ لِي",
+        "translation": "So Musa struck him with his fist and killed him. He said: This is of the work of Shaytan. Indeed, he is a manifest, misleading enemy. My Lord, indeed I have wronged myself, so forgive me.",
+        "ref": "Al-Qasas 28:15-16"
+      },
+      "didYouKnow": "The classical scholars note that the Egyptian who died was a known oppressor of the Israelites — and Musa struck him in defence of the weak. The death was accidental, but Musa's response teaches us the etiquette of a believer who has erred: immediate admission, no justification, and return to Allah.",
+      "takeaway": "The sign of a sincere heart is that it turns to Allah quickly — no excuses, no delay."
+    },
+    {
+      "num": 7,
+      "title": "The Flight to Madyan",
+      "thumb": "flight",
+      "body": "<p>Word of the killing spread. And the very next day, an Israelite — the same man Musa had defended — was fighting with another Egyptian. When Musa approached him, the man said something that revealed the danger: <em>O Musa, do you intend to kill me as you killed a soul yesterday? You want only to be a tyrant in the land.</em></p><p>Musa realised that the killing was known. He had become a fugitive. And at that moment, another Israelite came running from the far end of the city: <em>O Musa, the eminent ones are conferring over you to kill you, so leave. Indeed, I am to you a sincere adviser.</em></p><p>Musa fled Egypt that night. He did not pack. He did not say goodbye. He did not take any of the wealth or status of his upbringing. He simply walked out of the city — alone, hunted, with nothing.</p><p>The Quran says: <em>So he left it, fearful and expectant. He said: My Lord, save me from the wrongdoing people.</em> And a little later: <em>And when he directed himself toward Madyan, he said: Perhaps my Lord will guide me to the sound way.</em></p><p>Look at the faith of a fugitive. Musa did not know where he was going. He did not have a plan. He did not have provisions. He simply walked — trusting that the Lord who had protected him in the palace of Fir'awn would guide him through the desert.</p><p>This is the beginning of Musa's real training. Not as a prince of Egypt, but as a fugitive in the wilderness. Because Allah had bigger plans for him than being a prince — Allah was preparing him to be a prophet.</p>",
+      "dialogue": {
+        "arabic": "فَخَرَجَ مِنْهَا خَائِفًا يَتَرَقَّبُ ۖ قَالَ رَبِّ نَجِّنِي مِنَ الْقَوْمِ الظَّالِمِينَ",
+        "translation": "So he left it, fearful and expectant. He said: My Lord, save me from the wrongdoing people.",
+        "ref": "Al-Qasas 28:21"
+      },
+      "didYouKnow": "The distance from Egypt to Madyan was several hundred kilometres across the desert. Musa walked it alone, with no provisions, no guide, and no idea what awaited him. This was his <em>hijrah</em> — a migration that would change the course of his life.",
+      "takeaway": "Sometimes Allah removes you from comfort so He can prepare you for greatness."
+    },
+    {
+      "num": 8,
+      "title": "The Two Daughters",
+      "thumb": "daughters",
+      "body": "<p>Musa arrived in Madyan — exhausted, starving, homeless. He came to a well where the shepherds of the region were watering their flocks. And there, standing apart, he saw two women waiting with their sheep. They could not water their animals because the men at the well were pushing them aside.</p><p>Musa — tired, hungry, alone, a fugitive — walked over to the women and asked why they were waiting. They explained that they were the daughters of an old man, and could not compete with the strong shepherds. Musa did not ask for their father's name. He did not ask for anything in return. He simply stepped up, watered their flocks, and sent them on their way.</p><p>The Quran says: <em>And when he arrived at the well of Madyan, he found there a group of men watering and besides them two women keeping back their flocks. He said: What is the matter with you? They said: We cannot water until the shepherds take back, and our father is a very old man. So he watered their flocks for them.</em></p><p>And then Musa, exhausted and alone, sat down in the shade and made one of the most beautiful duas in the Quran: <em>My Lord, indeed I am, for whatever good You would send down to me, in need.</em></p><p>He did not ask for food. He did not ask for a home. He did not ask for safety. He simply said: <em>I am in need of whatever good You send me.</em> He did not specify the good. He did not name what he wanted. He simply acknowledged his need — and trusted Allah to fill it.</p>",
+      "dialogue": {
+        "arabic": "رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+        "translation": "My Lord, indeed I am, for whatever good You would send down to me, in need.",
+        "ref": "Al-Qasas 28:24"
+      },
+      "didYouKnow": "This dua — <em>rabbi inni lima anzalta ilayya min khayrin faqīr</em> — is one of the most concise and powerful in the Quran. It is the dua of a man with nothing left except trust. And within hours, Allah answered it with a home, a family, and a decade of peace.",
+      "takeaway": "The dua of the desperate person, made sincerely, is answered in ways they cannot imagine."
+    },
+    {
+      "num": 9,
+      "title": "The Ten Years",
+      "thumb": "ten",
+      "body": "<p>The daughters went home and told their father what had happened. And their father — Shuayb, according to many classical scholars — sent one of them back to invite Musa to his home. She approached Musa and said: <em>Indeed, my father invites you that he may reward you for having watered our flocks for us.</em></p><p>Musa came. He told the old man his story — his upbringing in the palace, the killing, the flight, his arrival in Madyan. The old man listened. And then he made Musa an offer: <em>Indeed, I wish to marry one of these two daughters of mine to you, on condition that you serve me for eight years. But if you complete ten, it will be of your own good will. And I do not wish to place upon you any difficulty. You will find me, if Allah wills, of the righteous.</em></p><p>Musa accepted. He married the daughter. And he stayed in Madyan for ten years — as a shepherd.</p><p>Think about what this meant. Musa had been raised in the palace of the most powerful king on earth. He had been educated in the finest schools of Egypt. He had grown up as a prince. And now, in the prime of his life, he was herding sheep in the desert for ten years.</p><p>But this was not a demotion. This was the education of a prophet. The sheep taught him patience. The desert taught him solitude. The years taught him humility. And the man who entered Madyan as a fugitive with nothing would leave it as the prophet who would challenge Fir'awn himself.</p>",
+      "dialogue": {
+        "arabic": "إِنِّي أُرِيدُ أَنْ أُنكِحَكَ إِحْدَى ابْنَتَيَّ هَاتَيْنِ عَلَىٰ أَن تَأْجُرَنِي ثَمَانِيَ حِجَجٍ ۖ فَإِنْ أَتْمَمْتَ عَشْرًا فَمِنْ عِندِكَ",
+        "translation": "Indeed, I wish to marry one of these two daughters of mine to you, on condition that you serve me for eight years. But if you complete ten, it will be of your own good will.",
+        "ref": "Al-Qasas 28:27"
+      },
+      "didYouKnow": "Musa served the full ten years — the optional maximum. The classical scholars say this was a sign of his character: he did not take the minimum, but gave generously. And the man who gave generously with his time would later give generously with his prophethood.",
+      "takeaway": "The years you spend in the wilderness are not wasted — they are the years Allah uses to shape you."
+    },
+    {
+      "num": 10,
+      "title": "The Burning Bush",
+      "thumb": "bush",
+      "body": "<p>After ten years, Musa's contract with Shuayb was fulfilled. He set out with his family to return to Egypt — perhaps to visit his mother, perhaps to see what had become of his people. And on the way, in the wilderness of Sinai, he saw something that would change the course of world history.</p><p>The Quran says: <em>And when he had completed the term and was travelling with his family, he perceived from the direction of the mount a fire. He said to his family: Stay here; indeed, I have perceived a fire. Perhaps I will bring you from there some information or a burning ember so that you may warm yourselves.</em></p><p>A fire. On a mountain. In the desert night. Musa — a shepherd, a father, a fugitive — thought it might be a source of warmth or information. He left his family and went to investigate.</p><p>And when he arrived, the fire spoke.</p><p>The Quran says: <em>But when he came to it, he was called: Blessed is He who is in the fire and whoever is around it. And exalted is Allah, Lord of the worlds. O Musa, indeed I am Allah, there is no deity except Me, so worship Me and establish prayer for My remembrance.</em></p><p>This was the moment Allah spoke to Musa directly — not through an angel, not through a dream, but with a voice from the fire. Musa had been called. Not as a prince. Not as a fugitive. But as a prophet of Allah, sent to the most powerful tyrant on earth.</p>",
+      "dialogue": {
+        "arabic": "فَلَمَّا أَتَاهَا نُودِيَ مِن شَاطِئِ الْوَادِ الْأَيْمَنِ فِي الْبُقْعَةِ الْمُبَارَكَةِ مِنَ الشَّجَرَةِ أَن يَا مُوسَىٰ إِنِّي أَنَا اللَّهُ رَبُّ الْعَالَمِينَ",
+        "translation": "But when he came to it, he was called from the right side of the valley, from the blessed tree: O Musa, indeed I am Allah, Lord of the worlds.",
+        "ref": "Al-Qasas 28:30"
+      },
+      "didYouKnow": "The place is called <em>Ṭuwā</em> in the Quran — the sacred valley in the Sinai desert where Allah spoke directly to Musa. It is one of the most honoured places in revelation, and it marks the beginning of Musa's prophethood.",
+      "takeaway": "Allah can call you from a fire, from a bush, from anywhere — He is not limited by the means He uses."
+    },
+    {
+      "num": 11,
+      "title": "The Two Signs",
+      "thumb": "signs",
+      "body": "<p>Allah gave Musa two signs to prove his prophethood to Fir'awn. The first was his staff: <em>And what is that in your right hand, O Musa? He said: It is my staff; I lean upon it, and I bring down leaves for my sheep, and I have other uses for it. He said: Throw it down, O Musa. So he threw it down, and thereupon it was a snake, moving swiftly.</em></p><p>The staff Musa had used to herd sheep for ten years became a living serpent. And then, when Allah commanded him to pick it up again, the serpent returned to being a staff. A staff in his hand, a serpent in his hand — same object, different reality.</p><p>The second sign was his hand: <em>And draw your hand into your bosom; it will come out white without disease — another sign. That We may show you of Our greater signs.</em> Musa's hand, drawn to his chest and pulled out, glowed white with a light that was not leprosy, not paint, not natural — a miracle of Allah.</p><p>Two signs. One for the earth — a serpent from wood. One for the sky — a hand lit from within. Together, they were the credentials of a prophet sent to challenge a king.</p><p>And then the mission: <em>Go to Fir'awn. Indeed, he has transgressed.</em></p><p>Musa's response reveals his humanity: <em>My Lord, expand for me my breast, and ease for me my task. And untie the knot from my tongue that they may understand my speech. And appoint for me a minister from my family — Harun, my brother. Strengthen through him my back, and let him share my task.</em></p><p>Even a prophet, called by Allah, was afraid. He asked for courage. He asked for eloquence. He asked for his brother. Because the mission was enormous, and Musa knew it.</p>",
+      "dialogue": {
+        "arabic": "اذْهَبْ إِلَىٰ فِرْعَوْنَ إِنَّهُ طَغَىٰ ۝ قَالَ رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي",
+        "translation": "Go to Fir'awn. Indeed, he has transgressed. He said: My Lord, expand for me my breast, and ease for me my task.",
+        "ref": "Ta-Ha 20:24-26"
+      },
+      "didYouKnow": "Musa's dua for his chest to be expanded — <em>rabbi ishraḥ lī ṣadrī</em> — has become one of the most beloved duas in Islamic tradition. It is recited by believers before difficult conversations, exams, speeches, and any task requiring courage.",
+      "takeaway": "It is not weakness to ask Allah for help with your fears — it is the sunnah of the prophets."
+    },
+    {
+      "num": 12,
+      "title": "The Mission to Fir'awn",
+      "thumb": "mission",
+      "body": "<p>Musa and Harun went to Fir'awn. They entered his court — the same court where Musa had been raised as a prince — as men of God, sent to call the king to tawhid. The Quran describes the entrance with the calm of revelation: <em>Then they both went to him and said: Indeed, we are messengers of your Lord, so send with us the Children of Israel and do not torment them. We have come to you with a sign from your Lord. And peace will be upon he who follows the guidance.</em></p><p>Look at the phrasing. They did not begin with a threat. They did not begin with an accusation. They said: <em>We are messengers of your Lord.</em> Not 'the Lord' — <em>your</em> Lord. They addressed Fir'awn as a servant of Allah, even though he claimed to be a god. They appealed to his humanity before his tyranny.</p><p>Then the request: <em>Send with us the Children of Israel.</em> Not 'believe in our message.' Not 'give up your throne.' The first demand was freedom for the enslaved. The political came before the theological. Musa and Harun knew that a king's beliefs could wait — but a nation's freedom could not.</p><p>And then the warning: <em>We have come to you with a sign from your Lord. And peace will be upon he who follows the guidance.</em> The sign was offered. The path was shown. The choice was Fir'awn's.</p><p>This is the model of dawah to the powerful — respect before confrontation, an offer before a threat, an invitation before a warning. Musa and Harun did not come to humiliate Fir'awn. They came to save him. But they also knew that if he refused, the consequences would be his own.</p>",
+      "dialogue": {
+        "arabic": "فَأْتِيَا فِرْعَوْنَ فَقُولَا إِنَّا رَسُولُ رَبِّ الْعَالَمِينَ ۝ أَنْ أَرْسِلْ مَعَنَا بَنِي إِسْرَائِيلَ",
+        "translation": "So go to him and say: Indeed, we are messengers of the Lord of the worlds — that you send the Children of Israel with us.",
+        "ref": "Ash-Shu'ara 26:16-17"
+      },
+      "didYouKnow": "Musa and Harun were commanded by Allah to speak gently to Fir'awn: <em>And speak to him with gentle speech, that perhaps he may be reminded or fear Allah.</em> (Ta-Ha 20:44) Even to the greatest tyrant, the Islamic method of dawah is gentleness — because the goal is to save the soul, not to defeat the person.",
+      "takeaway": "Even the worst tyrant is treated with dignity — because dawah aims at the heart, not the ego."
+    },
+    {
+      "num": 13,
+      "title": "The Sorcerers' Duel",
+      "thumb": "duel",
+      "body": "<p>Fir'awn refused. He dismissed the signs. He called Musa a madman, a liar, a magician. And he challenged Musa to a public contest — a duel of miracles against magic — on the day of a great festival, when the whole of Egypt would be watching.</p><p>The sorcerers came. They came from all over Egypt — the finest magicians of the land, experts in illusions and trickery. They came with ropes and staffs, weapons of deception. And when they threw them down, the Quran says: <em>They bewitched the eyes of the people and struck them with awe, and produced a great magic.</em></p><p>The ropes slithered. The staffs moved. The crowd gasped. Even Musa, the prophet of Allah, felt fear in his heart — the Quran says: <em>And Musa felt within himself a fear.</em></p><p>But Allah spoke to him: <em>Do not fear. Indeed, it is you who is superior. And throw what is in your right hand; it will swallow up what they have fabricated. What they have fabricated is only a magician's trick, and the magician will not succeed wherever he is.</em></p><p>Musa threw his staff. It became a serpent — and began to devour the sorcerers' staffs and ropes, one by one, until nothing was left of their illusion. The trick was over. The truth was standing in the arena, in the shape of a serpent that had eaten all their lies.</p><p>And the sorcerers — the professional magicians who knew exactly how magic worked — realised that what they had just seen was not magic. It could not be magic. It was something beyond. And they fell into prostration: <em>We believe in the Lord of the worlds — the Lord of Musa and Harun.</em></p>",
+      "dialogue": {
+        "arabic": "فَأَلْقَىٰ مُوسَىٰ عَصَاهُ فَإِذَا هِيَ تَلْقَفُ مَا يَأْفِكُونَ",
+        "translation": "So Musa threw down his staff, and immediately it devoured what they were falsifying.",
+        "ref": "Al-A'raf 7:117"
+      },
+      "didYouKnow": "The sorcerers knew magic. They had studied it all their lives. And that is exactly why they recognised that Musa's miracle was not magic — it was beyond any trick, any illusion, any art. Their knowledge was their testimony.",
+      "takeaway": "When the truth arrives, the experts in falsehood are often the first to recognise it — and the last to be able to deny it."
+    },
+    {
+      "num": 14,
+      "title": "The Sorcerers' Faith",
+      "thumb": "sorcerers",
+      "body": "<p>Fir'awn's response to the sorcerers' conversion was pure rage. He could not believe that his own magicians — men he had hired, men who had eaten from his table, men who had served his court — had just bowed to the God of Musa. He accused them of conspiracy: <em>You believed in him before I gave you permission. Indeed, this is a plot you have conspired in the city to drive out its people — but you are going to know.</em></p><p>And then he delivered his threat: <em>I will surely cut off your hands and your feet on opposite sides, and I will surely crucify you all.</em></p><p>Read that threat slowly. Cutting hands and feet on opposite sides was a punishment designed to maximise pain and humiliation — it was one of the cruellest methods of execution in the ancient world. Crucifixion was reserved for the worst criminals. And Fir'awn was threatening his own sorcerers — the very men who had just lost him a public duel.</p><p>And the sorcerers — newly guided, newly converted, newly aware of the truth — responded with one of the most extraordinary statements of faith in the Quran: <em>Indeed, we will return to our Lord. Indeed, we have believed in our Lord that He may forgive us our sins and what you compelled us to do of magic. And Allah is better and more enduring. Indeed, it is he who comes to his Lord as a criminal — indeed, for him is Hell. And it is he who comes to Him as a believer having done righteousness — for those there will be the highest of stations.</em></p><p>Look at their logic. They had been magicians their whole lives. Their whole careers were built on deception. They had just been publicly humiliated — their magic shattered by Musa's staff. And now they were being threatened with the worst death imaginable. And yet, in that exact moment, they did not waver. They did not negotiate. They did not ask for mercy. They simply said: <em>We will return to our Lord.</em></p><p>This is the power of conviction. When the heart has truly seen the truth, no threat can shake it. The sorcerers knew that what they had seen in Musa's staff was real — and they knew that Musa's Lord was real — and nothing Fir'awn could do would change that.</p><p>May Allah grant us the certainty of those sorcerers. Ameen.</p>",
+      "dialogue": {
+        "arabic": "قَالُوا لَن نُّؤْثِرَكَ عَلَىٰ مَا جَاءَنَا مِنَ الْبَيِّنَاتِ وَالَّذِي فَطَرَنَا ۖ فَاقْضِ مَا أَنتَ قَاضٍ ۖ إِنَّمَا تَقْضِي هَٰذِهِ الْحَيَاةَ الدُّنْيَا",
+        "translation": "They said: Never will we prefer you over what has come to us of clear proofs and over He who created us. So decree whatever you are to decree. You can only decree for this worldly life.",
+        "ref": "Ta-Ha 20:72"
+      },
+      "didYouKnow": "The Prophet ﷺ said that the sorcerers of Fir'awn were the first to be martyred for their faith in the Muslim tradition — they died for belief in the One God before the Children of Israel had even left Egypt.",
+      "takeaway": "True certainty cannot be threatened — because the one who has seen the truth knows that no tyrant can take it away."
+    },
+    {
+      "num": 15,
+      "title": "The Exodus",
+      "thumb": "exodus",
+      "body": "<p>After the duel, Fir'awn's arrogance only grew. He doubled down. He tightened the enslavement of the Children of Israel. He refused every warning. And Allah sent, one by one, a series of signs — the plagues that Egypt would never forget.</p><p>The Quran says: <em>And certainly We seized the people of Fir'awn with years of drought and scarcity of fruits, that perhaps they might remember. But when there came to them a good thing, they said: This is for us. But if evil came to them, they attributed it to Musa and those with him. Unquestionably, their evil omen is with Allah.</em></p><p>The signs came in waves. Some say they were the flood, locusts, insects, frogs, blood, and other calamities. Every time, Fir'awn would beg Musa to pray for relief — and promise to release the Israelites. Every time, once relieved, he would break his word.</p><p>Until the final sign came — a sign that no one could explain, no one could undo, and no one could survive. And Fir'awn knew that the day of reckoning had arrived.</p><p>And then, finally, Allah commanded Musa and the Children of Israel to leave. Under the darkness of night, hundreds of thousands of slaves — men, women, and children — walked out of Egypt, following the prophet who had been sent to free them. This was the Exodus — one of the most significant events in human history, and the moment that defined the people of Israel for all time.</p>",
+      "dialogue": {
+        "arabic": "وَأَوْحَيْنَا إِلَىٰ مُوسَىٰ وَأَخِيهِ أَن تَبَوَّآ لِقَوْمِكُمَا بِمِصْرَ بُيُوتًا وَاجْعَلُوا بُيُوتَكُمْ قِبْلَةً وَأَقِيمُوا الصَّلَاةَ ۗ وَبَشِّرِ الْمُؤْمِنِينَ",
+        "translation": "And We inspired to Musa and his brother: Settle your people in Egypt in houses and make your houses places of worship and establish prayer. And give good tidings to the believers.",
+        "ref": "Yunus 10:87"
+      },
+      "didYouKnow": "The Exodus of the Children of Israel from Egypt is one of the most documented events in scripture — mentioned in the Quran, the Bible, and the Torah. The Muslim tradition holds that approximately 600,000 Israelites left Egypt with Musa.",
+      "takeaway": "The exodus from slavery to freedom is one of the greatest archetypes in human history — and it was led by a prophet of Allah."
+    },
+    {
+      "num": 16,
+      "title": "The Splitting of the Sea",
+      "thumb": "splitting",
+      "body": "<p>Fir'awn pursued them. With his armies, his chariots, his soldiers — the most powerful military force in the world at that time. The Israelites reached the shore of the Red Sea. Behind them, Fir'awn's armies approached. In front of them, the water. There was nowhere to go.</p><p>The Quran says the Israelites cried out: <em>Indeed, we are overtaken!</em> They had walked out of Egypt with Musa on a promise — and now the sea was before them and the army was behind them. They were trapped. The promise seemed broken.</p><p>And Musa said the words that would echo through every generation of believers: <em>No! Indeed, my Lord is with me; He will guide me.</em></p><p>Four words. <em>My Lord is with me.</em> Not 'I hope He is with me.' Not 'perhaps He will help.' Just: <em>My Lord is with me.</em> Musa had been promised deliverance. He had seen miracle after miracle. He knew that Allah had not brought them out of Egypt to die at the shore of the sea.</p><p>And Allah commanded: <em>Strike the sea with your staff.</em> Musa struck. And the sea split. Not into two halves — but into twelve, according to some narrations, so that each tribe of Israel could walk on dry ground without seeing the others. The water stood like walls on either side, and the wind dried the seabed. And hundreds of thousands of Israelites walked through the sea.</p><p>This is one of the greatest miracles in history. A sea parted. A nation walked through. And the very waters that had carried the bodies of their slaughtered children now made a path for their deliverance.</p>",
+      "dialogue": {
+        "arabic": "قَالَ كَلَّا ۖ إِنَّ مَعِيَ رَبِّي سَيَهْدِينِ ۝ فَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنِ اضْرِب بِّعَصَاكَ الْبَحْرَ ۖ فَانفَلَقَ فَكَانَ كُلُّ فِرْقٍ كَالطَّوْدِ الْعَظِيمِ",
+        "translation": "He said: No! Indeed, my Lord is with me; He will guide me. So We inspired to Musa: Strike the sea with your staff. And it split, and each part was like a great mountain.",
+        "ref": "Ash-Shu'ara 26:62-63"
+      },
+      "didYouKnow": "The Prophet ﷺ said that when Musa struck the sea, the waters split in twelve paths — one for each tribe of Israel. This is why the Exodus became the defining narrative of Jewish identity for all generations.",
+      "takeaway": "When you have been promised the help of Allah, no sea is too deep, no army is too powerful."
+    },
+    {
+      "num": 17,
+      "title": "The Drowning of Fir'awn",
+      "thumb": "drowning",
+      "body": "<p>Fir'awn saw the sea part. He saw the Israelites walking through on dry ground. And he did not hesitate. He ordered his armies to follow them into the sea — thinking that if Musa could walk through, so could he.</p><p>The Israelites reached the far shore. And then, by the command of Allah, the waters closed. The walls of water crashed together. Fir'awn and his entire army were swallowed by the sea.</p><p>And in his very last moment, with the water closing over his head, Fir'awn cried out: <em>I believe that there is no deity except Him whom the Children of Israel have believed in, and I am of the Muslims.</em></p><p>Twenty years of arrogance. Twenty years of claiming divinity. Twenty years of enslaving the believers. And now, in the final second of his life, Fir'awn tried to accept Islam.</p><p>And Allah refused.</p><p>The Quran says: <em>Now? And you had disobeyed before and were of the corrupters. So today We will save you in your body, that you may be a sign to those who come after you. Indeed, many among the people are heedless of Our signs.</em></p><p>Fir'awn's last-minute faith was rejected — because a deathbed conversion is not accepted when it comes only from fear, not from sincerity. But Allah preserved his body as a sign. The very corpse of the tyrant was kept, as a witness to every generation that passed by the shores of Egypt. And today, some scholars identify his mummified body as the one mentioned in the Quran.</p><p>The lesson is severe: sincerity cannot be faked. Not before Allah. Not even at the last second.</p>",
+      "dialogue": {
+        "arabic": "آلْآنَ وَقَدْ عَصَيْتَ قَبْلُ وَكُنتَ مِنَ الْمُفْسِدِينَ ۝ فَالْيَوْمَ نُنَجِّيكَ بِبَدَنِكَ لِتَكُونَ لِمَنْ خَلْفَكَ آيَةً",
+        "translation": "Now? And you had disobeyed before and were of the corrupters. So today We will save you in your body, that you may be a sign to those who come after you.",
+        "ref": "Yunus 10:91-92"
+      },
+      "didYouKnow": "The body of Fir'awn is one of the most discussed archaeological artifacts in Islamic tradition. The Quran explicitly says his body was preserved as a sign — and some scholars have identified the mummy of Merneptah or Ramesses II as a possible candidate.",
+      "takeaway": "The mercy of Allah is offered in every moment of life — but it must be sought while the breath is still in you."
+    },
+    {
+      "num": 18,
+      "title": "The Forty Nights",
+      "thumb": "forty",
+      "body": "<p>After the deliverance, Musa led his people into the wilderness of Sinai. And there, Allah called him to a mountain — Mount Tur — for a private meeting. The Quran says: <em>And We made an appointment with Musa for thirty nights, and We completed them with ten more, so the term of his Lord was completed in forty nights.</em></p><p>Musa was called to receive the Torah — the tablets of Allah's guidance, the law for the Children of Israel. He left his brother Harun in charge of the people and went up the mountain. Forty nights of communion with Allah. Forty nights of instruction. Forty nights of divine presence.</p><p>But while Musa was on the mountain, something terrible happened below. The people — left for just a few weeks without their prophet — began to drift. A man called al-Samiri gathered them, melted their gold jewellery, and cast it into the shape of a calf. And then he told them: <em>This is your god and the god of Musa, but he forgot.</em></p><p>The very people who had been saved by a sea splitting before their eyes began to worship a golden statue. The very people who had walked through dry ground not two months earlier were now bowing to metal. This is the nature of faith without continuous nourishment — it can be lost in forty days.</p><p>And when Musa returned, carrying the tablets of Allah, he found his people prostrating to a calf. The prophet — the one who had spoken with Allah — had been away for forty days, and in that time his entire nation had forgotten.</p>",
+      "dialogue": {
+        "arabic": "وَوَاعَدْنَا مُوسَىٰ ثَلَاثِينَ لَيْلَةً وَأَتْمَمْنَاهَا بِعَشْرٍ فَتَمَّ مِيقَاتُ رَبِّهِ أَرْبَعِينَ لَيْلَةً",
+        "translation": "And We made an appointment with Musa for thirty nights, and We completed them with ten more, so the term of his Lord was completed in forty nights.",
+        "ref": "Al-A'raf 7:142"
+      },
+      "didYouKnow": "The Torah was given to Musa on Mount Sinai during these forty nights. The Quran calls this the <em>furqān</em> — the criterion — because it distinguished between truth and falsehood for the Children of Israel. The fasting of forty days in many traditions traces back to Musa's example.",
+      "takeaway": "Faith must be continuously nourished — it can be lost in the time you least expect."
+    },
+    {
+      "num": 19,
+      "title": "The Golden Calf",
+      "thumb": "calf",
+      "body": "<p>Musa came down the mountain carrying the tablets of Allah. And he found his people worshipping a golden calf. His reaction was violent — the Quran says: <em>And when Musa returned to his people, angry and grieved, he said: How evil is that by which you have replaced me after me. Were you impatient over the matter of your Lord? And he threw down the tablets and seized his brother by the head, dragging him toward him.</em></p><p>Look at the two emotions: <em>angry and grieved.</em> Angry at the betrayal. Grieved at what they had done to themselves. Musa did not just rage — he mourned. The prophet who had just spent forty nights in the presence of Allah was now watching his people bow to a metal animal.</p><p>Harun tried to explain: <em>O son of my mother, indeed the people overpowered me and were about to kill me. So do not let the enemies gloat over me, and do not put me with the wrongdoing people.</em> Harun had done his best. He had warned them. He had refused to participate. But the people had been too strong for him.</p><p>Musa let go of his brother. He had been angry at the wrong person. And then he turned to the actual culprits: the worshippers of the calf. And he delivered the punishment that the law required.</p><p>But notice the deeper lesson: the people had not been tricked by an outsider. The calf was made by one of their own — al-Samiri. And they had not been tricked by clever arguments — they had simply wanted something tangible to worship. When the guidance of Allah became invisible — Allah is unseen, His prophet was away — they replaced it with something they could see.</p><p>This is the eternal temptation of faith. We want something we can touch, something we can see, something that does not require trust in the unseen. And that is exactly what shirk is — the refusal to trust the unseen, and the desire to worship what we can see and control.</p>",
+      "dialogue": {
+        "arabic": "وَلَمَّا رَجَعَ مُوسَىٰ إِلَىٰ قَوْمِهِ غَضْبَانَ أَسِفًا قَالَ بِئْسَمَا خَلَفْتُمُونِي مِن بَعْدِي",
+        "translation": "And when Musa returned to his people, angry and grieved, he said: How evil is that by which you have replaced me after me.",
+        "ref": "Al-A'raf 7:150"
+      },
+      "didYouKnow": "The punishment for worshipping the calf was severe — the Quran says the worshippers were ordered to repent by killing each other, or were otherwise struck by fire from the sky. The severity was because the crime was not just personal — it was the betrayal of the very nation that had just been saved by Allah.",
+      "takeaway": "The worst shirk is not the worship of something false — it is the refusal to trust what you cannot see."
+    },
+    {
+      "num": 20,
+      "title": "The Request to See Allah",
+      "thumb": "see-allah",
+      "body": "<p>Of all the events of Musa's prophethood, one stands out as the most extraordinary. After the calf was destroyed and the people repented, Musa turned to Allah with a request that no prophet had ever made before him and no prophet has ever made since: <em>My Lord, show me, that I may look at You.</em></p><p>He wanted to see Allah. Not a vision, not a dream, not a sign — he wanted to look at his Lord directly. Musa, who had spoken with Allah in the fire, who had received the tablets on the mountain, who had walked through the sea — he wanted more. He wanted to <em>see</em>.</p><p>Allah's response was both tender and terrifying: <em>You will not see Me, but look at the mountain; if it should remain in place, then you will see Me.</em></p><p>Musa looked at the mountain. And the Quran says: <em>But when his Lord appeared to the mountain, He made it collapse to dust, and Musa fell down unconscious.</em></p><p>The mountain did not merely shake — it was crushed to dust. The mountain was so small before the manifestation of Allah that it was destroyed by a fraction of His presence. And Musa, seeing just the beginning of this, fell unconscious.</p><p>When he woke, he said: <em>Exalted are You! I have repented to You, and I am the first of the believers.</em> He had wanted to see Allah — and Allah showed him that even a mountain cannot survive His presence. Musa had received his answer: the veil between creation and Creator is not a limitation of vision — it is a limitation of existence. To see Allah directly would be to cease to exist.</p><p>The Prophet ﷺ said that Musa asked to see Allah and was shown the destruction of the mountain. And the Prophet ﷺ also said that no human being will see Allah until the Day of Judgement — because to see Him would be to be consumed by Him.</p>",
+      "dialogue": {
+        "arabic": "رَبِّ أَرِنِي أَنظُرْ إِلَيْكَ ۚ قَالَ لَن تَرَانِي وَلَٰكِنِ انظُرْ إِلَى الْجَبَلِ فَإِنِ اسْتَقَرَّ مَكَانَهُ فَسَوْفَ تَرَانِي ۚ فَلَمَّا تَجَلَّىٰ رَبُّهُ لِلْجَبَلِ جَعَلَهُ دَكًّا وَخَرَّ مُوسَىٰ صَعِقًا",
+        "translation": "My Lord, show me, that I may look at You. He said: You will not see Me, but look at the mountain; if it should remain in place, then you will see Me. But when his Lord appeared to the mountain, He made it collapse to dust, and Musa fell down unconscious.",
+        "ref": "Al-A'raf 7:143"
+      },
+      "didYouKnow": "The Muslim tradition holds that no human being has ever seen Allah with their eyes in this world. In the next world, the believers will be honoured with the vision of Allah — the greatest reward of Paradise. Musa's request was granted only as a lesson: no eye can bear His presence here.",
+      "takeaway": "Even the greatest of Allah's creation cannot bear the sight of Him — how small we truly are before our Lord."
+    },
+    {
+      "num": 21,
+      "title": "The Rock and the Twelve Springs",
+      "thumb": "springs",
+      "body": "<p>After the death of the previous generation of Israelites, Musa led the survivors into the wilderness. And in the desert, the people began to complain — they were thirsty, they were hungry, they were tired. They wanted the food of Egypt. They wanted water. They wanted ease.</p><p>And so Musa made dua to Allah. And Allah commanded him: <em>Strike the stone with your staff.</em> Musa struck the rock, and twelve springs gushed out — one for each tribe of Israel. Every tribe could drink without crowding. Every family had its own water. In the middle of the desert, Allah provided.</p><p>And then Allah sent them manna and salwa — food from the sky and quail from the sea — to feed them every day. The Quran says: <em>And We shaded you with clouds and sent down to you manna and quails: Eat from the good things which We have provided for you.</em></p><p>Water from a rock. Food from the sky. Shade from the clouds. This was provision beyond anything the Israelites had ever experienced in Egypt — even as slaves they had at least had bread and vegetables. And yet the Quran records them saying: <em>O Musa, we cannot endure one kind of food. So call upon your Lord to produce for us of what the earth grows — its herbs, cucumbers, garlic, lentils, and onions.</em></p><p>They had manna from the sky and they wanted onions. They had quails from Paradise and they wanted garlic. They had springs from the desert and they wanted the vegetables of Egypt. This is the nature of the human soul that has not yet learned gratitude — it is never satisfied with what it has, and it always imagines that the past was better than the present.</p><p>Musa replied with the pain of a prophet watching his own people reject the mercy of their Lord: <em>Would you exchange that which is better for that which is lower? Go down to a city; you will have what you have asked for.</em> And the Quran records the result: they were humbled and impoverished — until they learned to be grateful.</p>",
+      "dialogue": {
+        "arabic": "وَإِذِ اسْتَسْقَىٰ مُوسَىٰ لِقَوْمِهِ فَقُلْنَا اضْرِب بِّعَصَاكَ الْحَجَرَ ۖ فَانفَجَرَتْ مِنْهُ اثْنَتَا عَشْرَةَ عَيْنًا",
+        "translation": "And when Musa prayed for water for his people, We said: Strike the stone with your staff. So there gushed from it twelve springs.",
+        "ref": "Al-Baqarah 2:60"
+      },
+      "didYouKnow": "The manna and quails that Allah sent down to the Israelites in the desert are remembered in the Quran as one of the most significant signs of Allah's provision. The lesson was clear: when you trust Allah, He provides from where you do not expect.",
+      "takeaway": "The soul that is not grateful for what Allah gives will always find something else to complain about."
+    },
+    {
+      "num": 22,
+      "title": "The Man Who Would Be a Prophet",
+      "thumb": "al-khidr",
+      "body": "<p>The Quran tells the story of Musa's journey with a mysterious servant of Allah — known in Islamic tradition as al-Khidr. Musa was told that he could learn from this man, and he set out with him on a journey that would reveal one of the deepest lessons of prophethood.</p><p>Musa promised to be patient. And then, over the course of the journey, al-Khidr did three things that Musa could not understand:</p><p><strong>One:</strong> He scuttled a boat that belonged to poor fishermen — removing a plank and damaging the vessel they depended on for their livelihood.</p><p><strong>Two:</strong> He killed a young boy — stabbing him without explanation or cause.</p><p><strong>Three:</strong> He repaired a wall in a city whose people had refused them hospitality — building it up without being asked.</p><p>Musa objected to each of these actions. Each time, al-Khidr reminded him: <em>Did I not tell you that you would not be able to have patience with me?</em> Finally, on the third objection, al-Khidr explained: <em>This is the parting between me and you. But I will inform you of the interpretation of that about which you could not have patience.</em></p><p>And then he explained:</p><p><strong>The boat:</strong> There was a king who seized every good boat by force. By damaging it, al-Khidr had saved it from being stolen. The fishermen would repair it and keep their livelihood.</p><p><strong>The boy:</strong> The boy would have grown into a disbeliever who would have caused his righteous parents great suffering. Allah took him before he could corrupt them — and gave them a better child instead.</p><p><strong>The wall:</strong> The wall belonged to two orphan boys in the city. Underneath it was a treasure their righteous father had buried for them. The wall had to be repaired so the treasure could be preserved until they came of age.</p><p>Each act of al-Khidr — however cruel or strange it appeared — was done for a reason Musa could not see. And the deepest lesson of this story is one that every believer must learn: <em>Allah's wisdom is beyond our understanding.</em> The things that look like disasters may be mercies. The things that look like mercies may be disasters. Only Allah knows.</p><p>The Prophet ﷺ said: <em>How wonderful is the affair of the believer. If good befalls him, he is grateful and it is good for him. If evil befalls him, he is patient and it is good for him.</em> This is the standard of faith — to trust the wisdom of Allah even when His wisdom is beyond our sight.</p>",
+      "dialogue": {
+        "arabic": "وَمَا فَعَلْتُهُ عَنْ أَمْرِي ۚ ذَٰلِكَ تَأْوِيلُ مَا لَمْ تَسْطِع عَّلَيْهِ صَبْرًا",
+        "translation": "And I did it not of my own accord. That is the interpretation of that about which you could not have patience.",
+        "ref": "Al-Kahf 18:82"
+      },
+      "didYouKnow": "The story of Musa and al-Khidr is preserved in Surah Al-Kahf — the same surah that Muslims are encouraged to recite every Friday. The entire surah is about trusting Allah's wisdom when it is beyond our understanding.",
+      "takeaway": "What looks like a disaster from your limited vision may be the greatest mercy from Allah's infinite wisdom."
+    },
+    {
+      "num": 23,
+      "title": "The Desire to See Allah",
+      "thumb": "desire",
+      "body": "<p>Among the many stories of Musa, one more carries a lesson for every believer. Musa was a prophet who spoke with Allah, saw miracles, and led a nation. And yet he still wanted more. When he asked to see Allah, he was told it was impossible in this world — but his desire was not rebuked. It was honoured.</p><p>The Muslim scholars say this teaches us something beautiful: <em>the desire to know Allah is not a weakness — it is the highest form of worship.</em> Musa asked for what he could not have, but his asking was itself a form of love. He wanted to be closer. He wanted to see more. He wanted to know his Lord better.</p><p>And Allah — instead of telling Musa to be content with what he had — showed him a glimpse. When the mountain was destroyed, Musa saw the effect of Allah's presence. He did not see Allah directly, but he saw the power of Allah in a way that no other prophet had ever seen. His desire was rewarded — not with what he asked for, but with something greater.</p><p>The Prophet ﷺ said: <em>Everyone who loves to meet Allah — Allah loves to meet him. And everyone who hates to meet Allah — Allah hates to meet him.</em> This is the meaning of Musa's desire. He did not just obey Allah; he wanted to see him. He did not just trust Allah; he wanted to be near him.</p><p>This is the goal of every believer's life — not just to obey Allah, but to long for Him. Not just to accept His decree, but to desire His presence.</p>",
+      "dialogue": {
+        "arabic": "وَلَقَدْ أُوحِيَ إِلَيْكَ وَإِلَى الَّذِينَ مِن قَبْلِكَ لَئِنْ أَشْرَكْتَ لَيَحْبَطَنَّ عَمَلُكَ وَلَتَكُونَنَّ مِنَ الْخَاسِرِينَ",
+        "translation": "And it was already revealed to you and to those before you that if you should associate anything with Allah, your work would surely become worthless, and you would surely be among the losers.",
+        "ref": "Az-Zumar 39:65"
+      },
+      "didYouKnow": "Musa is called <em>Kalīmullāh</em> — 'the one who spoke with Allah' — because Allah spoke to him directly, without an intermediary angel. This is the highest honour given to any prophet before Muhammad ﷺ.",
+      "takeaway": "The desire to know Allah more deeply is not a weakness — it is the highest form of worship."
+    },
+    {
+      "num": 24,
+      "title": "The Journey to the Promised Land",
+      "thumb": "promised",
+      "body": "<p>After years in the wilderness, Musa led the Children of Israel to the borders of the Promised Land — the land of Canaan, the land that Allah had promised to the descendants of Ibrahim. But when the spies returned from scouting the land, they reported that it was filled with giants, with fortified cities, with powerful armies.</p><p>The people rebelled. The Quran says they said to Musa: <em>O Musa, indeed there is a people of exceeding strength in it. Indeed, we will never enter it until they leave it. So if they leave, then we will enter.</em></p><p>Two righteous men among them tried to encourage them: <em>Enter upon them through the gate, for when you have entered it, you will be predominant. And rely upon Allah, if you should be believers.</em> But the people refused. They wanted a miracle to solve their problem — and when the miracle meant they had to fight, they backed down.</p><p>And they said the words that would cost them their entry into the Promised Land: <em>O Musa, indeed we will never enter it as long as they are in it. So go, you and your Lord, and fight. Indeed, we will remain here sitting.</em></p><p>Read that carefully. They told a prophet of Allah: <em>Go, you and your Lord, and fight.</em> They did not just refuse — they mocked. And Musa, disappointed but faithful, replied: <em>My Lord, I have no control except over myself and my brother, so separate us from the defiantly disobedient people.</em></p><p>And Allah's judgment came: <em>Indeed, it will be forbidden to them for forty years, during which they will wander in the earth. So do not grieve over the defiantly disobedient people.</em></p><p>Forty years of wandering. A whole generation would die in the desert, never entering the Promised Land. Only their descendants would enter — because their lack of faith had forfeited the reward of their ancestors.</p>",
+      "dialogue": {
+        "arabic": "قَالُوا يَا مُوسَىٰ إِنَّا لَن نَّدْخُلَهَا أَبَدًا مَّا دَامُوا فِيهَا ۖ فَاذْهَبْ أَنتَ وَرَبُّكَ فَقَاتِلَا إِنَّا هَاهُنَا قَاعِدُونَ",
+        "translation": "They said: O Musa, indeed we will never enter it as long as they are in it. So go, you and your Lord, and fight. Indeed, we will remain here sitting.",
+        "ref": "Al-Ma'idah 5:24"
+      },
+      "didYouKnow": "The forty years of wandering were a punishment for a specific generation — the Israelites who had left Egypt with Musa. Their descendants — the next generation, born in the wilderness — would be the ones to enter the Promised Land. The next generation inherited a promise their parents had failed to claim.",
+      "takeaway": "Lack of faith can forfeit blessings that were within your reach — but the promise of Allah continues to the next generation."
+    },
+    {
+      "num": 25,
+      "title": "The Legacy of Musa",
+      "thumb": "legacy",
+      "body": "<p>Musa died in the wilderness. Some narrations say he was 120 years old. He had seen the plagues of Egypt, walked through the split sea, spoken with Allah on the mountain, received the Torah, led his people for decades, and never entered the Promised Land. He died on the outskirts, looking at the land he had been forbidden to enter.</p><p>And yet, the Prophet ﷺ told us something extraordinary. On the night of the Isra and Mi'raj — the Prophet's night journey to the heavens — he met Musa on the sixth heaven. And Musa welcomed him, and then gave him advice. When the Prophet ﷺ was told by Allah that his Ummah had to pray fifty times a day, Musa told him: <em>Go back and ask your Lord to reduce it. Your Ummah will not be able to bear it.</em> The Prophet ﷺ went back, and the prayers were reduced — again and again — until they became five.</p><p>Even in the heavens, Musa was still advising prophets. Even after his death, he was still caring for the Ummah. This is the legacy of Musa — a prophet who did not just deliver his own message, but who helped every prophet who came after him.</p><p>Musa is called <em>Kalīmullāh</em> — the one who spoke with Allah. He is the most mentioned prophet in the Quran. His story is the most detailed. His miracles were the most public. And yet his humility, his patience, and his concern for his people never wavered.</p><p>The Quran honours him in a single verse: <em>And mention in the Book, Musa. Indeed, he was chosen, and he was a messenger and a prophet.</em> Chosen. Messenger. Prophet. Three titles. One man. A legacy that has lasted thousands of years and will last until the end of time.</p><p>May Allah make us among those who speak the truth as Musa spoke it — and among those who are patient as Musa was patient. Ameen.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ مُوسَىٰ ۖ إِنَّهُ كَانَ مُخْلَصًا وَكَانَ رَسُولًا نَّبِيًّا",
+        "translation": "And mention in the Book, Musa. Indeed, he was chosen, and he was a messenger and a prophet.",
+        "ref": "Maryam 19:51"
+      },
+      "didYouKnow": "Musa's tomb is said to be in the wilderness — some narrations say near the Dead Sea, others say near Mount Nebo in Jordan. The Prophet ﷺ said that if he were near Musa's grave, he would show the Companions where it was — but Allah did not reveal the location, keeping Musa's final resting place a secret.",
+      "takeaway": "The legacy of a prophet is not measured in years, but in the effect his message has on every generation that follows."
+    }
+  ]
+},    {
+      "id": "harun",
+      "num": 15,
+      "name": "Harun",
+      "arabic": "هارون",
+      "subtitle": "10 Lessons",
+      "image": "images/prophet-15-harun.webp",
+      "tier": "standard",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Brother of Musa",
+          "thumb": "brother",
+          "body": "<p>Harun (AS) was the elder brother of Musa. He was born before the great slaughter began — some narrations say before Fir'awn's decree, others say the decree was suspended briefly after his birth. Either way, he was raised in the same family of Israelite slaves, under the same oppression, in the same era of fear.</p><p>The Quran honours him with a phrase that captures the closeness of the brothers: <em>And We gave him, out of Our mercy, his brother Harun as a prophet.</em> Two brothers, raised in the same house, sent to the same tyrant, working side by side. This is a relationship unique in the history of prophethood — two brothers who were both prophets at the same time, sent to the same nation with the same mission.</p><p>Harun's name means 'mountain' in Hebrew — a fitting name for a man who would become the steady support for his brother's trembling heart. When Musa asked Allah for a helper, he asked specifically for Harun: <em>And appoint for me a minister from my family — Harun, my brother. Strengthen through him my back, and let him share my task.</em></p><p>And Allah accepted the dua. Not because Harun was strong or eloquent in himself — but because Musa asked. The duas of the prophets are answered. And the answer to Musa's dua was his own brother.</p>",
+          "dialogue": {
+            "arabic": "وَوَهَبْنَا لَهُ مِن رَّحْمَتِنَا أَخَاهُ هَارُونَ نَبِيًّا",
+            "translation": "And We gave him, out of Our mercy, his brother Harun as a prophet.",
+            "ref": "Maryam 19:53"
+          },
+          "didYouKnow": "Harun is one of only two prophets in the Quran who was sent alongside another prophet at the same time — the other being Lut, who was with Ibrahim in his early years. But Musa and Harun were sent to the same tyrant, at the same time, with the same mission — a unique partnership in prophethood.",
+          "takeaway": "The best support for a mission is a companion who shares the burden with you."
+        },
+        {
+          "num": 2,
+          "title": "The Gift of Speech",
+          "thumb": "speech",
+          "body": "<p>When Musa was called by Allah at the burning bush, he made a series of requests. The last and most important was for his brother: <em>And my brother Harun — he is more eloquent than me in speech, so send him with me as a helper to confirm me. Indeed, I fear that they will deny me.</em></p><p>Musa was not asking for his brother because he did not trust Allah. He was asking because he knew his own limitations. Musa had a speech impediment — some narrations say he had burned his tongue as a child, testing the coals that Fir'awn had put before him. He feared that he would not be able to communicate clearly with the tyrant.</p><p>And Allah accepted the request: <em>We will strengthen your arm through your brother, and We will give you both authority, so they will not reach you. By Our signs, you and those who follow you will be the predominant.</em></p><p>This is the beauty of the Muslim approach to leadership. Musa did not pretend to be something he was not. He did not hide his weakness. He did not try to compensate for his speech impediment. He simply asked Allah to provide what he lacked — and Allah answered through his brother.</p><p>The Ummah works the same way. No single person has every gift. Some are eloquent, some are wise, some are strong, some are patient. The mission is completed when the gifts are combined — and the best community is the one that recognises its own gaps and fills them with the strengths of others.</p>",
+          "dialogue": {
+            "arabic": "وَأَخِي هَارُونُ هُوَ أَفْصَحُ مِنِّي لِسَانًا فَأَرْسِلْهُ مَعِيَ رِدْءًا يُصَدِّقُنِي ۖ إِنِّي أَخَافُ أَن يُكَذِّبُونِ",
+            "translation": "And my brother Harun — he is more eloquent than me in speech, so send him with me as a helper to confirm me. Indeed, I fear that they will deny me.",
+            "ref": "Al-Qasas 28:34"
+          },
+          "didYouKnow": "The scholars note that Harun's eloquence was specifically noted by Allah in the Quran: <em>Harun was granted eloquence by his Lord.</em> This was his gift — and he used it in service of his brother's mission. His eloquence was not for personal fame, but for the sake of Allah.",
+          "takeaway": "Your gift is not for your own glory — it is for the completion of the mission."
+        },
+        {
+          "num": 3,
+          "title": "The Partnership",
+          "thumb": "partnership",
+          "body": "<p>The partnership of Musa and Harun is one of the most beautiful examples of cooperation in the Quran. They were not rivals. They did not compete for prominence. They did not have separate followings. They were two brothers, one mission, one Lord — bound together by blood and faith.</p><p>Allah describes their mission in a single verse: <em>So go to him and say: Indeed, we are messengers of the Lord of the worlds — that you send the Children of Israel with us.</em> Notice: <em>We are messengers</em>, plural. Not 'I am a messenger and my brother is my helper.' Both brothers were messengers. Both carried the same authority. Both spoke for Allah.</p><p>And when they spoke to Fir'awn, they did not speak as one superior and one inferior. They spoke as equals, each honoured by Allah with prophethood. Harun was not a lesser prophet because he was sent as a support to his brother. He was a full prophet in his own right — honoured, sent, and accountable before Allah for his own mission.</p><p>This is the model for every partnership in the Ummah. Whether it is a married couple, a business partnership, a team of dawah workers, or a group of activists — the strongest partnerships are those where each person is fully honoured for their role, and the mission is bigger than any individual ego.</p>",
+          "dialogue": {
+            "arabic": "فَأْتِيَاهُ فَقُولَا إِنَّا رَسُولَا رَبِّكَ فَأَرْسِلْ مَعَنَا بَنِي إِسْرَائِيلَ وَلَا تُعَذِّبْهُمْ",
+            "translation": "So go to him and say: Indeed, we are messengers of your Lord, so send the Children of Israel with us and do not torment them.",
+            "ref": "Ta-Ha 20:47"
+          },
+          "didYouKnow": "The Quran mentions Musa and Harun together in over 20 verses. They are the most frequently paired prophets in revelation. Their partnership is a standing example of how two believers can carry one mission without competing for the lead.",
+          "takeaway": "The mission is bigger than any individual — the one who serves the mission is honoured regardless of their role."
+        },
+        {
+          "num": 4,
+          "title": "The Stand Before Fir'awn",
+          "thumb": "stand",
+          "body": "<p>When Musa and Harun entered Fir'awn's court, they were in the lion's den. Fir'awn had declared himself a god. He had ordered the murder of Israelite babies. He had enslaved an entire nation. And two shepherds — one with a speech impediment, one summoned as a support — were about to confront him.</p><p>But they did not speak with arrogance. They did not speak with threats. The Quran says they spoke with the gentleness commanded by Allah: <em>And speak to him with gentle speech, that perhaps he may be reminded or fear Allah.</em></p><p>Look at that command carefully. Allah — who had every right to demand fury — commanded gentleness. <em>Speak to him with gentle speech.</em> Not with anger. Not with contempt. Not with the language of superiority. With <em>gentle speech.</em> Because the goal was not to defeat Fir'awn — it was to save him.</p><p>And notice the reasoning: <em>that perhaps he may be reminded or fear Allah.</em> The door was left open for Fir'awn's repentance. Even after all his crimes — the murder of children, the enslavement of a nation, the claim to divinity — the door to forgiveness was still open. The purpose of the confrontation was not condemnation. It was invitation.</p><p>This is the Islamic approach to the powerful. We do not approach them with rage — we approach them with clarity. We do not seek to humiliate them — we seek to save them. We do not speak to them as enemies — we speak to them as brothers who have lost their way.</p>",
+          "dialogue": {
+            "arabic": "فَقُولَا لَهُ قَوْلًا لَّيِّنًا لَّعَلَّهُ يَتَذَكَّرُ أَوْ يَخْشَىٰ",
+            "translation": "And speak to him with gentle speech, that perhaps he may be reminded or fear Allah.",
+            "ref": "Ta-Ha 20:44"
+          },
+          "didYouKnow": "This verse — commanding gentleness even toward Fir'awn — is one of the most striking statements in the Quran. If gentleness was commanded for the worst tyrant in revelation, then no person we meet is beyond the reach of a gentle dawah.",
+          "takeaway": "The harder the heart, the softer the approach — because the goal is to save, not to defeat."
+        },
+        {
+          "num": 5,
+          "title": "The Ministry at the Mountain",
+          "thumb": "ministry",
+          "body": "<p>When Musa was called to Mount Tur for forty nights to receive the Torah, he left Harun in charge of the Children of Israel. The Quran records his instruction: <em>And Musa said to his brother Harun: Replace me among my people, and do good and do not follow the way of the corrupters.</em></p><p>Harun accepted. He stood before the people — not as a prophet sent by Allah, but as a brother serving his brother's mission. He was the caretaker of a nation. He was responsible for their guidance while Musa was away.</p><p>But the people did not stay faithful. Within days, al-Samiri began building the golden calf. He gathered the people, convinced them to hand over their jewellery, and cast the idol. And then he told them: <em>This is your god and the god of Musa, but he forgot.</em></p><p>Harun stood against them. The Quran records his warning: <em>O my people, you are only being tested by it. Indeed, your Lord is the Most Merciful, so follow me and obey my order.</em> He called them to the truth. He warned them of the danger. He stood against the corruption — with his words, with his presence, with his faith.</p><p>But the people did not listen. And Harun, standing alone against a crowd, did not resort to violence. He did not fight them. He did not leave them. He waited for his brother to return — and he bore witness against them with his words. This was his ministry: to be faithful when everyone else had fallen.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ مُوسَىٰ لِأَخِيهِ هَارُونَ اخْلُفْنِي فِي قَوْمِي وَأَصْلِحْ وَلَا تَتَّبِعْ سَبِيلَ الْمُفْسِدِينَ",
+            "translation": "And Musa said to his brother Harun: Replace me among my people, and do good and do not follow the way of the corrupters.",
+            "ref": "Al-A'raf 7:142"
+          },
+          "didYouKnow": "Harun's failure to stop the golden calf worship was not a failure of faith — it was a limitation of power. The people were too many, and they had turned against him. His duty was to stand firm and to speak the truth — which he did. Sometimes faithfulness means refusing to participate, even when you cannot stop what is happening.",
+          "takeaway": "Faithfulness is not always measured by the outcome — sometimes it is measured by your refusal to join the crowd."
+        },
+        {
+          "num": 6,
+          "title": "The Anger of Musa",
+          "thumb": "anger",
+          "body": "<p>When Musa returned from the mountain with the tablets of Allah, he found his people worshipping the golden calf. His first reaction was rage — and his anger fell on his brother. The Quran says: <em>And he seized his brother by the head, dragging him toward him.</em></p><p>Musa was so overwhelmed by the sight of the idol worship that he grabbed Harun — his own brother, his appointed deputy — and dragged him. He did not ask questions. He did not pause to understand. He simply reacted.</p><p>And Harun — patient, faithful, exhausted from weeks of trying to hold the people back — said: <em>O son of my mother, indeed the people overpowered me and were about to kill me. So do not let the enemies gloat over me, and do not put me with the wrongdoing people.</em></p><p>Look at how Harun defended himself. He did not fight back. He did not accuse Musa of unfairness. He did not say, 'I tried my best and you are blaming me?' He simply explained the situation — respectfully, gently, as a younger brother to an older one — and asked Musa not to humiliate him before their enemies.</p><p>And Musa released him. The Quran says: <em>He said: My Lord, forgive me and my brother and admit us into Your mercy, for You are the Most Merciful of the merciful.</em> In that moment, Musa's anger turned to dua. He did not stay angry with Harun. He asked Allah to forgive them both. Because a true believer does not let anger fester — it turns to prayer.</p>",
+          "dialogue": {
+            "arabic": "قَالَ ابْنَ أُمَّ إِنَّ الْقَوْمَ اسْتَضْعَفُونِي وَكَادُوا يَقْتُلُونَنِي فَلَا تُشْمِتْ بِيَ الْأَعْدَاءَ",
+            "translation": "He said: O son of my mother, indeed the people overpowered me and were about to kill me. So do not let the enemies gloat over me.",
+            "ref": "Al-A'raf 7:150"
+          },
+          "didYouKnow": "The title <em>ibna umm</em> — 'son of my mother' — is a tender, affectionate phrase that Arab brothers used to soften their speech. Harun was reminding Musa of their shared mother — of the bond that no dispute could break.",
+          "takeaway": "Even when you are wrongly accused, answer with gentleness — and let the anger turn into dua."
+        },
+        {
+          "num": 7,
+          "title": "The Dua of Musa",
+          "thumb": "musa-dua",
+          "body": "<p>After the anger passed, Musa turned to Allah with one of the tenderest duas in the Quran: <em>My Lord, forgive me and my brother and admit us into Your mercy, for You are the Most Merciful of the merciful.</em></p><p>Look at what Musa asked for. He did not ask for victory over his people. He did not ask for the destruction of the calf-worshippers. He did not ask for vindication of his own anger. He asked for <em>forgiveness for himself and his brother.</em> He asked for mercy. He asked for admission into the mercy of Allah.</p><p>This is the pattern of a prophet's response to grief. When the moment of anger passes, when the emotions settle, the heart returns to its Lord — with humility, with tenderness, with a request that includes everyone. Musa did not ask for himself alone; he asked for himself and his brother. The younger brother who had failed to stop the people, and the older brother who had wrongly accused him — both were in the same dua.</p><p>This is the mark of a leader who has been trained by Allah. A lesser man would have stayed angry. A lesser man would have held a grudge. A lesser man would have asked Allah for revenge. But Musa, after decades of prophethood, knew that the answer to every problem was the same: return to Allah, ask for forgiveness, and ask for His mercy.</p><p>The Quran says: <em>And Moses chose from his people seventy men for Our appointment.</em> After the calf incident, after the anger, after the dua, Musa continued to lead his people — and he continued to bring them back to Allah.</p>",
+          "dialogue": {
+            "arabic": "قَالَ رَبِّ اغْفِرْ لِي وَلِأَخِي وَأَدْخِلْنَا فِي رَحْمَتِكَ ۖ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+            "translation": "He said: My Lord, forgive me and my brother and admit us into Your mercy, for You are the Most Merciful of the merciful.",
+            "ref": "Al-A'raf 7:151"
+          },
+          "didYouKnow": "This dua — asking forgiveness for himself and his brother — is a model for how brothers should reconcile. Musa did not ask for forgiveness for himself only; he asked for both. Reconciliation begins with including the other person in your dua.",
+          "takeaway": "When you ask Allah for forgiveness, include those you have wronged — or who have wronged you."
+        },
+        {
+          "num": 8,
+          "title": "The Support of the Ummah",
+          "thumb": "support",
+          "body": "<p>Throughout Musa's mission, Harun was the steady presence. He was not the one who spoke with Allah on the mountain — but he was the one who held the people together while his brother was away. He was not the one who received the Torah — but he was the one who helped carry the burden of leading a nation.</p><p>The Quran honours him with a phrase that is rarely given to any prophet: <em>And We gave him, out of Our mercy, his brother Harun as a prophet.</em> Harun was not just Musa's brother — he was <em>given</em> to Musa. A gift from Allah. A mercy. A support that Musa had not earned but had been granted by his Lord.</p><p>This is the meaning of the phrase <em>out of Our mercy.</em> Harun was not a reward for Musa's good deeds — he was a mercy from Allah. Every support person in a mission — every helper, every spouse, every companion, every team member — is a mercy from Allah. We do not earn them; we receive them.</p><p>The Prophet ﷺ said: <em>A believer to another believer is like a building whose parts support one another.</em> And he interlaced his fingers to illustrate. Harun was that support for Musa. Every community needs its Haruns — the ones who do not lead from the front, but who hold the mission together from behind.</p>",
+          "dialogue": {
+            "arabic": "الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا",
+            "translation": "A believer to another believer is like a building whose parts support one another.",
+            "ref": "Sahih al-Bukhari & Muslim"
+          },
+          "didYouKnow": "Harun is described in the Quran as a <em>wazīr</em> — a minister, a support, a helper — specifically granted to Musa as an act of divine mercy. This is one of the highest honours given to any companion of any prophet.",
+          "takeaway": "Every community needs its Musas — the ones who lead — and its Haruns — the ones who support. Both are honoured by Allah."
+        },
+        {
+          "num": 9,
+          "title": "The Death of Harun",
+          "thumb": "death",
+          "body": "<p>Harun died before his brother Musa. Some narrations say he passed away in the wilderness, near Mount Hor, after decades of service alongside his brother. Musa buried him — one prophet burying another — and returned to lead the Children of Israel alone.</p><p>Even in death, Harun's role as a support never ended. The Prophet ﷺ told us on the night of the Isra and Mi'raj that he met Harun in the heavens — and he described him as a man of medium height, with a beard that fell below his chest. Harun welcomed him, and they greeted each other as brothers.</p><p>Look at the intimacy of that greeting. Two prophets, separated by thousands of years and thousands of miles, meeting in the heavens as brothers. Harun — who had spent his life supporting his brother Musa — was still welcoming prophets. The role of a supporter never ends. The one who helped the mission continues to serve the mission, even in the next world.</p><p>The Prophet ﷺ also said that Harun's death came just before Musa's — and that on the day Musa died, he was still remembered as the prophet who had been supported by his brother. The legacy of Harun was not his own prophethood alone — it was the partnership that had carried it.</p>",
+          "dialogue": {
+            "arabic": "وَلَقَدْ آتَيْنَا مُوسَى وَهَارُونَ الْفُرْقَانَ وَضِيَاءً وَذِكْرًا لِّلْمُتَّقِينَ",
+            "translation": "And We had certainly given Musa and Harun the Criterion and a light and a reminder for the righteous.",
+            "ref": "Al-Anbiya 21:48"
+          },
+          "didYouKnow": "The Quran mentions Musa and Harun together as recipients of the Torah — the <em>Furqān</em> (Criterion) that distinguished between truth and falsehood. They were honoured together, because they served together. The revelation belonged to both of them as a shared trust.",
+          "takeaway": "The one who serves the mission shares in the reward of the mission."
+        },
+        {
+          "num": 10,
+          "title": "The Legacy of Harun",
+          "thumb": "legacy",
+          "body": "<p>Harun is remembered in Islam as the prophet of support — the brother who stood beside his brother, the deputy who held the people together, the man whose name means 'mountain' because he was a mountain of steadiness for his mission.</p><p>The Quran honours him with the same title given to his brother: <em>We gave them the Criterion and a light and a reminder for the righteous.</em> The revelation was not just Musa's — it was Harun's too. The guidance was not just for Musa to deliver — it was for Harun to reinforce. And the reward was not just for Musa to receive — it was for Harun to share.</p><p>The Prophet ﷺ said: <em>Every prophet has a companion, and my companion is Harun.</em> This was said in a context of friendship and support — the Prophet ﷺ was expressing his love for the model of brotherhood that Musa and Harun had established. Every leader needs a supporter. Every mission needs a partner. Every community needs its Haruns.</p><p>The greatest lesson of Harun's life is that you do not need to be the one in front to be honoured by Allah. You do not need to be the one who speaks to lead the people. You do not need to be the one with the miracles to share in the blessings. You just need to be faithful. You just need to stand firm. You just need to support the mission with everything you have — and Allah will honour you as He honoured Harun.</p><p>May Allah make us among the supporters of His mission — and honour us as He honoured the brother of Musa. Ameen.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ مُوسَىٰ لِأَخِيهِ هَارُونَ اخْلُفْنِي فِي قَوْمِي",
+            "translation": "And Musa said to his brother Harun: Replace me among my people.",
+            "ref": "Al-A'raf 7:142"
+          },
+          "didYouKnow": "Harun is the only prophet in the Quran whose mission is described specifically as being given by Allah as a mercy to another prophet. His prophethood was not just for himself — it was a gift from Allah to Musa.",
+          "takeaway": "To support a mission is to share in its reward — the one who holds the mission together is as honoured as the one who leads it."
+        }
+      ]
+    }
+  ]
+}
