@@ -3990,4 +3990,21 @@ document.addEventListener('click', async (e) => {
   }
 }, true);
 setTimeout(updateFridayToggleVisual, 500);
-setTimeout(scheduleFridayReminder, 4000);
+setTimeout(scheduleFridayReminder, 4000);if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      console.log('SW registered', reg.scope);
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        if(!newWorker) return;
+        newWorker.addEventListener('statechange', () => {
+          if(newWorker.state === 'installed' && navigator.serviceWorker.controller){
+            showToast('New version available — refresh to update');
+          }
+        });
+      });
+    }).catch((err) => {
+      console.log('SW registration failed', err);
+    });
+  });
+}
