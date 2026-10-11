@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "arabic": "جمعة مباركة",
+    "title": "Jumu'ah Mubarak",
+    "sub": "The best day of the week"
+  },
+  "reciter": {
+    "id": "saoodshuraym",
+    "name": "Saud Al-Shuraim",
+    "folder": "Saood_ash-Shuraym_128kbps"
+  },
+  "surah": 18,
+  "sunnahs": [
+    { "id":"ghusl", "icon":"water", "title":"Take a bath (Ghusl)", "sub":"Purify yourself before Jumu'ah", "note":"The Prophet ﷺ said: \"Whoever performs Ghusl on Friday and then goes to the mosque, it is an expiation for him until the next Friday.\"" },
+    { "id":"clothes", "icon":"shirt", "title":"Wear your best clothes", "sub":"Dress well and clean", "note":"It is a day of gathering — present yourself beautifully before Allah. Clean clothes are a sign of respect for the occasion." },
+    { "id":"siwak", "icon":"tooth", "title":"Use Siwak / clean your teeth", "sub":"Fresh breath honours the gathering", "note":"The Prophet ﷺ encouraged the Siwak on Fridays especially. Cleanliness of the mouth is part of the sunnah of the day." },
+    { "id":"perfume", "icon":"drop", "title":"Apply perfume (men)", "sub":"A recommended sunnah on Friday", "note":"For men attending the mosque, perfume is recommended on Friday. Women should not wear perfume when going out to the masjid." },
+    { "id":"early", "icon":"clock", "title":"Go early to the masjid", "sub":"Arrive before the khutbah", "note":"The earlier you go, the greater the reward. The angels sit at the door of the mosque recording each arrival in order." },
+    { "id":"kahf", "icon":"book", "title":"Recite Surah Al-Kahf", "sub":"A light between the two Fridays", "note":"The Prophet ﷺ said: \"Whoever recites Surah Al-Kahf on Friday, a light will shine for him between the two Fridays.\" (al-Hakim)" },
+    { "id":"salawat", "icon":"star", "title":"Send abundant salawat", "sub":"Presented to the Prophet ﷺ on Friday", "note":"The Prophet ﷺ said: \"Send abundant salawat upon me on Friday, for it is presented to me.\" (Abu Dawud)" }
+  ],
+  "duas": [
+    { "arabic":"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَىٰ نَبِيِّنَا مُحَمَّدٍ", "translit":"Allahumma salli wa sallim 'ala nabiyyina Muhammad", "en":"O Allah, send prayers and peace upon our Prophet Muhammad.", "ref":"Recited abundantly on Friday" },
+    { "arabic":"اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا", "translit":"Allahumma aghithna, Allahumma aghithna, Allahumma aghithna", "en":"O Allah, send us rain. O Allah, send us rain. O Allah, send us rain.", "ref":"The Prophet ﷺ sought rain on this day" },
+    { "arabic":"اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي", "translit":"Allahumma innaka 'Afuwwun tuhibbul-'afwa fa'fu 'anni", "en":"O Allah, You are Most Forgiving, and You love forgiveness; so forgive me.", "ref":"Recite frequently — especially in the last hour before Maghrib" },
+    { "arabic":"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ", "translit":"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa Huwa 'ala kulli shay'in qadir", "en":"There is no god but Allah alone, He has no partner. His is the dominion and His is the praise, and He is Able to do all things.", "ref":"A treasure — recite 10× in the morning and evening" }
+  ],
+  "duaHourNote": "There is an hour on Friday when no Muslim asks Allah for anything except that He grants it. Many scholars say it is the last hour before Maghrib — so make dua between Asr and Maghrib.",
+  "khutbahEtiquette": [
+    "Stay silent during the khutbah — even telling someone to be quiet breaks it.",
+    "Do not step over people to reach a seat.",
+    "Sit close to the imam if there is space.",
+    "Listen attentively — no phone, no conversation.",
+    "If you arrive during the khutbah, sit at the nearest place and listen."
+  ],
+  "khutbahNote": "The khutbah is not a lecture — it is a reminder. Treat it as an act of worship."
+}
