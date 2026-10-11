@@ -4321,4 +4321,131 @@ function initProphetSync(){
     if(u) loadProphetProgressCloud();
   });
 }
-initProphetSync();
+initProphetSync();// ═══════════════════════════════════════════════════════════════
+// AUTH — sign in / sign up / sign out modal
+// ═══════════════════════════════════════════════════════════════
+
+let authMode = 'login';
+
+function openAuthModal(mode){
+  authMode = mode || 'login';
+  updateAuthModalUI();
+  const el = document.getElementById('auth-overlay');
+  if(el) el.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  const errEl = document.getElementById('auth-error');
+  if(errEl) errEl.textContent = '';
+  const form = document.getElementById('auth-form');
+  if(form) form.reset();
+}
+
+function closeAuthModal(){
+  const el = document.getElementById('auth-overlay');
+  if(el) el.classList.remove('show');
+  document.body.style.overflow = '';
+  const errEl = document.getElementById('auth-error');
+  if(errEl) errEl.textContent = '';
+}
+
+function updateAuthModalUI(){
+  const isLogin = authMode === 'login';
+  const title = document.getElementById('auth-modal-title');
+  const sub = document.getElementById('auth-modal-sub');
+  const nameInput = document.getElementById('auth-name');
+  const passInput = document.getElementById('auth-password');
+  const submit = document.getElementById('auth-submit');
+  const switchText = document.getElementById('auth-switch-text');
+  const switchBtn = document.getElementById('auth-switch-btn');
+  if(title) title.textContent = isLogin ? 'Sign in' : 'Create account';
+  if(sub) sub.textContent = isLogin ? "Welcome back to Al-Jumu'ah" : 'Join the Ummah on Al-Jumu\'ah';
+  if(nameInput) nameInput.style.display = isLogin ? 'none' : 'block';
+  if(passInput) passInput.setAttribute('autocomplete', isLogin ? 'current-password' : 'new-password');
+  if(submit) submit.textContent = isLogin ? 'Sign in' : 'Create account';
+  if(switchText) switchText.textContent = isLogin ? 'New here?' : 'Already have an account?';
+  if(switchBtn) switchBtn.textContent = isLogin ? 'Create an account' : 'Sign in';
+}
+
+function toggleAuthMode(){
+  authMode = authMode === 'login' ? 'signup' : 'login';
+  updateAuthModalUI();
+  const errEl = document.getElementById('auth-error');
+  if(errEl) errEl.textContent = '';
+}
+
+document.addEventListener('submit', async (e) => {
+  if(e.target.id !== 'auth-form') return;
+  e.preventDefault();
+  if(!window.firebase || !firebase.apps.length){
+    const errEl = document.getElementById('auth-error');
+    if(errEl) errEl.textContent = 'Auth not ready. Please wait a moment.';
+    return;
+  }
+  const auth = firebase.auth();
+  const emailEl = document.getElementById('auth-email');
+  const passEl = document.getElementById('auth-password');
+  const nameEl = document.getElementById('auth-name');
+  const errEl = document.getElementById('auth-error');
+  const submitBtn = document.getElementById('auth-submit');
+  const email = emailEl ? emailEl.value.trim() : '';
+  const password = passEl ? passEl.value : '';
+  const name = nameEl ? nameEl.value.trim() : '';
+  if(errEl) errEl.textContent = '';
+  if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Please wait...'; }
+  try {
+    if(authMode === 'login'){
+      await auth.signInWithEmailAndPassword(email, password);
+    } else {
+      const cred = await auth.createUserWithEmailAndPassword(email, password);
+      if(name && cred.user) await cred.user.updateProfile({ displayName: name });
+    }
+    closeAuthModal();
+    showToast(authMode === 'login' ? 'Welcome back' : 'Account created');
+  } catch(err){
+    let msg = err.message || 'Something went wrong.';
+    if(err.code === 'auth/email-already-in-use') msg = 'That email is already registered.';
+    else if(err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') msg = 'Wrong email or password.';
+    else if(err.code === 'auth/user-not-found') msg = 'No account found with that email.';
+    else if(err.code === 'auth/weak-password') msg = 'Password must be at least 6 characters.';
+    else if(err.code === 'auth/invalid-email') msg = 'Please enter a valid email.';
+    if(errEl) errEl.textContent = msg;
+  } finally {
+    if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = authMode === 'login' ? 'Sign in' : 'Create account'; }
+  }
+});
+
+async function signOutUser(){
+  if(!window.firebase || !firebase.apps.length) return;
+  try {
+    await firebase.auth().signOut();
+    showToast('Signed out');
+  } catch(e){ console.log('sign out failed', e); }
+}
+
+// Wire the Settings "Sign in" row + account status
+document.addEventListener('click', (e) => {
+  const row = e.target.closest('.setting-row[data-action="signin"]');
+  if(!row) return;
+  e.preventDefault();
+  e.stopPropagation();
+  if(window.__currentUser){
+    if(confirm('Sign out of your account?')) signOutUser();
+  } else {
+    openAuthModal('login');
+  }
+}, true);
+
+// Update the account row text on auth state change
+if(window.firebase){
+  firebase.auth().onAuthStateChanged((u) => {
+    const statusEl = document.getElementById('account-status');
+    const row = document.querySelector('.setting-row[data-action="signin"]');
+    const label = row ? row.querySelector('.setting-label') : null;
+    if(u){
+      if(statusEl) statusEl.textContent = u.displayName || u.email || 'Signed in';
+      if(label) label.textContent = 'Sign out';
+    } else {
+      if(statusEl) statusEl.textContent = 'Not signed in';
+      if(label) label.textContent = 'Sign in';
+    }
+  });
+}
