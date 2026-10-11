@@ -3131,4 +3131,129 @@ async function loadContent(key){
     CONTENT[key] = await res.json();
     return CONTENT[key];
   }catch(e){ console.error('loadContent failed', key, e); return null; }
+}let taharahState = { view: 'home', sectionIdx: 0, stepIdx: 0 };
+const TAHARAH_ICONS = {
+  drop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 12a6 6 0 1 1-12 0c0-5 6-12 6-12z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+  water:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 12a6 6 0 1 1-12 0c0-5 6-12 6-12z"/><path d="M5 15c0 4 3 6.5 7 6.5s7-2.5 7-6.5"/></svg>',
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  niyyah:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-11a7 7 0 0 1 14 0c0 6.65-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  hands:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V4a1.5 1.5 0 0 1 3 0v6"/><path d="M11 10V3a1.5 1.5 0 0 1 3 0v7"/><path d="M14 10V4.5a1.5 1.5 0 0 1 3 0V12c0 5-3 9-7 9s-7-3-7-8V9a1.5 1.5 0 0 1 3 0v3"/></svg>',
+  mouth:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c2-3 5-5 8-5s6 2 8 5"/><path d="M4 12c2 3 5 5 8 5s6-2 8-5"/><path d="M9 12v2"/></svg>',
+  nose:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v9"/><path d="M9 12c0 3 1.5 5 3 5s3-2 3-5"/><path d="M8 21h8"/></svg>',
+  face:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01"/><path d="M8 15c1.2 1 2.4 1.5 4 1.5s2.8-.5 4-1.5"/></svg>',
+  arms:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l4-16"/><path d="M21 20l-4-16"/><path d="M7 4h10"/><path d="M9 12h6"/></svg>',
+  head:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>',
+  feet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v9a3 3 0 0 0 3 3h1a3 3 0 0 1 3 3v3"/><path d="M4 21h5"/><path d="M15 21h5"/></svg>',
+  body:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8"/><path d="M8 22l4-7 4 7"/><path d="M8 11h8"/></svg>',
+  earth:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20"/><path d="M4 17c0-3 3-6 8-6s8 3 8 6"/><path d="M8 14v3M12 13v4M16 14v3"/></svg>',
+  info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+};
+async function renderTaharah(){
+  const data = await loadContent('taharah-salah');
+  if(!data){ setLearnContent('<div class="modal-error"><strong>Could not load</strong>Please check your connection.</div>'); return; }
+  taharahState = { view: 'home', sectionIdx: 0, stepIdx: 0 };
+  setLearnTitle('Taharah · Purification');
+  drawTaharahView();
 }
+function drawTaharahView(){
+  const data = CONTENT['taharah-salah'].taharah;
+  if(taharahState.view === 'home'){
+    setLearnTitle('Taharah · Purification');
+    const h = data.hero;
+    setLearnContent(`
+      <div class="trad-hero">
+        <div class="trad-hero-frame">${TAHARAH_ICONS.drop}</div>
+        <div class="trad-hero-title">${h.arabic}</div>
+        <div class="trad-hero-sub">${h.sub}</div>
+        <div class="trad-hero-desc">"${h.desc}"</div>
+      </div>
+      <div class="trad-section-list">
+        ${data.sections.map((s,i)=>`
+          <div class="trad-section-card" data-tsec="${i}">
+            <div class="trad-num">${s.num}</div>
+            <div class="trad-section-body">
+              <div class="trad-section-title">${s.title}</div>
+              <div class="trad-section-sub">${s.sub}</div>
+            </div>
+            <div class="trad-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </div>
+        `).join('')}
+      </div>
+    `);
+    document.querySelectorAll('[data-tsec]').forEach(el => {
+      el.addEventListener('click', () => {
+        taharahState.view = 'section';
+        taharahState.sectionIdx = parseInt(el.dataset.tsec);
+        taharahState.stepIdx = 0;
+        drawTaharahView();
+      });
+    });
+    LEARN_BACK_HANDLERS['taharah'] = () => { closeLearnOverlay(); return true; };
+  } else {
+    const sec = data.sections[taharahState.sectionIdx];
+    const step = sec.steps[taharahState.stepIdx];
+    const total = sec.steps.length;
+    const pct = ((taharahState.stepIdx + 1) / total) * 100;
+    setLearnTitle('Taharah · ' + sec.title);
+    setLearnContent(`
+      <div class="trad-step-header">
+        <div class="trad-step-label">Step ${taharahState.stepIdx + 1} of ${total}</div>
+        <div class="trad-step-count">${sec.num}</div>
+      </div>
+      <div class="trad-step-progress">
+        <div class="trad-step-progress-fill" style="width:${pct}%"></div>
+      </div>
+      <div class="trad-step-illustration">${TAHARAH_ICONS[step.icon] || TAHARAH_ICONS.drop}</div>
+      <div class="trad-step-arabic">${step.arabic}</div>
+      <div class="trad-step-title">${step.title}</div>
+      <div class="trad-step-body">${step.body}</div>
+      ${step.warn ? `<div class="trad-step-warn"><div class="trad-step-warn-icon">!</div><div class="trad-step-warn-body"><strong>Common mistake</strong>${step.warn}</div></div>` : ''}
+      <div class="trad-step-nav">
+        <button class="trad-step-nav-btn" id="trad-prev" ${taharahState.stepIdx === 0 ? 'disabled' : ''}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Prev
+        </button>
+        ${taharahState.stepIdx === total - 1
+          ? `<button class="trad-step-nav-btn primary" id="trad-finish">Finish<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>`
+          : `<button class="trad-step-nav-btn primary" id="trad-next">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>`
+        }
+      </div>
+      ${taharahState.stepIdx === total - 1 ? `<div class="trad-complete"><span class="trad-complete-ar">بارك الله فيك</span>Section complete</div>` : ''}
+    `);
+    const prevBtn = document.getElementById('trad-prev');
+    const nextBtn = document.getElementById('trad-next');
+    const finishBtn = document.getElementById('trad-finish');
+    if(prevBtn) prevBtn.addEventListener('click', () => {
+      if(taharahState.stepIdx > 0){ taharahState.stepIdx--; drawTaharahView(); }
+    });
+    if(nextBtn) nextBtn.addEventListener('click', () => {
+      if(taharahState.stepIdx < total - 1){ taharahState.stepIdx++; drawTaharahView(); }
+    });
+    if(finishBtn) finishBtn.addEventListener('click', () => {
+      taharahState.view = 'home';
+      taharahState.sectionIdx = 0;
+      taharahState.stepIdx = 0;
+      drawTaharahView();
+    });
+    LEARN_BACK_HANDLERS['taharah'] = () => {
+      if(taharahState.view === 'section' && taharahState.stepIdx > 0){
+        taharahState.stepIdx--;
+        drawTaharahView();
+      } else if(taharahState.view === 'section'){
+        taharahState.view = 'home';
+        taharahState.sectionIdx = 0;
+        taharahState.stepIdx = 0;
+        drawTaharahView();
+      } else {
+        closeLearnOverlay();
+      }
+      return true;
+    };
+  }
+}
+document.querySelectorAll('.tool-pill[data-tool="taharah"]').forEach(pill => {
+  pill.addEventListener('click', () => {
+    openLearnOverlay('taharah', 'traditional');
+    renderTaharah();
+  });
+});
