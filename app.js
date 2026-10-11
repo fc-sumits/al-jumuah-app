@@ -3621,4 +3621,159 @@ document.addEventListener('click', (e) => {
     else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
     return;
   }
-}, true);
+}, true);const JUMUAH_RECITER_FOLDER = 'Saood_ash-Shuraym_128kbps';
+function jumuahAudioUrl(ayahNum){
+  const s = '018';
+  const a = String(ayahNum).padStart(3,'0');
+  return `https://everyayah.com/data/${JUMUAH_RECITER_FOLDER}/${s}${a}.mp3`;
+}
+async function renderJumuahKahf(){
+  const el = document.getElementById('jumuah-content');
+  const tabsEl = el.querySelector('.jumuah-tabs');
+  const existingKahf = el.querySelector('#jumuah-kahf-wrap');
+  if(existingKahf) return;
+  const wrap = document.createElement('div');
+  wrap.id = 'jumuah-kahf-wrap';
+  wrap.innerHTML = `<div class="jumuah-empty"><div class="q-loading-spinner" style="margin:0 auto 12px"></div>Loading Surah Al-Kahf…</div>`;
+  el.appendChild(wrap);
+  if(!jumuahState.kahfData){
+    try{
+      const res = await fetch('https://api.alquran.cloud/v1/surah/18/editions/quran-uthmani,en.sahih,en.transliteration');
+      const data = await res.json();
+      if(!data || !data.data || data.data.length < 3) throw new Error('bad');
+      jumuahState.kahfData = {
+        arabic: data.data[0],
+        english: data.data[1],
+        translit: data.data[2]
+      };
+    }catch(e){
+      wrap.innerHTML = '<div class="jumuah-empty">Could not load Surah Al-Kahf.<br>Please check your connection.</div>';
+      return;
+    }
+  }
+  const ar = jumuahState.kahfData.arabic;
+  const en = jumuahState.kahfData.english;
+  const tr = jumuahState.kahfData.translit;
+  let versesHtml = '';
+  ar.ayahs.forEach((ayah, i) => {
+    const e = en.ayahs[i];
+    const t = tr.ayahs[i];
+    versesHtml += `<div class="jumuah-verse" id="jq-verse-${ayah.numberInSurah}" data-jvnum="${ayah.numberInSurah}" data-jvglobal="${ayah.number}">
+      <div class="jumuah-verse-num">${ayah.numberInSurah}</div>
+      <div class="jumuah-verse-arabic">${ayah.text}</div>
+      <div class="jumuah-verse-translit">${t ? t.text : ''}</div>
+      <div class="jumuah-verse-en">${e.text}</div>
+    </div>`;
+  });
+  wrap.innerHTML = `
+    <div class="jumuah-player">
+      <div class="jumuah-reciter-row">
+        <div class="jumuah-reciter-left">
+          <div class="jumuah-reciter-avatar">${JUMUAH_ICONS.mic}</div>
+          <div>
+            <div class="jumuah-reciter-name">Saud Al-Shuraim</div>
+            <div class="jumuah-reciter-sub">Imam of Masjid al-Haram</div>
+          </div>
+        </div>
+        <div class="jumuah-mode-toggle">
+          <button class="jumuah-mode-btn ${jumuahState.mode==='synced'?'active':''}" data-jmode="synced">Synced</button>
+          <button class="jumuah-mode-btn ${jumuahState.mode==='perverse'?'active':''}" data-jmode="perverse">Per-Verse</button>
+        </div>
+      </div>
+      <div class="jumuah-controls">
+        <button class="jumuah-stop" id="jumuah-stop-btn" aria-label="Stop"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+        <button class="jumuah-play" id="jumuah-play-btn" aria-label="Play"><svg id="jumuah-play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></button>
+        <button class="jumuah-stop" id="jumuah-bookmark-btn" aria-label="Bookmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+      </div>
+      <div class="jumuah-surah-label" id="jumuah-surah-label">Surah Al-Kahf · 110 verses</div>
+    </div>
+    <div id="jumuah-verses">${versesHtml}</div>
+  `;
+  document.querySelectorAll('[data-jmode]').forEach(b => b.addEventListener('click', () => {
+    jumuahState.mode = b.dataset.jmode;
+    document.querySelectorAll('[data-jmode]').forEach(x => x.classList.toggle('active', x.dataset.jmode === jumuahState.mode));
+  }));
+  document.getElementById('jumuah-play-btn').addEventListener('click', () => {
+    if(jumuahState.playing){
+      jumuahPause();
+    } else {
+      const start = jumuahState.currentVerse > 0 ? jumuahState.currentVerse : 1;
+      jumuahState.playing = true;
+      jumuahPlayVerse(start, jumuahState.mode === 'synced');
+    }
+  });
+  document.getElementById('jumuah-stop-btn').addEventListener('click', () => {
+    jumuahStop();
+  });
+  document.getElementById('jumuah-bookmark-btn').addEventListener('click', () => {
+    const v = jumuahState.currentVerse || 1;
+    localStorage.setItem('jumuah-bookmark', v);
+    showToast(`Bookmarked verse ${v}`);
+  });
+}
+function jumuahPlayVerse(ayahNum, autoAdvance){
+  if(jumuahState.audio){ try{ jumuahState.audio.pause(); }catch(e){} jumuahState.audio = null; }
+  document.querySelectorAll('.jumuah-verse').forEach(v => v.classList.remove('playing'));
+  const verseEl = document.getElementById(`jq-verse-${ayahNum}`);
+  if(verseEl){
+    verseEl.classList.add('playing');
+    verseEl.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  jumuahState.currentVerse = ayahNum;
+  const icon = document.getElementById('jumuah-play-icon');
+  if(icon) icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+  const label = document.getElementById('jumuah-surah-label');
+  if(label) label.textContent = `Playing verse ${ayahNum} of 110`;
+  const url = jumuahAudioUrl(ayahNum);
+  let playUrl = url;
+  caches.open(AUDIO_CACHE).then(cache => cache.match(url)).then(cached => {
+    if(cached){
+      return cached.blob().then(blob => {
+        playUrl = URL.createObjectURL(blob);
+        return playUrl;
+      });
+    }
+    return playUrl;
+  }).catch(()=>playUrl).then(finalUrl => {
+    const audio = new Audio(finalUrl);
+    jumuahState.audio = audio;
+    audio.play().then(() => {
+      audio.onended = () => {
+        if(finalUrl.startsWith('blob:')) URL.revokeObjectURL(finalUrl);
+        if(autoAdvance && jumuahState.playing && ayahNum < 110){
+          setTimeout(() => {
+            if(!jumuahState.playing) return;
+            jumuahPlayVerse(ayahNum + 1, true);
+          }, 300);
+        } else {
+          jumuahStop();
+        }
+      };
+    }).catch(() => {
+      showToast('Audio unavailable');
+      jumuahState.playing = false;
+    });
+  });
+}
+function jumuahPause(){
+  if(jumuahState.audio){ try{ jumuahState.audio.pause(); }catch(e){} jumuahState.audio = null; }
+  jumuahState.playing = false;
+  const icon = document.getElementById('jumuah-play-icon');
+  if(icon) icon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>';
+}
+function jumuahStop(){
+  if(jumuahState.audio){ try{ jumuahState.audio.pause(); }catch(e){} jumuahState.audio = null; }
+  jumuahState.playing = false;
+  document.querySelectorAll('.jumuah-verse').forEach(v => v.classList.remove('playing'));
+  const icon = document.getElementById('jumuah-play-icon');
+  if(icon) icon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>';
+  const label = document.getElementById('jumuah-surah-label');
+  if(label) label.textContent = 'Surah Al-Kahf · 110 verses';
+}
+const _origDrawJumuah = drawJumuah;
+drawJumuah = function(){
+  _origDrawJumuah();
+  if(jumuahState.tab === 'kahf'){
+    renderJumuahKahf();
+  }
+};
