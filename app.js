@@ -4448,4 +4448,157 @@ if(window.firebase){
       if(label) label.textContent = 'Sign in';
     }
   });
+}// ═══════════════════════════════════════════════════════════════
+// APP DATA SYNC (Phase 3)
+// Syncs prayer tracker, khatm, fasting, tasbih, custom dhikr,
+// umrah progress, and Quran last-read position to Firebase.
+// Uses localStorage interception — no changes to existing features.
+// ═══════════════════════════════════════════════════════════════
+
+const SYNC_EXACT_KEYS = ['khatm-state','tasbih-state','custom-dhikr','umrah-progress','quran-last-surah','quran-last-ayah'];
+const SYNC_PREFIXES = ['prayer-tracker-','fasting-'];
+
+function isSyncedKey(k){
+  if(SYNC_EXACT_KEYS.indexOf(k) !== -1) return true;
+  for(const p of SYNC_PREFIXES){ if(k.indexOf(p) === 0) return true; }
+  return false;
 }
+
+function safeParse(v){ try { return JSON.parse(v); } catch(e){ return v; } }
+
+function collectAppData(){
+  const out = { exact: {}, prefixed: {} };
+  SYNC_EXACT_KEYS.forEach(k => {
+    const v = localStorage.getItem(k);
+    if(v !== null) out.exact[k] = safeParse(v);
+  });
+  SYNC_PREFIXES.forEach(p => {
+    Object.keys(localStorage).forEach(k => {
+      if(k.indexOf(p) === 0) out.prefixed[k] = safeParse(localStorage.getItem(k));
+    });
+  });
+  return out;
+}
+
+function mergeBoolObject(local, cloud){
+  const out = Object.assign({}, local || {});
+  Object.keys(cloud || {}).forEach(k => { if(cloud[k] === true) out[k] = true; });
+  return out;
+}
+
+function mergePrimitiveArray(local, cloud){
+  const out = Array.isArray(local) ? local.slice() : [];
+  (cloud || []).forEach(item => { if(out.indexOf(item) === -1) out.push(item); });
+  return out;
+}
+
+function mergeObjectArray(local, cloud){
+  const out = Array.isArray(local) ? local.slice() : [];
+  const seen = new Set(out.map(o => JSON.stringify(o)));
+  (cloud || []).forEach(item => {
+    const k = JSON.stringify(item);
+    if(!seen.has(k)){ out.push(item); seen.add(k); }
+  });
+  return out;
+}
+
+function mergeAppData(local, cloud){
+  const merged = { exact: {}, prefixed: {} };
+  const lExact = (local && local.exact) || {};
+  const cExact = (cloud && cloud.exact) || {};
+  const keys = new Set([...Object.keys(lExact), ...Object.keys(cExact)]);
+  keys.forEach(k => {
+    const lv = lExact[k];
+    const cv = cExact[k];
+    if(k === 'khatm-state'){
+      const juzRead = mergePrimitiveArray((lv&&lv.juzRead)||[], (cv&&cv.juzRead)||[]);
+      const started = (lv&&lv.started) || (cv&&cv.started) || null;
+      const out = { juzRead };
+      if(started) out.started = started;
+      merged.exact[k] = out;
+    } else if(k === 'custom-dhikr'){
+      merged.exact[k] = mergeObjectArray(lv, cv);
+    } else if(k === 'tasbih-state'){
+      const lc = lv && typeof lv.count === 'number' ? lv.count : 0;
+      const cc = cv && typeof cv.count === 'number' ? cv.count : 0;
+      merged.exact[k] = { preset: (lv&&lv.preset)||(cv&&cv.preset)||'subhanallah', count: Math.max(lc, cc) };
+    } else if(k === 'quran-last-surah' || k === 'quran-last-ayah'){
+      const ln = typeof lv === 'number' ? lv : parseInt(lv,10) || 0;
+      const cn = typeof cv === 'number' ? cv : parseInt(cv,10) || 0;
+      merged.exact[k] = ln > 0 ? ln : cn;
+    } else if(k === 'umrah-progress'){
+      merged.exact[k] = mergeBoolObject(lv, cv);
+    } else {
+      merged.exact[k] = lv !== undefined ? lv : cv;
+    }
+  });
+  const lPre = (local && local.prefixed) || {};
+  const cPre = (cloud && cloud.prefixed) || {};
+  const pkeys = new Set([...Object.keys(lPre), ...Object.keys(cPre)]);
+  pkeys.forEach(k => { merged.prefixed[k] = mergeBoolObject(lPre[k], cPre[k]); });
+  return merged;
+}
+
+function writeAppDataToLocal(data){
+  Object.keys(data.exact || {}).forEach(k => {
+    try { localStorage.setItem(k, JSON.stringify(data.exact[k])); } catch(e){}
+  });
+  Object.keys(data.prefixed || {}).forEach(k => {
+    try { localStorage.setItem(k, JSON.stringify(data.prefixed[k])); } catch(e){}
+  });
+}
+
+async function cloudSaveAppData(){
+  if(!window.__currentUser || typeof db === 'undefined' || !db) return;
+  try {
+    const data = collectAppData();
+    await db.collection('users').doc(window.__currentUser.uid).set({ appData: data }, { merge: true });
+  } catch(e){ console.log('cloudSaveAppData failed', e); }
+}
+
+async function cloudLoadAppData(){
+  if(!window.__currentUser || typeof db === 'undefined' || !db) return;
+  try {
+    const doc = await db.collection('users').doc(window.__currentUser.uid).get();
+    if(!doc.exists) return;
+    const cloud = doc.data().appData;
+    if(!cloud) return;
+    const local = collectAppData();
+    const merged = mergeAppData(local, cloud);
+    writeAppDataToLocal(merged);
+    await cloudSaveAppData();
+    if(window.dhikrManager) window.dhikrManager.render();
+    if(window.gardenManager) window.gardenManager.render();
+    if(typeof updatePrayerTileStatus === 'function') updatePrayerTileStatus();
+  } catch(e){ console.log('cloudLoadAppData failed', e); }
+}
+
+let _appCloudSaveTimer = null;
+function scheduleAppCloudSave(){
+  if(_appCloudSaveTimer) clearTimeout(_appCloudSaveTimer);
+  _appCloudSaveTimer = setTimeout(() => { _appCloudSaveTimer = null; cloudSaveAppData(); }, 4000);
+}
+
+// Intercept localStorage.setItem for tracked keys
+(function(){
+  try {
+    const _orig = localStorage.setItem.bind(localStorage);
+    localStorage.setItem = function(k, v){
+      _orig(k, v);
+      if(isSyncedKey(k)) scheduleAppCloudSave();
+    };
+  } catch(e){ console.log('localStorage intercept failed', e); }
+})();
+
+// Save on app close / tab hide
+window.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'hidden') cloudSaveAppData();
+});
+window.addEventListener('pagehide', () => { cloudSaveAppData(); });
+
+// On auth change, load
+if(window.firebase){
+  firebase.auth().onAuthStateChanged((u) => {
+    if(u) cloudLoadAppData();
+  });
+                                             }
