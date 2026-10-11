@@ -3919,4 +3919,75 @@ setInterval(() => {
       updateJumuahDuaHour();
     }
   }
-}, 60000);
+}, 60000);function fridayReminderEnabled(){
+  return localStorage.getItem('friday-remind') !== 'off';
+}
+function updateFridayToggleVisual(){
+  const toggle = document.querySelector('.toggle[data-toggle="friday-remind"]');
+  if(!toggle) return;
+  if(fridayReminderEnabled()) toggle.classList.add('on');
+  else toggle.classList.remove('on');
+}
+async function enableFridayReminder(){
+  if(!('Notification' in window)){
+    showToast('Notifications not supported on this browser');
+    return false;
+  }
+  let perm = Notification.permission;
+  if(perm === 'default'){
+    try{ perm = await Notification.requestPermission(); }
+    catch(e){ perm = 'denied'; }
+  }
+  if(perm !== 'granted'){
+    showToast('Notifications permission denied');
+    return false;
+  }
+  return true;
+}
+function scheduleFridayReminder(){
+  if(!fridayReminderEnabled()) return;
+  if(typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+  const now = new Date();
+  if(now.getDay() !== 5) return;
+  const key = 'friday-remind-shown';
+  const todayKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  if(localStorage.getItem(key) === todayKey) return;
+  const maghrib = getCachedPrayerTime('Maghrib');
+  const maghribMins = maghrib ? minsFromHHMM(maghrib) : (18*60 + 30);
+  const nowMins = now.getHours()*60 + now.getMinutes();
+  if(nowMins >= maghribMins - 60) return;
+  setTimeout(() => {
+    try{
+      new Notification('Jumu\'ah Mubarak', {
+        body: 'Friday is here. Recite Surah Al-Kahf and send salawat.',
+        icon: 'images/prophet-25-muhammad.webp',
+        tag: 'friday-reminder'
+      });
+      localStorage.setItem(key, todayKey);
+    }catch(e){ console.log('notification failed', e); }
+  }, 3000);
+}
+document.addEventListener('click', async (e) => {
+  const toggle = e.target.closest('.toggle[data-toggle="friday-remind"]');
+  if(!toggle) return;
+  e.stopPropagation();
+  e.preventDefault();
+  if(fridayReminderEnabled()){
+    localStorage.setItem('friday-remind', 'off');
+    toggle.classList.remove('on');
+    showToast('Friday reminder off');
+  } else {
+    const ok = await enableFridayReminder();
+    if(ok){
+      localStorage.setItem('friday-remind', 'on');
+      toggle.classList.add('on');
+      showToast('Friday reminder on');
+      scheduleFridayReminder();
+    } else {
+      localStorage.setItem('friday-remind', 'off');
+      toggle.classList.remove('on');
+    }
+  }
+}, true);
+setTimeout(updateFridayToggleVisual, 500);
+setTimeout(scheduleFridayReminder, 4000);
