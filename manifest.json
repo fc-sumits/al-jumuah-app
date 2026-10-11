@@ -1,0 +1,42 @@
+{
+  "name": "Al-Jumu'ah",
+  "short_name": "Al-Jumu'ah",
+  "description": "Your Islamic companion — Quran, Hadith, Dhikr, Prayer, and more.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0F0D",
+  "theme_color": "#0B3D2E",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["lifestyle", "education", "books"],
+  "icons": [
+    {
+      "src": "Al%20jumah%20app%20icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "Al%20jumah%20app%20icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Quran",
+      "short_name": "Quran",
+      "description": "Open the Quran reader",
+      "url": "./index.html?open=quran"
+    },
+    {
+      "name": "Prayer Times",
+      "short_name": "Prayer",
+      "description": "View today's prayer times",
+      "url": "./index.html?open=prayer"
+    }
+  ]
+}
