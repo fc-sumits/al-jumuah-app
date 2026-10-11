@@ -3089,4 +3089,38 @@ const TOOLS = {
   hadithOfTheDay: {title:'📚 Hadith of the Day', render:() => renderTodayDedicated('hadith')},
   umrahGuide: {title:'🕋 Umrah Guide', render:renderUmrahGuide},
   hajjGuide: {title:'🕋 Hajj Guide', render:renderHajjGuide}
-};
+};let currentLearnZone = 'traditional';
+let currentLearnTool = null;
+function openLearnOverlay(toolId, zone){
+  currentLearnTool = toolId;
+  currentLearnZone = zone || 'traditional';
+  const overlay = document.getElementById('learn-overlay');
+  overlay.setAttribute('data-zone', currentLearnZone);
+  overlay.classList.add('theme-' + currentLearnZone);
+  overlay.setAttribute('aria-hidden', 'false');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeLearnOverlay(){
+  const overlay = document.getElementById('learn-overlay');
+  overlay.classList.remove('show');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  currentLearnTool = null;
+}
+function setLearnTitle(title){
+  const el = document.getElementById('learn-title');
+  if(el) el.textContent = title;
+}
+function setLearnContent(html){
+  const el = document.getElementById('learn-content');
+  if(el) el.innerHTML = html;
+}
+document.getElementById('learn-back').addEventListener('click', () => {
+  if(currentLearnTool && LEARN_BACK_HANDLERS[currentLearnTool]){
+    const handled = LEARN_BACK_HANDLERS[currentLearnTool]();
+    if(handled) return;
+  }
+  closeLearnOverlay();
+});
+const LEARN_BACK_HANDLERS = {};
