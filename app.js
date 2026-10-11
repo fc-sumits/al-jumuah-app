@@ -3256,4 +3256,84 @@ document.querySelectorAll('.tool-pill[data-tool="taharah"]').forEach(pill => {
     openLearnOverlay('taharah', 'traditional');
     renderTaharah();
   });
-});
+});let salahState = { tab: 'positions' };
+const SALAH_ICONS = {
+  qiyam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v8"/><path d="M9 22l3-8 3 8"/><path d="M8 10h8"/></svg>',
+  takbir:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8"/><path d="M9 22l3-7 3 7"/><path d="M8 8V3M16 8V3"/></svg>',
+  ruku:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="2"/><path d="M9 9h10"/><path d="M18 9v4"/><path d="M9 9v4"/></svg>',
+  sujud:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><path d="M8 18h11"/><path d="M5 14v-4h6"/><path d="M11 10l6 4"/></svg>',
+  jalsa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6"/><path d="M6 20h12"/><path d="M8 13v7"/></svg>',
+  tashahhud:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6"/><path d="M6 20h12"/><path d="M8 13v7"/><path d="M14 10V7"/></svg>',
+  salam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6"/><path d="M6 20h12"/><path d="M8 13v7"/><path d="M15 4l2-1M15 6l2 1"/></svg>',
+  folded:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v8"/><path d="M9 22l3-8 3 8"/><path d="M8 12h8"/></svg>',
+  dawn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3"/><path d="M18 12h3M16.3 7.7l2.1-2.1"/><path d="M8 17a4 4 0 0 1 8 0"/><path d="M2 21h20"/></svg>',
+  sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/></svg>',
+  sunlow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="16" r="4"/><path d="M12 8V5M6.3 12.3l-2.1-2.1M19.8 10.2l-2.1 2.1M2 22h20"/></svg>',
+  sunset:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18a4 4 0 0 1 8 0"/><path d="M2 22h20"/><path d="M12 3v3M5 8l2 2M19 8l-2 2"/></svg>',
+  moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a9 9 0 1 1-11-11 7 7 0 0 0 11 11z"/></svg>'
+};
+async function renderSalah(){
+  const data = await loadContent('salah');
+  if(!data){ setLearnContent('<div class="modal-error"><strong>Could not load</strong>Please check your connection.</div>'); return; }
+  salahState = { tab: 'positions' };
+  drawSalahView();
+}
+function drawSalahView(){
+  const data = CONTENT['salah'];
+  setLearnTitle('Salah · Prayer');
+  const tabsHtml = `
+    <div class="salah-tabs">
+      <button class="salah-tab ${salahState.tab==='positions'?'active':''}" data-slt="positions">Positions</button>
+      <button class="salah-tab ${salahState.tab==='prayers'?'active':''}" data-slt="prayers">5 Prayers</button>
+      <button class="salah-tab ${salahState.tab==='learn'?'active':''}" data-slt="learn">Learn</button>
+    </div>`;
+  let body = '';
+  if(salahState.tab === 'positions'){
+    body = `<div class="salah-grid">${data.positions.map((p,i)=>`
+      <div class="salah-card" data-slp="${i}">
+        <div class="salah-card-icon">${SALAH_ICONS[p.icon]||''}</div>
+        <div class="salah-card-arabic">${p.arabic}</div>
+        <div class="salah-card-translit">${p.translit}</div>
+        <div class="salah-card-title">${p.title}</div>
+      </div>`).join('')}</div>`;
+  } else if(salahState.tab === 'prayers'){
+    body = `<div class="salah-prayer-list">${data.prayers.map((p,i)=>`
+      <div class="salah-prayer-card" data-slpr="${i}">
+        <div class="salah-prayer-icon">${SALAH_ICONS[p.icon]||''}</div>
+        <div class="salah-prayer-body">
+          <div class="salah-prayer-name">${p.name}</div>
+          <div class="salah-prayer-arabic">${p.arabic}</div>
+          <div class="salah-prayer-meta">${p.rakah} rak'ah</div>
+        </div>
+        <div class="trad-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>`).join('')}</div>`;
+  } else {
+    body = `<div class="salah-learn-list">${data.learn.map((l,i)=>`
+      <div class="salah-learn-card" data-sll="${i}">
+        <div class="salah-learn-head">
+          <div class="salah-learn-title">${l.title}</div>
+          <div class="trad-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="salah-learn-body">${l.body}</div>
+      </div>`).join('')}</div>`;
+  }
+  setLearnContent(tabsHtml + body);
+  document.querySelectorAll('[data-slt]').forEach(b => b.addEventListener('click', () => {
+    salahState.tab = b.dataset.slt;
+    drawSalahView();
+  }));
+  document.querySelectorAll('[data-sll]').forEach(card => {
+    card.querySelector('.salah-learn-head').addEventListener('click', () => card.classList.toggle('open'));
+  });
+  LEARN_BACK_HANDLERS['salahGuide'] = () => { closeLearnOverlay(); return true; };
+}
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="taharah"], .tool-pill[data-tool="salahGuide"]');
+  if(pill){
+    e.stopPropagation();
+    e.preventDefault();
+    const tool = pill.dataset.tool;
+    if(tool === 'taharah'){ openLearnOverlay('taharah','traditional'); renderTaharah(); }
+    else if(tool === 'salahGuide'){ openLearnOverlay('salahGuide','traditional'); renderSalah(); }
+  }
+}, true);
