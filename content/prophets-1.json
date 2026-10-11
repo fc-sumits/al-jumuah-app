@@ -205,4 +205,657 @@
           "takeaway": "The greatest legacy a human can leave is not wealth or fame — it is a returning heart."
         }
       ]
+    },{
+  "id": "idris",
+  "num": 2,
+  "name": "Idris",
+  "arabic": "إدريس",
+  "subtitle": "9 Lessons",
+  "image": "images/prophet-02-idris.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Silent Prophet",
+      "thumb": "silent",
+      "body": "<p>Idris (AS) is one of the least-discussed prophets in the Quran — but the little that is said about him is immense. He is mentioned only twice by name, yet Allah praises him in a way that very few prophets are praised.</p><p>The Quran calls him <em>ṣiddīqan nabiyyan</em> — 'a man of truth, a prophet.' And then it says: <em>And We raised him to a high station.</em> Two titles and one elevation — that is the entire summary of his life in revelation. But that summary is packed with meaning.</p><p>What can we learn from a prophet about whom so little is said? We learn that fame is not the measure of a soul. Idris's rank with Allah did not depend on how many pages the Quran devoted to him — it depended on how he lived. And Allah's own testimony of him was: <em>truthful, a prophet, raised high.</em></p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ إِدْرِيسَ ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا ۝ وَرَفَعْنَاهُ مَكَانًا عَلِيًّا",
+        "translation": "And mention in the Book, Idris. Indeed, he was a man of truth, a prophet. And We raised him to a high station.",
+        "ref": "Maryam 19:56-57"
+      },
+      "didYouKnow": "Some scholars identify Idris with the biblical Enoch. Others suggest he was the first to write with a pen and the first to study the stars. These are classical narrations, not revelation — but they hint at a man of deep knowledge and quiet worship.",
+      "takeaway": "A soul's worth is measured by its truthfulness — not by how loudly the world remembers it."
     },
+    {
+      "num": 2,
+      "title": "The Name That Means Study",
+      "thumb": "study",
+      "body": "<p>The name <em>Idris</em> comes from the Arabic root <em>d-r-s</em> — the same root as <em>dars</em> (lesson) and <em>madrasah</em> (school). Some scholars say he was named Idris because of his constant study of the scriptures of Allah — the books revealed before him.</p><p>This is a profound detail. Of all the names Allah could have preserved for this prophet, He preserved a name tied to <em>learning</em>. And that tells us something about what mattered in Idris's life.</p><p>He was a student of revelation. He did not study for degrees, for prestige, or for argument. He studied to know his Lord — and the more he knew, the more he worshipped. Knowledge and worship were one continuous act in his life.</p><p>The Prophet ﷺ said: <em>Whoever treads a path seeking knowledge, Allah will make easy for him the path to Paradise.</em> Idris walked that path — and Allah raised him high.</p>",
+      "dialogue": {
+        "arabic": "وَرَفَعْنَاهُ مَكَانًا عَلِيًّا",
+        "translation": "And We raised him to a high station.",
+        "ref": "Maryam 19:57"
+      },
+      "didYouKnow": "Classical scholars like Ibn Kathir mention that Idris was the first to write with a pen, the first to sew clothes, and the first to observe the movements of the stars. Even if these traditions are not fully authentic, they paint a picture of a man devoted to knowledge for the sake of Allah.",
+      "takeaway": "Every step taken in pursuit of sacred knowledge raises the soul."
+    },
+    {
+      "num": 3,
+      "title": "The Craft of the Needle",
+      "thumb": "needle",
+      "body": "<p>One of the classical traditions about Idris says he was the first to sew clothing with a needle. Before him, people draped animal skins. After him, they could tailor garments.</p><p>Why does this matter? Because it shows that Idris was not a prophet who isolated himself in a cave. He was a prophet who <em>worked</em> — with his hands, with tools, with materials. He built. He created. He served the world while worshipping its Maker.</p><p>The Prophet ﷺ said: <em>No one has ever eaten food better than what he eats from the work of his own hands. Indeed, the Prophet of Allah, Dawud, used to eat from the work of his hands.</em> Idris embodied this principle centuries earlier.</p><p>Faith is not removed from daily labour. The needle that sewed clothing was as sacred an instrument as the tongue that recited scripture. Idris's hands built what the world needed, and his heart stayed fixed on his Lord.</p>",
+      "dialogue": {
+        "arabic": "مَا يَأْكُلُ أَحَدٌ طَعَامًا خَيْرًا مِنْ عَمَلِ يَدِهِ",
+        "translation": "No one eats food better than what he eats from the work of his own hands.",
+        "ref": "Sahih al-Bukhari"
+      },
+      "didYouKnow": "The Prophet ﷺ said that Dawud (AS) used to eat only from the work of his own hands — he was a blacksmith. Similarly, Zakariyya was a carpenter, and Musa (AS) worked as a shepherd for ten years in Madyan.",
+      "takeaway": "Honest work with the hands is worship — no profession is beneath a servant of Allah."
+    },
+    {
+      "num": 4,
+      "title": "The Silent Worshipper",
+      "thumb": "quiet",
+      "body": "<p>Idris is remembered in many traditions as a man of very few words — not because he was unfriendly, but because he was disciplined with his tongue. He was, in Arabic, <em>qalīl al-kalām</em> — 'of little speech.'</p><p>This is a rare virtue in any generation. In his time, people gathered at the temples of idols, argued about gods they invented, and celebrated their falsehoods loudly. Idris stood apart — not with arguments, not with lectures, but with stillness.</p><p>The Prophet ﷺ said: <em>Whoever believes in Allah and the Last Day, let him speak good or remain silent.</em> Idris lived this teaching centuries before it was spoken. His silence was not emptiness — it was fullness. His heart was occupied with remembering Allah, so his tongue had less need to fill the air with the world's noise.</p><p>Modern life is louder than ever. But the soul still longs for the same silence that Idris cultivated — a silence that is not the absence of words, but the presence of awareness.</p>",
+      "dialogue": {
+        "arabic": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+        "translation": "Whoever believes in Allah and the Last Day, let him speak good or remain silent.",
+        "ref": "Sahih al-Bukhari & Muslim"
+      },
+      "didYouKnow": "The classical scholars describe Idris as one of the <em>sābirūn</em> — the patiently constant. His worship was not occasional; it was a rhythm. He prayed, he reflected, he abstained from pointless speech — and the years added up.",
+      "takeaway": "Silence chosen for Allah is not withdrawal — it is the deepest kind of worship."
+    },
+    {
+      "num": 5,
+      "title": "A Prophet Before the Flood",
+      "thumb": "ancient",
+      "body": "<p>Idris lived long ago — most scholars place him before Nuh (AS). That means he called to Allah in a world already sliding into idolatry. The grandchildren of Adam, and their grandchildren, had drifted from the path of their forefather. Statues were carved, spirits were invoked, and the truth was pushed to the margins.</p><p>Into that world, Allah sent Idris. He was the second prophet mentioned in the Quran after Adam — and one of a small line of men who kept the fire of tawhid alive before the great flood of Nuh swept the earth.</p><p>Think about what that means: the world Idris lived in was almost entirely lost. There were no communities of believers to lean on, no scholars to consult, no mosques to visit. He was, in a very real sense, a light in a dark age.</p><p>And Allah's verdict on him was not 'he converted thousands' — because we do not know that he did. Allah's verdict was simply: <em>truthful, a prophet, raised high.</em> The standard was not the size of the harvest. It was the sincerity of the seed.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ إِدْرِيسَ ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا",
+        "translation": "And mention in the Book, Idris. Indeed, he was a man of truth, a prophet.",
+        "ref": "Maryam 19:56"
+      },
+      "didYouKnow": "The Quran mentions only two prophets between Adam and Nuh by name in the lineage traditions — Idris and Shith (Seth). The line of tawhid survived through a small number of faithful men in a world that had largely forgotten its Creator.",
+      "takeaway": "You are not responsible for the size of your harvest — only for the faithfulness of your seed."
+    },
+    {
+      "num": 6,
+      "title": "The High Station",
+      "thumb": "raised",
+      "body": "<p>The most striking thing about Idris is the phrase Allah uses for him: <em>And We raised him to a high station.</em> Scholars differ on what this station means. Some say it was a physical elevation — a place high in the heavens. Others say it was a spiritual rank, unique among the prophets of his time.</p><p>Either way, the meaning is profound: <em>Allah raised him</em>. Idris did not climb. He did not scheme. He did not seek fame. He simply stayed truthful, studied, worshipped, worked, and spoke little. And Allah — the Most Exalted — raised him.</p><p>This is the pattern of the Quran: whenever a servant lowers himself for Allah, Allah raises him. Whenever a servant chases elevation for himself, Allah humbles him. The mathematics of divine elevation are the reverse of the world's mathematics.</p><p>The Prophet ﷺ said: <em>Whoever humbles himself for Allah, Allah will raise him.</em> Idris lived that verse — and today his name is recited every time Surah Maryam is recited, from every mosque in the world, in every corner of the earth.</p>",
+      "dialogue": {
+        "arabic": "مَنْ تَوَاضَعَ لِلَّهِ رَفَعَهُ اللَّهُ",
+        "translation": "Whoever humbles himself for Allah, Allah will raise him.",
+        "ref": "Sahih Muslim (meaning)"
+      },
+      "didYouKnow": "The Arabic phrase <em>makānan 'aliyyan</em> ('a high station') uses the same word used elsewhere in the Quran for high rank and lofty position. It is the kind of station that does not end with death — it continues into the next life.",
+      "takeaway": "Allah raises those who lower themselves for Him."
+    },
+    {
+      "num": 7,
+      "title": "The Weight of Small Deeds",
+      "thumb": "small",
+      "body": "<p>Idris's story is quiet. He did not split seas, survive a flood, or rescue a nation. His story is not filled with dramatic moments. And yet Allah honoured him with a mention that will be recited until the end of time.</p><p>What made the difference? Consistency. The Prophet ﷺ said: <em>The most beloved deeds to Allah are those done consistently, even if they are small.</em> This is the entire story of Idris in one sentence.</p><p>He did not have one great day — he had a thousand small days of faithful worship. He did not offer one monumental act of charity — he offered a lifetime of honest work and silent remembrance. He did not deliver one unforgettable sermon — he lived a life of truthful example.</p><p>Our culture celebrates the spectacular. But Allah's currency is consistency. The deed done every day, unannounced, unnoticed, for Him alone — that is what endures. That is what got Idris raised high.</p>",
+      "dialogue": {
+        "arabic": "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
+        "translation": "The most beloved deeds to Allah are those done consistently, even if they are small.",
+        "ref": "Sahih al-Bukhari & Muslim"
+      },
+      "didYouKnow": "The Prophet ﷺ also said: <em>Take on only as much as you can do of good deeds, for the deed most beloved to Allah is that which is done consistently.</em> The Companions of the Prophet ﷺ lived by this principle — their small daily acts became mountains in the scales.",
+      "takeaway": "A small deed done every day for Allah outweighs a great deed done once."
+    },
+    {
+      "num": 8,
+      "title": "A Teacher of the Lost",
+      "thumb": "teacher",
+      "body": "<p>When Idris called his people, he was calling a generation that had grown up on stories of Adam — but no longer believed them. They had heard about the flood of Nuh — but considered it legend. They had drifted so far that the truth sounded like myth.</p><p>Idris did not waste his breath on anger. He spoke to them with patience, reminding them of their origin, of their purpose, of the Day they would all face. Some listened; many did not. And still he continued.</p><p>This is the mission of every caller to Allah: to keep speaking even when the response is slow. To keep warning even when the ears have grown used to the warning. To keep loving the people even when they have decided to reject you.</p><p>The Prophet ﷺ said: <em>Make things easy and do not make them difficult. Give good tidings and do not repel people.</em> Idris preached this way. He was a teacher of the lost — not by force, not by argument, but by patient clarity and quiet example.</p>",
+      "dialogue": {
+        "arabic": "يَسِّرُوا وَلَا تُعَسِّرُوا، وَبَشِّرُوا وَلَا تُنَفِّرُوا",
+        "translation": "Make things easy and do not make them difficult. Give good tidings and do not repel people.",
+        "ref": "Sahih al-Bukhari"
+      },
+      "didYouKnow": "Dawah in the Quran is not a shouting match — it is <em>bil-ḥikmah wal-mawʿiẓah al-ḥasanah</em>: 'with wisdom and beautiful admonition.' (An-Nahl 16:125). Idris embodied this. His mission was to remind, not to force.",
+      "takeaway": "The caller to Allah keeps speaking — even when the world stops listening."
+    },
+    {
+      "num": 9,
+      "title": "Mentioned Forever",
+      "thumb": "mention",
+      "body": "<p>Idris did not build an empire. He did not command armies. He did not leave behind palaces, treasuries, or monuments. He left behind only a name — and today his name is still spoken. The Quran says: <em>And mention in the Book, Idris.</em></p><p>Every time a Muslim recites Surah Maryam — every time a child learns the Quran, every time a hafidh reaches that verse — the command of Allah is obeyed: <em>And mention in the Book, Idris.</em> The mention of Idris has become an act of worship itself.</p><p>This is the reward of the quiet ones. The world forgot them; Allah remembered them. The world ignored them; Allah singled them out. The world traded their memory for noise; Allah preserved it in the final revelation until the end of time.</p><p>Whatever you build in this life will one day crumble. Whatever title you carry will one day be forgotten. But if your heart belongs to Allah, if your days are spent in quiet worship and honest work — you will be mentioned where it counts. Not in the newspapers. Not on social media. In the Book of Allah, and among the ranks of the righteous.</p><p>May Allah make us among the truthful, and raise us to a high station. Ameen.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ إِدْرِيسَ ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا",
+        "translation": "And mention in the Book, Idris. Indeed, he was a man of truth, a prophet.",
+        "ref": "Maryam 19:56"
+      },
+      "didYouKnow": "Idris is one of the very few prophets whose <em>name</em> is mentioned only twice in the Quran, yet whose <em>praise</em> is among the highest — <em>ṣiddīqan nabiyyan</em> — a title shared with Yusuf and Ibrahim. Two mentions, one rank.",
+      "takeaway": "The ones the world forgets are often the ones Allah remembers forever."
+    }
+  ]
+},{
+  "id": "nuh",
+  "num": 3,
+  "name": "Nuh",
+  "arabic": "نوح",
+  "subtitle": "20 Lessons",
+  "image": "images/prophet-03-nuh.webp",
+  "tier": "pillar",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The First Messenger",
+      "thumb": "first",
+      "body": "<p>Nuh (AS) is the first messenger Allah sent to a people who had fallen into idolatry. Adam was a prophet — but he taught his children directly. Shith and Idris carried the line of tawhid forward. But as generations passed and memories faded, the descendants of Adam began to slip.</p><p>The final break came with a group of righteous men — Wadd, Suwa', Yaghuth, Ya'uq, and Nasr. When they died, Shaytan whispered to those who had loved them: <em>Erect statues in their memory so you never forget their example.</em> And so they did. But a generation later, the children no longer remembered the example — they only saw the statues. And they began to worship them.</p><p>This is how shirk always begins: a small, seemingly innocent step. Nobody wakes up one morning and decides to worship idols. They begin by venerating, then venerating becomes praying, then praying becomes sacrificing, and before long they are calling upon the dead as if they were gods.</p><p>Into this world, Allah sent Nuh. He was the first messenger — the first prophet given a mission to a people who had deliberately turned away. And he would call them for 950 years.</p>",
+      "dialogue": {
+        "arabic": "وَقَالُوا لَا تَذَرُنَّ آلِهَتَكُمْ وَلَا تَذَرُنَّ وَدًّا وَلَا سُوَاعًا وَلَا يَغُوثَ وَيَعُوقَ وَنَسْرًا",
+        "translation": "And they said: Do not abandon your gods. Do not abandon Wadd, Suwa', Yaghuth, Ya'uq or Nasr.",
+        "ref": "Nuh 71:23"
+      },
+      "didYouKnow": "Ibn Kathir narrates that these five were righteous men of their time, and the statues began as monuments of respect — not worship. The shift from honouring the dead to worshipping them took a full generation.",
+      "takeaway": "Shirk rarely begins with rebellion — it begins with a small step that makes the wrong path feel normal."
+    },
+    {
+      "num": 2,
+      "title": "The Call Begins",
+      "thumb": "call",
+      "body": "<p>Allah sent Nuh to his people with a message of pure tawhid: <em>Worship Allah; you have no god other than Him. Indeed, I fear for you the punishment of a painful Day.</em> Simple, direct, unambiguous.</p><p>Nuh did not begin with arguments. He began with love — a sincere concern for his people's fate. Notice the phrase <em>I fear for you</em> — this is the language of a father, not a prosecutor. Nuh was not angry at them; he was worried for them.</p><p>And notice something else: he called them to the <em>same</em> Allah their forefathers had worshipped. This was not a new religion. This was a return. Nuh was not asking them to abandon their heritage; he was asking them to remember it. To go back to Adam. To go back to Ibrahim's ancestor. To reclaim the tawhid that their great-grandparents had abandoned.</p><p>This is the pattern of every true caller: they do not invent; they return. They do not add; they restore. And they call not from a place of superiority, but from a place of fear for those they love.</p>",
+      "dialogue": {
+        "arabic": "إِنِّي لَكُمْ نَذِيرٌ مُّبِينٌ ۝ أَنِ اعْبُدُوا اللَّهَ وَاتَّقُوهُ وَأَطِيعُونِ",
+        "translation": "Indeed, I am to you a clear warner — that you worship Allah, fear Him, and obey me.",
+        "ref": "Nuh 71:2-3"
+      },
+      "didYouKnow": "Nuh is mentioned 43 times in the Quran — one of the most frequently mentioned prophets. Along with Ibrahim, Musa, and Isa, he is one of the four prophets whose stories appear in almost every section of the Book.",
+      "takeaway": "The caller to Allah does not attack — he returns people to what they already know."
+    },
+    {
+      "num": 3,
+      "title": "Worship, Fear, Obey",
+      "thumb": "three",
+      "body": "<p>Look carefully at how Nuh summarised his message. It was not a long theological treatise. It was three verbs: <em>Worship. Fear. Obey.</em></p><p><strong>Worship</strong> Allah — the foundation. Recognise Him alone as your Lord. This is the root of everything.</p><p><strong>Fear</strong> Him — the guardrail. Worship without awe is empty ritual. Nuh was reminding them that their deeds had consequences. Not to paralyse them, but to focus them.</p><p><strong>Obey</strong> the messenger — the practical application. This is the part most people resist. It is easy to say you believe in Allah; it is harder to follow the specific guidance He sends. Nuh was asking them to submit — to accept that the path he was showing was from Allah, not from himself.</p><p>Three verbs. In the mouth of every prophet, the message has always been this: <em>Know Allah. Take Him seriously. Follow His guidance.</em> Nothing has changed. Nuh's message is the message of every messenger — including Muhammad ﷺ.</p>",
+      "dialogue": {
+        "arabic": "أَنِ اعْبُدُوا اللَّهَ وَاتَّقُوهُ وَأَطِيعُونِ",
+        "translation": "That you worship Allah, fear Him, and obey me.",
+        "ref": "Nuh 71:3"
+      },
+      "didYouKnow": "The Prophet ﷺ said that Nuh was the first of the messengers (Sahih al-Bukhari). He is called <em>Shaykh al-Mursalīn</em> — 'the elder of the messengers' — because he was the first sent with a revealed law to a people who had turned away.",
+      "takeaway": "Islam in three words: worship, fear, obey."
+    },
+    {
+      "num": 4,
+      "title": "A Gift and a Warning",
+      "thumb": "gift",
+      "body": "<p>Nuh continued his message with a promise and a warning: <em>He will forgive you of your sins and delay you to a specified term. Indeed, the appointment of Allah will come, and it cannot be delayed — if you only knew.</em></p><p>Notice: Nuh opens with forgiveness. He does not begin with hellfire. He begins with the promise of pardon — because that is how Allah works. The door to return is always open before the door to punishment. Mercy comes first.</p><p>But then the warning: the day of reckoning is real, and it cannot be postponed. Death comes for everyone — and after it, the accounting. This is not a threat; it is a reminder. Nuh wanted them to understand that their choices mattered beyond this world.</p><p>Some might ask: why does the Quran talk about punishment so much? Because the alternative — believing that nothing matters after death — is a lie. It leads to the same place: a soul that no longer takes itself seriously. The warning exists to keep the conscience awake.</p>",
+      "dialogue": {
+        "arabic": "يَغْفِرْ لَكُم مِّن ذُنُوبِكُمْ وَيُؤَخِّرْكُمْ إِلَىٰ أَجَلٍ مُّسَمًّى ۚ إِنَّ أَجَلَ اللَّهِ إِذَا جَاءَ لَا يُؤَخَّرُ",
+        "translation": "He will forgive you of your sins and delay you to a specified term. Indeed, the appointment of Allah, when it comes, cannot be delayed.",
+        "ref": "Nuh 71:4"
+      },
+      "didYouKnow": "The pattern of 'forgiveness first, warning second' appears throughout the Quran. Allah says: <em>Your Lord has prescribed mercy for Himself.</em> (Al-An'am 6:12) The warning is not the primary message — the mercy is.",
+      "takeaway": "Allah's mercy is offered before His warning is issued."
+    },
+    {
+      "num": 5,
+      "title": "The Leaders' Rejection",
+      "thumb": "leaders",
+      "body": "<p>Nuh's people did not reject him because they found his message false. They rejected him because it threatened their status. The Quran says: <em>The leaders of his people said: We see you in clear error.</em></p><p>Notice it was the <em>leaders</em> who spoke first. Not the poor, not the weak, not the ordinary people. The chiefs. The ones with wealth, power, and status. They understood immediately what Nuh's message meant for them: if tawhid was true, the temples they administered were fraud, the idols they sold were worthless, and the hierarchy built on religion was meaningless.</p><p>This is why the powerful always resist the call. It is not that they cannot see the truth — it is that they have too much to lose. Their wealth, their reputation, their position — all of it hangs on the system they defend. Nuh's message was a direct threat to their entire world.</p><p>And so they called him a fool. <em>We see you in clear error.</em> Not a debate. Not a discussion. A dismissal. Because when you cannot argue with a message, the easiest way to silence it is to attack the messenger.</p>",
+      "dialogue": {
+        "arabic": "فَقَالَ الْمَلَأُ الَّذِينَ كَفَرُوا مِن قَوْمِهِ مَا نَرَاكَ إِلَّا بَشَرًا مِّثْلَنَا وَمَا نَرَاكَ اتَّبَعَكَ إِلَّا الَّذِينَ هُمْ أَرَاذِلُنَا بَادِيَ الرَّأْيِ",
+        "translation": "The disbelieving leaders of his people said: We do not see you as anything but a man like ourselves, and we do not see anyone following you except the lowest among us, and only without thought.",
+        "ref": "Hud 11:27"
+      },
+      "didYouKnow": "Every prophet faced the same accusation: 'You are only a man like us.' The leaders of every generation use this argument because it removes the supernatural claim from the message. But the Quran answers it directly: <em>Say: I am only a man like you, to whom has been revealed that your god is one God.</em> (Al-Kahf 18:110)",
+      "takeaway": "The powerful rarely reject truth for intellectual reasons — they reject it because it costs them their privileges."
+    },
+    {
+      "num": 6,
+      "title": "The Mockery of the Poor Followers",
+      "thumb": "mockery",
+      "body": "<p>The leaders pointed to the believers and sneered: <em>Only the lowest among us follow you — the poor, the weak, those who have no status.</em> And on the surface, this was true. Nuh's followers were mostly the ordinary people — the ones with nothing to lose by turning to Allah.</p><p>But here is the irony: the Quran treats this as evidence <em>for</em> Nuh, not against him. Because history shows that whenever truth arrives, it is the humble who accept it first and the powerful who resist it longest. This was true of Nuh. It was true of Musa. It was true of Isa. And it was true of Muhammad ﷺ.</p><p>The Prophet ﷺ said: <em>Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.</em> The leaders of Nuh's people were looking at the wrong thing. They judged the message by the status of its followers — but Allah judges the followers by the sincerity of their hearts.</p><p>The poor of Nuh's time are now the righteous of the hereafter. And the wealthy who mocked them have been forgotten by the world and will be forgotten by history. That is the mathematics of Allah.</p>",
+      "dialogue": {
+        "arabic": "إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+        "translation": "Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.",
+        "ref": "Sahih Muslim"
+      },
+      "didYouKnow": "This accusation — 'only the weak follow you' — is repeated by the disbelievers in Surah Ash-Shu'ara, Surah Al-A'raf, Surah Yusuf, and others. The Quran consistently defends the poor and rebukes those who use poverty as a mark of shame.",
+      "takeaway": "The ones the world despises are often the first to enter Paradise."
+    },
+    {
+      "num": 7,
+      "title": "The Argument of the Elite",
+      "thumb": "argument",
+      "body": "<p>The leaders pressed on with their case: <em>If you were truthful, you would have brought angels. If Allah wanted to send a message, He would have sent an angel — not a man from among us.</em></p><p>Look carefully at their logic. They were not asking for evidence. They were setting an impossible condition — one that would have destroyed the whole purpose of prophethood. Because if Allah sent an angel to every people, the test would be pointless. Everyone would believe. There would be no room for faith, no room for striving, no room for reward.</p><p>The whole point of prophethood being human is that the message comes through someone like us. Someone who eats, sleeps, marries, works. Someone we can relate to, learn from, and follow. If the messengers were angels, we would say: <em>Of course they are righteous — they have no desires, no hunger, no struggle.</em> The human messenger removes that excuse.</p><p>Allah says: <em>And if We had made him an angel, We would have made him a man, and We would have covered them with that in which they cover themselves.</em> (Al-An'am 6:9) The argument of the elite was never about truth. It was about avoiding the messenger who made them uncomfortable.</p>",
+      "dialogue": {
+        "arabic": "مَا هَٰذَا إِلَّا بَشَرٌ مِّثْلُكُمْ يُرِيدُ أَن يَتَفَضَّلَ عَلَيْكُمْ وَلَوْ شَاءَ اللَّهُ لَأَنزَلَ مَلَائِكَةً",
+        "translation": "This is nothing but a man like yourselves who wants to gain superiority over you. And if Allah had willed, He would have sent down angels.",
+        "ref": "Al-Mu'minun 23:24"
+      },
+      "didYouKnow": "Every prophet faced the demand: 'Send us a sign.' Musa's people demanded to see Allah. Isa's people demanded a table from heaven. Muhammad's ﷺ people demanded water from the rocks. The demand for signs is never about truth — it is always about delay.",
+      "takeaway": "The demand for signs is often a way of avoiding the sign that has already been sent."
+    },
+    {
+      "num": 8,
+      "title": "The 950 Years",
+      "thumb": "950",
+      "body": "<p>The Quran says: <em>And indeed, We sent Nuh to his people, and he remained among them a thousand years less fifty.</em> Nine hundred and fifty years of calling to Allah. Nine hundred and fifty years of rejection, mockery, and being called a fool.</p><p>Think about what that means. Nuh's people lived long lives — centuries, by the reckoning of those early generations. And still, after 950 years of dawah, only a small number believed. The Quran tells us that only <em>a few</em> believed with him — a tiny fraction of his people.</p><p>Most people, faced with that level of rejection, would have given up after a month. Maybe a year. Maybe a decade. Nuh kept going for nearly a millennium. He watched the same families reject him, generation after generation. He watched the same arguments. He watched the same mockery. And still he called.</p><p>This is the greatest lesson of Nuh's life: persistence in the face of overwhelming failure. Not because he expected a breakthrough — but because he was faithful to the mission Allah had given him. The outcome was not his responsibility. The obedience was.</p>",
+      "dialogue": {
+        "arabic": "وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا",
+        "translation": "And indeed, We sent Nuh to his people, and he remained among them a thousand years less fifty.",
+        "ref": "Al-Ankabut 29:14"
+      },
+      "didYouKnow": "The extreme longevity of Nuh's generation is mentioned in both the Quran and the Bible. The Prophet ﷺ said the first generations of humanity lived very long lives — this is why 950 years was possible for a single prophet's mission.",
+      "takeaway": "Faithfulness is measured by obedience — not by results."
+    },
+    {
+      "num": 9,
+      "title": "The Complaint to Allah",
+      "thumb": "complaint",
+      "body": "<p>After centuries of rejection, Nuh finally turned to Allah — not in anger at his people, but in honesty about his exhaustion: <em>My Lord, I have called my people night and day, but my call has only made them flee further away.</em></p><p>This is a profound moment. Nuh did not pretend to be superhuman. He did not hide his pain. He opened his heart to his Lord and told Him the truth: <em>I have tried, and nothing has worked. They run from me. They cover their ears. They wrap themselves in their garments. And they persist in arrogance.</em></p><p>The Quran records this complaint not as weakness but as honesty. Because even the prophets — especially the prophets — knew that the only place to bring their exhaustion was to Allah. Not to the people. Not to themselves. To Allah.</p><p>This is a lesson for every caller to truth. You will get tired. You will feel like nothing is landing. You will watch people turn away and want to collapse. The answer is not to stop. The answer is to bring your exhaustion to Allah — and then get up and continue.</p>",
+      "dialogue": {
+        "arabic": "قَالَ رَبِّ إِنِّي دَعَوْتُ قَوْمِي لَيْلًا وَنَهَارًا ۝ فَلَمْ يَزِدْهُمْ دُعَائِي إِلَّا فِرَارًا",
+        "translation": "He said: My Lord, indeed I invited my people night and day, but my invitation only increased their flight.",
+        "ref": "Nuh 71:5-6"
+      },
+      "didYouKnow": "Nuh's complaint to Allah is one of several 'complaints' of the prophets recorded in the Quran — Yunus from the belly of the whale, Ayyub from his illness, Musa about Fir'awn. Allah never rebukes them for honesty — He honours them for it.",
+      "takeaway": "The heart that fears Allah brings its exhaustion to Him — not to the world."
+    },
+    {
+      "num": 10,
+      "title": "The Final Dua",
+      "thumb": "final",
+      "body": "<p>Nuh's complaint moved into a dua — and it was a heavy one: <em>My Lord, do not leave upon the earth any inhabitant from among the disbelievers. Indeed, if You leave them, they will mislead Your servants and will not beget except a wicked disbeliever.</em></p><p>This is one of the most intense duas in the Quran. Nuh was asking Allah to bring the flood. And some readers struggle with it — how could a prophet ask for such a thing?</p><p>But look carefully at Nuh's reasoning. He did not ask for destruction out of anger. He asked because he had seen with his own eyes what his people were producing. Generation after generation, they were not getting better — they were getting worse. Their children were being raised on shirk. Their grandchildren would be worse than them. The corruption was not local; it was inheritable.</p><p>Nuh's dua was not vengeance. It was mercy for the generations that would come. He was asking Allah to stop the rot before it consumed the whole line of humanity. This is the depth of prophetic wisdom — seeing far beyond the immediate.</p><p>And Allah answered. The flood came. And with it, a new beginning for the line of the believers.</p>",
+      "dialogue": {
+        "arabic": "وَقَالَ نُوحٌ رَّبِّ لَا تَذَرْ عَلَى الْأَرْضِ مِنَ الْكَافِرِينَ دَيَّارًا ۝ إِنَّكَ إِن تَذَرْهُمْ يُضِلُّوا عِبَادَكَ وَلَا يَلِدُوا إِلَّا فَاجِرًا كَفَّارًا",
+        "translation": "And Nuh said: My Lord, do not leave upon the earth any inhabitant from among the disbelievers. Indeed, if You leave them, they will mislead Your servants and will not beget except a wicked disbeliever.",
+        "ref": "Nuh 71:26-27"
+      },
+      "didYouKnow": "The Quran does not record Nuh asking for the flood in anger — it records his reasoning. He had seen that the corruption was inherited, and he asked Allah to preserve what could still be saved. Even his dua for destruction was a dua for mercy on the next generation.",
+      "takeaway": "Sometimes the mercy of Allah comes through what looks like severity — because He sees what we do not."
+    },
+        {
+          "num": 11,
+          "title": "The Ark Begins",
+          "thumb": "ark",
+          "body": "<p>After the dua, Allah commanded Nuh to build the ark. <em>And construct the ship under Our observation and Our inspiration, and do not address Me concerning those who have wronged — indeed, they are to be drowned.</em></p><p>Think about what Nuh was asked to do. He was asked to build a massive ship — in the middle of the desert, far from any sea, in a land that had never seen such a thing. The Quran does not describe the desert explicitly, but the scholars say Nuh lived in a land without significant water. He was being asked to build the impossible.</p><p>And Nuh obeyed. Without question. Without hesitation. He picked up wood and started hammering.</p><p>This is the essence of prophethood: obedience to the command even when the command makes no sense to the outside world. Nuh did not know how the flood would come. He did not know if the land would become a sea. He did not know how long it would take. He only knew that Allah had commanded — and that was enough.</p>",
+          "dialogue": {
+            "arabic": "وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا وَلَا تُخَاطِبْنِي فِي الَّذِينَ ظَلَمُوا ۚ إِنَّهُم مُّغْرَقُونَ",
+            "translation": "And construct the ship under Our observation and Our inspiration, and do not address Me concerning those who have wronged — indeed, they are to be drowned.",
+            "ref": "Hud 11:37"
+          },
+          "didYouKnow": "The Quran calls the ark <em>al-fulk</em> — a word used for any ship. Classical scholars mention that Nuh's ark was enormous, spanning hundreds of cubits, with three levels: one for animals, one for humans, one for birds. But the precise details are not in revelation.",
+          "takeaway": "Obedience to Allah often requires building what the world thinks is impossible."
+        },
+        {
+          "num": 12,
+          "title": "The Mockery of the Ark",
+          "thumb": "mocking",
+          "body": "<p>And so Nuh built. Day after day. Week after week. Month after month. The ark grew, plank by plank, timber by timber. And as it grew, so did the mockery of his people.</p><p>The Quran says: <em>And whenever a company of his people passed by him, they ridiculed him.</em> They pointed at him. They laughed. They thought he had lost his mind. A ship in the desert? A boat with no water? A prophet with a hammer?</p><p>This is the cost of obedience in a mocking world. The people who laughed did not understand what Nuh was doing — and they could not have understood, because they had not been told what was coming. Nuh had been told. He knew the flood was real. They did not.</p><p>And this is the pattern for every generation. The one who obeys Allah is often mocked by those who do not yet know what Allah has planned. The laughter is real. But the ark keeps getting built. And the rain is coming.</p><p>Nuh did not stop building to argue with them. He did not stop to defend himself. He kept working — because the work was the mission, and the mocking was just noise.</p>",
+          "dialogue": {
+            "arabic": "وَكُلَّمَا مَرَّ عَلَيْهِ مَلَأٌ مِّن قَوْمِهِ سَخِرُوا مِنْهُ ۚ قَالَ إِن تَسْخَرُوا مِنَّا فَإِنَّا نَسْخَرُ مِنكُمْ كَمَا تَسْخَرُونَ",
+            "translation": "And whenever a company of his people passed by him, they ridiculed him. He said: If you ridicule us, then we will ridicule you just as you ridicule.",
+            "ref": "Hud 11:38"
+          },
+          "didYouKnow": "The Quran records Nuh's calm reply to the mockery: <em>You will soon know who it is that will receive a punishment that disgraces him and upon whom a lasting punishment will descend.</em> (Hud 11:39) He did not curse them — he warned them.",
+          "takeaway": "Mockery is the tax of obedience — pay it without stopping the work."
+        },
+        {
+          "num": 13,
+          "title": "The Command to Load",
+          "thumb": "load",
+          "body": "<p>Then the command came: <em>Until, when Our command came and the oven overflowed, We said: Load upon the ship two of each kind — a pair — and your family, except those about whom the word has already been decreed, and those who have believed. And none had believed with him except a few.</em></p><p>The sign of the flood was an oven overflowing with water. This is one of the strangest details in the Quran — a baking oven in the middle of the desert suddenly gushing with water. And when Nuh saw it, he knew the flood had begun.</p><p>He loaded the ark with pairs of every animal — male and female — so that life on earth could continue after the flood. He loaded his family, except those whose fate had already been sealed by their disbelief. And he loaded the believers — a small, small group.</p><p>Try to imagine that scene. All those years of calling. All those years of patience. All those years of watching the people turn away. And in the end — a handful of believers. A few families. Some pairs of animals. That was it. That was what the ark would carry.</p><p>And that was enough. Because Allah's plan never depended on numbers. It depended on the sincerity of the few.</p>",
+          "dialogue": {
+            "arabic": "حَتَّىٰ إِذَا جَاءَ أَمْرُنَا وَفَارَ التَّنُّورُ قُلْنَا احْمِلْ فِيهَا مِن كُلٍّ زَوْجَيْنِ اثْنَيْنِ وَأَهْلَكَ إِلَّا مَن سَبَقَ عَلَيْهِ الْقَوْلُ وَمَنْ آمَنَ ۚ وَمَا آمَنَ مَعَهُ إِلَّا قَلِيلٌ",
+            "translation": "Until, when Our command came and the oven overflowed, We said: Load upon the ship two of each kind — a pair — and your family, except those about whom the word has already been decreed, and those who have believed. And none had believed with him except a few.",
+            "ref": "Hud 11:40"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>Nuh's people were the first to worship idols, and Allah sent Nuh as the first messenger. He called them for 950 years, and only a small number believed.</em> Some narrations say it was eighty people in total — including Nuh's own family.",
+          "takeaway": "The size of the ark mattered less than the sincerity of those on it."
+        },
+        {
+          "num": 14,
+          "title": "The Family of Nuh",
+          "thumb": "family",
+          "body": "<p>The Quran tells us: <em>And Nuh called to his Lord and said: My Lord, indeed my son is of my family, and indeed Your promise is true.</em> Nuh's son was drowning. And Nuh was asking Allah to save him.</p><p>Some might think this is strange — why would Nuh, a prophet, ask Allah to save a disbeliever? But look at the request: Nuh was not asking for a theological exemption. He was asking for a <em>family</em> exemption. His son was his son. The love of a father does not disappear when a child goes astray.</p><p>And this is one of the deepest teachings of the story. Even the greatest prophet, at the moment of the greatest catastrophe, looked at his own son and wanted him saved. Not because his son deserved it — but because his son was his son.</p><p>And Allah corrected him: <em>Indeed, he is not of your family; indeed, he is one whose work was other than righteous.</em> The family of Allah is not the family of blood. It is the family of faith.</p><p>The Quran says: <em>The near relatives of the Prophet are not the ones who merely share his blood; the family of Allah are the ones who fear Him and obey Him.</em> Nuh had to learn this the hardest way — by watching his own son drown while the ark floated to safety.</p>",
+          "dialogue": {
+            "arabic": "وَنَادَىٰ نُوحٌ رَّبَّهُ فَقَالَ رَبِّ إِنَّ ابْنِي مِنْ أَهْلِي وَإِنَّ وَعْدَكَ الْحَقُّ وَأَنتَ أَحْكَمُ الْحَاكِمِينَ ۝ قَالَ يَا نُوحُ إِنَّهُ لَيْسَ مِنْ أَهْلِكَ ۖ إِنَّهُ عَمَلٌ غَيْرُ صَالِحٍ",
+            "translation": "And Nuh called to his Lord and said: My Lord, indeed my son is of my family, and indeed Your promise is true, and You are the most just of judges. He said: O Nuh, indeed he is not of your family; indeed, he is one whose work was other than righteous.",
+            "ref": "Hud 11:45-46"
+          },
+          "didYouKnow": "One of Nuh's sons — Kan'an — rejected his father's message and drowned with the disbelievers. Another son — Sam — believed and continued the line of humanity. Every human being on earth today descends from Sam, not Kan'an.",
+          "takeaway": "The family of faith matters more than the family of blood."
+        },
+        {
+          "num": 15,
+          "title": "The Call to the Son",
+          "thumb": "calling",
+          "body": "<p>Before the ark was launched, Nuh called out to his son one last time: <em>O my son, embark with us and do not be with the disbelievers.</em> This was not a command; it was an invitation. A father offering his son a way out. A final chance.</p><p>And the son replied: <em>I will take refuge on a mountain to protect me from the water.</em> He did not argue theology. He did not attack his father's message. He just trusted a mountain. He believed that something physical could save him from what was coming.</p><p>Nuh replied with the truth: <em>There is no protector today from the decree of Allah, except for whom He gives mercy.</em> And then the waves came between them — and the son was among the drowned.</p><p>This is a heartbreak that the Quran does not soften. Nuh's son had every opportunity. He had a father who was a prophet, who had called him for centuries, who invited him one last time onto the ark. And he chose the mountain. He chose the illusion of safety over the ark of salvation.</p><p>The lesson: our own devices cannot save us from what Allah has decreed. Not our wealth, not our intelligence, not our strength. Only Allah's mercy saves — and His mercy is sought through obedience, not through substitutes.</p>",
+          "dialogue": {
+            "arabic": "وَنَادَىٰ نُوحٌ ابْنَهُ فَقَالَ يَا بُنَيَّ ارْكَب مَّعَنَا وَلَا تَكُن مَّعَ الْكَافِرِينَ ۝ قَالَ سَآوِي إِلَىٰ جَبَلٍ يَعْصِمُنِي مِنَ الْمَاءِ ۚ قَالَ لَا عَاصِمَ الْيَوْمَ مِنْ أَمْرِ اللَّهِ إِلَّا مَن رَّحِمَ",
+            "translation": "And Nuh called to his son and said: O my son, embark with us and do not be with the disbelievers. He said: I will take refuge on a mountain to protect me from the water. He said: There is no protector today from the decree of Allah, except for whom He gives mercy.",
+            "ref": "Hud 11:42-43"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>Every person who disobeys Allah has some mountain they trust in — money, health, family, status. And every mountain collapses on the day of reckoning.</em> Nuh's son chose a mountain. What mountain are we trusting?",
+          "takeaway": "Nothing we build can save us from the decree of Allah — only His mercy, sought through obedience."
+        },
+        {
+          "num": 16,
+          "title": "The Waves Like Mountains",
+          "thumb": "waves",
+          "body": "<p>The flood came — and it was not like any flood the world had ever seen. The Quran describes it: <em>And it sailed with them amid waves like mountains.</em> The water rose so high that the waves towered like hills. The whole earth — valleys, hills, mountains — was submerged under a raging ocean.</p><p>Everything the disbelievers had built — their temples, their homes, their monuments — was swept away. Everything they had trusted — their wealth, their status, their armies — was drowned with them. Every idol they had worshipped was destroyed along with its worshippers.</p><p>For Nuh and the believers, the ark was not a refuge; it was a deliverance. They watched from the deck as their world disappeared. They watched as their neighbors — the ones who had mocked them for centuries — were carried away by the water. They watched the ark hold its course because Allah had commanded it to.</p><p>This is the meaning of <em>tawakkul</em> — trust in Allah. It does not save you from difficulty; it carries you through it. Nuh did not escape the flood. He rode it. And that is the difference.</p>",
+          "dialogue": {
+            "arabic": "وَهِيَ تَجْرِي بِهِمْ فِي مَوْجٍ كَالْجِبَالِ",
+            "translation": "And it sailed with them amid waves like mountains.",
+            "ref": "Hud 11:42"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>If Allah were to punish the people of the earth for their sins, He would not leave a single creature on it. But He delays them to a specified term.</em> The flood was a historical event, but it is also a warning: divine judgment is not myth.",
+          "takeaway": "Allah does not remove every difficulty — He carries the faithful through it."
+        },
+        {
+          "num": 17,
+          "title": "The Drowning of the World",
+          "thumb": "drowning",
+          "body": "<p>The Quran tells us: <em>And it was said: O earth, swallow your water, and O sky, withhold your rain. And the water subsided, and the matter was accomplished.</em> The flood was not a natural disaster — it was a divine decree. And it ended by divine command.</p><p>The entire population of the earth — every man, woman, and child who had rejected Nuh — was drowned. Every idol temple was destroyed. Every scheme against Nuh was ended. The world was, in a single stroke, emptied of its corruption.</p><p>This is the most complete destruction in human history. It is a testimony to Allah's power — that He can create a world and end it. It is a testimony to Allah's justice — that He does not let corruption continue forever. And it is a testimony to Allah's mercy — that even in destruction, He preserved the seed of the righteous.</p><p>Some people ask: how could Allah drown innocent children? The answer, as the scholars explain, is that Allah does not punish children for the sins of their parents. But the flood was a complete wiping away — the children of the disbelievers would have grown into the same disbelievers. Allah took them in their state of innocence and did not let them grow into guilt.</p>",
+          "dialogue": {
+            "arabic": "وَقِيلَ يَا أَرْضُ ابْلَعِي مَاءَكِ وَيَا سَمَاءُ أَقْلِعِي وَغِيضَ الْمَاءُ وَقُضِيَ الْأَمْرُ",
+            "translation": "And it was said: O earth, swallow your water, and O sky, withhold your rain. And the water subsided, and the matter was accomplished.",
+            "ref": "Hud 11:44"
+          },
+          "didYouKnow": "The Quran describes the flood as a re-creation of sorts — the world was dissolved and then rebuilt from the ark. Nuh is called <em>the second Adam</em> by some scholars, because every human being alive today descends from his line.",
+          "takeaway": "The justice of Allah is real — and so is the mercy that follows."
+        },
+        {
+          "num": 18,
+          "title": "The Final Separation",
+          "thumb": "separation",
+          "body": "<p>The Quran says: <em>And it was said: Away with the wrongdoing people.</em> And with those words, the line between the saved and the drowned was drawn — permanently. There was no going back. No second chance. No more dawah.</p><p>What makes this moment so heavy is what it means for every generation after: the disbelievers were not just destroyed; they were <em>separated</em>. Allah's decree had closed. Their fate was written in the waters of the flood.</p><p>And Nuh, watching all of this, must have felt something that only a prophet could feel — the weight of what it means to be a witness. He had called them for 950 years. He had warned them. He had begged them. And now it was over.</p><p>This is why the Prophet ﷺ said: <em>Whoever sees an evil should change it with his hand, or his tongue, or at least hate it in his heart — and that is the weakest of faith.</em> Nuh had used all three. And even he could not change the hearts of his people — because the guidance comes from Allah alone.</p>",
+          "dialogue": {
+            "arabic": "وَقِيلَ بُعْدًا لِّلْقَوْمِ الظَّالِمِينَ",
+            "translation": "And it was said: Away with the wrongdoing people.",
+            "ref": "Hud 11:44"
+          },
+          "didYouKnow": "Some scholars note that the flood was preceded by a specific sign: the rain would not stop, and the earth would begin to release its waters from within. Both happened together, which is why the flood was total — not partial.",
+          "takeaway": "The deeds we are given in this life are not endless — a day comes when the gate closes."
+        },
+        {
+          "num": 19,
+          "title": "The Mountain of Joudi",
+          "thumb": "joudi",
+          "body": "<p>The Quran says: <em>And the ark settled upon Joudi, and it was said: Away with the wrongdoing people.</em> Joudi is a mountain in the region of northern Iraq, near the Turkish border — scholars describe it as a mountain that had never been submerged. The ark rested there, and the flood receded.</p><p>And then Nuh opened the ark. And what he saw was a new world. Every human being except his family was gone. Every city was in ruins. Every temple was destroyed. The earth was empty of human life — except for the small community of believers, the animals they had carried, and the covenant they had made with their Lord.</p><p>Nuh stepped out onto Joudi and looked at the sky. The sky had cleared. The waters had returned to their places. The wind was fresh. The world was new.</p><p>And Nuh — after 950 years of dawah, after building the ark, after losing his son to the flood — bowed in gratitude. Because he had not just survived. He had been delivered. He had been chosen. And he had been given a new beginning.</p>",
+          "dialogue": {
+            "arabic": "وَاسْتَوَتْ عَلَى الْجُودِيِّ ۖ وَقِيلَ بُعْدًا لِّلْقَوْمِ الظَّالِمِينَ",
+            "translation": "And the ark settled upon Joudi, and it was said: Away with the wrongdoing people.",
+            "ref": "Hud 11:44"
+          },
+          "didYouKnow": "The exact location of Joudi is disputed, but the classical scholars placed it in the Kurdish region of modern-day Turkey and Iraq. It is one of the few geographical markers from the flood that have been preserved in revelation.",
+          "takeaway": "After every flood, Allah gives the faithful a new beginning."
+        },
+        {
+          "num": 20,
+          "title": "The Second Father of Humanity",
+          "thumb": "legacy",
+          "body": "<p>Nuh is called the second father of humanity. Every human being alive today — Muslim, Christian, Jew, Hindu, atheist — descends from him. His story is not just one prophet's story; it is <em>our</em> story. We are the children of the ark.</p><p>The Quran tells us that after the flood, Allah blessed Nuh: <em>O Nuh, descend with peace from Us and blessings upon you and upon nations from those with you.</em> And Nuh's descendants spread across the earth — some righteous, some not, but all bearing the mark of the flood.</p><p>What does Nuh teach us? Patience beyond imagining. Obedience in the face of impossibility. Faithfulness that does not depend on results. The cost of true loyalty — losing his son. And the reward of that loyalty — being chosen as the father of the new world.</p><p>The Prophet ﷺ said: <em>If anyone were to be patient, Nuh would be the one.</em> He is the icon of <em>sabr</em> in the Islamic tradition — not because he was passive, but because he was constant.</p><p>And the final lesson: the ark is still the model. Allah commands; we obey. The world mocks; we build. The flood comes; we are saved. Not because we are strong, but because we trusted the One who commanded.</p><p>May Allah make us among those who build the ark, and among those who board it. Ameen.</p>",
+          "dialogue": {
+            "arabic": "يَا نُوحُ اهْبِطْ بِسَلَامٍ مِّنَّا وَبَرَكَاتٍ عَلَيْكَ وَعَلَىٰ أُمَمٍ مِّمَّن مَّعَكَ",
+            "translation": "O Nuh, descend with peace from Us and blessings upon you and upon nations from those with you.",
+            "ref": "Hud 11:48"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>Muslims will be asked on the Day of Judgment about their Prophet, and Nuh will be called as the first messenger to testify about his people.</em> He is honored in the hereafter as the first of the messengers.",
+          "takeaway": "The one who obeys Allah without waiting for results becomes the seed of a new world."
+        }
+      ]
+    },{
+  "id": "hud",
+  "num": 4,
+  "name": "Hud",
+  "arabic": "هود",
+  "subtitle": "9 Lessons",
+  "image": "images/prophet-04-hud.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The People of 'Ad",
+      "thumb": "ad",
+      "body": "<p>After the flood, humanity began again. Nuh's descendants multiplied, spread across the earth, and — as generations passed — the same drift began. Slowly, quietly, the memory of the One God faded. And among the tribes that grew proud and powerful, one stood out above all: the people of 'Ad.</p><p>The 'Ad were a nation unlike any before them. They were giants in stature, powerful in body, and masters of architecture. The Quran describes them with awe: <em>Do you not consider how your Lord dealt with 'Ad — Iram, of the lofty pillars, the like of which were not created in the lands?</em> Their buildings were so magnificent that the Quran uses them as an example of worldly grandeur unmatched before or since.</p><p>They had wealth. They had strength. They had technology. And with all of it, they had grown arrogant. They no longer thanked Allah for any of it — in fact, they attributed their greatness to themselves, and gradually began to worship gods of their own making.</p><p>Into this proud civilization, Allah sent a man from among them: Hud (AS).</p>",
+      "dialogue": {
+        "arabic": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِعَادٍ ۝ إِرَمَ ذَاتِ الْعِمَادِ ۝ الَّتِي لَمْ يُخْلَقْ مِثْلُهَا فِي الْبِلَادِ",
+        "translation": "Have you not considered how your Lord dealt with 'Ad — Iram, of the lofty pillars, the like of which were not created in the lands?",
+        "ref": "Al-Fajr 89:6-8"
+      },
+      "didYouKnow": "The 'Ad are called <em>Iram</em> in the Quran — a name associated with a legendary city of great wealth and architecture. Some scholars have tried to identify it with ruins found in southern Arabia, but the Quran describes it more as a warning than as an archaeological fact.",
+      "takeaway": "Wealth, strength and technology do not make a people great — gratitude to Allah does."
+    },
+    {
+      "num": 2,
+      "title": "A Brother From Among Them",
+      "thumb": "brother",
+      "body": "<p>Hud was not an outsider. He was not a foreigner dropped into 'Ad from some distant land. He was one of them. The Quran calls him <em>akhāhum Hūd</em> — 'their brother Hud.' He shared their language, their tribe, their history, their ancestors. He had grown up among them.</p><p>This is how Allah usually sends messengers — from within the people, not from outside them. Because a messenger from within can speak with the weight of shared experience. He knows their culture. He knows their fears. He knows their weaknesses. And he speaks with the moral authority of a person who has been part of them all along.</p><p>Hud stood up among his people and said: <em>O my people, worship Allah; you have no deity other than Him. Then will you not fear Him?</em> Not a new message. Not a foreign religion. The same tawhid that Nuh had called to, and Ibrahim's ancestor before him.</p><p>The message was not complicated. But the hearts had grown hard. And so Hud began his mission — with the same patience and the same love that Nuh had shown, but for a different people, and with a different ending.</p>",
+      "dialogue": {
+        "arabic": "وَإِلَىٰ عَادٍ أَخَاهُمْ هُودًا ۚ قَالَ يَا قَوْمِ اعْبُدُوا اللَّهَ مَا لَكُم مِّنْ إِلَٰهٍ غَيْرُهُ ۖ أَفَلَا تَتَّقُونَ",
+        "translation": "And to 'Ad, their brother Hud. He said: O my people, worship Allah; you have no deity other than Him. Then will you not fear Him?",
+        "ref": "Al-A'raf 7:65"
+      },
+      "didYouKnow": "Hud is one of the four prophets the Arabs called <em>al-ʿarab al-bā'idah</em> — 'the ancient Arabs.' He is also known as the second messenger after Nuh, sent specifically to the first great civilization that arose after the flood.",
+      "takeaway": "The best caller is one who shares the people's world — and calls them from within it."
+    },
+    {
+      "num": 3,
+      "title": "The Call to Gratitude",
+      "thumb": "gratitude",
+      "body": "<p>Hud continued: <em>And remember when He made you successors after the people of Nuh, and increased you in stature extensively. So remember the favors of Allah, that you might succeed.</em></p><p>Notice what Hud did not say. He did not begin with condemnation. He began with <em>remembrance</em> — reminding them of everything Allah had done for them. The 'Ad were strong? Allah had made them strong. They were prosperous? Allah had given them the wealth. They had survived after the flood? Allah had carried their ancestors on the ark.</p><p>Gratitude is the antidote to arrogance. Arrogance grows in the soil of forgetfulness. The 'Ad had forgotten where their strength came from. They had begun to think of it as their own achievement — something they had earned, something they deserved, something they owned.</p><p>And once a people thinks its blessings belong to itself, the door to pride opens. And once pride enters, worship becomes inconvenient. And once worship becomes inconvenient, disbelief follows.</p><p>Hud's first move was to remind them: <em>remember the favors of Allah.</em> Because the road back to faith always runs through gratitude.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرُوا إِذْ جَعَلَكُمْ خُلَفَاءَ مِن بَعْدِ قَوْمِ نُوحٍ وَزَادَكُمْ فِي الْخَلْقِ بَسْطَةً ۖ فَاذْكُرُوا آلَاءَ اللَّهِ لَعَلَّكُمْ تُفْلِحُونَ",
+        "translation": "And remember when He made you successors after the people of Nuh and increased you in stature extensively. So remember the favors of Allah, that you might succeed.",
+        "ref": "Al-A'raf 7:69"
+      },
+      "didYouKnow": "The scholars say the 'Ad were exceptionally tall — some narrations describe them as several times the height of ordinary men. But whatever their stature, their true smallness was in their hearts — they had forgotten the One who made them.",
+      "takeaway": "Gratitude is the antidote to arrogance — the memory of Allah's favors keeps the heart soft."
+    },
+    {
+      "num": 4,
+      "title": "The Accusation of Foolishness",
+      "thumb": "fool",
+      "body": "<p>The response of the 'Ad came fast: <em>Indeed, we see you in foolishness, and indeed we think you are of the liars.</em></p><p>Two accusations in one breath. First, that Hud was a fool — a man who had lost his mind. Second, that he was a liar — a man who was deliberately deceiving them. Notice the contradiction: you cannot be both a fool and a liar at the same time. A fool does not have the capacity to lie strategically; a liar is not naive enough to be foolish.</p><p>But this is how the powerful respond to truth. When they cannot refute the message, they attack the messenger. When the argument fails, they reach for insults. When the logic is unassailable, they reach for character assassination.</p><p>Hud did not take the bait. He did not argue with the accusation. He did not defend his intelligence. He simply said: <em>O my people, there is no foolishness in me; rather I am a messenger from the Lord of the worlds.</em> He did not fight the insult with another insult. He just reaffirmed what he was.</p><p>This is the dignity of the prophetic call. The messenger does not need to win the argument. He only needs to deliver the message.</p>",
+      "dialogue": {
+        "arabic": "قَالَ الْمَلَأُ الَّذِينَ كَفَرُوا مِن قَوْمِهِ إِنَّا لَنَرَاكَ فِي سَفَاهَةٍ وَإِنَّا لَنَظُنُّكَ مِنَ الْكَاذِبِينَ ۝ قَالَ يَا قَوْمِ لَيْسَ بِي سَفَاهَةٌ وَلَٰكِنِّي رَسُولٌ مِّن رَّبِّ الْعَالَمِينَ",
+        "translation": "The disbelieving leaders of his people said: Indeed, we see you in foolishness, and indeed we think you are of the liars. He said: O my people, there is no foolishness in me, but I am a messenger from the Lord of the worlds.",
+        "ref": "Al-A'raf 7:66-67"
+      },
+      "didYouKnow": "The pattern of attacking the messenger's character is nearly universal. In every generation, the people who reject the message resort to calling the messenger foolish, mad, or deceptive. The Quran records these accusations to show that they are older than Islam itself.",
+      "takeaway": "When the argument is lost, the attacker reaches for insult — do not take the bait."
+    },
+    {
+      "num": 5,
+      "title": "The Accusation of Madness",
+      "thumb": "mad",
+      "body": "<p>The 'Ad pressed harder: <em>We do not see in you anything but a man like ourselves, and we do not think you are anything but a liar.</em> And elsewhere: <em>He is not but a man who has fabricated a lie about Allah, and we will not believe in him.</em></p><p>Hud's reply was measured and precise: <em>Indeed, I call Allah to witness — and witness you — that I am free of what you associate with Him. So plot against me, all of you, and give me no respite. Indeed, I have relied upon Allah, my Lord and your Lord. There is no creature but that He holds it by its forelock. Indeed, my Lord is on a straight path.</em></p><p>This is one of the most confident statements in the entire Quran. Hud was telling them: <em>Bring all your plots. Bring all your strength. Do your worst. I am not afraid, because I have placed my trust in the One who holds every creature by its forelock.</em></p><p>They thought they were going to intimidate a prophet. He responded by telling them: <em>You are the ones who have no power. I have the power of the One who controls all things.</em></p><p>This is the security of tawakkul. The believer does not fear the plots of men, because the Plotter of all plots is on his side.</p>",
+      "dialogue": {
+        "arabic": "إِنِّي تَوَكَّلْتُ عَلَى اللَّهِ رَبِّي وَرَبِّكُم ۚ مَّا مِن دَابَّةٍ إِلَّا هُوَ آخِذٌ بِنَاصِيَتِهَا ۚ إِنَّ رَبِّي عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ",
+        "translation": "Indeed, I have relied upon Allah, my Lord and your Lord. There is no creature but that He holds it by its forelock. Indeed, my Lord is on a straight path.",
+        "ref": "Hud 11:56"
+      },
+      "didYouKnow": "The Arabic phrase <em>ākhidhun bināṣiyatihā</em> — 'holding it by its forelock' — is a metaphor for complete control. In Arab culture, grabbing a horse or camel by its forelock was a sign of mastery. Hud was telling his people: Allah has absolute control over every living thing, including you.",
+      "takeaway": "The one who trusts Allah cannot be intimidated by the power of men."
+    },
+    {
+      "num": 6,
+      "title": "The Signs They Missed",
+      "thumb": "signs",
+      "body": "<p>Hud continued: <em>O my people, ask forgiveness of your Lord and then repent to Him. He will send the sky upon you in showers and increase you in strength. So do not turn away as criminals.</em></p><p>Look at the mercy in this offer. Even after the insults, even after the accusations, even after being called a fool, Hud was still offering them a way back. And the reward of returning was not vague — it was specific: rain from the sky, an increase in strength. Blessings in this world, and forgiveness in the next.</p><p>This is the shape of every prophetic invitation: <em>Turn back, and Allah will shower you with mercy. Turn back, and He will increase you. Turn back, and your life will become better — not worse.</em></p><p>The 'Ad had been blessed with so much. And the sign that they should have seen was the sky itself — the rain that fell, the plants that grew, the strength that came from fertile land. But they had stopped seeing signs. Their eyes were on their buildings, their wealth, their status.</p><p>And when a people stops seeing signs, they lose the ability to be moved by warnings.</p>",
+      "dialogue": {
+        "arabic": "وَيَا قَوْمِ اسْتَغْفِرُوا رَبَّكُمْ ثُمَّ تُوبُوا إِلَيْهِ يُرْسِلِ السَّمَاءَ عَلَيْكُم مِّدْرَارًا وَيَزِدْكُمْ قُوَّةً إِلَىٰ قُوَّتِكُمْ وَلَا تَتَوَلَّوْا مُجْرِمِينَ",
+        "translation": "And O my people, ask forgiveness of your Lord and then repent to Him. He will send the sky upon you in showers and increase you in strength. So do not turn away as criminals.",
+        "ref": "Hud 11:52"
+      },
+      "didYouKnow": "The Quran repeatedly links repentance with rain as a sign of Allah's acceptance of a people. The 'Ad were blessed with fertile land, which is why their wealth was so great. Their rejection of Hud would cause that blessing to be removed.",
+      "takeaway": "Every blessing in your life is an invitation to turn back to Allah."
+    },
+    {
+      "num": 7,
+      "title": "The Refusal of Pride",
+      "thumb": "pride",
+      "body": "<p>The 'Ad did not reject Hud because they thought he was wrong. They rejected him because they thought they were <em>above</em> him. The Quran records their sneer: <em>You are nothing but a man like ourselves. If you are truthful, bring us what you promise.</em></p><p>They did not say, <em>We have examined the message and disagree with it.</em> They said, <em>We are equal to you, so why should we follow you?</em> The problem was not the message — the problem was their own pride. In their eyes, they were too great to submit to a man like themselves.</p><p>And this is the sin of <em>kibr</em> — arrogance. It is the sin of Iblis. It was the sin of the 'Ad. And it is the sin of every generation that thinks its own greatness is enough.</p><p>The Prophet ﷺ said: <em>No one who has an atom's weight of arrogance in his heart will enter Paradise.</em> The Companions asked, <em>But a man likes his clothes to be nice and his shoes to be nice?</em> The Prophet ﷺ replied: <em>Indeed, Allah is Beautiful and loves beauty. Arrogance is rejecting the truth and looking down on people.</em></p><p>It was not pride in their appearance that doomed the 'Ad. It was pride in their hearts — the belief that they were above having to submit.</p>",
+      "dialogue": {
+        "arabic": "مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ لَمْ يَدْخُلِ الْجَنَّةَ",
+        "translation": "Whoever has in his heart the weight of a mustard seed of arrogance will not enter Paradise.",
+        "ref": "Sahih Muslim"
+      },
+      "didYouKnow": "The 'Ad's greatness was measured by their buildings and their stature. But the Quran answers them: <em>Do you build on every height a monument for nothing? And do you take for yourselves structures as if you will remain forever?</em> (Ash-Shu'ara 26:128-129)",
+      "takeaway": "The sin that destroyed Iblis is the same sin that destroys nations — the belief that one is above submitting."
+    },
+    {
+      "num": 8,
+      "title": "The Punishment Arrives",
+      "thumb": "wind",
+      "body": "<p>Then came the decree of Allah. The Quran describes it with terrifying precision: <em>And as for 'Ad, they were destroyed by a furious wind, extremely violent. He imposed it upon them for seven nights and eight days, continuously, so that you would see the people therein fallen as if they were hollow trunks of palm trees.</em></p><p>Seven nights. Eight days. A wind that did not stop. A wind that lifted men off their feet and threw them against rocks. A wind that turned the mightiest of the 'Ad into hollow trunks of palm trees.</p><p>Notice what the punishment was: <em>wind</em>. What had they relied upon? Their buildings. What destroyed them? Nothing physical — just air. The very element they had ignored. The very blessing they had forgotten — the air they breathed every second, the wind that had carried rain to their land — became the tool of their destruction.</p><p>And there was no ark for them. There was no escape. There was no prophet pleading for them this time. Hud had left — Allah had commanded him to leave, and to take the believers with him. And when the wind came, only the disbelievers remained.</p>",
+      "dialogue": {
+        "arabic": "فَأَمَّا عَادٌ فَاسْتَكْبَرُوا فِي الْأَرْضِ بِغَيْرِ الْحَقِّ وَقَالُوا مَنْ أَشَدُّ مِنَّا قُوَّةً ۖ أَوَلَمْ يَرَوْا أَنَّ اللَّهَ الَّذِي خَلَقَهُمْ هُوَ أَشَدُّ مِنْهُمْ قُوَّةً",
+        "translation": "As for 'Ad, they were arrogant upon the earth without right and said: Who is greater than us in strength? Did they not consider that Allah who created them was greater than them in strength?",
+        "ref": "Fussilat 41:15"
+      },
+      "didYouKnow": "The Prophet ﷺ described this wind: <em>It is a wind that is cold, freezing, and comes with a great roar — it takes people and dashes them against the rocks.</em> (Sahih Muslim) The imagery of bodies scattered like hollow palm trunks appears directly in the Quran.",
+      "takeaway": "The blessing we ignore becomes the vessel of our destruction."
+    },
+    {
+      "num": 9,
+      "title": "The Ruined Cities",
+      "thumb": "ruins",
+      "body": "<p>The 'Ad were wiped out. And their magnificent cities — Iram of the lofty pillars — were left as empty ruins. The Quran says: <em>So do you see any remnant of them?</em> And the answer is: almost nothing. A civilization that had built wonders unmatched in the world was erased in eight days.</p><p>The Prophet ﷺ passed by some of the ruins of the 'Ad on his way to Tabuk, and he said to his Companions: <em>Do not enter upon these people who were punished, unless you are weeping. And if you are not weeping, then do not enter, lest you be afflicted with what afflicted them.</em></p><p>This is the lesson of the 'Ad — not for historians, but for us. The cities they built are dust. The strength they boasted of is dust. The wealth they hoarded is dust. And every generation that follows the same path will end the same way.</p><p>Hud was saved. His believers were saved. And they went on to become the ancestors of new generations — including, centuries later, the tribe of Salih, who would face their own test.</p><p>But the lesson of the 'Ad lives on in the Quran: <em>Whoever is arrogant upon the earth without right, let him remember the wind.</em></p><p>May Allah protect us from pride and make us among the humble. Ameen.</p>",
+      "dialogue": {
+        "arabic": "فَهَلْ تَرَىٰ لَهُم مِّن بَاقِيَةٍ",
+        "translation": "So do you see any remnant of them?",
+        "ref": "Al-Haqqah 69:8"
+      },
+      "didYouKnow": "The Prophet ﷺ instructed his Companions not to enter the ruins of punished nations except in humility, and to weep if they could — because the punishment of Allah is a real thing, and hardness of heart is a disease.",
+      "takeaway": "The ruins of the arrogant are the classrooms of the humble."
+    }
+  ]
+},    {
+      "id": "salih",
+      "num": 5,
+      "name": "Salih",
+      "arabic": "صالح",
+      "subtitle": "9 Lessons",
+      "image": "images/prophet-05-salih.webp",
+      "tier": "standard",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "After 'Ad",
+          "thumb": "after",
+          "body": "<p>When the 'Ad were destroyed, a new generation rose in their place. The Quran calls them <em>Thamud</em> — a people who inherited the lands of the 'Ad, learned their architecture, and settled in a fertile valley in the north of Arabia. And like every generation, they were tested.</p><p>For a time, the Thamud remembered. They saw the ruins of the 'Ad. They heard the stories. They knew the fate of a people who had grown proud and turned from Allah. The Prophet ﷺ said that the ruins of the 'Ad were still standing in the time of the Thamud — a visible warning on the horizon.</p><p>But generations pass. Memories fade. And the same story that had destroyed the 'Ad began to repeat itself. The Thamud grew prosperous. They grew powerful. They built magnificent homes carved directly into the rocky mountains — a skill that still amazes archaeologists today. And with the wealth and the strength, the same pride crept back in.</p><p>Into this world, Allah sent Salih (AS). Not an outsider — a brother from among them. The Quran says: <em>And to Thamud, their brother Salih.</em></p>",
+          "dialogue": {
+            "arabic": "وَإِلَىٰ ثَمُودَ أَخَاهُمْ صَالِحًا ۚ قَالَ يَا قَوْمِ اعْبُدُوا اللَّهَ مَا لَكُم مِّنْ إِلَٰهٍ غَيْرُهُ",
+            "translation": "And to Thamud, their brother Salih. He said: O my people, worship Allah; you have no deity other than Him.",
+            "ref": "Al-A'raf 7:73"
+          },
+          "didYouKnow": "The Thamud carved their homes into mountains — the ruins of Mada'in Salih in modern Saudi Arabia are considered by many scholars to be their remains. The Quran says: <em>And you carve out of the mountains, homes, skillfully.</em> (Ash-Shu'ara 26:149)",
+          "takeaway": "Every generation inherits not just the wealth of the past — but also the warnings."
+        },
+        {
+          "num": 2,
+          "title": "The Message of Salih",
+          "thumb": "message",
+          "body": "<p>Salih's message was identical to Hud's, and to Nuh's, and to every prophet before him: <em>Worship Allah; you have no deity other than Him.</em> One sentence. One truth. Repeated across centuries. The message has never changed because the truth has never changed.</p><p>But Salih added a specific reminder, tailored to his people: <em>And remember when He made you successors after 'Ad, and settled you in the land — you take for yourselves palaces from its plains and carve from the mountains, homes. So remember the favors of Allah, and do not commit abuse on the earth, spreading corruption.</em></p><p>Notice the wisdom: Salih did not just preach tawhid in the abstract. He connected it to their daily lives. <em>You live in palaces? Allah gave you those palaces. You carve homes from mountains? Allah gave you the strength and the skill. You inherited the lands of 'Ad? Allah gave you that inheritance — do not repeat their mistake.</em></p><p>This is the craft of prophetic dawah: it meets the people where they are. It uses their own lives, their own history, their own blessings as the material of the message. The lesson is always: <em>What you have is from Allah. Remember Him.</em></p>",
+          "dialogue": {
+            "arabic": "وَاذْكُرُوا إِذْ جَعَلَكُمْ خُلَفَاءَ مِن بَعْدِ عَادٍ وَبَوَّأَكُمْ فِي الْأَرْضِ تَتَّخِذُونَ مِن سُهُولِهَا قُصُورًا وَتَنْحِتُونَ الْجِبَالَ بُيُوتًا ۖ فَاذْكُرُوا آلَاءَ اللَّهِ وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ",
+            "translation": "And remember when He made you successors after 'Ad and settled you in the land — you take for yourselves palaces from its plains and carve from the mountains, homes. So remember the favors of Allah, and do not commit abuse on the earth, spreading corruption.",
+            "ref": "Al-A'raf 7:74"
+          },
+          "didYouKnow": "The ruins of Mada'in Salih are called <em>Al-Hijr</em> in the Quran — the same name Allah uses for the people of Thamud in Surah Al-Hijr. The Prophet ﷺ passed through these ruins and warned his Companions not to enter them.",
+          "takeaway": "The dawah that works is the one that meets people in the world they actually live in."
+        },
+        {
+          "num": 3,
+          "title": "The Demand for a Sign",
+          "thumb": "sign",
+          "body": "<p>The Thamud responded with the same demand as every disbelieving people before them: <em>If you are a messenger, bring us a sign.</em> But this time, the demand was more specific. They pointed to a specific rock — an enormous boulder — and said: <em>If you are truthful, bring forth from this rock a she-camel, ten months pregnant, with young, and let it be a sign from your Lord.</em></p><p>It was a challenge designed to be impossible. No human being can produce a living creature from a rock. They thought they had cornered Salih. They thought they had finally found a way to expose him as a fraud.</p><p>And Salih, knowing that Allah had power over all things, made dua to his Lord. And Allah answered. The rock split, and from it emerged a she-camel — exactly as they had specified. A living, breathing, fully formed animal. Standing on the plains of Thamud.</p><p>What did they do? They asked for a sign. And when the sign came, they refused it anyway. Because the sign was never the issue. The heart was.</p>",
+          "dialogue": {
+            "arabic": "قَدْ جَاءَتْكُم بَيِّنَةٌ مِّن رَّبِّكُمْ ۖ هَٰذِهِ نَاقَةُ اللَّهِ لَكُمْ آيَةً",
+            "translation": "There has come to you a clear sign from your Lord. This is the she-camel of Allah as a sign for you.",
+            "ref": "Al-A'raf 7:73"
+          },
+          "didYouKnow": "The she-camel was not just a miracle — it was also a test. The Quran says Allah brought it out as <em>a sign</em> — meaning that its continued existence was a living testimony. The Thamud would have to live with the evidence of their own rejection.",
+          "takeaway": "The sign is never the issue — the hardened heart is."
+        },
+        {
+          "num": 4,
+          "title": "The She-Camel's Rights",
+          "thumb": "camel",
+          "body": "<p>Allah gave the she-camel a specific rule: it was to be respected, and not to be harmed. Salih warned his people: <em>This is the she-camel of Allah — a sign for you. So leave her to eat on the earth of Allah, and do not touch her with harm, lest there take you a punishment of a painful day.</em></p><p>And then a detailed instruction: the camel would drink one day, and the people would drink on another. A shared water source. A shared cycle. A clear boundary.</p><p>This was an extraordinary concession. A wild, miraculous animal was given free access to the land, and given water rights that trumped the humans' own drinking days. It was as if Allah was saying: <em>The sign is not just to be seen — it is to be lived with. And how you treat it will reveal what is in your hearts.</em></p><p>The she-camel was not the point. The point was the response. If the people could live in harmony with a creature they did not understand, they could accept a prophet they did not fully understand. If they could not even tolerate a camel, they could not tolerate the truth.</p><p>And so the sign became a test — as every sign becomes for the people who receive it.</p>",
+          "dialogue": {
+            "arabic": "وَلَا تَمَسُّوهَا بِسُوءٍ فَيَأْخُذَكُمْ عَذَابُ يَوْمٍ عَظِيمٍ",
+            "translation": "And do not touch her with harm, lest there seize you the punishment of a great day.",
+            "ref": "Al-A'raf 7:73 (meaning)"
+          },
+          "didYouKnow": "The Quran describes the she-camel as having a specific drinking day: <em>She has a drink, and you have a drink, on a known day.</em> (Ash-Shu'ara 26:155) This detail shows that the miracle was not just for a moment — it was integrated into their daily life for a period of time.",
+          "takeaway": "A sign that is not lived by becomes a witness against the one who saw it."
+        },
+        {
+          "num": 5,
+          "title": "The Nine Wicked Men",
+          "thumb": "nine",
+          "body": "<p>The Quran says: <em>And there were in the city nine men who caused corruption in the land and did not reform.</em> Nine men. Not an army. Not a nation. Nine specific people — the ringleaders of the corruption, the ones who decided the fate of a whole society.</p><p>These nine men were not just disbelievers. They were <em>sowers</em> of corruption. They did not just reject the truth themselves — they organized, plotted, and pressured others to follow them. And when Salih's message began to gain traction, they decided to remove him permanently.</p><p>They gathered and swore: <em>We will surely attack him and his family by night, and then we will tell his protector: We did not witness the destruction of his family, and indeed we are truthful.</em> They planned a murder. And they planned to lie about it. In the darkness. Away from witnesses.</p><p>But the Quran says: <em>And they planned a plan, and We planned a plan, while they perceived not.</em> They could not imagine that Allah was already planning their end — while they were still plotting theirs.</p>",
+          "dialogue": {
+            "arabic": "وَكَانَ فِي الْمَدِينَةِ تِسْعَةُ رَهْطٍ يُفْسِدُونَ فِي الْأَرْضِ وَلَا يُصْلِحُونَ",
+            "translation": "And there were in the city nine men who caused corruption in the land and did not reform.",
+            "ref": "An-Naml 27:48"
+          },
+          "didYouKnow": "The Quran does not name these nine men, but the classical scholars describe them as the elite of the Thamud — the wealthy, the powerful, the ones whose influence shaped the whole society. The Quran often identifies the leaders as the chief corrupters of a people.",
+          "takeaway": "A society is often destroyed by a small number of corrupt leaders who control the many."
+        },
+        {
+          "num": 6,
+          "title": "The Slaughter of the Camel",
+          "thumb": "slaughter",
+          "body": "<p>The plotting intensified. And then, one day, the inevitable happened. The nine men persuaded one among them to kill the she-camel. The Quran says: <em>And they called their companion, and he took a sword and hamstrung her.</em> The sign of Allah, the miraculous proof, the living testimony of the truth — butchered by a single hand.</p><p>And the response from the people was not horror. It was a shrug. The Quran records them saying to Salih: <em>O Salih, bring us what you promise us, if you are of the messengers.</em> They had taken a living miracle — a gift from Allah — and turned it into a demand for more.</p><p>This is the terrifying pattern of the disbelieving heart. A sign is given. It is treated as a marvel. Then it becomes familiar. Then it becomes ordinary. Then it becomes an obstacle. Then it is destroyed. And then the demand for a <em>different</em> sign begins.</p><p>The heart that refuses to believe will never run out of reasons. It will only run out of signs to destroy.</p>",
+          "dialogue": {
+            "arabic": "فَنَادَوْا صَاحِبَهُمْ فَتَعَاطَىٰ فَعَقَرَ",
+            "translation": "And they called their companion, and he took a sword and hamstrung her.",
+            "ref": "Al-Qamar 54:29"
+          },
+          "didYouKnow": "The Arabic phrase <em>fa-'aqara</em> refers specifically to cutting the legs of a camel to disable it. The Quran describes the killing as the act of one man — but the entire nation was held responsible, because no one stopped him.",
+          "takeaway": "When a community permits corruption, the whole community bears its consequences."
+        },
+        {
+          "num": 7,
+          "title": "The Warning of Three Days",
+          "thumb": "warning",
+          "body": "<p>When the she-camel was killed, Salih's response was not panic. It was a warning: <em>Enjoy yourselves in your homes for three days. That is a promise not to be denied.</em> Three days. Allah had given them three days to think, to repent, to change. Even after the sign of Allah had been slaughtered.</p><p>But something strange began to happen. The Quran says that when Salih warned them, the faces of the people turned pale, and their bodies began to change colour day by day. On the first day they turned yellow. On the second day, red. On the third day, black. And on the fourth day, the punishment arrived.</p><p>This is the mercy of Allah — extending a warning beyond the moment. Even after the she-camel, even after the plotting, even after the arrogance — three days. Three days to turn back.</p><p>And still, they did not. The punishment was not sudden; it was announced. It was not hidden; it was warned. And every warning from Allah is also a final mercy.</p>",
+          "dialogue": {
+            "arabic": "فَقَالَ تَمَتَّعُوا فِي دَارِكُمْ ثَلَاثَةَ أَيَّامٍ ۖ ذَٰلِكَ وَعْدٌ غَيْرُ مَكْذُوبٍ",
+            "translation": "And he said: Enjoy yourselves in your homes for three days. That is a promise not to be denied.",
+            "ref": "Hud 11:65"
+          },
+          "didYouKnow": "Classical scholars describe the three days as the last mercy of Allah to the disbelievers — an opportunity to turn back even after the sign of Allah had been desecrated. Even in judgment, Allah opens a window.",
+          "takeaway": "Every warning from Allah is also a final offer of mercy."
+        },
+        {
+          "num": 8,
+          "title": "The Cry and the Earthquake",
+          "thumb": "cry",
+          "body": "<p>The fourth day came. And with it, the punishment of Allah. The Quran says: <em>So the earthquake seized them, and they became within their home fallen prone. And those who disbelieved in Salih — it was as if they had never lived there.</em></p><p>And in another verse: <em>And they were seized by the blast, and it left them in their homes, fallen prone.</em></p><p>The punishment took multiple forms — an earthquake, a blast, a cry. It was total. It came from the earth below and the sky above. And in a single moment, an entire civilization — the one that had carved palaces from stone, the one that had invented wonders of architecture, the one that had mocked Salih for years — was destroyed.</p><p>And Salih, watching it, turned to his people — even in the moment of their destruction — and said: <em>O my people, I had certainly conveyed to you the message of my Lord and advised you, but you do not like advisers.</em></p><p>This is the heart of a prophet. Even as the destruction unfolded before him, he did not gloat. He did not celebrate. He mourned — and he bore witness that he had done his part.</p>",
+          "dialogue": {
+            "arabic": "فَأَخَذَتْهُمُ الرَّجْفَةُ فَأَصْبَحُوا فِي دَارِهِمْ جَاثِمِينَ",
+            "translation": "So the earthquake seized them, and they became within their home fallen prone.",
+            "ref": "Al-A'raf 7:78"
+          },
+          "didYouKnow": "The Prophet ﷺ told his Companions about the ruins of Thamud: <em>Do not enter upon these people who were punished, unless you are weeping. And if you are not weeping, then do not enter, lest you be afflicted with what afflicted them.</em> The advice applies to every place of divine punishment.",
+          "takeaway": "The prophet warns and warns — but the outcome is never in his hands."
+        },
+        {
+          "num": 9,
+          "title": "The Saved Few",
+          "thumb": "saved",
+          "body": "<p>And Salih — along with the believers who had followed him — walked away. The Quran tells us: <em>So We saved him and those with him by mercy from Us, and We cut off the last remnant of those who denied Our signs and were not believers.</em></p><p>Look at that phrase: <em>by mercy from Us</em>. Salih was not saved because he was stronger than his people. He was not saved because he was smarter, or wealthier, or more powerful. He was saved because Allah chose to save him. Because he had done his part, and Allah did the rest.</p><p>The believers who followed Salih were not the powerful ones. As with Nuh, as with Hud, as with every prophet — the believers were the humble. The ones who had no stake in the corrupt system. The ones whose hearts were still soft enough to hear the truth.</p><p>And so the story closes with the same lesson it began with: <em>Blessings from Allah are gifts, not achievements. Gratitude keeps them. Arrogance destroys them. And the humble inherit the earth.</em></p><p>May Allah make us among the grateful, and protect us from the pride that destroyed nations. Ameen.</p>",
+          "dialogue": {
+            "arabic": "فَنَجَّيْنَا مَن كَانَ مَعَهُ وَالَّذِينَ آمَنُوا",
+            "translation": "So We saved those who were with him and those who believed.",
+            "ref": "Al-A'raf 7:72 (meaning)"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>The best of you are those who live long and do good deeds, and the worst of you are those who live long and do evil deeds.</em> The Thamud were destroyed despite their wealth and architecture — because the length of their years did not match the state of their hearts.",
+          "takeaway": "Allah saves those who are faithful — not those who are many or powerful."
+        }
+      ]
+    }
+  ]
+}
