@@ -4007,4 +4007,267 @@ setTimeout(scheduleFridayReminder, 4000);if('serviceWorker' in navigator){
       console.log('SW registration failed', err);
     });
   });
+}// ═══════════════════════════════════════════════════════════════
+// PROPHETS' STORIES — renderer + wiring
+// Loads content/prophets-1.json .. prophets-5.json (missing files ignored)
+// Uses existing openLearnOverlay / setLearnTitle / setLearnContent / LEARN_BACK_HANDLERS
+// Reuses existing CSS: .prophet-card, .prophet-hero, .lesson-row, .lesson-reader-*
+// ═══════════════════════════════════════════════════════════════
+
+const PROPHET_FILES = ['prophets-1', 'prophets-2', 'prophets-3', 'prophets-4', 'prophets-5'];
+
+const PROPHET_LESSON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/></svg>';
+const PROPHET_CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+const PROPHET_BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+
+const prophetState = {
+  view: 'list',
+  prophetId: null,
+  lessonNum: 1,
+  data: null,
+  progress: {}
+};
+
+try { prophetState.progress = JSON.parse(localStorage.getItem('prophet-progress') || '{}'); } catch(e) { prophetState.progress = {}; }
+
+function saveProphetProgress() {
+  try { localStorage.setItem('prophet-progress', JSON.stringify(prophetState.progress)); } catch(e) {}
 }
+
+function isLessonComplete(pid, num) {
+  return (prophetState.progress[pid] || []).indexOf(num) !== -1;
+}
+
+function markLessonComplete(pid, num) {
+  if(!prophetState.progress[pid]) prophetState.progress[pid] = [];
+  if(prophetState.progress[pid].indexOf(num) === -1) {
+    prophetState.progress[pid].push(num);
+    saveProphetProgress();
+  }
+}
+
+function getProphetProgressPct(prophet) {
+  const total = prophet.lessons.length;
+  const done = (prophetState.progress[prophet.id] || []).length;
+  return total ? Math.round((done / total) * 100) : 0;
+}
+
+async function loadAllProphets() {
+  if(prophetState.data) return prophetState.data;
+  const results = await Promise.allSettled(PROPHET_FILES.map(f => loadContent(f)));
+  const merged = [];
+  results.forEach(r => {
+    if(r.status === 'fulfilled' && r.value && Array.isArray(r.value.prophets)) {
+      merged.push(...r.value.prophets);
+    }
+  });
+  merged.sort((a, b) => a.num - b.num);
+  prophetState.data = merged;
+  return merged;
+}
+
+function getProphetById(id) {
+  return (prophetState.data || []).find(p => p.id === id);
+}
+
+async function renderProphets() {
+  setLearnTitle('Prophets');
+  setLearnContent('<div class="q-loading"><div class="q-loading-spinner"></div>Loading stories…</div>');
+  await loadAllProphets();
+  prophetState.view = 'list';
+  prophetState.prophetId = null;
+  drawProphetsView();
+}
+
+function drawProphetsView() {
+  if(prophetState.view === 'detail') return drawProphetDetail();
+  if(prophetState.view === 'reader') return drawProphetReader();
+  return drawProphetList();
+}
+
+function drawProphetList() {
+  const prophets = prophetState.data || [];
+  setLearnTitle('Prophets');
+  if(!prophets.length) {
+    setLearnContent('<div class="learn-empty">Could not load prophets.<br>Please check your connection.</div>');
+    return;
+  }
+  let html = '<div class="learn-intro">Journeys of the prophets — from Adam to Muhammad ﷺ. Tap any prophet to begin.</div>';
+  prophets.forEach(p => {
+    const pct = getProphetProgressPct(p);
+    html += '<div class="prophet-card" data-prophet="' + p.id + '">' +
+      '<div class="prophet-card-img" style="background-image:url(' + p.image + ')"></div>' +
+      '<div class="prophet-card-body">' +
+        '<div class="prophet-card-name">' + p.name + '</div>' +
+        '<div class="prophet-card-bar"><div class="prophet-card-fill" style="width:' + pct + '%"></div></div>' +
+      '</div>' +
+    '</div>';
+  });
+  setLearnContent(html);
+  document.querySelectorAll('[data-prophet]').forEach(el => {
+    el.addEventListener('click', () => {
+      prophetState.view = 'detail';
+      prophetState.prophetId = el.dataset.prophet;
+      prophetState.lessonNum = 1;
+      drawProphetsView();
+    });
+  });
+  LEARN_BACK_HANDLERS['prophetsStories'] = () => { closeLearnOverlay(); return true; };
+}
+
+function drawProphetDetail() {
+  const p = getProphetById(prophetState.prophetId);
+  if(!p) { prophetState.view = 'list'; return drawProphetList(); }
+  setLearnTitle(p.name);
+  const total = p.lessons.length;
+  const done = (prophetState.progress[p.id] || []).length;
+  const pct = getProphetProgressPct(p);
+  const nextLesson = p.lessons.find(l => !isLessonComplete(p.id, l.num)) || p.lessons[0];
+
+  const heroHtml =
+    '<div class="prophet-hero" style="background-image:url(' + p.image + ')">' +
+      '<div class="prophet-hero-info">' +
+        '<div class="prophet-hero-name">' + p.name + '</div>' +
+        '<div class="prophet-hero-sub">' + p.subtitle + ' · ' + done + ' of ' + total + ' complete</div>' +
+        '<div class="prophet-hero-bar"><div class="prophet-hero-fill" style="width:' + pct + '%"></div></div>' +
+      '</div>' +
+    '</div>';
+
+  let rowsHtml = '';
+  p.lessons.forEach(l => {
+    const complete = isLessonComplete(p.id, l.num);
+    const segs = complete
+      ? '<span class="lesson-seg filled"></span><span class="lesson-seg filled"></span><span class="lesson-seg filled"></span>'
+      : '<span class="lesson-seg"></span><span class="lesson-seg"></span><span class="lesson-seg"></span>';
+    const longClass = l.title.length > 24 ? ' long' : '';
+    rowsHtml += '<div class="lesson-row" data-lesson="' + l.num + '">' +
+      '<div class="lesson-thumb">' + PROPHET_LESSON_ICON + '</div>' +
+      '<div class="lesson-body">' +
+        '<div class="lesson-title' + longClass + '">' + l.num + '. ' + l.title + '</div>' +
+        '<div class="lesson-segs">' + segs + '</div>' +
+      '</div>' +
+      '<div class="lesson-chev">' + PROPHET_CHEV + '</div>' +
+    '</div>';
+  });
+
+  const contLabel = done === 0 ? 'Start reading' : (done >= total ? 'Read again' : 'Continue · Lesson ' + nextLesson.num);
+  const contBtn = '<button class="lesson-continue" id="prophet-continue">' + contLabel + '</button>';
+
+  setLearnContent(heroHtml + rowsHtml + contBtn);
+
+  document.querySelectorAll('[data-lesson]').forEach(el => {
+    el.addEventListener('click', () => {
+      prophetState.view = 'reader';
+      prophetState.lessonNum = parseInt(el.dataset.lesson);
+      drawProphetsView();
+    });
+  });
+  const contBtnEl = document.getElementById('prophet-continue');
+  if(contBtnEl) contBtnEl.addEventListener('click', () => {
+    prophetState.view = 'reader';
+    prophetState.lessonNum = nextLesson.num;
+    drawProphetsView();
+  });
+
+  LEARN_BACK_HANDLERS['prophetsStories'] = () => {
+    prophetState.view = 'list';
+    prophetState.prophetId = null;
+    drawProphetsView();
+    return true;
+  };
+}
+
+function drawProphetReader() {
+  const p = getProphetById(prophetState.prophetId);
+  if(!p) { prophetState.view = 'list'; return drawProphetList(); }
+  const lesson = p.lessons.find(l => l.num === prophetState.lessonNum);
+  if(!lesson) { prophetState.view = 'detail'; return drawProphetDetail(); }
+  const total = p.lessons.length;
+  const idx = p.lessons.indexOf(lesson);
+  const hasPrev = idx > 0;
+  const hasNext = idx < total - 1;
+
+  setLearnTitle(p.name + ' · Lesson ' + lesson.num);
+
+  const dlg = lesson.dialogue || {};
+  const dialogueHtml = (dlg.arabic || dlg.translation) ? (
+    '<div style="margin:18px 0;padding:16px 16px 14px;background:var(--gold-soft);border:1px solid var(--card-border-glow);border-radius:14px">' +
+      (dlg.arabic ? '<div style="font-family:var(--font-arabic);font-size:1.35rem;line-height:2;text-align:right;direction:rtl;color:var(--gold);margin-bottom:10px">' + dlg.arabic + '</div>' : '') +
+      (dlg.translation ? '<div style="font-size:.88rem;line-height:1.7;color:var(--text);margin-bottom:8px">' + dlg.translation + '</div>' : '') +
+      (dlg.ref ? '<div style="font-size:.72rem;color:var(--muted);font-style:italic;text-align:right">— ' + dlg.ref + '</div>' : '') +
+    '</div>'
+  ) : '';
+
+  const didYouKnowHtml = lesson.didYouKnow ? (
+    '<div style="margin:16px 0;padding:14px 16px;background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--gold);border-radius:10px">' +
+      '<div style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px">Did you know</div>' +
+      '<div style="font-size:.86rem;line-height:1.65;color:var(--text)">' + lesson.didYouKnow + '</div>' +
+    '</div>'
+  ) : '';
+
+  const heroHtml = '<div class="lesson-reader-hero" style="background-image:url(' + p.image + ')">' +
+    '<div class="lesson-reader-num">Lesson ' + lesson.num + ' of ' + total + '</div>' +
+  '</div>';
+
+  const bodyHtml = '<div class="lesson-reader-title">' + lesson.title + '</div>' +
+    '<div class="lesson-reader-body">' + lesson.body + '</div>';
+
+  const takeawayHtml = lesson.takeaway ? (
+    '<div class="lesson-reader-takeaway">' +
+      '<div class="lesson-reader-takeaway-label">Lesson to learn</div>' +
+      '<div class="lesson-reader-takeaway-text">' + lesson.takeaway + '</div>' +
+    '</div>'
+  ) : '';
+
+  const navHtml = '<div class="lesson-reader-nav">' +
+    '<button class="lesson-reader-btn" id="lesson-prev"' + (hasPrev ? '' : ' disabled') + '>' + PROPHET_BACK + ' Previous</button>' +
+    (hasNext
+      ? '<button class="lesson-reader-btn primary" id="lesson-next">Next ' + PROPHET_CHEV + '</button>'
+      : '<button class="lesson-reader-btn primary" id="lesson-complete">Complete ✓</button>') +
+  '</div>';
+
+  const completeHtml = isLessonComplete(p.id, lesson.num) ? '<div class="lesson-reader-complete">✓ Completed</div>' : '';
+
+  setLearnContent(heroHtml + bodyHtml + dialogueHtml + didYouKnowHtml + takeawayHtml + navHtml + completeHtml);
+
+  markLessonComplete(p.id, lesson.num);
+
+  const prevBtn = document.getElementById('lesson-prev');
+  const nextBtn = document.getElementById('lesson-next');
+  const completeBtn = document.getElementById('lesson-complete');
+  if(prevBtn && !prevBtn.disabled) prevBtn.addEventListener('click', () => {
+    prophetState.lessonNum = p.lessons[idx - 1].num;
+    drawProphetsView();
+  });
+  if(nextBtn) nextBtn.addEventListener('click', () => {
+    prophetState.lessonNum = p.lessons[idx + 1].num;
+    drawProphetsView();
+  });
+  if(completeBtn) completeBtn.addEventListener('click', () => {
+    markLessonComplete(p.id, lesson.num);
+    showToast('Lesson marked complete ✓');
+    prophetState.view = 'detail';
+    drawProphetsView();
+  });
+
+  const content = document.getElementById('learn-content');
+  if(content) content.scrollTop = 0;
+
+  LEARN_BACK_HANDLERS['prophetsStories'] = () => {
+    prophetState.view = 'detail';
+    drawProphetsView();
+    return true;
+  };
+}
+
+// Pill wiring — capture phase, overrides "coming soon"
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="prophetsStories"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const overlay = document.getElementById('learn-overlay');
+  if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook');
+  openLearnOverlay('prophetsStories', 'storybook');
+  renderProphets();
+}, true);
