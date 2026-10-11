@@ -1,1 +1,208 @@
-
+{
+  "prophets": [
+    {
+      "id": "adam",
+      "num": 1,
+      "name": "Adam",
+      "arabic": "آدم",
+      "subtitle": "15 Lessons",
+      "image": "images/prophet-01-adam.webp",
+      "tier": "major",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Announcement",
+          "thumb": "announce",
+          "body": "<p>Before any human drew breath, before clay was shaped or a soul was blown, Allah turned to the angels and made a declaration that would echo through every age of humanity. He said He would place a <em>khalifah</em> — a vicegerent, a steward — upon the earth.</p><p>It was not a question. It was a decree. And yet the angels, pure and ever-worshipping, responded with something unexpected: concern. <em>Will You place upon it one who causes corruption and sheds blood, while we exalt You with praise and sanctify You?</em> They had seen the earth before. They knew what clay-formed creatures might do with free will.</p><p>Allah did not rebuke them. He did not explain His plan. He answered with six words that carry the weight of all existence: <em>Indeed, I know what you do not know.</em> In that sentence lies the foundation of trust. The angels could not see the end of the story — but they trusted the Author.</p><p>This is the first lesson humanity is ever taught: our existence was not an accident, not a mistake, not a plan born of reaction. Before we were, we were announced. Before we sinned, we were honoured. Allah's plan for us began in eternity, and it has never stopped unfolding.</p>",
+          "dialogue": {
+            "arabic": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً ۖ قَالُوا أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ الدِّمَاءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ۖ قَالَ إِنِّي أَعْلَمُ مَا لَا تَعْلَمُونَ",
+            "translation": "And when your Lord said to the angels: Indeed, I am placing upon the earth a khalifah. They said: Will You place upon it one who causes corruption and sheds blood, while we exalt You with praise and sanctify You? He said: Indeed, I know what you do not know.",
+            "ref": "Al-Baqarah 2:30"
+          },
+          "didYouKnow": "The word <em>khalifah</em> shares its root with <em>khilafah</em> (succession) and <em>istikhlaf</em> (appointment as steward). Adam was not created to rule over Allah — but to represent His will on the earth.",
+          "takeaway": "Allah's plan is never in need of our approval — only our trust."
+        },
+        {
+          "num": 2,
+          "title": "The Clay",
+          "thumb": "clay",
+          "body": "<p>Allah created Adam from clay — <em>ṭīn</em> — and the Quran describes it with many names: <em>ṣalṣāl</em> (dry ringing clay), <em>ḥama' masnūn</em> (fermented black mud), <em>ṭīn lāzib</em> (sticky clay). Each description reveals a stage: the clay was gathered, mixed with water, left to settle, then shaped and dried until it rang like pottery.</p><p>The classical scholars, including Ibn Kathir, narrate that the clay was taken from different parts of the earth — some sweet, some bitter, some soft, some hard. This, they say, is why the children of Adam differ: in colour, in temperament, in strength, in weakness. From the earth we came; to the earth we return.</p><p>And Allah shaped him with His own hands — <em>bi-yadayh</em> — a detail the Quran emphasises when it rebukes Iblis: <em>What prevented you from prostrating to what I created with My own hands?</em> No other creation is described this way. The angels were created by command. The jinn were created by command. But Adam was shaped. Touched. Formed.</p><p>The honour was not in the material — clay is the most common, most humble substance on earth. The honour was in the Hands that shaped it. So it is with every human being: our worth is not in our flesh, but in the One who formed us.</p>",
+          "dialogue": {
+            "arabic": "إِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي خَالِقٌ بَشَرًا مِّن طِينٍ",
+            "translation": "When your Lord said to the angels: Indeed, I am creating a human being from clay.",
+            "ref": "Sad 38:71"
+          },
+          "didYouKnow": "Ibn Kathir and At-Tabari mention that Adam's body lay as clay for a period — some narrations say forty years — before the soul was breathed into it. The Quran does not specify the duration, so we mention it as classical commentary, not as revelation.",
+          "takeaway": "Our honour is not in our substance — dust and clay — but in the Hand that shaped us."
+        },
+        {
+          "num": 3,
+          "title": "The Breath of Life",
+          "thumb": "soul",
+          "body": "<p>Then came the moment that changed everything: <em>nafkh al-rūḥ</em> — the breathing of the soul. Allah breathed into the formed clay of His spirit, and the first human stirred.</p><p>Adam opened his eyes. He sat up. He saw. He heard. He thought. And he knew — instinctively, immediately — that he had a Lord. No mother had carried him, no father had taught him, no community had raised him. He was the direct handiwork of the Creator, and the first knowledge placed in his heart was the knowledge of Allah.</p><p>The Quran says: <em>Then He proportioned him and breathed into him of His soul and made for you hearing, vision and hearts.</em> Notice the order: first the soul, then the senses, then the heart. The soul is the seat of life; the senses are its windows; the heart is its throne.</p><p>This breath is the source of every dignity a human being carries. Not wealth, not lineage, not power, not intellect — but the soul that Allah breathed into the clay. Every human being, no matter how broken, carries that same breath. It is why Islam forbids the unjust taking of a single life: <em>Whoever kills a soul — unless for a soul or for corruption in the land — it is as if he had slain all of mankind.</em></p>",
+          "dialogue": {
+            "arabic": "ثُمَّ سَوَّاهُ وَنَفَخَ فِيهِ مِن رُّوحِهِ ۖ وَجَعَلَ لَكُمُ السَّمْعَ وَالْأَبْصَارَ وَالْأَفْئِدَةَ",
+            "translation": "Then He proportioned him and breathed into him of His soul and made for you hearing, vision and hearts.",
+            "ref": "Al-Sajdah 32:9"
+          },
+          "didYouKnow": "The Quran refers to the soul as <em>rūḥ</em> — a word that also means 'breath', 'wind' and 'mercy'. The soul is not a physical thing; it is a command from Allah: <em>Say: The soul is of the affair of my Lord.</em> (Al-Isra 17:85)",
+          "takeaway": "Every human being carries a breath of the Divine — that is the root of all human dignity."
+        },
+        {
+          "num": 4,
+          "title": "The Refusal of Iblis",
+          "thumb": "iblis",
+          "body": "<p>Allah commanded the angels to prostrate before Adam — a prostration of honour (<em>sujūd al-takrīm</em>), not worship. Every angel obeyed. All except one: Iblis. He was not an angel, but a jinn, formed of smokeless fire, and pride had taken root in his heart long before Adam existed.</p><p><em>Why did you not prostrate?</em> Allah asked. Iblis answered with the first recorded sin in existence: <em>I am better than him. You created me from fire and created him from clay.</em> He measured worth by material origin — fire over clay — not by obedience to his Lord. He made a judgement he had no right to make.</p><p>Some might ask: did Iblis not have a point? Fire is luminous, rising; clay is dark, heavy. But Iblis's error was not in his reasoning — it was in his <em>posture</em>. He placed his own intellect above his Lord's command. He treated a matter of obedience as a matter of debate.</p><p>And so Iblis fell — not from a throne, but from mercy. He was cursed and expelled. Notice: the first crime in history was not murder, theft or betrayal. It was arrogance. Every sin that followed — from the first murder to the last — traces its root back to that moment when a creature decided it knew better than its Creator.</p>",
+          "dialogue": {
+            "arabic": "قَالَ أَنَا خَيْرٌ مِّنْهُ ۖ خَلَقْتَنِي مِن نَّارٍ وَخَلَقْتَهُ مِن طِينٍ",
+            "translation": "He said: I am better than him. You created me from fire and created him from clay.",
+            "ref": "Al-A'raf 7:12"
+          },
+          "didYouKnow": "Iblis was not an angel — the Quran calls him a jinn (Al-Kahf 18:50). Angels are created from light and cannot disobey; jinn are created from fire and have free will, like humans.",
+          "takeaway": "Pride was the first sin and remains the gateway to every other sin."
+        },
+        {
+          "num": 5,
+          "title": "The Names",
+          "thumb": "names",
+          "body": "<p>Allah then gave Adam a gift unlike anything granted to any other creation: He taught him the names of all things. Not just their labels, but their essence, their purpose, their distinctions. The Quran says: <em>And He taught Adam the names, all of them.</em></p><p>Then He presented these things to the angels and asked: <em>Tell Me the names of these, if you are truthful.</em> The angels could not. They responded with a beautiful admission: <em>Glory be to You. We have no knowledge except what You have taught us. Indeed, You are the Knowing, the Wise.</em></p><p>Adam named them all — every one. And in that moment, the angels understood why Allah had singled out this clay-formed creature. Knowledge — not strength, not speed, not immortality — was to be humanity's crown.</p><p>This is why Islam places such immense value on seeking knowledge. The first revelation was not a call to prayer, not a call to fasting, not a call to pilgrimage — it was a call to <em>read</em>. The first honour given to humanity was not physical strength, but the ability to know. And the highest knowledge is the knowledge of Allah — for the more we know of creation, the more we should know of its Creator.</p>",
+          "dialogue": {
+            "arabic": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا ثُمَّ عَرَضَهُمْ عَلَى الْمَلَائِكَةِ",
+            "translation": "And He taught Adam the names, all of them; then He presented them to the angels.",
+            "ref": "Al-Baqarah 2:31"
+          },
+          "didYouKnow": "Scholars differ on what 'the names' means — some say the names of all created things, others say the names of Allah's attributes. Either way, the point stands: Adam was given a knowledge the angels did not possess.",
+          "takeaway": "Knowledge given by Allah is the highest honour a human can carry."
+        },
+        {
+          "num": 6,
+          "title": "Hawwa",
+          "thumb": "hawwa",
+          "body": "<p>Adam was alone in the garden — and though he had the company of angels and the presence of his Lord, Allah said: <em>It is not good for the man to be alone. We created for him a mate from himself, that he might find tranquillity in her.</em></p><p>From Adam's own self — as the Quran phrases it — Allah created Hawwa (Eve). The Quran does not describe the precise mechanism, but it does describe the purpose: <em>And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy.</em></p><p>Notice the language: <em>tranquillity</em> (sakīnah), <em>affection</em> (mawaddah), <em>mercy</em> (raḥmah). The purpose of the marital bond was never domination — it was companionship. Hawwa was not created as a servant for Adam; she was created as a partner, a source of peace, a reflection of his own soul.</p><p>When Adam saw her, he recognised her — not as a stranger, but as something taken from himself. And so the first family was formed — not in isolation, but in union.</p>",
+          "dialogue": {
+            "arabic": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+            "translation": "And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy.",
+            "ref": "Al-Rum 30:21"
+          },
+          "didYouKnow": "The Quran never blames Hawwa for the forbidden fruit — both Adam and Hawwa are described as being deceived together (<em>fa-azallahuma al-shayṭān</em> — 'so Shaytan caused them both to slip'). This is a crucial difference from some other traditions.",
+          "takeaway": "Marriage in Islam is not hierarchy — it is tranquillity, affection and mercy."
+        },
+        {
+          "num": 7,
+          "title": "The Garden",
+          "thumb": "garden",
+          "body": "<p>Allah placed Adam and Hawwa in Jannah — a garden of abundance, beyond anything we can imagine. The Quran says: <em>Dwell here — you and your spouse — and eat freely from wherever you wish.</em> Every fruit, every pleasure, every comfort was theirs. There was no hunger, no thirst, no fatigue, no fear.</p><p>But there was one restriction: <em>Do not approach this tree, lest you be among the wrongdoers.</em> One tree. In the midst of a whole garden of pleasures, one thing was forbidden.</p><p>Why would Allah forbid anything in paradise? Because paradise without a command is not a test — it is just a reward. The forbidden tree was not a trap; it was an invitation to obey. Allah gave Adam a whole garden and asked him to leave alone one thing. It was a small ask — and a great test.</p><p>Our own lives follow this pattern. Allah grants us countless blessings — air, water, food, family, health, time — and asks us to restrain from a few small things. The test has never been difficult in size. It has always been difficult in sincerity. Can we obey when the command is small? Can we trust when the reason is unseen?</p>",
+          "dialogue": {
+            "arabic": "وَكُلَا مِنْهَا حَيْثُ شِئْتُمَا رَغَدًا وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ فَتَكُونَا مِنَ الظَّالِمِينَ",
+            "translation": "And eat from it freely wherever you wish, but do not approach this tree, lest you be among the wrongdoers.",
+            "ref": "Al-Baqarah 2:35"
+          },
+          "didYouKnow": "The Quran does not identify the forbidden tree — it is not described as an apple tree, a fig tree, or anything specific. The mystery is intentional: the lesson is about obedience, not about botany.",
+          "takeaway": "One small command, in the midst of great blessing — that is how Allah tests."
+        },
+        {
+          "num": 8,
+          "title": "The Whisper",
+          "thumb": "whisper",
+          "body": "<p>Iblis had been expelled, but he had not finished. He swore to Allah that he would mislead Adam's children until the end of time: <em>I will surely sit in wait for them on Your straight path.</em> And his first target was the very man whose honour had caused his fall.</p><p>He came whispering. <em>Your Lord only forbade you this tree lest you become angels or immortals.</em> He presented the forbidden as a gift. He dressed deception in the clothing of concern. And then he swore an oath — a false one — that he was only a sincere adviser: <em>Indeed, I am to you a sincere adviser.</em></p><p>This is how deception always works: it never announces itself as evil. It arrives dressed as what you already want. Iblis did not say, 'Disobey Allah.' He said, 'Become immortal.' He did not say, 'I am your enemy.' He said, 'I am your adviser.'</p><p>And here is the frightening part: Iblis did not force them. He did not threaten them. He whispered. The gate of free will remained open. The choice was theirs. That is the nature of this world — we are not compelled to disobey, and we are not compelled to obey. We are shown the two paths and asked to choose.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ مَا نَهَاكُمَا رَبُّكُمَا عَنْ هَٰذِهِ الشَّجَرَةِ إِلَّا أَن تَكُونَا مَلَكَيْنِ أَوْ تَكُونَا مِنَ الْخَالِدِينَ ۖ وَقَاسَمَهُمَا إِنِّي لَكُمَا لَمِنَ النَّاصِحِينَ",
+            "translation": "He said: Your Lord did not forbid you this tree except that you become angels or become of the immortal. And he swore to them: Indeed, I am to you a sincere adviser.",
+            "ref": "Al-A'raf 7:20-21"
+          },
+          "didYouKnow": "Iblis's deception always follows the same pattern: he makes the forbidden seem desirable, then swears it is for our benefit. The Quran calls him <em>al-gharūr</em> — 'the deceiver.' His trade is illusion.",
+          "takeaway": "The enemy's weapon is deception dressed in the language of sincerity."
+        },
+        {
+          "num": 9,
+          "title": "The Slip",
+          "thumb": "slip",
+          "body": "<p>They ate. And immediately, everything changed. Their shame became visible, and they began to cover themselves with the leaves of the garden. Then their Lord called out — not in rage, but in the tone of a father whose child has wandered: <em>Did I not forbid you from that tree, and did I not warn you that Shaytan is a clear enemy to you?</em></p><p>Notice: Allah did not say 'I told you so.' He reminded them of the warning — but gently, and with the door to return already open. The slip was real. The consequence was real. But the door back to Allah had never closed.</p><p>The classical scholars point out that Adam's slip was not like Iblis's fall. Iblis <em>chose</em> rebellion — he was proud, defiant, and refused to repent. Adam <em>slipped</em> — he was deceived, he regretted, and he turned back immediately.</p><p>This is the mercy we often forget: even while we sin, our Lord is not slamming the door — He is holding it open and waiting. Every sin is followed by an opportunity for tawbah. The question is never whether we slip; the question is what we do next.</p>",
+          "dialogue": {
+            "arabic": "أَلَمْ أَنْهَكُمَا عَنْ تِلْكُمَا الشَّجَرَةِ وَأَقُل لَّكُمَا إِنَّ الشَّيْطَانَ لَكُمَا عَدُوٌّ مُّبِينٌ",
+            "translation": "Did I not forbid you from that tree and say to you: indeed, Shaytan is a clear enemy to you?",
+            "ref": "Al-A'raf 7:22"
+          },
+          "didYouKnow": "The Quran uses <em>azalla</em> — 'caused to slip' — for Adam, not <em>'aṣā</em> ('disobeyed') or <em>kafara</em> ('rejected'). The difference is deliberate: Adam was not a rebel; he was a human being who slipped.",
+          "takeaway": "Even the greatest slip is not the end — if the heart turns back."
+        },
+        {
+          "num": 10,
+          "title": "The Words of Repentance",
+          "thumb": "tawbah",
+          "body": "<p>Adam and Hawwa did not blame each other. They did not blame Iblis. They did not say, 'We were deceived, so it is not our fault.' They turned to their Lord — and they turned with words that Allah Himself had taught them.</p><p><em>Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.</em> That is the model of repentance: admission, no excuse, total reliance on Allah's mercy.</p><p>Look closely at the structure of this dua. They began with <em>rabbana</em> — 'our Lord' — affirming His Lordship. Then <em>ẓalamnā anfusanā</em> — 'we have wronged ourselves' — accepting full responsibility. Then <em>wa in lam taghfir lanā</em> — 'and if You do not forgive us' — recognising they had no power to forgive themselves. And finally <em>la-nakūnanna min al-khāsirīn</em> — 'we will surely be among the losers' — humbly admitting their need.</p><p>Four sentences. But they carry the entire blueprint of tawbah. And Allah accepted them — because He is <em>At-Tawwab</em>, the Ever-Accepting of Repentance. No one who returns to Him is turned away.</p>",
+          "dialogue": {
+            "arabic": "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+            "translation": "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.",
+            "ref": "Al-A'raf 7:23"
+          },
+          "didYouKnow": "The scholars say Adam and Hawwa were taught this dua by Allah Himself — <em>fa-talaqqā Ādamu min Rabbihi kalimāt</em> ('Then Adam received from his Lord words'). Even our ability to repent is a gift from Him.",
+          "takeaway": "Humble words, taught by Allah, wipe away the deepest falls."
+        },
+        {
+          "num": 11,
+          "title": "The Descent",
+          "thumb": "earth",
+          "body": "<p>Allah told them to descend — to the earth. <em>And for you on the earth is a place of settlement and provision for a time.</em> Some imagine this as banishment, as punishment. But the truth is subtler: the earth was always the plan. Adam's creation was not a mistake that needed correcting — it was the beginning of the mission.</p><p>On earth, Adam was given children, work, hunger, fatigue, provision, and death. And he was given something else the garden could not offer him: the chance to be tested. To strive. To choose obedience in the middle of hardship. To build a legacy.</p><p>The Quran reminds us: <em>Indeed, I am going to place a khalifah on the earth</em> — the decree was made before Adam ever slipped. The slip did not derail the plan. It was part of the plan.</p><p>This world is not a prison — it is a place of purpose. Every difficulty, every choice, every moment of restraint is a chance to rise. The garden was paradise, yes — but the earth is where we become worthy of it.</p>",
+          "dialogue": {
+            "arabic": "وَلَكُمْ فِي الْأَرْضِ مُسْتَقَرٌّ وَمَتَاعٌ إِلَىٰ حِينٍ",
+            "translation": "And for you on the earth is a place of settlement and provision for a time.",
+            "ref": "Al-Baqarah 2:36"
+          },
+          "didYouKnow": "The scholars note that even if Adam had never slipped, the earth was the destination. The khalifah decree was made <em>before</em> the creation of Adam — the slip did not create the plan; the plan already contained the slip.",
+          "takeaway": "Earth is not punishment — it is the arena of our purpose."
+        },
+        {
+          "num": 12,
+          "title": "The First Family",
+          "thumb": "family",
+          "body": "<p>On earth, Adam and Hawwa began their life together. The Quran tells us they were given children — sons and daughters — and that Adam was taught the way of worshipping Allah and living in obedience to Him.</p><p>The classical scholars say Adam was also a prophet. He received guidance from Allah and conveyed it to his children. He taught them: to worship the One, to give thanks, to do good, to avoid evil. He was the first father, the first teacher, the first prophet.</p><p>But here is something important: the earth did not have mosques, books, or scholars. Adam had nothing but the guidance in his heart and the words Allah had taught him. He built the first community of faith from scratch — a husband and wife, then children, then grandchildren. And every one of us descends from that family.</p><p>The lesson is that no community is too small to begin. No family is too simple to be blessed. Allah does not require crowds; He requires sincerity.</p>",
+          "dialogue": {
+            "arabic": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا",
+            "translation": "And He taught Adam the names, all of them.",
+            "ref": "Al-Baqarah 2:31"
+          },
+          "didYouKnow": "The prophets are said to number in the hundreds of thousands, but the Quran names only 25. Adam (AS) is the first of that line — the first prophet of the first family of the first generation of humanity.",
+          "takeaway": "Every community of faith begins with one family that chooses to obey."
+        },
+        {
+          "num": 13,
+          "title": "The Two Sons",
+          "thumb": "sons",
+          "body": "<p>Among Adam's children were two sons — Habil (Abel) and Qabil (Cain). Both were commanded to offer a sacrifice to Allah. Habil, a shepherd, brought the best of his flock, generously and sincerely. Qabil, a farmer, brought the leftovers of his harvest, half-heartedly and grudgingly.</p><p>Allah accepted from Habil and not from Qabil — not because of the gift, but because of the giver. <em>Allah only accepts from the righteous.</em> He sees what is offered, and He sees why it is offered. The outward act is the same; the inward state is different.</p><p>And this is what should make us tremble when we pray, fast, or give in charity. We know what we do. But do we know <em>why</em> we do it? Is it for Him, or for show? Is it our best, or our leftovers?</p><p>The story of the two brothers begins with a small difference — one sincerity, one hesitation — and ends in the first murder. But we will continue that story in the next lesson.</p>",
+          "dialogue": {
+            "arabic": "إِنَّمَا يَتَقَبَّلُ اللَّهُ مِنَ الْمُتَّقِينَ",
+            "translation": "Allah only accepts from the righteous.",
+            "ref": "Al-Ma'idah 5:27"
+          },
+          "didYouKnow": "The Quran does not name the two sons — the names Habil and Qabil come from the classical scholars. But the principle is universal: Allah accepts the deed that is offered with taqwa, not the one with the largest price tag.",
+          "takeaway": "What Allah accepts is not the size of the gift — it is the sincerity of the giver."
+        },
+        {
+          "num": 14,
+          "title": "The First Murder",
+          "thumb": "murder",
+          "body": "<p>Envy ignited in Qabil's chest. He threatened his brother: <em>I will surely kill you.</em> Habil replied with serene trust: <em>If you extend your hand to kill me, I will not extend mine to kill you. Indeed, I fear Allah, Lord of the worlds.</em></p><p>Qabil killed his brother — the first murder, the first grave dug in the earth. He did not know what to do with the body until Allah sent a crow to scratch the ground, teaching him burial. And he cried out in regret: <em>Woe to me! Was I unable to be like this crow and hide the body of my brother?</em></p><p>Envy had cost him his brother, his peace, and himself. And this is the great warning in this story: the harm of envy falls on the envier first. It burns through the heart before it ever reaches the one envied.</p><p>The Prophet ﷺ warned us: <em>Envy consumes good deeds the way fire consumes wood.</em> So the cure for envy is gratitude — turning to Allah and thanking Him for what He has given us, rather than looking at what He has given others.</p>",
+          "dialogue": {
+            "arabic": "لَئِن بَسَطتَ إِلَيَّ يَدَكَ لِتَقْتُلَنِي مَا أَنَا بِبَاسِطٍ يَدِيَ إِلَيْكَ لِأَقْتُلَكَ ۖ إِنِّي أَخَافُ اللَّهَ رَبَّ الْعَالَمِينَ",
+            "translation": "If you extend your hand to kill me, I will not extend mine to kill you. Indeed, I fear Allah, Lord of the worlds.",
+            "ref": "Al-Ma'idah 5:28"
+          },
+          "didYouKnow": "This is the first story in the Quran of a human taking another human's life — and Allah teaches us from it that the harm of envy falls on the envier first. The first murder was not born of desperation — it was born of resentment.",
+          "takeaway": "Envy destroys the one who carries it before it ever reaches the one it envies."
+        },
+        {
+          "num": 15,
+          "title": "The Legacy",
+          "thumb": "legacy",
+          "body": "<p>Adam lived on. He witnessed generations pass. He saw the earth populate with his descendants — some righteous, some rebellious, some striving, some falling. He taught, warned, prayed, and eventually returned to his Lord.</p><p>The Prophet ﷺ told us that Adam passed on a Friday — the day he was created, the day he entered Jannah, and the day he was sent down to the earth. All on the same blessed day. And so his story came full circle: from Friday to Friday.</p><p>But Adam's real legacy is not the length of his life or the number of his children. It is this: he was the first to say <em>rabbana ẓalamnā anfusanā</em>. He was the first to learn that falling is not the end. He was the first to discover that between the slip and the return, there is a mercy that never runs out.</p><p>Every one of us — Muslim, human, descendant of Adam — is called to walk that same path. We will slip. We will be deceived. We will eat from forbidden trees. But the question is what we say next. And Adam taught us the words.</p><p>May Allah make us among those who slip, and then return. Ameen.</p>",
+          "dialogue": {
+            "arabic": "فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ ۚ إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ",
+            "translation": "Then Adam received from his Lord words, and He accepted his repentance. Indeed, it is He who is the Accepter of Repentance, the Most Merciful.",
+            "ref": "Al-Baqarah 2:37"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>All of Adam's descendants will be resurrected in the state they died in.</em> Adam passed on a Friday, and Fridays remain the most blessed day of the week for the Ummah.",
+          "takeaway": "The greatest legacy a human can leave is not wealth or fame — it is a returning heart."
+        }
+      ]
+    },
