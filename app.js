@@ -3776,4 +3776,147 @@ drawJumuah = function(){
   if(jumuahState.tab === 'kahf'){
     renderJumuahKahf();
   }
-};
+};function getCachedPrayerTime(name){
+  try{
+    const now = new Date();
+    const dateStr = `${String(now.getDate()).padStart(2,'0')}-${String(now.getMonth()+1).padStart(2,'0')}-${now.getFullYear()}`;
+    const lat = localStorage.getItem('prayer-lat');
+    const lng = localStorage.getItem('prayer-lng');
+    const city = localStorage.getItem('prayer-city');
+    const country = localStorage.getItem('prayer-country');
+    const method = parseInt(localStorage.getItem('prayer-method') || '3');
+    const key = `prayer-cache-${dateStr}-${lat?`${lat}-${lng}`:`${city}-${country}`}-${method}`;
+    const cached = localStorage.getItem(key);
+    if(!cached) return null;
+    const t = JSON.parse(cached);
+    return t[name] || null;
+  }catch(e){ return null; }
+}
+function minsFromHHMM(str){
+  if(!str) return null;
+  const p = str.split(':');
+  return parseInt(p[0])*60 + parseInt(p[1]);
+}
+function isBeforeMaghribToday(){
+  const now = new Date();
+  const nowMins = now.getHours()*60 + now.getMinutes();
+  const maghrib = getCachedPrayerTime('Maghrib');
+  const maghribMins = maghrib ? minsFromHHMM(maghrib) : (18*60 + 30);
+  return nowMins < maghribMins;
+}
+function isJumuahOpen(){
+  const now = new Date();
+  if(now.getDay() !== 5) return false;
+  return isBeforeMaghribToday();
+}
+function daysUntilNextJumuah(){
+  const now = new Date();
+  const day = now.getDay();
+  if(day === 5 && isBeforeMaghribToday()) return 0;
+  if(day === 5) return 7;
+  return (5 - day + 7) % 7;
+}
+function updateJumuahTile(){
+  const tile = document.querySelector('.tile[data-nav="jumuah"]');
+  if(!tile) return;
+  const statusEl = document.getElementById('jumuah-status');
+  const isOpen = isJumuahOpen();
+  if(isOpen){
+    tile.classList.remove('jumuah-dormant');
+    tile.classList.add('jumuah-open');
+    if(statusEl) statusEl.textContent = 'Open today — tap to read';
+  } else {
+    tile.classList.remove('jumuah-open');
+    tile.classList.add('jumuah-dormant');
+    const days = daysUntilNextJumuah();
+    if(statusEl){
+      if(days === 7) statusEl.textContent = 'Opens next Friday';
+      else if(days === 1) statusEl.textContent = 'Opens tomorrow (Friday)';
+      else if(days === 0) statusEl.textContent = 'Opens Friday at Fajr';
+      else statusEl.textContent = `Opens in ${days} days · Friday`;
+    }
+  }
+}
+function updateJumuahCountdown(){
+  const textEl = document.getElementById('jumuah-countdown-text');
+  const fillEl = document.getElementById('jumuah-hero-fill');
+  if(!textEl) return;
+  const now = new Date();
+  const nowMins = now.getHours()*60 + now.getMinutes();
+  const maghrib = getCachedPrayerTime('Maghrib');
+  const maghribMins = maghrib ? minsFromHHMM(maghrib) : (18*60 + 30);
+  const fajr = getCachedPrayerTime('Fajr');
+  const fajrMins = fajr ? minsFromHHMM(fajr) : (5*60);
+  if(nowMins >= maghribMins){
+    textEl.textContent = 'Friday has ended';
+    if(fillEl) fillEl.style.width = '100%';
+    return;
+  }
+  const diff = maghribMins - nowMins;
+  const h = Math.floor(diff / 60);
+  const m = diff % 60;
+  const timeText = h > 0 ? `${h}h ${m}m` : `${m}m`;
+  textEl.textContent = `Friday ends in ${timeText}`;
+  const total = Math.max(1, maghribMins - fajrMins);
+  const elapsed = Math.max(0, nowMins - fajrMins);
+  const pct = Math.min(100, Math.round((elapsed / total) * 100));
+  if(fillEl) fillEl.style.width = pct + '%';
+}
+function updateJumuahPrayerTime(){
+  const timeEl = document.getElementById('jumuah-prayer-time');
+  const locEl = document.getElementById('jumuah-prayer-loc');
+  if(!timeEl) return;
+  const dhuhr = getCachedPrayerTime('Dhuhr');
+  timeEl.textContent = dhuhr || '—:—';
+  if(locEl){
+    const city = localStorage.getItem('prayer-city');
+    const country = localStorage.getItem('prayer-country');
+    const lat = localStorage.getItem('prayer-lat');
+    if(city) locEl.textContent = `Based on your location — ${city}${country ? ', ' + country : ''}`;
+    else if(lat) locEl.textContent = 'Based on your GPS location';
+    else locEl.textContent = 'Set your location in Prayer Times';
+  }
+}
+function updateJumuahDuaHour(){
+  const timeEl = document.getElementById('jumuah-duahour-time');
+  if(!timeEl) return;
+  const now = new Date();
+  const nowMins = now.getHours()*60 + now.getMinutes();
+  const maghrib = getCachedPrayerTime('Maghrib');
+  const maghribMins = maghrib ? minsFromHHMM(maghrib) : (18*60 + 30);
+  if(nowMins >= maghribMins){
+    timeEl.textContent = 'Passed for today';
+    return;
+  }
+  const diff = maghribMins - nowMins;
+  const h = Math.floor(diff / 60);
+  const m = diff % 60;
+  timeEl.textContent = h > 0 ? `in ${h}h ${m}m` : `in ${m}m`;
+}
+document.addEventListener('click', (e) => {
+  const tile = e.target.closest('.tile[data-nav="jumuah"]');
+  if(!tile) return;
+  e.stopPropagation();
+  e.preventDefault();
+  if(isJumuahOpen()){
+    openJumuah();
+  } else {
+    const days = daysUntilNextJumuah();
+    if(days === 7) showToast('Jumu\'ah opens next Friday');
+    else if(days === 1) showToast('Jumu\'ah opens tomorrow (Friday)');
+    else if(days === 0) showToast('Jumu\'ah opens at Fajr on Friday');
+    else showToast(`Jumu'ah opens in ${days} days (Friday)`);
+  }
+}, true);
+updateJumuahTile();
+setInterval(() => {
+  updateJumuahTile();
+  const overlay = document.getElementById('jumuah-overlay');
+  if(overlay && overlay.classList.contains('show')){
+    updateJumuahCountdown();
+    if(jumuahState.tab === 'more'){
+      updateJumuahPrayerTime();
+      updateJumuahDuaHour();
+    }
+  }
+}, 60000);
