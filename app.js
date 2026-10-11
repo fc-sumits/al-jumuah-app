@@ -3454,4 +3454,171 @@ LEARN_BACK_HANDLERS['salahGuide'] = () => {
     salahDetailState.prayerIdx = 0;
     salahDetailState.walkStep = 0;
   }
+}, true);let jumuahState = { tab: 'kahf', mode: 'synced', playing: false, currentVerse: 0, audio: null, data: null };
+const JUMUAH_ICONS = {
+  water:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 12a6 6 0 1 1-12 0c0-5 6-12 6-12z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg>',
+  shirt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l4 3-2 4v10H6V10L4 6l4-3"/><path d="M9 3a3 3 0 0 0 6 0"/></svg>',
+  tooth:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 5 2 5 5 0 4-2 6-2 10a1.5 1.5 0 0 1-3 0v-4"/><path d="M9 4c-2 0-4 2-4 5 0 4 2 6 2 10a1.5 1.5 0 0 0 3 0v-4"/></svg>',
+  drop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 12a6 6 0 1 1-12 0c0-5 6-12 6-12z"/></svg>',
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+  hourglass:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12M6 22h12"/><path d="M6 2c0 5 6 6 6 10s-6 5-6 10"/><path d="M18 2c0 5-6 6-6 10s6 5 6 10"/></svg>',
+  mosque:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M6 6c0 3-3 4-3 8v8h18v-8c0-4-3-5-3-8"/><path d="M9 6c0-1.7 1.3-3 3-3s3 1.3 3 3"/><path d="M9 22v-5a3 3 0 0 1 6 0v5"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg>',
+  copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>'
+};
+async function openJumuah(){
+  const overlay = document.getElementById('jumuah-overlay');
+  overlay.classList.add('show');
+  overlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  if(!jumuahState.data){
+    const data = await loadContent('jumuah');
+    if(!data){ document.getElementById('jumuah-content').innerHTML = '<div class="jumuah-empty">Could not load Jumu\'ah content.</div>'; return; }
+    jumuahState.data = data;
+  }
+  jumuahState.tab = 'kahf';
+  drawJumuah();
+}
+function closeJumuah(){
+  const overlay = document.getElementById('jumuah-overlay');
+  overlay.classList.remove('show');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  if(jumuahState.audio){ try{ jumuahState.audio.pause(); }catch(e){} jumuahState.audio = null; }
+  jumuahState.playing = false;
+  jumuahState.currentVerse = 0;
+}
+document.getElementById('jumuah-back').addEventListener('click', closeJumuah);
+document.getElementById('jumuah-settings').addEventListener('click', () => {
+  closeJumuah();
+  showPage('settings');
+});
+function drawJumuah(){
+  const data = jumuahState.data;
+  const tabsHtml = `
+    <div class="jumuah-tabs">
+      <button class="jumuah-tab ${jumuahState.tab==='kahf'?'active':''}" data-jt="kahf">Al-Kahf</button>
+      <button class="jumuah-tab ${jumuahState.tab==='sunnahs'?'active':''}" data-jt="sunnahs">Sunnahs</button>
+      <button class="jumuah-tab ${jumuahState.tab==='duas'?'active':''}" data-jt="duas">Duas</button>
+      <button class="jumuah-tab ${jumuahState.tab==='more'?'active':''}" data-jt="more">More</button>
+    </div>`;
+  const heroHtml = `
+    <div class="jumuah-hero">
+      <div class="jumuah-hero-mosque">${JUMUAH_ICONS.mosque}</div>
+      <div class="jumuah-hero-arabic">${data.hero.arabic}</div>
+      <div class="jumuah-hero-countdown">${JUMUAH_ICONS.hourglass}<span id="jumuah-countdown-text">Friday ends in —</span></div>
+      <div class="jumuah-hero-bar"><div class="jumuah-hero-fill" id="jumuah-hero-fill" style="width:0%"></div></div>
+    </div>`;
+  let tabBody = '';
+  if(jumuahState.tab === 'sunnahs') tabBody = renderJumuahSunnahs(data);
+  else if(jumuahState.tab === 'duas') tabBody = renderJumuahDuas(data);
+  else if(jumuahState.tab === 'more') tabBody = renderJumuahMore(data);
+  else tabBody = `<div class="jumuah-empty">Surah Al-Kahf loading…</div>`;
+  document.getElementById('jumuah-content').innerHTML = heroHtml + tabsHtml + tabBody;
+  document.querySelectorAll('[data-jt]').forEach(b => b.addEventListener('click', () => {
+    jumuahState.tab = b.dataset.jt;
+    if(jumuahState.tab !== 'kahf' && jumuahState.audio){ try{ jumuahState.audio.pause(); }catch(e){} jumuahState.audio = null; jumuahState.playing = false; }
+    drawJumuah();
+  }));
+  if(typeof updateJumuahCountdown === 'function') updateJumuahCountdown();
+}
+function renderJumuahSunnahs(data){
+  return `<div class="jumuah-sunnah-list">
+    ${data.sunnahs.map((s,i)=>`
+      <div class="jumuah-sunnah-card" data-jsum="${i}">
+        <div class="jumuah-sunnah-icon">${JUMUAH_ICONS[s.icon]||JUMUAH_ICONS.star}</div>
+        <div class="jumuah-sunnah-body">
+          <div class="jumuah-sunnah-title">${s.title}</div>
+          <div class="jumuah-sunnah-sub">${s.sub}</div>
+        </div>
+        <div class="jumuah-sunnah-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    `).join('')}
+  </div>`;
+}
+function renderJumuahDuas(data){
+  return `
+    <div class="jumuah-duahour">
+      <div class="jumuah-duahour-head">
+        <div class="jumuah-duahour-icon">${JUMUAH_ICONS.hourglass}</div>
+        <div class="jumuah-duahour-title">The Dua Hour</div>
+      </div>
+      <div class="jumuah-duahour-text">${data.duaHourNote}</div>
+    </div>
+    <div class="jumuah-dua-list">
+      ${data.duas.map((d,i)=>`
+        <div class="jumuah-dua-card">
+          <div class="jumuah-dua-arabic">${d.arabic}</div>
+          ${d.translit ? `<div class="jumuah-dua-translit">${d.translit}</div>` : ''}
+          <div class="jumuah-dua-en">${d.en}</div>
+          ${d.ref ? `<div class="jumuah-dua-ref">— ${d.ref}</div>` : ''}
+          <div class="jumuah-dua-actions">
+            <button class="jumuah-dua-btn" data-jduacopy="${i}">${JUMUAH_ICONS.copy}Copy</button>
+            <button class="jumuah-dua-btn" data-jduashare="${i}">${JUMUAH_ICONS.share}Share</button>
+          </div>
+        </div>
+      `).join('')}
+    </div>`;
+}
+function renderJumuahMore(data){
+  return `
+    <div class="jumuah-more-card">
+      <div class="jumuah-more-head">
+        <div class="jumuah-more-icon">${JUMUAH_ICONS.mosque}</div>
+        <div class="jumuah-more-title">Jumu'ah Prayer Time</div>
+      </div>
+      <div class="jumuah-more-big" id="jumuah-prayer-time">—:—</div>
+      <div class="jumuah-more-note" id="jumuah-prayer-loc">Based on your location</div>
+      <button class="jumuah-more-link" onclick="closeJumuah(); openTool('prayerTimes')">Change location ›</button>
+    </div>
+    <div class="jumuah-more-card">
+      <div class="jumuah-more-head">
+        <div class="jumuah-more-icon">${JUMUAH_ICONS.hourglass}</div>
+        <div class="jumuah-more-title">Dua Hour Countdown</div>
+      </div>
+      <div class="jumuah-more-big" id="jumuah-duahour-time">—</div>
+      <div class="jumuah-more-note">Last hour before Maghrib — the most accepted time for dua</div>
+    </div>
+    <div class="jumuah-more-card">
+      <div class="jumuah-more-head">
+        <div class="jumuah-more-icon">${JUMUAH_ICONS.book}</div>
+        <div class="jumuah-more-title">Khutbah Etiquette</div>
+      </div>
+      <ul class="jumuah-khutbah-list">
+        ${data.khutbahEtiquette.map(e => `<li>${e}</li>`).join('')}
+      </ul>
+      <div class="jumuah-khutbah-note">${data.khutbahNote}</div>
+    </div>`;
+}
+document.addEventListener('click', (e) => {
+  const sun = e.target.closest('[data-jsum]');
+  if(sun){
+    const i = parseInt(sun.dataset.jsum);
+    const s = jumuahState.data.sunnahs[i];
+    if(!s) return;
+    openQModal('✨ ' + s.title, `<div class="rm-dua" style="margin-bottom:14px"><div class="rm-dua-meaning" style="font-size:.92rem;line-height:1.7">${s.note}</div></div><div style="text-align:center;font-size:.75rem;color:var(--muted);font-style:italic">Sunnah of Jumu'ah</div>`);
+    return;
+  }
+  const cpy = e.target.closest('[data-jduacopy]');
+  if(cpy){
+    const i = parseInt(cpy.dataset.jduacopy);
+    const d = jumuahState.data.duas[i];
+    if(!d) return;
+    const text = `${d.arabic}\n\n${d.translit ? d.translit + '\n\n' : ''}${d.en}\n\n— ${d.ref} (Al-Jumu'ah)`;
+    navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+    return;
+  }
+  const shr = e.target.closest('[data-jduashare]');
+  if(shr){
+    const i = parseInt(shr.dataset.jduashare);
+    const d = jumuahState.data.duas[i];
+    if(!d) return;
+    const text = `${d.arabic}\n\n${d.translit ? d.translit + '\n\n' : ''}${d.en}\n\n— ${d.ref} (Al-Jumu'ah)`;
+    if(navigator.share) navigator.share({ title:'Friday Dua', text }).catch(()=>{});
+    else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+    return;
+  }
 }, true);
