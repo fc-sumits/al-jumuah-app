@@ -3123,4 +3123,12 @@ document.getElementById('learn-back').addEventListener('click', () => {
   }
   closeLearnOverlay();
 });
-const LEARN_BACK_HANDLERS = {};
+const LEARN_BACK_HANDLERS = {};const CONTENT = {};
+async function loadContent(key){
+  if(CONTENT[key]) return CONTENT[key];
+  try{
+    const res = await fetch('content/' + key + '.json');
+    CONTENT[key] = await res.json();
+    return CONTENT[key];
+  }catch(e){ console.error('loadContent failed', key, e); return null; }
+}
