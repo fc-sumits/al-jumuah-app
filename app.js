@@ -3336,4 +3336,114 @@ document.addEventListener('click', (e) => {
     if(tool === 'taharah'){ openLearnOverlay('taharah','traditional'); renderTaharah(); }
     else if(tool === 'salahGuide'){ openLearnOverlay('salahGuide','traditional'); renderSalah(); }
   }
+}, true);let salahDetailState = { view: 'list', posIdx: 0, prayerIdx: 0, walkStep: 0 };
+const SALAH_WALK_SEQUENCE = [
+  { key:'takbir',  title:'Opening Takbir', body:'Raise both hands to the ears and say <strong>"Allahu Akbar"</strong> to begin the prayer.', arabic:'اللَّهُ أَكْبَرُ', translit:'Allahu Akbar' },
+  { key:'qiyam',   title:'Standing (Qiyam)', body:'Place hands folded on the chest, right over left, and recite Surah Al-Fatiha followed by another surah.', arabic:'الْقِيَام', translit:'Qiyam' },
+  { key:'ruku',    title:'Bowing (Ruku)', body:'Say "Allahu Akbar", bow with a flat back, hands on knees, and recite three times: <strong>"Subhana Rabbiyal-Azim"</strong>.', arabic:'سُبْحَانَ رَبِّيَ الْعَظِيمِ', translit:"Subhana Rabbiyal-'Azim" },
+  { key:'stand2',  title:'Rising', body:'Rise saying <strong>"Sami\' Allahu liman hamidah"</strong>, then <strong>"Rabbana wa lakal-hamd"</strong>.', arabic:'سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ', translit:"Sami' Allahu liman hamidah" },
+  { key:'sujud',   title:'Prostration (Sujud)', body:'Say "Allahu Akbar" and prostrate. Say three times: <strong>"Subhana Rabbiyal-A\'la"</strong>.', arabic:'سُبْحَانَ رَبِّيَ الْأَعْلَى', translit:"Subhana Rabbiyal-A'la" },
+  { key:'jalsa',   title:'Sitting (Jalsa)', body:'Rise from sujud into a brief sitting, saying <strong>"Rabbighfir li"</strong>.', arabic:'رَبِّ اغْفِرْ لِي', translit:'Rabbighfir li' },
+  { key:'sujud2',  title:'Second Prostration', body:'Prostrate again with "Allahu Akbar" and repeat "Subhana Rabbiyal-A\'la" three times.', arabic:'سُبْحَانَ رَبِّيَ الْأَعْلَى', translit:"Subhana Rabbiyal-A'la" },
+  { key:'tashahhud', title:'Tashahhud', body:'In the final sitting, recite the Tashahhud, then the Durood Ibrahim, then a dua.', arabic:'التَّحِيَّاتُ لِلَّهِ', translit:'At-tahiyyatu lillah' },
+  { key:'salam',   title:'Closing Salam', body:'Turn the head to the right and say <strong>"As-salamu \'alaykum wa rahmatullah"</strong>, then to the left.', arabic:'السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ', translit:"As-salamu 'alaykum wa rahmatullah" }
+];
+function drawSalahDetail(){
+  const data = CONTENT['salah'];
+  if(salahDetailState.view === 'position'){
+    const p = data.positions[salahDetailState.posIdx];
+    setLearnTitle('Salah · ' + p.title);
+    setLearnContent(`
+      <div class="trad-step-illustration">${SALAH_ICONS[p.icon]||''}</div>
+      <div class="trad-step-arabic">${p.arabic}</div>
+      <div class="trad-step-title">${p.title}</div>
+      <div class="trad-step-body"><p>${p.meaning}</p></div>
+      ${p.dua ? `
+      <div class="rm-dua" style="margin:0 14px 16px">
+        <div class="rm-dua-label">Recited here</div>
+        <div class="rm-dua-arabic">${p.dua.arabic}</div>
+        <div class="rm-dua-translit">${p.dua.translit}</div>
+        <div class="rm-dua-meaning">${p.dua.en}</div>
+      </div>` : ''}
+      <div class="trad-step-nav">
+        <button class="trad-step-nav-btn" id="sl-pos-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Back
+        </button>
+      </div>
+    `);
+    document.getElementById('sl-pos-back').addEventListener('click', () => {
+      salahDetailState.view = 'list';
+      drawSalahView();
+    });
+  } else if(salahDetailState.view === 'walkthrough'){
+    const prayer = data.prayers[salahDetailState.prayerIdx];
+    const step = SALAH_WALK_SEQUENCE[salahDetailState.walkStep];
+    const total = SALAH_WALK_SEQUENCE.length;
+    const pct = ((salahDetailState.walkStep + 1) / total) * 100;
+    setLearnTitle('Salah · ' + prayer.name);
+    setLearnContent(`
+      <div class="trad-step-header">
+        <div class="trad-step-label">Step ${salahDetailState.walkStep + 1} of ${total}</div>
+        <div class="trad-step-count">${prayer.rakah} rak'ah</div>
+      </div>
+      <div class="trad-step-progress"><div class="trad-step-progress-fill" style="width:${pct}%"></div></div>
+      <div class="trad-step-arabic">${step.arabic}</div>
+      <div class="trad-step-title">${step.title}</div>
+      <div class="trad-step-body"><p>${step.body}</p></div>
+      ${step.translit ? `<div style="text-align:center;font-size:.82rem;font-style:italic;color:#6B5544;padding:0 14px 16px">${step.translit}</div>` : ''}
+      <div class="trad-step-nav">
+        <button class="trad-step-nav-btn" id="sl-walk-prev" ${salahDetailState.walkStep===0?'disabled':''}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Prev
+        </button>
+        ${salahDetailState.walkStep === total - 1
+          ? `<button class="trad-step-nav-btn primary" id="sl-walk-finish">Finish<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>`
+          : `<button class="trad-step-nav-btn primary" id="sl-walk-next">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>`
+        }
+      </div>
+      ${salahDetailState.walkStep === total - 1 ? `<div class="trad-complete"><span class="trad-complete-ar">تقبل الله</span>Walkthrough complete</div>` : ''}
+    `);
+    const prev = document.getElementById('sl-walk-prev');
+    const next = document.getElementById('sl-walk-next');
+    const finish = document.getElementById('sl-walk-finish');
+    if(prev && !prev.disabled) prev.addEventListener('click', () => { salahDetailState.walkStep--; drawSalahDetail(); });
+    if(next) next.addEventListener('click', () => { salahDetailState.walkStep++; drawSalahDetail(); });
+    if(finish) finish.addEventListener('click', () => { salahDetailState.view = 'list'; drawSalahView(); });
+  }
+}
+document.addEventListener('click', (e) => {
+  const posCard = e.target.closest('[data-slp]');
+  if(posCard){
+    salahDetailState.view = 'position';
+    salahDetailState.posIdx = parseInt(posCard.dataset.slp);
+    drawSalahDetail();
+    return;
+  }
+  const prayerCard = e.target.closest('[data-slpr]');
+  if(prayerCard){
+    salahDetailState.view = 'walkthrough';
+    salahDetailState.prayerIdx = parseInt(prayerCard.dataset.slpr);
+    salahDetailState.walkStep = 0;
+    drawSalahDetail();
+    return;
+  }
 }, true);
+const _origSalahBack = LEARN_BACK_HANDLERS['salahGuide'];
+LEARN_BACK_HANDLERS['salahGuide'] = () => {
+  if(salahDetailState.view === 'position'){
+    salahDetailState.view = 'list';
+    drawSalahView();
+    return true;
+  }
+  if(salahDetailState.view === 'walkthrough'){
+    if(salahDetailState.walkStep > 0){
+      salahDetailState.walkStep--;
+      drawSalahDetail();
+      return true;
+    }
+    salahDetailState.view = 'list';
+    drawSalahView();
+    return true;
+  }
+  closeLearnOverlay();
+  return true;
+};
