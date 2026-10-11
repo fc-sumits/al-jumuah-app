@@ -4043,6 +4043,7 @@ function markLessonComplete(pid, num) {
   if(prophetState.progress[pid].indexOf(num) === -1) {
     prophetState.progress[pid].push(num);
     saveProphetProgress();
+    saveProphetProgressCloud();
   }
 }
 
@@ -4270,4 +4271,54 @@ document.addEventListener('click', (e) => {
   if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook');
   openLearnOverlay('prophetsStories', 'storybook');
   renderProphets();
-}, true);
+}, true);// ═══════════════════════════════════════════════════════════════
+// PROPHET PROGRESS — Firebase sync
+// ═══════════════════════════════════════════════════════════════
+
+let prophetCloudSaveTimer = null;
+
+function saveProphetProgressCloud(){
+  if(!window.__currentUser || typeof db === 'undefined' || !db) return;
+  if(prophetCloudSaveTimer) clearTimeout(prophetCloudSaveTimer);
+  prophetCloudSaveTimer = setTimeout(async () => {
+    prophetCloudSaveTimer = null;
+    try {
+      await db.collection('users').doc(window.__currentUser.uid).set(
+        { prophetProgress: prophetState.progress },
+        { merge: true }
+      );
+    } catch(e){ console.log('prophet cloud save failed', e); }
+  }, 2500);
+}
+
+async function loadProphetProgressCloud(){
+  if(!window.__currentUser || typeof db === 'undefined' || !db) return;
+  try {
+    const doc = await db.collection('users').doc(window.__currentUser.uid).get();
+    if(!doc.exists) return;
+    const data = doc.data();
+    if(!data || !data.prophetProgress) return;
+    const cloud = data.prophetProgress;
+    Object.keys(cloud).forEach(pid => {
+      if(!Array.isArray(cloud[pid])) return;
+      if(!prophetState.progress[pid]) prophetState.progress[pid] = [];
+      cloud[pid].forEach(num => {
+        if(prophetState.progress[pid].indexOf(num) === -1){
+          prophetState.progress[pid].push(num);
+        }
+      });
+    });
+    saveProphetProgress();
+    if(prophetState.data && (prophetState.view === 'list' || prophetState.view === 'detail')){
+      drawProphetsView();
+    }
+  } catch(e){ console.log('prophet cloud load failed', e); }
+}
+
+function initProphetSync(){
+  if(!window.firebase || !firebase.apps.length){ setTimeout(initProphetSync, 300); return; }
+  firebase.auth().onAuthStateChanged(u => {
+    if(u) loadProphetProgressCloud();
+  });
+}
+initProphetSync();
