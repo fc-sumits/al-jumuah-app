@@ -1,0 +1,954 @@
+{
+  "prophets": [
+    {
+      "id": "ibrahim",
+      "num": 6,
+      "name": "Ibrahim",
+      "arabic": "إبراهيم",
+      "subtitle": "25 Lessons",
+      "image": "images/prophet-06-ibrahim.webp",
+      "tier": "pillar",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Search Begins",
+          "thumb": "search",
+          "body": "<p>Ibrahim (AS) was born into a world that had forgotten its Creator. His father was a sculptor of idols. His people worshipped statues — some carved from wood, some hammered from stone. The temple in his town was filled with them, and the king himself claimed to be a god.</p><p>But even as a young man, Ibrahim's heart refused to accept what his eyes saw. He watched his father chip away at lifeless rock and call it divine. He watched the priests bow to idols that could not see, hear, or speak. He watched the king parade through the streets while men prostrated before him as if he were the Creator of the heavens.</p><p>The Quran says: <em>And thus did We show Ibrahim the realm of the heavens and the earth, that he might be of those who are certain.</em> Before Ibrahim asked a single question, Allah had already placed the seed of certainty in his heart. The search that followed was not doubt — it was a pilgrimage. A young man walking out of the darkness of his people, guided by a light that only he could see.</p><p>This is the beginning of every believer's journey: the awareness that the world you inherited is not the truth, and the courage to look beyond it.</p>",
+          "dialogue": {
+            "arabic": "وَكَذَٰلِكَ نُرِي إِبْرَاهِيمَ مَلَكُوتَ السَّمَاوَاتِ وَالْأَرْضِ وَلِيَكُونَ مِنَ الْمُوقِنِينَ",
+            "translation": "And thus did We show Ibrahim the realm of the heavens and the earth, that he might be of those who are certain.",
+            "ref": "Al-An'am 6:75"
+          },
+          "didYouKnow": "Ibrahim is called <em>Khalilullah</em> — 'the close friend of Allah.' No other prophet is given this title. It comes from the root <em>kh-l-l</em>, meaning a deep friendship, the kind that leaves no room for anything else.",
+          "takeaway": "The journey to Allah begins the moment the heart refuses to accept a false world."
+        },
+        {
+          "num": 2,
+          "title": "The Star, the Moon, the Sun",
+          "thumb": "stars",
+          "body": "<p>The Quran gives us a window into Ibrahim's reasoning — one of the most beautiful passages in revelation. As night fell, Ibrahim saw a star and said: <em>This is my Lord.</em> But when the star set, he said: <em>I do not love those that set.</em></p><p>Then he saw the moon rising, and said the same. And when it too disappeared, he said: <em>If my Lord does not guide me, I will surely be among the misguided.</em></p><p>Then he saw the sun — brighter, larger, greater — and said: <em>This is my Lord; this is greater.</em> And when the sun also set, Ibrahim delivered the verdict that would define his whole life: <em>O my people, I am free from what you associate. Indeed, I have turned my face toward the One who created the heavens and the earth, and I am not of those who associate partners with Him.</em></p><p>This passage is often misunderstood as Ibrahim worshipping the stars, then rejecting them. But the classical scholars explain it differently: Ibrahim was making a <em>public demonstration</em> — a step-by-step argument for the people watching. He was showing them, through their own reasoning, that no created thing deserves worship. Everything that rises, sets. Everything that appears, disappears. Everything that shines, fades. Only the Creator of all — who never sets, never fades, never disappears — deserves to be called Lord.</p>",
+          "dialogue": {
+            "arabic": "فَلَمَّا أَفَلَ قَالَ لَئِن لَّمْ يَهْدِنِي رَبِّي لَأَكُونَنَّ مِنَ الْقَوْمِ الضَّالِّينَ ۝ فَلَمَّا رَأَى الشَّمْسَ بَازِغَةً قَالَ هَٰذَا رَبِّي هَٰذَا أَكْبَرُ ۖ فَلَمَّا أَفَلَتْ قَالَ يَا قَوْمِ إِنِّي بَرِيءٌ مِّمَّا تُشْرِكُونَ",
+            "translation": "When the star set, he said: If my Lord does not guide me, I will surely be among the misguided. When he saw the sun rising, he said: This is my Lord; this is greater. When it set, he said: O my people, I am free from what you associate.",
+            "ref": "Al-An'am 6:77-78"
+          },
+          "didYouKnow": "Ibrahim's method — observing created things, seeing their limits, and concluding that only the Creator is worthy — is one of the earliest forms of tawhid reasoning. It is called <em>dalīl al-ḥudūth</em> (the argument from temporality) by the scholars of Aqeedah.",
+          "takeaway": "Everything that rises must set — only the Creator never fades."
+        },
+        {
+          "num": 3,
+          "title": "The Argument with Azar",
+          "thumb": "father",
+          "body": "<p>Ibrahim's first obstacle was not the king. It was his own father. Azar was a sculptor of idols — the very person who carved the gods of their tribe. And Ibrahim, the son, had to confront the father.</p><p>He approached with gentleness and respect: <em>O my father, why do you worship that which does not hear, see, or benefit you at all? O my father, there has come to me knowledge that has not come to you — so follow me, and I will guide you to a straight path. O my father, do not worship Shaytan. Indeed, Shaytan has been a rebel against the Most Merciful.</em></p><p>Look at the tenderness in every line. Ibrahim did not begin with accusation. He used <em>yā abatī</em> — 'O my beloved father' — four times in a row. He did not say, 'You are a disbeliever.' He said, 'Follow me.' He did not attack. He invited.</p><p>And yet, despite the kindness, Azar rejected him. And worse: <em>He said: Do you reject my gods, O Ibrahim? If you do not stop, I will surely stone you. Leave me for a long time.</em> A father threatened to stone his own son.</p><p>Ibrahim's reply was sorrowful but firm: <em>Peace be upon you. I will ask forgiveness of my Lord for you. Indeed, He is to me ever Gracious.</em> And then he turned away from his father — and from his father's gods — and began a new life.</p>",
+          "dialogue": {
+            "arabic": "قَالَ أَرَاغِبٌ أَنتَ عَنْ آلِهَتِي يَا إِبْرَاهِيمُ ۖ لَئِن لَّمْ تَنتَهِ لَأَرْجُمَنَّكَ ۖ وَاهْجُرْنِي مَلِيًّا ۝ قَالَ سَلَامٌ عَلَيْكَ ۖ سَأَسْتَغْفِرُ لَكَ رَبِّي ۖ إِنَّهُ كَانَ بِي حَفِيًّا",
+            "translation": "He said: Do you reject my gods, O Ibrahim? If you do not stop, I will surely stone you. So leave me for a long time. Ibrahim said: Peace be upon you. I will ask forgiveness of my Lord for you. Indeed, He is to me ever Gracious.",
+            "ref": "Maryam 19:46-47"
+          },
+          "didYouKnow": "Azar is not Ibrahim's biological father in some narrations — he was his uncle who raised him, or his adoptive father. The Quran calls him <em>ab</em> (father), which in Arabic can also mean guardian or elder. Either way, Ibrahim's relationship to him was one of family love, making the rejection far more painful.",
+          "takeaway": "You can be kind to those who reject the truth — but you cannot compromise on the truth itself."
+        },
+        {
+          "num": 4,
+          "title": "Against the Idols",
+          "thumb": "idols",
+          "body": "<p>Ibrahim did not stop at talking. The Quran records an event that shocked his entire town — a public, deliberate, unforgettable protest against the idols.</p><p>It was the day of a festival. The whole city had gone out to celebrate, leaving the temple empty. Ibrahim walked in alone. Before him stood rows of statues — big ones, small ones, gods of wood and stone. He looked at them. He saw their lifelessness. He saw that the offerings placed before them had not been touched. He saw that the smoke of incense rose past their unblinking eyes without moving them.</p><p>And he took an axe. He struck each idol, breaking it into pieces — one after another, one after another — until only the largest remained, untouched. Then he placed the axe in its hand, and walked out.</p><p>When the people returned and found their gods in ruins, they were outraged. <em>Who has done this to our gods?</em> Someone said: <em>We heard a young man speaking ill of them — his name is Ibrahim.</em></p><p>They brought him to the temple, furious. And Ibrahim, calm, simply pointed to the biggest idol and said: <em>Ask them — if they can speak.</em></p>",
+          "dialogue": {
+            "arabic": "قَالُوا أَأَنتَ فَعَلْتَ هَٰذَا بِآلِهَتِنَا يَا إِبْرَاهِيمُ ۝ قَالَ بَلْ فَعَلَهُ كَبِيرُهُمْ هَٰذَا فَاسْأَلُوهُمْ إِن كَانُوا يَنطِقُونَ",
+            "translation": "They said: Have you done this to our gods, O Ibrahim? He said: Rather, this — the largest of them — did it. So ask them, if they should speak.",
+            "ref": "Al-Anbiya 21:62-63"
+          },
+          "didYouKnow": "Ibrahim's challenge — <em>ask them if they can speak</em> — is one of the most devastating arguments against idolatry ever recorded. He did not just break the idols; he dismantled the logic behind them. If they cannot defend themselves from an axe, how can they defend their worshippers?",
+          "takeaway": "The idols of every age are defenseless against the truth — they only stand because people refuse to ask questions."
+        },
+        {
+          "num": 5,
+          "title": "The Great Fire",
+          "thumb": "fire",
+          "body": "<p>The people were humiliated. Their gods lay in pieces at their feet, and the young man who had done it stood before them, unafraid. They had no argument. They had no proof. So they reached for the one thing every tyrant reaches for when logic fails: violence.</p><p>They decided to burn him alive. <em>Burn him and support your gods, if you are to act.</em> They gathered wood for days — some say weeks — until they had built a mountain of fuel. They lit it. And the flames rose so high that birds flying above were scorched. The people stood far back, unable to approach the heat.</p><p>They built a catapult. They loaded Ibrahim into it. And they flung him into the fire.</p><p>But Allah had other plans. The Quran says: <em>We said: O fire, be coolness and safety upon Ibrahim.</em></p><p>Not 'be extinguished.' Not 'stop burning.' But <em>be cool and safe</em>. The fire remained fire — but it lost its power to harm. It was, in that moment, the most obedient creature in the universe, obeying the command of its Lord to hold back its burning nature. And Ibrahim sat in the middle of the flames, untouched.</p><p>Some narrations say the only thing that burned was the rope that had bound him. He walked out of the fire free — no chains, no burns, no fear. And the crowd that had gathered to watch him die watched something impossible instead.</p>",
+          "dialogue": {
+            "arabic": "قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ",
+            "translation": "We said: O fire, be coolness and safety upon Ibrahim.",
+            "ref": "Al-Anbiya 21:69"
+          },
+          "didYouKnow": "The classical scholars note that the fire obeyed Allah's command rather than its own nature. Fire's natural state is to burn. But that day it became cool. This is a reminder that <em>every</em> created thing submits to Allah — even the ones that seem uncontrollable.",
+          "takeaway": "If Allah commands the fire to be cool, no power on earth can burn you."
+        },
+        {
+          "num": 6,
+          "title": "The Debate with Nimrod",
+          "thumb": "king",
+          "body": "<p>After the fire failed, the king of the land — Nimrod — decided to confront Ibrahim himself. Nimrod was not just a tyrant; he was a man who had begun to believe in his own divinity. He wore a crown, received worship, and had temples dedicated to him. And Ibrahim had publicly shattered his gods.</p><p>The Quran records a short but devastating exchange: <em>Ibrahim said: My Lord is the One who gives life and causes death. Nimrod replied: I give life and cause death.</em></p><p>Nimrod's boast was not idle. He had the power of life and death over his subjects — he could spare a condemned man or execute another. In his mind, this was the same as being the giver of life. He had confused <em>authority over life</em> with <em>creation of life</em>.</p><p>But Ibrahim did not pause to argue. He simply changed the ground: <em>Indeed, Allah brings the sun from the east, so bring it from the west.</em></p><p>The Quran says: <em>And the disbeliever was overwhelmed.</em> He had no answer. Ibrahim's argument was airtight — no one can move the sun. No one can command the heavens. No king, no matter how powerful, has authority over anything beyond his small corner of the earth. The debate ended in silence.</p><p>And this is the difference between truth and power: power can silence a voice, but it cannot silence reality. The sun rises from the east every morning. Nimrod, despite all his pride, could not change that. And no king in history ever has.</p>",
+          "dialogue": {
+            "arabic": "قَالَ إِبْرَاهِيمُ فَإِنَّ اللَّهَ يَأْتِي بِالشَّمْسِ مِنَ الْمَشْرِقِ فَأْتِ بِهَا مِنَ الْمَغْرِبِ فَبُهِتَ الَّذِي كَفَرَ",
+            "translation": "Ibrahim said: Indeed, Allah brings the sun from the east, so bring it from the west. And the disbeliever was overwhelmed.",
+            "ref": "Al-Baqarah 2:258"
+          },
+          "didYouKnow": "Nimrod is not named in the Quran — but the classical narrators identify him as the king Ibrahim debated. Some historians identify him with the historical ruler Nimrod of Mesopotamian tradition. Either way, the message is the same: no ruler is above Allah.",
+          "takeaway": "Power can silence a voice, but it can never rewrite reality."
+        },
+        {
+          "num": 7,
+          "title": "The Migration",
+          "thumb": "migration",
+          "body": "<p>After the debate, Ibrahim understood that staying was no longer possible. His people had tried to burn him, and their king had been publicly humiliated. He had done his part — he had delivered the message, broken the idols, survived the fire, and silenced the tyrant. Now it was time to leave.</p><p>The Quran says: <em>And he said: Indeed, I will emigrate to my Lord. Indeed, He is the Exalted in Might, the Wise.</em></p><p>And elsewhere: <em>And We saved him and Lut, and We guided them to the land which We had blessed for the worlds.</em> The land was Shaam — greater Syria, encompassing modern Palestine, Jordan, Lebanon, and Syria. Allah had called it 'blessed for the worlds' — the land of the prophets.</p><p>Ibrahim left. He left his father. He left his tribe. He left his town. He left everything he had known. And he left with nothing but his faith — and his nephew Lut, who had believed in him.</p><p>This is <em>hijrah</em> — the migration for the sake of Allah. Ibrahim did not leave because he was defeated; he left because the land could no longer hold the truth. When a place becomes impossible for faith, faith moves. And Allah always prepares a better land.</p><p>The Prophet ﷺ later said: <em>Whoever migrates for the sake of Allah will find in the earth abundant refuge and provision.</em> Ibrahim lived that truth centuries before it was spoken.</p>",
+          "dialogue": {
+            "arabic": "وَقَالَ إِنِّي مُهَاجِرٌ إِلَىٰ رَبِّي ۖ إِنَّهُ هُوَ الْعَزِيزُ الْحَكِيمُ",
+            "translation": "And he said: Indeed, I will emigrate to my Lord. Indeed, He is the Exalted in Might, the Wise.",
+            "ref": "Al-Ankabut 29:26"
+          },
+          "didYouKnow": "The land of Shaam is called <em>al-arḍ al-mubārakah</em> — 'the blessed land' — in the Quran. It is the only region that carries this title. More prophets lived, taught, and were buried in Shaam than in any other land on earth.",
+          "takeaway": "When a place can no longer hold your faith, Allah will carry you to where it can."
+        },
+        {
+          "num": 8,
+          "title": "In the Blessed Land",
+          "thumb": "shaam",
+          "body": "<p>Ibrahim arrived in Shaam — and began to build. Not with stone and timber this time, but with truth. He called people to tawhid in the new land, and slowly a community of believers formed around him. He married Sarah, who would become one of the greatest women in Islamic history.</p><p>But there was a problem: the land was not empty. It was ruled by local kings, filled with tribes, and surrounded by the same idolatry he had just fled. And one of those kings — the king of Egypt — heard about Sarah's beauty and wanted her for himself.</p><p>The Quran records this story with the calm of revelation: Ibrahim, knowing he could not defend Sarah by force, told her to say she was his sister. Not a lie in the full sense — Sarah was his sister in faith, and the community of believers were all family. But it was a concealment, made necessary by the danger.</p><p>The king took Sarah. Ibrahim stood alone, weaponless, powerless. And Sarah — quietly, in the moment of danger — made dua to Allah. And the king's hand was paralysed before he could touch her. His guards rushed in, saw him frozen, and he released her immediately.</p><p>Some narrations say the king was struck with paralysis several times, each time asking Sarah to pray for his release, each time promising to free her if she did. She prayed. He was released. He tried again. He was struck again. Finally, terrified, he returned her to Ibrahim with gifts and honours.</p><p>This was the beginning of a pattern: whatever the world took from Ibrahim, Allah returned to him with more. Whatever trials came, Allah raised him. This is the fruit of tawakkul — complete trust in the protection of Allah.</p>",
+          "dialogue": {
+            "arabic": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ",
+            "translation": "And whoever fears Allah — He will make for him a way out, and will provide for him from where he does not expect.",
+            "ref": "At-Talaq 65:2-3"
+          },
+          "didYouKnow": "Sarah — known in Arabic as Sarah — was the mother of Ishaq, and the ancestor of the line of the Children of Israel. Hajar, Ibrahim's second wife, was the mother of Ismail, and the ancestor of the line that led to the Prophet Muhammad ﷺ. Both lines — millions of people — descend from Ibrahim (AS).",
+          "takeaway": "When you cannot defend yourself, Allah defends you — and often gives back more than was taken."
+        },
+        {
+          "num": 9,
+          "title": "The Long Wait",
+          "thumb": "waiting",
+          "body": "<p>Ibrahim and Sarah grew old together in the blessed land. They lived a life of worship, hospitality, and calling to Allah. But there was one thing they did not have: a child.</p><p>Sarah was barren. Her womb had never opened. Years turned into decades. Ibrahim was now well past the age of fatherhood, and Sarah had given up hope that she would ever carry a child. The Quran says: <em>And Sarah was unable to bear children.</em></p><p>But Ibrahim had not given up on asking. He prayed for a righteous child — and the Quran preserves his words: <em>My Lord, grant me from the righteous.</em> Five words. A lifetime of waiting behind them. Ibrahim did not stop asking.</p><p>Then Sarah made a suggestion that would change the course of history. She told Ibrahim to marry her servant Hajar — perhaps Allah would give him a child through her. Ibrahim agreed. And Hajar, a servant from Egypt, became the second wife of the Khalil of Allah.</p><p>And then, one day, an announcement came — not from Sarah, and not from Hajar. But from angels. Angels who had come to Ibrahim's tent as guests, carrying news that would shake the foundations of prophethood.</p>",
+          "dialogue": {
+            "arabic": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+            "translation": "My Lord, grant me from the righteous.",
+            "ref": "As-Saffat 37:100"
+          },
+          "didYouKnow": "Ibrahim was around 86 years old when Ismail was born, and around 100 when Ishaq was announced. His long wait for a child was itself a lifelong act of worship — he kept asking, even when every human reason said no.",
+          "takeaway": "Allah is not delayed — He is preparing the moment the answer will be the most beautiful."
+        },
+        {
+          "num": 10,
+          "title": "The Angels Arrive",
+          "thumb": "angels",
+          "body": "<p>The Quran tells the story with a quietness that makes it unforgettable. Angels came to Ibrahim's tent — three of them, in the form of honoured guests. And Ibrahim, in the tradition of Arab hospitality, did not ask who they were or why they had come. He went to his flock, slaughtered a fattened calf, roasted it, and presented a feast.</p><p>But the guests did not eat. Their hands did not move. And Ibrahim — who had spent his life trusting people — felt a strange fear creep into his chest. These men were not what they seemed.</p><p>The guests spoke: <em>Do not fear. We have been sent to the people of Lut.</em> And then the angel Jibril delivered the message that would change Ibrahim's life: <em>And his wife was standing there, and she laughed, so We gave her glad tidings of Ishaq, and after Ishaq, of Yaqub.</em></p><p>Sarah, who had been listening from behind the curtain, laughed — not in mockery, but in the disbelief of a woman who had given up hope. And the angels heard the laugh and turned it into good news.</p><p>She struck her face and said: <em>Woe to me! Am I to bear a child when I am an old woman, and this my husband is an old man? Indeed, this is a strange thing.</em> And the angels replied with the words that still echo across the ages: <em>Are you amazed at the decree of Allah? May the mercy of Allah and His blessings be upon you, people of the house. Indeed, He is Praiseworthy and Honourable.</em></p>",
+          "dialogue": {
+            "arabic": "قَالُوا أَتَعْجَبِينَ مِنْ أَمْرِ اللَّهِ ۖ رَحْمَتُ اللَّهِ وَبَرَكَاتُهُ عَلَيْكُمْ أَهْلَ الْبَيْتِ ۚ إِنَّهُ حَمِيدٌ مَّجِيدٌ",
+            "translation": "They said: Are you amazed at the decree of Allah? May the mercy of Allah and His blessings be upon you, people of the house. Indeed, He is Praiseworthy and Honourable.",
+            "ref": "Hud 11:73"
+          },
+          "didYouKnow": "The angels announced two sons: Ishaq (from Sarah) and Yaqub (from Ishaq's future line). This is the only place in the Quran where three generations of prophets are announced together — Ibrahim, Ishaq, and Yaqub, the fathers of the Children of Israel.",
+          "takeaway": "Allah does not need your youth, your health, or your strength — He only needs your trust."
+        },
+        {
+          "num": 11,
+          "title": "The Barren Valley",
+          "thumb": "valley",
+          "body": "<p>Now we come to the heart of Ibrahim's story — the moment that tested him more than the fire, more than the king, more than the years of waiting. Allah commanded Ibrahim to take Hajar and their infant son Ismail, and to leave them in a barren valley — a place with no water, no shade, no people, no hope of survival.</p><p>The valley was called Bakkah. Today it is called Makkah. At the time, it was a dry, rocky, lifeless place between two hills — Safa and Marwa. No one lived there. Nothing grew there. There was no water for hundreds of miles.</p><p>Ibrahim obeyed. He walked with Hajar and the baby through the desert until they reached the valley. He set down his wife and child. He placed a small bag of dates and a skin of water beside them. And then he began to walk away.</p><p>Hajar ran after him. <em>O Ibrahim! Where are you going? Are you leaving us in a valley with no people and no water?</em> She asked again and again. He did not answer. He kept walking.</p><p>And then she asked the question that would define her legacy: <em>Did Allah command you to do this?</em></p><p>He turned and said: <em>Yes.</em></p><p>And she said: <em>Then He will not abandon us.</em></p><p>With those five words, Hajar returned to her baby, trusted her Lord, and waited. She had no food, no water, no shelter, no protection. But she had <em>yaqeen</em> — certainty — that the One who commanded her husband to leave her would not leave her.</p>",
+          "dialogue": {
+            "arabic": "رَبَّنَا إِنِّي أَسْكَنتُ مِن ذُرِّيَّتِي بِوَادٍ غَيْرِ ذِي زَرْعٍ عِندَ بَيْتِكَ الْمُحَرَّمِ",
+            "translation": "Our Lord, I have settled some of my descendants in an uncultivated valley near Your sacred House.",
+            "ref": "Ibrahim 14:37"
+          },
+          "didYouKnow": "Hajar's words — <em>Then He will not abandon us</em> — are considered one of the greatest statements of tawakkul in Islamic history. She did not know how Allah would save her. She only knew that He would. This is the essence of trust.",
+          "takeaway": "When you cannot see the way out, trust the One who placed you where you are."
+        },
+        {
+          "num": 12,
+          "title": "The Well of Zamzam",
+          "thumb": "zamzam",
+          "body": "<p>Hajar ran. She climbed the hill of Safa, looking across the desert for any sign of a caravan. Nothing. She ran down and up the hill of Marwa on the other side. Nothing. Back to Safa. Back to Marwa. Seven times — running between the two hills, searching, hoping, praying.</p><p>And then, as she stood on Marwa for the seventh time, she heard a sound. She ran back to Ismail — and saw water bubbling up from the ground beside his tiny feet. The baby had kicked the sand, and Allah had opened the earth beneath him.</p><p>Hajar rushed to the water. She scooped it with her hands, drinking, washing her child, and shouting: <em>Zamzam! Zamzam!</em> — 'Stop, stop!' or 'Gather, gather!' — depending on the narration. She was telling the water to stay, to not dry up, to keep flowing. And it did.</p><p>The well of Zamzam has never stopped. For over four thousand years, it has flowed continuously — through every drought, every war, every change of dynasty and nation. Today, millions of pilgrims drink from it every year. It has quenched the thirst of every generation that has come to Makkah.</p><p>And it began with a mother's trust and a baby's kick.</p><p>The Prophet ﷺ later said: <em>May Allah have mercy on the mother of Ismail. Had she left Zamzam alone — or had she not scooped from it — it would have been a flowing spring on the surface of the earth.</em> Allah's mercy, however, is that Zamzam was preserved for the generations to come.</p>",
+          "dialogue": {
+            "arabic": "فَاجْعَلْ أَفْئِدَةً مِّنَ النَّاسِ تَهْوِي إِلَيْهِمْ وَارْزُقْهُم مِّنَ الثَّمَرَاتِ لَعَلَّهُمْ يَشْكُرُونَ",
+            "translation": "So make hearts among the people incline toward them and provide for them from the fruits, that they might be grateful.",
+            "ref": "Ibrahim 14:37"
+          },
+          "didYouKnow": "Zamzam is still flowing today, thousands of years after Hajar's desperate run. Its water is considered blessed, and pilgrims drink from it and carry it home. It is one of the few physical miracles of Ibrahim's story that has never ceased.",
+          "takeaway": "Allah can bring water out of sand — but only after you have run the seven hills He asked you to run."
+        },
+        {
+          "num": 13,
+          "title": "The Vision of Sacrifice",
+          "thumb": "dream",
+          "body": "<p>Years passed. Ismail grew into a young man — strong, obedient, beloved by his father. Ibrahim would travel from Shaam to Makkah to visit him, and each visit was a reminder of Allah's favour: he had been given a son in his old age.</p><p>And then the dream came.</p><p>Ibrahim saw, in his sleep, that he was slaughtering his son. In Islam, the dreams of the prophets are revelation — not imagination. Ibrahim understood what the dream meant: Allah was commanding him to sacrifice Ismail.</p><p>Imagine the weight of that command. This was the son he had waited 86 years for. The son whose very existence was a miracle. The son through whom Allah had promised to build a nation. And now Ibrahim was being asked to give him back — with his own hands.</p><p>But Ibrahim did not hesitate. He did not argue. He did not ask for a delay. He simply went to his son and told him the truth: <em>O my son, indeed I have seen in a dream that I must sacrifice you. So see what you think.</em></p><p>Look at how Ibrahim phrased it. He did not say, 'Allah has commanded me to kill you.' He said, <em>see what you think</em>. He gave his son the chance to respond, to process, to participate in the decision. He treated him not as a child to be commanded, but as a soul to be consulted.</p><p>And Ismail — a young man at the height of his life — responded with a faith that mirrors his mother's: <em>O my father, do as you have been commanded. You will find me, if Allah wills, of the patient.</em></p><p>Father and son walked together to the place of sacrifice. Both of them were willing. Both of them were obedient. Both of them trusted the command of Allah more than their own lives.</p><p>What happened next changed the course of every generation.</p>",
+          "dialogue": {
+            "arabic": "يَا بُنَيَّ إِنِّي أَرَىٰ فِي الْمَنَامِ أَنِّي أَذْبَحُكَ فَانظُرْ مَاذَا تَرَىٰ ۚ قَالَ يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ ۖ سَتَجِدُنِي إِن شَاءَ اللَّهُ مِنَ الصَّابِرِينَ",
+            "translation": "O my son, indeed I have seen in a dream that I must sacrifice you, so see what you think. He said: O my father, do as you have been commanded. You will find me, if Allah wills, of the patient.",
+            "ref": "As-Saffat 37:102"
+          },
+          "didYouKnow": "The story of Ibrahim's sacrifice is commemorated every year by Muslims around the world on Eid al-Adha. When pilgrims perform Hajj, they sacrifice an animal in remembrance of Ibrahim and Ismail — the willingness to give everything for Allah.",
+          "takeaway": "The greatest love you can give Allah is the thing you love most besides Him."
+        },
+        {
+          "num": 14,
+          "title": "The Great Sacrifice",
+          "thumb": "sacrifice",
+          "body": "<p>They reached the place. Ibrahim laid his son down. He took the knife in his hand. He steadied himself. And he pressed the blade against Ismail's throat.</p><p>And the blade did not cut.</p><p>The Quran does not record the blow itself — it moves directly to the moment of relief: <em>So when they had both submitted and he put him down upon his forehead, We called to him: O Ibrahim, you have fulfilled the vision. Indeed, We thus reward the doers of good.</em></p><p>Notice the phrase: <em>when they had both submitted</em>. Not just Ibrahim — <em>both of them</em>. The father had surrendered his most beloved thing to Allah. And the son had surrendered himself. Two souls, one command, one obedience. This is the moment that Allah honoured forever.</p><p>And Allah stopped it. Not because the sacrifice was rejected — but because it had already been accepted. Ibrahim had shown, in his heart, that he was willing to give up everything for his Lord. And that willingness is what Allah wanted. Not the death of Ismail — the death of Ibrahim's attachment to anything besides Allah.</p><p>The Quran says: <em>And We ransomed him with a great sacrifice.</em> And a voice called out from the heavens, giving Ibrahim the news that every prophet since would repeat: <em>Peace be upon Ibrahim.</em></p><p>This is the moment that changed the course of human history. From this obedience came the blessing that produced two nations — the Children of Israel through Ishaq, and the Arab nation through Ismail. Two branches, one trunk, one act of submission.</p>",
+          "dialogue": {
+            "arabic": "فَلَمَّا أَسْلَمَا وَتَلَّهُ لِلْجَبِينِ ۝ وَنَادَيْنَاهُ أَن يَا إِبْرَاهِيمُ ۝ قَدْ صَدَّقْتَ الرُّؤْيَا ۚ إِنَّا كَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ",
+            "translation": "So when they had both submitted and he put him down upon his forehead, We called to him: O Ibrahim, you have fulfilled the vision. Indeed, We thus reward the doers of good.",
+            "ref": "As-Saffat 37:103-105"
+          },
+          "didYouKnow": "The event took place at Mina, near Makkah — which is why pilgrims sacrifice an animal there during Hajj. The 'great sacrifice' (dhibḥ 'aẓīm) that ransomed Ismail is remembered every Eid al-Adha by Muslims worldwide.",
+          "takeaway": "Allah does not want your sacrifice — He wants your willingness to give it."
+        },
+        {
+          "num": 15,
+          "title": "The Ransom",
+          "thumb": "ram",
+          "body": "<p>A ram appeared. Some narrations say it descended from Paradise — the same ram that Habil (Abel) had offered as a sacrifice generations earlier. It stood ready, and Ibrahim sacrificed it instead of his son.</p><p>And then Allah gave Ibrahim two pieces of news — one for the moment, and one for the centuries to come: <em>Indeed, this was the clear trial. And We ransomed him with a great sacrifice. And We left for him among later generations: Peace upon Ibrahim. Indeed, We thus reward the doers of good. Indeed, he was of Our believing servants.</em></p><p>Read those lines again. In five short verses, Allah does five things:</p><p><strong>One:</strong> He calls the test a <em>clear trial</em> — acknowledging its severity.<br><strong>Two:</strong> He provides a ransom — accepting the willingness in place of the act.<br><strong>Three:</strong> He promises eternal honour — <em>Peace upon Ibrahim</em> — words that every Muslim repeats in every salah.<br><strong>Four:</strong> He records the reward — <em>We thus reward the doers of good</em> — establishing a principle for all time.<br><strong>Five:</strong> He names Ibrahim <em>of Our believing servants</em> — the highest possible title.</p><p>This is what Allah does when a servant passes the test. He does not just accept the act — He preserves its memory. He does not just reward the doer — He writes it into revelation. He does not just honour the servant — He honours him <em>forever</em>.</p>",
+          "dialogue": {
+            "arabic": "وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ ۝ وَتَرَكْنَا عَلَيْهِ فِي الْآخِرِينَ ۝ سَلَامٌ عَلَىٰ إِبْرَاهِيمَ",
+            "translation": "And We ransomed him with a great sacrifice. And We left for him among later generations: Peace upon Ibrahim.",
+            "ref": "As-Saffat 37:107-109"
+          },
+          "didYouKnow": "Every Muslim who sends salam upon the prophets in the daily tashahhud — <em>Peace be upon Ibrahim and the family of Ibrahim</em> — is actually fulfilling the promise of this verse: <em>And We left for him among later generations: Peace upon Ibrahim.</em> Ibrahim's reward is literally woven into every Muslim prayer.",
+          "takeaway": "The deeds we do for Allah do not just get rewarded — they get remembered in every generation."
+        },
+        {
+          "num": 16,
+          "title": "The Kaaba Rises",
+          "thumb": "kaaba",
+          "body": "<p>Years later, Ibrahim returned to Makkah. Ismail was now a young man, married, living near the well of Zamzam. And Allah gave Ibrahim a new command — a new mission for his old age. To build a house. Not for himself, but for the worship of Allah.</p><p>The Quran says: <em>And when Ibrahim was raising the foundations of the House, and Ismail, saying: Our Lord, accept it from us. Indeed, You are the Hearing, the Knowing.</em></p><p>Father and son. Two pairs of hands. One command. They worked side by side, laying stone upon stone, building the first house of tawhid on the earth. Some narrations say Ibrahim would place the stone and Ismail would hand it up. Others say Ismail would climb on Ibrahim's shoulders when the walls grew too high. Either way, the image is unforgettable: two men who had just passed the greatest test of their lives now building the centre of worship for all future generations.</p><p>What was the Kaaba? Not a palace. Not a monument to a king. Not a tomb of a holy man. A simple, square structure, built from rough stone, dedicated to the One God. No images, no idols, no statues. Just a house with one purpose: to turn toward, to circle around, to worship the One who created the heavens and the earth.</p><p>And this is why Muslims face the Kaaba in prayer today. Not because the Kaaba is sacred in itself — but because Allah commanded it. Not because the building is worshipped — but because the direction toward it marks the unity of the Ummah.</p>",
+          "dialogue": {
+            "arabic": "وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+            "translation": "And when Ibrahim was raising the foundations of the House, and Ismail, saying: Our Lord, accept it from us. Indeed, You are the Hearing, the Knowing.",
+            "ref": "Al-Baqarah 2:127"
+          },
+          "didYouKnow": "The Kaaba had been built originally by Adam (AS), but had been destroyed or lost over the centuries. Ibrahim was not building it from scratch — he was rebuilding it, restoring the original house of tawhid that had been forgotten. Every stone was a step back to the beginning.",
+          "takeaway": "The greatest buildings are not the tallest — they are the ones built with dua on the lips and obedience in the hands."
+        },
+        {
+          "num": 17,
+          "title": "The Dua for the Ummah",
+          "thumb": "dua-ummah",
+          "body": "<p>As the walls rose, Ibrahim and Ismail did not just work — they prayed. And their dua is one of the most extraordinary in the Quran, because it asked for something that would not be fulfilled for nearly 2,500 years.</p><p><em>Our Lord, accept this from us. Indeed, You are the Hearing, the Knowing. Our Lord, and make us both Muslims to You and from our descendants a Muslim nation to You. And show us our rites and accept our repentance. Indeed, You are the Accepting of Repentance, the Merciful. Our Lord, send among them a messenger from among themselves, who will recite to them Your verses, teach them the Book and wisdom, and purify them. Indeed, You are the Exalted in Might, the Wise.</em></p><p>Look carefully at that last request. <em>Send among them a messenger from among themselves.</em> Ibrahim was asking Allah for a prophet who would come from his own descendants — a prophet to complete the message and purify the Ummah.</p><p>That dua was answered in the person of the Prophet Muhammad ﷺ. When the Prophet ﷺ was asked who he was, he said: <em>I am the answer to the dua of my father Ibrahim.</em></p><p>Think about that. Ibrahim, thousands of years before Muhammad ﷺ was born, made a dua that directly brought him into existence. Every Muslim today is the fruit of that dua. Every salah, every fast, every Quran recited — the answer to Ibrahim's prayer.</p>",
+          "dialogue": {
+            "arabic": "رَبَّنَا وَابْعَثْ فِيهِمْ رَسُولًا مِّنْهُمْ يَتْلُو عَلَيْهِمْ آيَاتِكَ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ وَيُزَكِّيهِمْ",
+            "translation": "Our Lord, send among them a messenger from among themselves who will recite to them Your verses, teach them the Book and wisdom, and purify them.",
+            "ref": "Al-Baqarah 2:129"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>I am the supplication of my father Ibrahim, the glad tidings of Isa, and the vision of my mother.</em> Three streams of prophecy converged on his birth — Ibrahim's prayer, Isa's announcement, and his mother Aminah's dream.",
+          "takeaway": "The dua you make today may be answered in a generation you will never meet."
+        },
+        {
+          "num": 18,
+          "title": "The Four Birds",
+          "thumb": "birds",
+          "body": "<p>One of the most striking conversations between Ibrahim and Allah is recorded in the Quran — a moment when Ibrahim asked to be shown how Allah brings the dead to life. Not because he doubted — but because he wanted <em>certainty</em> at the level of his heart, not just his intellect.</p><p>The Quran says: <em>And when Ibrahim said: My Lord, show me how You give life to the dead. He said: Have you not believed? He said: Yes, but to make my heart tranquil.</em></p><p>Notice: Allah did not rebuke Ibrahim for asking. He did not say, 'You should have known.' He accepted the question — because Ibrahim's request was not born of doubt, but of longing. He already believed. He just wanted the faith of the eyes to match the faith of the mind.</p><p>And then Allah gave him a demonstration that no other prophet had ever been given. <em>Take four birds and incline them to yourself, then place a portion of them on every hill, and call to them; they will come to you flying. And know that Allah is Exalted in Might and Wise.</em></p><p>Ibrahim did it. He slaughtered four birds, mixed their parts, distributed them across the hills, and then called them. And they came to him — reassembled, alive, flying to their master. A private miracle for Ibrahim alone, given to strengthen the heart that had already surrendered everything.</p>",
+          "dialogue": {
+            "arabic": "قَالَ أَوَلَمْ تُؤْمِن ۖ قَالَ بَلَىٰ وَلَٰكِن لِّيَطْمَئِنَّ قَلْبِي",
+            "translation": "He said: Have you not believed? He said: Yes, but to make my heart tranquil.",
+            "ref": "Al-Baqarah 2:260"
+          },
+          "didYouKnow": "Ibrahim's request is not a sign of weak faith — it is a sign of deep faith that wanted to grow deeper. The scholars call this <em>'ilm al-yaqīn</em> becoming <em>'ayn al-yaqīn</em> — knowledge becoming sight. Ibrahim wanted to <em>see</em> what he already <em>knew</em>.",
+          "takeaway": "Wanting deeper faith is not weakness — it is the hunger of the soul for more of its Lord."
+        },
+        {
+          "num": 19,
+          "title": "The Test of the Station",
+          "thumb": "station",
+          "body": "<p>After the Kaaba was built, Allah gave Ibrahim a series of tests — different from the earlier ones. These were not about survival, or sacrifice, or fire. These were about cleansing the house of Allah, establishing worship, and preparing for the generations to come.</p><p>The Quran says: <em>And when We made the House a place of return for the people and security. And take from the station of Ibrahim a place of prayer. And We charged Ibrahim and Ismail: Purify My House for those who perform Tawaf, those who are staying there for worship, and those who bow and prostrate.</em></p><p>Purify. This was the command. The Kaaba could not contain anything false. No idols. No images. No statues. No impurity. The house of the One God had to be cleansed of everything that could distract from the One God.</p><p>And then Allah gave Ibrahim a further command: <em>And proclaim to the people the Hajj; they will come to you on foot and on every lean camel, from every distant pass.</em></p><p>Think about what that command meant. Ibrahim was an old man, standing in an empty valley, being asked to 'proclaim' a pilgrimage to a whole world that did not know he existed. He could not send letters. He could not post announcements. He could not travel to every land. He simply stood on the mountain of Abu Qubays and called out — and Allah made the call echo through the centuries.</p><p>That call is still being answered. Every year, millions of Muslims travel to Makkah from every corner of the earth, fulfilling the call Ibrahim issued thousands of years ago.</p>",
+          "dialogue": {
+            "arabic": "وَأَذِّن فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ",
+            "translation": "And proclaim to the people the Hajj; they will come to you on foot and on every lean camel, from every distant pass.",
+            "ref": "Al-Hajj 22:27"
+          },
+          "didYouKnow": "Ibrahim's call for Hajj is one of the clearest examples of <em>barakah</em> in obedience — the multiplication of a single act beyond all human measure. One man's call became the pilgrimage of hundreds of millions across fourteen centuries.",
+          "takeaway": "When Allah asks you to do something impossible, He has already prepared the way for it to be fulfilled."
+        },
+        {
+          "num": 20,
+          "title": "The Imam of Mankind",
+          "thumb": "imam",
+          "body": "<p>At one point in Ibrahim's life, after passing test after test — the fire, the exile, the sacrifice, the building — Allah raised him to a rank that no other prophet had ever been given. The Quran says:</p><p><em>And when Ibrahim was tried by his Lord with certain commands, which he fulfilled, He said: Indeed, I will make you an imam for the people. Ibrahim said: And from my descendants? He said: My covenant does not include the wrongdoers.</em></p><p>Look carefully at what is happening here. Allah tested Ibrahim with commands, and Ibrahim fulfilled them all. Only then did Allah give him the title of <em>Imam</em> — a leader, a model, a template for all future believers. The title did not come first. The obedience came first. Then the title.</p><p>And notice Ibrahim's response: he immediately asked for his descendants. He did not want the honour for himself alone. He wanted it to extend to his family, his children, his grandchildren. He wanted the blessings of Allah to flow through his line.</p><p>Allah answered with a condition: <em>My covenant does not include the wrongdoers.</em> The leadership of faith is not inherited — it is earned by obedience. Ibrahim's descendants would be blessed only so long as they stayed on the path.</p><p>This is one of the most important principles in Islamic history. The Children of Israel descended from Ibrahim through Ishaq and Yaqub — and were blessed so long as they obeyed. The Arabs descended from Ibrahim through Ismail — and were blessed when Muhammad ﷺ came, restoring the way of Ibrahim. Neither bloodline guaranteed anything. Obedience did.</p>",
+          "dialogue": {
+            "arabic": "وَإِذِ ابْتَلَىٰ إِبْرَاهِيمَ رَبُّهُ بِكَلِمَاتٍ فَأَتَمَّهُنَّ ۖ قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامًا",
+            "translation": "And when Ibrahim was tried by his Lord with certain commands, which he fulfilled, He said: Indeed, I will make you an imam for the people.",
+            "ref": "Al-Baqarah 2:124"
+          },
+          "didYouKnow": "The word <em>imam</em> in this verse refers to a spiritual leader and example — someone whose life becomes a template for the faithful. Ibrahim is called the <em>Imam of the Ummah</em>, because every prophet after him — Musa, Isa, Muhammad ﷺ — belongs to the tradition of tawhid he established.",
+          "takeaway": "Allah's honours are not given as favours — they are earned through obedience."
+        },
+        {
+          "num": 21,
+          "title": "The Testament",
+          "thumb": "testament",
+          "body": "<p>As Ibrahim grew older, he knew his time was approaching. And so he gathered his sons — Ismail and Ishaq — and gave them the final word that would define his legacy.</p><p>The Quran says: <em>And Ibrahim instructed his sons and so did Yaqub: O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.</em></p><p>Look at those words: <em>do not die except while you are Muslims.</em> This was not a casual goodbye. This was Ibrahim's final instruction — the last thing he wanted on his children's lips. Not 'be successful.' Not 'be wealthy.' Not 'be famous.' Just: <em>die on tawhid</em>. Live your life in such a way that when death comes, you are still on the path.</p><p>And notice that the Quran links Ibrahim's testament with Yaqub's — a jump forward in time, because Yaqub would later give the same instruction to his own sons, generations later. The message flows from prophet to prophet, from father to son, from generation to generation. It is one single stream, one single call: <em>Worship Allah alone, and die upon that faith.</em></p><p>Every Muslim parent today inherits this responsibility. The greatest gift you can give your child is not wealth, not education, not status — it is the faith that will carry them into the hereafter. Ibrahim understood this. It was his final word to his sons.</p>",
+          "dialogue": {
+            "arabic": "وَوَصَّىٰ بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَىٰ لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+            "translation": "And Ibrahim instructed his sons, and so did Yaqub: O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.",
+            "ref": "Al-Baqarah 2:132"
+          },
+          "didYouKnow": "Ibrahim's testament is one of the few places in the Quran where the word <em>Islam</em> is used by a prophet about himself and his descendants — long before the religion of Muhammad ﷺ was revealed. The religion of Islam has always been the same: tawhid, obedience, and submission to the One God.",
+          "takeaway": "The only inheritance that matters is the faith you pass to those who come after you."
+        },
+        {
+          "num": 22,
+          "title": "The Friend of Allah",
+          "thumb": "khalil",
+          "body": "<p>Of all the titles given to any human being in the Quran, one stands above all others. It is the title given to Ibrahim: <em>Khalilullah</em> — the close friend of Allah.</p><p>The Quran says: <em>And Allah took Ibrahim as a close friend.</em> The word <em>khalīl</em> is deeper than <em>ḥabīb</em> (beloved) and stronger than <em>walī</em> (protector). It describes a friendship so deep that the friend becomes like a part of oneself. In Arabic, <em>khalīl</em> comes from <em>khalal</em> — a gap that lets something enter into the heart. Ibrahim was a man whose heart had opened completely to his Lord.</p><p>How did he get there? Not by miracles. Not by building the Kaaba. Not by surviving the fire. He got there by obedience — one act at a time. When Allah said 'leave your father,' Ibrahim left. When Allah said 'go to a barren valley,' Ibrahim went. When Allah said 'sacrifice your son,' Ibrahim took the knife. One command at a time, one obedience at a time, one surrender at a time — until his heart had no room left for anything but Allah.</p><p>The Prophet ﷺ said: <em>If I were to take a khalīl, I would have taken Abu Bakr as my khalīl. But my beloved is Allah and He has taken your companion Ibrahim as His khalīl.</em> The Prophet ﷺ did not claim for himself the title that belonged to Ibrahim.</p><p>This is the highest rank a human can reach — friendship with the One who made the heavens and the earth.</p>",
+          "dialogue": {
+            "arabic": "وَاتَّخَذَ اللَّهُ إِبْرَاهِيمَ خَلِيلًا",
+            "translation": "And Allah took Ibrahim as a close friend.",
+            "ref": "An-Nisa 4:125"
+          },
+          "didYouKnow": "The Prophet ﷺ said: <em>The best of creation after Ibrahim is the one who follows his way.</em> And he also said: <em>I am the closest of all people to Ibrahim.</em> Ibrahim's legacy is not limited to a single nation — it belongs to every believer who walks the path of tawhid.",
+          "takeaway": "Friendship with Allah is not given — it is built, one act of obedience at a time."
+        },
+        {
+          "num": 23,
+          "title": "The Passing of Ibrahim",
+          "thumb": "passing",
+          "body": "<p>Ibrahim lived long — some narrations say 175 years, others say 200. He saw his sons grow into men. He saw Ismail establish Makkah and raise the Kaaba with him. He saw Ishaq grow into a prophet. He saw the beginnings of the two great nations that would descend from him.</p><p>And then, one day, he returned to his Lord. The Quran does not describe the moment of his death, but the classical narrators say he passed away quietly, surrounded by his family, remembering Allah to the end. He was buried in the city of Hebron — <em>Al-Khalil</em> in Arabic — a city named after him to this day.</p><p>But Ibrahim's story did not end with his death. It had only begun. Because everything that came after — the Children of Israel, the Arab tribes, the line of prophets, and finally the Prophet Muhammad ﷺ — all flowed from his obedience. The message of tawhid that he had carried alone for so many years would eventually cover the earth.</p><p>When Ibrahim stood in the fire alone, he could not have imagined that four thousand years later, billions of people would testify to the same truth he had testified to. When Ibrahim stood on the mountain and called the world to Hajj, he could not have imagined that the call would be answered by millions every year. When Ibrahim made dua for a messenger from his descendants, he could not have imagined that Allah would answer it in the greatest human being ever to live.</p><p>But that is how Allah works. The obedience you offer today — small, hidden, unseen — becomes the seed of generations of blessing you will never know about.</p>",
+          "dialogue": {
+            "arabic": "وَإِبْرَاهِيمَ الَّذِي وَفَّىٰ",
+            "translation": "And Ibrahim who fulfilled his duty.",
+            "ref": "An-Najm 53:37"
+          },
+          "didYouKnow": "Ibrahim is the only prophet whose name is mentioned in the <em>tashahhud</em> of every single Muslim prayer. His name is spoken more times per day on earth than any other prophet — because every Muslim of every generation says: <em>Peace be upon Ibrahim and the family of Ibrahim.</em>",
+          "takeaway": "The obedience you offer today becomes the blessing of generations you will never meet."
+        },
+        {
+          "num": 24,
+          "title": "The Father of the Prophets",
+          "thumb": "father-prophets",
+          "body": "<p>Ibrahim is called <em>Abu al-Anbiya</em> — the father of the prophets. Not because every prophet was his direct descendant, but because the great prophetic traditions of the world flow through his two sons. From Ishaq came Yaqub, Yusuf, Musa, Harun, Dawud, Sulayman, Ayyub, Yunus, Zakariyya, Yahya, and Isa — peace be upon them all. From Ismail came the line that led, thousands of years later, to Muhammad ﷺ.</p><p>Almost every prophet mentioned by name in the Quran is either from the line of Ibrahim or was sent to a people connected to that lineage. In this sense, Ibrahim is not just a prophet — he is the great trunk of the prophetic tree. The whole tree grows from him.</p><p>And yet, the Quran is careful to say: <em>My covenant does not include the wrongdoers.</em> The tree was not blessed because of the trunk — it was blessed because the trunk had obeyed. The descendants were not chosen because of their blood — they were chosen because the father had earned the right to have a righteous line through dua and action.</p><p>Every Muslim who calls himself a Muslim is, in a spiritual sense, a descendant of Ibrahim — even if he is not from his blood. The Quran says: <em>And strive in the way of Allah as you ought to strive. He has chosen you and has not placed upon you in the religion any difficulty. The religion of your father Ibrahim.</em> Every Muslim is bound to Ibrahim by faith, not by lineage.</p>",
+          "dialogue": {
+            "arabic": "مِلَّةَ أَبِيكُمْ إِبْرَاهِيمَ ۚ هُوَ سَمَّاكُمُ الْمُسْلِمِينَ مِن قَبْلُ",
+            "translation": "The religion of your father Ibrahim. He named you Muslims before.",
+            "ref": "Al-Hajj 22:78"
+          },
+          "didYouKnow": "Of the 25 prophets mentioned by name in the Quran, roughly 17 are from Ibrahim's descendants. Only Adam, Idris, Nuh, Hud, Salih, Lut, Dhul-Kifl, and Ilyas are from other lines — and all of them came before Ibrahim. Ibrahim is the watershed of prophethood.",
+          "takeaway": "You can be a descendant of Ibrahim — not by blood, but by faith."
+        },
+        {
+          "num": 25,
+          "title": "The Legacy",
+          "thumb": "legacy",
+          "body": "<p>What is the legacy of Ibrahim? Not just a city, not just a house, not just a lineage. His legacy is a way of life — the way of <em>ḥanīfiyyah</em>, the pure, unadulterated worship of the One God.</p><p>The Quran says: <em>Ibrahim was neither a Jew nor a Christian, but he was a ḥanīf, a Muslim, and he was not of the polytheists.</em> He did not belong to any of the sects that would later claim him as their own. He belonged only to Allah.</p><p>And the Quran commands the Prophet ﷺ, and every believer after him: <em>Then We revealed to you: Follow the way of Ibrahim, a ḥanīf. And he was not of those who associate partners with Allah.</em></p><p>So this is what Ibrahim leaves us: a single, clear, uncompromising path — the path of one God, one worship, one life lived in submission to the Creator. No intermediaries. No idols. No substitutes. Just the pure, direct relationship between the servant and his Lord.</p><p>Ibrahim showed us what it means to trust when the world stands against you. He showed us what it means to walk away when a place cannot hold your faith. He showed us what it means to give the thing you love most. He showed us what it means to rebuild, again and again, even when you know you may not see the fruit.</p><p>And he showed us the greatest reward of all: that when you follow Allah with everything, Allah honours you with everything. Ibrahim had no land that stayed his. He had no son he kept. He had no life that was spared. And yet Allah gave him a land that carries his name, a son that carries his legacy, a life that carries his reward — forever.</p><p>May Allah make us among those who follow the way of Ibrahim. Ameen.</p>",
+          "dialogue": {
+            "arabic": "ثُمَّ أَوْحَيْنَا إِلَيْكَ أَنِ اتَّبِعْ مِلَّةَ إِبْرَاهِيمَ حَنِيفًا ۖ وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+            "translation": "Then We revealed to you: Follow the way of Ibrahim, a hanif. And he was not of those who associated partners with Allah.",
+            "ref": "An-Nahl 16:123"
+          },
+          "didYouKnow": "The word <em>ḥanīf</em> refers to someone who turns away from all false religions and turns toward the pure, original worship of the One God. It comes from the root <em>ḥ-n-f</em>, meaning to incline, to turn, to lean toward. Ibrahim was the ḥanīf — the one who turned away from every false path and turned entirely toward Allah.",
+          "takeaway": "The path of Ibrahim is simple, but it is not easy — and it is the only path that ends in Allah's pleasure."
+        }
+      ]
+    },{
+  "id": "lut",
+  "num": 7,
+  "name": "Lut",
+  "arabic": "لوط",
+  "subtitle": "9 Lessons",
+  "image": "images/prophet-07-lut.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Nephew of Ibrahim",
+      "thumb": "nephew",
+      "body": "<p>Lut (AS) was the nephew of Ibrahim — the son of Ibrahim's brother Haran. He grew up in the same household that produced the greatest monotheist of his age. He saw Ibrahim break the idols. He saw him thrown into the fire. He watched the flames refuse to burn him. And when Ibrahim decided to migrate to the blessed land, Lut went with him.</p><p>This is the first lesson of Lut's life: he attached himself to the truth from the beginning. He did not wait to see the outcome of Ibrahim's trial before deciding what he believed. When the fire was still burning, Lut had already chosen his path.</p><p>The Quran says: <em>And Lut believed him. And Ibrahim said: Indeed, I will emigrate to my Lord.</em> The scholars note that Lut was the first person in that generation to believe in Ibrahim's message — the very first fruit of Ibrahim's dawah. A nephew who trusted his uncle's faith before anyone else.</p>",
+      "dialogue": {
+        "arabic": "فَآمَنَ لَهُ لُوطٌ ۖ وَقَالَ إِنِّي مُهَاجِرٌ إِلَىٰ رَبِّي",
+        "translation": "And Lut believed him. And he said: Indeed, I will emigrate to my Lord.",
+        "ref": "Al-Ankabut 29:26"
+      },
+      "didYouKnow": "Lut is mentioned 27 times in the Quran. Though he is Ibrahim's nephew by blood, the Quran treats him as one of the great prophets in his own right — a man who carried the message of tawhid to a nation that had gone further astray than almost any other.",
+      "takeaway": "Faith begins the moment you attach yourself to the truth — even before you see the outcome."
+    },
+    {
+      "num": 2,
+      "title": "The Cities of Sodom",
+      "thumb": "cities",
+      "body": "<p>Lut travelled with Ibrahim to the blessed land of Shaam, and eventually Allah sent him as a prophet to a specific people — the inhabitants of the cities of Sodom and Gomorrah, located in the region that is now the Dead Sea area. They were a nation of unprecedented corruption.</p><p>The Quran describes their sin with painful clarity: they had abandoned the natural relationship between men and women, and had turned instead to men. This was not a moral failing that existed elsewhere — it was a new kind of corruption that they themselves had invented.</p><p>The Quran says: <em>And Lut, when he said to his people: Do you commit such immorality as no one has preceded you with from among the worlds?</em> The phrase <em>no one has preceded you</em> is significant. This was not a gradual drift — it was a radical innovation in human behaviour. They had introduced a form of corruption that human civilization had never seen before.</p><p>Beyond that, the men of Sodom had developed a culture of violence and predation. Travellers were robbed, abused, or killed. Highways were dangerous. Guests were treated as prey. Their cities had become the most dangerous places on earth — not just for their immorality, but for their predatory cruelty.</p>",
+      "dialogue": {
+        "arabic": "وَلُوطًا إِذْ قَالَ لِقَوْمِهِ أَتَأْتُونَ الْفَاحِشَةَ مَا سَبَقَكُم بِهَا مِنْ أَحَدٍ مِّنَ الْعَالَمِينَ",
+        "translation": "And Lut, when he said to his people: Do you commit such immorality as no one has preceded you with from among the worlds?",
+        "ref": "Al-A'raf 7:80"
+      },
+      "didYouKnow": "The classical scholars say the corruption of the people of Lut was not just sexual — it was spiritual. They had abandoned tawhid, abandoned natural law, and abandoned every form of social decency. Their society was the first in history to make corruption its identity.",
+      "takeaway": "Some corruptions are so deep that they become the identity of a people — not just a practice, but a badge."
+    },
+    {
+      "num": 3,
+      "title": "The Call of Lut",
+      "thumb": "call",
+      "body": "<p>Lut called his people with the same message every prophet carries: <em>O my people, worship Allah; you have no deity other than Him. Indeed, I fear for you the punishment of a terrible Day.</em></p><p>But he also addressed their specific sin — the one that made them unique among the nations of the earth: <em>Indeed, you approach men with desire instead of women. Rather, you are a transgressing people.</em></p><p>Notice the structure: Lut did not begin with their sin. He began with tawhid. He called them first to their Lord, then to their purification. Because the sin was rooted in their abandonment of God — once a people forgets its Creator, everything else unravels.</p><p>And this is a pattern we see repeated everywhere in history. When a people loses touch with the One who made them, the moral law slowly collapses. What was unthinkable to their grandparents becomes normal to them. What was normal to them becomes virtuous to their children. Corruption is not a sudden fall — it is a slow unraveling, one generation at a time.</p><p>Lut saw this unraveling from the front row. He was not just a prophet to them — he was a witness to their spiral. And every day, his heart broke a little more as he watched them sink deeper.</p>",
+      "dialogue": {
+        "arabic": "إِنَّكُمْ لَتَأْتُونَ الرِّجَالَ شَهْوَةً مِّن دُونِ النِّسَاءِ ۚ بَلْ أَنتُمْ قَوْمٌ مُّسْرِفُونَ",
+        "translation": "Indeed, you approach men with desire instead of women. Rather, you are a transgressing people.",
+        "ref": "Al-A'raf 7:81"
+      },
+      "didYouKnow": "The Prophet ﷺ said: <em>What I fear most for my Ummah is what the people of Lut did.</em> And he cursed the one who commits this act and the one who facilitates it. The Quran's treatment of this sin is one of the most severe in revelation.",
+      "takeaway": "When a people forgets its Creator, every moral boundary eventually collapses."
+    },
+    {
+      "num": 4,
+      "title": "The Response",
+      "thumb": "response",
+      "body": "<p>How did the people of Lut respond to their prophet? Not with argument. Not with debate. Not with discussion of theology. They responded with the ugliest sentence in the Quran: <em>Expel them from your city. Indeed, they are people who keep themselves pure.</em></p><p>Read that again. They mocked purity. They saw the believers' cleanliness as a defect. In their twisted worldview, being moral was the sin — and they wanted it removed from their midst. Their corruption had become so complete that virtue itself offended them.</p><p>And this is what makes their sin so deep. It was not just that they committed immoral acts. It was that they had inverted the moral order entirely. Good had become bad in their eyes. Bad had become good. Purity had become a threat. Corruption had become their culture.</p><p>The Quran says the people of Lut threatened their prophet: <em>If you do not stop, O Lut, you will surely be among the expelled.</em> They gave him the choice: silence or exile. Stop warning us, or leave. Either way, they were determined to keep their corruption.</p><p>And Lut replied with sorrow: <em>I am, toward your deed, of those who detest it.</em> He did not argue. He did not fight. He simply declared his complete rejection of their path.</p>",
+      "dialogue": {
+        "arabic": "فَمَا كَانَ جَوَابَ قَوْمِهِ إِلَّا أَن قَالُوا أَخْرِجُوا آلَ لُوطٍ مِّن قَرْيَتِكُمْ ۖ إِنَّهُمْ أُنَاسٌ يَتَطَهَّرُونَ",
+        "translation": "But the answer of his people was only that they said: Expel the family of Lut from your city. Indeed, they are people who keep themselves pure.",
+        "ref": "An-Naml 27:56"
+      },
+      "didYouKnow": "The phrase <em>people who keep themselves pure</em> was meant as mockery — they were using purity as an accusation. This is one of the most chilling examples of moral inversion in the Quran. When a society despises virtue, it has passed the point of no return.",
+      "takeaway": "The deepest corruption is not committing sin — it is seeing sin as good and virtue as a crime."
+    },
+    {
+      "num": 5,
+      "title": "The Angels Arrive",
+      "thumb": "angels",
+      "body": "<p>Allah sent angels to Lut — as He had sent them to Ibrahim. The angels first visited Ibrahim and gave him the glad tidings of Ishaq and Yaqub. And then they told Ibrahim where they were going: <em>Indeed, we are to destroy the people of this city. Indeed, its people have been wrongdoers.</em></p><p>Ibrahim, always merciful, began to plead for them: <em>Indeed, Lut is in it. They said: We know better who is in it. We will surely save him and his family, except his wife. She is of those who stay behind.</em></p><p>And then the angels left and came to Lut. And when they arrived, Lut was troubled. The angels appeared as beautiful young men — the very kind of travellers that the men of Sodom preyed upon. And Lut knew exactly what that meant. His guests were in danger.</p><p>The Quran says: <em>And when Our messengers came to Lut, he was distressed for them and felt for them great discomfort, and he said: This is a trying day.</em> He did not know they were angels. He thought he had to protect them. And he knew the men of his city would come for them the moment they heard.</p><p>This is the depth of Lut's character: even in the middle of a nation of predators, he still had the honour to protect a guest with his life.</p>",
+      "dialogue": {
+        "arabic": "وَلَمَّا جَاءَتْ رُسُلُنَا لُوطًا سِيءَ بِهِمْ وَضَاقَ بِهِمْ ذَرْعًا وَقَالَ هَٰذَا يَوْمٌ عَصِيبٌ",
+        "translation": "And when Our messengers came to Lut, he was distressed for them and felt for them great discomfort, and he said: This is a trying day.",
+        "ref": "Hud 11:77"
+      },
+      "didYouKnow": "The angels visited Ibrahim first — and Ibrahim's pleading for the people of Lut is one of the most famous intercessions in the Quran. Allah replied that the decree had been passed, but that Lut and his family (except his wife) would be saved. Ibrahim's mercy, even toward the worst of nations, is a model for the Ummah.",
+      "takeaway": "Even when the world has abandoned virtue, the believer still protects the vulnerable."
+    },
+    {
+      "num": 6,
+      "title": "The Mob at the Door",
+      "thumb": "mob",
+      "body": "<p>The men of the city heard about the visitors. And they came — not a few, but a mob. The Quran says they came <em>rushing toward him</em>, as if running to a crime. They had no shame. They did not even try to hide their intentions. They wanted the guests, and they were going to take them.</p><p>Lut stood at the door. Alone. Against a mob. A prophet trying to protect two guests from an entire city. And in the middle of this nightmare, he said something that reveals the depth of his desperation: <em>O my people, these are my daughters — they are purer for you. So fear Allah and do not disgrace me concerning my guests. Is there not among you a single right-minded man?</em></p><p>Look at those words: <em>Is there not among you a single right-minded man?</em> This was not a rhetorical question. It was the cry of a man who had spent his whole life calling to a nation, and now, at the final moment, he was searching their crowd for even one person who had heard him. One person who would stand with him. One man who would remember what he had taught.</p><p>And there was no one. Not one. The mob responded with their usual arrogance: <em>You know we have no need of your daughters. Indeed, you know what we want.</em></p><p>Lut said: <em>If only I had against you some power, or could take refuge in a strong support!</em> And at that moment, the angels revealed themselves. They said: <em>O Lut, indeed we are messengers of your Lord; they will never reach you.</em></p>",
+      "dialogue": {
+        "arabic": "قَالَ لَوْ أَنَّ لِي بِكُمْ قُوَّةً أَوْ آوِي إِلَىٰ رُكْنٍ شَدِيدٍ ۝ قَالُوا يَا لُوطُ إِنَّا رُسُلُ رَبِّكَ لَن يَصِلُوا إِلَيْكَ",
+        "translation": "He said: If only I had against you some power or could take refuge in a strong support! They said: O Lut, indeed we are messengers of your Lord; they will never reach you.",
+        "ref": "Hud 11:80-81"
+      },
+      "didYouKnow": "The Prophet ﷺ said: <em>Lut sought refuge in a strong support, and he was told: 'I am the strong support.'</em> The scholars explain that Lut was calling on Allah, and Allah responded by revealing the angels. Even in the moment of greatest weakness, the prophet's reliance on his Lord was total.",
+      "takeaway": "When the whole world rises against you, Allah's support is enough — even if it comes in the form of two strangers at your door."
+    },
+    {
+      "num": 7,
+      "title": "The Command to Leave",
+      "thumb": "leave",
+      "body": "<p>And then the angels gave Lut the command: <em>So set out with your family during a portion of the night and let not any among you look back — except your wife; indeed, she will be struck by that which strikes them. Indeed, their appointment is the morning. Is not the morning near?</em></p><p>Lut left. He walked out of the city with his family in the dark of night, heading toward the mountains. He did not look back. He did not see the destruction. He only heard it — the sound of a city disappearing behind him.</p><p>But there is a detail in this passage that shakes the heart: <em>except your wife.</em> Lut's own wife was left behind. She was a disbeliever. She had lived in the house of a prophet, heard the truth every day, watched her husband call his people to Allah for years — and she had refused. She sided with the disbelievers. When the command to leave came, she was not among the saved.</p><p>This is one of the hardest lessons of the story: faith is not inherited, not by blood, not by marriage. Even the wife of a prophet can be lost. Even the wife of Nuh, even the wife of Lut — both are mentioned in the Quran as examples of those who disbelieved despite living in the house of a prophet.</p><p>The Quran says: <em>Allah presents an example of those who disbelieved: the wife of Nuh and the wife of Lut. They were under two of Our righteous servants, but they betrayed them. So they did not benefit them at all against Allah.</em></p>",
+      "dialogue": {
+        "arabic": "فَأَسْرِ بِأَهْلِكَ بِقِطْعٍ مِّنَ اللَّيْلِ وَلَا يَلْتَفِتْ مِنكُمْ أَحَدٌ إِلَّا امْرَأَتَكَ",
+        "translation": "So set out with your family during a portion of the night and let not any among you look back — except your wife.",
+        "ref": "Hud 11:81"
+      },
+      "didYouKnow": "The wives of Nuh and Lut are mentioned together in the Quran as examples of disbelievers whose proximity to prophets did not save them. The Quran's lesson is clear: relationship to the righteous does not substitute for personal faith.",
+      "takeaway": "Being close to a person of faith is not the same as being a person of faith."
+    },
+    {
+      "num": 8,
+      "title": "The Cities Overturned",
+      "thumb": "overturned",
+      "body": "<p>When morning came, the punishment of Allah descended on the cities of Sodom and Gomorrah. The Quran describes it in one of the most vivid passages in revelation: <em>So when Our command came, We made the highest part of it the lowest, and rained upon them stones of layered hard clay — marked from your Lord. And they are not far from the wrongdoers.</em></p><p>Think about what that means. The cities were <em>lifted up</em> and then <em>thrown down</em>. The buildings, the walls, the temples of corruption — all of it was raised into the air and then crashed to the ground. And then stones rained on the ruins. The whole place was destroyed — not just physically, but symbolically. It was erased.</p><p>And the earth beneath the cities is still there today. The Dead Sea region — where Sodom and Gomorrah stood — is a desolate, barren, salt-covered wasteland. Nothing grows there. Nothing lives there. It is one of the most lifeless places on earth. And it stands as a permanent reminder of what happens when a people crosses the final line.</p><p>The Prophet ﷺ passed by these ruins on his way to Tabuk. He said to his Companions: <em>Do not enter upon these people who were punished, unless you are weeping. And if you are not weeping, then do not enter — lest you be afflicted with what afflicted them.</em></p>",
+      "dialogue": {
+        "arabic": "فَلَمَّا جَاءَ أَمْرُنَا جَعَلْنَا عَالِيَهَا سَافِلَهَا وَأَمْطَرْنَا عَلَيْهَا حِجَارَةً مِّن سِجِّيلٍ مَّنضُودٍ",
+        "translation": "So when Our command came, We made the highest part of it the lowest, and rained upon them stones of layered hard clay.",
+        "ref": "Hud 11:82"
+      },
+      "didYouKnow": "The Dead Sea — the site of the punishment — is the lowest point on the surface of the earth, at about 430 meters below sea level. And its water is so saline that no fish can live in it. Even its geography testifies to the judgment that fell there.",
+      "takeaway": "The ruins of destroyed nations are not curiosities — they are warnings we should approach with trembling."
+    },
+    {
+      "num": 9,
+      "title": "The Legacy of Lut",
+      "thumb": "legacy",
+      "body": "<p>Lut lived on after the destruction of his people. He was saved with his family — the believers who had followed him. And he continued to worship Allah, to call to tawhid, and to live as a righteous man until his death.</p><p>His legacy is not the cities he lost, but the truth he kept. He did not convert his people. He did not see success in the way the world measures it. But he stood firm to the very end. He declared his rejection of their corruption even when they threatened to expel him. He protected his guests even when a mob came to his door. He walked out of the city when Allah commanded — without looking back.</p><p>And this is what every believer must learn from Lut: the path of truth is often lonely. The reward may not be visible in this life. Success might not come in the form you expect. But the obedience — the standing firm, the protecting the vulnerable, the walking away when commanded — that is the mission. The outcome is with Allah.</p><p>Lut's name is recited in every generation. His story is preserved in the Quran. His cities are a warning to every nation that follows the same path. And his reward — a righteous prophet of Allah, saved from the destruction of a corrupt people — endures forever.</p><p>May Allah protect us from the sins of the people of Lut, and make us among those who stand firm even when the world does not. Ameen.</p>",
+      "dialogue": {
+        "arabic": "إِلَّا آلَ لُوطٍ ۖ نَّجَّيْنَاهُم بِسَحَرٍ ۝ نِّعْمَةً مِّنْ عِندِنَا ۚ كَذَٰلِكَ نَجْزِي مَن شَكَرَ",
+        "translation": "Except the family of Lut — We saved them before dawn, as a favor from Us. Thus do We reward those who are grateful.",
+        "ref": "Al-Qamar 54:34-35"
+      },
+      "didYouKnow": "Lut is the only prophet whose people were destroyed by such a specific, geographically-preserved punishment. Their cities were left visible — a testimony to every generation that passes through the region. The Prophet ﷺ saw them, and he wept.",
+      "takeaway": "Success is not measured by how many follow you — it is measured by how faithfully you stand."
+    }
+  ]
+},
+{
+  "id": "ismail",
+  "num": 8,
+  "name": "Ismail",
+  "arabic": "إسماعيل",
+  "subtitle": "12 Lessons",
+  "image": "images/prophet-08-ismail.webp",
+  "tier": "standard",
+  "lessons": [
+    {
+      "num": 1,
+      "title": "The Promised Son",
+      "thumb": "promise",
+      "body": "<p>Ismail (AS) was the answer to a dua his father had been making for decades. Ibrahim had prayed: <em>My Lord, grant me from the righteous.</em> And after years of waiting, after Sarah had given up hope, after Ibrahim had grown old — Allah answered. Through Hajar, Ibrahim was given a son. Ismail.</p><p>The Quran announces his birth with tenderness: <em>So We gave him good tidings of a forbearing boy.</em> One word — <em>ḥalīm</em>, forbearing, patient, gentle — captured the essence of who Ismail would become. And that word would be proven true, in the most dramatic way, just a few years later.</p><p>But before that moment, before the great trial, Ismail's first years were lived in the wilderness. Allah commanded Ibrahim to take Hajar and the infant Ismail to a barren valley — the place that would one day become Makkah. Ibrahim left them there. Alone. In a land with no water, no shade, no people, no hope.</p><p>Ismail would grow up in that valley. He would grow up with nothing but his mother, and the water that Allah caused to spring from the earth at his own tiny feet.</p>",
+      "dialogue": {
+        "arabic": "فَبَشَّرْنَاهُ بِغُلَامٍ حَلِيمٍ",
+        "translation": "So We gave him good tidings of a forbearing boy.",
+        "ref": "As-Saffat 37:101"
+      },
+      "didYouKnow": "Ismail is one of only two prophets in the Quran explicitly called <em>ḥalīm</em> — forbearing. The other is Ibrahim himself. The father and son shared the same quality: patience in the face of the hardest commands.",
+      "takeaway": "Some blessings come only after the longest waiting — and they come from the One who was always listening."
+    },
+    {
+      "num": 2,
+      "title": "The Valley of Nothing",
+      "thumb": "valley",
+      "body": "<p>The valley of Bakkah — where Ibrahim left Hajar and Ismail — was one of the most inhospitable places on earth. No water. No vegetation. No humans. No shelter. Just dry earth between two rocky hills, and the desert heat beating down on two people who had no way to survive.</p><p>But Allah had a plan. When Hajar ran between Safa and Marwa, searching desperately for help, the infant Ismail — kicking his tiny legs in the sand — struck the ground where water was destined to emerge. The spring of Zamzam bubbled up. Hajar rushed back, scooped the water, and shouted <em>Zamzam! Zamzam!</em> — 'gather, gather!'</p><p>And so Ismail's very first contribution to the world was a miracle. He was too young to know what he was doing. He had no idea that his tiny feet had just opened a spring that would flow for thousands of years. But Allah used him anyway. The greatest blessings sometimes come through the smallest vessels.</p><p>The valley of nothing became the valley of the well of Zamzam. And that well, in turn, attracted a caravan of the tribe of Jurhum. They settled near the water. And Ismail grew up among them — a child of the desert, raised by his mother, adopted by the tribe that came because of the well his feet had opened.</p>",
+      "dialogue": {
+        "arabic": "رَبَّنَا إِنِّي أَسْكَنتُ مِن ذُرِّيَّتِي بِوَادٍ غَيْرِ ذِي زَرْعٍ عِندَ بَيْتِكَ الْمُحَرَّمِ",
+        "translation": "Our Lord, I have settled some of my descendants in an uncultivated valley near Your sacred House.",
+        "ref": "Ibrahim 14:37"
+      },
+      "didYouKnow": "The tribe of Jurhum settled in Makkah because of Zamzam. Ismail grew up among them, learned their Arabic, and eventually married from within them. The Arab nation — from which the Prophet Muhammad ﷺ would come — traces its lineage through Ismail and the tribe of Jurhum.",
+      "takeaway": "Allah can bring blessing from the smallest things — even the kick of a baby's foot."
+    },
+    {
+      "num": 3,
+      "title": "Growing in Makkah",
+      "thumb": "growing",
+      "body": "<p>Ismail grew up in the valley of Makkah. He learned Arabic from the tribe of Jurhum. He learned archery, horsemanship, and the trades of the desert. He became known for his honesty, his reliability, and his generous hospitality — traits that would define him for the rest of his life.</p><p>He was the first to speak pure Arabic, according to the narrations. He was the first to tame horses for riding. He was the first to make arrows for hunting. And he was the first to establish the tradition of hospitality that would later become the hallmark of the Arabs — greeting every traveller, feeding every guest, protecting everyone who came to his tent.</p><p>And through all of this, his mother Hajar taught him about his father. She told him about Ibrahim — the prophet who had stood in the fire, broken the idols, debated the tyrant. She told him about tawhid — the worship of the One God, without partners, without idols, without images. And she taught him that his father had left them in that valley because Allah had commanded it.</p><p>Ismail grew up with a faith in a father he barely knew, and a trust in a God he had never seen. And both trusts would be tested, together, in the most extraordinary way.</p>",
+      "dialogue": {
+        "arabic": "وَاذْكُرْ فِي الْكِتَابِ إِسْمَاعِيلَ ۖ إِنَّهُ كَانَ صَادِقَ الْوَعْدِ وَكَانَ رَسُولًا نَّبِيًّا",
+        "translation": "And mention in the Book, Ismail. Indeed, he was true to his promise, and he was a messenger and a prophet.",
+        "ref": "Maryam 19:54"
+      },
+      "didYouKnow": "The Quran praises Ismail specifically for being <em>ṣādiq al-waʿd</em> — 'true to his promise.' Of all the qualities that could have been highlighted, this is the one Allah chose. Whatever Ismail promised, he delivered — without exception, without excuse.",
+      "takeaway": "The most powerful reputation you can build is one of keeping your word."
+    },
+    {
+      "num": 4,
+      "title": "The Returning Father",
+      "thumb": "father",
+      "body": "<p>One day, when Ismail was a young man, a traveller arrived in Makkah. An old man with a grey beard, dusty from the road, walking with the calm of someone who had walked a very long way with a very specific purpose.</p><p>It was Ibrahim. His father, whom he had not seen since infancy. He had come back to visit his son, to see how the child he had left in the valley had grown.</p><p>Ismail was not at home when Ibrahim arrived. But Ismail's wife was. And Ibrahim, without revealing who he was, asked about her husband. She complained. She spoke of their poverty, their hardship, their difficult life in the barren valley. She was bitter about the struggle.</p><p>When Ibrahim left, he told her to give Ismail a message: <em>Change the threshold of your door.</em> Ismail came home, heard the message, understood immediately, and divorced his wife. He knew his father's code — that the threshold of a house was its woman, and that a woman who complained about her husband's home did not deserve to be its keeper.</p><p>Years later, Ibrahim returned again. By then Ismail had remarried — a woman of patience, generosity, and gratitude. When Ibrahim arrived and asked how things were, she praised Allah, spoke well of her husband, and treated the stranger with full hospitality. Ibrahim left a message for his son: <em>Keep the threshold of your door.</em></p><p>When Ismail came home and heard the message, he wept. He knew his father had returned — and had approved of his life.</p>",
+      "dialogue": {
+        "arabic": "وَإِذْ قَالَ إِبْرَاهِيمُ رَبِّ اجْعَلْ هَٰذَا بَلَدًا آمِنًا وَارْزُقْ أَهْلَهُ مِنَ الثَّمَرَاتِ",
+        "translation": "And when Ibrahim said: My Lord, make this a secure city and provide its people with fruits.",
+        "ref": "Al-Baqarah 2:126"
+      },
+      "didYouKnow": "The story of Ibrahim visiting Ismail's two wives is recorded in the Sahih of al-Bukhari. It teaches us that the quality of a home is defined by the character of the woman who keeps it — a principle Ibrahim encoded in his cryptic messages.",
+      "takeaway": "The people who share your home shape the peace of your home."
+    },
+    {
+      "num": 5,
+      "title": "The Shared Trial",
+      "thumb": "shared",
+      "body": "<p>And then came the trial that would define Ismail's life forever. Ibrahim had seen in a dream that he was sacrificing his son. He came to Ismail — not with a command, but with the truth. He told him what he had seen. He asked for his view.</p><p>Ismail was a young man at the height of his strength. He had a whole life ahead of him. He had a family, a tribe, a future. And in one moment, his father told him that Allah had commanded his death.</p><p>There was no hesitation. No argument. No request for delay. No fear. Ismail said: <em>O my father, do as you have been commanded. You will find me, if Allah wills, of the patient.</em></p><p>Look at what Ismail did not say. He did not ask, 'Why me?' He did not ask, 'Can we wait?' He did not ask, 'Are you sure it was a dream?' He did not ask anything. He simply said: <em>Do what Allah commanded.</em> He trusted his father completely — and he trusted his Lord completely.</p><p>The Quran describes their walk to the place of sacrifice with a phrase that is almost unbearable in its tenderness: <em>So when they had both submitted.</em> Not just Ismail — <em>both</em>. Ibrahim had submitted his father's love. Ismail had submitted his life. They walked together, hand in hand, toward the altar. Two souls, one command, one obedience.</p>",
+      "dialogue": {
+        "arabic": "قَالَ يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ ۖ سَتَجِدُنِي إِن شَاءَ اللَّهُ مِنَ الصَّابِرِينَ",
+        "translation": "He said: O my father, do as you have been commanded. You will find me, if Allah wills, of the patient.",
+        "ref": "As-Saffat 37:102"
+      },
+      "didYouKnow": "Ismail's response is one of the greatest statements of tawakkul in the Quran. He did not know that Allah would save him. He fully expected to die. And yet, his obedience was absolute. This is the difference between submission that expects reward and submission that trusts — no matter the outcome.",
+      "takeaway": "True submission is not obedience in the hope of reward — it is obedience because Allah commanded."
+    },
+    {
+      "num": 6,
+      "title": "The Ransom",
+      "thumb": "ransom",
+      "body": "<p>And then the moment. Ibrahim, with the knife in his hand, at the point of sacrifice. Ismail, lying still on the ground, waiting. And the voice from the heavens: <em>O Ibrahim, you have fulfilled the vision. Indeed, We thus reward the doers of good.</em></p><p>A ram appeared. Ismail was saved. Father and son embraced. And Allah gave Ibrahim the promise that would echo through every generation of Muslims: <em>Peace upon Ibrahim.</em></p><p>But what about Ismail? What was his reward? The Quran says: <em>And We gave him good tidings of Ishaq — a prophet from among the righteous.</em> Not just a son, but a prophet. And of Ismail, the Quran says: <em>And We gave him good tidings of Ismail — a prophet from among the righteous.</em> Both sons would be prophets. Both would carry the message of tawhid forward.</p><p>The test had been passed. Ismail had proven that his obedience to Allah was not conditional — not on his father's safety, not on his own life, not on the outcome. He had submitted completely. And in return, Allah gave him a life that would be remembered forever.</p><p>Every Muslim who performs Hajj sacrifices an animal in remembrance of this moment. Every Eid al-Adha, millions of Muslims remember the willingness of Ibrahim and Ismail to give everything for Allah. Their submission is the central example of faith in action.</p>",
+      "dialogue": {
+        "arabic": "وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ",
+        "translation": "And We ransomed him with a great sacrifice.",
+        "ref": "As-Saffat 37:107"
+      },
+      "didYouKnow": "Ismail is described in the Quran as <em>ṣādiq al-waʿd</em> — true to his promise — and as <em>rasūlan nabiyyā</em> — a messenger and a prophet. Both titles came after the great trial. The trial did not just test Ismail's faith; it forged him into the person Allah would honour forever.",
+      "takeaway": "Allah does not waste the trials He sends — they shape us into the person He wants us to be."
+    },
+    {
+      "num": 7,
+      "title": "Raising the Kaaba",
+      "thumb": "kaaba",
+      "body": "<p>Years later, Ismail and Ibrahim received a new command from Allah: to build the Kaaba — the first house of worship on earth, in the very valley where Ismail had grown up. The valley of Bakkah, the place where Ibrahim had left Hajar and the infant Ismail so many years before, was to become the centre of worship for all of humanity.</p><p>The Quran says: <em>And when Ibrahim was raising the foundations of the House, and Ismail, saying: Our Lord, accept it from us. Indeed, You are the Hearing, the Knowing.</em></p><p>Father and son. Two pairs of hands. One command. Together they lifted stone upon stone, wall upon wall, until the Kaaba rose from the valley floor — a simple, unadorned structure, dedicated to the worship of the One God. No idols. No images. No statues. Just a house for the One who created the heavens and the earth.</p><p>And as they worked, they prayed. They did not just build with their hands; they built with their hearts, offering duas that would shape the future of the Ummah. <em>Our Lord, accept this from us. Our Lord, make us both Muslims to You, and from our descendants a Muslim nation to You. Our Lord, send among them a messenger from among themselves.</em></p><p>That last dua — for a messenger from among their own descendants — was answered thousands of years later, in the person of the Prophet Muhammad ﷺ. Ismail did not know that his prayer would bring the final prophet into the world. He just prayed. And Allah answered across centuries.</p>",
+      "dialogue": {
+        "arabic": "وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        "translation": "And when Ibrahim was raising the foundations of the House, and Ismail, saying: Our Lord, accept it from us. Indeed, You are the Hearing, the Knowing.",
+        "ref": "Al-Baqarah 2:127"
+      },
+      "didYouKnow": "The Kaaba built by Ibrahim and Ismail was a simple, rectangular structure without a roof, with two doors — one facing east, one facing west. It was rebuilt several times over the centuries, but its core purpose has never changed: to be the house of tawhid, the direction of prayer for all Muslims.",
+      "takeaway": "The dua you make today may be answered in a generation you will never meet."
+    },
+    {
+      "num": 8,
+      "title": "The Prophet of the Arabs",
+      "thumb": "arab",
+      "body": "<p>Ismail lived on in Makkah — a prophet, a father, a leader of the growing community of believers that had gathered around the Kaaba. He called people to tawhid. He taught them the rites of worship. He led them in prayer. And he established the traditions of hospitality, honesty, and honour that would later become the foundation of Arab society.</p><p>The Quran says: <em>And mention in the Book, Ismail. Indeed, he was true to his promise, and he was a messenger and a prophet. And he used to enjoin on his people prayer and zakah, and he was to his Lord pleasing.</em></p><p>Look at what the Quran highlights about Ismail. Not his strength. Not his lineage. Not his building of the Kaaba. His <em>promise-keeping</em>. His <em>prayer</em>. His <em>zakah</em>. His <em>pleasing his Lord</em>. These are the qualities that Allah chose to record for all time — the quiet, daily faithfulness of a prophet who lived a long, quiet, faithful life.</p><p>Ismail was the ancestor of the Adnanite Arabs — the line that would eventually produce the tribe of Quraysh, and from Quraysh, the Prophet Muhammad ﷺ. Every Arab who traces their lineage to Ismail honours him. But honour is not in lineage — it is in faith. And Ismail's faith was the foundation of everything that came after.</p>",
+      "dialogue": {
+        "arabic": "وَكَانَ يَأْمُرُ أَهْلَهُ بِالصَّلَاةِ وَالزَّكَاةِ وَكَانَ عِندَ رَبِّهِ مَرْضِيًّا",
+        "translation": "And he used to enjoin on his people prayer and zakah, and he was to his Lord pleasing.",
+        "ref": "Maryam 19:55"
+      },
+      "didYouKnow": "Ismail is described in the Quran as <em>marḍiyyan</em> — one with whom Allah is pleased. Of all the qualities that could have been highlighted, this is the highest — to have Allah's own pleasure testified about you in revelation.",
+      "takeaway": "The greatest honour is not what people say about you — it is what Allah says about you."
+    },
+    {
+      "num": 9,
+      "title": "The Ancestor of Muhammad ﷺ",
+      "thumb": "lineage",
+      "body": "<p>Ismail's descendants multiplied. They spread across the Arabian Peninsula, forming tribes, building cities, raising armies. And from them — from the line of Adnan, from the tribe of Quraysh, from the family of Hashim — came the Prophet Muhammad ﷺ, the final messenger of Allah.</p><p>When the Prophet ﷺ spoke of his lineage, he did not boast. He said: <em>Allah chose Kinanah from the children of Ismail, chose Quraysh from Kinanah, chose Banu Hashim from Quraysh, and chose me from Banu Hashim.</em> His lineage was noble — but his nobility was not the point. His prophethood was.</p><p>And yet, the connection is beautiful. Ismail — the baby whose feet opened Zamzam, the boy who submitted to the knife, the man who built the Kaaba with his father — was the ancestor of the greatest human being to ever live. His obedience, thousands of years before, was the seed of the Prophet ﷺ.</p><p>The Prophet ﷺ said: <em>I am the answer to the dua of my father Ibrahim, and the glad tidings of my brother Isa.</em> The dua Ibrahim made as he built the Kaaba with Ismail — <em>Our Lord, send among them a messenger from among themselves</em> — was answered in Muhammad ﷺ. Ismail's hands were on the Kaaba when that dua was made. His descendants were the nation the dua was made for.</p>",
+      "dialogue": {
+        "arabic": "رَبَّنَا وَابْعَثْ فِيهِمْ رَسُولًا مِّنْهُمْ يَتْلُو عَلَيْهِمْ آيَاتِكَ",
+        "translation": "Our Lord, send among them a messenger from among themselves who will recite to them Your verses.",
+        "ref": "Al-Baqarah 2:129"
+      },
+      "didYouKnow": "The lineage of the Prophet ﷺ through Ismail is preserved in the books of Seerah. The Prophet ﷺ himself said: <em>Allah chose Kinanah from the children of Ismail, chose Quraysh from Kinanah, chose Banu Hashim from Quraysh, and chose me from Banu Hashim.</em> (Sahih Muslim)",
+      "takeaway": "The obedience of one generation becomes the blessing of a thousand generations after."
+    },
+    {
+      "num": 10,
+      "title": "The Father of Hospitality",
+      "thumb": "hospitality",
+      "body": "<p>Among the Arabs, Ismail is remembered as the father of hospitality — the man who established the tradition of welcoming every traveller, feeding every guest, and protecting everyone who came under his roof. This tradition would later become one of the most celebrated virtues of the Arab people — and of Islam itself.</p><p>The Prophet ﷺ said: <em>Whoever believes in Allah and the Last Day, let him honour his guest.</em> This teaching has its roots in the example of Ismail — the man whose entire society was built on the principle that no stranger should ever be turned away.</p><p>But hospitality, in the prophetic sense, is not just about food and shelter. It is about honouring the human being who comes to your door. It is about recognising that every person carries the breath of Allah. It is about treating them as you would want to be treated if you were a stranger in a strange land.</p><p>Ismail taught this principle to his children, and his children taught it to theirs. And centuries later, when the Prophet ﷺ came to a people who had corrupted almost everything, the one tradition they had preserved intact was hospitality. It was the seed that made the acceptance of Islam possible among the Arabs.</p>",
+      "dialogue": {
+        "arabic": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ضَيْفَهُ",
+        "translation": "Whoever believes in Allah and the Last Day, let him honour his guest.",
+        "ref": "Sahih al-Bukhari & Muslim"
+      },
+      "didYouKnow": "The Arab tradition of hospitality — feeding the traveller, protecting the refugee, honouring the guest — is one of the few pre-Islamic Arab virtues that Islam preserved and elevated. Ismail's legacy is woven into the fabric of Islamic culture.",
+      "takeaway": "The simplest acts of kindness become the traditions that shape a civilisation."
+    },
+    {
+      "num": 11,
+      "title": "The Sacrifice Remembered",
+      "thumb": "remembered",
+      "body": "<p>Every year, on the 10th of Dhul-Hijjah, Muslims around the world sacrifice an animal in remembrance of Ibrahim and Ismail. Every Eid al-Adha, millions of sheep, goats, cows, and camels are offered in obedience to Allah — a ritual that has its origin in the day Ibrahim raised the knife over his son.</p><p>But the sacrifice is not just a ritual. It is a reminder. It is a reminder that obedience to Allah sometimes requires giving up what we love most. It is a reminder that our attachments are not absolute — only Allah is. It is a reminder that Ismail's willingness to die and Ibrahim's willingness to sacrifice were both accepted by Allah, and both honoured forever.</p><p>The Prophet ﷺ said: <em>The son of Adam does not do any deed on the Day of Sacrifice that is more beloved to Allah than the shedding of blood. Indeed, it will come on the Day of Judgement with its horns, its hair, and its hooves. And indeed, the blood is accepted by Allah before it falls to the ground.</em></p><p>So every Eid al-Adha, when we raise the knife, we are raising it in the footsteps of Ismail. We are saying, with our actions, what Ismail said with his life: <em>Do what Allah commanded. You will find me, if Allah wills, of the patient.</em></p>",
+      "dialogue": {
+        "arabic": "وَلِكُلِّ أُمَّةٍ جَعَلْنَا مَنسَكًا لِّيَذْكُرُوا اسْمَ اللَّهِ عَلَىٰ مَا رَزَقَهُم مِّن بَهِيمَةِ الْأَنْعَامِ",
+        "translation": "And for every nation We have appointed a rite of sacrifice, that they may mention the name of Allah over what He has provided for them of grazing livestock.",
+        "ref": "Al-Hajj 22:34"
+      },
+      "didYouKnow": "The word <em>qurbān</em> — sacrifice — comes from the root <em>q-r-b</em>, meaning 'nearness.' The purpose of sacrifice is not the death of the animal; it is drawing near to Allah. The animal's body is a vessel; the soul's nearness to its Lord is the goal.",
+      "takeaway": "Every sacrifice we make for Allah is a step closer to Him."
+    },
+    {
+      "num": 12,
+      "title": "The Legacy of Ismail",
+      "thumb": "legacy",
+      "body": "<p>Ismail's story is the story of a man whose whole life was shaped by the trial he passed as a young man. He never forgot the moment when he lay on the ground, waiting for his father's knife. He never forgot the voice from the heavens. He never forgot the ram that came instead of him.</p><p>And so he spent the rest of his life in gratitude. He prayed. He gave charity. He kept his promises. He honoured his guests. He raised his children on the same faith that had saved him. And when his time came, he returned to his Lord with the same submission he had shown on the day of sacrifice.</p><p>The Prophet ﷺ said: <em>Whoever is generous, Allah is generous with him. Whoever is generous with his guest, Allah is generous with him in the grave.</em> Ismail's hospitality was not just a virtue — it was a testimony to his understanding that generosity is a form of worship.</p><p>Ismail's legacy is simple but profound: <em>obedience to Allah, without conditions, without reservations, without delay.</em> He did not ask why. He did not ask when. He did not ask if there was another way. He simply said: <em>Do what you have been commanded.</em> And for that, Allah honoured him forever — with prophethood, with a legacy, and with the promise that his descendants would include the greatest man ever to walk the earth.</p><p>May Allah make us among those who obey Him without hesitation, and join us with Ismail in the highest ranks of the righteous. Ameen.</p>",
+      "dialogue": {
+        "arabic": "وَإِسْمَاعِيلَ وَإِدْرِيسَ وَذَا الْكِفْلِ ۖ كُلٌّ مِّنَ الصَّابِرِينَ",
+        "translation": "And Ismail, Idris, and Dhul-Kifl — all were of the patient.",
+        "ref": "Al-Anbiya 21:85"
+      },
+      "didYouKnow": "Ismail is one of four prophets the Quran describes as <em>of the patient</em> — the others being Idris, Dhul-Kifl, and Ayyub. Patience was the defining virtue of Ismail's life: patience in the valley, patience at the altar, patience in the building of the Kaaba, patience in the long years of raising a nation.",
+      "takeaway": "The greatest legacy you can leave is a life of quiet, faithful obedience."
+    }
+  ]
+},    {
+      "id": "ishaq",
+      "num": 9,
+      "name": "Ishaq",
+      "arabic": "إسحاق",
+      "subtitle": "9 Lessons",
+      "image": "images/prophet-09-ishaq.webp",
+      "tier": "standard",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Laughter of Sarah",
+          "thumb": "laughter",
+          "body": "<p>Ishaq (AS) was the son of Ibrahim and Sarah — born when his father was around 100 years old, and his mother well past the age of childbearing. His very existence was a miracle, announced by angels who came to Ibrahim's tent.</p><p>The Quran records the moment with unforgettable tenderness. The angels gave Sarah the news: <em>And his wife was standing there, and she laughed, so We gave her glad tidings of Ishaq, and after Ishaq, of Yaqub.</em></p><p>She laughed — not in mockery, but in the disbelief of a woman who had waited her entire life for this news and had given up on it decades ago. She laughed because the promise seemed impossible. And then she heard her own laugh echoed back to her as confirmation: <em>Yes, Sarah. You will have a son.</em></p><p>She struck her face in disbelief: <em>Woe to me! Am I to bear a child when I am an old woman, and this my husband is an old man? Indeed, this is a strange thing.</em> And the angels replied: <em>Are you amazed at the decree of Allah? May the mercy of Allah and His blessings be upon you, people of the house.</em></p><p>Ishaq's name in Arabic comes from the root <em>ḍ-ḥ-k</em> — to laugh. His whole identity was tied to that moment of wonder — the laugh of a mother who could not believe the mercy of her Lord.</p>",
+          "dialogue": {
+            "arabic": "فَضَحِكَتْ فَبَشَّرْنَاهَا بِإِسْحَاقَ وَمِن وَرَاءِ إِسْحَاقَ يَعْقُوبَ",
+            "translation": "So she laughed, and We gave her glad tidings of Ishaq, and after Ishaq, of Yaqub.",
+            "ref": "Hud 11:71"
+          },
+          "didYouKnow": "Ishaq's name comes from the Hebrew root <em>ṣ-ḥ-q</em> (to laugh) — the same meaning as the Arabic <em>ḍ-ḥ-k</em>. Both traditions preserve the memory of Sarah's laugh at the news of her impossible pregnancy.",
+          "takeaway": "Allah's mercy laughs at impossibility — the child of an old woman, the son of a barren womb."
+        },
+        {
+          "num": 2,
+          "title": "The Blessed Son",
+          "thumb": "blessed",
+          "body": "<p>Ishaq was born into a household of prophecy. His father was the Khalil of Allah — the closest friend of his Lord. His mother was Sarah, honoured by revelation as 'the wife of Ibrahim' and praised for her faith. His elder half-brother was Ismail, the prophet of the Kaaba. And Ishaq himself would go on to be one of the great prophets of Allah.</p><p>The Quran describes his birth with the phrase: <em>And We gave him good tidings of Ishaq — a prophet from among the righteous.</em> Two honours in one announcement: he would be a prophet, and he would be one of the righteous. His prophethood was announced before his birth.</p><p>Ishaq grew up in Shaam — the blessed land. He learned the ways of Ibrahim: worship, hospitality, patience, honesty, courage. He saw his father's example every day. He watched him pray. He watched him feed every guest. He watched him call to tawhid without fear of kings or armies.</p><p>And he absorbed it all — the way a sapling absorbs the sun. Ibrahim had built a family of faith; and Ishaq would continue it.</p>",
+          "dialogue": {
+            "arabic": "وَبَشَّرْنَاهُ بِإِسْحَاقَ نَبِيًّا مِّنَ الصَّالِحِينَ",
+            "translation": "And We gave him good tidings of Ishaq — a prophet from among the righteous.",
+            "ref": "As-Saffat 37:112"
+          },
+          "didYouKnow": "Ishaq is one of the 25 prophets named in the Quran. He is mentioned 17 times — usually alongside Ibrahim, his father, and Yaqub, his son. He is the only prophet whose name means 'laughter' — a reminder that the greatest blessings come from the places we least expect.",
+          "takeaway": "The greatest inheritances are not wealth — they are example, teaching, and faith."
+        },
+        {
+          "num": 3,
+          "title": "The Way of Ibrahim",
+          "thumb": "way",
+          "body": "<p>The Quran commands believers, in multiple places, to follow the way of Ibrahim. And it also praises Ishaq and Yaqub explicitly for walking that way. The Quran says: <em>And We gave him Ishaq and Yaqub in addition; and all We made righteous. And We made them leaders guiding by Our command. And We inspired to them the doing of good deeds, establishment of prayer, and giving of zakah; and they were worshippers of Us.</em></p><p>Read that verse slowly. Allah describes Ishaq and Yaqub with four qualities:</p><p><strong>One:</strong> He made them <em>righteous</em> — their character was purified.<br><strong>Two:</strong> He made them <em>leaders</em> — not by force, but by example.<br><strong>Three:</strong> He <em>inspired</em> them to do good — the impulse itself came from Allah.<br><strong>Four:</strong> They were <em>worshippers of Allah</em> — the root identity of both men.</p><p>This is the prophetic lineage. Father to son, from Ibrahim through Ishaq to Yaqub — three generations of prophets in one continuous line. The Quran honours them all together. And their way is the way of every believer: tawhid, prayer, zakah, good deeds — the same four pillars of faith that Ibrahim had established centuries earlier.</p>",
+          "dialogue": {
+            "arabic": "وَجَعَلْنَاهُمْ أَئِمَّةً يَهْدُونَ بِأَمْرِنَا وَأَوْحَيْنَا إِلَيْهِمْ فِعْلَ الْخَيْرَاتِ وَإِقَامَ الصَّلَاةِ وَإِيتَاءَ الزَّكَاةِ ۖ وَكَانُوا لَنَا عَابِدِينَ",
+            "translation": "And We made them leaders guiding by Our command. And We inspired to them the doing of good deeds, establishment of prayer, and giving of zakah; and they were worshippers of Us.",
+            "ref": "Al-Anbiya 21:73"
+          },
+          "didYouKnow": "Ibrahim, Ishaq, and Yaqub are the only three consecutive generations of prophets mentioned by name in the Quran. From Ishaq came Yaqub, and from Yaqub came the twelve tribes of the Children of Israel — including Yusuf, the prophet whose story fills an entire surah of the Quran.",
+          "takeaway": "Faith is not just taught — it is caught. Live it, and your children will carry it."
+        },
+        {
+          "num": 4,
+          "title": "The Covenant",
+          "thumb": "covenant",
+          "body": "<p>The Quran mentions a special covenant that Allah made with the lineage of Ibrahim: <em>And We gave him Ishaq and Yaqub, and We guided each of them. And Nuh, We had guided before. And from his descendants, Dawud, Sulayman, Ayyub, Yusuf, Musa, and Harun. Thus do We reward the doers of good. And Zakariyya, Yahya, Isa, and Ilyas — each was of the righteous.</em></p><p>Read that list. Almost every major prophet mentioned by name in the Quran came through the line of Ishaq. Dawud, Sulayman, Ayyub, Yusuf, Musa, Harun, Zakariyya, Yahya, Isa — all descended from Ishaq. This is the Abrahamic lineage of prophecy.</p><p>And this is the meaning of the covenant. Ishaq was not just a son of Ibrahim — he was the doorway through which the great line of Israelite prophets would enter the world. His prophethood was not just for his own generation; it was the seed of centuries of prophethood to come.</p><p>What did Ibrahim do to deserve this? He obeyed. He submitted. He trusted Allah when everything seemed lost. And Allah gave him a lineage of prophets that would last for thousands of years — from Ishaq through Yaqub through the twelve tribes, until the final prophet of that line, Isa ibn Maryam.</p>",
+          "dialogue": {
+            "arabic": "وَوَهَبْنَا لَهُ إِسْحَاقَ وَيَعْقُوبَ ۚ كُلًّا هَدَيْنَا ۚ وَنُوحًا هَدَيْنَا مِن قَبْلُ ۖ وَمِن ذُرِّيَّتِهِ دَاوُودَ وَسُلَيْمَانَ وَأَيُّوبَ وَيُوسُفَ وَمُوسَىٰ وَهَارُونَ",
+            "translation": "And We gave him Ishaq and Yaqub; each We guided. And Nuh, We had guided before. And from his descendants, Dawud, Sulayman, Ayyub, Yusuf, Musa, and Harun.",
+            "ref": "Al-An'am 6:84"
+          },
+          "didYouKnow": "The list of prophets in this verse includes 14 names, all from the lineage of Ibrahim through Ishaq. Every one of them — from Dawud to Isa — is considered by the Quran to be part of the fulfilment of Allah's covenant with Ibrahim.",
+          "takeaway": "The reward of one obedient life can be the legacy of a hundred generations."
+        },
+        {
+          "num": 5,
+          "title": "The Father of Yaqub",
+          "thumb": "father",
+          "body": "<p>The Quran tells us that Ishaq became the father of Yaqub — a prophet in his own right, and the father of the twelve tribes of the Children of Israel. The moment of Yaqub's birth was announced by the angels together with the announcement of Ishaq himself: <em>We gave her glad tidings of Ishaq, and after Ishaq, of Yaqub.</em></p><p>Sarah heard the news of her son and her grandson in a single breath. Two generations of prophets were announced to her in one moment. This is the highest honour that any mother in the Quran receives: to be told that her child and her grandchild would both be prophets of Allah.</p><p>Ishaq raised Yaqub with the same care that Ibrahim had raised him. He taught him tawhid. He taught him prayer. He taught him patience. He taught him that the way of his grandfather Ibrahim was the only path worth walking. And when Ishaq grew old, he gathered his sons — including Yaqub — and gave them the same final instruction that Ibrahim had given his own sons: <em>O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.</em></p>",
+          "dialogue": {
+            "arabic": "وَوَصَّىٰ بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَىٰ لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+            "translation": "And Ibrahim instructed his sons, and so did Yaqub: O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.",
+            "ref": "Al-Baqarah 2:132"
+          },
+          "didYouKnow": "The Quran mentions Ishaq and Yaqub together in over a dozen places — they are almost never separated. This pairing reflects the unity of the prophetic mission: father to son, teaching to teaching, faith to faith.",
+          "takeaway": "The most important inheritance you can pass on is not land, not wealth — it is faith."
+        },
+        {
+          "num": 6,
+          "title": "The Blessed Land",
+          "thumb": "land",
+          "body": "<p>The Quran says: <em>And We blessed him and Ishaq. But among their descendants is the doer of good and the clearly unjust to himself.</em></p><p>Notice what Allah did. He blessed Ibrahim and Ishaq — the father and the son. But then He immediately clarified: <em>among their descendants is the doer of good and the clearly unjust.</em> Being descended from a prophet does not guarantee anything. Every soul chooses its own path. Some of the descendants of Ibrahim and Ishaq would be righteous; some would be corrupt. The lineage does not save anyone.</p><p>And this is why Allah's covenant with Ibrahim was conditional: <em>My covenant does not include the wrongdoers.</em> The promises of Allah are not blood-based; they are faith-based. Every generation must choose for itself.</p><p>Ishaq lived in this truth. He did not rely on his father's rank. He did not assume his prophethood was his by right. He earned it by his own obedience — by his own prayer, his own charity, his own worship. He walked the way of Ibrahim not because he was Ibrahim's son, but because he believed what Ibrahim believed.</p>",
+          "dialogue": {
+            "arabic": "وَبَارَكْنَا عَلَيْهِ وَعَلَىٰ إِسْحَاقَ ۚ وَمِن ذُرِّيَّتِهِمَا مُحْسِنٌ وَظَالِمٌ لِّنَفْسِهِ مُبِينٌ",
+            "translation": "And We blessed him and Ishaq. But among their descendants is the doer of good and the clearly unjust to himself.",
+            "ref": "As-Saffat 37:113"
+          },
+          "didYouKnow": "The Quran's emphasis on individual responsibility — over bloodline — is one of its most consistent themes. Nuh's son drowned. Lut's wife was destroyed. Ibrahim's father rejected him. Islam has never taught that faith runs in the blood; it has always taught that it must be chosen.",
+          "takeaway": "You cannot inherit faith — you can only choose it."
+        },
+        {
+          "num": 7,
+          "title": "The Long Life",
+          "thumb": "long",
+          "body": "<p>Ishaq lived a long life — the classical narrations say 180 years. He saw his father Ibrahim pass away. He saw his sons grow into men. He saw the beginning of the twelve tribes of Israel take shape. And he saw the descendants of his own children multiply across the land of Shaam.</p><p>Through all of those decades, Ishaq stayed on the path. He did not slip. He did not waver. He did not grow tired of worship. He did not become cynical as the world changed around him. He stayed the way Ibrahim had raised him to be — steady, patient, faithful.</p><p>This is one of the greatest tests of a believer: the test of the long haul. Many people start their faith with fire. They pray with passion, they give with abandon, they call to Allah with zeal. And then the years pass. The fire dims. The passion fades. And slowly, without noticing, the person becomes someone they never thought they would be.</p><p>Ishaq did not fade. He stayed lit. For 180 years, he kept the lamp of tawhid burning — through every change of fortune, every loss, every gain. He is a witness that it is possible to grow old without losing faith. And every generation needs that witness.</p>",
+          "dialogue": {
+            "arabic": "وَاذْكُرْ عِبَادَنَا إِبْرَاهِيمَ وَإِسْحَاقَ وَيَعْقُوبَ أُولِي الْأَيْدِي وَالْأَبْصَارِ",
+            "translation": "And remember Our servants Ibrahim, Ishaq, and Yaqub — people of strength and vision.",
+            "ref": "Sad 38:45"
+          },
+          "didYouKnow": "The Quran describes Ibrahim, Ishaq, and Yaqub with the phrase <em>ūlī al-aydī wal-abṣār</em> — 'people of strength and vision.' The 'strength' here refers to their strength in worship, and the 'vision' to their clarity in discerning the truth. These are the two gifts that kept them steady across decades.",
+          "takeaway": "The hardest test of faith is not the crisis — it is the long silence that follows."
+        },
+        {
+          "num": 8,
+          "title": "The Father of the Children of Israel",
+          "thumb": "israel",
+          "body": "<p>Ishaq's descendants — through his son Yaqub — would become the Children of Israel. Twelve tribes, twelve sons of Yaqub, and from them an entire nation. For centuries, the Children of Israel would be the primary carriers of tawhid on the earth, until their own corruption led Allah to send the final messenger to the world through the line of Ismail instead.</p><p>But this was not yet known when Ishaq was alive. He simply did what every father is called to do: he raised his children in the way of Allah and entrusted them to his Lord. He did not know what would happen to the Children of Israel. He did not know that most of them would drift. He did not know that some of them would reject the very prophets Allah sent to them.</p><p>He only knew his duty. And he fulfilled it faithfully. The rest was Allah's to handle.</p><p>And so Ishaq stands in the Quran as a model for every parent: raise your children on tawhid, teach them the prayer, teach them charity, teach them patience, and then trust Allah with their future. You are not responsible for the choices they will make. You are only responsible for the example you give.</p>",
+          "dialogue": {
+            "arabic": "يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَىٰ لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+            "translation": "O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.",
+            "ref": "Al-Baqarah 2:132"
+          },
+          "didYouKnow": "The Children of Israel take their name from Yaqub — 'Isra' was another name for Yaqub, and 'il' is the Arabic word for God. So the Children of Israel are literally the descendants of Yaqub. Ishaq was their grandfather.",
+          "takeaway": "The parent plants the seed — Allah gives the growth."
+        },
+        {
+          "num": 9,
+          "title": "The Quiet Prophet",
+          "thumb": "quiet",
+          "body": "<p>Of all the prophets of the Quran, Ishaq may be the quietest. He is never the central figure of any story. He is mentioned mostly alongside his father Ibrahim or his son Yaqub. He did not split a sea. He did not survive a fire. He did not interpret a dream that saved a nation. His story does not have a single dramatic moment.</p><p>And yet, the Quran praises him as <em>a prophet from among the righteous</em>. He is honoured as one of the <em>ūlī al-aydī wal-abṣār</em>. He is named as one of the <em>patient</em>. He is listed among those who received the covenant of prophethood from Allah.</p><p>This is the quiet legacy of Ishaq. He did not need to perform miracles to be beloved to his Lord. He did not need to be the centre of every story to be honoured in revelation. He simply lived a long, faithful, obedient life — and Allah recorded his name in the Quran forever.</p><p>His quietness is his teaching. Not everyone is called to be the central figure. Not every believer needs to be a hero. Most of us are called to be Ishaqs — steady, faithful, patient, unremarkable on the outside, glorious in the sight of Allah.</p><p>May Allah make us among those He remembers, even if the world does not. Ameen.</p>",
+          "dialogue": {
+            "arabic": "وَبَشَّرْنَاهُ بِإِسْحَاقَ نَبِيًّا مِّنَ الصَّالِحِينَ",
+            "translation": "And We gave him good tidings of Ishaq — a prophet from among the righteous.",
+            "ref": "As-Saffat 37:112"
+          },
+          "didYouKnow": "Ishaq's name appears 17 times in the Quran. Almost every time, it is paired with either Ibrahim or Yaqub. His identity is never in isolation — he is always seen as part of the great prophetic chain of his family. His quietness was not lesser — it was the exact role Allah had assigned him.",
+          "takeaway": "You do not need to be the hero of the story — only faithful in the part Allah wrote for you."
+        }
+      ]
+    },
+    {
+      "id": "yaqub",
+      "num": 10,
+      "name": "Yaqub",
+      "arabic": "يعقوب",
+      "subtitle": "14 Lessons",
+      "image": "images/prophet-10-yaqub.webp",
+      "tier": "major",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Grandson of Ibrahim",
+          "thumb": "grandson",
+          "body": "<p>Yaqub (AS) was the son of Ishaq and the grandson of Ibrahim. He is also known as <em>Israil</em> — the name from which the 'Children of Israel' derive. Every prophet from the line of Ishaq came through Yaqub. He was the door through which the twelve tribes — and twelve thousand prophets — would enter the world.</p><p>Yaqub grew up in the household of Ishaq, in the blessed land of Shaam. He learned the way of Ibrahim from his father — the way of tawhid, of worship, of patience, of hospitality. And he saw how his father lived out those teachings every day of his long life.</p><p>When Yaqub grew older, Ishaq gathered his sons and gave them the same instruction Ibrahim had given his own sons: <em>O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.</em> Yaqub heard that instruction, absorbed it, and lived by it for the rest of his life. It became the defining phrase of his own fatherhood, which he would repeat to his own twelve sons decades later.</p>",
+          "dialogue": {
+            "arabic": "وَوَصَّىٰ بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَىٰ لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+            "translation": "And Ibrahim instructed his sons, and so did Yaqub: O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.",
+            "ref": "Al-Baqarah 2:132"
+          },
+          "didYouKnow": "The name <em>Israil</em> (Israel) — the name by which Yaqub is most commonly known in the Quran — means 'servant of Allah.' Every mention of 'Children of Israel' in the Quran refers to the descendants of Yaqub.",
+          "takeaway": "The legacy you inherit from your father is not measured by years — but by how faithfully you pass it on."
+        },
+        {
+          "num": 2,
+          "title": "Twelve Sons",
+          "thumb": "twelve",
+          "body": "<p>Yaqub had twelve sons — the founders of the twelve tribes of Israel. Among them were Yusuf, the prophet whose story fills an entire surah of the Quran; and Binyamin, his younger full brother; and ten older brothers whose jealousy would set the most dramatic family story in the Quran into motion.</p><p>Yaqub loved all his sons, but his heart was attached to Yusuf in a way the others noticed — and envied. The Quran says: <em>When they said: Truly Yusuf and his brother are more beloved to our father than we, though we are a group. Indeed, our father is in clear error.</em></p><p>Why did Yaqub love Yusuf more? The Quran hints at the answer through Yusuf's dream — the young boy had seen eleven stars, the sun, and the moon prostrating to him. And Yaqub, a prophet, understood the dream's meaning: Yusuf was destined for something extraordinary. That knowledge — that his young son was going to be a prophet — was why his father's heart leaned toward him. Not favouritism, but recognition.</p><p>And so began one of the most painful chapters of Yaqub's life. His beloved son Yusuf would be taken from him by jealous brothers, sold into slavery, and lost for decades. The story of how a father survived that grief, kept his trust in Allah, and lived to see his son again, is one of the most moving stories in revelation.</p>",
+          "dialogue": {
+            "arabic": "إِذْ قَالُوا لَيُوسُفُ وَأَخُوهُ أَحَبُّ إِلَىٰ أَبِينَا مِنَّا وَنَحْنُ عُصْبَةٌ ۖ إِنَّ أَبَانَا لَفِي ضَلَالٍ مُّبِينٍ",
+            "translation": "When they said: Truly Yusuf and his brother are more beloved to our father than we, though we are a group. Indeed, our father is in clear error.",
+            "ref": "Yusuf 12:8"
+          },
+          "didYouKnow": "The twelve sons of Yaqub became the twelve tribes of Israel. Their descendants, over centuries, would grow into the nation that Allah sent most of the Israelite prophets to — Musa, Harun, Dawud, Sulayman, Zakariyya, Yahya, and Isa.",
+          "takeaway": "Sometimes the deepest trials come from the people closest to us — and Allah is still in control."
+        },
+        {
+          "num": 3,
+          "title": "The Dream of Yusuf",
+          "thumb": "dream",
+          "body": "<p>One night, young Yusuf came to his father with extraordinary news. He had seen a dream: eleven stars, the sun, and the moon — all prostrating to him. Yusuf was a child, but even he sensed the dream's weight. He told his father.</p><p>Yaqub's response was immediate: <em>O my son, do not relate your vision to your brothers, or they will devise a plot against you. Indeed, Shaytan is to man a clear enemy.</em></p><p>Yaqub understood two things instantly. First, the dream was a prophecy — his young son would one day be raised above his brothers. Second, the brothers would never accept that. If they knew, they would stop at nothing to prevent it.</p><p>And so Yaqub gave Yusuf the wisest advice a father can give a child: <em>And thus will your Lord choose you and teach you the interpretation of narratives, and complete His favour upon you and upon the family of Yaqub, as He completed it upon your fathers before, Ibrahim and Ishaq.</em> He did not try to stop the prophecy. He did not warn Yusuf against ambition. He simply taught his son to trust the plan of his Lord, and to protect the knowledge of that plan from those who would harm him.</p>",
+          "dialogue": {
+            "arabic": "قَالَ يَا بُنَيَّ لَا تَقْصُصْ رُؤْيَاكَ عَلَىٰ إِخْوَتِكَ فَيَكِيدُوا لَكَ كَيْدًا ۖ إِنَّ الشَّيْطَانَ لِلْإِنسَانِ عَدُوٌّ مُّبِينٌ",
+            "translation": "He said: O my son, do not relate your vision to your brothers, or they will devise a plot against you. Indeed, Shaytan is to man a clear enemy.",
+            "ref": "Yusuf 12:5"
+          },
+          "didYouKnow": "The scholars note that Yusuf's dream came true decades later — after slavery, imprisonment, and years of waiting. When Yusuf became the minister of Egypt, his brothers came to him for help, and eventually the family was reunited. Only then did the full meaning of the dream unfold.",
+          "takeaway": "Some prophecies take a lifetime to fulfil — the wisdom is not in rushing, but in trusting."
+        },
+        {
+          "num": 4,
+          "title": "The Loss of Yusuf",
+          "thumb": "loss",
+          "body": "<p>The brothers did what Yaqub feared. They took Yusuf out into the wilderness under the pretence of playing, threw him into a well, and returned to their father at night — weeping. They brought his shirt, stained with false blood, and told their father: <em>We went racing each other and left Yusuf with our possessions, and a wolf ate him. But you will never believe us, even if we should be truthful.</em></p><p>Yaqub saw the shirt. He saw the tears. He saw through both. A wolf that ate a boy but left his shirt unripped? His sons had lied to him. And yet he did not accuse them. He did not scream. He did not curse. He simply said: <em>Rather, your souls have enticed you to something, so patience is most fitting. And Allah is the one sought for help against that which you describe.</em></p><p>Patience. In that moment of his life — the very moment his beloved son disappeared — Yaqub's first response was patience. Not anger. Not violence. Not despair. Just <em>ṣabrun jamīl</em> — beautiful patience. A patience that does not complain, does not demand, does not collapse. Just quietly trusts Allah and waits for His help.</p><p>That word — <em>ṣabrun jamīl</em> — would define the rest of Yaqub's life. He would lose Yusuf for decades. He would lose Binyamin years later. He would go blind with grief. But through it all, his patience would never break.</p>",
+          "dialogue": {
+            "arabic": "قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ ۖ وَاللَّهُ الْمُسْتَعَانُ عَلَىٰ مَا تَصِفُونَ",
+            "translation": "He said: Rather, your souls have enticed you to something, so patience is most fitting. And Allah is the one sought for help against that which you describe.",
+            "ref": "Yusuf 12:18"
+          },
+          "didYouKnow": "The Arabic phrase <em>ṣabrun jamīl</em> — 'beautiful patience' — appears only twice in the Quran, both times on the tongue of Yaqub. It describes a patience that is not bitter, not resentful, not weary — but graceful, dignified, and trusting. It is the highest form of patience.",
+          "takeaway": "Beautiful patience is not the absence of pain — it is the presence of trust."
+        },
+        {
+          "num": 5,
+          "title": "Blind with Grief",
+          "thumb": "blind",
+          "body": "<p>Years passed. Yaqub did not stop grieving for Yusuf. He wept. He wept so much that the Quran says: <em>And he turned away from them and said: O my sorrow over Yusuf! And his eyes became white from grief, for he was a suppressor of his grief.</em></p><p>His eyes became white — meaning he lost his sight. He wept so much, for so long, that his vision was taken from him. And yet, in the same verse, the Quran says he was <em>a suppressor of his grief</em> — meaning that he did not weep in public. He did not make a spectacle of his pain. He did not use his suffering to burden others. He wept privately, quietly, before his Lord alone.</p><p>His sons — the very ones who had caused his grief — came to him and said: <em>By Allah, you will not cease remembering Yusuf until you become fatally ill or become of those who perish.</em></p><p>They were mocking him. Accusing him of obsession. Telling him he would die from grief. And Yaqub's response was one of the most extraordinary statements of faith in the entire Quran: <em>I only complain of my suffering and my grief to Allah, and I know from Allah that which you do not know.</em></p><p>He did not complain to people. He did not complain to his sons. He complained only to his Lord. And in that same sentence, he testified: <em>I know from Allah that which you do not know.</em> His certainty in Allah's mercy never flickered, no matter how long the wait.</p>",
+          "dialogue": {
+            "arabic": "إِنَّمَا أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ وَأَعْلَمُ مِنَ اللَّهِ مَا لَا تَعْلَمُونَ",
+            "translation": "I only complain of my suffering and my grief to Allah, and I know from Allah that which you do not know.",
+            "ref": "Yusuf 12:86"
+          },
+          "didYouKnow": "The classical scholars say Yaqub lost his sight from the sheer volume of his tears over Yusuf. He was blind for years — and yet his inner vision was clearer than ever. His eyes were closed; his certainty was open.",
+          "takeaway": "The one who carries their grief to Allah carries it lighter than the one who carries it to people."
+        },
+        {
+          "num": 6,
+          "title": "The Command to Seek Yusuf",
+          "thumb": "seek",
+          "body": "<p>After years of loss, Yaqub gave his sons a command. He sent them to Egypt to seek provisions during a famine — and he sent them with a message that would change everything: <em>O my sons, go and find out about Yusuf and his brother, and do not despair of the mercy of Allah. Indeed, no one despairs of the mercy of Allah except the disbelieving people.</em></p><p>Look carefully at what Yaqub did. He was old. He was blind. He had lost Yusuf decades earlier. He had every reason to give up hope. But he did not. He told his sons — the ones who had caused his pain — to go looking for the brother they had thrown into a well. Because he still believed Yusuf was alive. And he still believed Allah would reunite them.</p><p>This is <em>ḥusn al-ẓann billāh</em> — thinking well of Allah. Yaqub had been tested more than almost any prophet. He had lost a son, lost his sight, lost decades of his life to grief. And still, he refused to despair of Allah's mercy. He taught his sons — and by extension, all believers — that despair is a form of disbelief. No matter how dark the night, morning is coming.</p><p>And morning was coming. Because in Egypt, in a palace, at the height of power, was Yusuf. Alive. Successful. Waiting.</p>",
+          "dialogue": {
+            "arabic": "يَا بَنِيَّ اذْهَبُوا فَتَحَسَّسُوا مِن يُوسُفَ وَأَخِيهِ وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ",
+            "translation": "O my sons, go and find out about Yusuf and his brother, and do not despair of the mercy of Allah. Indeed, no one despairs of the mercy of Allah except the disbelieving people.",
+            "ref": "Yusuf 12:87"
+          },
+          "didYouKnow": "The phrase <em>rūḥ Allah</em> — 'the spirit of Allah' or 'the relief from Allah' — is used by Yaqub in this verse. It refers to the refreshing mercy of Allah that comes after the hardest trials. To despair of it is to forget who Allah is.",
+          "takeaway": "Despair is not a feeling — it is a verdict. It decides that Allah cannot help, which is the opposite of iman."
+        },
+        {
+          "num": 7,
+          "title": "The Reunion",
+          "thumb": "reunion",
+          "body": "<p>Yusuf revealed himself to his brothers. He forgave them — all of them. He sent his shirt back with them, telling them to place it over their father's face, promising that Yaqub's sight would return. And the whole family was invited to Egypt, to live under Yusuf's protection.</p><p>The Quran describes the reunion with breathtaking tenderness. Yaqub was still in Shaam when the caravan left Egypt. And yet, from that distance, he said to those around him: <em>Indeed, I sense the scent of Yusuf, unless you consider me weakened in mind.</em></p><p>The people around him thought he had lost his mind. How could a blind old man, hundreds of miles away, smell a scent from Egypt? But the Quran says the scent of Yusuf was real. The proximity of reunion was so close that Yaqub's heart could feel it before his eyes could see it.</p><p>When the shirt was placed over his face, his sight returned. And when the family arrived in Egypt — Yusuf, his parents, and all his brothers — they fell into prostration before Yusuf, fulfilling the dream of eleven stars, the sun, and the moon. And Yusuf said: <em>O my father, this is the interpretation of my dream from before. My Lord has made it true.</em></p><p>Yaqub's long, painful wait was over. But his patience had not been wasted. Allah had used every single day of it to shape the most beautiful reunion in revelation.</p>",
+          "dialogue": {
+            "arabic": "إِنِّي لَأَجِدُ رِيحَ يُوسُفَ ۖ لَوْلَا أَن تُفَنِّدُونِ",
+            "translation": "Indeed, I sense the scent of Yusuf, unless you consider me weakened in mind.",
+            "ref": "Yusuf 12:94"
+          },
+          "didYouKnow": "The reunion of Yaqub and Yusuf is one of the most emotional scenes in the Quran. Yaqub had lost Yusuf when Yusuf was a boy, and saw him again when Yusuf was the minister of Egypt. Decades had passed. But Allah had preserved the reunion for the perfect moment.",
+          "takeaway": "The reunion Allah is preparing for you is worth every day of the wait."
+        },
+        {
+          "num": 8,
+          "title": "The Final Testament",
+          "thumb": "final",
+          "body": "<p>Yaqub lived for a time in Egypt, honoured as the father of the minister of the land. But when death approached, he gathered his sons one final time — just as Ibrahim had gathered his sons, and Ishaq had gathered his. And he asked them the most important question a father can ask: <em>What will you worship after me?</em></p><p>And they answered: <em>We will worship your God and the God of your fathers — Ibrahim, Ismail, and Ishaq — one God. And we are Muslims, submitting to Him.</em></p><p>Look at the beauty of that answer. The sons did not say, 'We will worship the God of Yaqub.' They said, 'We will worship the God of your fathers — Ibrahim, Ismail, and Ishaq.' They traced their faith back three generations, all the way to Ibrahim, the Khalil of Allah. They named Ismail — not their direct ancestor — as part of the same chain, because tawhid is not a family tree; it is a single truth that flows from generation to generation.</p><p>And Yaqub died in peace — knowing that his sons would carry the faith forward. The same faith of Ibrahim. The same faith of Ishaq. The same faith of Muhammad ﷺ, who would come centuries later from the other branch of Ibrahim's line.</p><p>The Quran records Yaqub's final moments as a testament to what matters most in a life: not what you accumulate, but what you pass on.</p>",
+          "dialogue": {
+            "arabic": "أَمْ كُنتُمْ شُهَدَاءَ إِذْ حَضَرَ يَعْقُوبَ الْمَوْتُ إِذْ قَالَ لِبَنِيهِ مَا تَعْبُدُونَ مِن بَعْدِي قَالُوا نَعْبُدُ إِلَٰهَكَ وَإِلَٰهَ آبَائِكَ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ إِلَٰهًا وَاحِدًا وَنَحْنُ لَهُ مُسْلِمُونَ",
+            "translation": "Or were you witnesses when death approached Yaqub, when he said to his sons: What will you worship after me? They said: We will worship your God and the God of your fathers, Ibrahim, Ismail, and Ishaq — one God. And we are Muslims, submitting to Him.",
+            "ref": "Al-Baqarah 2:133"
+          },
+          "didYouKnow": "Yaqub's final question — <em>what will you worship after me?</em> — is the most important question any parent can ask. It is not 'what will you inherit from me' or 'what will you build after me' — but 'who will you worship when I am gone?'",
+          "takeaway": "The question at your deathbed will not be about your wealth — but about the faith you leave behind."
+        },
+        {
+          "num": 9,
+          "title": "Beautiful Patience",
+          "thumb": "patience",
+          "body": "<p>If there is one word that describes Yaqub, it is <em>ṣabr</em> — patience. And not just any patience, but the Quran's phrase: <em>ṣabrun jamīl</em> — beautiful patience. It appears on Yaqub's tongue twice, both times at the moments of his greatest pain.</p><p>What makes patience 'beautiful'? Not the duration — Yaqub's pain lasted decades. Not the silence — Yaqub wept until he lost his sight. Not the strength — Yaqub was a broken old man when he finally reunited with Yusuf. What made his patience beautiful was that it never turned to bitterness.</p><p>He did not curse his sons. He did not despair of Allah. He did not give up on his other children. He did not lose his faith in the goodness of his Lord. He kept praying. He kept hoping. He kept trusting — even when every human reason said there was no hope.</p><p>This is the patience that Allah loves. Not the patience of the stoic who feels nothing. Not the patience of the proud who refuses to complain. But the patience of a father who weeps in private, complains only to Allah, and still — still — believes that mercy is coming.</p><p>Every believer will face a moment of loss. A moment when the thing you love most is taken from you. A moment when the wait feels endless. In that moment, the question is not 'will you feel pain?' — you will. The question is 'will you keep trusting?' — the way Yaqub did.</p>",
+          "dialogue": {
+            "arabic": "فَصَبْرٌ جَمِيلٌ ۖ عَسَى اللَّهُ أَن يَأْتِيَنِي بِهِمْ جَمِيعًا ۚ إِنَّهُ هُوَ الْعَلِيمُ الْحَكِيمُ",
+            "translation": "So patience is most fitting. Perhaps Allah will bring them to me all together. Indeed, it is He who is the Knowing, the Wise.",
+            "ref": "Yusuf 12:83"
+          },
+          "didYouKnow": "Yaqub lost Yusuf for around forty years. Some narrations say the separation lasted longer. Through it all, he never stopped asking Allah for reunion. His dua — <em>Perhaps Allah will bring them to me all together</em> — was answered in full, with Yusuf, Binyamin, and the entire family restored.",
+          "takeaway": "Beautiful patience weeps, waits, and still says: perhaps Allah will bring it back."
+        },
+        {
+          "num": 10,
+          "title": "The Scent of Hope",
+          "thumb": "scent",
+          "body": "<p>There is a detail in the reunion story that deserves its own lesson. When the caravan left Egypt with Yusuf's shirt, Yaqub was still in Shaam — hundreds of miles away. And yet the Quran says: <em>And when the caravan departed, their father said: Indeed, I sense the scent of Yusuf, unless you consider me weakened in mind.</em></p><p>He sensed it. Before the shirt arrived. Before the news came. Before anything physical had changed in his situation, Yaqub felt the mercy of Allah approaching. This is the sixth sense of the believer: the ability to feel hope when the world says there is nothing to hope for.</p><p>People around him told him he had lost his mind. They could not feel what he felt. They could not sense what he sensed. And they judged him for being 'out of touch.' But Yaqub was not out of touch — he was more in touch with reality than they were. He was in touch with the mercy of Allah.</p><p>And the mercy of Allah was on its way. Not because Yaqub had earned it — but because Allah had promised it. Not because Yaqub deserved it — but because Yaqub had never stopped trusting it.</p><p>This is the great teaching of the scent of Yusuf: sometimes, before the answer arrives, Allah gives the believer a sense of its coming. A feeling. A quiet certainty. A peace that does not match the circumstances. That is a gift from your Lord — a foretaste of the mercy He is about to send.</p>",
+          "dialogue": {
+            "arabic": "وَلَمَّا فَصَلَتِ الْعِيرُ قَالَ أَبُوهُمْ إِنِّي لَأَجِدُ رِيحَ يُوسُفَ ۖ لَوْلَا أَن تُفَنِّدُونِ",
+            "translation": "And when the caravan departed, their father said: Indeed, I sense the scent of Yusuf, unless you consider me weakened in mind.",
+            "ref": "Yusuf 12:94"
+          },
+          "didYouKnow": "The Arabic word <em>ʿīr</em> refers to the caravan of travellers. Yaqub was hundreds of miles away from Egypt when he sensed the approaching reunion. The distance was real — but so was his certainty.",
+          "takeaway": "The mercy of Allah sometimes arrives in the heart before it arrives in the hands."
+        },
+        {
+          "num": 11,
+          "title": "The Father Who Never Gave Up",
+          "thumb": "father",
+          "body": "<p>There is a lesson in Yaqub's story for every parent. His sons had lied to him. They had hurt him deeply. They had caused the disappearance of his most beloved child — his own son Yusuf. And yet, when the famine came, Yaqub sent those same sons on a mission. When they needed advice, he gave it. When they came back and needed comfort, he offered it.</p><p>He never disowned them. He never stopped being their father. Even after everything they had done, Yaqub kept his door open. Because he knew that his role was not to punish — it was to guide. His sons were adults, and they had made terrible choices. But they were still his children. And a father does not abandon his children.</p><p>When Yusuf was finally reunited with Yaqub, Yusuf said: <em>O my father, this is the interpretation of my dream from before.</em> And Yaqub, who had lived through it all — the pain, the wait, the blindness, the grief — saw his family restored. He saw that everything he had suffered had been part of Allah's plan to save not just his family, but an entire nation from famine.</p><p>This is the deep wisdom of Yaqub's fatherhood. He did not react to his children's mistakes by giving up on them. He did not let their failures define their future. He kept being their father — and eventually, the mercy of Allah brought them all together.</p>",
+          "dialogue": {
+            "arabic": "وَرَفَعَ أَبَوَيْهِ عَلَى الْعَرْشِ وَخَرُّوا لَهُ سُجَّدًا ۖ وَقَالَ يَا أَبَتِ هَٰذَا تَأْوِيلُ رُؤْيَايَ مِن قَبْلُ قَدْ جَعَلَهَا رَبِّي حَقًّا",
+            "translation": "And he raised his parents upon the throne, and they fell in prostration to him. And he said: O my father, this is the interpretation of my dream from before. My Lord has made it true.",
+            "ref": "Yusuf 12:100"
+          },
+          "didYouKnow": "Yaqub is one of the few prophets whose fatherhood is central to his story. The Quran uses his relationship with his sons as a teaching about patience, forgiveness, and the long view of parenting — the parent who keeps trusting even when the children have failed.",
+          "takeaway": "A parent's love does not stop at the child's mistakes — it waits for the child's return."
+        },
+        {
+          "num": 12,
+          "title": "The Twelve Tribes",
+          "thumb": "tribes",
+          "body": "<p>Yaqub's twelve sons became the twelve tribes of Israel. From them descended the nation that would dominate the prophetic history of the next two thousand years. Through them came Musa, Dawud, Sulayman, Yunus, Zakariyya, Yahya, and Isa — peace be upon them all. The line of Ibrahim through Ishaq through Yaqub was the greatest line of prophethood in history.</p><p>But the Quran is careful to remind us: the Children of Israel were not blessed because of their blood. They were blessed because their ancestors — Ibrahim, Ishaq, Yaqub — had been faithful. When they themselves drifted from tawhid, when they corrupted their books, when they rejected the prophets sent to them, they lost the blessing. Allah did not hesitate to correct them. And eventually, the blessing of prophethood was transferred to the descendants of Ismail — through the final messenger, Muhammad ﷺ.</p><p>This is the pattern of Allah's dealings with nations. The blessing never belonged to a bloodline — it belonged to a way of life. When the people of Yaqub walked the way of Yaqub, they were blessed. When they abandoned it, they were replaced.</p><p>For us, the lesson is clear. The blessing of Allah — the reward of worship, the peace of faith, the honour of being among the believers — is not inherited. It is earned. Every generation must choose its own path.</p>",
+          "dialogue": {
+            "arabic": "كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُونَ بِالْمَعْرُوفِ وَتَنْهَوْنَ عَنِ الْمُنكَرِ",
+            "translation": "You are the best nation produced for mankind — you enjoin what is right and forbid what is wrong.",
+            "ref": "Aal-i-Imraan 3:110"
+          },
+          "didYouKnow": "The Children of Israel numbered the twelve tribes descended from Yaqub's twelve sons. Their history is one of the longest continuous prophetic traditions in human civilization — from Musa (around 1300 BCE) to Isa (around 30 CE), spanning over a thousand years.",
+          "takeaway": "Blessings from Allah are not inherited — they are re-earned by every generation."
+        },
+        {
+          "num": 13,
+          "title": "The Meeting with Yusuf",
+          "thumb": "meeting",
+          "body": "<p>The Quran records the reunion of Yaqub and Yusuf in a single, overwhelming sentence: <em>And when they entered upon Yusuf, he took his parents to himself and said: Enter Egypt, if Allah wills, in security.</em></p><p>He took them to himself. Not to a palace, not to a throne, not to a formal audience. He took them to himself. The word <em>āwā</em> — 'he took them in' — carries the meaning of embracing, welcoming, enfolding. After forty years of separation, Yusuf did not receive his father with ceremony. He received him with an embrace.</p><p>And then the dream. Yaqub's dream as a boy — eleven stars, the sun, and the moon — was fulfilled in that moment. The eleven stars were his eleven brothers. The sun was his father Yaqub. The moon was his mother. And they all bowed before Yusuf — not out of worship, but in recognition of Allah's favour upon him. Every detail of the dream that had been given to a child had now been fulfilled in the adult.</p><p>And Yusuf said: <em>O my father, this is the interpretation of my dream from before. My Lord has made it true.</em> He did not say, 'You were right, father.' He did not say, 'Look how far I have come.' He said: <em>My Lord has made it true.</em> He gave the credit to Allah. Because he knew that the dream, the journey, the slavery, the imprisonment, the rise to power, the reunion — all of it had been the work of his Lord.</p>",
+          "dialogue": {
+            "arabic": "وَلَمَّا دَخَلُوا عَلَىٰ يُوسُفَ آوَىٰ إِلَيْهِ أَبَوَيْهِ وَقَالَ ادْخُلُوا مِصْرَ إِن شَاءَ اللَّهُ آمِنِينَ",
+            "translation": "And when they entered upon Yusuf, he took his parents to himself and said: Enter Egypt, if Allah wills, in security.",
+            "ref": "Yusuf 12:99"
+          },
+          "didYouKnow": "Yaqub was over 130 years old when he finally saw Yusuf again. He had been blind for years. His sight was restored only when Yusuf's shirt was placed over his face — and his tears of joy at the reunion were the same tears that had cost him his vision.",
+          "takeaway": "The reunion Allah has prepared for you is worth every tear shed along the way."
+        },
+        {
+          "num": 14,
+          "title": "The Legacy of Yaqub",
+          "thumb": "legacy",
+          "body": "<p>Yaqub died in Egypt, surrounded by his family. He was buried with honour — some narrations say Yusuf carried his body back to Shaam, to be buried near his father Ishaq and his grandfather Ibrahim. And so the Khalil's family was reunited in the earth, just as they had been reunited in life.</p><p>What is Yaqub's legacy? The Quran's answer is his beautiful patience. When Allah Himself wanted to describe the perfect response to grief, He put the words <em>ṣabrun jamīl</em> on Yaqub's tongue. Twice. Because no one in revelation had shown what Yaqub showed — that a broken heart can still trust a whole God.</p><p>His legacy is also his fatherhood. He raised twelve sons who became the fathers of a nation. Some of them made terrible mistakes. Some of them repented. Some of them held on to faith. But all of them inherited the tawhid of Yaqub — and through them, tawhid continued.</p><p>And his legacy is his hope. Even after decades of loss, even after losing his sight, even after being mocked by his own sons, Yaqub never gave up. He never despaired of Allah's mercy. And because he never despaired, he was given the greatest reunion of his life in the last years of it.</p><p>The Prophet ﷺ said: <em>The noblest of the descendants of Israel are Yusuf, the son of Yaqub, the son of Ishaq, the son of Ibrahim.</em> Four generations of prophets in one lineage — a line that began with the Khalil of Allah and continued through his obedient descendants.</p><p>May Allah grant us the beautiful patience of Yaqub, and reunite us with those we love in the highest gardens of Paradise. Ameen.</p>",
+          "dialogue": {
+            "arabic": "وَلَقَدْ جَاءَتْ رُسُلُنَا إِبْرَاهِيمَ بِالْبُشْرَىٰ قَالُوا سَلَامًا ۖ قَالَ سَلَامٌ",
+            "translation": "And Our messengers came to Ibrahim with good tidings. They said: Peace. He said: Peace.",
+            "ref": "Hud 11:69"
+          },
+          "didYouKnow": "Yaqub is one of the four prophets the Quran describes as <em>ūlī al-aydī wal-abṣār</em> — 'people of strength and vision.' His strength was in his patience. His vision was in his hope. Together, they carried him through forty years of grief without losing his faith.",
+          "takeaway": "Beautiful patience is not the absence of pain — it is the refusal to let pain extinguish hope."
+        }
+      ]
+    }
+  ]
+          }
