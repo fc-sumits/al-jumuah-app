@@ -880,4 +880,34 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .theme-modern .learn-back{background:#1E2044;border-color:rgba(99,102,241,0.3);color:#F0F0F5}
 .theme-storybook{--bg:#1F140B;--card:#2C1E11;--card-hover:#382716;--card-border:rgba(224,169,60,0.22);--card-border-glow:rgba(224,169,60,0.55);--gold:#E0A93C;--gold-soft:rgba(224,169,60,0.15);--emerald:#C97B3F;--emerald-soft:rgba(201,123,63,0.15);--text:#F5E6C8;--muted:#B8A382;--muted-2:#806B52;--divider:rgba(224,169,60,0.12)}
 .theme-storybook .learn-topbar{background:#1F140B;border-bottom:1px solid rgba(224,169,60,0.18)}
-.theme-storybook .learn-title{color:#F5E6C8}
+.theme-storybook .learn-title{color:#F5E6C8}.salah-tabs{display:flex;gap:6px;padding:0 14px 16px}
+.salah-tab{flex:1;padding:10px 6px;background:#FFFFFF;border:1px solid rgba(184,147,90,0.35);border-radius:10px;color:#6B5544;font-family:var(--font-arabic);font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s ease}
+.salah-tab.active{background:#1B5E3F;color:#F5EDD9;border-color:#1B5E3F}
+.salah-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px 20px}
+.salah-card{background:#FFFFFF;border:1px solid rgba(184,147,90,0.32);border-radius:14px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 6px rgba(184,147,90,0.08)}
+.salah-card:hover{border-color:#B8935A;box-shadow:0 4px 14px rgba(184,147,90,0.18)}
+.salah-card-icon{width:56px;height:56px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;background:rgba(27,94,63,0.08);border-radius:50%;color:#1B5E3F}
+.salah-card-icon svg{width:30px;height:30px;stroke-width:1.6}
+.salah-card-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:#1B5E3F;margin-bottom:4px}
+.salah-card-translit{font-size:.72rem;color:#6B5544;font-style:italic;margin-bottom:4px}
+.salah-card-title{font-size:.82rem;font-weight:700;color:#3D2B1F;font-family:var(--font-arabic)}
+.salah-prayer-list{padding:0 14px 20px;display:flex;flex-direction:column;gap:10px}
+.salah-prayer-card{display:flex;align-items:center;gap:14px;background:#FFFFFF;border:1px solid rgba(184,147,90,0.32);border-radius:14px;padding:14px 16px;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 6px rgba(184,147,90,0.08)}
+.salah-prayer-card:hover{border-color:#B8935A;box-shadow:0 4px 14px rgba(184,147,90,0.18)}
+.salah-prayer-icon{flex-shrink:0;width:48px;height:48px;background:rgba(27,94,63,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1B5E3F}
+.salah-prayer-icon svg{width:26px;height:26px;stroke-width:1.6}
+.salah-prayer-body{flex:1;min-width:0}
+.salah-prayer-name{font-size:1.05rem;font-weight:700;color:#3D2B1F;font-family:var(--font-arabic);margin-bottom:2px}
+.salah-prayer-arabic{font-family:var(--font-arabic);font-size:.85rem;color:#1B5E3F;margin-bottom:2px}
+.salah-prayer-meta{font-size:.75rem;color:#6B5544}
+.salah-learn-list{padding:0 14px 20px;display:flex;flex-direction:column;gap:10px}
+.salah-learn-card{background:#FFFFFF;border:1px solid rgba(184,147,90,0.32);border-radius:14px;overflow:hidden;transition:border-color .2s ease}
+.salah-learn-card.open{border-color:#B8935A}
+.salah-learn-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;gap:12px}
+.salah-learn-title{font-size:.95rem;font-weight:700;color:#3D2B1F;font-family:var(--font-arabic)}
+.salah-learn-card .trad-chev{color:#B8935A;transition:transform .3s ease}
+.salah-learn-card.open .trad-chev{transform:rotate(180deg)}
+.salah-learn-body{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 16px;font-size:.85rem;color:#3D2B1F;line-height:1.75;font-family:var(--font-arabic)}
+.salah-learn-card.open .salah-learn-body{max-height:900px;padding:0 16px 16px}
+.salah-learn-body p{margin-bottom:10px}
+.salah-learn-body strong{color:#1B5E3F}
