@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v6';
+const CACHE_VERSION = 'aljumuah-v7';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -17,7 +17,32 @@ const PRECACHE_URLS = [
   './content/prophets-2.json',
   './content/prophets-3.json',
   './content/prophets-4.json',
-  './content/prophets-5.json'
+  './content/prophets-5.json',
+  './images/prophet-01-adam.webp',
+'./images/prophet-02-idris.webp',
+'./images/prophet-03-nuh.webp',
+'./images/prophet-04-hud.webp',
+'./images/prophet-05-salih.webp',
+'./images/prophet-06-ibrahim.webp',
+'./images/prophet-07-lut.webp',
+'./images/prophet-08-ismail.webp',
+'./images/prophet-09-ishaq.webp',
+'./images/prophet-10-yaqub.webp',
+'./images/prophet-11-yusuf.webp',
+'./images/prophet-12-ayyub.webp',
+'./images/prophet-13-shuayb.webp',
+'./images/prophet-14-musa.webp',
+'./images/prophet-15-harun.webp',
+'./images/prophet-16-dhulkifl.webp',
+'./images/prophet-17-dawud.webp',
+'./images/prophet-18-sulayman.webp',
+'./images/prophet-19-ilyas.webp',
+'./images/prophet-20-alyasa.webp',
+'./images/prophet-21-yunus.webp',
+'./images/prophet-22-zakariyya.webp',
+'./images/prophet-23-yahya.webp',
+'./images/prophet-24-isa.webp',
+'./images/prophet-25-muhammad.webp'
 ];
 
 self.addEventListener('install', (event) => {
