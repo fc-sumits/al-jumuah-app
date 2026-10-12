@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v8';
+const CACHE_VERSION = 'aljumuah-v9';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -44,7 +44,24 @@ const PRECACHE_URLS = [
 './images/prophet-24-isa.webp',
 './images/prophet-25-muhammad.webp',
 './content/new-muslim.json',
-  './images/new-muslim-hero.webp'
+  './images/new-muslim-hero.webp',
+    './content/seerah.json',
+  './images/seerah-phase-1.webp',
+  './images/seerah-phase-2.webp',
+  './images/seerah-phase-3.webp',
+  './images/seerah-phase-4.webp',
+  './images/seerah-phase-5.webp',
+  './images/seerah-feat-first-revelation.webp',
+  './images/seerah-feat-isra-miraj.webp',
+  './images/seerah-feat-hijrah.webp',
+  './images/seerah-feat-badr.webp',
+  './images/seerah-feat-uhud.webp',
+  './images/seerah-feat-trench.webp',
+  './images/seerah-feat-hudaybiyyah.webp',
+  './images/seerah-feat-conquest.webp',
+  './images/seerah-feat-farewell.webp',
+  './images/seerah-feat-passing.webp',
+  './images/seerah-closing.webp'
 ];
 
 self.addEventListener('install', (event) => {
