@@ -1,0 +1,97 @@
+{
+  "newMuslim": {
+    "title": "New to Islam?",
+    "subtitle": "Start here",
+    "heroImage": "images/new-muslim-hero.webp",
+    "lessons": [
+      {
+        "id": "shahada",
+        "num": 1,
+        "title": "The Shahada",
+        "icon": "shahada",
+        "arabic": "الشهادة",
+        "body": "<p>The Shahada is the declaration of faith in Islam. It is one sentence in Arabic that contains the entire foundation of the religion: <strong>La ilaha illallah, Muhammadur Rasulullah</strong> — There is no god but Allah, and Muhammad is the Messenger of Allah.</p><p>To become Muslim, a person simply says this sentence — aloud, in Arabic if possible, but even a sincere heart-belief is enough. There is no ritual, no fee, no priest, no intermediary. You speak directly to Allah.</p><p>The first half — <em>there is no god but Allah</em> — means that nothing in the universe deserves your worship, your ultimate fear, or your absolute hope except the One who created everything. Not money. Not status. Not other people. Not yourself. Just Him.</p><p>The second half — <em>Muhammad is the Messenger of Allah</em> — means that the Prophet Muhammad ﷺ is the final prophet, and his example is the model we follow. His words, his character, and his teachings show us how the Quran is meant to be lived.</p><p>The Shahada is not just an entry point. It is the belief you renew every day, in every prayer, in every choice. It is the smallest sentence with the biggest consequence.</p>",
+        "doToday": "Say the Shahada out loud in Arabic: <em>Ash-hadu an la ilaha illallah, wa ash-hadu anna Muhammadar Rasulullah</em>. Then say its meaning in your own language. Let it settle in your heart."
+      },
+      {
+        "id": "prayer",
+        "num": 2,
+        "title": "How to Pray",
+        "icon": "prayer",
+        "arabic": "الصلاة",
+        "body": "<p>Muslims pray five times a day, at fixed times, in the direction of the Kaaba in Makkah. These five prayers are the daily heartbeat of the faith — they are not optional, and they are not a burden. They are a conversation.</p><p>The five prayers are: <strong>Fajr</strong> (before sunrise), <strong>Dhuhr</strong> (early afternoon), <strong>Asr</strong> (late afternoon), <strong>Maghrib</strong> (just after sunset), and <strong>Isha</strong> (night). Each takes only a few minutes. Together they take roughly thirty minutes of your day.</p><p>Each prayer has the same basic structure: you stand, you recite the opening chapter of the Quran (Al-Fatiha), you bow, you prostrate, you sit, and you finish. The movements are simple. The Arabic phrases are short and can be learned one at a time.</p><p>If you are a new Muslim, <strong>you are not expected to be perfect</strong>. The Prophet ﷺ taught: <em>Whatever you know, do it — and whatever you don't know, ask and learn.</em> Pray what you can, and add to it over time. Allah accepts sincere effort.</p><p>At the end of your journey of learning, prayer becomes a home. It is the place you return to when everything else moves.</p>",
+        "doToday": "Learn the words and meaning of <strong>Al-Fatiha</strong> — the seven-verse chapter recited in every prayer. Just that one chapter is enough to start."
+      },
+      {
+        "id": "wudu",
+        "num": 3,
+        "title": "Wudu Basics",
+        "icon": "wudu",
+        "arabic": "الوضوء",
+        "body": "<p>Before prayer, Muslims perform a simple washing ritual called <strong>Wudu</strong>. It is not about dirt — it is about purity and readiness. You wash the parts of your body that are most exposed to the world: the face, hands, arms, head, and feet.</p><p>The basic steps are: (1) make the intention in your heart; (2) say <em>Bismillah</em>; (3) wash your hands three times; (4) rinse your mouth three times; (5) rinse your nose three times; (6) wash your face three times; (7) wash your arms up to the elbows three times; (8) wipe your head once; (9) wipe your ears once; (10) wash your feet up to the ankles three times.</p><p>That's it. The entire Wudu takes about a minute. It can be done at any sink or any tap. If you don't know all the steps yet, even a simplified wash — the face, hands, and feet — is enough as you learn.</p><p>Wudu remains valid until you use the bathroom, pass wind, or fall asleep. When that happens, you simply redo the Wudu before the next prayer.</p><p>The Prophet ﷺ taught that the one who performs Wudu properly — every drop of water carries away a small sin. So the small ritual is doing more than it appears.</p>",
+        "doToday": "At your next sink, walk through the 10 steps slowly. Say <em>Bismillah</em> at the start. Notice that it feels different than a normal wash."
+      },
+      {
+        "id": "fasting",
+        "num": 4,
+        "title": "Fasting in Ramadan",
+        "icon": "fast",
+        "arabic": "الصيام",
+        "body": "<p>Every year, in the ninth month of the Islamic calendar — <strong>Ramadan</strong> — Muslims fast from dawn to sunset for thirty days. From the first light before sunrise (<em>Fajr</em>) until the sun disappears below the horizon (<em>Maghrib</em>), we abstain from food, drink, and marital intimacy.</p><p>The fast is not just physical. It is also a training of the tongue and the heart. The Prophet ﷺ said: <em>Whoever does not give up false speech and evil actions, Allah has no need of his hunger and thirst.</em> Fasting without patience and kindness is an empty fast.</p><p>Before dawn, we eat a pre-dawn meal called <strong>Suhoor</strong> — the Prophet ﷺ encouraged it, saying there is blessing in it. At sunset, we break the fast with dates and water, called <strong>Iftar</strong>. Then we pray Maghrib.</p><p>In the evening after Isha, Muslims gather at the mosque for a long night prayer called <strong>Taraweeh</strong> — sometimes 8 units, sometimes 20. It is voluntary, but it fills the masjid every night of Ramadan.</p><p>The last ten nights are especially sacred. One of them contains <strong>Laylat al-Qadr</strong> — the Night of Power — which the Quran describes as better than a thousand months. Muslims seek it by praying more, reading Quran more, and asking Allah for forgiveness.</p>",
+        "doToday": "Try a voluntary fast on Monday or Thursday this week. Wake up before Fajr. Eat Suhoor. Notice how the day feels different."
+      },
+      {
+        "id": "zakat",
+        "num": 5,
+        "title": "Zakat",
+        "icon": "zakat",
+        "arabic": "الزكاة",
+        "body": "<p>Zakat is the third pillar of Islam — an annual charitable payment of <strong>2.5%</strong> of certain types of wealth that a Muslim has held for one full lunar year.</p><p>This is not a tax. It is not a fee. It is a right that the poor have over the wealthy. Allah says: <em>And in their wealth there is a known right for the beggar and the deprived.</em> When a Muslim earns beyond a certain threshold (called the <em>nisab</em>), 2.5% of that wealth belongs to those in need — by Allah's command.</p><p>What is included? Cash and bank savings, gold and silver, stocks and investments, business inventory, and money owed to you that you expect to be repaid. What is excluded? Your home, your car, your furniture, and personal items — the things you actually use.</p><p>Who receives it? The Quran names eight categories, including the poor, the needy, the debt-burdened, the wayfarer, and those whose hearts are being reconciled to Islam.</p><p>Zakat is not charity from the generous. It is a pillar of the religion — every Muslim who meets the threshold must give it. And like everything else in Islam, it purifies the soul from attachment to wealth and reminds us that what we have is a trust from Allah.</p>",
+        "doToday": "If you have savings, look at the total amount. Multiply it by 0.025. That is your Zakat if the amount has been held for a year. If not yet, note the date you crossed the threshold so you can calculate next year."
+      },
+      {
+        "id": "hajj",
+        "num": 6,
+        "title": "Hajj",
+        "icon": "hajj",
+        "arabic": "الحج",
+        "body": "<p>Hajj is the fifth pillar of Islam — a pilgrimage to Makkah that every Muslim who is physically and financially able must perform <strong>once in their lifetime</strong>.</p><p>It takes place during the first ten days of <strong>Dhul-Hijjah</strong>, the final month of the Islamic calendar. Millions of Muslims from every corner of the world gather in one place, wear the same simple clothing, and stand side by side — no wealth, no status, no nationality. Just servants of Allah.</p><p>The pilgrimage includes several core rites: entering a state of Ihram, circling the Kaaba seven times (Tawaf), walking between the hills of Safa and Marwa (Sa'i), standing at the plain of <strong>Arafah</strong> for a day of prayer, stoning the symbolic pillars at Mina, and sacrificing an animal in memory of Ibrahim (peace be upon him).</p><p>The Prophet ﷺ said: <em>Whoever performs Hajj and does not commit any obscenity or transgression will return as pure as the day his mother gave birth to him.</em> It is a complete reset of the soul.</p><p>If you are new to Islam, do not worry about Hajj now. It is a lifetime obligation for those who have the means. The five daily prayers, Ramadan, and Zakat are your priorities in the beginning. But keep the intention in your heart — many Muslims save for years, and Allah sees every intention.</p>",
+        "doToday": "Read the story of Ibrahim's test in the Quran (Surah As-Saffat 37:99-113). It is the story behind Hajj — a father's obedience and a son's surrender."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I need to learn Arabic to be Muslim?",
+        "a": "No. Islam is not a religion of Arabic speakers only. You must learn the small amount of Arabic needed for prayer — the words of Al-Fatiha and a few short phrases — but you can learn it gradually, and you can start by praying in your own language until you do. The Quran has been translated into every major language on earth. Scholars say that learning the Arabic of the Quran is a lifelong pursuit, not a prerequisite."
+      },
+      {
+        "q": "What if I don't know how to pray yet?",
+        "a": "Then you are in the company of every new Muslim who ever lived. You are not expected to know everything on day one. Start with the Fajr prayer. Learn Al-Fatiha. Ask a local mosque, an online teacher, or a Muslim friend to walk you through it. Even the Prophet ﷺ told one of his Companions: 'Pray standing, and if you cannot, then sitting, and if you cannot, then on your side.' Pray what you can. Allah accepts what you offer sincerely."
+      },
+      {
+        "q": "Do I have to change my name?",
+        "a": "Only if your name has a meaning that contradicts Islam — such as a name that means 'servant of Jesus' or 'worshipper of an idol.' If your name is neutral, common, or cultural, keep it. The Prophet ﷺ changed only the names that had shirk in their meaning. A Muslim named Michael, Sarah, David, or Adam has no obligation to change anything."
+      },
+      {
+        "q": "How do I tell my family?",
+        "a": "Gently, honestly, and with love. You are not required to announce anything publicly until you feel ready. When you do tell them, speak with kindness and patience. Reassure them that Islam commands you to honour your parents, protect your relationships, and treat them with mercy. Not every family reacts well at first — many do, over time. If there is a risk of harm, it is permissible to be quiet about your faith. The Prophet ﷺ said: 'Whoever conceals his faith, Allah will conceal his faults on the Day of Judgment.'"
+      },
+      {
+        "q": "Can I still be friends with non-Muslims?",
+        "a": "Absolutely. Islam does not forbid friendship, kindness, or love toward people of other faiths. Allah says: 'Allah does not forbid you from those who do not fight you because of religion and do not expel you from your homes — from being righteous toward them and acting justly toward them.' (Al-Mumtahanah 60:8) You are not permitted to compromise your beliefs, but you are required to treat all people with honour. The Prophet ﷺ had Jewish and pagan neighbours and treated them with generosity."
+      },
+      {
+        "q": "What about my past sins?",
+        "a": "Every sin you committed before accepting Islam is wiped away. Completely. The Prophet ﷺ said: 'Islam wipes out whatever came before it.' One of his Companions said: 'When I became Muslim, my heart felt lighter than it had in my entire life.' Do not look back with guilt. Look forward with gratitude. And if you commit sins after accepting Islam, do not despair — Allah's door of forgiveness is always open for the one who turns back."
+      },
+      {
+        "q": "Where do I go for help?",
+        "a": "Start with a local mosque — most have a New Muslim support group or at least an imam who can guide you. If you don't have access to a mosque, there are many online communities and teachers who offer free classes for new Muslims. Read the Quran every day, even a few verses. Study the life of the Prophet ﷺ — his character is the best teacher. And make dua constantly: 'My Lord, guide me and keep me on the straight path.' That dua alone is enough."
+      },
+      {
+        "q": "Do I have to follow one specific madhhab (school of law)?",
+        "a": "A new Muslim does not need to choose a madhhab. The four classical schools (Hanafi, Maliki, Shafi'i, Hanbali) are all valid and represent different juristic approaches within the same religion. As a beginner, follow the basic practices taught in any reliable beginner's guide. If you encounter a specific question that matters to you — marriage, inheritance, contracts — consult a local scholar you trust. Over years, you may find yourself naturally gravitating toward one approach. That is fine. It is not an obligation."
+      }
+    ]
+  }
+      }
