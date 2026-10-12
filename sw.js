@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v9';
+const CACHE_VERSION = 'aljumuah-v10';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -61,7 +61,28 @@ const PRECACHE_URLS = [
   './images/seerah-feat-conquest.webp',
   './images/seerah-feat-farewell.webp',
   './images/seerah-feat-passing.webp',
-  './images/seerah-closing.webp'
+  './images/seerah-closing.webp',
+    './content/sahaba-1.json',
+  './content/sahaba-2.json',
+  './content/sahaba-3.json',
+  './content/sahaba-4.json',
+  './content/sahaba-5.json',
+  './images/sahaba-hero.webp',
+  './images/sahaba-01-abu-bakr.webp',
+  './images/sahaba-02-umar.webp',
+  './images/sahaba-03-uthman.webp',
+  './images/sahaba-04-ali.webp',
+  './images/sahaba-05-bilal.webp',
+  './images/sahaba-06-hamza.webp',
+  './images/sahaba-07-khalid.webp',
+  './images/sahaba-08-salman.webp',
+  './images/sahaba-09-abu-hurayrah.webp',
+  './images/sahaba-10-aisha.webp',
+  './images/sahaba-11-fatimah.webp',
+  './images/sahaba-12-zayd.webp',
+  './images/sahaba-13-sad.webp',
+  './images/sahaba-14-talha.webp',
+  './images/sahaba-15-zubayr.webp'
 ];
 
 self.addEventListener('install', (event) => {
