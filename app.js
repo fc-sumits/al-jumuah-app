@@ -4621,4 +4621,236 @@ if(window.firebase){
   firebase.auth().onAuthStateChanged((u) => {
     if(u) cloudLoadAppData();
   });
-                                             }
+                                             }// ═══════════════════════════════════════════════════════════════
+// NEW MUSLIM — hero + grid + FAQ + reader
+// Uses existing openLearnOverlay / setLearnTitle / setLearnContent
+// Zone: theme-modern (indigo)
+// ═══════════════════════════════════════════════════════════════
+
+const NEW_MUSLIM_ICONS = {
+  shahada: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 22V9a1.5 1.5 0 0 1 3 0v7"/><path d="M14 8V5.5a1.5 1.5 0 0 1 3 0V14c0 4-3 8-7 8"/><path d="M8 16v-4a1.5 1.5 0 0 1 3 0"/></svg>',
+  prayer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6"/><path d="M6 20h12"/><path d="M8 13v7"/></svg>',
+  wudu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 12a6 6 0 1 1-12 0c0-5 6-12 6-12z"/></svg>',
+  fast: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a9 9 0 1 1-11-11 7 7 0 0 0 11 11z"/><path d="M18 4l.5 1.1 1.1.5-1.1.5L18 7.2l-.5-1.1-1.1-.5 1.1-.5z"/></svg>',
+  zakat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6"/><path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/><path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/></svg>',
+  hajj: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg>'
+};
+
+const NEW_MUSLIM_CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+const NEW_MUSLIM_BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+const NEW_MUSLIM_NEXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+const newMuslimState = {
+  view: 'list',
+  lessonId: null,
+  data: null,
+  progress: {},
+  faqOpen: false,
+  faqItemOpen: -1
+};
+
+try { newMuslimState.progress = JSON.parse(localStorage.getItem('new-muslim-progress') || '{}'); } catch(e) { newMuslimState.progress = {}; }
+
+function saveNewMuslimProgress(){
+  try { localStorage.setItem('new-muslim-progress', JSON.stringify(newMuslimState.progress)); } catch(e){}
+}
+
+function isNMLessonComplete(id){ return !!newMuslimState.progress[id]; }
+
+function markNMLessonComplete(id){
+  newMuslimState.progress[id] = true;
+  saveNewMuslimProgress();
+}
+
+function getNMProgressCount(){
+  if(!newMuslimState.data) return 0;
+  let c = 0;
+  newMuslimState.data.lessons.forEach(l => { if(isNMLessonComplete(l.id)) c++; });
+  return c;
+}
+
+async function renderNewMuslim(){
+  setLearnTitle('New Muslim');
+  setLearnContent('<div class="q-loading"><div class="q-loading-spinner"></div>Loading…</div>');
+  if(!newMuslimState.data){
+    const data = await loadContent('new-muslim');
+    if(!data || !data.newMuslim){
+      setLearnContent('<div class="learn-empty">Could not load content.<br>Please check your connection.</div>');
+      return;
+    }
+    newMuslimState.data = data.newMuslim;
+  }
+  newMuslimState.view = 'list';
+  newMuslimState.lessonId = null;
+  drawNewMuslimView();
+}
+
+function drawNewMuslimView(){
+  if(newMuslimState.view === 'reader') return drawNMReader();
+  return drawNMList();
+}
+
+function drawNMList(){
+  const d = newMuslimState.data;
+  setLearnTitle('New Muslim');
+  const total = d.lessons.length;
+  const done = getNMProgressCount();
+  const pct = total ? done / total : 0;
+  const ring = 2 * Math.PI * 26;
+  const offset = ring * (1 - pct);
+
+  const ringHtml =
+    '<div class="nm-ring">' +
+      '<svg viewBox="0 0 62 62">' +
+        '<circle class="nm-ring-track" cx="31" cy="31" r="26"/>' +
+        '<circle class="nm-ring-fill" cx="31" cy="31" r="26" stroke-dasharray="' + ring + '" stroke-dashoffset="' + offset + '"/>' +
+      '</svg>' +
+      '<div class="nm-ring-count">' + done + '/' + total + '</div>' +
+    '</div>';
+
+  const heroHtml =
+    '<div class="nm-hero">' +
+      '<div class="nm-hero-img"></div>' +
+      ringHtml +
+      '<div class="nm-hero-info">' +
+        '<div class="nm-hero-title">New to Islam?</div>' +
+        '<div class="nm-hero-sub">Start here</div>' +
+      '</div>' +
+    '</div>';
+
+  const cardsHtml = '<div class="nm-grid">' + d.lessons.map(l => {
+    const complete = isNMLessonComplete(l.id);
+    return '<div class="nm-card' + (complete ? ' done' : '') + '" data-nm="' + l.id + '">' +
+      '<div class="nm-card-icon">' + (NEW_MUSLIM_ICONS[l.icon] || NEW_MUSLIM_ICONS.shahada) + '</div>' +
+      '<div class="nm-card-title">' + l.title + '</div>' +
+      '<div class="nm-card-progress">' +
+        '<span>' + (complete ? '1' : '0') + '/1</span>' +
+        '<span class="nm-dot' + (complete ? ' done' : '') + '"></span>' +
+      '</div>' +
+    '</div>';
+  }).join('') + '</div>';
+
+  const faqOpen = newMuslimState.faqOpen;
+  const faqStrip =
+    '<div class="nm-faq' + (faqOpen ? ' open' : '') + '" id="nm-faq-toggle">' +
+      '<div class="nm-faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.8c-.2 1.4-1.4 1.7-2.4 2.2"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg></div>' +
+      '<div class="nm-faq-body">' +
+        '<div class="nm-faq-title">FAQ</div>' +
+        '<div class="nm-faq-sub">Common questions and answers</div>' +
+      '</div>' +
+      '<div class="nm-faq-chev">' + NEW_MUSLIM_CHEV + '</div>' +
+    '</div>';
+
+  const faqListHtml = '<div class="nm-faq-list' + (faqOpen ? ' open' : '') + '">' +
+    d.faq.map((f, i) => {
+      const open = newMuslimState.faqItemOpen === i;
+      return '<div class="nm-faq-item' + (open ? ' open' : '') + '" data-nmfaq="' + i + '">' +
+        '<div class="nm-faq-q">' +
+          '<span>' + f.q + '</span>' +
+          '<span class="nm-faq-q-chev">' + NEW_MUSLIM_CHEV + '</span>' +
+        '</div>' +
+        '<div class="nm-faq-a">' + f.a + '</div>' +
+      '</div>';
+    }).join('') + '</div>';
+
+  setLearnContent(heroHtml + cardsHtml + faqStrip + faqListHtml);
+
+  document.querySelectorAll('[data-nm]').forEach(el => {
+    el.addEventListener('click', () => {
+      newMuslimState.view = 'reader';
+      newMuslimState.lessonId = el.dataset.nm;
+      drawNewMuslimView();
+    });
+  });
+
+  const faqToggle = document.getElementById('nm-faq-toggle');
+  if(faqToggle) faqToggle.addEventListener('click', () => {
+    newMuslimState.faqOpen = !newMuslimState.faqOpen;
+    drawNewMuslimView();
+  });
+
+  document.querySelectorAll('[data-nmfaq]').forEach(el => {
+    el.querySelector('.nm-faq-q').addEventListener('click', () => {
+      const i = parseInt(el.dataset.nmfaq);
+      newMuslimState.faqItemOpen = (newMuslimState.faqItemOpen === i) ? -1 : i;
+      drawNewMuslimView();
+    });
+  });
+
+  LEARN_BACK_HANDLERS['newMuslim'] = () => { closeLearnOverlay(); return true; };
+}
+
+function drawNMReader(){
+  const d = newMuslimState.data;
+  const lesson = d.lessons.find(l => l.id === newMuslimState.lessonId);
+  if(!lesson){ newMuslimState.view = 'list'; return drawNMList(); }
+  const idx = d.lessons.indexOf(lesson);
+  const hasPrev = idx > 0;
+  const hasNext = idx < d.lessons.length - 1;
+  const complete = isNMLessonComplete(lesson.id);
+
+  setLearnTitle(lesson.title);
+
+  const avatarHtml = '<div class="nm-reader-avatar">' + (NEW_MUSLIM_ICONS[lesson.icon] || NEW_MUSLIM_ICONS.shahada) + '</div>';
+  const titleHtml = '<div class="nm-reader-title">' + lesson.title + '</div>';
+  const arabicHtml = lesson.arabic ? '<div class="nm-reader-arabic">' + lesson.arabic + '</div>' : '';
+  const bodyHtml = '<div class="nm-reader-body">' + lesson.body + '</div>';
+  const doHtml = lesson.doToday ?
+    '<div class="nm-do-today">' +
+      '<div class="nm-do-today-label">Do this today</div>' +
+      '<div class="nm-do-today-text">' + lesson.doToday + '</div>' +
+    '</div>' : '';
+
+  const navHtml = '<div class="nm-reader-nav">' +
+    '<button class="nm-reader-btn" id="nm-prev"' + (hasPrev ? '' : ' disabled') + '>' + NEW_MUSLIM_BACK + ' Previous</button>' +
+    (hasNext
+      ? '<button class="nm-reader-btn primary" id="nm-next">Next ' + NEW_MUSLIM_NEXT + '</button>'
+      : '<button class="nm-reader-btn primary" id="nm-complete">Complete ✓</button>') +
+  '</div>';
+
+  const completeHtml = complete ? '<div class="nm-reader-complete">✓ Completed</div>' : '';
+
+  setLearnContent(avatarHtml + titleHtml + arabicHtml + bodyHtml + doHtml + navHtml + completeHtml);
+
+  const prevBtn = document.getElementById('nm-prev');
+  const nextBtn = document.getElementById('nm-next');
+  const completeBtn = document.getElementById('nm-complete');
+
+  if(prevBtn && !prevBtn.disabled) prevBtn.addEventListener('click', () => {
+    newMuslimState.lessonId = d.lessons[idx - 1].id;
+    drawNewMuslimView();
+  });
+  if(nextBtn) nextBtn.addEventListener('click', () => {
+    markNMLessonComplete(lesson.id);
+    newMuslimState.lessonId = d.lessons[idx + 1].id;
+    drawNewMuslimView();
+  });
+  if(completeBtn) completeBtn.addEventListener('click', () => {
+    markNMLessonComplete(lesson.id);
+    showToast('Lesson marked complete ✓');
+    newMuslimState.view = 'list';
+    drawNewMuslimView();
+  });
+
+  const content = document.getElementById('learn-content');
+  if(content) content.scrollTop = 0;
+
+  LEARN_BACK_HANDLERS['newMuslim'] = () => {
+    newMuslimState.view = 'list';
+    newMuslimState.lessonId = null;
+    drawNewMuslimView();
+    return true;
+  };
+}
+
+// Pill wiring — capture phase
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="newMuslim"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const overlay = document.getElementById('learn-overlay');
+  if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook');
+  openLearnOverlay('newMuslim', 'modern');
+  renderNewMuslim();
+}, true);
