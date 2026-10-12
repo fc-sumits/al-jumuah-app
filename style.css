@@ -2375,4 +2375,224 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   .seerah-reader-title{font-size:1.2rem;}
   .seerah-reader-body::first-letter{font-size:2.5rem;padding:4px 8px 0 0;}
   .seerah-reader-nav-btn{font-size:.8rem;padding:11px 10px;}
+   }/* ═══════════════════════════════════════════════════════════════
+   SAHABA STORIES — theme-companions + .sahaba-* classes
+   Emerald + gold + ivory. Distinct from traditional/modern/storybook.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   ZONE: theme-companions
+   ───────────────────────────────────────────── */
+.theme-companions{
+  --bg:#0B2420;
+  --card:#133029;
+  --card-hover:#183A31;
+  --card-border:rgba(212,175,55,0.28);
+  --card-border-glow:rgba(212,175,55,0.6);
+  --gold:#D4AF37;
+  --gold-soft:rgba(212,175,55,0.14);
+  --emerald:#2A7A5E;
+  --emerald-soft:rgba(42,122,94,0.18);
+  --text:#F0E6D2;
+  --muted:#8FA89E;
+  --muted-2:#5A6F66;
+  --divider:rgba(212,175,55,0.14);
+  --copper:#B87333;
+}
+.theme-companions .learn-topbar{background:#0B2420;border-bottom:1px solid rgba(212,175,55,0.2)}
+.theme-companions .learn-title{color:#F0E6D2}
+.theme-companions .learn-back{background:#133029;border-color:rgba(212,175,55,0.35);color:#F0E6D2}
+.theme-companions .learn-back:hover{border-color:#D4AF37;color:#D4AF37}
+.theme-companions .learn-content{background:linear-gradient(180deg,#0B2420 0%,#081915 100%)}
+
+/* ─────────────────────────────────────────────
+   WRAPPER
+   ───────────────────────────────────────────── */
+.sahaba-view{position:relative;padding-bottom:24px}
+
+/* ─────────────────────────────────────────────
+   GALLERY HERO
+   ───────────────────────────────────────────── */
+.sahaba-hero{
+  position:relative;margin:0 0 18px;border:1.5px solid var(--card-border);
+  border-radius:18px;overflow:hidden;
+  background:linear-gradient(170deg,#133029 0%,#0E2620 60%,#0B2420 100%);
+  box-shadow:0 6px 28px rgba(0,0,0,.4),inset 0 0 40px rgba(212,175,55,.06);
+}
+.sahaba-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.6' opacity='0.08'%3E%3Cpath d='M30 4 L56 30 L30 56 L4 30 Z'/%3E%3Cpath d='M30 14 L46 30 L30 46 L14 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:60px 60px;pointer-events:none;
+}
+.sahaba-hero-inner{position:relative;z-index:1;padding:26px 20px 22px;text-align:center}
+.sahaba-hero-title-ar{
+  font-family:var(--font-arabic);font-size:2.4rem;color:var(--gold);
+  line-height:1.15;direction:rtl;margin-bottom:6px;
+  text-shadow:0 0 30px rgba(212,175,55,.5),0 0 8px rgba(212,175,55,.35);
+}
+.sahaba-hero-title-en{font-family:var(--font-body);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.sahaba-hero-sub{font-family:var(--font-body);font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+.sahaba-hero-ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
+.sahaba-hero-ornament-line{height:1px;flex:1;max-width:80px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sahaba-hero-ornament-star{color:var(--gold);display:flex;align-items:center;justify-content:center}
+.sahaba-hero-ornament-star svg{width:16px;height:16px;fill:currentColor;filter:drop-shadow(0 0 6px rgba(212,175,55,.7))}
+.sahaba-hero-img-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-top:1px solid var(--card-border)}
+.sahaba-hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,48,41,.4) 0%,transparent 40%,transparent 60%,#0B2420 100%);pointer-events:none}
+.sahaba-hero-img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ─────────────────────────────────────────────
+   GALLERY GRID — 2 columns of medallion cards
+   ───────────────────────────────────────────── */
+.sahaba-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 2px}
+.sahaba-card{
+  position:relative;background:linear-gradient(160deg,#133029 0%,#0E2620 100%);
+  border:1px solid var(--card-border);border-radius:14px;
+  padding:16px 12px 14px;text-align:center;cursor:pointer;
+  transition:transform .18s ease,border-color .2s ease,box-shadow .25s ease;
+  overflow:hidden;
+}
+.sahaba-card:active{transform:scale(.96)}
+.sahaba-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(212,175,55,.2)}
+.sahaba-card.done{border-color:rgba(74,222,128,.45)}
+.sahaba-card-medallion{
+  width:76px;height:76px;margin:0 auto 12px;border-radius:50%;
+  overflow:hidden;position:relative;
+  box-shadow:0 0 0 2px rgba(212,175,55,.55),0 0 20px rgba(212,175,55,.35);
+}
+.sahaba-card-medallion img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.sahaba-card-name{font-family:var(--font-body);font-size:.9rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:4px}
+.sahaba-card-sub{font-family:var(--font-body);font-size:.68rem;color:var(--muted);letter-spacing:.02em;line-height:1.3}
+.sahaba-card-diamond{position:absolute;width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.65}
+.sahaba-card-diamond.tl{top:6px;left:6px}
+.sahaba-card-diamond.tr{top:6px;right:6px}
+.sahaba-card-diamond.bl{bottom:6px;left:6px}
+.sahaba-card-diamond.br{bottom:6px;right:6px}
+
+/* ─────────────────────────────────────────────
+   DETAIL — large centered medallion hero
+   ───────────────────────────────────────────── */
+.sahaba-detail-hero{position:relative;text-align:center;padding:14px 16px 22px}
+.sahaba-detail-medallion{
+  width:132px;height:132px;margin:0 auto 20px;border-radius:50%;
+  overflow:hidden;position:relative;
+  box-shadow:0 0 0 3px rgba(212,175,55,.6),0 0 40px rgba(212,175,55,.4),inset 0 0 30px rgba(212,175,55,.15);
+}
+.sahaba-detail-medallion::after{
+  content:'';position:absolute;inset:-14px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,175,55,.18) 0%,transparent 70%);
+  pointer-events:none;z-index:-1;
+}
+.sahaba-detail-medallion img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.sahaba-detail-name-ar{
+  font-family:var(--font-arabic);font-size:1.9rem;color:var(--gold);
+  line-height:1.2;direction:rtl;margin-bottom:6px;
+  text-shadow:0 0 24px rgba(212,175,55,.5);
+}
+.sahaba-detail-name-en{font-family:var(--font-body);font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.sahaba-detail-sub{font-family:var(--font-body);font-size:.82rem;font-style:italic;color:var(--muted);margin-bottom:14px}
+.sahaba-detail-count{font-family:var(--font-body);font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.sahaba-detail-divider{display:flex;align-items:center;justify-content:center;gap:10px;max-width:220px;margin:0 auto 8px}
+.sahaba-detail-divider-line{height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(212,175,55,.55),transparent)}
+.sahaba-detail-divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 6px rgba(212,175,55,.7)}
+
+/* ─────────────────────────────────────────────
+   DETAIL — lesson list rows
+   ───────────────────────────────────────────── */
+.sahaba-lesson-row{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 12px;border-bottom:1px solid var(--divider);
+  cursor:pointer;transition:background .2s ease;border-radius:8px;
+}
+.sahaba-lesson-row:last-child{border-bottom:none}
+.sahaba-lesson-row:hover,.sahaba-lesson-row:active{background:rgba(212,175,55,.05)}
+.sahaba-lesson-num{
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  background:rgba(212,175,55,.14);border:1.5px solid rgba(212,175,55,.5);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-body);font-size:.85rem;font-weight:700;
+}
+.sahaba-lesson-body{flex:1;min-width:0}
+.sahaba-lesson-title{font-family:var(--font-body);font-size:.92rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:3px}
+.sahaba-lesson-sub{font-family:var(--font-body);font-size:.72rem;color:var(--muted);line-height:1.3}
+.sahaba-lesson-chev{flex-shrink:0;color:var(--gold);opacity:.75}
+.sahaba-lesson-chev svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sahaba-start-pill{
+  flex-shrink:0;font-family:var(--font-body);font-size:.58rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:#0B2420;
+  background:var(--gold);padding:4px 10px;border-radius:999px;
+  box-shadow:0 2px 8px rgba(212,175,55,.4);
+}
+
+/* ─────────────────────────────────────────────
+   READER — full-page lesson view
+   ───────────────────────────────────────────── */
+.sahaba-reader{padding:8px 4px 20px}
+.sahaba-reader-badge{
+  display:table;margin:0 auto 16px;
+  font-family:var(--font-body);font-size:.6rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);
+  padding:5px 14px;border-radius:999px;
+}
+.sahaba-reader-title{font-family:var(--font-body);font-size:1.45rem;font-weight:800;color:var(--text);text-align:center;line-height:1.25;margin-bottom:8px}
+.sahaba-reader-caption{font-family:var(--font-body);font-size:.78rem;color:var(--muted);text-align:center;letter-spacing:.03em;margin-bottom:18px}
+.sahaba-reader-divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 4px}
+.sahaba-reader-divider-line{height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent)}
+.sahaba-reader-divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 6px rgba(212,175,55,.7)}
+.sahaba-reader-body{font-family:var(--font-body);font-size:.94rem;line-height:1.85;color:var(--text);padding:0 4px}
+.sahaba-reader-body p{margin-bottom:14px}
+.sahaba-reader-body p:last-child{margin-bottom:0}
+.sahaba-reader-body strong{color:var(--gold);font-weight:700}
+.sahaba-reader-body em{color:#D9CFB8;font-style:italic}
+.sahaba-reader-body::first-letter{
+  font-family:var(--font-body);font-size:3rem;font-weight:800;color:var(--gold);
+  float:left;line-height:.95;padding:6px 10px 0 0;
+  text-shadow:0 0 16px rgba(212,175,55,.5);
+}
+
+/* FROM THE SUNNAH box */
+.sahaba-sunnah{
+  margin:22px 4px;padding:18px 16px 16px;
+  background:linear-gradient(140deg,rgba(212,175,55,.09),rgba(212,175,55,.02));
+  border:2px solid var(--gold);border-radius:14px;
+  box-shadow:0 0 22px rgba(212,175,55,.18);
+}
+.sahaba-sunnah-label{font-family:var(--font-body);font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.sahaba-sunnah-arabic{font-family:var(--font-arabic);font-size:1.5rem;color:var(--gold);text-align:right;direction:rtl;line-height:1.9;margin-bottom:10px;text-shadow:0 0 18px rgba(212,175,55,.4)}
+.sahaba-sunnah-translation{font-family:var(--font-body);font-size:.85rem;font-style:italic;color:var(--text);line-height:1.7;text-align:center;margin-bottom:8px}
+.sahaba-sunnah-ref{font-family:var(--font-body);font-size:.7rem;color:var(--muted);text-align:right;letter-spacing:.04em;font-weight:600}
+
+/* DID YOU KNOW box */
+.sahaba-didyouknow{margin:20px 4px;padding:14px 16px 14px 18px;background:#133029;border-left:3px solid var(--gold);border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.sahaba-didyouknow-label{font-family:var(--font-body);font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sahaba-didyouknow-text{font-family:var(--font-body);font-size:.83rem;color:var(--text);line-height:1.7}
+
+/* LESSON TO LEARN */
+.sahaba-lesson-to-learn{margin:22px 4px;padding:16px;background:rgba(212,175,55,.07);border:1.5px solid var(--gold);border-radius:14px}
+.sahaba-lesson-to-learn-label{font-family:var(--font-body);font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sahaba-lesson-to-learn-text{font-family:var(--font-body);font-size:.88rem;font-style:italic;color:var(--text);line-height:1.7}
+
+/* Share row */
+.sahaba-share-row{display:flex;justify-content:flex-end;gap:10px;margin:22px 4px 8px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.22)}
+.sahaba-share-btn{background:transparent;border:1px solid rgba(212,175,55,.4);color:var(--gold);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease}
+.sahaba-share-btn:hover{background:rgba(212,175,55,.14);border-color:var(--gold)}
+.sahaba-share-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Responsive */
+@media (max-width:420px){
+  .sahaba-hero-title-ar{font-size:2.05rem}
+  .sahaba-hero-title-en{font-size:.98rem}
+  .sahaba-detail-name-ar{font-size:1.6rem}
+  .sahaba-detail-medallion{width:110px;height:110px}
+  .sahaba-card-medallion{width:66px;height:66px}
+  .sahaba-reader-title{font-size:1.28rem}
+  .sahaba-sunnah-arabic{font-size:1.28rem}
+}
+@media (max-width:360px){
+  .sahaba-hero-inner{padding:22px 16px 18px}
+  .sahaba-hero-title-ar{font-size:1.85rem}
+  .sahaba-card{padding:14px 8px 12px}
+  .sahaba-card-medallion{width:58px;height:58px;margin-bottom:10px}
+  .sahaba-card-name{font-size:.82rem}
+  .sahaba-reader-body::first-letter{font-size:2.5rem;padding:4px 8px 0 0}
    }
