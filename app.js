@@ -4854,3 +4854,404 @@ document.addEventListener('click', (e) => {
   openLearnOverlay('newMuslim', 'modern');
   renderNewMuslim();
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// SEERAH TIMELINE — Phase H renderer
+// Uses existing openLearnOverlay / setLearnTitle / setLearnContent
+// Zone: theme-storybook. Mixed behaviour: standard→reader, featured→reader, inline→expand
+// ═══════════════════════════════════════════════════════════════
+
+const SEERAH_STAR_SVG = '<svg viewBox="0 0 24 24"><path d="M12 1.6l2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 15l-5.2 2.7 1-5.8L3.6 7.8l5.8-.9L12 1.6z"/></svg>';
+const SEERAH_CRESCENT_SVG = '<svg viewBox="0 0 24 24"><path d="M21 14a9 9 0 1 1-11-11 7 7 0 0 0 11 11z"/></svg>';
+const SEERAH_CHEV_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+const SEERAH_CHEV_DOWN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+const SEERAH_BACK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+const SEERAH_COPY_SVG = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const SEERAH_SHARE_SVG = '<svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+
+const SEERAH_STATE = {
+  view: 'timeline',       // 'timeline' | 'reader'
+  activeId: null,
+  openInlineId: null,
+  data: null,
+  viewed: {},
+  scrollPos: 0
+};
+
+try { SEERAH_STATE.viewed = JSON.parse(localStorage.getItem('seerah-viewed') || '{}'); } catch(e) { SEERAH_STATE.viewed = {}; }
+
+function saveSeerahViewed(){
+  try { localStorage.setItem('seerah-viewed', JSON.stringify(SEERAH_STATE.viewed)); } catch(e) {}
+}
+
+function getAllSeerahMilestones(){
+  if(!SEERAH_STATE.data || !SEERAH_STATE.data.phases) return [];
+  const out = [];
+  SEERAH_STATE.data.phases.forEach(p => {
+    (p.milestones || []).forEach(m => { out.push(m); });
+  });
+  return out;
+}
+
+function findSeerahMilestone(id){
+  return getAllSeerahMilestones().find(m => m.id === id) || null;
+}
+
+function getSeerahTotal(){ return getAllSeerahMilestones().length; }
+
+function getSeerahViewedCount(){
+  return getAllSeerahMilestones().filter(m => SEERAH_STATE.viewed[m.id]).length;
+}
+
+function getCurrentSeerahPhaseLabel(){
+  if(!SEERAH_STATE.data) return '';
+  for(const p of SEERAH_STATE.data.phases){
+    const hasUnviewed = p.milestones.some(m => !SEERAH_STATE.viewed[m.id]);
+    if(hasUnviewed) return 'PHASE ' + p.num + ' · ' + p.title.toUpperCase();
+  }
+  return 'JOURNEY COMPLETE';
+}
+
+// ── Main entry ──
+async function renderSeerah(){
+  setLearnTitle('Seerah');
+  setLearnContent('<div class="seerah-loading"><div class="seerah-loading-spinner"></div>Loading the timeline…</div>');
+  LEARN_BACK_HANDLERS['seerahTimeline'] = seerahBackHandler;
+  if(!SEERAH_STATE.data){
+    const data = await loadContent('seerah');
+    if(!data || !data.seerah){
+      setLearnContent('<div class="seerah-empty">Could not load the Seerah timeline.<br>Please check your connection.</div>');
+      return;
+    }
+    SEERAH_STATE.data = data.seerah;
+  }
+  SEERAH_STATE.view = 'timeline';
+  SEERAH_STATE.activeId = null;
+  SEERAH_STATE.openInlineId = null;
+  SEERAH_STATE.scrollPos = 0;
+  drawSeerah();
+}
+
+function seerahBackHandler(){
+  if(SEERAH_STATE.view === 'reader'){
+    const scrollPos = SEERAH_STATE.scrollPos;
+    SEERAH_STATE.view = 'timeline';
+    SEERAH_STATE.activeId = null;
+    drawSeerah();
+    const content = document.getElementById('learn-content');
+    if(content && scrollPos > 0){
+      requestAnimationFrame(() => { content.scrollTop = scrollPos; });
+      SEERAH_STATE.scrollPos = 0;
+    }
+    return true;
+  }
+  closeLearnOverlay();
+  return true;
+}
+
+function drawSeerah(){
+  if(SEERAH_STATE.view === 'reader') return drawSeerahReader();
+  return drawSeerahTimeline();
+}
+
+// ── Timeline view ──
+function drawSeerahTimeline(){
+  const d = SEERAH_STATE.data;
+  const viewed = getSeerahViewedCount();
+  const total = getSeerahTotal();
+  const pct = total ? Math.round((viewed / total) * 100) : 0;
+
+  let html = '<div class="seerah-view">';
+
+  // Hero
+  html += '<div class="seerah-hero">';
+  html +=   '<div class="seerah-hero-inner">';
+  html +=     '<div class="seerah-hero-title-ar">السيرة النبوية</div>';
+  html +=     '<div class="seerah-hero-title-en">' + d.subtitle + '</div>';
+  html +=     '<div class="seerah-hero-sub">' + total + ' milestones · ' + d.phases.length + ' phases · 570 – 632 CE</div>';
+  html +=     '<div class="seerah-hero-ornament">';
+  html +=       '<div class="seerah-hero-ornament-line"></div>';
+  html +=       '<div class="seerah-hero-ornament-star">' + SEERAH_STAR_SVG + '</div>';
+  html +=       '<div class="seerah-hero-ornament-line"></div>';
+  html +=     '</div>';
+  html +=   '</div>';
+  html +=   '<div class="seerah-hero-img-wrap"><img class="seerah-hero-img" src="images/seerah-phase-1.webp" alt="Makkah valley at golden hour" loading="lazy"></div>';
+  html += '</div>';
+
+  // Progress
+  html += '<div class="seerah-progress">';
+  html +=   '<div class="seerah-progress-label">' + getCurrentSeerahPhaseLabel() + '</div>';
+  html +=   '<div class="seerah-progress-count">' + viewed + ' / ' + total + '</div>';
+  html += '</div>';
+  html += '<div class="seerah-progress-bar"><div class="seerah-progress-fill" style="width:' + pct + '%"></div></div>';
+
+  // Timeline
+  html += '<div class="seerah-timeline">';
+  html +=   '<div class="seerah-timeline-cap"></div>';
+  d.phases.forEach(p => {
+    html += renderSeerahPhase(p);
+  });
+  html +=   renderSeerahClosing();
+  html += '</div>';
+
+  html += '</div>';
+
+  setLearnContent(html);
+  attachSeerahTimelineListeners();
+}
+
+function renderSeerahPhase(phase){
+  let html = '<div class="seerah-phase-banner">';
+  html +=   '<div class="seerah-phase-image-wrap"><img class="seerah-phase-image" src="' + phase.heroImage + '" alt="' + phase.title + '" loading="lazy"></div>';
+  html +=   '<div class="seerah-phase-medallion">' + SEERAH_STAR_SVG + '</div>';
+  html +=   '<div class="seerah-phase-info">';
+  html +=     '<div class="seerah-phase-title-ar">' + phase.arabic + '</div>';
+  html +=     '<div class="seerah-phase-title-en">PHASE ' + phase.num + ' · ' + phase.title.toUpperCase() + '</div>';
+  html +=     '<div class="seerah-phase-range">' + phase.range + ' · ' + phase.milestones.length + ' milestones</div>';
+  html +=     '<div class="seerah-phase-divider"><div class="seerah-phase-divider-line"></div><div class="seerah-phase-divider-diamond"></div><div class="seerah-phase-divider-line"></div></div>';
+  html +=   '</div>';
+  html += '</div>';
+  phase.milestones.forEach(m => { html += renderSeerahCard(m); });
+  return html;
+}
+
+function renderSeerahCard(m){
+  const isFeatured = m.featured === true;
+  const isInline = m.inline === true && !isFeatured;
+  const isOpenInline = isInline && SEERAH_STATE.openInlineId === m.id;
+  const wasViewed = !!SEERAH_STATE.viewed[m.id];
+
+  let itemClass = 'seerah-item';
+  if(wasViewed) itemClass += ' dot-muted';
+
+  let cardClass = 'seerah-card';
+  if(isFeatured) cardClass += ' seerah-card-featured';
+  if(isInline) cardClass += ' seerah-card-inline';
+  if(isOpenInline) cardClass += ' open';
+
+  const chevSvg = isInline ? SEERAH_CHEV_DOWN_SVG : SEERAH_CHEV_SVG;
+
+  let html = '<div class="' + itemClass + '" data-seerah-item="' + m.id + '">';
+  html += '<div class="' + cardClass + '" data-seerah-card="' + m.id + '">';
+
+  if(isFeatured && m.image){
+    html += '<div class="seerah-card-image">';
+    html +=   '<img src="' + m.image + '" alt="' + m.title + '" loading="lazy">';
+    html +=   '<div class="seerah-featured-badge">Featured</div>';
+    html += '</div>';
+  }
+
+  html += '<div class="seerah-card-head" data-seerah-tap="' + m.id + '">';
+  html +=   '<div class="seerah-card-head-left">';
+  html +=     '<span class="seerah-year">' + m.year + '</span>';
+  html +=     '<div class="seerah-card-title">' + m.title + '</div>';
+  html +=     '<div class="seerah-card-short">' + m.short + '</div>';
+  html +=   '</div>';
+  html +=   '<div class="seerah-card-chev">' + chevSvg + '</div>';
+  html += '</div>';
+
+  if(isInline){
+    html += '<div class="seerah-card-body">';
+    html +=   '<div class="seerah-inline-body">' + m.body + '</div>';
+    if(m.takeaway){
+      html += '<div class="seerah-inline-lesson">';
+      html +=   '<div class="seerah-inline-lesson-label">★ Lesson to Learn</div>';
+      html +=   '<div class="seerah-inline-lesson-text">' + m.takeaway + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function renderSeerahClosing(){
+  let html = '<div class="seerah-closing">';
+  html +=   '<div class="seerah-closing-image-wrap"><img class="seerah-closing-image" src="images/seerah-closing.webp" alt="Masjid an-Nabawi at sunrise" loading="lazy"></div>';
+  html +=   '<div class="seerah-closing-info">';
+  html +=     '<div class="seerah-closing-arabic">صلى الله عليه وسلم</div>';
+  html +=     '<div class="seerah-closing-quote">And We have not sent you except as a mercy to the worlds.</div>';
+  html +=     '<div class="seerah-closing-ref">Quran 21:107</div>';
+  html +=     '<div class="seerah-closing-divider"><div class="seerah-closing-divider-line"></div><div class="seerah-closing-divider-star">' + SEERAH_STAR_SVG + '</div><div class="seerah-closing-divider-line"></div></div>';
+  html +=     '<div class="seerah-closing-final">Peace be upon him — until we meet.</div>';
+  html +=     '<div class="seerah-closing-ornament">' + SEERAH_CRESCENT_SVG + '</div>';
+  html +=   '</div>';
+  html += '</div>';
+  return html;
+}
+
+function attachSeerahTimelineListeners(){
+  document.querySelectorAll('[data-seerah-tap]').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.seerahTap;
+      const m = findSeerahMilestone(id);
+      if(!m) return;
+
+      if(m.inline === true && m.featured !== true){
+        // Toggle inline expand — one open at a time
+        SEERAH_STATE.openInlineId = (SEERAH_STATE.openInlineId === id) ? null : id;
+        if(SEERAH_STATE.openInlineId === id){
+          SEERAH_STATE.viewed[id] = true;
+          saveSeerahViewed();
+        }
+        const content = document.getElementById('learn-content');
+        const scroll = content ? content.scrollTop : 0;
+        drawSeerah();
+        const c2 = document.getElementById('learn-content');
+        if(c2) requestAnimationFrame(() => { c2.scrollTop = scroll; });
+      } else {
+        // Open full-page reader
+        const content = document.getElementById('learn-content');
+        SEERAH_STATE.scrollPos = content ? content.scrollTop : 0;
+        SEERAH_STATE.view = 'reader';
+        SEERAH_STATE.activeId = id;
+        SEERAH_STATE.viewed[id] = true;
+        saveSeerahViewed();
+        drawSeerah();
+      }
+    });
+  });
+}
+
+// ── Reader view (full page) ──
+function drawSeerahReader(){
+  const m = findSeerahMilestone(SEERAH_STATE.activeId);
+  if(!m){
+    SEERAH_STATE.view = 'timeline';
+    return drawSeerahTimeline();
+  }
+
+  const all = getAllSeerahMilestones();
+  const idx = all.findIndex(x => x.id === m.id);
+  const hasPrev = idx > 0;
+  const hasNext = idx < all.length - 1;
+  const isFeatured = m.featured === true;
+
+  let html = '<div class="seerah-view seerah-reader">';
+
+  if(isFeatured && m.image){
+    html += '<div class="seerah-reader-hero">';
+    html +=   '<img src="' + m.image + '" alt="' + m.title + '" loading="lazy">';
+    html +=   '<div class="seerah-reader-featured-badge">Featured</div>';
+    html += '</div>';
+  }
+
+  html += '<div class="seerah-reader-head">';
+  html +=   '<span class="seerah-reader-year">' + m.year + '</span>';
+  html +=   '<div class="seerah-reader-title">' + m.title + '</div>';
+  if(m.short) html += '<div class="seerah-reader-caption">' + m.short + '</div>';
+  html += '</div>';
+
+  html += '<div class="seerah-reader-divider"><div class="seerah-reader-divider-line"></div><div class="seerah-reader-divider-star">' + SEERAH_STAR_SVG + '</div><div class="seerah-reader-divider-line"></div></div>';
+
+  const bodyClass = isFeatured ? 'seerah-reader-body' : 'seerah-reader-body no-dropcap';
+  html += '<div class="' + bodyClass + '">' + m.body + '</div>';
+
+  if(isFeatured && m.verse && m.verse.arabic){
+    html += '<div class="seerah-verse">';
+    html +=   '<div class="seerah-verse-arabic">' + m.verse.arabic + '</div>';
+    if(m.verse.translation) html += '<div class="seerah-verse-translation">' + m.verse.translation + '</div>';
+    if(m.verse.ref) html += '<div class="seerah-verse-ref">— ' + m.verse.ref + '</div>';
+    html += '</div>';
+  }
+
+  if(isFeatured && m.didYouKnow){
+    html += '<div class="seerah-didyouknow">';
+    html +=   '<div class="seerah-didyouknow-label">Did You Know</div>';
+    html +=   '<div class="seerah-didyouknow-text">' + m.didYouKnow + '</div>';
+    html += '</div>';
+  }
+
+  if(m.takeaway){
+    html += '<div class="seerah-lesson">';
+    html +=   '<div class="seerah-lesson-label">★ Lesson to Learn</div>';
+    html +=   '<div class="seerah-lesson-text">' + m.takeaway + '</div>';
+    html += '</div>';
+  }
+
+  html += '<div class="seerah-share-row">';
+  html +=   '<button class="seerah-share-btn" data-seerah-copy="' + m.id + '" aria-label="Copy">' + SEERAH_COPY_SVG + '</button>';
+  html +=   '<button class="seerah-share-btn" data-seerah-share="' + m.id + '" aria-label="Share">' + SEERAH_SHARE_SVG + '</button>';
+  html += '</div>';
+
+  html += '<div class="seerah-reader-nav">';
+  html +=   '<button class="seerah-reader-nav-btn" data-seerah-nav="prev"' + (hasPrev ? '' : ' disabled') + '>' + SEERAH_BACK_SVG + ' Previous</button>';
+  html +=   '<button class="seerah-reader-nav-btn primary" data-seerah-nav="next"' + (hasNext ? '' : ' disabled') + '>Next ' + SEERAH_CHEV_SVG + '</button>';
+  html += '</div>';
+
+  html += '</div>';
+
+  setLearnTitle('Seerah');
+  setLearnContent(html);
+
+  const content = document.getElementById('learn-content');
+  if(content) content.scrollTop = 0;
+
+  attachSeerahReaderListeners(idx, all);
+}
+
+function attachSeerahReaderListeners(idx, all){
+  document.querySelectorAll('[data-seerah-nav]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(btn.disabled) return;
+      const dir = btn.dataset.seerahNav;
+      const newIdx = dir === 'next' ? idx + 1 : idx - 1;
+      if(newIdx < 0 || newIdx >= all.length) return;
+      const nextM = all[newIdx];
+      SEERAH_STATE.activeId = nextM.id;
+      SEERAH_STATE.viewed[nextM.id] = true;
+      saveSeerahViewed();
+      drawSeerah();
+    });
+  });
+
+  document.querySelectorAll('[data-seerah-copy]').forEach(btn => {
+    btn.addEventListener('click', () => copySeerahMilestone(btn.dataset.seerahCopy));
+  });
+
+  document.querySelectorAll('[data-seerah-share]').forEach(btn => {
+    btn.addEventListener('click', () => shareSeerahMilestone(btn.dataset.seerahShare));
+  });
+}
+
+function buildSeerahShareText(m){
+  let text = '﷽\n\n' + m.title + ' (' + m.year + ')\n\n' + m.short + '\n\n';
+  if(m.verse && m.verse.arabic){
+    text += m.verse.arabic + '\n\n';
+    if(m.verse.translation) text += '"' + m.verse.translation + '"\n';
+    if(m.verse.ref) text += '— ' + m.verse.ref + '\n\n';
+  }
+  if(m.takeaway) text += '★ ' + m.takeaway + '\n\n';
+  text += '— Seerah Timeline · Al-Jumu\'ah';
+  return text;
+}
+
+function copySeerahMilestone(id){
+  const m = findSeerahMilestone(id);
+  if(!m) return;
+  const text = buildSeerahShareText(m);
+  navigator.clipboard.writeText(text).then(() => showToast('Copied')).catch(() => showToast('Could not copy'));
+}
+
+function shareSeerahMilestone(id){
+  const m = findSeerahMilestone(id);
+  if(!m) return;
+  const text = buildSeerahShareText(m);
+  if(navigator.share){
+    navigator.share({ title: m.title, text }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => showToast('Copied')).catch(() => showToast('Could not copy'));
+  }
+}
+
+// ── Pill wiring (capture phase — overrides "coming soon") ──
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="seerahTimeline"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const overlay = document.getElementById('learn-overlay');
+  if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook');
+  openLearnOverlay('seerahTimeline', 'storybook');
+  renderSeerah();
+}, true);
