@@ -1414,4 +1414,965 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   font-size:.82rem;
   font-weight:700;
   letter-spacing:.05em;
-  }
+  }/* ═══════════════════════════════════════════════════════════════
+   SEERAH TIMELINE — Part 1 of 2
+   Base, hero, progress, timeline line, phase banners
+   Storybook zone with brighter gold override (#E8B44A)
+   ═══════════════════════════════════════════════════════════════ */
+
+.seerah-view{
+  --sg:#E8B44A;
+  --sg-glow:rgba(232,180,74,0.35);
+  --sg-soft:rgba(232,180,74,0.14);
+  --sg-line:rgba(232,180,74,0.42);
+  --sg-border:rgba(232,180,74,0.26);
+  --sg-border-strong:rgba(232,180,74,0.55);
+  --sg-card:#2C1E11;
+  --sg-bg:#1F140B;
+  --sg-text:#F5E6C8;
+  --sg-muted:#B8A382;
+  --sg-muted-2:#806B52;
+  padding-bottom:24px;
+  position:relative;
+}
+
+/* ─────────────────────────────────────────────
+   HERO PANEL
+   ───────────────────────────────────────────── */
+.seerah-hero{
+  position:relative;
+  margin:0 0 20px;
+  border:1.5px solid var(--sg-border);
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(170deg,#2C1E11 0%,#3B2818 60%,#4A3218 100%);
+  box-shadow:0 6px 28px rgba(0,0,0,.4),inset 0 0 40px rgba(232,180,74,.06);
+}
+.seerah-hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E8B44A' stroke-width='0.6' opacity='0.09'%3E%3Cpath d='M30 4 L56 30 L30 56 L4 30 Z'/%3E%3Cpath d='M30 14 L46 30 L30 46 L14 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:60px 60px;
+  pointer-events:none;
+}
+.seerah-hero-inner{
+  position:relative;
+  z-index:1;
+  padding:28px 20px 22px;
+  text-align:center;
+}
+.seerah-hero-title-ar{
+  font-family:var(--font-arabic);
+  font-size:2.6rem;
+  color:var(--sg);
+  line-height:1.15;
+  direction:rtl;
+  margin-bottom:8px;
+  text-shadow:0 0 32px rgba(232,180,74,.55),0 0 8px rgba(232,180,74,.4);
+}
+.seerah-hero-title-en{
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--sg-text);
+  letter-spacing:.01em;
+  margin-bottom:8px;
+}
+.seerah-hero-sub{
+  font-family:var(--font-body);
+  font-size:.7rem;
+  color:var(--sg-muted);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.seerah-hero-ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+.seerah-hero-ornament-line{
+  height:1px;
+  flex:1;
+  max-width:80px;
+  background:linear-gradient(90deg,transparent,var(--sg),transparent);
+}
+.seerah-hero-ornament-star{
+  color:var(--sg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.seerah-hero-ornament-star svg{
+  width:16px;height:16px;
+  fill:currentColor;
+  filter:drop-shadow(0 0 6px rgba(232,180,74,.7));
+}
+.seerah-hero-img-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-top:1px solid var(--sg-border);
+  margin:0 -1px -1px;
+}
+.seerah-hero-img-wrap::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(44,30,17,.5) 0%,transparent 35%,transparent 65%,#1F140B 100%);
+  pointer-events:none;
+}
+.seerah-hero-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ─────────────────────────────────────────────
+   PROGRESS ROW + BAR
+   ───────────────────────────────────────────── */
+.seerah-progress{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+  padding:0 4px;
+}
+.seerah-progress-label{
+  font-family:var(--font-body);
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sg);
+}
+.seerah-progress-count{
+  font-family:var(--font-body);
+  font-size:.72rem;
+  font-weight:700;
+  color:var(--sg-muted);
+  letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;
+}
+.seerah-progress-bar{
+  height:2px;
+  background:rgba(232,180,74,.16);
+  border-radius:999px;
+  overflow:hidden;
+  margin:0 4px 24px;
+}
+.seerah-progress-fill{
+  height:100%;
+  background:var(--sg);
+  border-radius:999px;
+  transition:width .5s ease;
+  box-shadow:0 0 8px rgba(232,180,74,.65);
+}
+
+/* ─────────────────────────────────────────────
+   TIMELINE WRAPPER + VERTICAL LINE
+   ───────────────────────────────────────────── */
+.seerah-timeline{
+  position:relative;
+  padding-left:38px;
+  padding-right:2px;
+}
+.seerah-timeline::before{
+  content:'';
+  position:absolute;
+  left:14px;
+  top:12px;
+  bottom:12px;
+  width:2px;
+  background:var(--sg-line);
+  border-radius:999px;
+  pointer-events:none;
+}
+.seerah-timeline-cap{
+  position:absolute;
+  left:14px;
+  top:6px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--sg);
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 0 5px rgba(232,180,74,.18),0 0 16px rgba(232,180,74,.75);
+  pointer-events:none;
+  z-index:2;
+}
+
+/* ─────────────────────────────────────────────
+   MILESTONE WRAPPER + DOT
+   ───────────────────────────────────────────── */
+.seerah-item{
+  position:relative;
+  margin-bottom:24px;
+}
+.seerah-item:last-of-type{margin-bottom:0;}
+.seerah-item::before{
+  content:'';
+  position:absolute;
+  left:-24px;
+  top:26px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--sg);
+  transform:translateX(-50%);
+  box-shadow:0 0 0 4px rgba(232,180,74,.16),0 0 12px rgba(232,180,74,.6);
+  z-index:2;
+  pointer-events:none;
+}
+.seerah-item.dot-muted::before{
+  background:rgba(232,180,74,.55);
+  box-shadow:0 0 0 3px rgba(232,180,74,.1);
+}
+
+/* ─────────────────────────────────────────────
+   PHASE BANNER
+   ───────────────────────────────────────────── */
+.seerah-phase-banner{
+  position:relative;
+  margin:34px -2px 26px -38px;
+  padding-left:0;
+  z-index:3;
+}
+.seerah-phase-banner:first-of-type{margin-top:6px;}
+.seerah-phase-image-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-top:1px solid var(--sg-border);
+  border-bottom:1px solid var(--sg-border);
+}
+.seerah-phase-image-wrap::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(31,20,11,.15) 0%,transparent 40%,transparent 60%,#1F140B 100%);
+  pointer-events:none;
+}
+.seerah-phase-image{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.seerah-phase-medallion{
+  position:absolute;
+  left:14px;
+  bottom:-10px;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:var(--sg-bg);
+  border:1.5px solid var(--sg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:translateX(-50%);
+  box-shadow:0 0 12px rgba(232,180,74,.55);
+  z-index:4;
+}
+.seerah-phase-medallion svg{
+  width:11px;height:11px;
+  fill:var(--sg);
+}
+.seerah-phase-info{
+  text-align:center;
+  padding:20px 20px 8px;
+}
+.seerah-phase-title-ar{
+  font-family:var(--font-arabic);
+  font-size:1.7rem;
+  color:var(--sg);
+  direction:rtl;
+  line-height:1.2;
+  margin-bottom:8px;
+  text-shadow:0 0 22px rgba(232,180,74,.45);
+}
+.seerah-phase-title-en{
+  font-family:var(--font-body);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--sg);
+  margin-bottom:8px;
+}
+.seerah-phase-range{
+  font-family:var(--font-body);
+  font-size:.72rem;
+  color:var(--sg-muted);
+  letter-spacing:.06em;
+}
+.seerah-phase-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:16px auto 0;
+  max-width:220px;
+}
+.seerah-phase-divider-line{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(232,180,74,.6),transparent);
+}
+.seerah-phase-divider-diamond{
+  width:6px;height:6px;
+  background:var(--sg);
+  transform:rotate(45deg);
+  box-shadow:0 0 6px rgba(232,180,74,.7);
+   }/* ─────────────────────────────────────────────
+   MILESTONE CARD (shared base)
+   ───────────────────────────────────────────── */
+.seerah-card{
+  position:relative;
+  background:var(--sg-card);
+  border:1px solid var(--sg-border);
+  border-radius:16px;
+  overflow:hidden;
+  transition:border-color .25s ease,box-shadow .3s ease,background .25s ease;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.seerah-card:active{transform:scale(.992);}
+.seerah-card-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+}
+.seerah-card-head-left{
+  flex:1;
+  min-width:0;
+}
+.seerah-year{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#1F140B;
+  background:var(--sg);
+  padding:3px 10px;
+  border-radius:999px;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+.seerah-card-title{
+  font-family:var(--font-body);
+  font-size:.98rem;
+  font-weight:700;
+  color:var(--sg-text);
+  line-height:1.28;
+  margin-bottom:4px;
+}
+.seerah-card-short{
+  font-family:var(--font-body);
+  font-size:.78rem;
+  color:var(--sg-muted);
+  line-height:1.5;
+}
+.seerah-card-chev{
+  flex-shrink:0;
+  color:var(--sg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .3s ease;
+}
+.seerah-card-chev svg{
+  width:18px;height:18px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.seerah-card.open .seerah-card-chev{transform:rotate(90deg);}
+
+/* ─────────────────────────────────────────────
+   FEATURED CARD (warm glow)
+   ───────────────────────────────────────────── */
+.seerah-card-featured{
+  border-color:var(--sg-border-strong);
+  box-shadow:0 0 26px rgba(232,180,74,.24),0 0 0 1px rgba(232,180,74,.12);
+  background:linear-gradient(160deg,#2C1E11 0%,#33220F 100%);
+}
+.seerah-card-featured .seerah-card-title{
+  font-size:1.02rem;
+  color:#FFF3D6;
+}
+.seerah-featured-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  font-family:var(--font-body);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#1F140B;
+  background:#C97B3F;
+  padding:4px 10px;
+  border-radius:999px;
+  z-index:2;
+  box-shadow:0 2px 10px rgba(201,123,63,.5);
+}
+.seerah-card-featured .seerah-card-image{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-bottom:1px solid var(--sg-border);
+}
+.seerah-card-featured .seerah-card-image::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(31,20,11,.75) 100%);
+  pointer-events:none;
+}
+.seerah-card-featured .seerah-card-image img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.seerah-card-featured .seerah-card-head{
+  padding-top:14px;
+}
+
+/* ─────────────────────────────────────────────
+   INLINE CARD (expands in place)
+   ───────────────────────────────────────────── */
+.seerah-card-inline{
+  border-color:rgba(232,180,74,.18);
+}
+.seerah-card-inline.open{
+  border-color:var(--sg);
+  box-shadow:0 0 24px rgba(232,180,74,.24);
+}
+.seerah-card-inline .seerah-card-chev svg{
+  transition:transform .3s ease;
+}
+.seerah-card-inline .seerah-card-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .45s ease,padding .3s ease;
+  padding:0 16px;
+}
+.seerah-card-inline.open .seerah-card-body{
+  max-height:1200px;
+  padding:0 16px 16px;
+}
+
+/* ─────────────────────────────────────────────
+   INLINE BODY (paragraphs + lesson mini)
+   ───────────────────────────────────────────── */
+.seerah-inline-body{
+  font-family:var(--font-body);
+  font-size:.85rem;
+  line-height:1.75;
+  color:var(--sg-text);
+  padding-top:12px;
+  border-top:1px dashed rgba(232,180,74,.22);
+  margin-top:4px;
+}
+.seerah-inline-body p{margin-bottom:10px;}
+.seerah-inline-body p:last-child{margin-bottom:0;}
+.seerah-inline-lesson{
+  margin-top:14px;
+  padding:12px 14px;
+  background:rgba(232,180,74,.08);
+  border:1px solid rgba(232,180,74,.4);
+  border-radius:12px;
+}
+.seerah-inline-lesson-label{
+  font-family:var(--font-body);
+  font-size:.6rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sg);
+  margin-bottom:6px;
+}
+.seerah-inline-lesson-text{
+  font-family:var(--font-body);
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--sg-text);
+  line-height:1.6;
+}
+
+/* ─────────────────────────────────────────────
+   READER VIEW (full page, replaces timeline)
+   ───────────────────────────────────────────── */
+.seerah-reader{padding:8px 4px 20px;}
+.seerah-reader-hero{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid var(--sg-border);
+  margin-bottom:20px;
+}
+.seerah-reader-hero::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 45%,rgba(31,20,11,.7) 100%);
+  pointer-events:none;
+}
+.seerah-reader-hero img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.seerah-reader-featured-badge{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  font-family:var(--font-body);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#1F140B;
+  background:#C97B3F;
+  padding:4px 10px;
+  border-radius:999px;
+  z-index:2;
+  box-shadow:0 2px 10px rgba(201,123,63,.55);
+}
+.seerah-reader-head{
+  padding:0 4px 18px;
+}
+.seerah-reader-year{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#1F140B;
+  background:var(--sg);
+  padding:4px 12px;
+  border-radius:999px;
+  margin-bottom:12px;
+}
+.seerah-reader-title{
+  font-family:var(--font-body);
+  font-size:1.5rem;
+  font-weight:800;
+  color:var(--sg-text);
+  line-height:1.22;
+  margin-bottom:8px;
+}
+.seerah-reader-caption{
+  font-family:var(--font-body);
+  font-size:.76rem;
+  color:var(--sg-muted);
+  letter-spacing:.04em;
+  line-height:1.5;
+}
+.seerah-reader-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:18px 4px;
+}
+.seerah-reader-divider-line{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(232,180,74,.5),transparent);
+}
+.seerah-reader-divider-star{
+  color:var(--sg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.seerah-reader-divider-star svg{
+  width:14px;height:14px;
+  fill:currentColor;
+  filter:drop-shadow(0 0 6px rgba(232,180,74,.55));
+}
+.seerah-reader-body{
+  font-family:var(--font-body);
+  font-size:.92rem;
+  line-height:1.85;
+  color:var(--sg-text);
+  padding:0 4px;
+}
+.seerah-reader-body p{margin-bottom:14px;}
+.seerah-reader-body p:last-child{margin-bottom:0;}
+.seerah-reader-body strong{color:var(--sg);font-weight:700;}
+.seerah-reader-body em{color:#E8D9B8;font-style:italic;}
+.seerah-reader-body::first-letter{
+  font-family:var(--font-body);
+  font-size:3rem;
+  font-weight:800;
+  color:var(--sg);
+  float:left;
+  line-height:.95;
+  padding:6px 10px 0 0;
+  text-shadow:0 0 16px rgba(232,180,74,.5);
+}
+.seerah-reader-body.no-dropcap::first-letter{
+  font-size:inherit;
+  font-weight:inherit;
+  color:inherit;
+  float:none;
+  padding:0;
+  line-height:inherit;
+  text-shadow:none;
+}
+
+/* ─────────────────────────────────────────────
+   VERSE BLOCK (featured only)
+   ───────────────────────────────────────────── */
+.seerah-verse{
+  margin:22px 4px;
+  padding:18px 16px 16px;
+  background:linear-gradient(140deg,rgba(232,180,74,.09),rgba(232,180,74,.02));
+  border:2px solid var(--sg);
+  border-radius:14px;
+  box-shadow:0 0 22px rgba(232,180,74,.18);
+}
+.seerah-verse-arabic{
+  font-family:var(--font-arabic);
+  font-size:1.6rem;
+  color:var(--sg);
+  text-align:right;
+  direction:rtl;
+  line-height:1.9;
+  margin-bottom:12px;
+  text-shadow:0 0 20px rgba(232,180,74,.4);
+}
+.seerah-verse-translation{
+  font-family:var(--font-body);
+  font-size:.85rem;
+  font-style:italic;
+  color:var(--sg-text);
+  line-height:1.7;
+  text-align:center;
+  margin-bottom:10px;
+}
+.seerah-verse-ref{
+  font-family:var(--font-body);
+  font-size:.7rem;
+  color:var(--sg-muted);
+  text-align:right;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+/* ─────────────────────────────────────────────
+   DID YOU KNOW (featured only)
+   ───────────────────────────────────────────── */
+.seerah-didyouknow{
+  margin:20px 4px;
+  padding:14px 16px 14px 18px;
+  background:#2C1E11;
+  border-left:3px solid var(--sg);
+  border-radius:8px;
+  box-shadow:0 2px 12px rgba(0,0,0,.25);
+}
+.seerah-didyouknow-label{
+  font-family:var(--font-body);
+  font-size:.6rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--sg);
+  margin-bottom:8px;
+}
+.seerah-didyouknow-text{
+  font-family:var(--font-body);
+  font-size:.82rem;
+  color:var(--sg-text);
+  line-height:1.7;
+}
+
+/* ─────────────────────────────────────────────
+   LESSON TO LEARN (all milestones)
+   ───────────────────────────────────────────── */
+.seerah-lesson{
+  margin:22px 4px;
+  padding:16px;
+  background:rgba(232,180,74,.07);
+  border:1.5px solid var(--sg);
+  border-radius:14px;
+}
+.seerah-lesson-label{
+  font-family:var(--font-body);
+  font-size:.6rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--sg);
+  margin-bottom:8px;
+}
+.seerah-lesson-text{
+  font-family:var(--font-body);
+  font-size:.88rem;
+  font-style:italic;
+  color:var(--sg-text);
+  line-height:1.7;
+}
+
+/* ─────────────────────────────────────────────
+   SHARE ROW (reader only)
+   ───────────────────────────────────────────── */
+.seerah-share-row{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin:22px 4px 8px;
+  padding-top:16px;
+  border-top:1px dashed rgba(232,180,74,.22);
+}
+.seerah-share-btn{
+  background:transparent;
+  border:1px solid rgba(232,180,74,.4);
+  color:var(--sg);
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+.seerah-share-btn:hover{
+  background:rgba(232,180,74,.14);
+  border-color:var(--sg);
+}
+.seerah-share-btn svg{
+  width:16px;height:16px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ─────────────────────────────────────────────
+   READER NAV (prev/next)
+   ───────────────────────────────────────────── */
+.seerah-reader-nav{
+  display:flex;
+  gap:10px;
+  margin:16px 4px 0;
+}
+.seerah-reader-nav-btn{
+  flex:1;
+  padding:13px 14px;
+  background:transparent;
+  border:1px solid rgba(232,180,74,.4);
+  color:var(--sg);
+  border-radius:12px;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .2s ease;
+}
+.seerah-reader-nav-btn:hover{
+  background:rgba(232,180,74,.12);
+  border-color:var(--sg);
+}
+.seerah-reader-nav-btn:disabled{
+  opacity:.32;
+  cursor:default;
+}
+.seerah-reader-nav-btn:disabled:hover{
+  background:transparent;
+}
+.seerah-reader-nav-btn.primary{
+  background:var(--sg);
+  color:#1F140B;
+  border-color:var(--sg);
+  box-shadow:0 4px 16px rgba(232,180,74,.35);
+}
+.seerah-reader-nav-btn.primary:hover{
+  background:#F5C55C;
+  border-color:#F5C55C;
+}
+.seerah-reader-nav-btn svg{
+  width:14px;height:14px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+     }/* ─────────────────────────────────────────────
+   CLOSING PANEL (end of timeline)
+   ───────────────────────────────────────────── */
+.seerah-closing{
+  position:relative;
+  margin:36px -2px 20px -38px;
+  padding:0;
+  text-align:center;
+}
+.seerah-closing-image-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-top:1px solid var(--sg-border);
+  border-bottom:1px solid var(--sg-border);
+}
+.seerah-closing-image-wrap::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(31,20,11,.15) 0%,transparent 40%,transparent 60%,#1F140B 100%);
+  pointer-events:none;
+}
+.seerah-closing-image{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.seerah-closing-info{
+  padding:22px 20px 10px;
+}
+.seerah-closing-arabic{
+  font-family:var(--font-arabic);
+  font-size:2.2rem;
+  color:var(--sg);
+  direction:rtl;
+  line-height:1.3;
+  margin-bottom:12px;
+  text-shadow:0 0 30px rgba(232,180,74,.5);
+}
+.seerah-closing-quote{
+  font-family:var(--font-body);
+  font-size:.88rem;
+  font-style:italic;
+  color:var(--sg-text);
+  line-height:1.65;
+  max-width:320px;
+  margin:0 auto 10px;
+}
+.seerah-closing-ref{
+  font-family:var(--font-body);
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--sg);
+  margin-bottom:20px;
+}
+.seerah-closing-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  max-width:240px;
+  margin:0 auto 18px;
+}
+.seerah-closing-divider-line{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(232,180,74,.6),transparent);
+}
+.seerah-closing-divider-star{
+  color:var(--sg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.seerah-closing-divider-star svg{
+  width:14px;height:14px;
+  fill:currentColor;
+  filter:drop-shadow(0 0 8px rgba(232,180,74,.7));
+}
+.seerah-closing-final{
+  font-family:var(--font-body);
+  font-size:.82rem;
+  color:var(--sg-muted);
+  letter-spacing:.04em;
+  margin-bottom:18px;
+  font-style:italic;
+}
+.seerah-closing-ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:12px;
+}
+.seerah-closing-ornament svg{
+  width:20px;height:20px;
+  fill:var(--sg);
+  filter:drop-shadow(0 0 10px rgba(232,180,74,.7));
+  opacity:.9;
+}
+
+/* ─────────────────────────────────────────────
+   EMPTY / LOADING STATES
+   ───────────────────────────────────────────── */
+.seerah-empty{
+  text-align:center;
+  padding:60px 24px;
+  color:var(--sg-muted-2);
+  font-family:var(--font-body);
+  font-size:.9rem;
+  line-height:1.7;
+}
+.seerah-loading{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--sg-muted);
+  font-family:var(--font-body);
+  font-size:.88rem;
+}
+.seerah-loading-spinner{
+  width:34px;height:34px;
+  border:2px solid rgba(232,180,74,.18);
+  border-top-color:var(--sg);
+  border-radius:50%;
+  margin:0 auto 14px;
+  animation:seerahSpin 1s linear infinite;
+}
+@keyframes seerahSpin{to{transform:rotate(360deg);}}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE TWEAKS
+   ───────────────────────────────────────────── */
+@media (max-width:420px){
+  .seerah-hero-title-ar{font-size:2.2rem;}
+  .seerah-hero-title-en{font-size:.98rem;}
+  .seerah-phase-title-ar{font-size:1.5rem;}
+  .seerah-reader-title{font-size:1.35rem;}
+  .seerah-closing-arabic{font-size:1.9rem;}
+  .seerah-verse-arabic{font-size:1.4rem;}
+  .seerah-timeline{padding-left:34px;}
+  .seerah-timeline::before{left:12px;}
+  .seerah-timeline-cap{left:12px;}
+  .seerah-item::before{left:-22px;}
+  .seerah-phase-medallion{left:12px;}
+  .seerah-phase-banner{margin-left:-34px;}
+  .seerah-closing{margin-left:-34px;}
+}
+@media (max-width:360px){
+  .seerah-hero-inner{padding:22px 16px 18px;}
+  .seerah-hero-title-ar{font-size:1.95rem;}
+  .seerah-card-head{padding:14px;}
+  .seerah-card-title{font-size:.92rem;}
+  .seerah-reader-title{font-size:1.2rem;}
+  .seerah-reader-body::first-letter{font-size:2.5rem;padding:4px 8px 0 0;}
+  .seerah-reader-nav-btn{font-size:.8rem;padding:11px 10px;}
+   }
