@@ -436,79 +436,61 @@ function attachQuranListeners(){
   document.querySelectorAll('.tafsir-ayah').forEach(btn => { btn.addEventListener('click', () => openTafsir(parseInt(btn.dataset.ayah))); });
   document.querySelectorAll('.word-ayah').forEach(btn => { btn.addEventListener('click', () => openWordByWord(parseInt(btn.dataset.ayah))); });
 }
-async function playAyah(ayahNum, globalAyah, autoAdvance) {
-  // Pause any currently playing audio
-  if (QURAN.audio) {
-    QURAN.audio.pause();
-    QURAN.audio = null;
-  }
-
-  // Clear previous playing states
+async function playAyah(ayahNum, globalAyah, autoAdvance){
+  if(QURAN.audio){ try{ QURAN.audio.pause(); }catch(e){} QURAN.audio = null; }
   document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
-  document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = ''; });
-
+  document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
   const verseEl = document.getElementById(`q-verse-${ayahNum}`);
-  if (verseEl) {
+  if(verseEl){
     verseEl.classList.add('playing');
-    if (QURAN.autoScroll) verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if(QURAN.autoScroll) verseEl.scrollIntoView({ behavior:'smooth', block:'center' });
     const playBtn = verseEl.querySelector('.play-ayah');
-    if (playBtn) playBtn.innerHTML = '';
+    if(playBtn) playBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>';
   }
-
   QURAN.currentAyah = ayahNum;
   localStorage.setItem('quran-last-ayah', ayahNum);
-
   const url = reciterAudioUrl(QURAN.reciter, QURAN.data.arabic.number, ayahNum, globalAyah);
   let playUrl = url;
   let isBlob = false;
-
-  try {
+  try{
     const cache = await caches.open(AUDIO_CACHE);
     const cached = await cache.match(url);
-    if (cached) {
-      const blob = await cached.blob();
-      playUrl = URL.createObjectURL(blob);
-      isBlob = true;
-      // Store the current blob URL so we can clean it up later
-      QURAN.currentBlobUrl = playUrl;
-    }
-  } catch (e) { console.log('Cache match failed:', e); }
-
+    if(cached){ const blob = await cached.blob(); playUrl = URL.createObjectURL(blob); isBlob = true; }
+  }catch(e){ console.log('cache match failed', e); }
   const audio = new Audio(playUrl);
   QURAN.audio = audio;
-
   audio.play().then(() => {
     audio.onended = () => {
-      // DO NOT revoke the URL here. Wait until the next audio starts.
-      if (autoAdvance && QURAN.playing && ayahNum < QURAN.data.arabic.numberOfAyahs) {
+      if(isBlob && playUrl.startsWith('blob:')){ try{ URL.revokeObjectURL(playUrl); }catch(e){} }
+      if(autoAdvance && QURAN.playing && ayahNum < QURAN.data.arabic.numberOfAyahs){
         const next = QURAN.data.arabic.ayahs[ayahNum];
-        if (next) {
-          // Start the next ayah. The revoke will happen inside its .then() block.
-          playAyah(ayahNum + 1, next.number, true);
+        if(next){
+          setTimeout(() => {
+            if(!QURAN.playing) return;
+            playAyah(ayahNum + 1, next.number, true);
+          }, 250);
         }
       } else {
         QURAN.playing = false;
-        // If this was the last ayah or playback stopped, revoke the last blob URL.
-        if (QURAN.currentBlobUrl) {
-          URL.revokeObjectURL(QURAN.currentBlobUrl);
-          QURAN.currentBlobUrl = null;
-        }
+        document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
+        document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
       }
     };
-    // The new audio has successfully started playing.
-    // Now it is safe to revoke the PREVIOUS blob URL.
-    if (QURAN.previousBlobUrl) {
-      URL.revokeObjectURL(QURAN.previousBlobUrl);
-    }
-    // Set the current URL as the previous one for the next cycle
-    QURAN.previousBlobUrl = isBlob ? playUrl : null;
-
-  function stopQuranAudio(){
+  }).catch((err) => {
+    console.error('Audio playback failed:', err);
+    showToast('Audio unavailable');
+    QURAN.playing = false;
+    document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
+    document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
+  });
+}
+function stopQuranAudio(){
   QURAN.playing = false;
-  if(QURAN.audio){ QURAN.audio.pause(); QURAN.audio = null; }
+  if(QURAN.audio){ try{ QURAN.audio.pause(); }catch(e){} QURAN.audio = null; }
   document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
   document.querySelectorAll('.play-ayah').forEach(b => { b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>'; });
-                     }const TODAY_DATA = {
+}
+const TODAY_DATA = {
   verse: [
     {arabic:'فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ', translation:'So remember Me; I will remember you. And be grateful to Me and do not deny Me.', ref:'Al-Baqarah 2:152'},
     {arabic:'لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا', translation:'Allah does not burden a soul beyond what it can bear.', ref:'Al-Baqarah 2:286'},
@@ -785,8 +767,7 @@ document.querySelectorAll('#mode-select button').forEach(btn => {
     stopQuranAudio();
     if(QURAN.data) renderSurah();
   });
-});
-const HADITH_COLLECTIONS = [
+});const HADITH_COLLECTIONS = [
   {id:'eng-bukhari',name:'Sahih al-Bukhari',arabic:'صحيح البخاري',count:7554,desc:'The most authentic collection, compiled by Imam al-Bukhari.'},
   {id:'eng-muslim',name:'Sahih Muslim',arabic:'صحيح مسلم',count:7360,desc:'The second most authentic collection, compiled by Imam Muslim.'},
   {id:'eng-nasai',name:'Sunan an-Nasa\'i',arabic:'سنن النسائي',count:5679,desc:'One of the six canonical books.'},
