@@ -1,0 +1,176 @@
+{
+  "sahaba": [
+    {
+      "id": "khalid",
+      "num": 7,
+      "name": "Khalid ibn al-Walid",
+      "arabic": "خالد بن الوليد",
+      "subtitle": "Sayfullah · The Sword of Allah",
+      "image": "images/sahaba-07-khalid.webp",
+      "tier": "mujahid",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Fiercest Enemy of Islam",
+          "thumb": "enemy",
+          "body": "<p>Before he became the sword of Islam, Khalid ibn al-Walid was the sword drawn against it. He was one of the greatest warriors of the Quraysh — a master horseman, a brilliant tactician, and a man the Muslims feared on the battlefield more than any other.</p><p>At the Battle of Uhud, it was Khalid who spotted the fatal gap left by the Muslim archers on the hill. It was Khalid who wheeled his cavalry around the Muslim flank. It was Khalid who turned a Muslim victory into a Muslim disaster — killing seventy of the Prophet's ﷺ companions in a single afternoon.</p><p>He was the man the Muslims most feared. And he was the man who would soon become the sword they most trusted.</p>",
+          "takeaway": "Allah chooses His servants from wherever He wills — the fiercest enemy can become the most loyal protector."
+        },
+        {
+          "num": 2,
+          "title": "The Peace of Hudaybiyyah — His Turning",
+          "thumb": "turning",
+          "body": "<p>After the Treaty of Hudaybiyyah, Khalid began to think. He had watched the Prophet ﷺ from the outside for years. He had seen the Muslims lose battles and win them. He had seen the Prophet's ﷺ dignity in victory and patience in defeat. And something in him stirred.</p><p>He went to the Prophet ﷺ alone — not as a prisoner, not as a defeated man, but as a seeker. He said: 'By Allah, it is clear to me that you are on the truth. I have fought against you — I want to fight for you.'</p><p>The Prophet ﷺ welcomed him. He said: 'Khalid, I knew even as you fought against me that you were destined to fight for Islam.' The man who had been the Muslim army's most dangerous enemy became one of its most beloved generals in a single moment of honesty.</p>",
+          "takeaway": "Sometimes the greatest warrior is the man who finally stops fighting the wrong battle."
+        },
+        {
+          "num": 3,
+          "title": "The Battle of Mu'tah",
+          "thumb": "mutah",
+          "body": "<p>At the Battle of Mu'tah, the Muslims faced the Byzantine army for the first time — a huge force, vastly larger than their own. Zayd ibn Harithah was appointed commander. When he fell, Ja'far ibn Abi Talib took the banner. When Ja'far fell, Abdullah ibn Rawahah took it. When Abdullah fell, the Muslim army stood leaderless, facing annihilation.</p><p>Then Khalid ibn al-Walid — newly Muslim — stepped forward. He picked up the banner, reorganised the troops, and did something brilliant: instead of pressing forward, he withdrew the army in good order, saving thousands of Muslim lives. He did not win — but he did not lose. The Prophet ﷺ named him <em>Sayfullah</em> — the Sword of Allah.</p><p>From that day, every major Muslim battle in Arabia, Iraq, and Syria was led or shaped by Khalid ibn al-Walid.</p>",
+          "takeaway": "Sometimes the greatest victory is not winning — it is standing your ground, and leaving with your army intact."
+        },
+        {
+          "num": 4,
+          "title": "The Conquests",
+          "thumb": "conquests",
+          "body": "<p>Under Abu Bakr and Umar, Khalid ibn al-Walid led the Muslim armies into Persia, Iraq, Syria, and Palestine. His tactical genius became legendary. He won battles against overwhelming odds — at Walaja, at Yarmouk, at Ajnadayn — using terrain, feints, forced marches, and breathtaking audacity.</p><p>At the Battle of Yarmouk, he faced the full might of the Byzantine Empire. The Muslims were outnumbered many times over. Khalid reorganised the army, took personal command of the cavalry, and shattered the Roman lines in one of the most decisive battles of history. Syria was opened to Islam.</p><p>Wherever he went, cities fell — but the people did not. Khalid's armies were disciplined. They did not loot, they did not terrorise, and they kept their promises. The people of Damascus, of Homs, of Aleppo — many of them welcomed the Muslims as liberators from the Roman yoke.</p>",
+          "takeaway": "A great general wins battles — but a great commander wins the respect of the people he is sent to."
+        },
+        {
+          "num": 5,
+          "title": "The Dismissal",
+          "thumb": "dismissal",
+          "body": "<p>When Umar ibn al-Khattab became Caliph, he dismissed Khalid from overall command. It was not because Khalid had failed — he had won nearly every battle he was given. But Umar feared the people would start to trust Khalid more than they trusted Allah. He wanted the Ummah to know that victories came from Allah, not from any single man.</p><p>Khalid was replaced — and he obeyed instantly. He did not complain, did not question, and did not hesitate. He handed over his command, took up a smaller position, and continued to fight under whoever was appointed over him. He said: <em>'I do not fight for Umar — I fight for the One who sent Muhammad with the truth.'</em></p><p>That was the true greatness of Khalid — not his victories, but his humility. He could command an army, and he could obey one, in the same lifetime.</p>",
+          "didYouKnow": "Khalid ibn al-Walid fought over a hundred battles and never lost one. But the quality that made him truly great was his willingness to hand over command without a word of protest.",
+          "takeaway": "The measure of a warrior is not how he wields power — it is how he lets go of it."
+        },
+        {
+          "num": 6,
+          "title": "His Passing and Legacy",
+          "thumb": "legacy",
+          "body": "<p>Khalid ibn al-Walid died in 642 CE in Homs, Syria — in his own bed, not on the battlefield. He wept as he realised this, saying: <em>'I have fought in so many battles that there is not a spot on my body without a scar from a sword or an arrow — and yet here I am, dying like a camel in its stall. Let the cowards weep.'</em></p><p>He had wanted to die a martyr. Allah had decreed otherwise. But Allah had already given him a legacy no martyr could match — the man who had turned the entire Middle East toward Islam by the strength of his sword.</p><p>He left behind the advice he had given his troops: <em>'Remember that you are always in the presence of Allah. Do not be the reason your brothers fall. Keep your prayer. Beware of arrogance — it destroys armies.'</em></p><p>The Prophet ﷺ had said: <em>'What an excellent servant of Allah Khalid is — a sword among the swords Allah has drawn against the disbelievers.'</em></p>",
+          "dialogue": {
+            "arabic": "نِعْمَ عَبْدُ اللَّهِ خَالِدٌ، سَيْفٌ مِنْ سُيُوفِ اللَّهِ",
+            "translation": "What an excellent servant of Allah Khalid is — a sword among the swords Allah has drawn.",
+            "ref": "Bukhari"
+          },
+          "takeaway": "A life is not measured by how it ends, but by what it defended while it lasted."
+        }
+      ]
+    },
+    {
+      "id": "salman",
+      "num": 8,
+      "name": "Salman al-Farsi",
+      "arabic": "سلمان الفارسي",
+      "subtitle": "The Seeker of Truth · Salman the Persian",
+      "image": "images/sahaba-08-salman.webp",
+      "tier": "sabiqun",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "Born in Persia",
+          "thumb": "persia",
+          "body": "<p>Salman was born into a wealthy Persian family in the city of Isfahan. His father was the village chief and a priest of the Zoroastrian temple — the fire-worshippers of Persia. Salman was raised to tend the sacred fire, and his father loved him more than anything in the world.</p><p>But Salman's heart was restless. He saw the fire burning in the temple and wondered how a thing you could light and extinguish could be a god. He asked the priests questions they could not answer. He looked at the world and sensed that there must be something truer beneath it.</p><p>Then, one day, he met a Christian monk. The monk spoke to him about a God who was not confined to a temple — a God who had sent prophets to guide humanity. Salman was transfixed. This was something his heart recognised.</p>",
+          "takeaway": "The deepest seekers are not satisfied with what they inherit — they search until they find what their soul was built for."
+        },
+        {
+          "num": 2,
+          "title": "The Long Journey",
+          "thumb": "journey",
+          "body": "<p>Salman left his family and his homeland. He travelled with the monk, learned from him, and when that monk died, he travelled further — from one Christian monastery to another, always asking: <em>'Who is the most learned man of his time in this matter?'</em> Each monk sent him to the next. Each step took him further east, further west, but always toward something he could not yet name.</p><p>The final monk told him something extraordinary: 'There is a prophet about to appear in Arabia. He will be from the tribe of the Quraysh, in a city between two lava fields. He will be known for his honesty. He will be sent with the religion of Ibrahim. If you can reach him, reach him.'</p><p>Salman set out. But he was captured on the way and sold into slavery. He was bought and sold, sold again, and eventually ended up in Yathrib — a slave working on a date palm grove. He had travelled across the known world, only to be trapped in the very city where the Prophet ﷺ would one day arrive.</p>",
+          "takeaway": "Allah moves His seekers along unexpected paths — sometimes the longest road is the shortest way to where you were always meant to be."
+        },
+        {
+          "num": 3,
+          "title": "Meeting the Prophet ﷺ",
+          "thumb": "meeting",
+          "body": "<p>When the Prophet ﷺ migrated to Madinah, Salman heard the news and knew — with an instinct trained by years of searching — that this was the man the monk had spoken of. He began to test him.</p><p>He brought food to the Prophet ﷺ, saying it was charity. The Prophet ﷺ gave it to his companions but did not eat from it himself. Salman thought: <em>Charity is not for the Prophet — that is one sign.</em></p><p>Next, he brought food as a gift. The Prophet ﷺ ate from it and shared it. Salman thought: <em>The Prophet accepts gifts and shares them — that is the second sign.</em></p><p>Then, watching carefully, he saw the mark he had been told about — a small seal of prophethood between the Prophet's ﷺ shoulders. And with that, Salman's heart settled. Years of searching, thousands of miles, chains, years of slavery — all of it had led him here. He embraced Islam.</p>",
+          "dialogue": {
+            "arabic": "مِنْ أَبِي الْأَنْبِيَاءِ إِبْرَاهِيمَ",
+            "translation": "Salman is from the family of the Prophet Ibrahim — he was a true seeker of the truth.",
+            "ref": "Traditional"
+          },
+          "didYouKnow": "The Prophet ﷺ freed Salman from slavery by paying his ransom with date palms and gold. Salman became one of the most beloved companions, and the Prophet ﷺ said of him: 'Salman is from the Ahl al-Bayt (my family).'",
+          "takeaway": "Truth is not measured by where you come from — it is recognised by the heart that has been searching for it all along."
+        },
+        {
+          "num": 4,
+          "title": "The Trench",
+          "thumb": "trench",
+          "body": "<p>When the Quraysh and their allies laid siege to Madinah in 5 AH, the Prophet ﷺ consulted his companions on how to defend the city. They had no army that could match the ten thousand at the gates. Salman — remembering the siege tactics of his Persian homeland — proposed something no Arab had ever seen: <strong>dig a trench</strong>.</p><p>Dig a wide, deep trench along the exposed northern flank of Madinah. Force the enemy to cross it, and cut them off. The Prophet ﷺ loved the plan. The Muslims dug day and night for days, in the cold of winter, without proper food or clothing. The Prophet ﷺ dug alongside them, singing poems of encouragement.</p><p>The enemy arrived. They found the trench and were stunned. Their horses could not cross it. Their archers could not dislodge the Muslims. For nearly a month they faced off across the ditch — until Allah sent a violent storm that tore their tents and scattered their armies. The siege collapsed. The city survived.</p>",
+          "didYouKnow": "Salman al-Farsi's idea of the trench was the first use of defensive trench warfare in Arabian history — the Muslims learned from the world and let Allah do the rest.",
+          "takeaway": "Wisdom does not belong to any one nation — every nation carries gifts that Allah has placed there for the Ummah to use."
+        },
+        {
+          "num": 5,
+          "title": "The Governor of Mada'in",
+          "thumb": "governor",
+          "body": "<p>After the Prophet's ﷺ passing, Salman served the Muslim Ummah in many ways. Umar ibn al-Khattab appointed him as governor of Mada'in — the ancient capital of Persia, near what is now Baghdad. It was the fallen capital of the empire Salman had once been raised in.</p><p>He came to the city not in a crown or on a horse, but carrying his few belongings, dressed in the simple cloth of a slave, sitting on a small pack. The people of Mada'in came out to meet their new governor and did not recognise him. Some mockingly asked where the governor was — and he answered: 'I am Salman. What you see is what I am.'</p><p>He served with the same simplicity he had learned from the Prophet ﷺ. He gave no special privileges to himself, he lived off his own labour, and he was known for his generosity. When he left the governorship, he left with almost nothing — because he gave everything away to the poor.</p>",
+          "takeaway": "The title of a leader is not the shape of his authority — it is the humility with which he carries it."
+        },
+        {
+          "num": 6,
+          "title": "His Legacy",
+          "thumb": "legacy",
+          "body": "<p>Salman al-Farsi died around 656 CE in Mada'in. He was approximately eighty years old — an elder among the companions. He had left his homeland, his family, and his wealth. He had been a slave for years. He had crossed the known world searching for the truth. And Allah had honoured him with something greater than any of it.</p><p>The Prophet ﷺ said of him: <em>'Salman is a sea that cannot be emptied.'</em> His wisdom, his knowledge, and his generosity were deeper than anyone could measure.</p><p>The Muslims of Madinah said of him: 'Salman never missed a single day of fasting after the Prophet ﷺ taught him to observe the fasts of the moon. He never gave away less than half of what he had. He never stood on the battlefield without praying first.'</p><p>He was the Persian who became a Muslim, the slave who became a governor, the seeker who became a beacon — a testament to the truth that all souls, from every corner of the earth, are called to the same door.</p>",
+          "takeaway": "A life lived in the search of truth is a life already in the presence of the One who guides."
+        }
+      ]
+    },
+    {
+      "id": "abu-hurayrah",
+      "num": 9,
+      "name": "Abu Hurayrah",
+      "arabic": "أبو هريرة",
+      "subtitle": "The Keeper of the Sunnah · Father of the Kitten",
+      "image": "images/sahaba-09-abu-hurayrah.webp",
+      "tier": "sabiqun",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Boy and His Cat",
+          "thumb": "cat",
+          "body": "<p>Before he was known as the greatest narrator of hadith in Islamic history, Abu Hurayrah was a young man from the Daws tribe of Yemen. His name was Abdur-Rahman ibn Sakhr, and he was known to be gentle, playful, and poor.</p><p>He loved animals — especially a small cat he kept as a companion. He would carry it with him everywhere, feed it from his own food, and play with it in the evenings. Because of this, the people of Madinah gave him a nickname: <strong>Abu Hurayrah</strong> — the father of the little cat.</p><p>He kept the nickname all his life. The Prophet ﷺ himself used it, and today fourteen centuries later, millions of Muslims know him by that affectionate name — a reminder that small kindnesses can become part of a person's legacy forever.</p>",
+          "didYouKnow": "Because the Prophet ﷺ saw the gentleness of Abu Hurayrah with animals, he once said: 'A woman was forgiven for a dog she watered — and a woman was punished for a cat she tied up.' The hadith is often linked to Abu Hurayrah's love for cats.",
+          "takeaway": "The kindness you show to the smallest creation of Allah is written in the heavens — small acts carry eternal weight."
+        },
+        {
+          "num": 2,
+          "title": "Coming to Islam",
+          "thumb": "coming",
+          "body": "<p>Abu Hurayrah accepted Islam in the year 7 AH, when the Muslims were preparing for the expedition to Khaybar. He came from Yemen to Madinah, seeking the Prophet ﷺ. His mother came with him — but she had not yet accepted Islam. He would bring her food, care for her, and pray for her guidance every single day.</p><p>One day, she said something about the Prophet ﷺ that hurt Abu Hurayrah deeply. He went to the Prophet ﷺ in tears and said: 'O Messenger of Allah, pray for my mother.' The Prophet ﷺ raised his hands and prayed. Abu Hurayrah went home — and found the door slightly open. His mother heard his footsteps and called out: 'Come in.' He entered, and she said: 'I bear witness that there is no god but Allah, and that Muhammad is His Messenger.'</p><p>Abu Hurayrah wept again — this time from joy. He ran back to the Prophet ﷺ with the news, and the Prophet ﷺ thanked Allah and prayed for the entire household.</p>",
+          "takeaway": "Dua for a loved one is the most powerful tool you have — keep knocking on the door of Allah for those you care about."
+        },
+        {
+          "num": 3,
+          "title": "The Hungry Years",
+          "thumb": "hungry",
+          "body": "<p>When Abu Hurayrah came to Madinah, he had nothing. He joined the Ahl as-Suffah — the poorest of the believers, who lived in a shaded section of the Prophet's mosque. They had no family, no home, no wealth. They spent their days learning and their nights in prayer.</p><p>Abu Hurayrah would sometimes faint from hunger. He would tie a stone to his stomach to ease the ache. Once, the Prophet ﷺ gave a bowl of milk and told him to take it to the Ahl as-Suffah. Abu Hurayrah took it — but on the way, he grew so thirsty that he almost drank it himself. He knew the Prophet ﷺ had told him to give it to the others. He resisted — and delivered the milk. The Prophet ﷺ smiled at him and said: 'Drink, Abu Hurayrah.'</p><p>Later, when Islam spread and wealth came to the Muslims, Abu Hurayrah would remember those days with fondness. He said: <em>'I came to the Prophet ﷺ with nothing. I ate the food of the Ahl as-Suffah. I learned in the shade of the mosque. And Allah gave me more than any man could have earned.'</em></p>",
+          "takeaway": "Poverty is not the absence of wealth — it is the presence of hunger — and Allah sees every fasting heart."
+        },
+        {
+          "num": 4,
+          "title": "The Sponge of the Ummah",
+          "thumb": "sponge",
+          "body": "<p>Because he had no family, no land, and no business, Abu Hurayrah had something no other companion had: <strong>time</strong>. While other companions worked in the markets and managed their households, Abu Hurayrah stayed with the Prophet ﷺ from dawn until night. He watched how the Prophet ﷺ walked, how he sat, how he ate, how he spoke to children, how he treated the poor.</p><p>And he memorised — everything. The Prophet's ﷺ words, his actions, his silences, his approvals, his disapprovals. He would later say: <em>'No one memorised as many hadith as I did, because I stayed with the Prophet ﷺ day and night.'</em></p><p>Once, the companions complained that Abu Hurayrah narrated too many hadith — that no one else remembered as much as he did. The Prophet ﷺ said: 'The ones who raise this concern are busy with their markets and their property.' He then prayed for Abu Hurayrah and spread his cloak over his chest, saying: 'Spread your cloak.' Abu Hurayrah did — and the Prophet ﷺ filled it with something no eye could see and no ear could hear. Abu Hurayrah said afterward: <em>'I never forgot a single hadith after that.'</em></p>",
+          "didYouKnow": "Abu Hurayrah narrated over 5,000 hadith — more than any other companion. His diligence as a young man preserved the words of the Prophet ﷺ for every generation after him.",
+          "takeaway": "Time given to sacred learning is never wasted — it becomes the foundation of everything the Ummah will build on."
+        },
+        {
+          "num": 5,
+          "title": "His Legacy",
+          "thumb": "legacy",
+          "body": "<p>Abu Hurayrah lived for nearly fifty years after the Prophet ﷺ. He spent those years teaching — narrating the hadith he had preserved, spreading the Sunnah of the Prophet ﷺ to the next generation. He was strict with himself. He would fast often and pray long into the night. He would weep during recitation.</p><p>He was appointed as a judge in Bahrain by Umar ibn al-Khattab, and then returned to Madinah to teach. His students included the greatest scholars of the generation — many of the founders of the schools of Islamic law were trained by his memory.</p><p>He died around 681 CE, aged 78, in Madinah. He was buried in al-Baqi, beside so many of the companions he had served. His legacy was not built on wealth or conquest. It was built on memory — on the willingness to sit at the feet of the Prophet ﷺ and simply receive what he was given.</p><p>Every Muslim today who prays according to the Sunnah, who fasts as the Prophet ﷺ fasted, who treats others as the Prophet ﷺ treated them — follows the pathway that Abu Hurayrah preserved for them. He is the keeper of the Sunnah, and his name is remembered in every line of a hadith.</p>",
+          "dialogue": {
+            "arabic": "احْفَظْ عَلَيَّ حَدِيثِي",
+            "translation": "Preserve my hadith, and Allah will preserve you.",
+            "ref": "Traditional"
+          },
+          "takeaway": "The one who takes the time to learn what is sacred carries a trust for all who will come after."
+        }
+      ]
+    }
+  ]
+}
