@@ -2375,6 +2375,33 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   .seerah-reader-title{font-size:1.2rem;}
   .seerah-reader-body::first-letter{font-size:2.5rem;padding:4px 8px 0 0;}
   .seerah-reader-nav-btn{font-size:.8rem;padding:11px 10px;}
+     lesson-to-learn{margin:22px 4px;padding:16px;background:rgba(212,175,55,.07);border:1.5px solid var(--gold);border-radius:14px}
+.sahaba-lesson-to-learn-label{font-family:var(--font-body);font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sahaba-lesson-to-learn-text{font-family:var(--font-body);font-size:.88rem;font-style:italic;color:var(--text);line-height:1.7}
+
+/* Share row */
+.sahaba-share-row{display:flex;justify-content:flex-end;gap:10px;margin:22px 4px 8px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.22)}
+.sahaba-share-btn{background:transparent;border:1px solid rgba(212,175,55,.4);color:var(--gold);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease}
+.sahaba-share-btn:hover{background:rgba(212,175,55,.14);border-color:var(--gold)}
+.sahaba-share-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Responsive */
+@media (max-width:420px){
+  .sahaba-hero-title-ar{font-size:2.05rem}
+  .sahaba-hero-title-en{font-size:.98rem}
+  .sahaba-detail-name-ar{font-size:1.6rem}
+  .sahaba-detail-medallion{width:110px;height:110px}
+  .sahaba-card-medallion{width:66px;height:66px}
+  .sahaba-reader-title{font-size:1.28rem}
+  .sahaba-sunnah-arabic{font-size:1.28rem}
+}
+@media (max-width:360px){
+  .sahaba-hero-inner{padding:22px 16px 18px}
+  .sahaba-hero-title-ar{font-size:1.85rem}
+  .sahaba-card{padding:14px 8px 12px}
+  .sahaba-card-medallion{width:58px;height:58px;margin-bottom:10px}
+  .sahaba-card-name{font-size:.82rem}
+  .sahaba-reader-body::first-letter{font-size:2.5rem;padding:4px 8px 0 0}
    }/* ═══════════════════════════════════════════════════════════════
    SAHABA STORIES — theme-companions + .sahaba-* classes
    Emerald + gold + ivory. Distinct from traditional/modern/storybook.
@@ -2398,7 +2425,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   --muted-2:#5A6F66;
   --divider:rgba(212,175,55,0.14);
   --copper:#B87333;
-    --sg:#D4AF37;
+  --sg:#D4AF37;
   --sg-glow:rgba(212,175,55,0.35);
   --sg-border:rgba(212,175,55,0.4);
 }
@@ -2439,8 +2466,8 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .sahaba-hero-ornament-line{height:1px;flex:1;max-width:80px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .sahaba-hero-ornament-star{color:var(--gold);display:flex;align-items:center;justify-content:center}
 .sahaba-hero-ornament-star svg{width:16px;height:16px;fill:currentColor;filter:drop-shadow(0 0 6px rgba(212,175,55,.7))}
-.sahaba-hero-img-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-top:1px solid var(--card-border)}
-.sahaba-hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,48,41,.4) 0%,transparent 40%,transparent 60%,#0B2420 100%);pointer-events:none}
+.sahaba-hero-img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden}
+.sahaba-hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,48,41,.15) 0%,transparent 25%,transparent 75%,#0B2420 100%);pointer-events:none}
 .sahaba-hero-img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ─────────────────────────────────────────────
