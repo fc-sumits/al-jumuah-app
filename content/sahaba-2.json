@@ -1,0 +1,186 @@
+{
+  "sahaba": [
+    {
+      "id": "ali",
+      "num": 4,
+      "name": "Ali ibn Abi Talib",
+      "arabic": "علي بن أبي طالب",
+      "subtitle": "Asadullah · The Lion of Allah",
+      "image": "images/sahaba-04-ali.webp",
+      "tier": "rashidun",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "Raised in the Prophet's House",
+          "thumb": "raised",
+          "body": "<p>Ali ibn Abi Talib was born in Makkah around 600 CE — the son of Abu Talib, the man who had raised the Prophet ﷺ himself. When famine struck Makkah and Abu Talib's family struggled, the Prophet ﷺ and his uncle Abbas each took one of Abu Talib's children to raise. The Prophet ﷺ chose Ali.</p><p>So Ali grew up in the Prophet's house — not as a nephew, but as a son. He saw the Prophet's ﷺ character up close: the way he prayed before dawn, the way he spoke gently, the way he treated the poor and the powerful the same. Ali absorbed it all.</p><p>When the Prophet ﷺ received the revelation and told Ali about it, the boy accepted without hesitation. He was ten years old. He was the first child to believe, the first of the youth of Makkah to enter Islam.</p>",
+          "takeaway": "The person who grows up watching a good example becomes a good example — character is caught, not just taught."
+        },
+        {
+          "num": 2,
+          "title": "The Night of the Hijrah",
+          "thumb": "hijrah",
+          "body": "<p>When the Prophet ﷺ planned the Hijrah, the Quraysh had decided to kill him. On the night he was to leave, he needed to disappear from his own bed. He called Ali and gave him two tasks: sleep in his bed as a decoy, and stay behind in Makkah to return the trusts the Prophet ﷺ held on behalf of others.</p><p>Ali did both without question. He slept in the Prophet's bed as the assassins stood outside, and he remained in Makkah for days afterward, returning every trust — including those of the very men who had tried to kill the Prophet ﷺ. Then he left on foot, alone, across the desert, and joined the Prophet ﷺ in Madinah.</p><p>This was the character of Ali: faithful with the small things, brave with the heavy ones, always quietly serving.</p>",
+          "takeaway": "Being trusted with a task is an honour — being faithful to it is the test."
+        },
+        {
+          "num": 3,
+          "title": "Husband of Fatimah",
+          "thumb": "fatimah",
+          "body": "<p>When Fatimah (RA) — the Prophet's ﷺ beloved daughter — came of age, several companions asked for her hand. The Prophet ﷺ did not favour wealth or status. He asked Fatimah, and she chose Ali ibn Abi Talib.</p><p>They were married in the second year after the Hijrah. Theirs was a simple marriage — no gold, no great dowry. The Prophet ﷺ told them to sell Ali's armour for the dowry and to buy essential household items with the rest. And Allah blessed this union with children: Hasan, Husayn, Zaynab, and Umm Kulthum.</p><p>Ali and Fatimah remained one of the most beloved families in the Ummah — the household of the Prophet ﷺ, the house that carried his lineage, the house whose love is a mark of faith for every Muslim.</p>",
+          "didYouKnow": "The Prophet ﷺ said of Fatimah and Ali's household: 'The love of the Ahl al-Bayt (the Prophet's family) is a sign of faith, and their hatred is a sign of hypocrisy.'",
+          "takeaway": "The simplest marriage built on love and faith creates the deepest legacy."
+        },
+        {
+          "num": 4,
+          "title": "The Banner at Khaybar",
+          "thumb": "khaybar",
+          "body": "<p>At the Battle of Khaybar, the Muslims were facing their last hostile stronghold in Arabia. The fortresses were formidable, built into rocky hills and layered in defence. After days of fighting, the Prophet ﷺ announced: <em>'Tomorrow I will give the banner to a man who loves Allah and His Messenger — and whom Allah and His Messenger love.'</em></p><p>The companions spent the night wondering who it would be. In the morning, the Prophet ﷺ called for Ali, who was recovering from an eye infection. He placed his blessed saliva on Ali's eyes and the pain vanished. Then he gave Ali the banner and said: <em>'Advance gently. Call them to Islam first. If even one person is guided through you, it is better for you than a herd of red camels.'</em></p><p>Ali led the assault and the fortresses fell. He did not charge in swinging — he went in inviting. That was his style: fierce when needed, gentle whenever possible.</p>",
+          "dialogue": {
+            "arabic": "لَأَنْ يَهْدِيَ اللَّهُ بِكَ رَجُلًا وَاحِدًا خَيْرٌ لَكَ مِنْ حُمْرِ النَّعَمِ",
+            "translation": "If Allah guides one man through you, it is better for you than a herd of red camels.",
+            "ref": "Bukhari & Muslim"
+          },
+          "takeaway": "Even the strongest warriors are measured not by what they destroy, but by what they guide."
+        },
+        {
+          "num": 5,
+          "title": "The Fourth Caliph",
+          "thumb": "caliph",
+          "body": "<p>After Uthman (RA) was martyred, the Muslim Ummah was in turmoil. The companions gathered and pledged allegiance to Ali as the fourth Caliph. He did not seek the position — he accepted it under enormous pressure, hoping to steady the Ummah.</p><p>But his caliphate was the most troubled of the four. Some Muslims refused to accept him. Civil conflict broke out — Muslim fighting Muslim for the first time in history. Ali led with wisdom and patience, but the wounds had already opened. He kept the state alive through years of strife.</p><p>Through all of it, he remained the same Ali — a man of prayer, of learning, of deep devotion. He lived simply. He judged fairly. He wept during recitation. He wrote letters that would still be studied fourteen centuries later. His Nahj al-Balagha — his sermons, letters, and sayings — remain one of the masterpieces of Arabic wisdom literature.</p>",
+          "takeaway": "Sometimes you are given leadership not to conquer, but to carry — and carrying is harder than conquering."
+        },
+        {
+          "num": 6,
+          "title": "The Scholar of the Ummah",
+          "thumb": "scholar",
+          "body": "<p>Ali was not only a warrior and a caliph — he was one of the greatest scholars of the companions. The Prophet ﷺ said of him: <em>'I am the city of knowledge and Ali is its gate.'</em> His rulings on Islamic law, his understanding of the Quran, and his mastery of Arabic rhetoric were unmatched among his generation.</p><p>After the Prophet's ﷺ passing, when disputes arose between companions, it was often Ali's understanding that clarified the way. Umar ibn al-Khattab would consult him on the hardest cases. He would say: 'If not for Ali, Umar would have perished.'</p><p>He was the teacher of a generation of scholars — Ibn Abbas, Ibn Mas'ud, and many others were shaped by his instruction. His legacy of knowledge is embedded in every school of Islamic thought.</p>",
+          "takeaway": "Knowledge is not just what you know — it is what you give away, so the Ummah after you can carry it forward."
+        },
+        {
+          "num": 7,
+          "title": "His Humility",
+          "thumb": "humility",
+          "body": "<p>Ali was caliph — but he patched his own sandals. He walked through the marketplace unrecognised by merchants who did not know the Caliph's face. He visited the sick at night. He divided his time by day, allocating days to different groups of people so everyone had access to justice.</p><p>Once, a Jewish man came to him with a dispute. The case went before a Muslim judge, who called Ali by the honorary title 'O Amir al-Mu'minin.' Ali stopped him. He said: 'Call me by my name — let the case be decided on equal footing.' And when the judge decided in favour of the Jewish man, Ali accepted the ruling without question.</p><p>This was the Ali the Ummah remembers — powerful in the world, humble before Allah, equal before the law.</p>",
+          "takeaway": "True honour is not the title the world gives you — it is the character you keep when no one is watching."
+        },
+        {
+          "num": 8,
+          "title": "The Martyrdom and Legacy",
+          "thumb": "legacy",
+          "body": "<p>In 661 CE, while praying Fajr in the mosque of Kufa, Ali was struck on the head with a poisoned sword by Abdurrahman ibn Amr, a Kharijite fanatic. He lingered for two days, giving final instructions: to treat his killer justly, to feed him and give him water as long as he lived, and to not punish his family for his crime.</p><p>He was buried in Najaf, and his grave became a site of remembrance for Muslims around the world.</p><p>Ali ibn Abi Talib — the first child to believe, the Prophet's ﷺ cousin and son-in-law, the warrior at Khaybar, the scholar of the Ummah, the humblest caliph — left behind a legacy that no single label can hold. He was the embodiment of the verse: <em>'Allah is pleased with them, and they are pleased with Him.'</em></p><p>The Prophet ﷺ said of him: <em>'Whoever I am his mawla, Ali is his mawla.'</em> And he said: <em>'You are to me as Harun was to Musa, except that there is no prophet after me.'</em></p>",
+          "dialogue": {
+            "arabic": "أَنْتَ مِنِّي بِمَنْزِلَةِ هَارُونَ مِنْ مُوسَى",
+            "translation": "You are to me in the position of Harun to Musa — except that there is no prophet after me.",
+            "ref": "Bukhari & Muslim"
+          },
+          "takeaway": "A life of humility, courage, and knowledge is a life that speaks across centuries."
+        }
+      ]
+    },
+    {
+      "id": "bilal",
+      "num": 5,
+      "name": "Bilal ibn Rabah",
+      "arabic": "بلال بن رباح",
+      "subtitle": "The First Muezzin · The Voice of Islam",
+      "image": "images/sahaba-05-bilal.webp",
+      "tier": "sabiqun",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Abyssinian Slave",
+          "thumb": "slave",
+          "body": "<p>Bilal ibn Rabah was born in Makkah, the son of an Abyssinian slave. In the society of pre-Islamic Arabia, he was at the very bottom — a slave of the Banu Jumah tribe, owned by a cruel man named Umayyah ibn Khalaf. He had no rights, no freedom, no future.</p><p>And yet Bilal had something no master could take — a heart. He was known for his honesty and his dignity. Even in chains, he carried himself with a quiet nobility that made people notice him.</p><p>When he heard the message of Islam — that Allah was One, that all men were equal before Him, that the slave and the master stood the same in His sight — Bilal believed immediately. He saw in Islam what the world had denied him all his life: <strong>worth</strong>.</p>",
+          "takeaway": "A person's true worth is not measured by the world's chains, but by the heart's freedom."
+        },
+        {
+          "num": 2,
+          "title": "The Torture",
+          "thumb": "torture",
+          "body": "<p>When Umayyah discovered that Bilal had accepted Islam, he was enraged. He ordered Bilal dragged out into the scorching desert, stripped of clothing, and pinned down on the burning sand with heavy stones placed on his chest. Then he commanded his men to whip him.</p><p>They demanded that Bilal reject the faith of Muhammad ﷺ and return to the idols. And Bilal — his body burning, his skin split, his life barely held together — answered with one word, over and over: <strong>أحد · أحد</strong> — <em>One. One.</em> One God. One Lord. One Allah. No matter what they did to him.</p><p>Abu Bakr as-Siddiq heard what was happening. He came to Umayyah and offered to buy Bilal's freedom. Umayyah, exhausted by the torture that Bilal endured without breaking, agreed to sell. Abu Bakr paid, freed him, and gave him no further obligation. Bilal walked free — his first taste of liberty, given by the brotherhood of faith.</p>",
+          "dialogue": {
+            "arabic": "أَحَدٌ، أَحَدٌ",
+            "translation": "One — One.",
+            "ref": "Ibn Hisham"
+          },
+          "didYouKnow": "Abu Bakr paid for Bilal's freedom with his own wealth — and asked nothing in return. When asked why, he said simply: 'I did it for the sake of Allah.'",
+          "takeaway": "When the body is crushed, the tongue can still hold the truth — and that is the deepest freedom."
+        },
+        {
+          "num": 3,
+          "title": "The First Muezzin",
+          "thumb": "muezzin",
+          "body": "<p>After the Hijrah, the Muslims of Madinah needed a way to call people to prayer. At first they used a simple call, but the Prophet ﷺ wanted something distinctive — a call that would ring across the rooftops and reach every ear.</p><p>Then the adhan was revealed — the call to prayer with its words of takbir and tawhid. And the Prophet ﷺ chose Bilal to be the first to give it.</p><p>Picture the moment: the man who had been pinned to burning sand and mocked as a slave, now climbing the highest roof in Madinah, his voice rising into the dawn sky: <em>Allahu Akbar, Allahu Akbar...</em> The call for prayer, echoing over the city that had just welcomed the Prophet ﷺ.</p><p>The Prophet ﷺ said: 'Bilal's voice is one of the voices that Allah loves.' And when the Muslims later conquered Makkah, the Prophet ﷺ ordered Bilal to climb the Kaaba itself and give the adhan from its roof. The slave who had once cried 'Ahad' under stones now called the world to prayer from the holiest house on earth.</p>",
+          "takeaway": "The world's hierarchy means nothing to Allah — the one who was lowest becomes the voice that calls the highest."
+        },
+        {
+          "num": 4,
+          "title": "The Prophet's Silence",
+          "thumb": "silence",
+          "body": "<p>Once, during a dispute, someone mocked Bilal's mother, calling her a bad name about her Abyssinian heritage. The Prophet ﷺ heard it. He turned to the man and said: <em>'Are you taunting him about his mother? You are a man who still has some of the jahiliyyah in you.'</em></p><p>The man wept and asked forgiveness. Bilal — always gentle — forgave him. And the Prophet ﷺ taught the Ummah, through this incident: <strong>racism has no place in Islam</strong>. Every Muslim — Arab, Abyssinian, Persian, Roman — is a brother or sister to every other, and the only thing that raises one above another is taqwa — the awareness of Allah.</p><p>When the Prophet ﷺ passed away, Bilal could not bring himself to give the adhan anymore. His voice would break with grief. He left Madinah and lived in Syria and Palestine, refusing to call prayer in the city where the Prophet ﷺ was no longer present to hear it.</p>",
+          "didYouKnow": "After the Prophet ﷺ passed away, Bilal stopped calling the adhan. Years later, he returned to Madinah and gave the call one final time — and the entire city wept.",
+          "takeaway": "Islam erased the world's hierarchy of blood and tribe — the only thing left standing is the awareness of Allah."
+        },
+        {
+          "num": 5,
+          "title": "His Legacy",
+          "thumb": "legacy",
+          "body": "<p>Bilal ibn Rabah lived the rest of his life in Syria, serving Islam, raising his family, and remaining faithful until the end. He died sometime around 640 CE — during the caliphate of Umar or Abu Bakr — and was buried in Damascus.</p><p>His name is spoken by every muezzin of every masjid on earth, five times a day, from Morocco to Indonesia. Whenever the adhan rises, the memory of Bilal rises with it.</p><p>The Prophet ﷺ once said: <em>'Four people are the first to be called to Paradise — Bilal from Abyssinia, Salman from Persia, Suhayb from Rome, and Umar from the Quraysh.'</em> And he said: <em>'I saw Bilal in a dream, walking in Paradise.'</em></p><p>Bilal — the slave who became the voice of the Ummah, whose 'Ahad' echoed through chains into eternity.</p>",
+          "takeaway": "The most profound legacies are not built by those with the easiest lives — but by those who stayed faithful in the hardest ones."
+        }
+      ]
+    },
+    {
+      "id": "hamza",
+      "num": 6,
+      "name": "Hamza ibn Abdul-Muttalib",
+      "arabic": "حمزة بن عبد المطلب",
+      "subtitle": "Lion of Allah · Master of Martyrs",
+      "image": "images/sahaba-06-hamza.webp",
+      "tier": "sabiqun",
+      "lessons": [
+        {
+          "num": 1,
+          "title": "The Fierce Warrior",
+          "thumb": "warrior",
+          "body": "<p>Hamza ibn Abdul-Muttalib was the Prophet's ﷺ uncle — the brother of his father Abdullah and of Abu Talib. He was also, in the days before Islam, one of the strongest and most respected men of Makkah. A hunter, a wrestler, a warrior — he was the kind of man whose presence alone made others step back.</p><p>He was not a man of politics. He did not scheme. He did not chase the wealth of the Quraysh. He lived freely, hunted freely, and answered to no one but himself. But when insulted, he never backed down. Everyone in Makkah knew: Hamza would fight.</p><p>Before Islam, he was not hostile to the Prophet ﷺ. He was simply indifferent — absorbed in his own life, in the hunts and the freedom of the desert. But Allah had other plans for his strength.</p>",
+          "takeaway": "The strongest men are often the ones who have not yet found the right cause — but when they do, they change the world."
+        },
+        {
+          "num": 2,
+          "title": "The Rage of the Lion",
+          "thumb": "rage",
+          "body": "<p>Hamza returned one day from a hunting trip. Someone told him what had happened while he was gone: Abu Jahl — the chief of the Quraysh's hostility — had found the Prophet ﷺ sitting near the Kaaba and had insulted him, mocked his message, and physically harassed him. No one had stopped it.</p><p>Hamza did not go home first. He did not gather his wits. He did not weigh his options. He walked straight into the gathering place of the Quraysh, found Abu Jahl, and struck him with his hunting bow across the head, drawing blood.</p><p>Then he said the words that would change his life and the entire course of Islamic history: <strong>'Do you insult him while I follow his religion? I am on his path — I bear witness that he is the Messenger of Allah.'</em></p><p>The Quraysh's leaders were stunned. Hamza had just declared his Islam in the most public, most dangerous way possible. And nobody dared to touch him.</p>",
+          "dialogue": {
+            "arabic": "أَنَا عَلَى دِينِهِ، أَشْهَدُ أَنَّهُ رَسُولُ اللَّهِ",
+            "translation": "I am on his religion — I bear witness that he is the Messenger of Allah.",
+            "ref": "Ibn Hisham"
+          },
+          "takeaway": "Sometimes faith arrives not with study but with fury — a heart moved so deeply that it moves without waiting to be convinced."
+        },
+        {
+          "num": 3,
+          "title": "The Shield of the Ummah",
+          "thumb": "shield",
+          "body": "<p>Hamza's Islam changed the balance in Makkah overnight. Before, the Muslims were weak and hunted. After Hamza declared his faith, the Quraysh could no longer harass the Prophet ﷺ with the same impunity. Hamza became the community's shield.</p><p>He walked the streets of Makkah next to the Prophet ﷺ. When enemies approached, they saw Hamza and turned away. He did not start fights — but he made sure no one dared to. He lent his strength to a community that had none, and in doing so, he gave the early Muslims something no wealth could buy: <strong>space to breathe</strong>.</p><p>He also set an example of humility. He did not use his strength to dominate the Muslims — he used it to protect them. He served as a warrior, as a protector, and as one of the closest of the Prophet's ﷺ companions.</p>",
+          "takeaway": "The best strength is the strength that shields the weak — not the strength that simply dominates."
+        },
+        {
+          "num": 4,
+          "title": "Uhud — The Day of Blood",
+          "thumb": "uhud",
+          "body": "<p>On the day of Uhud, Hamza fought like a man who had already surrendered his life for Allah. He was the standard-bearer of the Muslim army, cutting through the enemy lines, urging the believers forward.</p><p>And then, from a hidden position, a spear came flying. It was thrown by Wahshi — a slave hired by the Quraysh specifically to hunt Hamza down. The spear struck Hamza's chest and he fell — the Lion of Allah, slain not in single combat but by a coward's spear from a hidden hand.</p><p>When the Prophet ﷺ found Hamza's body, he wept. And the woman Hind — the wife of Abu Sufyan, whose father had been killed at Badr — had ordered her slave to bring Hamza's liver, so great was her hatred. When the Prophet ﷺ saw what had been done to his uncle's body, he stood over him and grieved.</p><p>Hamza was the master of the martyrs — the greatest of those who died for Islam on the battlefield.</p>",
+          "takeaway": "The bravest of men can still fall — but a life given for the sake of Allah is not lost. It is sealed."
+        },
+        {
+          "num": 5,
+          "title": "His Legacy",
+          "thumb": "legacy",
+          "body": "<p>Hamza ibn Abdul-Muttalib was buried at Uhud, where he fell, in 625 CE. His grave remains a place of remembrance to this day. The Prophet ﷺ mourned him deeply — he called him <em>Asadullah</em> — the Lion of Allah.</p><p>Wahshi — the man who killed him — later accepted Islam. He came to the Prophet ﷺ and asked whether there could be forgiveness for what he had done. The Prophet ﷺ told him: 'Can you try to hide your face from me? I cannot look at you without remembering.' And yet, Wahshi was accepted as a Muslim.</p><p>Years later, Wahshi himself would fight in the Muslim army — and it was he who killed Musaylimah the false prophet. Allah's justice is subtle and complete: the hand that took Hamza's life would later end a greater enemy of Islam.</p><p>Hamza's legacy is one word: <strong>courage</strong>. The courage to stand for truth, even when standing means facing the whole world.</p>",
+          "takeaway": "A martyr's death is not the end of a life — it is the beginning of an eternal one."
+        }
+      ]
+    }
+  ]
+}
