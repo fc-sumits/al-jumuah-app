@@ -2398,6 +2398,9 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   --muted-2:#5A6F66;
   --divider:rgba(212,175,55,0.14);
   --copper:#B87333;
+    --sg:#D4AF37;
+  --sg-glow:rgba(212,175,55,0.35);
+  --sg-border:rgba(212,175,55,0.4);
 }
 .theme-companions .learn-topbar{background:#0B2420;border-bottom:1px solid rgba(212,175,55,0.2)}
 .theme-companions .learn-title{color:#F0E6D2}
