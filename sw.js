@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v7';
+const CACHE_VERSION = 'aljumuah-v8';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -42,7 +42,9 @@ const PRECACHE_URLS = [
 './images/prophet-22-zakariyya.webp',
 './images/prophet-23-yahya.webp',
 './images/prophet-24-isa.webp',
-'./images/prophet-25-muhammad.webp'
+'./images/prophet-25-muhammad.webp',
+'./content/new-muslim.json',
+  './images/new-muslim-hero.webp'
 ];
 
 self.addEventListener('install', (event) => {
