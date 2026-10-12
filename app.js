@@ -511,25 +511,7 @@ async function playAyah(ayahNum, globalAyah, autoAdvance) {
     if (QURAN.currentBlobUrl) {
       URL.revokeObjectURL(QURAN.currentBlobUrl);
       QURAN.currentBlobUrl = null;
-    }
-  });
-      }
-  QURAN.currentAyah = ayahNum;
-  localStorage.setItem('quran-last-ayah', ayahNum);
-  const url = reciterAudioUrl(QURAN.reciter, QURAN.data.arabic.number, ayahNum, globalAyah);
-  let playUrl = url;
-  try{ const cache = await caches.open(AUDIO_CACHE); const cached = await cache.match(url); if(cached){ const blob = await cached.blob(); playUrl = URL.createObjectURL(blob); } }
-  catch(e){}
-  const audio = new Audio(playUrl);
-  QURAN.audio = audio;
-  audio.play().then(() => {
-    audio.onended = () => {
-      if(playUrl.startsWith('blob:')) URL.revokeObjectURL(playUrl);
-      if(autoAdvance && QURAN.playing && ayahNum < QURAN.data.arabic.numberOfAyahs){
-        setTimeout(() => { if(!QURAN.playing) return; const next = QURAN.data.arabic.ayahs[ayahNum]; if(next) playAyah(ayahNum + 1, next.number, true); }, 250);
-      } else QURAN.playing = false;
-    };
-  }).catch(() => { showToast('Audio unavailable'); QURAN.playing = false; });
+   });
 }
 function stopQuranAudio(){
   QURAN.playing = false;
