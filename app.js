@@ -5255,3 +5255,354 @@ document.addEventListener('click', (e) => {
   openLearnOverlay('seerahTimeline', 'storybook');
   renderSeerah();
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// SAHABA STORIES — renderer (parallel copy of Prophets, theme-companions)
+// Loads content/sahaba-1.json .. sahaba-5.json
+// Uses existing openLearnOverlay / setLearnTitle / setLearnContent / LEARN_BACK_HANDLERS
+// ═══════════════════════════════════════════════════════════════
+
+const SAHABA_FILES = ['sahaba-1', 'sahaba-2', 'sahaba-3', 'sahaba-4', 'sahaba-5'];
+
+const SAHABA_STAR_SVG = '<svg viewBox="0 0 24 24"><path d="M12 1.6l2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 15l-5.2 2.7 1-5.8L3.6 7.8l5.8-.9L12 1.6z"/></svg>';
+const SAHABA_CHEV_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+const SAHABA_BACK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+const SAHABA_COPY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const SAHABA_SHARE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+
+const sahabaState = {
+  view: 'gallery',
+  sahabaId: null,
+  lessonNum: 1,
+  data: null,
+  progress: {}
+};
+
+try { sahabaState.progress = JSON.parse(localStorage.getItem('sahaba-progress') || '{}'); } catch(e) { sahabaState.progress = {}; }
+
+function saveSahabaProgress(){
+  try { localStorage.setItem('sahaba-progress', JSON.stringify(sahabaState.progress)); } catch(e){}
+}
+
+function isSahabaLessonComplete(id, num){
+  return (sahabaState.progress[id] || []).indexOf(num) !== -1;
+}
+
+function markSahabaLessonComplete(id, num){
+  if(!sahabaState.progress[id]) sahabaState.progress[id] = [];
+  if(sahabaState.progress[id].indexOf(num) === -1){
+    sahabaState.progress[id].push(num);
+    saveSahabaProgress();
+  }
+}
+
+function getSahabaProgressPct(sahaba){
+  const total = sahaba.lessons.length;
+  const done = (sahabaState.progress[sahaba.id] || []).length;
+  return total ? Math.round((done / total) * 100) : 0;
+}
+
+function getSahabaById(id){
+  return (sahabaState.data || []).find(s => s.id === id);
+}
+
+async function loadAllSahaba(){
+  if(sahabaState.data) return sahabaState.data;
+  const results = await Promise.allSettled(SAHABA_FILES.map(f => loadContent(f)));
+  const merged = [];
+  results.forEach(r => {
+    if(r.status === 'fulfilled' && r.value && Array.isArray(r.value.sahaba)){
+      merged.push(...r.value.sahaba);
+    }
+  });
+  merged.sort((a, b) => a.num - b.num);
+  sahabaState.data = merged;
+  return merged;
+}
+
+async function renderSahaba(){
+  setLearnTitle('Companions');
+  setLearnContent('<div class="sahaba-loading"><div class="sahaba-loading-spinner"></div>Loading the companions…</div>');
+  LEARN_BACK_HANDLERS['sahabaStories'] = sahabaBackHandler;
+  await loadAllSahaba();
+  sahabaState.view = 'gallery';
+  sahabaState.sahabaId = null;
+  sahabaState.lessonNum = 1;
+  drawSahabaView();
+}
+
+function sahabaBackHandler(){
+  if(sahabaState.view === 'reader'){
+    sahabaState.view = 'detail';
+    drawSahabaView();
+    return true;
+  }
+  if(sahabaState.view === 'detail'){
+    sahabaState.view = 'gallery';
+    sahabaState.sahabaId = null;
+    drawSahabaView();
+    return true;
+  }
+  closeLearnOverlay();
+  return true;
+}
+
+function drawSahabaView(){
+  if(sahabaState.view === 'reader') return drawSahabaReader();
+  if(sahabaState.view === 'detail') return drawSahabaDetail();
+  return drawSahabaGallery();
+}
+
+// ── Gallery (main list) ──
+function drawSahabaGallery(){
+  const sahaba = sahabaState.data || [];
+  setLearnTitle('Companions');
+  if(!sahaba.length){
+    setLearnContent('<div class="learn-empty">Could not load the companions.<br>Please check your connection.</div>');
+    return;
+  }
+
+  let totalLessons = 0;
+  sahaba.forEach(s => { totalLessons += s.lessons.length; });
+
+  let html = '<div class="sahaba-view">';
+
+  // Hero
+  html += '<div class="sahaba-hero">';
+  html +=   '<div class="sahaba-hero-inner">';
+  html +=     '<div class="sahaba-hero-title-ar">الصحابة الكرام</div>';
+  html +=     '<div class="sahaba-hero-title-en">The Noble Companions</div>';
+  html +=     '<div class="sahaba-hero-sub">' + sahaba.length + ' companions · ' + totalLessons + ' lessons</div>';
+  html +=     '<div class="sahaba-hero-ornament">';
+  html +=       '<div class="sahaba-hero-ornament-line"></div>';
+  html +=       '<div class="sahaba-hero-ornament-star">' + SAHABA_STAR_SVG + '</div>';
+  html +=       '<div class="sahaba-hero-ornament-line"></div>';
+  html +=     '</div>';
+  html +=   '</div>';
+  html +=   '<div class="sahaba-hero-img-wrap"><img class="sahaba-hero-img" src="images/sahaba-hero.webp" alt="Makkah valley at dawn" loading="lazy"></div>';
+  html += '</div>';
+
+  // Gallery grid
+  html += '<div class="sahaba-grid">';
+  sahaba.forEach(s => {
+    const done = (sahabaState.progress[s.id] || []).length;
+    const complete = done >= s.lessons.length;
+    html += '<div class="sahaba-card' + (complete ? ' done' : '') + '" data-sahaba="' + s.id + '">';
+    html +=   '<span class="sahaba-card-diamond tl"></span>';
+    html +=   '<span class="sahaba-card-diamond tr"></span>';
+    html +=   '<span class="sahaba-card-diamond bl"></span>';
+    html +=   '<span class="sahaba-card-diamond br"></span>';
+    html +=   '<div class="sahaba-card-medallion"><img src="' + s.image + '" alt="' + s.name + '" loading="lazy"></div>';
+    html +=   '<div class="sahaba-card-name">' + s.name + '</div>';
+    html +=   '<div class="sahaba-card-sub">' + s.subtitle + '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '</div>';
+
+  setLearnContent(html);
+
+  document.querySelectorAll('[data-sahaba]').forEach(el => {
+    el.addEventListener('click', () => {
+      sahabaState.view = 'detail';
+      sahabaState.sahabaId = el.dataset.sahaba;
+      sahabaState.lessonNum = 1;
+      drawSahabaView();
+    });
+  });
+}
+
+// ── Detail (companion hero + lesson list) ──
+function drawSahabaDetail(){
+  const s = getSahabaById(sahabaState.sahabaId);
+  if(!s){ sahabaState.view = 'gallery'; return drawSahabaGallery(); }
+
+  setLearnTitle(s.name);
+
+  const total = s.lessons.length;
+  const done = (sahabaState.progress[s.id] || []).length;
+
+  let html = '<div class="sahaba-view">';
+
+  html += '<div class="sahaba-detail-hero">';
+  html +=   '<div class="sahaba-detail-medallion"><img src="' + s.image + '" alt="' + s.name + '" loading="lazy"></div>';
+  html +=   '<div class="sahaba-detail-name-ar">' + s.arabic + '</div>';
+  html +=   '<div class="sahaba-detail-name-en">' + s.name + '</div>';
+  html +=   '<div class="sahaba-detail-sub">' + s.subtitle + '</div>';
+  html +=   '<div class="sahaba-detail-count">' + total + ' LESSONS · ' + done + ' COMPLETED</div>';
+  html +=   '<div class="sahaba-detail-divider">';
+  html +=     '<div class="sahaba-detail-divider-line"></div>';
+  html +=     '<div class="sahaba-detail-divider-diamond"></div>';
+  html +=     '<div class="sahaba-detail-divider-line"></div>';
+  html +=   '</div>';
+  html += '</div>';
+
+  s.lessons.forEach((l, i) => {
+    const complete = isSahabaLessonComplete(s.id, l.num);
+    const isFirstIncomplete = !complete && s.lessons.findIndex(x => !isSahabaLessonComplete(s.id, x.num)) === i;
+    html += '<div class="sahaba-lesson-row" data-sahaba-lesson="' + l.num + '">';
+    html +=   '<div class="sahaba-lesson-num">' + l.num + '</div>';
+    html +=   '<div class="sahaba-lesson-body">';
+    html +=     '<div class="sahaba-lesson-title">' + l.title + '</div>';
+    html +=     '<div class="sahaba-lesson-sub">' + (l.thumb ? l.thumb.replace(/-/g, ' ') : ('Lesson ' + l.num)) + '</div>';
+    html +=   '</div>';
+    if(isFirstIncomplete && i === 0){
+      html += '<div class="sahaba-start-pill">Start</div>';
+    } else {
+      html += '<div class="sahaba-lesson-chev">' + SAHABA_CHEV_SVG + '</div>';
+    }
+    html += '</div>';
+  });
+
+  html += '</div>';
+
+  setLearnContent(html);
+
+  document.querySelectorAll('[data-sahaba-lesson]').forEach(el => {
+    el.addEventListener('click', () => {
+      sahabaState.view = 'reader';
+      sahabaState.lessonNum = parseInt(el.dataset.sahabaLesson);
+      drawSahabaView();
+    });
+  });
+}
+
+// ── Reader (full-page lesson) ──
+function drawSahabaReader(){
+  const s = getSahabaById(sahabaState.sahabaId);
+  if(!s){ sahabaState.view = 'gallery'; return drawSahabaGallery(); }
+  const lesson = s.lessons.find(l => l.num === sahabaState.lessonNum);
+  if(!lesson){ sahabaState.view = 'detail'; return drawSahabaDetail(); }
+  const total = s.lessons.length;
+  const idx = s.lessons.indexOf(lesson);
+  const hasPrev = idx > 0;
+  const hasNext = idx < total - 1;
+
+  setLearnTitle(s.name.split(' ')[0]);
+
+  let html = '<div class="sahaba-view sahaba-reader">';
+
+  html += '<div class="sahaba-reader-badge">Lesson ' + lesson.num + ' of ' + total + '</div>';
+  html += '<div class="sahaba-reader-title">' + lesson.title + '</div>';
+  if(lesson.sub) html += '<div class="sahaba-reader-caption">' + lesson.sub + '</div>';
+  else html += '<div class="sahaba-reader-caption">' + s.name + ' · Lesson ' + lesson.num + '</div>';
+
+  html += '<div class="sahaba-reader-divider">';
+  html +=   '<div class="sahaba-reader-divider-line"></div>';
+  html +=   '<div class="sahaba-reader-divider-diamond"></div>';
+  html +=   '<div class="sahaba-reader-divider-line"></div>';
+  html += '</div>';
+
+  html += '<div class="sahaba-reader-body">' + lesson.body + '</div>';
+
+  // From the Sunnah (dialogue) block
+  if(lesson.dialogue && (lesson.dialogue.arabic || lesson.dialogue.translation)){
+    html += '<div class="sahaba-sunnah">';
+    html +=   '<div class="sahaba-sunnah-label">★ FROM THE SUNNAH</div>';
+    if(lesson.dialogue.arabic) html += '<div class="sahaba-sunnah-arabic">' + lesson.dialogue.arabic + '</div>';
+    if(lesson.dialogue.translation) html += '<div class="sahaba-sunnah-translation">"' + lesson.dialogue.translation + '"</div>';
+    if(lesson.dialogue.ref) html += '<div class="sahaba-sunnah-ref">— ' + lesson.dialogue.ref + '</div>';
+    html += '</div>';
+  }
+
+  // Did you know
+  if(lesson.didYouKnow){
+    html += '<div class="sahaba-didyouknow">';
+    html +=   '<div class="sahaba-didyouknow-label">💡 DID YOU KNOW</div>';
+    html +=   '<div class="sahaba-didyouknow-text">' + lesson.didYouKnow + '</div>';
+    html += '</div>';
+  }
+
+  // Lesson to learn
+  if(lesson.takeaway){
+    html += '<div class="sahaba-lesson-to-learn">';
+    html +=   '<div class="sahaba-lesson-to-learn-label">★ LESSON TO LEARN</div>';
+    html +=   '<div class="sahaba-lesson-to-learn-text">' + lesson.takeaway + '</div>';
+    html += '</div>';
+  }
+
+  // Share row
+  html += '<div class="sahaba-share-row">';
+  html +=   '<button class="sahaba-share-btn" data-sahaba-copy="' + s.id + '" data-sahaba-lesson-copy="' + lesson.num + '" aria-label="Copy">' + SAHABA_COPY_SVG + '</button>';
+  html +=   '<button class="sahaba-share-btn" data-sahaba-share="' + s.id + '" data-sahaba-lesson-share="' + lesson.num + '" aria-label="Share">' + SAHABA_SHARE_SVG + '</button>';
+  html += '</div>';
+
+  // Nav
+  html += '<div class="seerah-reader-nav" style="margin-top:16px">';
+  html +=   '<button class="seerah-reader-nav-btn" data-sahaba-nav="prev"' + (hasPrev ? '' : ' disabled') + '>' + SAHABA_BACK_SVG + ' Previous</button>';
+  html +=   '<button class="seerah-reader-nav-btn primary" data-sahaba-nav="next"' + (hasNext ? '' : ' disabled') + '>Next ' + SAHABA_CHEV_SVG + '</button>';
+  html += '</div>';
+
+  html += '</div>';
+
+  setLearnContent(html);
+
+  markSahabaLessonComplete(s.id, lesson.num);
+
+  const content = document.getElementById('learn-content');
+  if(content) content.scrollTop = 0;
+
+  // Nav listeners
+  document.querySelectorAll('[data-sahaba-nav]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(btn.disabled) return;
+      const dir = btn.dataset.sahabaNav;
+      const newIdx = dir === 'next' ? idx + 1 : idx - 1;
+      if(newIdx < 0 || newIdx >= total) return;
+      sahabaState.lessonNum = s.lessons[newIdx].num;
+      drawSahabaView();
+    });
+  });
+
+  // Copy/share
+  document.querySelectorAll('[data-sahaba-copy]').forEach(btn => {
+    btn.addEventListener('click', () => copySahabaLesson(btn.dataset.sahabaCopy, parseInt(btn.dataset.sahabaLessonCopy)));
+  });
+  document.querySelectorAll('[data-sahaba-share]').forEach(btn => {
+    btn.addEventListener('click', () => shareSahabaLesson(btn.dataset.sahabaShare, parseInt(btn.dataset.sahabaLessonShare)));
+  });
+}
+
+function buildSahabaShareText(sahabaId, lessonNum){
+  const s = getSahabaById(sahabaId);
+  if(!s) return '';
+  const lesson = s.lessons.find(l => l.num === lessonNum);
+  if(!lesson) return '';
+  let text = '﷽\n\n' + s.name + ' · ' + s.subtitle + '\nLesson ' + lesson.num + ' — ' + lesson.title + '\n\n';
+  if(lesson.dialogue && lesson.dialogue.arabic){
+    text += lesson.dialogue.arabic + '\n';
+    if(lesson.dialogue.translation) text += '"' + lesson.dialogue.translation + '"\n';
+    if(lesson.dialogue.ref) text += '— ' + lesson.dialogue.ref + '\n\n';
+  }
+  if(lesson.takeaway) text += '★ ' + lesson.takeaway + '\n\n';
+  text += '— Sahaba Stories · Al-Jumu\'ah';
+  return text;
+}
+
+function copySahabaLesson(sahabaId, lessonNum){
+  const text = buildSahabaShareText(sahabaId, lessonNum);
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(() => showToast('Copied')).catch(() => showToast('Could not copy'));
+}
+
+function shareSahabaLesson(sahabaId, lessonNum){
+  const text = buildSahabaShareText(sahabaId, lessonNum);
+  if(!text) return;
+  if(navigator.share){
+    navigator.share({ title: 'Sahaba Story', text }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => showToast('Copied')).catch(() => showToast('Could not copy'));
+  }
+}
+
+// ── Pill wiring (capture phase) ──
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="sahabaStories"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const overlay = document.getElementById('learn-overlay');
+  if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook', 'theme-companions');
+  openLearnOverlay('sahabaStories', 'companions');
+  renderSahaba();
+}, true);
