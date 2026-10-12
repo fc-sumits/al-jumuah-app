@@ -503,17 +503,7 @@ async function playAyah(ayahNum, globalAyah, autoAdvance) {
     // Set the current URL as the previous one for the next cycle
     QURAN.previousBlobUrl = isBlob ? playUrl : null;
 
-  }).catch((err) => {
-    console.error('Audio playback failed:', err);
-    showToast('Audio unavailable');
-    QURAN.playing = false;
-    // If playback fails, revoke the current blob URL to clean up
-    if (QURAN.currentBlobUrl) {
-      URL.revokeObjectURL(QURAN.currentBlobUrl);
-      QURAN.currentBlobUrl = null;
-   });
-}
-function stopQuranAudio(){
+  function stopQuranAudio(){
   QURAN.playing = false;
   if(QURAN.audio){ QURAN.audio.pause(); QURAN.audio = null; }
   document.querySelectorAll('.q-verse').forEach(v => v.classList.remove('playing'));
