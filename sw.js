@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v10';
+const CACHE_VERSION = 'aljumuah-v11';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
@@ -82,7 +82,8 @@ const PRECACHE_URLS = [
   './images/sahaba-12-zayd.webp',
   './images/sahaba-13-sad.webp',
   './images/sahaba-14-talha.webp',
-  './images/sahaba-15-zubayr.webp'
+  './images/sahaba-15-zubayr.webp',
+  './content/quiz.json'
 ];
 
 self.addEventListener('install', (event) => {
