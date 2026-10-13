@@ -102,10 +102,10 @@ applyTheme(localStorage.getItem('app-theme') || 'auto');
 applySize(localStorage.getItem('app-size') || 'medium');
 function updateHijri(){
   try{
-    const fmt = new Intl.DateTimeFormat('en-TN-u-ca-islamic-umalqura', { day:'numeric', month:'long', year:'numeric' });
-    const parts = fmt.formatToParts(new Date());
-    const get = t => parts.find(p=>p.type===t)?.value || '';
-    document.getElementById('hijri-date').textContent = `${get('day')} ${get('month')} ${get('year').replace(' AH','')} AH`;
+    const p = getHijriParts(new Date());
+    const months = ['Muharram','Safar','Rabi\' al-Awwal','Rabi\' al-Thani','Jumada al-Ula','Jumada al-Akhirah','Rajab','Sha\'ban','Ramadan','Shawwal','Dhul-Qa\'dah','Dhul-Hijjah'];
+    const monthName = months[p.month - 1] || '';
+    document.getElementById('hijri-date').textContent = `${p.day} ${monthName} ${p.year} AH`;
   }catch(e){ document.getElementById('hijri-date').textContent = '—'; }
 }
 updateHijri();
