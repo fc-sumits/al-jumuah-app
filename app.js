@@ -5606,3 +5606,477 @@ document.addEventListener('click', (e) => {
   openLearnOverlay('sahabaStories', 'companions');
   renderSahaba();
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// ISLAMIC QUIZ — renderer + state + sound + stats
+// Uses openLearnOverlay / setLearnTitle / setLearnContent / LEARN_BACK_HANDLERS
+// Zone: theme-modern
+// ═══════════════════════════════════════════════════════════════
+
+const QUIZ_SOUND_ON_KEY = 'quiz-sound-on';
+let quizSoundOn = localStorage.getItem(QUIZ_SOUND_ON_KEY) !== 'off';
+
+const quizState = {
+  view: 'home',
+  data: null,
+  categoryId: null,
+  difficulty: null,
+  questions: [],
+  index: 0,
+  score: 0,
+  answers: [],
+  answered: false,
+  stats: {}
+};
+
+try { quizState.stats = JSON.parse(localStorage.getItem('quiz-stats') || '{}'); } catch(e) { quizState.stats = {}; }
+
+function saveQuizStats(){
+  try { localStorage.setItem('quiz-stats', JSON.stringify(quizState.stats)); } catch(e){}
+}
+
+function quizPlaySound(type){
+  if(!quizSoundOn) return;
+  try {
+    if(type === 'correct'){
+      if(typeof playSpecificSound === 'function') playSpecificSound('chime');
+    } else if(type === 'wrong'){
+      if(typeof tasbihAudioCtx === 'undefined') return;
+      if(!tasbihAudioCtx) tasbihAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const ctx = tasbihAudioCtx;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.frequency.value = 180;
+      osc.type = 'sawtooth';
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(); osc.stop(ctx.currentTime + 0.25);
+    }
+  } catch(e){}
+}
+
+async function loadQuizData(){
+  if(quizState.data) return quizState.data;
+  const d = await loadContent('quiz');
+  if(!d || !d.quiz) return null;
+  quizState.data = d.quiz;
+  return quizState.data;
+}
+
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+
+function collectQuizQuestions(categoryId){
+  if(!quizState.data) return [];
+  if(categoryId === 'general'){
+    const all = [];
+    quizState.data.categories.forEach(cat => {
+      cat.questions.forEach(q => all.push(Object.assign({}, q, {catId: cat.id})));
+    });
+    return all;
+  }
+  const cat = quizState.data.categories.find(c => c.id === categoryId);
+  if(!cat) return [];
+  return cat.questions.map(q => Object.assign({}, q, {catId: categoryId}));
+}
+
+function buildQuizSet(categoryId, difficulty){
+  const all = collectQuizQuestions(categoryId);
+  const easy = shuffleArray(all.filter(q => q.difficulty === 'easy'));
+  const medium = shuffleArray(all.filter(q => q.difficulty === 'medium'));
+  const hard = shuffleArray(all.filter(q => q.difficulty === 'hard'));
+  let picked = [];
+  if(difficulty === 'easy'){
+    picked = easy.slice(0, 10);
+  } else if(difficulty === 'medium'){
+    picked = easy.slice(0, 5).concat(medium.slice(0, 10));
+  } else if(difficulty === 'hard'){
+    picked = easy.slice(0, 5).concat(medium.slice(0, 5), hard.slice(0, 10));
+  }
+  return shuffleArray(picked);
+}
+
+async function renderQuiz(){
+  setLearnTitle('Islamic Quiz');
+  setLearnContent('<div class="q-loading"><div class="q-loading-spinner"></div>Loading…</div>');
+  LEARN_BACK_HANDLERS['islamicQuiz'] = quizBackHandler;
+  const data = await loadQuizData();
+  if(!data){
+    setLearnContent('<div class="learn-empty">Could not load the quiz.<br>Please check your connection.</div>');
+    return;
+  }
+  quizState.view = 'home';
+  quizState.categoryId = null;
+  quizState.difficulty = null;
+  drawQuizView();
+}
+
+function quizBackHandler(){
+  if(quizState.view === 'playing'){
+    if(!confirm('Exit quiz? Your progress will be lost.')) return true;
+    quizState.view = 'home';
+    quizState.categoryId = null;
+    quizState.difficulty = null;
+    drawQuizView();
+    return true;
+  }
+  if(quizState.view === 'difficulty'){
+    quizState.view = 'home';
+    quizState.categoryId = null;
+    drawQuizView();
+    return true;
+  }
+  if(quizState.view === 'result'){
+    quizState.view = 'home';
+    quizState.categoryId = null;
+    quizState.difficulty = null;
+    drawQuizView();
+    return true;
+  }
+  closeLearnOverlay();
+  return true;
+}
+
+function drawQuizView(){
+  if(quizState.view === 'difficulty') return drawQuizDifficulty();
+  if(quizState.view === 'playing') return drawQuizPlaying();
+  if(quizState.view === 'result') return drawQuizResult();
+  return drawQuizHome();
+}
+
+// ── HOME ──
+function drawQuizHome(){
+  const d = quizState.data;
+  let totalQ = 0;
+  d.categories.forEach(c => { totalQ += c.questions.length; });
+
+  let html = '<div class="quiz-view">';
+  html += '<div class="quiz-hero">';
+  html +=   '<div class="quiz-hero-title-ar">اختبار إسلامي</div>';
+  html +=   '<div class="quiz-hero-title-en">Islamic Quiz</div>';
+  html +=   '<div class="quiz-hero-sub">' + totalQ + ' questions · ' + d.categories.length + ' categories</div>';
+  html += '</div>';
+
+  html += '<div class="quiz-general-tile" data-quiz-cat="general">';
+  html +=   '<div class="quiz-general-icon">🎲</div>';
+  html +=   '<div class="quiz-general-body">';
+  html +=     '<div class="quiz-general-title">General Quiz</div>';
+  html +=     '<div class="quiz-general-sub">Random mix from all categories</div>';
+  html +=   '</div>';
+  html +=   '<div class="quiz-general-chev">' + SEERAH_CHEV_SVG + '</div>';
+  html += '</div>';
+
+  html += '<div class="quiz-cat-grid">';
+  d.categories.forEach(cat => {
+    let easyN = 0, medN = 0, hardN = 0;
+    cat.questions.forEach(q => {
+      if(q.difficulty === 'easy') easyN++;
+      else if(q.difficulty === 'medium') medN++;
+      else if(q.difficulty === 'hard') hardN++;
+    });
+    const stat = quizState.stats[cat.id] || {};
+    let best = null;
+    ['easy','medium','hard'].forEach(diff => {
+      if(stat[diff] && stat[diff].best != null){
+        const pct = Math.round((stat[diff].best / stat[diff].total) * 100);
+        if(best == null || pct > best) best = pct;
+      }
+    });
+    html += '<div class="quiz-cat-card" data-quiz-cat="' + cat.id + '">';
+    if(best != null) html += '<div class="quiz-cat-best">' + best + '%</div>';
+    html +=   '<div class="quiz-cat-icon">' + cat.icon + '</div>';
+    html +=   '<div class="quiz-cat-name">' + cat.name + '</div>';
+    html +=   '<div class="quiz-cat-count">' + cat.questions.length + ' questions</div>';
+    html +=   '<div class="quiz-cat-badges">';
+    html +=     '<span class="quiz-cat-badge e">E ' + easyN + '</span>';
+    html +=     '<span class="quiz-cat-badge m">M ' + medN + '</span>';
+    html +=     '<span class="quiz-cat-badge h">H ' + hardN + '</span>';
+    html +=   '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  html += '</div>';
+  setLearnContent(html);
+
+  document.querySelectorAll('[data-quiz-cat]').forEach(el => {
+    el.addEventListener('click', () => {
+      quizState.categoryId = el.dataset.quizCat;
+      quizState.view = 'difficulty';
+      drawQuizView();
+    });
+  });
+}
+
+// ── DIFFICULTY PICKER ──
+function drawQuizDifficulty(){
+  const catId = quizState.categoryId;
+  let catName, catIcon;
+  if(catId === 'general'){
+    catName = 'General Quiz';
+    catIcon = '🎲';
+  } else {
+    const cat = quizState.data.categories.find(c => c.id === catId);
+    catName = cat.name + ' Quiz';
+    catIcon = cat.icon;
+  }
+
+  let html = '<div class="quiz-diff-view">';
+  html +=   '<div class="quiz-diff-icon">' + catIcon + '</div>';
+  html +=   '<div class="quiz-diff-title">' + catName + '</div>';
+  html +=   '<div class="quiz-diff-sub">Choose your difficulty level</div>';
+
+  html +=   '<div class="quiz-diff-card easy" data-quiz-diff="easy">';
+  html +=     '<div class="quiz-diff-badge">E</div>';
+  html +=     '<div class="quiz-diff-body">';
+  html +=       '<div class="quiz-diff-name">Easy</div>';
+  html +=       '<div class="quiz-diff-meta">10 questions · Basic level</div>';
+  html +=     '</div>';
+  html +=     '<div class="quiz-diff-chev">' + SEERAH_CHEV_SVG + '</div>';
+  html +=   '</div>';
+
+  html +=   '<div class="quiz-diff-card medium" data-quiz-diff="medium">';
+  html +=     '<div class="quiz-diff-badge">M</div>';
+  html +=     '<div class="quiz-diff-body">';
+  html +=       '<div class="quiz-diff-name">Medium</div>';
+  html +=       '<div class="quiz-diff-meta">15 questions · Intermediate</div>';
+  html +=     '</div>';
+  html +=     '<div class="quiz-diff-chev">' + SEERAH_CHEV_SVG + '</div>';
+  html +=   '</div>';
+
+  html +=   '<div class="quiz-diff-card hard" data-quiz-diff="hard">';
+  html +=     '<div class="quiz-diff-badge">H</div>';
+  html +=     '<div class="quiz-diff-body">';
+  html +=       '<div class="quiz-diff-name">Hard</div>';
+  html +=       '<div class="quiz-diff-meta">20 questions · Advanced</div>';
+  html +=     '</div>';
+  html +=     '<div class="quiz-diff-chev">' + SEERAH_CHEV_SVG + '</div>';
+  html +=   '</div>';
+
+  html +=   '<div class="quiz-diff-hint">Questions are shuffled each play</div>';
+  html += '</div>';
+  setLearnContent(html);
+
+  document.querySelectorAll('[data-quiz-diff]').forEach(el => {
+    el.addEventListener('click', () => {
+      const diff = el.dataset.quizDiff;
+      quizState.difficulty = diff;
+      quizState.questions = buildQuizSet(quizState.categoryId, diff);
+      quizState.index = 0;
+      quizState.score = 0;
+      quizState.answers = [];
+      quizState.answered = false;
+      quizState.view = 'playing';
+      drawQuizView();
+    });
+  });
+}
+
+// ── PLAYING ──
+function drawQuizPlaying(){
+  const q = quizState.questions[quizState.index];
+  if(!q){
+    quizState.view = 'result';
+    return drawQuizView();
+  }
+  const total = quizState.questions.length;
+  const pct = Math.round((quizState.index / total) * 100);
+  const diffLabel = quizState.difficulty.charAt(0).toUpperCase() + quizState.difficulty.slice(1);
+
+  let html = '<div class="quiz-play">';
+  html +=   '<div class="quiz-play-progress"><div class="quiz-play-progress-fill" style="width:' + pct + '%"></div></div>';
+  html +=   '<div class="quiz-play-meta">';
+  html +=     '<span class="quiz-play-meta-left">' + diffLabel + ' · Q ' + (quizState.index + 1) + '/' + total + '</span>';
+  html +=     '<span class="quiz-play-meta-right">Score ' + quizState.score + '/' + quizState.index + '</span>';
+  html +=   '</div>';
+
+  html +=   '<div class="quiz-question-card">';
+  html +=     '<span class="quiz-diff-pill ' + quizState.difficulty + '">' + diffLabel + '</span>';
+  html +=     '<div class="quiz-question-text">' + q.q + '</div>';
+  html +=   '</div>';
+
+  html +=   '<div class="quiz-options">';
+  const letters = ['A','B','C','D'];
+  q.options.forEach((opt, i) => {
+    html += '<div class="quiz-option" data-quiz-opt="' + i + '">';
+    html +=   '<div class="quiz-option-letter">' + letters[i] + '</div>';
+    html +=   '<div class="quiz-option-text">' + opt + '</div>';
+    html += '</div>';
+  });
+  html +=   '</div>';
+
+  html +=   '<div id="quiz-explain-slot"></div>';
+  html +=   '<button class="quiz-next-btn" id="quiz-next-btn" style="display:none">Next ' + SEERAH_CHEV_SVG + '</button>';
+  html += '</div>';
+  setLearnContent(html);
+
+  document.querySelectorAll('[data-quiz-opt]').forEach(el => {
+    el.addEventListener('click', () => quizChooseAnswer(parseInt(el.dataset.quizOpt)));
+  });
+}
+
+function quizChooseAnswer(chosen){
+  if(quizState.answered) return;
+  const q = quizState.questions[quizState.index];
+  if(!q) return;
+  const correct = q.correct;
+  quizState.answered = true;
+
+  const options = document.querySelectorAll('[data-quiz-opt]');
+  options.forEach((el, i) => {
+    el.classList.add('disabled');
+    if(i === correct) el.classList.add('correct');
+    else if(i === chosen) el.classList.add('wrong');
+    else el.classList.add('faded');
+  });
+
+  const isCorrect = chosen === correct;
+  if(isCorrect){
+    quizState.score++;
+    if(navigator.vibrate) navigator.vibrate(30);
+    quizPlaySound('correct');
+  } else {
+    if(navigator.vibrate) navigator.vibrate([40, 30, 40]);
+    quizPlaySound('wrong');
+  }
+
+  quizState.answers.push({ qid: q.id, chosen: chosen, correct: isCorrect, explain: q.explain, qtext: q.q });
+
+  const slot = document.getElementById('quiz-explain-slot');
+  if(slot){
+    slot.innerHTML = '<div class="quiz-explain"><div class="quiz-explain-label">💡 DID YOU KNOW</div><div class="quiz-explain-text">' + q.explain + '</div></div>';
+  }
+
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if(nextBtn){
+    nextBtn.style.display = 'flex';
+    const isLast = quizState.index >= quizState.questions.length - 1;
+    nextBtn.innerHTML = isLast ? 'See Results' : 'Next ' + SEERAH_CHEV_SVG;
+    nextBtn.addEventListener('click', () => {
+      if(isLast){
+        quizState.view = 'result';
+        drawQuizView();
+      } else {
+        quizState.index++;
+        quizState.answered = false;
+        drawQuizView();
+      }
+    });
+  }
+
+  const metaRight = document.querySelector('.quiz-play-meta-right');
+  if(metaRight) metaRight.textContent = 'Score ' + quizState.score + '/' + (quizState.index + 1);
+}
+
+// ── RESULT ──
+function drawQuizResult(){
+  const total = quizState.questions.length;
+  const score = quizState.score;
+  const pct = total ? Math.round((score / total) * 100) : 0;
+
+  let label = 'Keep learning';
+  let labelClass = 'keep';
+  if(pct >= 90){ label = 'Excellent!'; labelClass = 'excellent'; }
+  else if(pct >= 70){ label = 'Good job!'; labelClass = 'good'; }
+  else if(pct >= 50){ label = 'Fair'; labelClass = 'fair'; }
+
+  const catId = quizState.categoryId;
+  const diff = quizState.difficulty;
+  if(catId && diff){
+    if(!quizState.stats[catId]) quizState.stats[catId] = {};
+    const prev = quizState.stats[catId][diff] || { best: 0, total: 0 };
+    quizState.stats[catId][diff] = { best: Math.max(score, prev.best || 0), total: total };
+    saveQuizStats();
+  }
+
+  const size = 180;
+  const radius = (size - 12) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - pct / 100);
+
+  let html = '<div class="quiz-result">';
+  html += '<div class="quiz-result-ring-wrap">';
+  html +=   '<svg class="quiz-result-ring" viewBox="0 0 ' + size + ' ' + size + '">';
+  html +=     '<defs><linearGradient id="quizGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#818CF8"/></linearGradient></defs>';
+  html +=     '<circle class="quiz-result-track" cx="' + (size/2) + '" cy="' + (size/2) + '" r="' + radius + '"/>';
+  html +=     '<circle class="quiz-result-fill" cx="' + (size/2) + '" cy="' + (size/2) + '" r="' + radius + '" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + offset + '"/>';
+  html +=   '</svg>';
+  html +=   '<div class="quiz-result-inner">';
+  html +=     '<div class="quiz-result-pct">' + pct + '%</div>';
+  html +=     '<div class="quiz-result-label ' + labelClass + '">' + label + '</div>';
+  html +=   '</div>';
+  html += '</div>';
+  html += '<div class="quiz-result-meta">' + score + ' of ' + total + ' correct</div>';
+
+  html += '<div class="quiz-review-title">Review</div>';
+  html += '<div class="quiz-review-list">';
+  quizState.answers.forEach(a => {
+    html += '<div class="quiz-review-row ' + (a.correct ? 'correct' : 'wrong') + '">';
+    html +=   '<div class="quiz-review-icon">' + (a.correct ? '✓' : '✗') + '</div>';
+    html +=   '<div class="quiz-review-text">' + a.qtext + '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '<div class="quiz-result-actions">';
+  html +=   '<button class="quiz-result-btn outline" id="quiz-retry">Try again</button>';
+  html +=   '<button class="quiz-result-btn primary" id="quiz-home">Choose category</button>';
+  html += '</div>';
+  html += '</div>';
+  setLearnContent(html);
+
+  if(pct >= 80){
+    setTimeout(() => {
+      const wrap = document.querySelector('.quiz-result-ring-wrap');
+      if(!wrap) return;
+      const colors = ['#6366F1','#818CF8','#fbbf24','#4ade80'];
+      for(let i = 0; i < 16; i++){
+        const c = document.createElement('span');
+        c.className = 'quiz-confetti';
+        const angle = (Math.PI * 2 * i) / 16;
+        const distance = 80 + Math.random() * 60;
+        c.style.setProperty('--qx', (Math.cos(angle) * distance) + 'px');
+        c.style.setProperty('--qy', (Math.sin(angle) * distance) + 'px');
+        c.style.left = '50%'; c.style.top = '50%';
+        c.style.background = colors[i % 4];
+        wrap.appendChild(c);
+        setTimeout(() => c.remove(), 1800);
+      }
+    }, 300);
+  }
+
+  const retryBtn = document.getElementById('quiz-retry');
+  if(retryBtn) retryBtn.addEventListener('click', () => {
+    quizState.questions = buildQuizSet(quizState.categoryId, quizState.difficulty);
+    quizState.index = 0;
+    quizState.score = 0;
+    quizState.answers = [];
+    quizState.answered = false;
+    quizState.view = 'playing';
+    drawQuizView();
+  });
+  const homeBtn = document.getElementById('quiz-home');
+  if(homeBtn) homeBtn.addEventListener('click', () => {
+    quizState.view = 'home';
+    quizState.categoryId = null;
+    quizState.difficulty = null;
+    drawQuizView();
+  });
+}
+
+// ── Pill wiring ──
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="islamicQuiz"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const overlay = document.getElementById('learn-overlay');
+  if(overlay) overlay.classList.remove('theme-traditional', 'theme-modern', 'theme-storybook', 'theme-companions');
+  openLearnOverlay('islamicQuiz', 'modern');
+  renderQuiz();
+}, true);
