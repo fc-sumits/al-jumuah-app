@@ -6637,3 +6637,144 @@ const ISLAMIC_FACTS = [
 {id:99, cat:'akhlaq', text:'The Prophet ﷺ said: "None of you truly believes until he loves for his brother what he loves for himself."'},
 {id:100, cat:'akhlaq', text:'The Prophet ﷺ said: "Do not consider any act of goodness insignificant — even meeting your brother with a cheerful face."'}
 ];
+// ═══════════════════════════════════════════════════════════════
+// DAILY FACT — dedicated full-screen overlay + renderer + copy/share
+// ═══════════════════════════════════════════════════════════════
+
+const FACT_ICONS = {
+  history: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 16 14"/></svg>',
+  quran:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+  sunnah:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M5 21V12a7 7 0 0 1 14 0v9"/><path d="M12 12v3"/><circle cx="12" cy="6" r="1.5"/><path d="M3 21h18"/></svg>',
+  science: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 20a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 20L15 8V2"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="6.5" y1="15" x2="17.5" y2="15"/></svg>',
+  tawhid:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/></svg>',
+  akhlaq:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a2 2 0 1 1 4 0v5"/><path d="M11 11V4a2 2 0 1 1 4 0v7"/><path d="M15 11V6a2 2 0 1 1 4 0v9a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3a2 2 0 1 1 4 0"/></svg>'
+};
+
+const FACT_CATEGORY_LABELS = {
+  history: { en:'History',  ar:'التاريخ',  icon: FACT_ICONS.history },
+  quran:   { en:'Quran',    ar:'القرآن',    icon: FACT_ICONS.quran },
+  sunnah:  { en:'Sunnah',   ar:'السنة',    icon: FACT_ICONS.sunnah },
+  science: { en:'Science',  ar:'العلم',     icon: FACT_ICONS.science },
+  tawhid:  { en:'Tawhid',   ar:'التوحيد',   icon: FACT_ICONS.tawhid },
+  akhlaq:  { en:'Akhlaq',   ar:'الأخلاق',   icon: FACT_ICONS.akhlaq }
+};
+
+let currentDailyFact = null;
+
+function pickRandomFact(){
+  const list = ISLAMIC_FACTS || [];
+  if(!list.length) return null;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+// Build overlay DOM once (like note-modal pattern)
+(function ensureFactOverlay(){
+  if(document.getElementById('fact-overlay')) return;
+  const el = document.createElement('div');
+  el.id = 'fact-overlay';
+  el.className = 'fact-overlay';
+  el.setAttribute('aria-hidden', 'true');
+  el.innerHTML =
+    '<div class="fact-topbar">' +
+      '<button class="fact-back" id="fact-back" aria-label="Back">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
+      '</button>' +
+      '<div class="fact-topbar-title">Daily Islamic Fact</div>' +
+      '<div class="fact-topbar-spacer"></div>' +
+    '</div>' +
+    '<div class="fact-content" id="fact-content"></div>';
+  document.body.appendChild(el);
+  document.getElementById('fact-back').addEventListener('click', closeFactOverlay);
+})();
+
+function openFactOverlay(){
+  const overlay = document.getElementById('fact-overlay');
+  if(!overlay) return;
+  overlay.classList.add('show');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  renderDailyFact();
+}
+
+function closeFactOverlay(){
+  const overlay = document.getElementById('fact-overlay');
+  if(!overlay) return;
+  overlay.classList.remove('show');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function renderDailyFact(){
+  const content = document.getElementById('fact-content');
+  if(!content) return;
+  const fact = pickRandomFact();
+  if(!fact){
+    content.innerHTML = '<div class="fact-empty">No facts available.</div>';
+    return;
+  }
+  currentDailyFact = fact;
+  const meta = FACT_CATEGORY_LABELS[fact.cat] || { en:'Fact', ar:'', icon: FACT_ICONS.tawhid };
+
+  content.innerHTML =
+    '<div class="fact-hero">' +
+      '<div class="fact-hero-ornament">' +
+        '<div class="fact-hero-line"></div>' +
+        '<div class="fact-hero-star">✦</div>' +
+        '<div class="fact-hero-line"></div>' +
+      '</div>' +
+      '<div class="fact-category-pill">' +
+        '<span class="fact-cat-icon">' + meta.icon + '</span>' +
+        '<span class="fact-cat-en">' + meta.en + '</span>' +
+      '</div>' +
+      '<div class="fact-hero-ar">' + meta.ar + '</div>' +
+      '<div class="fact-hero-en">Daily Islamic Fact</div>' +
+    '</div>' +
+
+    '<div class="fact-card">' +
+      '<div class="fact-card-glow"></div>' +
+      '<div class="fact-card-ornament">✦</div>' +
+      '<div class="fact-card-text">' + fact.text + '</div>' +
+      '<div class="fact-card-ornament-bottom">─ ✦ ─</div>' +
+    '</div>' +
+
+    '<div class="fact-actions">' +
+      '<button class="fact-action" id="fact-copy" aria-label="Copy">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+        '<span>Copy</span>' +
+      '</button>' +
+      '<button class="fact-action primary" id="fact-share" aria-label="Share">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
+        '<span>Share</span>' +
+      '</button>' +
+    '</div>';
+
+  document.getElementById('fact-copy').addEventListener('click', copyDailyFact);
+  document.getElementById('fact-share').addEventListener('click', shareDailyFact);
+}
+
+function buildFactShareText(fact){
+  const meta = FACT_CATEGORY_LABELS[fact.cat] || { en:'Fact' };
+  return fact.text + '\n\n— ' + meta.en + ' · Daily Islamic Fact · Al-Jumu\\'ah';
+}
+
+function copyDailyFact(){
+  if(!currentDailyFact) return;
+  const text = buildFactShareText(currentDailyFact);
+  navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+}
+
+function shareDailyFact(){
+  if(!currentDailyFact) return;
+  const text = buildFactShareText(currentDailyFact);
+  if(navigator.share) navigator.share({ title:'Daily Islamic Fact', text }).catch(()=>{});
+  else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+}
+
+// Pill wiring — capture phase, intercepts default "coming soon" toast
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-tool="dailyFact"]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  openFactOverlay();
+}, true);
