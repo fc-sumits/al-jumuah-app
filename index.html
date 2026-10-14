@@ -31,9 +31,20 @@
 </header>
 
 <div class="greeting" id="greeting">
+<div class="greeting-normal" id="greeting-normal">
 <span class="greeting-arabic">السلام عليكم</span>
 <span class="greeting-sep">·</span>
 <span class="greeting-date" id="hijri-date">—</span>
+</div>
+<div class="greeting-compact" id="greeting-compact">
+<button class="greeting-compact-back" id="greeting-compact-back" aria-label="Back">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<div class="greeting-compact-info">
+<div class="greeting-compact-name" id="greeting-compact-name">Surah</div>
+<div class="greeting-compact-meaning" id="greeting-compact-meaning"></div>
+</div>
+</div>
 </div>
 
 <main class="app-main" id="app-main">
@@ -141,10 +152,6 @@
 </div>
 </div>
 <div id="quran-reader-view" style="display:none">
-<div class="reader-topbar">
-<button class="back-btn" onclick="backToSurahList()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-<div class="reader-topbar-title" id="reader-title">Surah</div>
-</div>
 <div id="quran-content"></div>
 </div>
 </section>
