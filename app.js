@@ -1,4 +1,4 @@
-const WEBSITE_URL = 'https://fc-sumits.github.io/Al--jumuah/';
+const WEBSITE_URL = 'https://fc-sumits.github.io/Al---jumuah/';
 const FIREBASE_CONFIG = {apiKey:"AIzaSyC0_UOlhEhdueJLIDrMnE4liCuvPvdpezA",authDomain:"jumah-website.firebaseapp.com",projectId:"jumah-website",storageBucket:"jumah-website.firebasestorage.app",messagingSenderId:"139676383479",appId:"1:139676383479:web:2082e48d30d64f51113bf2",measurementId:"G-7Y1PYBCPY9"};
 const AUDIO_CACHE = 'quran-audio-v1';
 const PRAYER_METHODS = {3:'Muslim World League',2:'ISNA (North America)',4:'Umm al-Qura (Makkah)',5:'Egyptian General Authority',1:'University of Karachi',0:'Shia Ithna-Ashari'};
