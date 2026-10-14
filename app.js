@@ -6329,3 +6329,175 @@ function escapeHtmlBasic(s){
   d.textContent = s;
   return d.innerHTML;
 }
+// ═══════════════════════════════════════════════════════════════
+// BOOKMARKS — Hadith tab renderer
+// ═══════════════════════════════════════════════════════════════
+
+function renderBookmarksHadith(){
+  const c = document.querySelector('[data-bm-panel="hadith"]');
+  if(!c) return;
+  if(!window.__currentUser){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/></svg></span>Sign in to save and sync bookmarks.</div>';
+    return;
+  }
+  if(!userBookmarks.hadith || !userBookmarks.hadith.length){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/></svg></span>No saved hadith yet.<br>Star a hadith while reading to save it here.</div>';
+    return;
+  }
+  let html = '';
+  userBookmarks.hadith.forEach(item => {
+    const key = item.key || item;
+    const col = HADITH_COLLECTIONS.find(x => x.id === item.collectionId);
+    const colName = col ? col.name : 'Hadith';
+    const gradeLabel = item.grade ? item.grade.charAt(0).toUpperCase() + item.grade.slice(1) : 'Sahih';
+    html += '<div class="bm-item" data-bm-hadith="' + key + '">';
+    html +=   '<div class="bm-item-head">';
+    html +=     '<span class="bm-ref">' + escapeHtmlBasic(colName) + ' · #' + item.number + ' · ' + gradeLabel + '</span>';
+    html +=     '<span class="bm-star" data-bm-hremove="' + key + '"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>';
+    html +=   '</div>';
+    html +=   '<p class="bm-text">' + escapeHtmlBasic(item.text || '') + '</p>';
+    html += '</div>';
+  });
+  c.innerHTML = html;
+
+  c.querySelectorAll('[data-bm-hadith]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if(e.target.closest('[data-bm-hremove]')) return;
+      const key = el.dataset.bmHadith;
+      const item = userBookmarks.hadith.find(x => (x.key || x) === key);
+      if(!item) return;
+      const col = HADITH_COLLECTIONS.find(x => x.id === item.collectionId);
+      const colName = col ? col.name : 'Hadith';
+      const gradeLabel = item.grade ? item.grade.charAt(0).toUpperCase() + item.grade.slice(1) : 'Sahih';
+      openQModal('📚 ' + colName + ' · #' + item.number,
+        '<div class="modal-verse-ref">' + escapeHtmlBasic(colName) + ' · #' + item.number + ' · ' + gradeLabel + '</div>' +
+        '<div class="modal-body-text">' + escapeHtmlBasic(item.text || '') + '</div>'
+      );
+    });
+  });
+
+  c.querySelectorAll('[data-bm-hremove]').forEach(el => {
+    el.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const key = el.dataset.bmHremove;
+      const idx = userBookmarks.hadith.findIndex(x => (x.key || x) === key);
+      if(idx >= 0) userBookmarks.hadith.splice(idx, 1);
+      await saveUserBookmarks();
+      showToast('Removed');
+      renderBookmarksHadith();
+      document.querySelectorAll('[data-h-bookmark="' + key + '"]').forEach(btn => {
+        btn.classList.remove('active');
+        const svg = btn.querySelector('svg');
+        if(svg) svg.setAttribute('fill', 'none');
+      });
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BOOKMARKS — Notes tab renderer
+// ═══════════════════════════════════════════════════════════════
+
+async function renderBookmarksNotes(){
+  const c = document.querySelector('[data-bm-panel="notes"]');
+  if(!c) return;
+  if(!window.__currentUser){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Sign in to save and sync your notes.</div>';
+    return;
+  }
+  const notes = userBookmarks.notes || {};
+  const keys = Object.keys(notes);
+  if(!keys.length){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>No notes yet.<br>Tap the 📝 icon on a verse while reading to add a note.</div>';
+    return;
+  }
+
+  const display = getNotesDisplay();
+  c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading notes…</div>';
+
+  const bySurah = {};
+  keys.forEach(k => {
+    const parts = k.split(':');
+    if(parts.length !== 2) return;
+    const s = parts[0], a = parts[1];
+    if(!bySurah[s]) bySurah[s] = [];
+    bySurah[s].push(parseInt(a));
+  });
+
+  let html = '';
+  try{
+    const surahNums = Object.keys(bySurah).sort((a,b) => parseInt(a) - parseInt(b));
+    for(const surahNum of surahNums){
+      let ar = null, en = null;
+      if(display === 'full'){
+        const res = await fetch('https://api.alquran.cloud/v1/surah/' + surahNum + '/editions/quran-uthmani,en.sahih');
+        const data = await res.json();
+        ar = data.data[0];
+        en = data.data[1];
+      }
+      const sortedAyahs = bySurah[surahNum].sort((a,b) => a - b);
+      for(const ayahNum of sortedAyahs){
+        const key = surahNum + ':' + ayahNum;
+        const noteText = notes[key];
+        let refName = 'Surah ' + surahNum;
+        let arabicText = '';
+        let englishText = '';
+        if(ar && en){
+          const ay = ar.ayahs.find(x => x.numberInSurah === ayahNum);
+          const ey = en.ayahs.find(x => x.numberInSurah === ayahNum);
+          refName = ar.englishName;
+          if(ay) arabicText = ay.text;
+          if(ey) englishText = ey.text;
+        } else if(display === 'compact'){
+          const meta = (QURAN.surahList || []).find(s => s.number === parseInt(surahNum));
+          if(meta) refName = meta.englishName;
+        }
+        html += '<div class="bm-item" data-bm-note="' + key + '">';
+        html +=   '<div class="bm-item-head">';
+        html +=     '<span class="bm-ref">' + escapeHtmlBasic(refName) + ' · ' + key + '</span>';
+        html +=     '<span class="bm-star" data-bm-nremove="' + key + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></span>';
+        html +=   '</div>';
+        if(display === 'full' && arabicText){
+          html += '<p class="bm-arabic">' + arabicText + '</p>';
+        }
+        if(display === 'full' && englishText){
+          html += '<p class="bm-text">' + escapeHtmlBasic(englishText) + '</p>';
+        }
+        html +=   '<div class="bm-note-text">' + escapeHtmlBasic(noteText) + '</div>';
+        html += '</div>';
+      }
+    }
+    c.innerHTML = html;
+  }catch(e){
+    console.error('notes render failed', e);
+    c.innerHTML = '<div class="bm-empty">Could not load notes.</div>';
+    return;
+  }
+
+  c.querySelectorAll('[data-bm-note]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if(e.target.closest('[data-bm-nremove]')) return;
+      const key = el.dataset.bmNote;
+      const parts = key.split(':');
+      showPage('quran');
+      openSurahAtVerse(parseInt(parts[0]), parseInt(parts[1]));
+      setTimeout(() => {
+        const noteText = userBookmarks.notes[key] || '';
+        if(noteText) openNoteModal('quran', key, 'Surah ' + parts[0] + ' · ' + key);
+      }, 800);
+    });
+  });
+
+  c.querySelectorAll('[data-bm-nremove]').forEach(el => {
+    el.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const key = el.dataset.bmNremove;
+      if(!confirm('Delete this note?')) return;
+      delete userBookmarks.notes[key];
+      await saveUserBookmarks();
+      showToast('Note deleted');
+      refreshNoteIcons();
+      renderBookmarksNotes();
+    });
+  });
+      }
