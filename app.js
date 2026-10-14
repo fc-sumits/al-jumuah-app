@@ -6216,3 +6216,116 @@ document.addEventListener('click', (e) => {
   const grade = gradeEl ? gradeEl.textContent.toLowerCase() : 'sahih';
   toggleHadithBookmark(key, collectionId, number, text, grade);
 });
+// ═══════════════════════════════════════════════════════════════
+// NOTES SYSTEM — icon on Quran verses + modal (add/edit/delete)
+// ═══════════════════════════════════════════════════════════════
+
+function getNotesDisplay(){
+  return localStorage.getItem('notes-display') || 'compact';
+}
+
+// Monkey-patch attachQuranListeners to add note icons after each surah render
+const _origAttachQuranListeners = attachQuranListeners;
+attachQuranListeners = function(){
+  _origAttachQuranListeners();
+  addNoteIconsToVerses();
+};
+
+function addNoteIconsToVerses(){
+  if(!QURAN.data) return;
+  document.querySelectorAll('.q-verse').forEach(verseEl => {
+    const actions = verseEl.querySelector('.q-verse-actions');
+    if(!actions) return;
+    if(actions.querySelector('.note-ayah')) return;
+    const ayahNum = parseInt(verseEl.dataset.ayah);
+    const key = QURAN.data.arabic.number + ':' + ayahNum;
+    const hasNote = userBookmarks.notes && userBookmarks.notes[key];
+    const btn = document.createElement('button');
+    btn.className = 'q-act note-ayah' + (hasNote ? ' active' : '');
+    btn.dataset.ayah = ayahNum;
+    btn.title = 'Note';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>';
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if(!window.__currentUser){ showToast('Sign in to save notes'); return; }
+      openNoteModal('quran', key, QURAN.data.arabic.englishName + ' · ' + key);
+    });
+    actions.appendChild(btn);
+  });
+}
+
+function refreshNoteIcons(){
+  if(!QURAN.data) return;
+  document.querySelectorAll('.q-act.note-ayah').forEach(btn => {
+    const ayahNum = parseInt(btn.dataset.ayah);
+    const key = QURAN.data.arabic.number + ':' + ayahNum;
+    const hasNote = userBookmarks.notes && userBookmarks.notes[key];
+    btn.classList.toggle('active', !!hasNote);
+  });
+}
+
+function openNoteModal(source, key, refLabel){
+  let overlay = document.getElementById('note-modal');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'note-modal';
+    overlay.className = 'note-overlay';
+    overlay.innerHTML =
+      '<div class="note-sheet">' +
+        '<div class="note-head">' +
+          '<div class="note-title">Note</div>' +
+          '<button class="note-close" id="note-close" aria-label="Close">✕</button>' +
+        '</div>' +
+        '<div class="note-ref" id="note-ref"></div>' +
+        '<textarea class="note-input" id="note-input" placeholder="Write your reflection..."></textarea>' +
+        '<div class="note-actions">' +
+          '<button class="note-delete" id="note-delete">Delete</button>' +
+          '<button class="note-save" id="note-save">Save</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', (e) => {
+      if(e.target === overlay) closeNoteModal();
+    });
+  }
+  if(!userBookmarks.notes) userBookmarks.notes = {};
+  const input = document.getElementById('note-input');
+  const ref = document.getElementById('note-ref');
+  const deleteBtn = document.getElementById('note-delete');
+  const existing = userBookmarks.notes[key] || '';
+  input.value = existing;
+  ref.textContent = refLabel;
+  deleteBtn.style.display = existing ? 'block' : 'none';
+  overlay.classList.add('show');
+  setTimeout(() => input.focus(), 100);
+
+  document.getElementById('note-close').onclick = closeNoteModal;
+  document.getElementById('note-delete').onclick = async () => {
+    if(!confirm('Delete this note?')) return;
+    delete userBookmarks.notes[key];
+    await saveUserBookmarks();
+    closeNoteModal();
+    showToast('Note deleted');
+    refreshNoteIcons();
+  };
+  document.getElementById('note-save').onclick = async () => {
+    const val = input.value.trim();
+    if(val) userBookmarks.notes[key] = val;
+    else delete userBookmarks.notes[key];
+    await saveUserBookmarks();
+    closeNoteModal();
+    showToast(val ? 'Note saved' : 'Note removed');
+    refreshNoteIcons();
+  };
+}
+
+function closeNoteModal(){
+  const overlay = document.getElementById('note-modal');
+  if(overlay) overlay.classList.remove('show');
+}
+
+function escapeHtmlBasic(s){
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
