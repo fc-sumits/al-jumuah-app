@@ -6501,3 +6501,32 @@ async function renderBookmarksNotes(){
     });
   });
       }
+// ═══════════════════════════════════════════════════════════════
+// NOTES DISPLAY PREFERENCE
+// ═══════════════════════════════════════════════════════════════
+
+(function(){
+  function applyNotesDisplay(){
+    const mode = localStorage.getItem('notes-display') || 'compact';
+    const seg = document.getElementById('notes-seg');
+    if(seg){
+      seg.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('active', b.dataset.notes === mode);
+      });
+    }
+  }
+  applyNotesDisplay();
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('#notes-seg button');
+    if(!btn) return;
+    e.stopPropagation();
+    const mode = btn.dataset.notes;
+    localStorage.setItem('notes-display', mode);
+    applyNotesDisplay();
+    showToast(mode === 'compact' ? 'Notes: Compact' : 'Notes: Full');
+    const notesPanel = document.querySelector('[data-bm-panel="notes"]');
+    if(notesPanel && notesPanel.classList.contains('active')){
+      if(typeof renderBookmarksNotes === 'function') renderBookmarksNotes();
+    }
+  }, true);
+})();
