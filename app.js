@@ -115,7 +115,8 @@ const navItems = document.querySelectorAll('.nav-item');
 const SESSION = { currentPage: 'home', scroll: {} };
 function showPage(name){
   if(SESSION.currentPage && SESSION.currentPage !== name){
-    SESSION.scroll[SESSION.currentPage] = mainEl.scrollTop;
+  SESSION.scroll[SESSION.currentPage] = mainEl.scrollTop;
+  if(name === 'settings') SESSION.prevPage = SESSION.currentPage;
   }
   allPages.forEach(p=>p.classList.toggle('active', p.dataset.page === name));
   navItems.forEach(n=>{ if(n.dataset.navTab) n.classList.toggle('active', n.dataset.navTab === name); });
@@ -144,7 +145,7 @@ function showPage(name){
 }
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
-document.getElementById('back-btn').addEventListener('click', ()=>showPage('home'));
+document.getElementById('back-btn').addEventListener('click', ()=>showPage(SESSION.prevPage || 'home'));
 document.querySelectorAll('.cat-head').forEach(head=>{ head.addEventListener('click', ()=>head.parentElement.classList.toggle('open')); });
 document.querySelectorAll('.tile').forEach(tile=>{
   tile.addEventListener('click', ()=>{
