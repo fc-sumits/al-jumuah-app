@@ -887,21 +887,22 @@ class HadithBrowser {
     }
     if(!data.hadiths || data.hadiths.length === 0){ c.innerHTML = html + '<div class="q-loading">No hadiths found.</div>'; return; }
     const isSignedIn = !!window.__currentUser;
-    const grade = this.getGrade(collectionId);
-    const gradeLabel = {sahih:'Sahih',hasan:'Hasan'}[grade] || 'Sahih';
-    data.hadiths.forEach(h => {
-      const key = `${collectionId}-${h.hadithnumber}`;
-      const comments = this.comments[key] || [];
-      const cmtsHtml = comments.map(cm => {
-        const isMine = window.__currentUser && cm.userId === window.__currentUser.uid;
-        const when = cm.timestamp ? new Date(cm.timestamp).toLocaleDateString() : '';
-        return `<div class="h-cmt"><div class="h-cmt-meta">${cm.isPublic?'🌍':'🔒'} ${this.escapeHtml(cm.userName||'Anonymous')} · ${when}${isMine?`<a onclick="window.hadithBrowser.deleteComment('${cm.id}','${key}')">Delete</a>`:''}</div><div class="h-cmt-text">${this.escapeHtml(cm.text)}</div></div>`;
-      }).join('');
-      const formHtml = isSignedIn
-        ? `<div class="h-form"><textarea id="h-input-${key}" placeholder="Share your reflection..."></textarea><div class="h-form-row"><label class="h-radio"><input type="radio" name="h-vis-${key}" value="public" checked>🌍 Public</label><label class="h-radio"><input type="radio" name="h-vis-${key}" value="private">🔒 Private</label><button class="h-submit" onclick="window.hadithBrowser.submitComment('${key}')">Post</button></div></div>`
-        : `<div class="h-signin-msg">Please <a onclick="window.open('${WEBSITE_URL}','_blank')">sign in on the website</a> to leave a reflection.</div>`;
-      html += `<div class="h-card" data-key="${key}"><div class="h-card-head"><span class="h-num">${h.hadithnumber}</span><span class="h-grade ${grade}">${gradeLabel}</span></div><p class="h-text">${this.escapeHtml(h.text)}</p><div class="h-foot"><button class="h-toggle" onclick="window.hadithBrowser.toggleComments('${key}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Thoughts (${comments.length})</button></div><div class="h-comments" id="h-comments-${key}"><div class="h-cmt-list">${cmtsHtml || '<div style="font-size:.8rem;color:var(--muted-2);padding:8px 0">No thoughts yet.</div>'}</div>${formHtml}</div></div>`;
-    });
+const grade = this.getGrade(collectionId);
+const gradeLabel = {sahih:'Sahih',hasan:'Hasan'}[grade] || 'Sahih';
+data.hadiths.forEach(h => {
+  const key = `${collectionId}-${h.hadithnumber}`;
+  const hSaved = isHadithBookmarked(key);
+  const comments = this.comments[key] || [];
+  const cmtsHtml = comments.map(cm => {
+    const isMine = window.__currentUser && cm.userId === window.__currentUser.uid;
+    const when = cm.timestamp ? new Date(cm.timestamp).toLocaleDateString() : '';
+    return `<div class="h-cmt"><div class="h-cmt-meta">${cm.isPublic?'🌍':'🔒'} ${this.escapeHtml(cm.userName||'Anonymous')} · ${when}${isMine?`<a onclick="window.hadithBrowser.deleteComment('${cm.id}','${key}')">Delete</a>`:''}</div><div class="h-cmt-text">${this.escapeHtml(cm.text)}</div></div>`;
+  }).join('');
+  const formHtml = isSignedIn
+    ? `<div class="h-form"><textarea id="h-input-${key}" placeholder="Share your reflection..."></textarea><div class="h-form-row"><label class="h-radio"><input type="radio" name="h-vis-${key}" value="public" checked>🌍 Public</label><label class="h-radio"><input type="radio" name="h-vis-${key}" value="private">🔒 Private</label><button class="h-submit" onclick="window.hadithBrowser.submitComment('${key}')">Post</button></div></div>`
+    : `<div class="h-signin-msg">Please <a onclick="window.open('${WEBSITE_URL}','_blank')">sign in on the website</a> to leave a reflection.</div>`;
+  html += `<div class="h-card" data-key="${key}"><div class="h-card-head"><span class="h-num">${h.hadithnumber}</span><span class="h-grade ${grade}">${gradeLabel}</span><button class="h-bookmark${hSaved?' active':''}" data-h-bookmark="${key}" data-h-collection="${collectionId}" data-h-number="${h.hadithnumber}" aria-label="Bookmark"><svg viewBox="0 0 24 24" fill="${hSaved?'currentColor':'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div><p class="h-text">${this.escapeHtml(h.text)}</p><div class="h-foot"><button class="h-toggle" onclick="window.hadithBrowser.toggleComments('${key}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Thoughts (${comments.length})</button></div><div class="h-comments" id="h-comments-${key}"><div class="h-cmt-list">${cmtsHtml || '<div style="font-size:.8rem;color:var(--muted-2);padding:8px 0">No thoughts yet.</div>'}</div>${formHtml}</div></div>`;
+});
     c.innerHTML = html;
   }
   toggleComments(key){ const el = document.getElementById(`h-comments-${key}`); if(el) el.classList.toggle('open'); }
@@ -6171,4 +6172,47 @@ document.querySelectorAll('.bm-tab').forEach(tab => {
     else if(which === 'hadith' && typeof renderBookmarksHadith === 'function') renderBookmarksHadith();
     else if(which === 'notes' && typeof renderBookmarksNotes === 'function') renderBookmarksNotes();
   });
+});
+// ── Hadith bookmark helpers ──
+function isHadithBookmarked(key){
+  if(!userBookmarks.hadith) userBookmarks.hadith = [];
+  return userBookmarks.hadith.some(x => (typeof x === 'string' ? x === key : x.key === key));
+}
+
+async function toggleHadithBookmark(key, collectionId, number, text, grade){
+  if(!window.__currentUser){
+    showToast('Sign in to save hadith');
+    return;
+  }
+  if(!userBookmarks.hadith) userBookmarks.hadith = [];
+  const idx = userBookmarks.hadith.findIndex(x => (typeof x === 'string' ? x === key : x.key === key));
+  if(idx >= 0){
+    userBookmarks.hadith.splice(idx, 1);
+    showToast('Removed');
+  } else {
+    userBookmarks.hadith.push({ key, collectionId, number, text, grade });
+    showToast('Hadith saved');
+  }
+  await saveUserBookmarks();
+  document.querySelectorAll('[data-h-bookmark="' + key + '"]').forEach(btn => {
+    const active = isHadithBookmarked(key);
+    btn.classList.toggle('active', active);
+    const svg = btn.querySelector('svg');
+    if(svg) svg.setAttribute('fill', active ? 'currentColor' : 'none');
+  });
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-h-bookmark]');
+  if(!btn) return;
+  e.stopPropagation();
+  const key = btn.dataset.hBookmark;
+  const collectionId = btn.dataset.hCollection;
+  const number = parseInt(btn.dataset.hNumber);
+  const card = btn.closest('.h-card');
+  const textEl = card ? card.querySelector('.h-text') : null;
+  const text = textEl ? textEl.textContent : '';
+  const gradeEl = card ? card.querySelector('.h-grade') : null;
+  const grade = gradeEl ? gradeEl.textContent.toLowerCase() : 'sahih';
+  toggleHadithBookmark(key, collectionId, number, text, grade);
 });
