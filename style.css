@@ -3013,3 +3013,57 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .h-bookmark:active{transform:scale(.9)}
 .h-bookmark.active{opacity:1}
 .h-bookmark svg{width:16px;height:16px;stroke-width:2}
+/* Note modal */
+.note-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  display:none;align-items:flex-end;justify-content:center;
+  z-index:99999;padding:0;
+}
+.note-overlay.show{display:flex;animation:fadeIn .2s ease}
+.note-sheet{
+  background:var(--card);border:1px solid var(--card-border);
+  border-bottom:none;border-radius:22px 22px 0 0;
+  width:100%;max-width:600px;
+  padding:20px 18px calc(24px + env(safe-area-inset-bottom,0));
+  animation:sheetUp .3s cubic-bezier(.2,.8,.4,1);
+}
+.note-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.note-title{font-size:1.05rem;font-weight:700;color:var(--gold);font-family:var(--font-body)}
+.note-close{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--divider);
+  color:var(--muted);cursor:pointer;font-size:.9rem;
+}
+.note-ref{
+  font-size:.72rem;color:var(--gold);padding:5px 12px;
+  background:var(--emerald-soft);border-radius:999px;
+  display:inline-block;margin-bottom:14px;
+  border:1px solid var(--gold-soft);font-weight:700;
+  letter-spacing:.04em;
+}
+.note-input{
+  width:100%;min-height:140px;padding:12px;
+  background:var(--bg);color:var(--text);
+  border:1px solid var(--divider);border-radius:12px;
+  font-family:var(--font-body);font-size:.92rem;line-height:1.6;
+  resize:vertical;box-sizing:border-box;
+}
+.note-input:focus{outline:none;border-color:var(--gold)}
+.note-actions{display:flex;gap:10px;margin-top:14px}
+.note-save{
+  flex:1;padding:12px;background:var(--gold);color:#0A0F0D;
+  border:none;border-radius:12px;font-family:var(--font-body);
+  font-weight:700;font-size:.9rem;cursor:pointer;
+}
+.note-delete{
+  padding:12px 18px;background:transparent;color:#d9534f;
+  border:1px solid #d9534f;border-radius:12px;
+  font-family:var(--font-body);font-weight:700;font-size:.9rem;
+  cursor:pointer;
+}
+.bm-note-text{
+  margin-top:8px;padding:10px 12px;background:var(--bg);
+  border-left:3px solid var(--gold);border-radius:8px;
+  font-size:.85rem;color:var(--text);line-height:1.6;
+}
