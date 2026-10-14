@@ -307,6 +307,7 @@ function openLastRead(){
 async function openSurahAtVerse(surahNum, ayahNum){
   QURAN.surah = surahNum;
   localStorage.setItem('quran-last-surah', surahNum);
+  localStorage.setItem('quran-last-ayah', ayahNum);
   document.getElementById('quran-list-view').style.display = 'none';
   document.getElementById('quran-reader-view').style.display = 'block';
   mainEl.scrollTop = 0;
@@ -316,6 +317,7 @@ async function openSurahAtVerse(surahNum, ayahNum){
 function openSurah(n){
   QURAN.surah = n;
   localStorage.setItem('quran-last-surah', n);
+  localStorage.setItem('quran-last-ayah', 1);
   document.getElementById('quran-list-view').style.display = 'none';
   document.getElementById('quran-reader-view').style.display = 'block';
   mainEl.scrollTop = 0;
@@ -6837,3 +6839,34 @@ document.addEventListener('click', (e) => {
   e.preventDefault();
   window.open(WEBSITE_URL, '_blank');
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// QURAN — track verse in view (updates Home "Continue" tile)
+// ═══════════════════════════════════════════════════════════════
+
+let _quranScrollTimer = null;
+function trackQuranScroll(){
+  if(SESSION.currentPage !== 'quran') return;
+  const readerView = document.getElementById('quran-reader-view');
+  if(!readerView || readerView.style.display !== 'block') return;
+  if(!QURAN.data) return;
+  const verses = document.querySelectorAll('#quran-content .q-verse');
+  if(!verses.length) return;
+  const viewTop = 120;
+  let currentAyah = null;
+  for(const v of verses){
+    const rect = v.getBoundingClientRect();
+    if(rect.bottom > viewTop){ currentAyah = parseInt(v.dataset.ayah); break; }
+  }
+  if(!currentAyah) return;
+  const prevAyah = parseInt(localStorage.getItem('quran-last-ayah') || '1');
+  if(currentAyah === prevAyah) return;
+  localStorage.setItem('quran-last-ayah', currentAyah);
+  renderLastRead();
+}
+mainEl.addEventListener('scroll', () => {
+  if(_quranScrollTimer) clearTimeout(_quranScrollTimer);
+  _quranScrollTimer = setTimeout(() => {
+    _quranScrollTimer = null;
+    trackQuranScroll();
+  }, 500);
+}, { passive: true });
