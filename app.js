@@ -3109,7 +3109,8 @@ const TOOLS = {
   verseOfTheDay: {title:'📖 Verse of the Day', render:() => renderTodayDedicated('verse')},
   hadithOfTheDay: {title:'📚 Hadith of the Day', render:() => renderTodayDedicated('hadith')},
   umrahGuide: {title:'🕋 Umrah Guide', render:renderUmrahGuide},
-  hajjGuide: {title:'🕋 Hajj Guide', render:renderHajjGuide}
+  hajjGuide: {title:'🕋 Hajj Guide', render:renderHajjGuide},
+  aboutApp: {title:'ℹ️ About the app', render:renderAboutApp}
 };let currentLearnZone = 'traditional';
 let currentLearnTool = null;
 function openLearnOverlay(toolId, zone){
@@ -6777,4 +6778,52 @@ document.addEventListener('click', (e) => {
   e.stopPropagation();
   e.preventDefault();
   openFactOverlay();
+}, true);
+// ═══════════════════════════════════════════════════════════════
+// ABOUT THE APP — modal renderer
+// ═══════════════════════════════════════════════════════════════
+
+function renderAboutApp(){
+  document.getElementById('q-modal-content').innerHTML = `
+    <div class="tool-view">
+      <div class="rm-header" style="padding:20px 0 14px">
+        <div class="rm-header-arabic">الجمعة</div>
+        <div class="rm-header-title">Al-Jumu'ah</div>
+        <div class="rm-header-sub">Version 1.0.0 · By FC</div>
+      </div>
+      <div class="pg-intro">
+        A free, offline-capable Islamic companion — built to help every Muslim stay connected to the Quran, Hadith, dhikr, prayer, and knowledge. No ads. No distraction. Just the deen.
+      </div>
+      <div class="tool-section-title">What's Inside</div>
+      <div class="pg-step-content" style="padding:0;max-height:none">
+        <ul>
+          <li>Quran — 114 surahs, tafsir, word-by-word, audio, offline</li>
+          <li>Hadith — 9 collections with search &amp; reflections</li>
+          <li>Dhikr, Tasbih, Adhkar, Duas &amp; Durood</li>
+          <li>Prayer times, Qibla, Prayer &amp; Fasting trackers</li>
+          <li>Prophets, Sahaba, Seerah, New Muslim, Islamic Quiz</li>
+          <li>Ramadan mode, Hijri calendar, Zakat calculators</li>
+          <li>100 Daily Islamic Facts</li>
+          <li>And more…</li>
+        </ul>
+      </div>
+      <div class="tool-section-title">Credits</div>
+      <div class="pg-intro" style="font-size:.78rem;padding:12px">
+        Recitations from everyayah.com · Quran text from alquran.cloud · Hadith from fawazahmed0 hadith-api · Prayer times &amp; Qibla from aladhan.com · Tafsir &amp; word-by-word from quran.com
+      </div>
+      <div class="kh-complete-msg" style="margin-top:14px">
+        <span class="dua">جَزَاكُمُ اللَّهُ خَيْرًا</span>
+        <div class="en">May Allah reward you with good.</div>
+      </div>
+      <div class="tool-hint" style="padding-top:18px">Made with love for the Ummah 🌙</div>
+    </div>`;
+}
+
+// Website pill — opens WEBSITE_URL (was showing "coming soon")
+document.addEventListener('click', (e) => {
+  const pill = e.target.closest('.tool-pill[data-website-link]');
+  if(!pill) return;
+  e.stopPropagation();
+  e.preventDefault();
+  window.open(WEBSITE_URL, '_blank');
 }, true);
