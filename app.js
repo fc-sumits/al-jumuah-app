@@ -323,13 +323,21 @@ function openSurah(n){
   mainEl.scrollTop = 0;
   loadSurah(n);
 }
+function setReaderCompactBar(name, meaning){
+  const nameEl = document.getElementById('greeting-compact-name');
+  const meanEl = document.getElementById('greeting-compact-meaning');
+  if(nameEl) nameEl.textContent = name || 'Surah';
+  if(meanEl) meanEl.textContent = meaning || '';
+  document.body.classList.add('reader-active');
+}
 function backToSurahList(){
   stopQuranAudio();
   document.getElementById('quran-reader-view').style.display = 'none';
   document.getElementById('quran-list-view').style.display = 'block';
+  document.body.classList.remove('reader-active');
   mainEl.scrollTop = 0;
   renderLastRead();
-}
+    }
 async function loadSurah(n){
   const container = document.getElementById('quran-content');
   container.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading verses…</div>';
@@ -337,8 +345,8 @@ async function loadSurah(n){
     const res = await fetch(`https://api.alquran.cloud/v1/surah/${n}/editions/${QURAN.script},en.sahih`);
     const data = await res.json();
     QURAN.data = { arabic: data.data[0], english: data.data[1] };
-    document.getElementById('reader-title').textContent = QURAN.data.arabic.englishName;
-    renderSurah();
+setReaderCompactBar(QURAN.data.arabic.englishName, QURAN.data.arabic.englishNameTranslation);
+renderSurah();
   }catch(e){ container.innerHTML = '<div class="q-loading">Could not load this surah.</div>'; }
 }
 function renderSurah(){
@@ -6870,3 +6878,14 @@ mainEl.addEventListener('scroll', () => {
     trackQuranScroll();
   }, 500);
 }, { passive: true });
+// ═══════════════════════════════════════════════════════════════
+// READER COMPACT BAR — back button wiring
+// ═══════════════════════════════════════════════════════════════
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('#greeting-compact-back');
+  if(!btn) return;
+  e.stopPropagation();
+  e.preventDefault();
+  backToSurahList();
+}, true);
