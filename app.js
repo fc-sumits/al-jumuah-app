@@ -123,7 +123,17 @@ function showPage(name){
   if(name === 'hadith' && window.hadithBrowser) window.hadithBrowser.renderRoot();
   if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
   if(name === 'give') renderGive();
-  if(name === 'quran'){ renderLastRead(); }
+  if(name === 'quran'){
+  renderLastRead();
+  const rv = document.getElementById('quran-reader-view');
+  if(rv && rv.style.display === 'block'){
+    document.body.classList.add('reader-active');
+  } else {
+    document.body.classList.remove('reader-active');
+  }
+} else {
+  document.body.classList.remove('reader-active');
+  }
   const saved = SESSION.scroll[name];
   if(saved !== undefined){
     requestAnimationFrame(() => { mainEl.scrollTop = saved; });
