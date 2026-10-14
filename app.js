@@ -6080,3 +6080,95 @@ document.addEventListener('click', (e) => {
   openLearnOverlay('islamicQuiz', 'modern');
   renderQuiz();
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// BOOKMARKS — main tab renderers
+// Verses tab (fetches each saved verse from alquran.cloud)
+// Hadith + Notes tabs come in B2/B3.
+// ═══════════════════════════════════════════════════════════════
+
+function loadBookmarks(){
+  const activeTab = document.querySelector('.bm-tab.active');
+  const which = activeTab ? activeTab.dataset.bm : 'verses';
+  if(which === 'verses') renderBookmarksVerses();
+  else if(which === 'hadith') renderBookmarksHadith();
+  else if(which === 'notes') renderBookmarksNotes();
+}
+
+async function renderBookmarksVerses(){
+  const c = document.getElementById('bm-verses');
+  if(!c) return;
+  if(!window.__currentUser){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>Sign in to save and sync bookmarks.<br>Tap the star on any verse while reading.</div>';
+    return;
+  }
+  if(!userBookmarks.verses.length){
+    c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>No saved verses yet.<br>Star a verse while reading to save it here.</div>';
+    return;
+  }
+  c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading saved verses…</div>';
+  try{
+    const keys = userBookmarks.verses.slice();
+    const bySurah = {};
+    keys.forEach(k => {
+      const parts = k.split(':');
+      const s = parts[0], a = parts[1];
+      if(!bySurah[s]) bySurah[s] = [];
+      bySurah[s].push(parseInt(a));
+    });
+    let html = '';
+    const surahNums = Object.keys(bySurah).sort((a,b) => parseInt(a) - parseInt(b));
+    for(const surahNum of surahNums){
+      const res = await fetch('https://api.alquran.cloud/v1/surah/' + surahNum + '/editions/quran-uthmani,en.sahih');
+      const data = await res.json();
+      const ar = data.data[0];
+      const en = data.data[1];
+      bySurah[surahNum].forEach(ayahNum => {
+        const ay = ar.ayahs.find(x => x.numberInSurah === ayahNum);
+        const ey = en.ayahs.find(x => x.numberInSurah === ayahNum);
+        if(!ay || !ey) return;
+        const key = surahNum + ':' + ayahNum;
+        html += '<div class="bm-item" data-bm-verse="' + key + '">';
+        html +=   '<div class="bm-item-head">';
+        html +=     '<span class="bm-ref">' + ar.englishName + ' · ' + key + '</span>';
+        html +=     '<span class="bm-star" data-bm-remove="' + key + '"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>';
+        html +=   '</div>';
+        html +=   '<p class="bm-arabic">' + ay.text + '</p>';
+        html +=   '<p class="bm-text">' + ey.text + '</p>';
+        html += '</div>';
+      });
+    }
+    c.innerHTML = html;
+    c.querySelectorAll('[data-bm-verse]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if(e.target.closest('[data-bm-remove]')) return;
+        const parts = el.dataset.bmVerse.split(':');
+        showPage('quran');
+        openSurahAtVerse(parseInt(parts[0]), parseInt(parts[1]));
+      });
+    });
+    c.querySelectorAll('[data-bm-remove]').forEach(el => {
+      el.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const key = el.dataset.bmRemove;
+        const idx = userBookmarks.verses.indexOf(key);
+        if(idx >= 0) userBookmarks.verses.splice(idx, 1);
+        await saveUserBookmarks();
+        showToast('Removed');
+        renderBookmarksVerses();
+      });
+    });
+  }catch(e){
+    console.error('bookmarks verses render failed', e);
+    c.innerHTML = '<div class="bm-empty">Could not load saved verses.</div>';
+  }
+}
+
+// Re-render the panel when the user switches tabs
+document.querySelectorAll('.bm-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const which = tab.dataset.bm;
+    if(which === 'verses') renderBookmarksVerses();
+    else if(which === 'hadith' && typeof renderBookmarksHadith === 'function') renderBookmarksHadith();
+    else if(which === 'notes' && typeof renderBookmarksNotes === 'function') renderBookmarksNotes();
+  });
+});
