@@ -20,7 +20,18 @@ header.app-header{flex-shrink:0;padding:calc(env(safe-area-inset-top,0) + 14px) 
 .icon-btn:active{transform:scale(.9)}
 .icon-btn:hover{background:var(--gold-soft);color:var(--gold)}
 .icon-btn svg{width:22px;height:22px;stroke-width:1.8}
-.greeting{flex-shrink:0;padding:14px 18px 6px;display:flex;align-items:center;gap:10px}
+.greeting{flex-shrink:0;padding:14px 18px 6px;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden;min-height:46px}
+.greeting-normal{display:flex;align-items:center;gap:10px;width:100%;transition:opacity .28s ease,transform .28s ease}
+.greeting-compact{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:6px 14px;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .28s ease,transform .28s ease;background:var(--bg)}
+.greeting-compact-back{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--card-border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0;transition:all .2s ease}
+.greeting-compact-back:hover{border-color:var(--gold);color:var(--gold)}
+.greeting-compact-back:active{transform:scale(.92)}
+.greeting-compact-back svg{width:16px;height:16px;stroke-width:2.4}
+.greeting-compact-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.greeting-compact-name{font-size:.95rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.15;letter-spacing:.005em}
+.greeting-compact-meaning{font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.1;letter-spacing:.02em}
+body.reader-active .greeting-normal{opacity:0;transform:translateY(-8px);pointer-events:none}
+body.reader-active .greeting-compact{opacity:1;transform:translateY(0);pointer-events:auto}
 .greeting-arabic{font-family:var(--font-arabic);font-size:1.05rem;color:var(--text)}
 .greeting-sep{color:var(--muted-2);font-size:.9rem}
 .greeting-date{font-size:.82rem;color:var(--muted);letter-spacing:.02em}
@@ -142,7 +153,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .surah-name{font-size:.96rem;font-weight:700;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .surah-meta{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
 .surah-arabic{font-family:var(--font-arabic);font-size:1.35rem;color:var(--gold);text-align:right;line-height:1.2;flex-shrink:0;white-space:nowrap}
-.reader-topbar{display:flex;align-items:center;gap:12px;padding:10px 4px 12px;position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--divider);margin-bottom:8px}
+.reader-topbar{display:flex;align-items:center;gap:12px;padding:6px 4px 14px}
 .reader-topbar-title{font-size:1.05rem;font-weight:700;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .surah-banner{background:linear-gradient(160deg,#0B3D2E 0%,#1A5C45 60%,#0B3D2E 100%);border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:22px 16px;margin-bottom:12px;text-align:center;position:relative;overflow:hidden}
 .surah-banner::before{content:'';position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='0.8'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30 Z'%3E%3C/path%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/svg%3E");background-size:60px 60px;pointer-events:none}
