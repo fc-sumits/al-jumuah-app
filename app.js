@@ -6541,7 +6541,7 @@ const ISLAMIC_FACTS = [
 {id:3, cat:'history', text:'Baghdad was founded in 762 CE by the Abbasid Caliph al-Mansur and became the largest city in the world by the 9th century.'},
 {id:4, cat:'history', text:'The Battle of Badr took place in 2 AH (624 CE). 313 Muslims faced roughly 1,000 Quraysh — and won decisively.'},
 {id:5, cat:'history', text:'Al-Qarawiyyin in Fes, Morocco — founded in 859 CE by Fatima al-Fihri — is recognised as the oldest continuously operating university in the world.'},
-{id:6, cat:'history', text:'The Prophet ﷺ was born in the Year of the Elephant (570 CE) — the same year Abraha\\'s army tried to destroy the Kaaba.'},
+{id:6, cat:'history', text:'The Prophet ﷺ was born in the Year of the Elephant (570 CE) — the same year Abraha\'s army tried to destroy the Kaaba.'},
 {id:7, cat:'history', text:'The Hijrah — the migration from Makkah to Madinah — marks year 1 of the Islamic calendar.'},
 {id:8, cat:'history', text:'Umar ibn al-Khattab (RA) established the Islamic calendar, dating it from the Hijrah.'},
 {id:9, cat:'history', text:'Jerusalem was peacefully opened to Muslim rule in 637 CE during the caliphate of Umar (RA).'},
@@ -6551,7 +6551,7 @@ const ISLAMIC_FACTS = [
 {id:13, cat:'history', text:'Al-Azhar University in Cairo, founded in 970 CE, is one of the oldest centres of Islamic learning still active today.'},
 {id:14, cat:'history', text:'The first migration to Abyssinia took place in 615 CE, where the Christian king Negus gave refuge to the early Muslims.'},
 {id:15, cat:'history', text:'Sultan Salahuddin al-Ayyubi (Saladin) recaptured Jerusalem in 1187 CE after the Battle of Hattin.'},
-{id:16, cat:'history', text:'The Prophet\\'s ﷺ grandfather, Abdul Muttalib, is credited with rediscovering the well of Zamzam, which had been buried for generations.'},
+{id:16, cat:'history', text:'The Prophet\'s ﷺ grandfather, Abdul Muttalib, is credited with rediscovering the well of Zamzam, which had been buried for generations.'},
 {id:17, cat:'history', text:'The Battle of Uhud took place in 3 AH (625 CE), where 70 Muslims were martyred — including Hamza ibn Abdul Muttalib (RA).'},
 {id:18, cat:'quran', text:'The Quran has 114 surahs and 6,236 verses.'},
 {id:19, cat:'quran', text:'Surah Al-Baqarah is the longest surah with 286 verses. Surah Al-Kawthar is the shortest with just 3 verses.'},
@@ -6583,7 +6583,7 @@ const ISLAMIC_FACTS = [
 {id:45, cat:'sunnah', text:'The Prophet ﷺ encouraged visiting the sick, and said the one who visits a sick person walks in the gardens of Paradise.'},
 {id:46, cat:'sunnah', text:'The Prophet ﷺ would say "Bismillah" upon entering the home and would greet the household.'},
 {id:47, cat:'sunnah', text:'It is sunnah to say "Alhamdulillah" after sneezing, and "Yarhamukallah" to the one who sneezes.'},
-{id:48, cat:'sunnah', text:'The Prophet ﷺ said: "The believer\\'s shade on the Day of Judgement will be his charity."'},
+{id:48, cat:'sunnah', text:'The Prophet ﷺ said: "The believer\'s shade on the Day of Judgement will be his charity."'},
 {id:49, cat:'sunnah', text:'When drinking water, it is sunnah to sit, say Bismillah, drink in three sips, and say Alhamdulillah afterwards.'},
 {id:50, cat:'sunnah', text:'The Prophet ﷺ fasted on Mondays and Thursdays and encouraged others to do the same.'},
 {id:51, cat:'sunnah', text:'The Prophet ﷺ said: "Whoever believes in Allah and the Last Day, let him speak good or remain silent."'},
@@ -6606,13 +6606,13 @@ const ISLAMIC_FACTS = [
 {id:68, cat:'tawhid', text:'Tawhid — the oneness of Allah — is the foundation of Islam and the core message of every prophet.'},
 {id:69, cat:'tawhid', text:'Surah Al-Ikhlas summarises Tawhid in four short verses: Allah is One, Eternal, not begotten, and without equal.'},
 {id:70, cat:'tawhid', text:'Shirk — associating partners with Allah — is the only sin Allah will not forgive if a person dies upon it.'},
-{id:71, cat:'tawhid', text:'Allah\\'s 99 names (Asma ul-Husna) each describe a perfect attribute — like Ar-Rahman (Most Merciful) and Al-Hakim (All-Wise).'},
+{id:71, cat:'tawhid', text:'Allah\'s 99 names (Asma ul-Husna) each describe a perfect attribute — like Ar-Rahman (Most Merciful) and Al-Hakim (All-Wise).'},
 {id:72, cat:'tawhid', text:'The first of the five pillars of Islam is the Shahada — the declaration of faith in Allah and His Messenger.'},
 {id:73, cat:'tawhid', text:'Allah says in a Hadith Qudsi: "I am as My servant thinks I am, and I am with him when he remembers Me."'},
 {id:74, cat:'tawhid', text:'Iman (faith) consists of belief in Allah, His angels, His books, His messengers, the Last Day, and divine decree.'},
 {id:75, cat:'tawhid', text:'Allah is closer to us than our jugular vein — He hears every prayer and sees every tear (Quran 50:16).'},
 {id:76, cat:'tawhid', text:'Tawakkul — complete trust in Allah — does not mean abandoning effort; it means relying on Allah after doing your part.'},
-{id:77, cat:'tawhid', text:'Allah\\'s mercy overcomes His wrath — the Prophet ﷺ affirmed this in a well-known hadith.'},
+{id:77, cat:'tawhid', text:'Allah\'s mercy overcomes His wrath — the Prophet ﷺ affirmed this in a well-known hadith.'},
 {id:78, cat:'tawhid', text:'Dua is worship — the Prophet ﷺ said that supplication itself is the essence of worship.'},
 {id:79, cat:'tawhid', text:'The Prophet ﷺ said: "Allah is Beautiful, and He loves beauty."'},
 {id:80, cat:'tawhid', text:'Every act done with the intention of pleasing Allah becomes worship — even eating and sleeping.'},
@@ -6632,7 +6632,7 @@ const ISLAMIC_FACTS = [
 {id:94, cat:'akhlaq', text:'Envy is a fire that consumes good deeds — the Prophet ﷺ warned against it in multiple narrations.'},
 {id:95, cat:'akhlaq', text:'The Prophet ﷺ said: "Give gifts, and you will love one another."'},
 {id:96, cat:'akhlaq', text:'The best charity is that given from what you love — even a single date given with a generous heart counts.'},
-{id:97, cat:'akhlaq', text:'The Prophet ﷺ said: "Whoever relieves a believer\\'s distress, Allah will relieve his distress on the Day of Judgement."'},
+{id:97, cat:'akhlaq', text:'The Prophet ﷺ said: "Whoever relieves a believer\'s distress, Allah will relieve his distress on the Day of Judgement."'},
 {id:98, cat:'akhlaq', text:'Making dua for your brother in his absence is answered by an angel who says: "And for you the same."'},
 {id:99, cat:'akhlaq', text:'The Prophet ﷺ said: "None of you truly believes until he loves for his brother what he loves for himself."'},
 {id:100, cat:'akhlaq', text:'The Prophet ﷺ said: "Do not consider any act of goodness insignificant — even meeting your brother with a cheerful face."'}
@@ -6754,7 +6754,7 @@ function renderDailyFact(){
 
 function buildFactShareText(fact){
   const meta = FACT_CATEGORY_LABELS[fact.cat] || { en:'Fact' };
-  return fact.text + '\n\n— ' + meta.en + ' · Daily Islamic Fact · Al-Jumu\\'ah';
+  return fact.text + '\n\n— ' + meta.en + ' · Daily Islamic Fact · Al-Jumu\'ah';
 }
 
 function copyDailyFact(){
