@@ -21,17 +21,17 @@ header.app-header{flex-shrink:0;padding:calc(env(safe-area-inset-top,0) + 14px) 
 .icon-btn:hover{background:var(--gold-soft);color:var(--gold)}
 .icon-btn svg{width:22px;height:22px;stroke-width:1.8}
 .greeting{flex-shrink:0;padding:14px 18px 6px;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden;min-height:46px}
-.greeting-normal{display:flex;align-items:center;gap:10px;width:100%;transition:opacity .28s ease,transform .28s ease}
-.greeting-compact{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:6px 14px;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .28s ease,transform .28s ease;background:var(--bg)}
-.greeting-compact-back{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--card-border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0;transition:all .2s ease}
-.greeting-compact-back:hover{border-color:var(--gold);color:var(--gold)}
-.greeting-compact-back:active{transform:scale(.92)}
-.greeting-compact-back svg{width:16px;height:16px;stroke-width:2.4}
-.greeting-compact-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
-.greeting-compact-name{font-size:.95rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.15;letter-spacing:.005em}
-.greeting-compact-meaning{font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.1;letter-spacing:.02em}
-body.reader-active .greeting-normal{opacity:0;transform:translateY(-8px);pointer-events:none}
-body.reader-active .greeting-compact{opacity:1;transform:translateY(0);pointer-events:auto}
+.header-reader-bar{display:none;flex:1;align-items:center;gap:10px;min-width:0}
+.header-reader-back{width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid var(--divider);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0;transition:all .2s ease}
+.header-reader-back:hover{border-color:var(--gold);color:var(--gold)}
+.header-reader-back:active{transform:scale(.92)}
+.header-reader-back svg{width:16px;height:16px;stroke-width:2.4}
+.header-reader-info{flex:1;min-width:0;text-align:center;padding:0 6px}
+.header-reader-name{font-size:.95rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.15;letter-spacing:.005em}
+.header-reader-meaning{font-size:.68rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.1;letter-spacing:.02em;margin-top:1px}
+body.reader-active .brand{display:none}
+body.reader-active .header-reader-bar{display:flex}
+body.reader-active .greeting{display:none}
 .greeting-arabic{font-family:var(--font-arabic);font-size:1.05rem;color:var(--text)}
 .greeting-sep{color:var(--muted-2);font-size:.9rem}
 .greeting-date{font-size:.82rem;color:var(--muted);letter-spacing:.02em}
