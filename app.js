@@ -112,15 +112,25 @@ updateHijri();
 const mainEl = document.getElementById('app-main');
 const allPages = document.querySelectorAll('.page');
 const navItems = document.querySelectorAll('.nav-item');
+const SESSION = { currentPage: 'home', scroll: {} };
 function showPage(name){
+  if(SESSION.currentPage && SESSION.currentPage !== name){
+    SESSION.scroll[SESSION.currentPage] = mainEl.scrollTop;
+  }
   allPages.forEach(p=>p.classList.toggle('active', p.dataset.page === name));
   navItems.forEach(n=>{ if(n.dataset.navTab) n.classList.toggle('active', n.dataset.navTab === name); });
-  mainEl.scrollTop = 0;
   if(name === 'bookmarks') loadBookmarks();
   if(name === 'hadith' && window.hadithBrowser) window.hadithBrowser.renderRoot();
   if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
   if(name === 'give') renderGive();
   if(name === 'quran'){ renderLastRead(); }
+  const saved = SESSION.scroll[name];
+  if(saved !== undefined){
+    requestAnimationFrame(() => { mainEl.scrollTop = saved; });
+  } else {
+    mainEl.scrollTop = 0;
+  }
+  SESSION.currentPage = name;
 }
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
