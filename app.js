@@ -846,11 +846,13 @@ class HadithBrowser {
     }catch(e){ console.log('comments load failed', e); }
   }
   openCollection(id){
-    this.currentCollectionId = id;
-    this.currentSectionNumber = 1;
-    const info = HADITH_COLLECTIONS.find(c => c.id === id);
-    document.getElementById('hadith-content').innerHTML = `<div class="settings-header"><button class="back-btn" onclick="window.hadithBrowser.renderRoot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><span class="settings-title" style="font-size:1.1rem">${info.name}</span></div><div class="h-search"><input type="number" id="h-search-input" placeholder="Go to hadith number..." inputmode="numeric"><button onclick="window.hadithBrowser.searchHadith()">Go</button></div><div id="h-list" class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>`;
-    this.loadSection(id, 1);
+  this.currentCollectionId = id;
+  this.currentSectionNumber = 1;
+  const info = HADITH_COLLECTIONS.find(c => c.id === id);
+  document.body.classList.add('hadith-full-active');
+  setHadithBreadcrumb(info.name, '');
+  document.getElementById('hadith-content').innerHTML = `<div class="h-search"><input type="number" id="h-search-input" placeholder="Go to hadith number..." inputmode="numeric"><button onclick="window.hadithBrowser.searchHadith()">Go</button></div><div id="h-list" class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>`;
+  this.loadSection(id, 1);
   }
   async loadSection(collectionId, sectionNumber){
     this.currentSectionNumber = sectionNumber;
