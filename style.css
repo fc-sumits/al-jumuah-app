@@ -3370,3 +3370,83 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
   .fact-category-pill{padding:6px 14px 6px 10px}
   .fact-cat-en{font-size:.66rem}
    }
+/* ═══════════════════════════════════════════════════════════════
+   HADITH BREADCRUMB BAR (header, shown in fullscreen hadith)
+   ═══════════════════════════════════════════════════════════════ */
+.header-hadith-bar{display:none;flex:1;align-items:center;gap:6px;min-width:0;padding:0 4px}
+.header-hadith-home{display:flex;align-items:center;gap:5px;background:transparent;border:none;color:var(--muted);font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 4px;flex-shrink:0;border-radius:8px;transition:color .2s ease}
+.header-hadith-home:hover{color:var(--gold)}
+.header-hadith-home svg{width:14px;height:14px;stroke-width:2;flex-shrink:0}
+.header-hadith-sep{width:12px;height:12px;color:var(--muted-2);flex-shrink:0;opacity:.6}
+.header-hadith-collection-btn{background:transparent;border:none;color:var(--text);font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;padding:6px 4px;min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;border-radius:8px;transition:color .2s ease}
+.header-hadith-collection-btn:hover{color:var(--gold)}
+.header-hadith-collection-btn span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.header-hadith-number{font-family:var(--font-body);font-size:.82rem;font-weight:700;color:var(--gold);flex-shrink:0;padding:0 4px;letter-spacing:.02em}
+body.hadith-full-active .brand{display:none}
+body.hadith-full-active .header-reader-bar{display:none}
+body.hadith-full-active .header-hadith-bar{display:flex}
+body.hadith-full-active .greeting{display:none}
+
+/* ═══════════════════════════════════════════════════════════════
+   LAST HADITH CARD (top of Hadith root)
+   ═══════════════════════════════════════════════════════════════ */
+.last-hadith-card{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(42,138,106,.08));border:1px solid var(--gold-soft);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:14px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.last-hadith-card:hover{transform:translateY(-1px);border-color:var(--gold)}
+.last-hadith-card:active{transform:scale(.99)}
+.last-hadith-icon{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center}
+.last-hadith-icon svg{width:18px;height:18px;stroke-width:2}
+.last-hadith-body{flex:1;min-width:0}
+.last-hadith-head{font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-bottom:3px}
+.last-hadith-title{font-size:.92rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.last-hadith-close{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:transparent;border:1px solid var(--divider);color:var(--muted-2);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:all .2s ease}
+.last-hadith-close:hover{border-color:#d9534f;color:#d9534f}
+.last-hadith-close svg{width:12px;height:12px;stroke-width:2.2}
+
+/* ═══════════════════════════════════════════════════════════════
+   FULLSCREEN HADITH
+   ═══════════════════════════════════════════════════════════════ */
+.hf-view{padding:8px 4px 20px;animation:pageIn .28s ease}
+.hf-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px;padding:0 4px}
+.hf-collection-badge{font-family:var(--font-body);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:rgba(212,175,55,.12);border:1px solid var(--gold-soft);padding:5px 12px;border-radius:999px}
+.hf-number-badge{font-family:var(--font-body);font-size:.68rem;font-weight:800;letter-spacing:.06em;color:var(--text);background:var(--card);border:1px solid var(--card-border);padding:5px 12px;border-radius:999px}
+.hf-grade-badge{font-family:var(--font-body);font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.hf-grade-badge.sahih{background:rgba(42,138,106,.25);color:#5fc99b}
+.hf-grade-badge.hasan{background:rgba(80,130,200,.25);color:#7fb0e6}
+.hf-text-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:22px 20px;margin-bottom:18px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.hf-text{font-family:var(--font-body);font-size:1.02rem;line-height:1.85;color:var(--text);letter-spacing:.002em}
+.hf-text p{margin-bottom:14px}
+.hf-text p:last-child{margin-bottom:0}
+.hf-section{background:var(--bg);border:1px solid var(--divider);border-radius:var(--radius-md);padding:16px 18px;margin-bottom:14px}
+.hf-section-title{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.hf-section-title svg{width:14px;height:14px;stroke-width:2}
+.hf-scholarly-intro{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.hf-scholar-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px dashed var(--divider)}
+.hf-scholar-row:first-of-type{border-top:none}
+.hf-scholar-name{font-size:.86rem;color:var(--text);font-weight:600;line-height:1.35;flex:1;min-width:0}
+.hf-scholar-grade{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;flex-shrink:0;background:rgba(42,138,106,.22);color:#5fc99b}
+.hf-scholar-grade.weak{background:rgba(217,83,79,.22);color:#e88b88}
+.hf-scholar-grade.fabricated{background:rgba(217,83,79,.3);color:#ff8a86}
+.hf-in-book{font-size:.72rem;color:var(--muted-2);font-style:italic;margin-top:12px;padding-top:12px;border-top:1px dashed var(--divider)}
+.hf-actions{display:flex;gap:10px;margin-bottom:16px}
+.hf-action-btn{flex:1;background:var(--card);border:1px solid var(--card-border);color:var(--text);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s ease}
+.hf-action-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hf-action-btn:active{transform:scale(.98)}
+.hf-action-btn svg{width:14px;height:14px;stroke-width:2}
+.hf-action-btn.primary{background:var(--gold-soft);border-color:var(--gold);color:var(--gold)}
+.hf-thoughts-toggle{width:100%;background:transparent;border:1px dashed var(--divider);color:var(--gold);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:14px;transition:all .2s ease}
+.hf-thoughts-toggle:hover{border-color:var(--gold);background:var(--gold-soft)}
+.hf-thoughts-toggle svg{width:14px;height:14px;stroke-width:2}
+.hf-thoughts-body{display:none;margin-bottom:14px}
+.hf-thoughts-body.open{display:block}
+.hf-thoughts-body .h-form textarea{background:var(--card)}
+.hf-thoughts-body .h-signin-msg{background:var(--card)}
+.hf-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;padding-top:18px;border-top:1px dashed var(--divider)}
+.hf-nav-btn{background:transparent;border:1px solid var(--card-border);color:var(--text);border-radius:var(--radius-sm);padding:11px 16px;font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s ease;min-width:100px;justify-content:center}
+.hf-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hf-nav-btn:active{transform:scale(.96)}
+.hf-nav-btn svg{width:14px;height:14px;stroke-width:2.4}
+.hf-nav-label{font-size:.72rem;color:var(--muted-2);font-style:italic;text-align:center;flex:1;line-height:1.4}
+.h-bookmark-expand{background:transparent;border:none;padding:4px 6px;cursor:pointer;color:var(--muted);opacity:.7;display:flex;align-items:center;justify-content:center;transition:opacity .2s ease,color .2s ease,transform .15s ease;margin-left:4px;flex-shrink:0}
+.h-bookmark-expand:hover{opacity:1;color:var(--gold)}
+.h-bookmark-expand:active{transform:scale(.9)}
+.h-bookmark-expand svg{width:15px;height:15px;stroke-width:2}
