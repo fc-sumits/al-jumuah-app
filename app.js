@@ -7052,3 +7052,39 @@ document.addEventListener('click', (e) => {
     return;
   }
 }, true);
+// ═══════════════════════════════════════════════════════════════
+// SETTINGS TOGGLES — last-read-show + last-hadith-show
+// ═══════════════════════════════════════════════════════════════
+
+(function(){
+  function applyToggleVisual(key){
+    const el = document.querySelector('.toggle[data-toggle="' + key + '"]');
+    if(!el) return;
+    const off = localStorage.getItem(key) === 'off';
+    el.classList.toggle('on', !off);
+  }
+  applyToggleVisual('last-read-show');
+  applyToggleVisual('last-hadith-show');
+  setTimeout(() => {
+    applyToggleVisual('last-read-show');
+    applyToggleVisual('last-hadith-show');
+  }, 500);
+
+  document.addEventListener('click', (e) => {
+    const toggle = e.target.closest('.toggle[data-toggle="last-read-show"], .toggle[data-toggle="last-hadith-show"]');
+    if(!toggle) return;
+    e.stopPropagation();
+    e.preventDefault();
+    const key = toggle.dataset.toggle;
+    const nowOff = localStorage.getItem(key) === 'off';
+    localStorage.setItem(key, nowOff ? 'on' : 'off');
+    toggle.classList.toggle('on', nowOff);
+    showToast(nowOff ? 'Shown' : 'Hidden');
+    if(key === 'last-hadith-show' && typeof renderLastHadithCard === 'function'){
+      renderLastHadithCard();
+    }
+    if(key === 'last-read-show' && typeof renderLastRead === 'function'){
+      renderLastRead();
+    }
+  }, true);
+})();
