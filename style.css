@@ -3451,3 +3451,9 @@ body.hadith-full-active .greeting{display:none}
 .h-bookmark-expand:active{transform:scale(.9)}
 .h-bookmark-expand svg{width:15px;height:15px;stroke-width:2}
 .hf-text-note{font-size:.72rem;color:var(--muted-2);font-style:italic;margin-bottom:12px;padding-bottom:10px;border-bottom:1px dashed var(--divider);text-align:center;letter-spacing:.02em}
+.h-section-nav{display:flex;gap:10px;margin-top:22px;padding-top:18px;border-top:1px dashed var(--divider)}
+.h-section-nav-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 14px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s ease;min-width:0}
+.h-section-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
+.h-section-nav-btn:active{transform:scale(.97)}
+.h-section-nav-btn svg{width:14px;height:14px;stroke-width:2.4;flex-shrink:0}
+@media (max-width:360px){.h-section-nav{flex-direction:column}.h-section-nav-btn{font-size:.78rem}}
