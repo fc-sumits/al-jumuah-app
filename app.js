@@ -7294,8 +7294,8 @@ function closeHadithFullscreen(){
   }
   mainEl.scrollTop = 0;
 }
-
-// Expand icon on each hadith card — inject after render
+  });
+// Expand icon on each hadith card + section prev/next nav
 const _origRenderHadiths = HadithBrowser.prototype.renderHadiths;
 HadithBrowser.prototype.renderHadiths = function(data, collectionId, sectionNumber, customHeader){
   _origRenderHadiths.call(this, data, collectionId, sectionNumber, customHeader);
@@ -7317,7 +7317,41 @@ HadithBrowser.prototype.renderHadiths = function(data, collectionId, sectionNumb
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
     head.appendChild(btn);
   });
+  if(sectionNumber && data && data.metadata && data.metadata.section){
+    appendSectionNav(collectionId, sectionNumber, data.metadata.section);
+  }
 };
+
+function appendSectionNav(collectionId, sectionNumber, sectionsMap){
+  const c = document.getElementById('h-list');
+  if(!c) return;
+  const nums = Object.keys(sectionsMap).map(n => parseInt(n)).filter(n => !isNaN(n)).sort((a,b) => a-b);
+  if(nums.length < 2) return;
+  const idx = nums.indexOf(sectionNumber);
+  if(idx === -1) return;
+  const prevSec = nums[(idx - 1 + nums.length) % nums.length];
+  const nextSec = nums[(idx + 1) % nums.length];
+  const nav = document.createElement('div');
+  nav.className = 'h-section-nav';
+  nav.innerHTML =
+    '<button class="h-section-nav-btn" data-hsec-prev>' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
+      '<span>Previous section</span>' +
+    '</button>' +
+    '<button class="h-section-nav-btn" data-hsec-next>' +
+      '<span>Next section</span>' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
+    '</button>';
+  c.appendChild(nav);
+  nav.querySelector('[data-hsec-prev]').addEventListener('click', () => {
+    window.hadithBrowser.loadSection(collectionId, prevSec);
+    mainEl.scrollTop = 0;
+  });
+  nav.querySelector('[data-hsec-next]').addEventListener('click', () => {
+    window.hadithBrowser.loadSection(collectionId, nextSec);
+    mainEl.scrollTop = 0;
+  });
+}
 
 document.addEventListener('click', (e) => {
   const expandBtn = e.target.closest('.h-bookmark-expand');
