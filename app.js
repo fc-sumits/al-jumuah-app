@@ -7071,7 +7071,9 @@ document.addEventListener('click', (e) => {
   }, 500);
 
   document.addEventListener('click', (e) => {
-    const toggle = e.target.closest('.toggle[data-toggle="last-read-show"], .toggle[data-toggle="last-hadith-show"]');
+    const row = e.target.closest('.setting-row');
+    if(!row) return;
+    const toggle = row.querySelector('.toggle[data-toggle="last-read-show"], .toggle[data-toggle="last-hadith-show"]');
     if(!toggle) return;
     e.stopPropagation();
     e.preventDefault();
