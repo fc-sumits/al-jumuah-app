@@ -149,8 +149,21 @@ function showPage(name){
 let __lastBackAt = 0;
 const __BACK_EXIT_WINDOW = 2000;
 
+let __guardPushed = false;
 function __reArmBackGuard(){
-  try{ history.pushState({ aljumuahGuard: true }, '', location.href); }catch(e){}
+  try{
+    history.pushState({ aljumuahGuard: true }, '', location.href);
+    __guardPushed = true;
+  }catch(e){}
+}
+function __primeBackStack(){
+  try{
+    // Push an "exit cushion" — this is what the user pops when they actually want to exit
+    history.pushState({ aljumuahExitCushion: true }, '', location.href);
+    // Then push the app guard on top of it
+    history.pushState({ aljumuahGuard: true }, '', location.href);
+    __guardPushed = true;
+  }catch(e){}
 }
 
 function __getTopLayer(){
@@ -235,7 +248,7 @@ window.addEventListener('popstate', function(){
 });
 
 if(!history.state || !history.state.aljumuahGuard){
-  __reArmBackGuard();
+  __primeBackStack();
 }
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
