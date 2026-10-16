@@ -299,8 +299,9 @@ function renderQuranList(){
 function renderLastRead(){
   const card = document.getElementById('last-read-card');
   if(!card) return;
+  const toggleOff = localStorage.getItem('last-read-show') === 'off';
   const lastSurah = parseInt(localStorage.getItem('quran-last-surah') || '0');
-  if(!lastSurah){ card.style.display = 'none'; return; }
+  if(toggleOff || !lastSurah){ card.style.display = 'none'; return; }
   const meta = QURAN.surahList.find(s => s.number === lastSurah);
   if(!meta){ card.style.display = 'none'; return; }
   const lastAyah = parseInt(localStorage.getItem('quran-last-ayah') || '1');
