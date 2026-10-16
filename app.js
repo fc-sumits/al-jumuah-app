@@ -848,19 +848,19 @@ class HadithBrowser {
       }));
     }catch(e){ console.log('comments load failed', e); }
   }
-  openCollection(id){
+  openCollection(id, sectionNumber, scrollToNumber){
   this.currentCollectionId = id;
-  this.currentSectionNumber = 1;
+  this.currentSectionNumber = sectionNumber || 1;
   const info = HADITH_COLLECTIONS.find(c => c.id === id);
   document.body.classList.add('hadith-full-active');
   setHadithBreadcrumb(info.name, '');
   document.getElementById('hadith-content').innerHTML = `<div class="h-search"><input type="number" id="h-search-input" placeholder="Go to hadith number..." inputmode="numeric"><button onclick="window.hadithBrowser.searchHadith()">Go</button></div><div id="h-list" class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>`;
-  this.loadSection(id, 1);
+  this.loadSection(id, this.currentSectionNumber, scrollToNumber);
   }
-  async loadSection(collectionId, sectionNumber){
-    this.currentSectionNumber = sectionNumber;
-    const c = document.getElementById('h-list');
-    if(!c) return;
+  async loadSection(collectionId, sectionNumber, scrollToNumber){
+  this.currentSectionNumber = sectionNumber;
+  const c = document.getElementById('h-list');
+  if(!c) return;
     c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>';
     try{
       const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${collectionId}/sections/${sectionNumber}.json`;
@@ -870,8 +870,14 @@ class HadithBrowser {
         const keys = data.hadiths.map(h => `${collectionId}-${h.hadithnumber}`);
         await this.loadCommentsForKeys(keys);
       }
-      this.renderHadiths(data, collectionId, sectionNumber);
-    }catch(e){ c.innerHTML = '<div class="q-loading">Could not load hadith.</div>'; }
+    this.renderHadiths(data, collectionId, sectionNumber);
+    if(scrollToNumber){
+      setTimeout(() => {
+        const card = document.querySelector('#h-list .h-card[data-key="' + collectionId + '-' + scrollToNumber + '"]');
+        if(card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 350);
+    }
+  }catch(e){ c.innerHTML = '<div class="q-loading">Could not load hadith.</div>'; }
   }
   async randomHadith(){
     const col = HADITH_COLLECTIONS[Math.floor(Math.random()*HADITH_COLLECTIONS.length)];
@@ -6962,15 +6968,11 @@ function renderLastHadithCard(){
   const card = slot.querySelector('[data-last-hadith]');
   if(card){
     card.addEventListener('click', (e) => {
-      if(e.target.closest('[data-last-hadith-close]')) return;
-      const s = getLastHadith();
-      if(!s || !window.hadithBrowser) return;
-      window.hadithBrowser.currentCollectionId = s.collectionId;
-      window.hadithBrowser.openCollection(s.collectionId);
-      if(s.sectionNumber && s.sectionNumber !== 1){
-        window.hadithBrowser.loadSection(s.collectionId, s.sectionNumber);
-      }
-    });
+  if(e.target.closest('[data-last-hadith-close]')) return;
+  const s = getLastHadith();
+  if(!s || !window.hadithBrowser) return;
+  window.hadithBrowser.openCollection(s.collectionId, s.sectionNumber || 1, s.hadithNumber || null);
+});
   }
   const closeBtn = slot.querySelector('[data-last-hadith-close]');
   if(closeBtn){
