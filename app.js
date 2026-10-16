@@ -819,8 +819,11 @@ class HadithBrowser {
   }
   escapeHtml(text){ const d = document.createElement('div'); d.textContent = text; return d.innerHTML; }
   renderRoot(){
-    const c = document.getElementById('hadith-content');
-    if(!c) return;
+  this.currentCollectionId = null;
+  this.currentSectionNumber = 1;
+  document.body.classList.remove('hadith-full-active');
+  const c = document.getElementById('hadith-content');
+  if(!c) return;
     c.innerHTML = `<button class="h-random-btn" onclick="window.hadithBrowser.randomHadith()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>🎲 Random Hadith</button><div id="last-hadith-slot"></div><div class="h-coll-grid" id="h-coll-grid"></div>`;
     const grid = document.getElementById('h-coll-grid');
   grid.innerHTML = HADITH_COLLECTIONS.map(col => `<div class="h-coll" onclick="window.hadithBrowser.openCollection('${col.id}')"><div class="h-coll-head"><div class="h-coll-title">${col.name}</div><div class="h-coll-arabic">${col.arabic}</div></div><div class="h-coll-count">${col.count.toLocaleString()} hadith</div><div class="h-coll-desc">${col.desc}</div></div>`).join('');
@@ -7013,3 +7016,37 @@ mainEl.addEventListener('scroll', () => {
     trackHadithScroll();
   }, 500);
 }, { passive: true });
+// ═══════════════════════════════════════════════════════════════
+// HADITH BREADCRUMB — setter + wiring
+// ═══════════════════════════════════════════════════════════════
+
+function setHadithBreadcrumb(collectionName, numberLabel){
+  const nameEl = document.getElementById('header-hadith-collection-name');
+  const numEl = document.getElementById('header-hadith-number');
+  const seps = document.querySelectorAll('.header-hadith-sep');
+  const lastSep = seps[1];
+  if(nameEl) nameEl.textContent = collectionName || 'Collection';
+  if(numEl){
+    numEl.textContent = numberLabel ? ('#' + numberLabel) : '';
+    numEl.style.display = numberLabel ? '' : 'none';
+  }
+  if(lastSep) lastSep.style.display = numberLabel ? '' : 'none';
+}
+
+document.addEventListener('click', (e) => {
+  const rootBtn = e.target.closest('#hadith-crumb-root');
+  if(rootBtn && window.hadithBrowser){
+    e.stopPropagation();
+    e.preventDefault();
+    window.hadithBrowser.renderRoot();
+    mainEl.scrollTop = 0;
+    return;
+  }
+  const collBtn = e.target.closest('#hadith-crumb-collection');
+  if(collBtn && window.hadithBrowser){
+    e.stopPropagation();
+    e.preventDefault();
+    mainEl.scrollTop = 0;
+    return;
+  }
+}, true);
