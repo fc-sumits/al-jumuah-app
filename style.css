@@ -3450,3 +3450,4 @@ body.hadith-full-active .greeting{display:none}
 .h-bookmark-expand:hover{opacity:1;color:var(--gold)}
 .h-bookmark-expand:active{transform:scale(.9)}
 .h-bookmark-expand svg{width:15px;height:15px;stroke-width:2}
+.hf-text-note{font-size:.72rem;color:var(--muted-2);font-style:italic;margin-bottom:12px;padding-bottom:10px;border-bottom:1px dashed var(--divider);text-align:center;letter-spacing:.02em}
