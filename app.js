@@ -203,25 +203,35 @@ function __performBack(){
     mainEl.scrollTop = 0;
     return true;
   }
-  if(layer === 'page'){ showPage('home'); return true; }
+  if(layer === 'page'){
+  if(SESSION.currentPage === 'settings'){
+    const target = (SESSION.prevPage && SESSION.prevPage !== 'settings') ? SESSION.prevPage : 'home';
+    showPage(target);
+  } else {
+    showPage('home');
+  }
+  return true;
+     }
   return false;
 }
 
 window.addEventListener('popstate', function(){
-  const handled = __performBack();
-  if(handled){
-    __lastBackAt = 0;
+  setTimeout(function(){
+    const handled = __performBack();
+    if(handled){
+      __lastBackAt = 0;
+      __reArmBackGuard();
+      return;
+    }
+    const now = Date.now();
+    if(now - __lastBackAt < __BACK_EXIT_WINDOW){
+      __lastBackAt = 0;
+      return;
+    }
+    __lastBackAt = now;
+    if(typeof showToast === 'function') showToast('Press back again to exit');
     __reArmBackGuard();
-    return;
-  }
-  const now = Date.now();
-  if(now - __lastBackAt < __BACK_EXIT_WINDOW){
-    __lastBackAt = 0;
-    return;
-  }
-  __lastBackAt = now;
-  if(typeof showToast === 'function') showToast('Press back again to exit');
-  __reArmBackGuard();
+  }, 0);
 });
 
 if(!history.state || !history.state.aljumuahGuard){
