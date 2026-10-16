@@ -7091,3 +7091,241 @@ document.addEventListener('click', (e) => {
     }
   }, true);
 })();
+// ═══════════════════════════════════════════════════════════════
+// FULLSCREEN HADITH — reader view
+// ═══════════════════════════════════════════════════════════════
+
+const HF_STATE = {
+  collectionId: null,
+  sectionNumber: 1,
+  hadithNumber: null,
+  hadithData: null,
+  collectionInfo: null,
+  metadata: null
+};
+
+function openHadithFullscreen(collectionId, sectionNumber, hadithNumber){
+  const col = HADITH_COLLECTIONS.find(c => c.id === collectionId);
+  if(!col) return;
+  HF_STATE.collectionId = collectionId;
+  HF_STATE.sectionNumber = sectionNumber || 1;
+  HF_STATE.hadithNumber = hadithNumber;
+  HF_STATE.collectionInfo = col;
+  document.body.classList.add('hadith-full-active');
+  setHadithBreadcrumb(col.name, hadithNumber);
+  document.getElementById('hadith-content').innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>';
+  loadHadithFullscreen();
+}
+
+async function loadHadithFullscreen(){
+  const { collectionId, hadithNumber } = HF_STATE;
+  if(!collectionId || !hadithNumber){
+    showToast('Hadith not found');
+    closeHadithFullscreen();
+    return;
+  }
+  try {
+    const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${collectionId}/${hadithNumber}.min.json`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('nf');
+    const data = await res.json();
+    if(!data.hadiths || !data.hadiths.length) throw new Error('empty');
+    HF_STATE.hadithData = data.hadiths[0];
+    HF_STATE.metadata = data.metadata || {};
+    const key = `${collectionId}-${hadithNumber}`;
+    if(window.hadithBrowser) await window.hadithBrowser.loadCommentsForKeys([key]);
+    drawHadithFullscreen();
+  } catch(e){
+    console.error(e);
+    document.getElementById('hadith-content').innerHTML = '<div class="q-loading">Could not load this hadith.</div>';
+  }
+}
+
+function drawHadithFullscreen(){
+  const h = HF_STATE.hadithData;
+  const col = HF_STATE.collectionInfo;
+  if(!h || !col) return;
+  const grade = window.hadithBrowser ? window.hadithBrowser.getGrade(col.id) : 'sahih';
+  const gradeLabel = {sahih:'Sahih',hasan:'Hasan'}[grade] || 'Sahih';
+  const key = `${col.id}-${h.hadithnumber}`;
+  const hSaved = isHadithBookmarked(key);
+  const comments = (window.hadithBrowser && window.hadithBrowser.comments[key]) || [];
+  const isSignedIn = !!window.__currentUser;
+
+  const cmtsHtml = comments.map(cm => {
+    const isMine = window.__currentUser && cm.userId === window.__currentUser.uid;
+    const when = cm.timestamp ? new Date(cm.timestamp).toLocaleDateString() : '';
+    return `<div class="h-cmt"><div class="h-cmt-meta">${cm.isPublic?'🌍':'🔒'} ${escapeHtmlBasic(cm.userName||'Anonymous')} · ${when}${isMine?`<a onclick="window.hadithBrowser.deleteComment('${cm.id}','${key}')">Delete</a>`:''}</div><div class="h-cmt-text">${escapeHtmlBasic(cm.text)}</div></div>`;
+  }).join('');
+  const formHtml = isSignedIn
+    ? `<div class="h-form"><textarea id="h-input-${key}" placeholder="Share your reflection..."></textarea><div class="h-form-row"><label class="h-radio"><input type="radio" name="h-vis-${key}" value="public" checked>🌍 Public</label><label class="h-radio"><input type="radio" name="h-vis-${key}" value="private">🔒 Private</label><button class="h-submit" onclick="window.hadithBrowser.submitComment('${key}')">Post</button></div></div>`
+    : `<div class="h-signin-msg">Please <a onclick="window.open('${WEBSITE_URL}','_blank')">sign in on the website</a> to leave a reflection.</div>`;
+
+  const meta = HF_STATE.metadata || {};
+  const scholars = meta.grades || [];
+  const scholarsHtml = scholars.length ? `
+    <div class="hf-section">
+      <div class="hf-section-title">Scholarly Authentication</div>
+      <div class="hf-scholarly-intro">The label above is the grade most of these scholars gave. Each scholar's own wording:</div>
+      ${scholars.map(s => {
+        const g = (s.grade || '').toLowerCase();
+        const cls = g.includes('fabricat') ? 'fabricated' : (g.includes('weak') || g.includes('da\'if') ? 'weak' : '');
+        return `<div class="hf-scholar-row"><div class="hf-scholar-name">${escapeHtmlBasic(s.name || '')}</div><span class="hf-scholar-grade ${cls}">${escapeHtmlBasic(s.grade || '')}</span></div>`;
+      }).join('')}
+      ${meta.reference && meta.reference.book ? `<div class="hf-in-book">In-book reference: ${meta.reference.book}:${meta.reference.hadith}</div>` : ''}
+    </div>` : '';
+
+  const html = `
+    <div class="hf-view">
+      <div class="hf-meta">
+        <span class="hf-collection-badge">${escapeHtmlBasic(col.name)}</span>
+        <span class="hf-number-badge">#${h.hadithnumber}</span>
+        <span class="hf-grade-badge ${grade}">${gradeLabel}</span>
+      </div>
+
+      <div class="hf-text-card">
+        <div class="hf-text-note">Seek the Arabic text for full understanding.</div>
+        <div class="hf-text">${escapeHtmlBasic(h.text || '')}</div>
+      </div>
+
+      ${scholarsHtml}
+
+      <div class="hf-actions">
+        <button class="hf-action-btn" id="hf-copy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+        <button class="hf-action-btn primary" id="hf-share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+        <button class="hf-action-btn" id="hf-bookmark">${hSaved ? '★' : '☆'}</button>
+      </div>
+
+      <button class="hf-thoughts-toggle" id="hf-thoughts-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Thoughts (${comments.length})
+      </button>
+      <div class="hf-thoughts-body" id="hf-thoughts-body">
+        <div class="h-cmt-list">${cmtsHtml || '<div style="font-size:.8rem;color:var(--muted-2);padding:8px 0">No thoughts yet.</div>'}</div>
+        ${formHtml}
+      </div>
+
+      <div class="hf-nav">
+        <button class="hf-nav-btn" id="hf-prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span id="hf-prev-label">#—</span>
+        </button>
+        <div class="hf-nav-label">All of<br>${escapeHtmlBasic(col.name)}</div>
+        <button class="hf-nav-btn" id="hf-next">
+          <span id="hf-next-label">#—</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('hadith-content').innerHTML = html;
+  mainEl.scrollTop = 0;
+  attachHadithFullscreenListeners();
+}
+
+function attachHadithFullscreenListeners(){
+  const h = HF_STATE.hadithData;
+  const col = HF_STATE.collectionInfo;
+  if(!h || !col) return;
+  const key = `${col.id}-${h.hadithnumber}`;
+
+  const copyBtn = document.getElementById('hf-copy');
+  if(copyBtn) copyBtn.addEventListener('click', () => {
+    const text = `${h.text}\n\n— ${col.name} #${h.hadithnumber} · Al-Jumu'ah`;
+    navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+  });
+  const shareBtn = document.getElementById('hf-share');
+  if(shareBtn) shareBtn.addEventListener('click', () => {
+    const text = `${h.text}\n\n— ${col.name} #${h.hadithnumber} · Al-Jumu'ah`;
+    if(navigator.share) navigator.share({ title: col.name + ' #' + h.hadithnumber, text }).catch(()=>{});
+    else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
+  });
+  const bmBtn = document.getElementById('hf-bookmark');
+  if(bmBtn) bmBtn.addEventListener('click', () => {
+    if(!window.__currentUser){ showToast('Sign in to save hadith'); return; }
+    toggleHadithBookmark(key, col.id, h.hadithnumber, h.text || '', window.hadithBrowser ? window.hadithBrowser.getGrade(col.id) : 'sahih');
+    bmBtn.textContent = isHadithBookmarked(key) ? '★' : '☆';
+  });
+
+  const thoughtsToggle = document.getElementById('hf-thoughts-toggle');
+  if(thoughtsToggle) thoughtsToggle.addEventListener('click', () => {
+    document.getElementById('hf-thoughts-body').classList.toggle('open');
+  });
+
+  const prevBtn = document.getElementById('hf-prev');
+  const nextBtn = document.getElementById('hf-next');
+  const total = col.count || 0;
+  let prevNum = h.hadithnumber - 1;
+  let nextNum = h.hadithnumber + 1;
+  if(prevNum < 1) prevNum = total;
+  if(nextNum > total) nextNum = 1;
+  const prevLabel = document.getElementById('hf-prev-label');
+  const nextLabel = document.getElementById('hf-next-label');
+  if(prevLabel) prevLabel.textContent = '#' + prevNum;
+  if(nextLabel) nextLabel.textContent = '#' + nextNum;
+
+  if(prevBtn) prevBtn.addEventListener('click', () => navigateHadithFullscreen('prev'));
+  if(nextBtn) nextBtn.addEventListener('click', () => navigateHadithFullscreen('next'));
+}
+
+function navigateHadithFullscreen(dir){
+  const total = HF_STATE.collectionInfo ? HF_STATE.collectionInfo.count : 0;
+  if(!total || !HF_STATE.hadithNumber) return;
+  let next = HF_STATE.hadithNumber + (dir === 'next' ? 1 : -1);
+  if(next < 1) next = total;
+  if(next > total) next = 1;
+  HF_STATE.hadithNumber = next;
+  setHadithBreadcrumb(HF_STATE.collectionInfo.name, next);
+  document.getElementById('hadith-content').innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading hadith…</div>';
+  loadHadithFullscreen();
+}
+
+function closeHadithFullscreen(){
+  document.body.classList.remove('hadith-full-active');
+  if(window.hadithBrowser){
+    window.hadithBrowser.renderRoot();
+  }
+  mainEl.scrollTop = 0;
+}
+
+// Expand icon on each hadith card — inject after render
+const _origRenderHadiths = HadithBrowser.prototype.renderHadiths;
+HadithBrowser.prototype.renderHadiths = function(data, collectionId, sectionNumber, customHeader){
+  _origRenderHadiths.call(this, data, collectionId, sectionNumber, customHeader);
+  const cards = document.querySelectorAll('#h-list .h-card');
+  const sec = sectionNumber || 1;
+  cards.forEach(card => {
+    const head = card.querySelector('.h-card-head');
+    if(!head || head.querySelector('.h-bookmark-expand')) return;
+    const key = card.dataset.key || '';
+    const parts = key.split('-');
+    const num = parts[parts.length - 1];
+    const btn = document.createElement('button');
+    btn.className = 'h-bookmark-expand';
+    btn.setAttribute('aria-label', 'Open fullscreen');
+    btn.dataset.hExpandKey = key;
+    btn.dataset.hExpandColl = collectionId;
+    btn.dataset.hExpandNum = num;
+    btn.dataset.hExpandSec = sec;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
+    head.appendChild(btn);
+  });
+};
+
+document.addEventListener('click', (e) => {
+  const expandBtn = e.target.closest('.h-bookmark-expand');
+  if(!expandBtn) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const collId = expandBtn.dataset.hExpandColl;
+  const num = parseInt(expandBtn.dataset.hExpandNum);
+  const sec = parseInt(expandBtn.dataset.hExpandSec) || 1;
+  openHadithFullscreen(collId, sec, num);
+}, true);
