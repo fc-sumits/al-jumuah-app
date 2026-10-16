@@ -143,6 +143,90 @@ function showPage(name){
   }
   SESSION.currentPage = name;
 }
+// ═══════════════════════════════════════════════════════════════
+// BACK BUTTON HIERARCHY + DOUBLE-BACK TO EXIT
+// ═══════════════════════════════════════════════════════════════
+let __lastBackAt = 0;
+const __BACK_EXIT_WINDOW = 2000;
+
+function __reArmBackGuard(){
+  try{ history.pushState({ aljumuahGuard: true }, '', location.href); }catch(e){}
+}
+
+function __getTopLayer(){
+  const has = id => { const el = document.getElementById(id); return el && el.classList.contains('show'); };
+  if(has('note-modal')) return 'note';
+  if(has('q-modal')) return 'qmodal';
+  if(has('fact-overlay')) return 'fact';
+  if(has('auth-overlay')) return 'auth';
+  if(has('jumuah-overlay')) return 'jumuah';
+  if(has('learn-overlay')) return 'learn';
+  if(document.querySelector('.hf-view')) return 'hf';
+  const rv = document.getElementById('quran-reader-view');
+  if(rv && rv.style.display === 'block') return 'quran-reader';
+  if(document.body.classList.contains('hadith-full-active')) return 'hadith-coll';
+  if(SESSION.currentPage && SESSION.currentPage !== 'home') return 'page';
+  return 'home';
+}
+
+function __performBack(){
+  const layer = __getTopLayer();
+  if(layer === 'note'){ closeNoteModal(); return true; }
+  if(layer === 'qmodal'){ closeQModal(); return true; }
+  if(layer === 'fact'){ closeFactOverlay(); return true; }
+  if(layer === 'auth'){ closeAuthModal(); return true; }
+  if(layer === 'jumuah'){ closeJumuah(); return true; }
+  if(layer === 'learn'){
+    if(currentLearnTool && LEARN_BACK_HANDLERS[currentLearnTool]){
+      const handled = LEARN_BACK_HANDLERS[currentLearnTool]();
+      if(handled) return true;
+    }
+    closeLearnOverlay();
+    return true;
+  }
+  if(layer === 'hf'){
+    document.body.classList.remove('hadith-full-active');
+    const collId = HF_STATE.collectionId;
+    const sec = HF_STATE.sectionNumber || 1;
+    const num = HF_STATE.hadithNumber || null;
+    if(window.hadithBrowser && collId){
+      window.hadithBrowser.openCollection(collId, sec, num);
+    } else if(window.hadithBrowser){
+      window.hadithBrowser.renderRoot();
+    }
+    mainEl.scrollTop = 0;
+    return true;
+  }
+  if(layer === 'quran-reader'){ backToSurahList(); return true; }
+  if(layer === 'hadith-coll'){
+    if(window.hadithBrowser) window.hadithBrowser.renderRoot();
+    mainEl.scrollTop = 0;
+    return true;
+  }
+  if(layer === 'page'){ showPage('home'); return true; }
+  return false;
+}
+
+window.addEventListener('popstate', function(){
+  const handled = __performBack();
+  if(handled){
+    __lastBackAt = 0;
+    __reArmBackGuard();
+    return;
+  }
+  const now = Date.now();
+  if(now - __lastBackAt < __BACK_EXIT_WINDOW){
+    __lastBackAt = 0;
+    return;
+  }
+  __lastBackAt = now;
+  if(typeof showToast === 'function') showToast('Press back again to exit');
+  __reArmBackGuard();
+});
+
+if(!history.state || !history.state.aljumuahGuard){
+  __reArmBackGuard();
+}
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
 document.getElementById('back-btn').addEventListener('click', ()=>showPage(SESSION.prevPage || 'home'));
