@@ -7294,7 +7294,6 @@ function closeHadithFullscreen(){
   }
   mainEl.scrollTop = 0;
 }
-  });
 // Expand icon on each hadith card + section prev/next nav
 const _origRenderHadiths = HadithBrowser.prototype.renderHadiths;
 HadithBrowser.prototype.renderHadiths = function(data, collectionId, sectionNumber, customHeader){
