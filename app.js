@@ -7324,29 +7324,39 @@ HadithBrowser.prototype.renderHadiths = function(data, collectionId, sectionNumb
 function appendSectionNav(collectionId, sectionNumber, sectionsMap){
   const c = document.getElementById('h-list');
   if(!c) return;
-  const nums = Object.keys(sectionsMap).map(n => parseInt(n)).filter(n => !isNaN(n)).sort((a,b) => a-b);
-  if(nums.length < 2) return;
+  let nums = Object.keys(sectionsMap || {}).map(n => parseInt(n)).filter(n => !isNaN(n) && n > 0).sort((a,b) => a-b);
+  if(nums.length < 2){
+    nums = [sectionNumber - 1, sectionNumber, sectionNumber + 1].filter(n => n > 0);
+  }
   const idx = nums.indexOf(sectionNumber);
   if(idx === -1) return;
-  const prevSec = nums[(idx - 1 + nums.length) % nums.length];
-  const nextSec = nums[(idx + 1) % nums.length];
+  const prevSec = idx > 0 ? nums[idx - 1] : null;
+  const nextSec = idx < nums.length - 1 ? nums[idx + 1] : null;
+  if(!prevSec && !nextSec) return;
   const nav = document.createElement('div');
   nav.className = 'h-section-nav';
-  nav.innerHTML =
-    '<button class="h-section-nav-btn" data-hsec-prev>' +
+  let html = '';
+  if(prevSec){
+    html += '<button class="h-section-nav-btn" data-hsec-prev>' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
       '<span>Previous section</span>' +
-    '</button>' +
-    '<button class="h-section-nav-btn" data-hsec-next>' +
+    '</button>';
+  }
+  if(nextSec){
+    html += '<button class="h-section-nav-btn" data-hsec-next>' +
       '<span>Next section</span>' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
     '</button>';
+  }
+  nav.innerHTML = html;
   c.appendChild(nav);
-  nav.querySelector('[data-hsec-prev]').addEventListener('click', () => {
+  const prevBtn = nav.querySelector('[data-hsec-prev]');
+  if(prevBtn) prevBtn.addEventListener('click', () => {
     window.hadithBrowser.loadSection(collectionId, prevSec);
     mainEl.scrollTop = 0;
   });
-  nav.querySelector('[data-hsec-next]').addEventListener('click', () => {
+  const nextBtn = nav.querySelector('[data-hsec-next]');
+  if(nextBtn) nextBtn.addEventListener('click', () => {
     window.hadithBrowser.loadSection(collectionId, nextSec);
     mainEl.scrollTop = 0;
   });
