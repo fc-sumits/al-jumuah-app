@@ -13,16 +13,16 @@
   "categories": ["lifestyle", "education", "books"],
   "icons": [
     {
-      "src": "Al%20jumah%20app%20icon.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "Al%20jumah%20app%20icon.jpg",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "maskable"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
