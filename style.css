@@ -3526,3 +3526,23 @@ body.hadith-full-active .greeting{display:none}
 .continue-card.learn-zone {
   margin: 0 0 16px 0;
    }
+/* Reciter Change Button */
+.reciter-change-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.reciter-change-btn:active {
+  transform: scale(0.95);
+  background: var(--gold-soft);
+}
