@@ -5496,6 +5496,17 @@ function drawSahabaGallery(){
   sahaba.forEach(s => { totalLessons += s.lessons.length; });
 
   let html = '<div class="sahaba-view">';
+  const savedS = JSON.parse(localStorage.getItem('continue-sahaba') || 'null');
+if(savedS && savedS.id) {
+  const savedSahaba = sahaba.find(x => x.id === savedS.id);
+  if(savedSahaba) {
+    html += `<div class="continue-card learn-zone" onclick="sahabaState.view='reader';sahabaState.sahabaId='${savedSahaba.id}';sahabaState.lessonNum=${savedS.lesson};drawSahabaView();">
+      <div class="continue-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      <div class="continue-card-body"><div class="continue-card-label">Continue Reading</div><div class="continue-card-title">${savedSahaba.name} · Lesson ${savedS.lesson}</div></div>
+      <div class="continue-card-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+    </div>`;
+  }
+}
 
   // Hero
   html += '<div class="sahaba-hero">';
@@ -5604,6 +5615,7 @@ function drawSahabaReader(){
   if(!s){ sahabaState.view = 'gallery'; return drawSahabaGallery(); }
   const lesson = s.lessons.find(l => l.num === sahabaState.lessonNum);
   if(!lesson){ sahabaState.view = 'detail'; return drawSahabaDetail(); }
+  localStorage.setItem('continue-sahaba', JSON.stringify({ id: s.id, lesson: lesson.num }));
   const total = s.lessons.length;
   const idx = s.lessons.indexOf(lesson);
   const hasPrev = idx > 0;
