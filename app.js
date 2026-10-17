@@ -4233,6 +4233,17 @@ function drawProphetList() {
     return;
   }
   let html = '<div class="learn-intro">Journeys of the prophets — from Adam to Muhammad ﷺ. Tap any prophet to begin.</div>';
+  const savedP = JSON.parse(localStorage.getItem('continue-prophets') || 'null');
+if(savedP && savedP.id) {
+  const savedProphet = prophets.find(x => x.id === savedP.id);
+  if(savedProphet) {
+    html += `<div class="continue-card learn-zone" onclick="prophetState.view='reader';prophetState.prophetId='${savedProphet.id}';prophetState.lessonNum=${savedP.lesson};drawProphetsView();">
+      <div class="continue-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      <div class="continue-card-body"><div class="continue-card-label">Continue Reading</div><div class="continue-card-title">${savedProphet.name} · Lesson ${savedP.lesson}</div></div>
+      <div class="continue-card-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+    </div>`;
+  }
+}
   prophets.forEach(p => {
     const pct = getProphetProgressPct(p);
     html += '<div class="prophet-card" data-prophet="' + p.id + '">' +
@@ -4322,6 +4333,7 @@ function drawProphetReader() {
   if(!p) { prophetState.view = 'list'; return drawProphetList(); }
   const lesson = p.lessons.find(l => l.num === prophetState.lessonNum);
   if(!lesson) { prophetState.view = 'detail'; return drawProphetDetail(); }
+  localStorage.setItem('continue-prophets', JSON.stringify({ id: p.id, lesson: lesson.num }));
   const total = p.lessons.length;
   const idx = p.lessons.indexOf(lesson);
   const hasPrev = idx > 0;
