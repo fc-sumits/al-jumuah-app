@@ -143,15 +143,11 @@ function showPage(name){
   }
   SESSION.currentPage = name;
 }
+ // ═══════════════════════════════════════════════════════════════
+// BACK BUTTON HIERARCHY (Chrome-safe)
 // ═══════════════════════════════════════════════════════════════
-// BACK BUTTON HIERARCHY + DOUBLE-BACK TO EXIT
-// ═══════════════════════════════════════════════════════════════
-let __lastBackAt = 0;
-const __BACK_EXIT_WINDOW = 2000;
 
-function __reArmBackGuard(){
-  try{ history.pushState({ aljumuahGuard: true, t: Date.now() }, '', '#g' + Date.now()); }catch(e){}
-}
+window.__isPoppingBack = false;
 
 function __getTopLayer(){
   const has = id => { const el = document.getElementById(id); return el && el.classList.contains('show'); };
@@ -204,42 +200,22 @@ function __performBack(){
     return true;
   }
   if(layer === 'page'){
-  if(SESSION.currentPage === 'settings'){
-    const target = (SESSION.prevPage && SESSION.prevPage !== 'settings') ? SESSION.prevPage : 'home';
-    showPage(target);
-  } else {
-    showPage('home');
+    if(SESSION.currentPage === 'settings'){
+      const target = (SESSION.prevPage && SESSION.prevPage !== 'settings') ? SESSION.prevPage : 'home';
+      showPage(target);
+    } else {
+      showPage('home');
+    }
+    return true;
   }
-  return true;
-     }
   return false;
 }
 
 window.addEventListener('popstate', function(){
-  const now = Date.now();
-  const isDoubleBack = (now - __lastBackAt < __BACK_EXIT_WINDOW);
-
-  const handled = __performBack();
-
-  if(handled){
-    __lastBackAt = 0;
-    __reArmBackGuard();
-    return;
-  }
-
-  if(isDoubleBack){
-    __lastBackAt = 0;
-    return;
-  }
-
-  __lastBackAt = now;
-  __reArmBackGuard();
-  if(typeof showToast === 'function') showToast('Press back again to exit');
+  window.__isPoppingBack = true;
+  __performBack();
+  window.__isPoppingBack = false;
 });
-
-if(!history.state || !history.state.aljumuahGuard){
-  __reArmBackGuard();
-}
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
 document.getElementById('back-btn').addEventListener('click', ()=>showPage(SESSION.prevPage || 'home'));
@@ -7469,3 +7445,68 @@ document.addEventListener('click', (e) => {
   const sec = parseInt(expandBtn.dataset.hExpandSec) || 1;
   openHadithFullscreen(collId, sec, num);
 }, true);
+
+// ═══════════════════════════════════════════════════════════════
+// BACK BUTTON WRAPPERS (Pushed to history on tap)
+// ═══════════════════════════════════════════════════════════════
+(function(){
+  function wrapOpen(fnName){
+    const orig = window[fnName];
+    if(!orig) return;
+    window[fnName] = function(){
+      if(!window.__isPoppingBack) history.pushState({}, '');
+      return orig.apply(this, arguments);
+    };
+  }
+  function wrapClose(fnName){
+    const orig = window[fnName];
+    if(!orig) return;
+    window[fnName] = function(){
+      if(!window.__isPoppingBack){ history.back(); return; }
+      return orig.apply(this, arguments);
+    };
+  }
+
+  // Wrap Openers
+  wrapOpen('openQModal');
+  wrapOpen('openLearnOverlay');
+  wrapOpen('openFactOverlay');
+  wrapOpen('openJumuah');
+  wrapOpen('openAuthModal');
+  wrapOpen('openNoteModal');
+  wrapOpen('openSurah');
+  wrapOpen('openSurahAtVerse');
+  
+  // Wrap Closers
+  wrapClose('closeQModal');
+  wrapClose('closeLearnOverlay');
+  wrapClose('closeFactOverlay');
+  wrapClose('closeJumuah');
+  wrapClose('closeAuthModal');
+  wrapClose('closeNoteModal');
+  wrapClose('backToSurahList');
+
+  // Special handling for showPage (tabs)
+  const origShowPage = window.showPage;
+  window.showPage = function(name){
+    if(!window.__isPoppingBack && name !== 'home' && SESSION.currentPage !== name) {
+      history.pushState({}, '');
+    }
+    return origShowPage.apply(this, arguments);
+  };
+
+  // Special handling for HadithBrowser (Class methods)
+  if(typeof HadithBrowser !== 'undefined'){
+    const origOpenColl = HadithBrowser.prototype.openCollection;
+    HadithBrowser.prototype.openCollection = function(){
+      if(!window.__isPoppingBack) history.pushState({}, '');
+      return origOpenColl.apply(this, arguments);
+    };
+
+    const origRenderRoot = HadithBrowser.prototype.renderRoot;
+    HadithBrowser.prototype.renderRoot = function(){
+      if(!window.__isPoppingBack){ history.back(); return; }
+      return origRenderRoot.apply(this, arguments);
+    };
+  }
+})();
