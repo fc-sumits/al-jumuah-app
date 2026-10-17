@@ -3457,3 +3457,72 @@ body.hadith-full-active .greeting{display:none}
 .h-section-nav-btn:active{transform:scale(.97)}
 .h-section-nav-btn svg{width:14px;height:14px;stroke-width:2.4;flex-shrink:0}
 @media (max-width:360px){.h-section-nav{flex-direction:column}.h-section-nav-btn{font-size:.78rem}}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTINUE CARDS (Chunk 6)
+   ═══════════════════════════════════════════════════════════════ */
+.continue-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(42, 138, 106, 0.08));
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.continue-card:active {
+  transform: scale(0.98);
+}
+.continue-card-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #0A0F0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+.continue-card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+.continue-card-body {
+  flex: 1;
+  min-width: 0;
+}
+.continue-card-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+.continue-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.continue-card-chev {
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.continue-card-chev svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+}
+.continue-card.learn-zone {
+  margin: 0 0 16px 0;
+   }
