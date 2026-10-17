@@ -444,7 +444,7 @@ function renderSurah(){
   const info = RECITER_INFO[QURAN.reciter] || RECITER_INFO['ar.alafasy'];
   const isDl = isSurahDownloaded(QURAN.reciter, ar.number);
   let html = `<div class="surah-banner"><div class="surah-banner-arabic">${ar.name}</div><div class="surah-banner-english">${ar.englishName}</div><div class="surah-banner-meaning">${ar.englishNameTranslation}</div><div class="surah-banner-meta"><span>${rev}</span><span>${ar.numberOfAyahs} verses</span></div></div>`;
-  html += `<div class="reciter-card" id="reciter-card" onclick="this.classList.toggle('open')"><div class="reciter-card-avatar">🎙</div><div class="reciter-card-body"><div class="reciter-card-name">${info.name}</div><div class="reciter-card-style">${info.style}</div></div><div class="reciter-card-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="reciter-card-bio">${info.bio}</div></div>`;
+  html += `<div class="reciter-card" id="reciter-card" onclick="this.classList.toggle('open')"><div class="reciter-card-avatar">🎙</div><div class="reciter-card-body"><div class="reciter-card-name">${info.name}</div><div class="reciter-card-style">${info.style}</div></div><button class="reciter-change-btn" onclick="event.stopPropagation(); openReciterPicker();">Change</button><div class="reciter-card-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="reciter-card-bio">${info.bio}</div></div>`;
   html += `<div class="download-section"><div class="download-head"><div class="download-info"><div class="download-label">Offline Audio</div><div class="download-title ${isDl?'done':''}" id="dl-title">${isDl ? '✓ Downloaded — plays offline' : 'Save this surah for offline'}</div></div><button class="download-btn ${isDl?'done':''}" id="download-btn" onclick="downloadSurah()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>${isDl ? 'Remove' : 'Download'}</button></div><div class="download-progress" id="dl-progress"><div class="download-progress-bar"><div class="download-progress-fill" id="dl-fill"></div></div><div class="download-progress-text" id="dl-text">Preparing…</div></div></div>`;
   if(ar.number !== 1 && ar.number !== 9) html += `<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
   html += `<div class="q-controls"><button class="q-btn primary" id="q-play-all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>${mode === 'perverse' ? 'Play from start' : 'Play Surah'}</button><button class="q-btn" id="q-stop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"/></svg>Stop</button></div>`;
@@ -7532,3 +7532,35 @@ document.addEventListener('click', (e) => {
     };
   }
 })();
+// ═══════════════════════════════════════════════════════════════
+// RECITER PICKER (From inside the Quran Reader)
+// ═══════════════════════════════════════════════════════════════
+function openReciterPicker() {
+  const listHtml = Object.entries(RECITER_INFO).map(([id, info]) => `
+    <div class="snd-item ${QURAN.reciter === id ? 'active' : ''}" onclick="setReciterFromReader('${id}')">
+      <div class="snd-item-left">
+        <div class="snd-icon">🎙</div>
+        <div>
+          <div class="snd-name">${info.name}</div>
+          <div class="snd-desc">${info.style}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  
+  openQModal('🎙 Choose Reciter', `<div class="snd-list" style="padding-bottom: 20px;">${listHtml}</div>`);
+}
+
+function setReciterFromReader(id) {
+  QURAN.reciter = id;
+  localStorage.setItem('quran-reciter', id);
+  
+  // Sync the main dropdown in the Quran list
+  const mainSelect = document.getElementById('reciter-select');
+  if(mainSelect) mainSelect.value = id;
+  
+  closeQModal();
+  stopQuranAudio();
+  if(QURAN.data) renderSurah();
+  showToast('Reciter updated');
+}
