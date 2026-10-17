@@ -149,21 +149,8 @@ function showPage(name){
 let __lastBackAt = 0;
 const __BACK_EXIT_WINDOW = 2000;
 
-let __guardPushed = false;
 function __reArmBackGuard(){
-  try{
-    history.pushState({ aljumuahGuard: true }, '', location.href);
-    __guardPushed = true;
-  }catch(e){}
-}
-function __primeBackStack(){
-  try{
-    // Push an "exit cushion" — this is what the user pops when they actually want to exit
-    history.pushState({ aljumuahExitCushion: true }, '', location.href);
-    // Then push the app guard on top of it
-    history.pushState({ aljumuahGuard: true }, '', location.href);
-    __guardPushed = true;
-  }catch(e){}
+  try{ history.pushState({ aljumuahGuard: true, t: Date.now() }, '', '#g' + Date.now()); }catch(e){}
 }
 
 function __getTopLayer(){
@@ -229,27 +216,29 @@ function __performBack(){
 }
 
 window.addEventListener('popstate', function(){
-  setTimeout(function(){
-    if(typeof showToast === 'function') showToast('BACK: ' + __getTopLayer() + ' | page=' + SESSION.currentPage);
-    const handled = __performBack();
-    if(handled){
-      __lastBackAt = 0;
-      __reArmBackGuard();
-      return;
-    }
-    const now = Date.now();
-    if(now - __lastBackAt < __BACK_EXIT_WINDOW){
-      __lastBackAt = 0;
-      return;
-    }
-    __lastBackAt = now;
-    if(typeof showToast === 'function') showToast('Press back again to exit');
+  const now = Date.now();
+  const isDoubleBack = (now - __lastBackAt < __BACK_EXIT_WINDOW);
+
+  const handled = __performBack();
+
+  if(handled){
+    __lastBackAt = 0;
     __reArmBackGuard();
-  }, 0);
+    return;
+  }
+
+  if(isDoubleBack){
+    __lastBackAt = 0;
+    return;
+  }
+
+  __lastBackAt = now;
+  __reArmBackGuard();
+  if(typeof showToast === 'function') showToast('Press back again to exit');
 });
 
 if(!history.state || !history.state.aljumuahGuard){
-  __primeBackStack();
+  __reArmBackGuard();
 }
 navItems.forEach(item=>{ item.addEventListener('click', ()=>{ if(item.dataset.navTab) showPage(item.dataset.navTab); }); });
 document.getElementById('open-settings').addEventListener('click', ()=>showPage('settings'));
