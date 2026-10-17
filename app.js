@@ -7114,10 +7114,9 @@ document.addEventListener('click', (e) => {
   if(rootBtn && window.hadithBrowser){
     e.stopPropagation();
     e.preventDefault();
-    window.hadithBrowser.renderRoot();
-    mainEl.scrollTop = 0;
+    history.back();
     return;
-  }
+    }
   const collBtn = e.target.closest('#hadith-crumb-collection');
   if(collBtn && window.hadithBrowser){
     e.stopPropagation();
@@ -7476,7 +7475,8 @@ document.addEventListener('click', (e) => {
   wrapOpen('openNoteModal');
   wrapOpen('openSurah');
   wrapOpen('openSurahAtVerse');
-  
+  wrapOpen('openHadithFullscreen'); // Added this
+
   // Wrap Closers
   wrapClose('closeQModal');
   wrapClose('closeLearnOverlay');
@@ -7485,6 +7485,7 @@ document.addEventListener('click', (e) => {
   wrapClose('closeAuthModal');
   wrapClose('closeNoteModal');
   wrapClose('backToSurahList');
+  wrapClose('closeHadithFullscreen'); // Added this
 
   // Special handling for showPage (tabs)
   const origShowPage = window.showPage;
@@ -7495,18 +7496,12 @@ document.addEventListener('click', (e) => {
     return origShowPage.apply(this, arguments);
   };
 
-  // Special handling for HadithBrowser (Class methods)
+  // Special handling for HadithBrowser.openCollection
   if(typeof HadithBrowser !== 'undefined'){
     const origOpenColl = HadithBrowser.prototype.openCollection;
     HadithBrowser.prototype.openCollection = function(){
       if(!window.__isPoppingBack) history.pushState({}, '');
       return origOpenColl.apply(this, arguments);
-    };
-
-    const origRenderRoot = HadithBrowser.prototype.renderRoot;
-    HadithBrowser.prototype.renderRoot = function(){
-      if(!window.__isPoppingBack){ history.back(); return; }
-      return origRenderRoot.apply(this, arguments);
     };
   }
 })();
