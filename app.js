@@ -230,6 +230,7 @@ function __performBack(){
 
 window.addEventListener('popstate', function(){
   setTimeout(function(){
+    if(typeof showToast === 'function') showToast('BACK: ' + __getTopLayer() + ' | page=' + SESSION.currentPage);
     const handled = __performBack();
     if(handled){
       __lastBackAt = 0;
