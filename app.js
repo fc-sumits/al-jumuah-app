@@ -125,13 +125,16 @@ function showPage(name){
   if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
   if(name === 'give') renderGive();
   if(name === 'quran'){
-  renderLastRead();
-  const rv = document.getElementById('quran-reader-view');
-  if(rv && rv.style.display === 'block'){
-    document.body.classList.add('reader-active');
-  } else {
-    document.body.classList.remove('reader-active');
+  // Force return to the Surah list view
+  const listView = document.getElementById('quran-list-view');
+  const readerView = document.getElementById('quran-reader-view');
+  if(listView && readerView) {
+    readerView.style.display = 'none';
+    listView.style.display = 'block';
   }
+  document.body.classList.remove('reader-active');
+  renderLastRead();
+  SESSION.scroll['quran'] = 0; // Reset scroll memory so the list starts at the top
 } else {
   document.body.classList.remove('reader-active');
   }
