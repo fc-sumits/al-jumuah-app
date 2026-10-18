@@ -15,6 +15,9 @@
   const micBtn = document.getElementById('ai-mic-btn');
 
   if(!orb || !overlay) return; // Exit if HTML isn't there yet
+  // --- AI CONFIG & HISTORY ---
+const WORKER_URL = 'https://al-jumuah-ai.allifaheem28.workers.dev';
+let chatHistory = [];
   // --- ORB ANIMATION LOGIC ---
 let orbRestTimer;
 function triggerOrbPulse() {
@@ -161,6 +164,7 @@ function renderChips(aiType) {
 
     // Clear chat and send greeting for the new persona
     chatBody.innerHTML = '';
+    chatHistory = []; // Reset context for the new AI
     renderChips(target);
     if (target === 'ahki') {
       addMessage('ai', 'I am Ahki! I can open surahs, change settings, or explain how the app works.');
@@ -181,6 +185,8 @@ function renderChips(aiType) {
     msgDiv.className = `ai-msg ${role}`;
     
     const bubble = document.createElement('div');
+    // Save to context history
+chatHistory.push({ role: role, text: text });
     bubble.className = 'ai-bubble';
     
     // Simple typing effect for dummy text
@@ -208,27 +214,56 @@ function renderChips(aiType) {
     }
   }
 
-  function handleSend() {
-    triggerOrbPulse();
-    const text = textInput.value.trim();
-    if (!text) return;
+  async function handleSend() {
+  triggerOrbPulse();
+  const text = textInput.value.trim();
+  if (!text) return;
 
-    // Add user message
-    addMessage('user', text);
-    textInput.value = '';
-    textInput.style.height = 'auto'; // Reset height
+  // Add user message
+  addMessage('user', text);
+  textInput.value = '';
+  textInput.style.height = 'auto'; // Reset height
 
-    const currentAI = overlay.getAttribute('data-ai');
+  const currentAI = overlay.getAttribute('data-ai');
+  
+  // Show a temporary "thinking" bubble
+  const tempMsg = document.createElement('div');
+  tempMsg.className = 'ai-msg ai';
+  tempMsg.innerHTML = '<div class="ai-bubble" id="ai-loading">Thinking...</div>';
+  chatBody.appendChild(tempMsg);
+  chatBody.scrollTop = chatBody.scrollHeight;
 
-    // Simulate AI reply
-    setTimeout(() => {
-      if (currentAI === 'ahki') {
-        addMessage('ai', `I heard you say: "${text}". Soon, I will actually perform this action in the app!`);
-      } else {
-        addMessage('ai', 'Let me check the database for that... [Demo Mode: UmmahAPI not connected yet].');
-      }
-    }, 800);
+  try {
+    const response = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: chatHistory,
+        aiType: currentAI
+      })
+    });
+
+    const data = await response.json();
+    
+    // Remove the "Thinking..." bubble
+    const loadingEl = document.getElementById('ai-loading');
+    if(loadingEl) loadingEl.closest('.ai-msg').remove();
+
+    if (data.reply) {
+      addMessage('ai', data.reply);
+    } else {
+      addMessage('ai', 'Sorry, I could not understand the response from the server.');
+    }
+
+  } catch (err) {
+    // Handle offline/errors
+    const loadingEl = document.getElementById('ai-loading');
+    if(loadingEl) loadingEl.closest('.ai-msg').remove();
+    
+    addMessage('ai', 'I seem to be offline or the API is down. Please check your connection!');
+    console.error(err);
   }
+}
 
   sendBtn.addEventListener('click', handleSend);
   
