@@ -110,11 +110,23 @@ setTimeout(triggerOrbPulse, 500);
   }
 
   // --- 2. OPEN / CLOSE CHAT ---
+  const chipsContainer = document.getElementById('ai-quick-chips');
+
+function renderChips(aiType) {
+  const chips = aiType === 'ahki' 
+    ? ["Change to light mode", "Open Surah Al-Mulk", "How to download audio?"]
+    : ["Hadith on patience", "Dua for anxiety", "Tafsir of Ayat al-Kursi"];
+    
+  chipsContainer.innerHTML = chips.map(c => 
+    `<button class="ai-chip" onclick="document.getElementById('ai-text-input').value='${c}'; document.getElementById('ai-send-btn').click();">${c}</button>`
+  ).join('');
+  }
   function openChat() {
     triggerOrbPulse();
     overlay.classList.add('show');
     // If chat is empty, send a greeting
     if (chatBody.children.length === 0) {
+      renderChips(overlay.getAttribute('data-ai'));
       const currentAI = overlay.getAttribute('data-ai');
       if (currentAI === 'ahki') {
         addMessage('ai', 'As-salamu alaykum! I am Ahki. How can I help you navigate the app today?');
@@ -147,6 +159,7 @@ setTimeout(triggerOrbPulse, 500);
 
     // Clear chat and send greeting for the new persona
     chatBody.innerHTML = '';
+    renderChips(target);
     if (target === 'ahki') {
       addMessage('ai', 'I am Ahki! I can open surahs, change settings, or explain how the app works.');
     } else {
@@ -231,3 +244,33 @@ setTimeout(triggerOrbPulse, 500);
   });
 
 })();
+/* Quick Starter Chips */
+.ai-quick-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 16px 12px;
+  flex-shrink: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ai-quick-chips::-webkit-scrollbar { display: none; }
+
+.ai-chip {
+  background: var(--card);
+  border: 1px solid var(--ai-accent);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ai-chip:active {
+  background: var(--ai-accent);
+  color: #fff;
+  transform: scale(0.96);
+}
