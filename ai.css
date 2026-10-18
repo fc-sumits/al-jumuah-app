@@ -39,11 +39,13 @@
   box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45), 0 0 0 1px rgba(99, 102, 241, 0.1);
   cursor: grab;
   z-index: 9998;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0.4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.6s ease;
   touch-action: none;
   
 }
 .ai-orb.pulse-active {
+  opacity: 1;
   animation: orbPulse 2s ease-in-out 3; /* Plays 3 times (6 seconds total) */
 }
 
