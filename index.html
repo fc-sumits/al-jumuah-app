@@ -383,6 +383,62 @@
 .auth-switch{text-align:center;margin-top:14px;font-size:.85rem;color:var(--muted)}
 .auth-switch-btn{background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0 4px;margin-left:4px}
 </style>
+<!-- ═══════════════════════════════════════════════════════════════
+     AI ASSISTANT (AHKI & SHEIKH) - UI SHELL
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- The Floating Orb -->
+<div id="ai-orb" class="ai-orb">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" opacity="0.3"/>
+    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+    <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+  </svg>
+</div>
+
+<!-- The Full-Screen Chat Overlay -->
+<div id="ai-chat-overlay" class="ai-chat-overlay" data-ai="ahki">
+  
+  <!-- Header -->
+  <div class="ai-header">
+    <button class="ai-back" id="ai-close-btn" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    
+    <!-- The AI Switcher -->
+    <div class="ai-switcher" id="ai-switcher">
+      <button class="ai-switch-btn active" data-target="ahki">🤖 Ahki</button>
+      <button class="ai-switch-btn" data-target="sheikh">🕌 Sheikh</button>
+    </div>
+    
+    <button class="ai-voice-toggle active" id="ai-voice-btn" aria-label="Toggle Voice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    </button>
+  </div>
+
+  <!-- Chat Area -->
+  <div class="ai-chat-body" id="ai-chat-body">
+    <!-- Messages will be injected here by JS -->
+  </div>
+
+  <!-- Input Area -->
+  <div class="ai-input-area">
+    <button class="ai-plus-btn" id="ai-plus-btn" aria-label="Attach">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+    <textarea id="ai-text-input" placeholder="Ask Ahki..." rows="1"></textarea>
+    <button class="ai-mic-btn" id="ai-mic-btn" aria-label="Voice input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+    </button>
+    <button class="ai-send-btn" id="ai-send-btn" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<!-- Link to the new AI CSS -->
+<link rel="stylesheet" href="ai.css">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
