@@ -244,33 +244,3 @@ function renderChips(aiType) {
   });
 
 })();
-/* Quick Starter Chips */
-.ai-quick-chips {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 0 16px 12px;
-  flex-shrink: 0;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.ai-quick-chips::-webkit-scrollbar { display: none; }
-
-.ai-chip {
-  background: var(--card);
-  border: 1px solid var(--ai-accent);
-  color: var(--text);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.ai-chip:active {
-  background: var(--ai-accent);
-  color: #fff;
-  transform: scale(0.96);
-}
