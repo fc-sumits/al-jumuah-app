@@ -278,3 +278,31 @@
 .ai-send-btn { background: var(--ai-accent); color: #fff; }
 .ai-mic-btn:active, .ai-send-btn:active { transform: scale(0.92); }
 .ai-mic-btn svg, .ai-send-btn svg { width: 18px; height: 18px; }
+/* ─────────────────────────────────────────────
+   LIGHT MODE OVERRIDES
+   ───────────────────────────────────────────── */
+[data-theme="light"] #ai-chat-overlay {
+  --ai-bubble-ai: #FFFFFF;
+  --ai-bubble-user: #0B3D2E; /* Deep emerald for user bubble */
+}
+
+[data-theme="light"] #ai-chat-overlay[data-ai="sheikh"] {
+  --ai-bubble-ai: #F5EDD9; /* Traditional parchment color for Sheikh */
+}
+
+/* Force text color to be readable in light mode */
+[data-theme="light"] .ai-msg.ai .ai-bubble {
+  color: #3D2B1F; 
+  border: 1px solid rgba(184, 147, 90, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .ai-msg.user .ai-bubble {
+  color: #FFFFFF;
+}
+
+/* Fix the input field background for light mode */
+[data-theme="light"] #ai-text-input {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.1);
+}
