@@ -15,6 +15,21 @@
   const micBtn = document.getElementById('ai-mic-btn');
 
   if(!orb || !overlay) return; // Exit if HTML isn't there yet
+  // --- ORB ANIMATION LOGIC ---
+let orbRestTimer;
+function triggerOrbPulse() {
+  orb.classList.remove('pulse-active');
+  void orb.offsetWidth; // Magic trick to restart animation
+  orb.classList.add('pulse-active');
+
+  clearTimeout(orbRestTimer);
+  orbRestTimer = setTimeout(() => {
+    orb.classList.remove('pulse-active');
+  }, 6000);
+}
+
+// Trigger it once when the app loads
+setTimeout(triggerOrbPulse, 500);
 
   // --- 1. DRAGGABLE ORB LOGIC ---
   let isDragging = false;
@@ -30,6 +45,7 @@
   orb.addEventListener('pointerdown', (e) => {
     isDragging = true;
     hasDragged = false;
+    triggerOrbPulse();
     startX = e.clientX;
     startY = e.clientY;
 
@@ -95,6 +111,7 @@
 
   // --- 2. OPEN / CLOSE CHAT ---
   function openChat() {
+    triggerOrbPulse();
     overlay.classList.add('show');
     // If chat is empty, send a greeting
     if (chatBody.children.length === 0) {
@@ -177,6 +194,7 @@
   }
 
   function handleSend() {
+    triggerOrbPulse();
     const text = textInput.value.trim();
     if (!text) return;
 
