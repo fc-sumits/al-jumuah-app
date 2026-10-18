@@ -111,8 +111,10 @@ setTimeout(triggerOrbPulse, 500);
 
   // --- 2. OPEN / CLOSE CHAT ---
   const chipsContainer = document.getElementById('ai-quick-chips');
+  if (!chipsContainer) console.warn('Chips container not found in HTML');
 
 function renderChips(aiType) {
+  if (!chipsContainer) return;
   const chips = aiType === 'ahki' 
     ? ["Change to light mode", "Open Surah Al-Mulk", "How to download audio?"]
     : ["Hadith on patience", "Dua for anxiety", "Tafsir of Ayat al-Kursi"];
