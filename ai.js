@@ -219,14 +219,12 @@ chatHistory.push({ role: role, text: text });
   const text = textInput.value.trim();
   if (!text) return;
 
-  // Add user message
   addMessage('user', text);
   textInput.value = '';
-  textInput.style.height = 'auto'; // Reset height
+  textInput.style.height = 'auto'; 
 
   const currentAI = overlay.getAttribute('data-ai');
   
-  // Show a temporary "thinking" bubble
   const tempMsg = document.createElement('div');
   tempMsg.className = 'ai-msg ai';
   tempMsg.innerHTML = '<div class="ai-bubble" id="ai-loading">Thinking...</div>';
@@ -237,63 +235,49 @@ chatHistory.push({ role: role, text: text });
     const response = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        messages: chatHistory,
-        aiType: currentAI
-      })
+      body: JSON.stringify({ messages: chatHistory, aiType: currentAI })
     });
 
     const data = await response.json();
-    
-    // Remove the "Thinking..." bubble
     const loadingEl = document.getElementById('ai-loading');
     if(loadingEl) loadingEl.closest('.ai-msg').remove();
 
-    // --- HANDLE APP ACTIONS (FUNCTION CALLING) ---
     if (data.functionCall) {
       const fn = data.functionCall;
       
+      // EXECUTE THE TOOL INSTANTLY (No second API call!)
       if (fn.name === 'change_theme') {
-        if (typeof applyTheme === 'function') applyTheme(fn.args.theme);
-        addMessage('ai', `Done! I've changed the theme to ${fn.args.theme} mode.`);
+        applyTheme(fn.args.theme);
+        addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
       } 
       else if (fn.name === 'open_page') {
-        if (typeof showPage === 'function') showPage(fn.args.page_name);
-        addMessage('ai', `Opening the ${fn.args.page_name} page now.`);
-        setTimeout(() => { overlay.classList.remove('show'); }, 1200);
+        showPage(fn.args.page_name);
+        addMessage('ai', `Opening ${fn.args.page_name}...`);
+        setTimeout(() => { overlay.classList.remove('show'); }, 1000);
       } 
       else if (fn.name === 'change_text_size') {
-        if (typeof applySize === 'function') applySize(fn.args.size);
-        addMessage('ai', `I've updated the text size to ${fn.args.size}.`);
+        applySize(fn.args.size);
+        addMessage('ai', `Text size updated.`);
       } 
       else if (fn.name === 'open_surah') {
-        if (typeof showPage === 'function' && typeof openSurah === 'function') {
-          showPage('quran');
-          openSurah(fn.args.surah_number);
-        }
-        addMessage('ai', `Opening Surah number ${fn.args.surah_number}.`);
-        setTimeout(() => { overlay.classList.remove('show'); }, 1200);
+        showPage('quran');
+        openSurah(fn.args.surah_number);
+        addMessage('ai', `Opening Surah ${fn.args.surah_number}...`);
+        setTimeout(() => { overlay.classList.remove('show'); }, 1000);
       }
-      return; // Exit early since the tool was executed
+      return;
     }
 
-    // --- HANDLE NORMAL TEXT REPLY ---
     if (data.reply) {
       addMessage('ai', data.reply);
-    } else {
-      addMessage('ai', 'Sorry, I could not understand the response from the server.');
     }
 
   } catch (err) {
-    // Handle offline/errors
     const loadingEl = document.getElementById('ai-loading');
     if(loadingEl) loadingEl.closest('.ai-msg').remove();
-    
-    addMessage('ai', 'I seem to be offline or the API is down. Please check your connection!');
-    console.error(err);
+    addMessage('ai', 'Connection error.');
   }
-}
-
+  
   sendBtn.addEventListener('click', handleSend);
   
   textInput.addEventListener('keydown', (e) => {
