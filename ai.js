@@ -249,6 +249,35 @@ chatHistory.push({ role: role, text: text });
     const loadingEl = document.getElementById('ai-loading');
     if(loadingEl) loadingEl.closest('.ai-msg').remove();
 
+    // --- HANDLE APP ACTIONS (FUNCTION CALLING) ---
+    if (data.functionCall) {
+      const fn = data.functionCall;
+      
+      if (fn.name === 'change_theme') {
+        if (typeof applyTheme === 'function') applyTheme(fn.args.theme);
+        addMessage('ai', `Done! I've changed the theme to ${fn.args.theme} mode.`);
+      } 
+      else if (fn.name === 'open_page') {
+        if (typeof showPage === 'function') showPage(fn.args.page_name);
+        addMessage('ai', `Opening the ${fn.args.page_name} page now.`);
+        setTimeout(() => { overlay.classList.remove('show'); }, 1200);
+      } 
+      else if (fn.name === 'change_text_size') {
+        if (typeof applySize === 'function') applySize(fn.args.size);
+        addMessage('ai', `I've updated the text size to ${fn.args.size}.`);
+      } 
+      else if (fn.name === 'open_surah') {
+        if (typeof showPage === 'function' && typeof openSurah === 'function') {
+          showPage('quran');
+          openSurah(fn.args.surah_number);
+        }
+        addMessage('ai', `Opening Surah number ${fn.args.surah_number}.`);
+        setTimeout(() => { overlay.classList.remove('show'); }, 1200);
+      }
+      return; // Exit early since the tool was executed
+    }
+
+    // --- HANDLE NORMAL TEXT REPLY ---
     if (data.reply) {
       addMessage('ai', data.reply);
     } else {
