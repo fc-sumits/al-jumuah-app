@@ -162,7 +162,7 @@ nav.bottom-nav{position:absolute;left:0;right:0;bottom:0;height:calc(var(--nav-h
 .surah-banner-meaning{font-size:.82rem;color:rgba(232,228,220,.75);margin-bottom:14px;position:relative;z-index:1}
 .surah-banner-meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .surah-banner-meta span{padding:4px 12px;background:rgba(0,0,0,.25);border:1px solid var(--gold-soft);border-radius:999px;font-size:.68rem;color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.reciter-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.reciter-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
 .reciter-card:hover{border-color:var(--gold-soft)}
 .reciter-card-avatar{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem}
 .reciter-card-body{flex:1;min-width:0}
