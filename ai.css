@@ -41,7 +41,25 @@
   z-index: 9998;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   touch-action: none;
-  animation: orbPulse 3s infinite alternate;
+  
+}
+.ai-orb.pulse-active {
+  animation: orbPulse 2s ease-in-out 3; /* Plays 3 times (6 seconds total) */
+}
+
+@keyframes orbPulse {
+  0% { 
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45), 0 0 0 0 rgba(99, 102, 241, 0.4); 
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45), 0 0 0 14px rgba(99, 102, 241, 0); 
+    transform: scale(1.06);
+  }
+  100% { 
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45), 0 0 0 0 rgba(99, 102, 241, 0); 
+    transform: scale(1);
+  }
 }
 
 .ai-orb svg {
