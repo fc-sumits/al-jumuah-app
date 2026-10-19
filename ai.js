@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════
-// AI ASSISTANT (AHKI & SHEIKH) - CATALOG SEARCH LOGIC
+// AI ASSISTANT (AHKI & SHEIKH) - LOCAL RAG SEARCH
 // ═══════════════════════════════════════════════════════════════
 
 (function() {
@@ -16,8 +16,53 @@
   if(!orb || !overlay) return; 
   
   const WORKER_URL = 'https://al-jumuah-ai.allifaheem28.workers.dev';
+  const CATALOG_URL = 'https://raw.githubusercontent.com/fc-sumits/al-jumuah-app/main/content/catalog.json';
   let chatHistory = [];
   let aiMemoryOn = false; 
+  let localCatalog = [];
+
+  // 1. Fetch the catalog in the background when the app loads
+  fetch(CATALOG_URL)
+    .then(res => res.json())
+    .then(data => { localCatalog = data; console.log("Catalog loaded for local search"); })
+    .catch(err => console.error("Failed to load catalog", err));
+
+  // 2. Local Search Function (Finds top 5 matches)
+  function searchCatalog(query) {
+    if (!localCatalog || localCatalog.length === 0) return [];
+    
+    const stopWords = ['lesson', 'story', 'which', 'where', 'year', 'when', 'did', 'how', 'what', 'the', 'and', 'for', 'about', 'with', 'from', 'that', 'this', 'give', 'me', 'tell'];
+    let keywords = query.toLowerCase().split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
+    
+    let results = localCatalog.map(item => {
+      let score = 0;
+      const textToSearch = (item.title + " " + item.summary + " " + (item.parent || "")).toLowerCase();
+      
+      keywords.forEach(kw => {
+        // Match keywords in text
+        if (textToSearch.includes(kw)) score += 10;
+        // Exact keyword match in title
+        if (item.title.toLowerCase().includes(kw)) score += 20;
+        // Match Prophet/Entity name
+        if (item.parent && item.parent.toLowerCase().includes(kw)) score += 30;
+      });
+      
+      return { item, score };
+    });
+
+    // Sort by highest score and return the top 5
+    return results
+      .filter(r => r.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map(r => ({
+        module: r.item.module,
+        id: r.item.id,
+        lesson: r.item.lesson,
+        title: r.item.title,
+        summary: r.item.summary
+      }));
+  }
 
   function closeAllOverlays() {
     const learn = document.getElementById('learn-overlay');
@@ -222,11 +267,14 @@
 
     try {
       const historyToSend = aiMemoryOn ? chatHistory.slice(-4) : [{ role: 'user', text: text }];
+      
+      // Run Local Search to find top 5 candidates
+      const candidates = searchCatalog(text);
 
       const response = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: historyToSend, aiType: currentAI })
+        body: JSON.stringify({ messages: historyToSend, aiType: currentAI, candidates: candidates })
       });
 
       const data = await response.json();
@@ -272,12 +320,12 @@
             setTimeout(() => { overlay.classList.remove('show'); }, 1000);
           }
           else if (fn.name === 'open_catalog_lesson') {
-            // The AI found the exact lesson from the catalog
+            // The AI found the exact lesson from the 5 candidates
             const mod = fn.args.module;
             const itemId = fn.args.id;
             const lessonNum = fn.args.lesson || 1;
             
-            addMessage('ai', `I found it in my catalog! Opening it now...`);
+            addMessage('ai', `I found exactly what you're looking for! Opening it now...`);
 
             if (mod === 'prophets') {
               openLearnOverlay('prophetsStories', 'storybook');
