@@ -410,9 +410,14 @@
       <button class="ai-switch-btn" data-target="sheikh">🕌 Sheikh</button>
     </div>
     
-    <button class="ai-voice-toggle active" id="ai-voice-btn" aria-label="Toggle Voice">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-    </button>
+    <div style="display:flex; gap:8px; align-items:center;">
+  <button class="ai-voice-toggle" id="ai-memory-btn" aria-label="Toggle Memory" style="opacity:0.5;" title="Toggle Chat Memory">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+  </button>
+  <button class="ai-voice-toggle active" id="ai-voice-btn" aria-label="Toggle Voice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+  </button>
+</div>>
   </div>
 
   <!-- Chat Area -->
