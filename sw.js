@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'aljumuah-v66';
+const CACHE_VERSION = 'aljumuah-v67';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
