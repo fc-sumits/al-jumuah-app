@@ -243,30 +243,82 @@ chatHistory.push({ role: role, text: text });
     if(loadingEl) loadingEl.closest('.ai-msg').remove();
 
     if (data.functionCall) {
-      const fn = data.functionCall;
-      
-      // EXECUTE THE TOOL INSTANTLY (No second API call!)
-      if (fn.name === 'change_theme') {
-        applyTheme(fn.args.theme);
-        addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
-      } 
-      else if (fn.name === 'open_page') {
-        showPage(fn.args.page_name);
-        addMessage('ai', `Opening ${fn.args.page_name}...`);
-        setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-      } 
-      else if (fn.name === 'change_text_size') {
-        applySize(fn.args.size);
-        addMessage('ai', `Text size updated.`);
-      } 
-      else if (fn.name === 'open_surah') {
-        showPage('quran');
-        openSurah(fn.args.surah_number);
-        addMessage('ai', `Opening Surah ${fn.args.surah_number}...`);
-        setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-      }
-      return;
+  const fn = data.functionCall;
+  
+  if (fn.name === 'change_theme') {
+    applyTheme(fn.args.theme);
+    addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
+  } 
+  else if (fn.name === 'open_page') {
+    showPage(fn.args.page_name);
+    addMessage('ai', `Opening ${fn.args.page_name}...`);
+    setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+  } 
+  else if (fn.name === 'change_text_size') {
+    applySize(fn.args.size);
+    addMessage('ai', `Text size updated.`);
+  } 
+  else if (fn.name === 'open_surah') {
+    showPage('quran');
+    openSurah(fn.args.surah_number);
+    addMessage('ai', `Opening Surah ${fn.args.surah_number}...`);
+    setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+  }
+  else if (fn.name === 'open_verse') {
+    showPage('quran');
+    openSurahAtVerse(fn.args.surah_number, fn.args.ayah_number);
+    addMessage('ai', `Opening Surah ${fn.args.surah_number}, Verse ${fn.args.ayah_number}...`);
+    setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+  }
+  else if (fn.name === 'open_hadith') {
+    showPage('hadith');
+    openHadithFullscreen(fn.args.collection_id, 1, fn.args.hadith_number);
+    addMessage('ai', `Opening Hadith #${fn.args.hadith_number}...`);
+    setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+  }
+  else if (fn.name === 'open_lesson') {
+    const mod = fn.args.module;
+    const item = fn.args.item_id;
+    const lesson = fn.args.lesson_number || 1;
+
+    if (mod === 'prophets') {
+      openLearnOverlay('prophetsStories', 'storybook');
+      renderProphets().then(() => {
+        prophetState.view = 'reader';
+        prophetState.prophetId = item;
+        prophetState.lessonNum = lesson;
+        drawProphetsView();
+      });
+    } else if (mod === 'sahaba') {
+      openLearnOverlay('sahabaStories', 'companions');
+      renderSahaba().then(() => {
+        sahabaState.view = 'reader';
+        sahabaState.sahabaId = item;
+        sahabaState.lessonNum = lesson;
+        drawSahabaView();
+      });
+    } else if (mod === 'seerah') {
+      openLearnOverlay('seerahTimeline', 'storybook');
+      renderSeerah().then(() => {
+        SEERAH_STATE.view = 'reader';
+        SEERAH_STATE.activeId = item;
+        drawSeerah();
+      });
+    } else if (mod === 'new_muslim') {
+      openLearnOverlay('newMuslim', 'modern');
+      renderNewMuslim().then(() => {
+        newMuslimState.view = 'reader';
+        newMuslimState.lessonId = item;
+        drawNewMuslimView();
+      });
     }
+    
+    addMessage('ai', `Opening that lesson for you...`);
+    setTimeout(() => { overlay.classList.remove('show'); }, 1500);
+  }
+  
+  return;
+}
 
     if (data.reply) {
       addMessage('ai', data.reply);
