@@ -21,7 +21,6 @@
   let chatHistory = [];
   let aiMemoryOn = false; 
 
-  // Helper for safe search
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
@@ -273,83 +272,126 @@
               { type: 'new_muslim', files: ['new-muslim'] }
             ];
 
-            let bestMatch = null;
-            let highestScore = 0;
+            let allSearchable = [];
 
+            // Flatten everything into exact lesson blocks
             for (const mod of modules) {
               for (const file of mod.files) {
                 const dataContent = await loadContent(file);
                 if (!dataContent) continue;
 
-                let items = [];
-                if (mod.type === 'prophets') items = dataContent.prophets || [];
-                else if (mod.type === 'sahaba') items = dataContent.sahaba || [];
-                else if (mod.type === 'seerah') items = dataContent.seerah?.phases?.flatMap(p => p.milestones) || [];
-                else if (mod.type === 'new_muslim') items = dataContent.newMuslim?.lessons || [];
-
-                for (const item of items) {
-                  const fullText = JSON.stringify(item).toLowerCase();
-                  
-                  let score = 0;
-                  keywords.forEach(kw => { 
-                    const escaped = escapeRegExp(kw);
-                    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
-                    if (regex.test(fullText)) score++; 
+                if (mod.type === 'prophets' && dataContent.prophets) {
+                  dataContent.prophets.forEach(p => {
+                    p.lessons.forEach(l => {
+                      allSearchable.push({
+                        module: 'prophets',
+                        itemId: p.id,
+                        lessonNum: l.num,
+                        title: l.title || '',
+                        body: `${p.name} ${p.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
+                      });
+                    });
                   });
-
-                  if (score > highestScore) {
-                    highestScore = score;
-                    bestMatch = { module: mod.type, item: item };
-                    
-                    if (item.lessons) {
-                      let bestLesson = null;
-                      let lessonScore = 0;
-                      for (const lesson of item.lessons) {
-                         const lessonText = JSON.stringify(lesson).toLowerCase();
-                         let ls = 0;
-                         keywords.forEach(kw => { 
-                           const escaped = escapeRegExp(kw);
-                           const regex = new RegExp(`\\b${escaped}\\b`, 'i');
-                           if (regex.test(lessonText)) ls++; 
-                         });
-                         if (ls > lessonScore) {
-                             lessonScore = ls;
-                             bestLesson = lesson;
-                         }
-                      }
-                      if (bestLesson) bestMatch.lesson = bestLesson;
-                    }
-                  }
+                }
+                else if (mod.type === 'sahaba' && dataContent.sahaba) {
+                  dataContent.sahaba.forEach(s => {
+                    s.lessons.forEach(l => {
+                      allSearchable.push({
+                        module: 'sahaba',
+                        itemId: s.id,
+                        lessonNum: l.num,
+                        title: l.title || '',
+                        body: `${s.name} ${s.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
+                      });
+                    });
+                  });
+                }
+                else if (mod.type === 'seerah' && dataContent.seerah) {
+                  dataContent.seerah.phases.forEach(phase => {
+                    phase.milestones.forEach(m => {
+                      allSearchable.push({
+                        module: 'seerah',
+                        itemId: m.id,
+                        lessonNum: null,
+                        title: m.title || '',
+                        body: `${m.short || ''} ${m.body} ${m.didYouKnow || ''}`
+                      });
+                    });
+                  });
+                }
+                else if (mod.type === 'new_muslim' && dataContent.newMuslim) {
+                  dataContent.newMuslim.lessons.forEach(l => {
+                    allSearchable.push({
+                      module: 'new_muslim',
+                      itemId: l.id,
+                      lessonNum: null,
+                      title: l.title || '',
+                      body: l.body || ''
+                    });
+                  });
                 }
               }
             }
+
+            let bestMatch = null;
+            let highestScore = 0;
+
+            allSearchable.forEach(item => {
+              let score = 0;
+              const titleText = item.title.toLowerCase();
+              const bodyText = item.body.toLowerCase();
+
+              keywords.forEach(kw => { 
+                const escaped = escapeRegExp(kw);
+                const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+                
+                // Title match gives huge boost (10 points)
+                if (regex.test(titleText)) {
+                  score += 10;
+                } 
+                // Body match gives 2 points
+                else if (regex.test(bodyText)) {
+                  score += 2;
+                }
+              });
+
+              // Exact phrase bonus (20 points)
+              if (bodyText.includes(rawQuery) || titleText.includes(rawQuery)) {
+                score += 20;
+              }
+
+              if (score > highestScore) {
+                highestScore = score;
+                bestMatch = item;
+              }
+            });
 
             if (bestMatch && highestScore > 0) {
               if (bestMatch.module === 'prophets') {
                 openLearnOverlay('prophetsStories', 'storybook');
                 await renderProphets();
                 prophetState.view = 'reader';
-                prophetState.prophetId = bestMatch.item.id;
-                prophetState.lessonNum = bestMatch.lesson ? bestMatch.lesson.num : 1;
+                prophetState.prophetId = bestMatch.itemId;
+                prophetState.lessonNum = bestMatch.lessonNum || 1;
                 drawProphetsView();
               } else if (bestMatch.module === 'sahaba') {
                 openLearnOverlay('sahabaStories', 'companions');
                 await renderSahaba();
                 sahabaState.view = 'reader';
-                sahabaState.sahabaId = bestMatch.item.id;
-                sahabaState.lessonNum = bestMatch.lesson ? bestMatch.lesson.num : 1;
+                sahabaState.sahabaId = bestMatch.itemId;
+                sahabaState.lessonNum = bestMatch.lessonNum || 1;
                 drawSahabaView();
               } else if (bestMatch.module === 'seerah') {
                 openLearnOverlay('seerahTimeline', 'storybook');
                 await renderSeerah();
                 SEERAH_STATE.view = 'reader';
-                SEERAH_STATE.activeId = bestMatch.item.id;
+                SEERAH_STATE.activeId = bestMatch.itemId;
                 drawSeerah();
               } else if (bestMatch.module === 'new_muslim') {
                 openLearnOverlay('newMuslim', 'modern');
                 await renderNewMuslim();
                 newMuslimState.view = 'reader';
-                newMuslimState.lessonId = bestMatch.item.id;
+                newMuslimState.lessonId = bestMatch.itemId;
                 drawNewMuslimView();
               }
               addMessage('ai', `I found exactly what you're looking for! Opening it now...`);
