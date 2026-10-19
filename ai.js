@@ -27,28 +27,15 @@
 
   // --- CLEANUP FUNCTION: Closes every overlay before opening a new one ---
   function closeAllOverlays() {
-    // 1. Learn Overlay (Prophets, Sahaba, Seerah, etc.)
     const learn = document.getElementById('learn-overlay');
-    if (learn) {
-      learn.classList.remove('show');
-      learn.setAttribute('aria-hidden', 'true');
-    }
+    if (learn) { learn.classList.remove('show'); learn.setAttribute('aria-hidden', 'true'); }
 
-    // 2. Jumuah Overlay
     const jumuah = document.getElementById('jumuah-overlay');
-    if (jumuah) {
-      jumuah.classList.remove('show');
-      jumuah.setAttribute('aria-hidden', 'true');
-    }
+    if (jumuah) { jumuah.classList.remove('show'); jumuah.setAttribute('aria-hidden', 'true'); }
 
-    // 3. Daily Fact Overlay
     const fact = document.getElementById('fact-overlay');
-    if (fact) {
-      fact.classList.remove('show');
-      fact.setAttribute('aria-hidden', 'true');
-    }
+    if (fact) { fact.classList.remove('show'); fact.setAttribute('aria-hidden', 'true'); }
 
-    // 4. Tools & Modals
     const qmodal = document.getElementById('q-modal');
     if (qmodal) qmodal.classList.remove('show');
     
@@ -58,13 +45,11 @@
     const auth = document.getElementById('auth-overlay');
     if (auth) auth.classList.remove('show');
 
-    // 5. Fullscreen Hadith
     if (document.body.classList.contains('hadith-full-active')) {
       document.body.classList.remove('hadith-full-active');
       if (window.hadithBrowser) window.hadithBrowser.renderRoot();
     }
 
-    // 6. Quran Reader
     const reader = document.getElementById('quran-reader-view');
     const list = document.getElementById('quran-list-view');
     if (reader && reader.style.display === 'block') {
@@ -74,7 +59,7 @@
       document.body.classList.remove('reader-active');
     }
 
-    document.body.style.overflow = ''; // Restore scroll
+    document.body.style.overflow = ''; 
   }
 
   // --- ORB ANIMATION LOGIC ---
@@ -280,7 +265,6 @@
         const fn = data.functionCall;
         
         try {
-          // CLEANUP: Close all overlays before executing any new action
           closeAllOverlays();
 
           if (fn.name === 'change_theme') {
@@ -318,13 +302,10 @@
             const rawQuery = fn.args.query.toLowerCase();
             addMessage('ai', `Searching for "${fn.args.query}"...`);
             
-            const stopWords = ['death', 'story', 'lesson', 'patience', 'sabr', 'life', 'time', 'year', 'about', 'with'];
+            // ONLY filter structural words. Keep action words like "well", "banished", "death".
+            const stopWords = ['lesson', 'story', 'which', 'where', 'year', 'when', 'did', 'how', 'what', 'the', 'and', 'for', 'about', 'with', 'from', 'that', 'this'];
             let keywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
-            
             if (keywords.length === 0) keywords = rawQuery.split(' ');
-            
-            keywords.sort((a, b) => b.length - a.length);
-            const mainEntity = keywords[0];
             
             const modules = [
               { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
@@ -348,6 +329,7 @@
                         itemId: p.id,
                         lessonNum: l.num,
                         title: l.title || '',
+                        parentName: p.name || '', // ADDED PARENT NAME
                         body: `${p.name} ${p.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
                       });
                     });
@@ -361,6 +343,7 @@
                         itemId: s.id,
                         lessonNum: l.num,
                         title: l.title || '',
+                        parentName: s.name || '', // ADDED PARENT NAME
                         body: `${s.name} ${s.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
                       });
                     });
@@ -374,6 +357,7 @@
                         itemId: m.id,
                         lessonNum: null,
                         title: m.title || '',
+                        parentName: '', 
                         body: `${m.short || ''} ${m.body} ${m.didYouKnow || ''}`
                       });
                     });
@@ -386,6 +370,7 @@
                       itemId: l.id,
                       lessonNum: null,
                       title: l.title || '',
+                      parentName: '',
                       body: l.body || ''
                     });
                   });
@@ -400,21 +385,28 @@
               let score = 0;
               const titleText = item.title.toLowerCase();
               const bodyText = item.body.toLowerCase();
+              const parentText = item.parentName.toLowerCase();
 
-              const entityRegex = new RegExp(`\\b${escapeRegExp(mainEntity)}\\b`, 'i');
-              if (!entityRegex.test(titleText) && !entityRegex.test(bodyText)) {
-                return; 
-              }
-
-              keywords.forEach((kw, index) => {
+              keywords.forEach(kw => {
                 const regex = new RegExp(`\\b${escapeRegExp(kw)}\\b`, 'i');
+                
+                // HUGE SCORE if the keyword matches the Prophet's name (fixes the Yusuf vs Yaqub issue)
+                if (parentText && regex.test(parentText)) {
+                  score += 25; 
+                }
+                
                 if (regex.test(titleText)) {
-                  score += 15;
+                  score += 10;
                 } 
                 else if (regex.test(bodyText)) {
-                  score += 2;
+                  score += 5;
                 }
               });
+
+              // Even bigger score if the exact phrase is found
+              if (titleText.includes(rawQuery) || bodyText.includes(rawQuery)) {
+                score += 50;
+              }
 
               if (score > highestScore) {
                 highestScore = score;
