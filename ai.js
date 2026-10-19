@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════
-// AI ASSISTANT (AHKI & SHEIKH) - HYBRID SEARCH ENGINE (L3+L4+L5)
+// AI ASSISTANT (AHKI & SHEIKH) - CATALOG SEARCH LOGIC
 // ═══════════════════════════════════════════════════════════════
 
 (function() {
@@ -11,8 +11,6 @@
   const chatBody = document.getElementById('ai-chat-body');
   const textInput = document.getElementById('ai-text-input');
   const sendBtn = document.getElementById('ai-send-btn');
-  const plusBtn = document.getElementById('ai-plus-btn');
-  const micBtn = document.getElementById('ai-mic-btn');
   const memoryBtn = document.getElementById('ai-memory-btn');
 
   if(!orb || !overlay) return; 
@@ -21,39 +19,6 @@
   let chatHistory = [];
   let aiMemoryOn = false; 
 
-  // =====================================================================
-  // SEARCH ENGINE TOOLS (Fuzzy, Synonyms, TF-IDF)
-  // =====================================================================
-
-  // 1. FUZZY MATCHING (Levenshtein Distance)
-  function getLevenshteinDistance(a, b) {
-    if(a.length === 0) return b.length; 
-    if(b.length === 0) return a.length; 
-    const matrix = [];
-    for(let i = 0; i <= b.length; i++) matrix[i] = [i];
-    for(let j = 0; j <= a.length; j++) matrix[0][j] = j;
-    for(let i = 1; i <= b.length; i++) {
-      for(let j = 1; j <= a.length; j++) {
-        if(b.charAt(i-1) == a.charAt(j-1)) matrix[i][j] = matrix[i-1][j-1];
-        else matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, Math.min(matrix[i][j-1] + 1, matrix[i-1][j] + 1));
-      }
-    }
-    return matrix[b.length][a.length];
-  }
-
-  // 2. SYNONYM DICTIONARY
-  const SEARCH_SYNONYMS = {
-    'banished': ['banished', 'expelled', 'descend', 'sent down'],
-    'sabr': ['sabr', 'patience', 'perseverance', 'steadfast'],
-    'well': ['well', 'pit', 'cistern', 'bottom'],
-    'migrate': ['migrate', 'hijrah', 'migration', 'emigrated'],
-    'kaaba': ['kaaba', 'kabah', 'ka\'bah', 'house'],
-    'death': ['death', 'passed away', 'died', 'demise'],
-    'whale': ['whale', 'fish', 'swallowed'],
-    'camel': ['camel', 'she-camel', 'naqah']
-  };
-
-  // 3. CLEANUP FUNCTION 
   function closeAllOverlays() {
     const learn = document.getElementById('learn-overlay');
     if (learn) { learn.classList.remove('show'); learn.setAttribute('aria-hidden', 'true'); }
@@ -82,7 +47,6 @@
     document.body.style.overflow = ''; 
   }
 
-  // --- ORB ANIMATION LOGIC ---
   let orbRestTimer;
   function triggerOrbPulse() {
     orb.classList.remove('pulse-active');
@@ -93,7 +57,6 @@
   }
   setTimeout(triggerOrbPulse, 500);
 
-  // --- DRAGGABLE ORB LOGIC ---
   let isDragging = false;
   let hasDragged = false;
   let startX, startY, initialLeft, initialTop;
@@ -153,7 +116,6 @@
     orb.style.right = 'auto';
   }
 
-  // --- OPEN / CLOSE CHAT ---
   const chipsContainer = document.getElementById('ai-quick-chips');
   function renderChips(aiType) {
     if (!chipsContainer) return;
@@ -182,7 +144,6 @@
 
   closeBtn.addEventListener('click', () => overlay.classList.remove('show'));
 
-  // --- SWITCHER LOGIC ---
   switcher.addEventListener('click', (e) => {
     const btn = e.target.closest('.ai-switch-btn');
     if (!btn) return;
@@ -201,10 +162,7 @@
     }
   });
 
-  // --- VOICE & MEMORY TOGGLES ---
-  voiceBtn.addEventListener('click', () => {
-    voiceBtn.classList.toggle('active');
-  });
+  voiceBtn.addEventListener('click', () => { voiceBtn.classList.toggle('active'); });
 
   if (memoryBtn) {
     memoryBtn.addEventListener('click', () => {
@@ -215,7 +173,6 @@
     });
   }
 
-  // --- CHAT LOGIC ---
   function addMessage(role, text) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `ai-msg ${role}`;
@@ -296,10 +253,6 @@
             addMessage('ai', `Opening ${fn.args.page_name}...`);
             setTimeout(() => { overlay.classList.remove('show'); }, 1000);
           } 
-          else if (fn.name === 'change_text_size') {
-            applySize(fn.args.size);
-            addMessage('ai', `Text size updated.`);
-          } 
           else if (fn.name === 'open_surah') {
             showPage('quran');
             openSurah(fn.args.surah_number);
@@ -318,160 +271,43 @@
             addMessage('ai', `Opening Hadith #${fn.args.hadith_number}...`);
             setTimeout(() => { overlay.classList.remove('show'); }, 1000);
           }
-          else if (fn.name === 'search_and_open') {
-            const rawQuery = fn.args.query.toLowerCase();
-            addMessage('ai', `Searching for "${fn.args.query}"...`);
+          else if (fn.name === 'open_catalog_lesson') {
+            // The AI found the exact lesson from the catalog
+            const mod = fn.args.module;
+            const itemId = fn.args.id;
+            const lessonNum = fn.args.lesson || 1;
             
-            // PRE-PROCESS QUERY (Stopwords & Synonyms)
-            const stopWords = ['lesson', 'story', 'which', 'where', 'year', 'when', 'did', 'how', 'what', 'the', 'and', 'for', 'about', 'with', 'from', 'that', 'this'];
-            let baseKeywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
-            if (baseKeywords.length === 0) baseKeywords = rawQuery.split(' ');
+            addMessage('ai', `I found it in my catalog! Opening it now...`);
 
-            let expandedKeywords = new Set(baseKeywords);
-            baseKeywords.forEach(kw => {
-              if (SEARCH_SYNONYMS[kw]) {
-                SEARCH_SYNONYMS[kw].forEach(syn => expandedKeywords.add(syn));
-              }
-            });
-            expandedKeywords = Array.from(expandedKeywords);
-
-            const modules = [
-              { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
-              { type: 'sahaba', files: ['sahaba-1','sahaba-2','sahaba-3','sahaba-4','sahaba-5'] },
-              { type: 'seerah', files: ['seerah'] },
-              { type: 'new_muslim', files: ['new-muslim'] }
-            ];
-
-            let allSearchable = [];
-
-            // FLATTEN DATA
-            for (const mod of modules) {
-              for (const file of mod.files) {
-                const dataContent = await loadContent(file);
-                if (!dataContent) continue;
-
-                if (mod.type === 'prophets' && dataContent.prophets) {
-                  dataContent.prophets.forEach(p => {
-                    p.lessons.forEach(l => {
-                      allSearchable.push({ module: 'prophets', itemId: p.id, lessonNum: l.num, title: l.title || '', parentName: p.name || '', body: `${p.name} ${p.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}` });
-                    });
-                  });
-                }
-                else if (mod.type === 'sahaba' && dataContent.sahaba) {
-                  dataContent.sahaba.forEach(s => {
-                    s.lessons.forEach(l => {
-                      allSearchable.push({ module: 'sahaba', itemId: s.id, lessonNum: l.num, title: l.title || '', parentName: s.name || '', body: `${s.name} ${s.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}` });
-                    });
-                  });
-                }
-                else if (mod.type === 'seerah' && dataContent.seerah) {
-                  dataContent.seerah.phases.forEach(phase => {
-                    phase.milestones.forEach(m => {
-                      allSearchable.push({ module: 'seerah', itemId: m.id, lessonNum: null, title: m.title || '', parentName: '', body: `${m.short || ''} ${m.body} ${m.didYouKnow || ''}` });
-                    });
-                  });
-                }
-                else if (mod.type === 'new_muslim' && dataContent.newMuslim) {
-                  dataContent.newMuslim.lessons.forEach(l => {
-                    allSearchable.push({ module: 'new_muslim', itemId: l.id, lessonNum: null, title: l.title || '', parentName: '', body: l.body || '' });
-                  });
-                }
-              }
+            if (mod === 'prophets') {
+              openLearnOverlay('prophetsStories', 'storybook');
+              await renderProphets();
+              prophetState.view = 'reader';
+              prophetState.prophetId = itemId;
+              prophetState.lessonNum = lessonNum;
+              drawProphetsView();
+            } else if (mod === 'sahaba') {
+              openLearnOverlay('sahabaStories', 'companions');
+              await renderSahaba();
+              sahabaState.view = 'reader';
+              sahabaState.sahabaId = itemId;
+              sahabaState.lessonNum = lessonNum;
+              drawSahabaView();
+            } else if (mod === 'seerah') {
+              openLearnOverlay('seerahTimeline', 'storybook');
+              await renderSeerah();
+              SEERAH_STATE.view = 'reader';
+              SEERAH_STATE.activeId = itemId;
+              drawSeerah();
+            } else if (mod === 'new_muslim') {
+              openLearnOverlay('newMuslim', 'modern');
+              await renderNewMuslim();
+              newMuslimState.view = 'reader';
+              newMuslimState.lessonId = itemId;
+              drawNewMuslimView();
             }
-
-            // CALCULATE IDF (Inverse Document Frequency) - Level 5 Logic
-            const totalDocs = allSearchable.length;
-            const docFrequencies = {};
-            expandedKeywords.forEach(kw => {
-              let count = 0;
-              allSearchable.forEach(doc => {
-                if (doc.body.toLowerCase().includes(kw) || doc.title.toLowerCase().includes(kw)) count++;
-              });
-              // Rarer words get a higher multiplier
-              docFrequencies[kw] = count > 0 ? Math.log(totalDocs / count) + 1 : 1;
-            });
-
-            let bestMatch = null;
-            let highestScore = 0;
-
-            // SCORING ALGORITHM
-            allSearchable.forEach(item => {
-              let score = 0;
-              const titleText = item.title.toLowerCase();
-              const bodyText = item.body.toLowerCase();
-              const parentText = item.parentName.toLowerCase();
-
-              baseKeywords.forEach(kw => {
-                const idfMultiplier = docFrequencies[kw] || 1; // Rarity multiplier
-                
-                // 1. Exact Prophet Match (Highest priority)
-                if (parentText && parentText.includes(kw)) score += (30 * idfMultiplier); 
-
-                // 2. Fuzzy Matching (Level 3) - Only for words > 4 chars
-                if (kw.length > 4) {
-                   titleText.split(' ').forEach(word => {
-                     if (getLevenshteinDistance(word, kw) <= 2) score += (10 * idfMultiplier);
-                   });
-                   bodyText.split(' ').forEach(word => {
-                     if (getLevenshteinDistance(word, kw) <= 2) score += (3 * idfMultiplier);
-                   });
-                }
-
-                // 3. Direct Match
-                if (titleText.includes(kw)) score += (15 * idfMultiplier);
-                else if (bodyText.includes(kw)) score += (5 * idfMultiplier);
-              });
-
-              // 4. Synonym Matches (Level 4) - Lower weight to prevent false positives
-              expandedKeywords.forEach(syn => {
-                if (titleText.includes(syn)) score += 5;
-                else if (bodyText.includes(syn)) score += 2;
-              });
-
-              // 5. Exact Phrase Bonus (Level 5 Failsafe)
-              if (titleText.includes(rawQuery) || bodyText.includes(rawQuery)) {
-                score += 100;
-              }
-
-              if (score > highestScore) {
-                highestScore = score;
-                bestMatch = item;
-              }
-            });
-
-            if (bestMatch && highestScore > 0) {
-              if (bestMatch.module === 'prophets') {
-                openLearnOverlay('prophetsStories', 'storybook');
-                await renderProphets();
-                prophetState.view = 'reader';
-                prophetState.prophetId = bestMatch.itemId;
-                prophetState.lessonNum = bestMatch.lessonNum || 1;
-                drawProphetsView();
-              } else if (bestMatch.module === 'sahaba') {
-                openLearnOverlay('sahabaStories', 'companions');
-                await renderSahaba();
-                sahabaState.view = 'reader';
-                sahabaState.sahabaId = bestMatch.itemId;
-                sahabaState.lessonNum = bestMatch.lessonNum || 1;
-                drawSahabaView();
-              } else if (bestMatch.module === 'seerah') {
-                openLearnOverlay('seerahTimeline', 'storybook');
-                await renderSeerah();
-                SEERAH_STATE.view = 'reader';
-                SEERAH_STATE.activeId = bestMatch.itemId;
-                drawSeerah();
-              } else if (bestMatch.module === 'new_muslim') {
-                openLearnOverlay('newMuslim', 'modern');
-                await renderNewMuslim();
-                newMuslimState.view = 'reader';
-                newMuslimState.lessonId = bestMatch.itemId;
-                drawNewMuslimView();
-              }
-              addMessage('ai', `I found exactly what you're looking for! Opening it now...`);
-              setTimeout(() => { overlay.classList.remove('show'); }, 1500);
-            } else {
-              addMessage('ai', `I couldn't find a lesson matching that. Try using different keywords.`);
-            }
+            
+            setTimeout(() => { overlay.classList.remove('show'); }, 1500);
           }
         } catch (toolErr) {
           console.error("Tool execution failed:", toolErr);
