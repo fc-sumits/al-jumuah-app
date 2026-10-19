@@ -272,13 +272,14 @@ chatHistory.push({ role: role, text: text });
       addMessage('ai', data.reply);
     }
 
-  } catch (err) {
+    } catch (err) {
     const loadingEl = document.getElementById('ai-loading');
     if(loadingEl) loadingEl.closest('.ai-msg').remove();
     addMessage('ai', 'Connection error.');
   }
-  
-  sendBtn.addEventListener('click', handleSend);
+}
+
+sendBtn.addEventListener('click', handleSend);
   
   textInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
