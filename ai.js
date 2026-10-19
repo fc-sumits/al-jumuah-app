@@ -25,6 +25,58 @@
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
+  // --- CLEANUP FUNCTION: Closes every overlay before opening a new one ---
+  function closeAllOverlays() {
+    // 1. Learn Overlay (Prophets, Sahaba, Seerah, etc.)
+    const learn = document.getElementById('learn-overlay');
+    if (learn) {
+      learn.classList.remove('show');
+      learn.setAttribute('aria-hidden', 'true');
+    }
+
+    // 2. Jumuah Overlay
+    const jumuah = document.getElementById('jumuah-overlay');
+    if (jumuah) {
+      jumuah.classList.remove('show');
+      jumuah.setAttribute('aria-hidden', 'true');
+    }
+
+    // 3. Daily Fact Overlay
+    const fact = document.getElementById('fact-overlay');
+    if (fact) {
+      fact.classList.remove('show');
+      fact.setAttribute('aria-hidden', 'true');
+    }
+
+    // 4. Tools & Modals
+    const qmodal = document.getElementById('q-modal');
+    if (qmodal) qmodal.classList.remove('show');
+    
+    const notemodal = document.getElementById('note-modal');
+    if (notemodal) notemodal.classList.remove('show');
+    
+    const auth = document.getElementById('auth-overlay');
+    if (auth) auth.classList.remove('show');
+
+    // 5. Fullscreen Hadith
+    if (document.body.classList.contains('hadith-full-active')) {
+      document.body.classList.remove('hadith-full-active');
+      if (window.hadithBrowser) window.hadithBrowser.renderRoot();
+    }
+
+    // 6. Quran Reader
+    const reader = document.getElementById('quran-reader-view');
+    const list = document.getElementById('quran-list-view');
+    if (reader && reader.style.display === 'block') {
+      reader.style.display = 'none';
+      if (list) list.style.display = 'block';
+      if (typeof stopQuranAudio === 'function') stopQuranAudio();
+      document.body.classList.remove('reader-active');
+    }
+
+    document.body.style.overflow = ''; // Restore scroll
+  }
+
   // --- ORB ANIMATION LOGIC ---
   let orbRestTimer;
   function triggerOrbPulse() {
@@ -228,6 +280,9 @@
         const fn = data.functionCall;
         
         try {
+          // CLEANUP: Close all overlays before executing any new action
+          closeAllOverlays();
+
           if (fn.name === 'change_theme') {
             applyTheme(fn.args.theme);
             addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
@@ -263,14 +318,11 @@
             const rawQuery = fn.args.query.toLowerCase();
             addMessage('ai', `Searching for "${fn.args.query}"...`);
             
-            // Filter out generic words that ruin the search
             const stopWords = ['death', 'story', 'lesson', 'patience', 'sabr', 'life', 'time', 'year', 'about', 'with'];
             let keywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
             
-            // If everything got filtered out, fallback to the raw query
             if (keywords.length === 0) keywords = rawQuery.split(' ');
             
-            // Sort keywords by length (longest first). The longest word is usually the main entity (e.g. "Talib" in "Abu Talib death")
             keywords.sort((a, b) => b.length - a.length);
             const mainEntity = keywords[0];
             
@@ -349,21 +401,16 @@
               const titleText = item.title.toLowerCase();
               const bodyText = item.body.toLowerCase();
 
-              // CRITICAL FIX: The lesson MUST contain the main entity name.
-              // E.g., if searching "Abu Talib", the lesson must have the word "Talib".
               const entityRegex = new RegExp(`\\b${escapeRegExp(mainEntity)}\\b`, 'i');
               if (!entityRegex.test(titleText) && !entityRegex.test(bodyText)) {
-                return; // Skip this lesson completely if it doesn't mention the main entity
+                return; 
               }
 
               keywords.forEach((kw, index) => {
                 const regex = new RegExp(`\\b${escapeRegExp(kw)}\\b`, 'i');
-                
-                // Title match gives huge boost
                 if (regex.test(titleText)) {
                   score += 15;
                 } 
-                // Body match gives small boost
                 else if (regex.test(bodyText)) {
                   score += 2;
                 }
