@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════
-// AI ASSISTANT (AHKI & SHEIKH) - FRONTEND LOGIC
+// AI ASSISTANT (AHKI & SHEIKH) - HYBRID SEARCH ENGINE (L3+L4+L5)
 // ═══════════════════════════════════════════════════════════════
 
 (function() {
@@ -21,35 +21,56 @@
   let chatHistory = [];
   let aiMemoryOn = false; 
 
-  function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // =====================================================================
+  // SEARCH ENGINE TOOLS (Fuzzy, Synonyms, TF-IDF)
+  // =====================================================================
+
+  // 1. FUZZY MATCHING (Levenshtein Distance)
+  function getLevenshteinDistance(a, b) {
+    if(a.length === 0) return b.length; 
+    if(b.length === 0) return a.length; 
+    const matrix = [];
+    for(let i = 0; i <= b.length; i++) matrix[i] = [i];
+    for(let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    for(let i = 1; i <= b.length; i++) {
+      for(let j = 1; j <= a.length; j++) {
+        if(b.charAt(i-1) == a.charAt(j-1)) matrix[i][j] = matrix[i-1][j-1];
+        else matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, Math.min(matrix[i][j-1] + 1, matrix[i-1][j] + 1));
+      }
+    }
+    return matrix[b.length][a.length];
   }
 
-  // --- CLEANUP FUNCTION: Closes every overlay before opening a new one ---
+  // 2. SYNONYM DICTIONARY
+  const SEARCH_SYNONYMS = {
+    'banished': ['banished', 'expelled', 'descend', 'sent down'],
+    'sabr': ['sabr', 'patience', 'perseverance', 'steadfast'],
+    'well': ['well', 'pit', 'cistern', 'bottom'],
+    'migrate': ['migrate', 'hijrah', 'migration', 'emigrated'],
+    'kaaba': ['kaaba', 'kabah', 'ka\'bah', 'house'],
+    'death': ['death', 'passed away', 'died', 'demise'],
+    'whale': ['whale', 'fish', 'swallowed'],
+    'camel': ['camel', 'she-camel', 'naqah']
+  };
+
+  // 3. CLEANUP FUNCTION 
   function closeAllOverlays() {
     const learn = document.getElementById('learn-overlay');
     if (learn) { learn.classList.remove('show'); learn.setAttribute('aria-hidden', 'true'); }
-
     const jumuah = document.getElementById('jumuah-overlay');
     if (jumuah) { jumuah.classList.remove('show'); jumuah.setAttribute('aria-hidden', 'true'); }
-
     const fact = document.getElementById('fact-overlay');
     if (fact) { fact.classList.remove('show'); fact.setAttribute('aria-hidden', 'true'); }
-
     const qmodal = document.getElementById('q-modal');
     if (qmodal) qmodal.classList.remove('show');
-    
     const notemodal = document.getElementById('note-modal');
     if (notemodal) notemodal.classList.remove('show');
-    
     const auth = document.getElementById('auth-overlay');
     if (auth) auth.classList.remove('show');
-
     if (document.body.classList.contains('hadith-full-active')) {
       document.body.classList.remove('hadith-full-active');
       if (window.hadithBrowser) window.hadithBrowser.renderRoot();
     }
-
     const reader = document.getElementById('quran-reader-view');
     const list = document.getElementById('quran-list-view');
     if (reader && reader.style.display === 'block') {
@@ -58,7 +79,6 @@
       if (typeof stopQuranAudio === 'function') stopQuranAudio();
       document.body.classList.remove('reader-active');
     }
-
     document.body.style.overflow = ''; 
   }
 
@@ -73,7 +93,7 @@
   }
   setTimeout(triggerOrbPulse, 500);
 
-  // --- 1. DRAGGABLE ORB LOGIC ---
+  // --- DRAGGABLE ORB LOGIC ---
   let isDragging = false;
   let hasDragged = false;
   let startX, startY, initialLeft, initialTop;
@@ -133,7 +153,7 @@
     orb.style.right = 'auto';
   }
 
-  // --- 2. OPEN / CLOSE CHAT ---
+  // --- OPEN / CLOSE CHAT ---
   const chipsContainer = document.getElementById('ai-quick-chips');
   function renderChips(aiType) {
     if (!chipsContainer) return;
@@ -162,7 +182,7 @@
 
   closeBtn.addEventListener('click', () => overlay.classList.remove('show'));
 
-  // --- 3. SWITCHER LOGIC ---
+  // --- SWITCHER LOGIC ---
   switcher.addEventListener('click', (e) => {
     const btn = e.target.closest('.ai-switch-btn');
     if (!btn) return;
@@ -181,7 +201,7 @@
     }
   });
 
-  // --- 4. VOICE & MEMORY TOGGLES ---
+  // --- VOICE & MEMORY TOGGLES ---
   voiceBtn.addEventListener('click', () => {
     voiceBtn.classList.toggle('active');
   });
@@ -195,7 +215,7 @@
     });
   }
 
-  // --- 5. CHAT LOGIC ---
+  // --- CHAT LOGIC ---
   function addMessage(role, text) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `ai-msg ${role}`;
@@ -302,11 +322,19 @@
             const rawQuery = fn.args.query.toLowerCase();
             addMessage('ai', `Searching for "${fn.args.query}"...`);
             
-            // ONLY filter structural words. Keep action words like "well", "banished", "death".
+            // PRE-PROCESS QUERY (Stopwords & Synonyms)
             const stopWords = ['lesson', 'story', 'which', 'where', 'year', 'when', 'did', 'how', 'what', 'the', 'and', 'for', 'about', 'with', 'from', 'that', 'this'];
-            let keywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
-            if (keywords.length === 0) keywords = rawQuery.split(' ');
-            
+            let baseKeywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
+            if (baseKeywords.length === 0) baseKeywords = rawQuery.split(' ');
+
+            let expandedKeywords = new Set(baseKeywords);
+            baseKeywords.forEach(kw => {
+              if (SEARCH_SYNONYMS[kw]) {
+                SEARCH_SYNONYMS[kw].forEach(syn => expandedKeywords.add(syn));
+              }
+            });
+            expandedKeywords = Array.from(expandedKeywords);
+
             const modules = [
               { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
               { type: 'sahaba', files: ['sahaba-1','sahaba-2','sahaba-3','sahaba-4','sahaba-5'] },
@@ -316,6 +344,7 @@
 
             let allSearchable = [];
 
+            // FLATTEN DATA
             for (const mod of modules) {
               for (const file of mod.files) {
                 const dataContent = await loadContent(file);
@@ -324,88 +353,84 @@
                 if (mod.type === 'prophets' && dataContent.prophets) {
                   dataContent.prophets.forEach(p => {
                     p.lessons.forEach(l => {
-                      allSearchable.push({
-                        module: 'prophets',
-                        itemId: p.id,
-                        lessonNum: l.num,
-                        title: l.title || '',
-                        parentName: p.name || '', // ADDED PARENT NAME
-                        body: `${p.name} ${p.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
-                      });
+                      allSearchable.push({ module: 'prophets', itemId: p.id, lessonNum: l.num, title: l.title || '', parentName: p.name || '', body: `${p.name} ${p.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}` });
                     });
                   });
                 }
                 else if (mod.type === 'sahaba' && dataContent.sahaba) {
                   dataContent.sahaba.forEach(s => {
                     s.lessons.forEach(l => {
-                      allSearchable.push({
-                        module: 'sahaba',
-                        itemId: s.id,
-                        lessonNum: l.num,
-                        title: l.title || '',
-                        parentName: s.name || '', // ADDED PARENT NAME
-                        body: `${s.name} ${s.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}`
-                      });
+                      allSearchable.push({ module: 'sahaba', itemId: s.id, lessonNum: l.num, title: l.title || '', parentName: s.name || '', body: `${s.name} ${s.subtitle || ''} ${l.body} ${l.dialogue ? l.dialogue.translation : ''}` });
                     });
                   });
                 }
                 else if (mod.type === 'seerah' && dataContent.seerah) {
                   dataContent.seerah.phases.forEach(phase => {
                     phase.milestones.forEach(m => {
-                      allSearchable.push({
-                        module: 'seerah',
-                        itemId: m.id,
-                        lessonNum: null,
-                        title: m.title || '',
-                        parentName: '', 
-                        body: `${m.short || ''} ${m.body} ${m.didYouKnow || ''}`
-                      });
+                      allSearchable.push({ module: 'seerah', itemId: m.id, lessonNum: null, title: m.title || '', parentName: '', body: `${m.short || ''} ${m.body} ${m.didYouKnow || ''}` });
                     });
                   });
                 }
                 else if (mod.type === 'new_muslim' && dataContent.newMuslim) {
                   dataContent.newMuslim.lessons.forEach(l => {
-                    allSearchable.push({
-                      module: 'new_muslim',
-                      itemId: l.id,
-                      lessonNum: null,
-                      title: l.title || '',
-                      parentName: '',
-                      body: l.body || ''
-                    });
+                    allSearchable.push({ module: 'new_muslim', itemId: l.id, lessonNum: null, title: l.title || '', parentName: '', body: l.body || '' });
                   });
                 }
               }
             }
 
+            // CALCULATE IDF (Inverse Document Frequency) - Level 5 Logic
+            const totalDocs = allSearchable.length;
+            const docFrequencies = {};
+            expandedKeywords.forEach(kw => {
+              let count = 0;
+              allSearchable.forEach(doc => {
+                if (doc.body.toLowerCase().includes(kw) || doc.title.toLowerCase().includes(kw)) count++;
+              });
+              // Rarer words get a higher multiplier
+              docFrequencies[kw] = count > 0 ? Math.log(totalDocs / count) + 1 : 1;
+            });
+
             let bestMatch = null;
             let highestScore = 0;
 
+            // SCORING ALGORITHM
             allSearchable.forEach(item => {
               let score = 0;
               const titleText = item.title.toLowerCase();
               const bodyText = item.body.toLowerCase();
               const parentText = item.parentName.toLowerCase();
 
-              keywords.forEach(kw => {
-                const regex = new RegExp(`\\b${escapeRegExp(kw)}\\b`, 'i');
+              baseKeywords.forEach(kw => {
+                const idfMultiplier = docFrequencies[kw] || 1; // Rarity multiplier
                 
-                // HUGE SCORE if the keyword matches the Prophet's name (fixes the Yusuf vs Yaqub issue)
-                if (parentText && regex.test(parentText)) {
-                  score += 25; 
+                // 1. Exact Prophet Match (Highest priority)
+                if (parentText && parentText.includes(kw)) score += (30 * idfMultiplier); 
+
+                // 2. Fuzzy Matching (Level 3) - Only for words > 4 chars
+                if (kw.length > 4) {
+                   titleText.split(' ').forEach(word => {
+                     if (getLevenshteinDistance(word, kw) <= 2) score += (10 * idfMultiplier);
+                   });
+                   bodyText.split(' ').forEach(word => {
+                     if (getLevenshteinDistance(word, kw) <= 2) score += (3 * idfMultiplier);
+                   });
                 }
-                
-                if (regex.test(titleText)) {
-                  score += 10;
-                } 
-                else if (regex.test(bodyText)) {
-                  score += 5;
-                }
+
+                // 3. Direct Match
+                if (titleText.includes(kw)) score += (15 * idfMultiplier);
+                else if (bodyText.includes(kw)) score += (5 * idfMultiplier);
               });
 
-              // Even bigger score if the exact phrase is found
+              // 4. Synonym Matches (Level 4) - Lower weight to prevent false positives
+              expandedKeywords.forEach(syn => {
+                if (titleText.includes(syn)) score += 5;
+                else if (bodyText.includes(syn)) score += 2;
+              });
+
+              // 5. Exact Phrase Bonus (Level 5 Failsafe)
               if (titleText.includes(rawQuery) || bodyText.includes(rawQuery)) {
-                score += 50;
+                score += 100;
               }
 
               if (score > highestScore) {
