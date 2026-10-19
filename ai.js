@@ -13,12 +13,18 @@
   const sendBtn = document.getElementById('ai-send-btn');
   const plusBtn = document.getElementById('ai-plus-btn');
   const micBtn = document.getElementById('ai-mic-btn');
+  const memoryBtn = document.getElementById('ai-memory-btn');
 
   if(!orb || !overlay) return; 
   
   const WORKER_URL = 'https://al-jumuah-ai.allifaheem28.workers.dev';
   let chatHistory = [];
   let aiMemoryOn = false; 
+
+  // Helper for safe search
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
 
   // --- ORB ANIMATION LOGIC ---
   let orbRestTimer;
@@ -144,7 +150,6 @@
     voiceBtn.classList.toggle('active');
   });
 
-  const memoryBtn = document.getElementById('ai-memory-btn');
   if (memoryBtn) {
     memoryBtn.addEventListener('click', () => {
       aiMemoryOn = !aiMemoryOn;
@@ -223,118 +228,141 @@
       if (data.functionCall) {
         const fn = data.functionCall;
         
-        if (fn.name === 'change_theme') {
-          applyTheme(fn.args.theme);
-          addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
-        } 
-        else if (fn.name === 'open_page') {
-          showPage(fn.args.page_name);
-          addMessage('ai', `Opening ${fn.args.page_name}...`);
-          setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-        } 
-        else if (fn.name === 'change_text_size') {
-          applySize(fn.args.size);
-          addMessage('ai', `Text size updated.`);
-        } 
-        else if (fn.name === 'open_surah') {
-          showPage('quran');
-          openSurah(fn.args.surah_number);
-          addMessage('ai', `Opening Surah ${fn.args.surah_number}...`);
-          setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-        }
-        else if (fn.name === 'open_verse') {
-          showPage('quran');
-          openSurahAtVerse(fn.args.surah_number, fn.args.ayah_number);
-          addMessage('ai', `Opening Surah ${fn.args.surah_number}, Verse ${fn.args.ayah_number}...`);
-          setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-        }
-        else if (fn.name === 'open_hadith') {
-          showPage('hadith');
-          openHadithFullscreen(fn.args.collection_id, 1, fn.args.hadith_number);
-          addMessage('ai', `Opening Hadith #${fn.args.hadith_number}...`);
-          setTimeout(() => { overlay.classList.remove('show'); }, 1000);
-        }
-        else if (fn.name === 'search_and_open') {
-          const query = fn.args.query.toLowerCase();
-          addMessage('ai', `Searching for "${fn.args.query}"...`);
-          
-          const modules = [
-            { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
-            { type: 'sahaba', files: ['sahaba-1','sahaba-2','sahaba-3','sahaba-4','sahaba-5'] },
-            { type: 'seerah', files: ['seerah'] },
-            { type: 'new_muslim', files: ['new-muslim'] }
-          ];
+        try {
+          if (fn.name === 'change_theme') {
+            applyTheme(fn.args.theme);
+            addMessage('ai', `Done! Changed theme to ${fn.args.theme}.`);
+          } 
+          else if (fn.name === 'open_page') {
+            showPage(fn.args.page_name);
+            addMessage('ai', `Opening ${fn.args.page_name}...`);
+            setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+          } 
+          else if (fn.name === 'change_text_size') {
+            applySize(fn.args.size);
+            addMessage('ai', `Text size updated.`);
+          } 
+          else if (fn.name === 'open_surah') {
+            showPage('quran');
+            openSurah(fn.args.surah_number);
+            addMessage('ai', `Opening Surah ${fn.args.surah_number}...`);
+            setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+          }
+          else if (fn.name === 'open_verse') {
+            showPage('quran');
+            openSurahAtVerse(fn.args.surah_number, fn.args.ayah_number);
+            addMessage('ai', `Opening Surah ${fn.args.surah_number}, Verse ${fn.args.ayah_number}...`);
+            setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+          }
+          else if (fn.name === 'open_hadith') {
+            showPage('hadith');
+            openHadithFullscreen(fn.args.collection_id, 1, fn.args.hadith_number);
+            addMessage('ai', `Opening Hadith #${fn.args.hadith_number}...`);
+            setTimeout(() => { overlay.classList.remove('show'); }, 1000);
+          }
+          else if (fn.name === 'search_and_open') {
+            const rawQuery = fn.args.query.toLowerCase();
+            addMessage('ai', `Searching for "${fn.args.query}"...`);
+            
+            const keywords = rawQuery.split(' ').filter(w => w.length > 2);
+            
+            const modules = [
+              { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
+              { type: 'sahaba', files: ['sahaba-1','sahaba-2','sahaba-3','sahaba-4','sahaba-5'] },
+              { type: 'seerah', files: ['seerah'] },
+              { type: 'new_muslim', files: ['new-muslim'] }
+            ];
 
-          let bestMatch = null;
+            let bestMatch = null;
+            let highestScore = 0;
 
-          for (const mod of modules) {
-            if (bestMatch) break;
-            for (const file of mod.files) {
-              if (bestMatch) break;
-              const dataContent = await loadContent(file);
-              if (!dataContent) continue;
+            for (const mod of modules) {
+              for (const file of mod.files) {
+                const dataContent = await loadContent(file);
+                if (!dataContent) continue;
 
-              let items = [];
-              if (mod.type === 'prophets') items = dataContent.prophets || [];
-              else if (mod.type === 'sahaba') items = dataContent.sahaba || [];
-              else if (mod.type === 'seerah') items = dataContent.seerah?.phases?.flatMap(p => p.milestones) || [];
-              else if (mod.type === 'new_muslim') items = dataContent.newMuslim?.lessons || [];
+                let items = [];
+                if (mod.type === 'prophets') items = dataContent.prophets || [];
+                else if (mod.type === 'sahaba') items = dataContent.sahaba || [];
+                else if (mod.type === 'seerah') items = dataContent.seerah?.phases?.flatMap(p => p.milestones) || [];
+                else if (mod.type === 'new_muslim') items = dataContent.newMuslim?.lessons || [];
 
-              for (const item of items) {
-                const textToSearch = (item.title + " " + (item.body || item.short || "")).toLowerCase();
-                if (textToSearch.includes(query)) {
-                  bestMatch = { module: mod.type, item: item };
-                  break;
-                }
-                
-                if (item.lessons) {
-                  for (const lesson of item.lessons) {
-                    const lessonText = (lesson.title + " " + lesson.body).toLowerCase();
-                    if (lessonText.includes(query)) {
-                      bestMatch = { module: mod.type, parent: item, lesson: lesson };
-                      break;
+                for (const item of items) {
+                  const fullText = JSON.stringify(item).toLowerCase();
+                  
+                  let score = 0;
+                  keywords.forEach(kw => { 
+                    const escaped = escapeRegExp(kw);
+                    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+                    if (regex.test(fullText)) score++; 
+                  });
+
+                  if (score > highestScore) {
+                    highestScore = score;
+                    bestMatch = { module: mod.type, item: item };
+                    
+                    if (item.lessons) {
+                      let bestLesson = null;
+                      let lessonScore = 0;
+                      for (const lesson of item.lessons) {
+                         const lessonText = JSON.stringify(lesson).toLowerCase();
+                         let ls = 0;
+                         keywords.forEach(kw => { 
+                           const escaped = escapeRegExp(kw);
+                           const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+                           if (regex.test(lessonText)) ls++; 
+                         });
+                         if (ls > lessonScore) {
+                             lessonScore = ls;
+                             bestLesson = lesson;
+                         }
+                      }
+                      if (bestLesson) bestMatch.lesson = bestLesson;
                     }
                   }
                 }
-                if (bestMatch) break;
               }
             }
-          }
 
-          if (bestMatch) {
-            if (bestMatch.module === 'prophets') {
-              openLearnOverlay('prophetsStories', 'storybook');
-              await renderProphets();
-              prophetState.view = 'reader';
-              prophetState.prophetId = bestMatch.parent.id;
-              prophetState.lessonNum = bestMatch.lesson.num;
-              drawProphetsView();
-            } else if (bestMatch.module === 'sahaba') {
-              openLearnOverlay('sahabaStories', 'companions');
-              await renderSahaba();
-              sahabaState.view = 'reader';
-              sahabaState.sahabaId = bestMatch.parent.id;
-              sahabaState.lessonNum = bestMatch.lesson.num;
-              drawSahabaView();
-            } else if (bestMatch.module === 'seerah') {
-              openLearnOverlay('seerahTimeline', 'storybook');
-              await renderSeerah();
-              SEERAH_STATE.view = 'reader';
-              SEERAH_STATE.activeId = bestMatch.item.id;
-              drawSeerah();
-            } else if (bestMatch.module === 'new_muslim') {
-              openLearnOverlay('newMuslim', 'modern');
-              await renderNewMuslim();
-              newMuslimState.view = 'reader';
-              newMuslimState.lessonId = bestMatch.item.id;
-              drawNewMuslimView();
+            if (bestMatch && highestScore > 0) {
+              if (bestMatch.module === 'prophets') {
+                openLearnOverlay('prophetsStories', 'storybook');
+                await renderProphets();
+                prophetState.view = 'reader';
+                prophetState.prophetId = bestMatch.item.id;
+                prophetState.lessonNum = bestMatch.lesson ? bestMatch.lesson.num : 1;
+                drawProphetsView();
+              } else if (bestMatch.module === 'sahaba') {
+                openLearnOverlay('sahabaStories', 'companions');
+                await renderSahaba();
+                sahabaState.view = 'reader';
+                sahabaState.sahabaId = bestMatch.item.id;
+                sahabaState.lessonNum = bestMatch.lesson ? bestMatch.lesson.num : 1;
+                drawSahabaView();
+              } else if (bestMatch.module === 'seerah') {
+                openLearnOverlay('seerahTimeline', 'storybook');
+                await renderSeerah();
+                SEERAH_STATE.view = 'reader';
+                SEERAH_STATE.activeId = bestMatch.item.id;
+                drawSeerah();
+              } else if (bestMatch.module === 'new_muslim') {
+                openLearnOverlay('newMuslim', 'modern');
+                await renderNewMuslim();
+                newMuslimState.view = 'reader';
+                newMuslimState.lessonId = bestMatch.item.id;
+                drawNewMuslimView();
+              }
+              addMessage('ai', `I found exactly what you're looking for! Opening it now...`);
+              setTimeout(() => { overlay.classList.remove('show'); }, 1500);
+            } else {
+              addMessage('ai', `I couldn't find a lesson matching that. Try using different keywords.`);
             }
-            addMessage('ai', `I found exactly what you're looking for! Opening it now...`);
-            setTimeout(() => { overlay.classList.remove('show'); }, 1500);
-          } else {
-            addMessage('ai', `I couldn't find a lesson that specifically mentions "${fn.args.query}". Try using different keywords.`);
           }
+        } catch (toolErr) {
+          console.error("Tool execution failed:", toolErr);
+          addMessage('ai', `I found the content, but hit an error opening it.`);
         }
+        
         return;
       }
 
