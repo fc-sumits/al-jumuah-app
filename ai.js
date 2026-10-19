@@ -263,7 +263,16 @@
             const rawQuery = fn.args.query.toLowerCase();
             addMessage('ai', `Searching for "${fn.args.query}"...`);
             
-            const keywords = rawQuery.split(' ').filter(w => w.length > 2);
+            // Filter out generic words that ruin the search
+            const stopWords = ['death', 'story', 'lesson', 'patience', 'sabr', 'life', 'time', 'year', 'about', 'with'];
+            let keywords = rawQuery.split(' ').filter(w => w.length > 2 && !stopWords.includes(w));
+            
+            // If everything got filtered out, fallback to the raw query
+            if (keywords.length === 0) keywords = rawQuery.split(' ');
+            
+            // Sort keywords by length (longest first). The longest word is usually the main entity (e.g. "Talib" in "Abu Talib death")
+            keywords.sort((a, b) => b.length - a.length);
+            const mainEntity = keywords[0];
             
             const modules = [
               { type: 'prophets', files: ['prophets-1','prophets-2','prophets-3','prophets-4','prophets-5'] },
@@ -274,7 +283,6 @@
 
             let allSearchable = [];
 
-            // Flatten everything into exact lesson blocks
             for (const mod of modules) {
               for (const file of mod.files) {
                 const dataContent = await loadContent(file);
@@ -341,24 +349,25 @@
               const titleText = item.title.toLowerCase();
               const bodyText = item.body.toLowerCase();
 
-              keywords.forEach(kw => { 
-                const escaped = escapeRegExp(kw);
-                const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+              // CRITICAL FIX: The lesson MUST contain the main entity name.
+              // E.g., if searching "Abu Talib", the lesson must have the word "Talib".
+              const entityRegex = new RegExp(`\\b${escapeRegExp(mainEntity)}\\b`, 'i');
+              if (!entityRegex.test(titleText) && !entityRegex.test(bodyText)) {
+                return; // Skip this lesson completely if it doesn't mention the main entity
+              }
+
+              keywords.forEach((kw, index) => {
+                const regex = new RegExp(`\\b${escapeRegExp(kw)}\\b`, 'i');
                 
-                // Title match gives huge boost (10 points)
+                // Title match gives huge boost
                 if (regex.test(titleText)) {
-                  score += 10;
+                  score += 15;
                 } 
-                // Body match gives 2 points
+                // Body match gives small boost
                 else if (regex.test(bodyText)) {
                   score += 2;
                 }
               });
-
-              // Exact phrase bonus (20 points)
-              if (bodyText.includes(rawQuery) || titleText.includes(rawQuery)) {
-                score += 20;
-              }
 
               if (score > highestScore) {
                 highestScore = score;
