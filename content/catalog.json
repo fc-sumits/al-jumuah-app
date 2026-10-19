@@ -1,0 +1,2756 @@
+[
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 1,
+    "title": "The Announcement",
+    "parent": "Adam",
+    "summary": "Before any human existed, Allah announced to the angels that He would appoint a khalifah on earth. The angels questioned the decision, fearing corruption and bloodshed. Allah responded, 'Indeed, I know what you do not know,' affirming that humanity's existence rests on trust in God's eternal plan.",
+    "keywords": ["Allah", "angels", "khalifah", "creation", "divine decree", "trust", "humanity"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 2,
+    "title": "The Clay",
+    "parent": "Adam",
+    "summary": "Allah fashioned the first human, Adam, from various types of clay, describing the stages of gathering, mixing, and shaping. Scholars note the clay came from different parts of the earth, accounting for diversity among descendants. Adam was uniquely formed by Allah's own hands, rebuking Iblis for refusing to prostrate to this hand-shaped being.",
+    "keywords": ["Adam", "clay", "Ibn Kathir", "Iblis", "creation", "humanity", "earth"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 3,
+    "title": "The Breath of Life",
+    "parent": "Adam",
+    "summary": "Allah breathed the soul into Adam, instantly granting him awareness of a Creator. The Quranic order of soul, senses, and heart describes the soul as the source of inherent human dignity. This divine breath endows every person with equal worth, forming the basis for Islam's prohibition against unjust killing.",
+    "keywords": ["nafkh al-ruh", "Adam", "soul", "dignity", "killing", "Islamic teaching"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 4,
+    "title": "The Refusal of Iblis",
+    "parent": "Adam",
+    "summary": "Allah commanded all angels to prostrate before Adam as an act of honor, and every angel obeyed except Iblis, a jinn made of fire. Iblis refused, claiming superiority because he was created from fire while Adam was made from clay, marking the first recorded sin of arrogance.",
+    "keywords": ["Iblis", "prostration", "pride", "jinn", "sin", "arrogance"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 5,
+    "title": "The Names",
+    "parent": "Adam",
+    "summary": "Allah taught Adam the names of all things, granting him unique knowledge that distinguished humanity from the angels. When the angels were challenged to name the creations, they admitted their lack of knowledge. This event underscores Islam's emphasis on seeking knowledge as humanity's true honor.",
+    "keywords": ["names", "knowledge", "angels", "Quran", "creation", "intellectual pursuit"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 6,
+    "title": "Hawwa",
+    "parent": "Adam",
+    "summary": "In the garden, Adam was alone until Allah created Hawwa (Eve) from his own self. The Qur'an highlights that this creation was intended to bring tranquility, affection, and mercy between spouses. Hawwa is portrayed as a partner and reflection of Adam's soul, forming the first family.",
+    "keywords": ["Hawwa", "Eve", "companionship", "tranquility", "affection", "mercy"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 7,
+    "title": "The Garden",
+    "parent": "Adam",
+    "summary": "Allah placed Adam and Hawwa in the abundant garden of Jannah, granting them limitless blessings. They were given a single command not to approach one specific tree, making the prohibition a test of obedience rather than a trap. Divine tests are often small in size but large in moral significance.",
+    "keywords": ["Jannah", "forbidden tree", "test", "obedience", "blessings", "sincerity"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 8,
+    "title": "The Whisper",
+    "parent": "Adam",
+    "summary": "Iblis, after being expelled, vows to mislead humanity until the end of time. He whispers to Adam's descendants, presenting the forbidden tree as a gift and disguising deception as sincere advice. The narrative illustrates how deception appears as what one desires, never overtly evil.",
+    "keywords": ["Iblis", "deception", "free will", "forbidden tree", "whisper", "immortality"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 9,
+    "title": "The Slip",
+    "parent": "Adam",
+    "summary": "Adam and Eve ate the forbidden fruit, causing their shame to become visible. Their Lord gently reminds them of the warning, emphasizing that the door to repentance remains open. Scholars differentiate Adam's accidental slip, driven by deception and regret, from Iblis's deliberate rebellion.",
+    "keywords": ["slip", "repentance", "tawbah", "mercy", "Shaytan", "regret"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 10,
+    "title": "The Words of Repentance",
+    "parent": "Adam",
+    "summary": "Adam and Hawwa accepted responsibility for their mistake without blaming each other or Iblis. Their prayer begins with 'rabbana,' acknowledges their wrongdoing, seeks forgiveness, and admits that without it they will be among the losers. Allah, as At-Tawwab, accepted their repentance.",
+    "keywords": ["repentance", "tawbah", "dua", "forgiveness", "At-Tawwab", "humility"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 11,
+    "title": "The Descent",
+    "parent": "Adam",
+    "summary": "Allah commanded humanity to descend to earth, not as punishment but as part of a divine plan. Earth provides the setting for testing, work, hardship, and the opportunity to fulfill the role of khalifah. The slip in the garden was anticipated and integrated into the purpose of building a legacy.",
+    "keywords": ["descent", "earth", "khalifah", "purpose", "test", "legacy", "banished"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 12,
+    "title": "The First Family",
+    "parent": "Adam",
+    "summary": "Adam and Hawwa became the first family on earth. Adam, as a prophet, taught worship of Allah, gratitude, and avoidance of evil. With no mosques or books, Adam relied on divine guidance in his heart to build the first faith community, emphasizing that sincerity is what Allah requires.",
+    "keywords": ["first family", "prophet", "faith community", "sincerity", "guidance"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 13,
+    "title": "The Two Sons",
+    "parent": "Adam",
+    "summary": "The Qur'anic story of Adam's two sons, Habil (Abel) and Qabil (Cain), who were commanded to sacrifice. Habil offered the best of his flock, while Qabil presented leftovers. Allah accepted Habil's offering due to his righteousness, highlighting the importance of intention behind worship.",
+    "keywords": ["Habil", "Qabil", "sacrifice", "righteousness", "intention", "murder"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 14,
+    "title": "The First Murder",
+    "parent": "Adam",
+    "summary": "Envy inflamed Qabil's heart, leading him to kill his brother Habil, marking the first murder on earth. Allah sent a crow to demonstrate how to bury the body, prompting Qabil's remorse. The narrative warns that envy harms the envier first, consuming good deeds like fire consumes wood.",
+    "keywords": ["envy", "murder", "burial", "crow", "gratitude", "Qabil", "Habil"]
+  },
+  {
+    "module": "prophets",
+    "id": "adam",
+    "lesson": 15,
+    "title": "The Legacy",
+    "parent": "Adam",
+    "summary": "Adam lived a long life, witnessing generations of his descendants, and died on a Friday. His legacy includes being the first to utter the prayer 'rabbana zalamna anfusana,' teaching that falling is not final and divine mercy follows repentance.",
+    "keywords": ["legacy", "repentance", "Friday", "mercy", "descendants", "Prophet"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 1,
+    "title": "The Silent Prophet",
+    "parent": "Idris",
+    "summary": "Idris is a scarcely mentioned yet highly honored prophet in the Quran, described as truthful and elevated to a high station. His brief portrayal teaches that a prophet's worth is measured by righteousness, not fame, and that Allah's testimony summarizes his exemplary life.",
+    "keywords": ["Idris", "truthful", "high station", "faith", "humility", "divine praise"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 2,
+    "title": "The Name That Means Study",
+    "parent": "Idris",
+    "summary": "The name Idris derives from the Arabic root d-r-s, linking it to lessons and schools. Idris pursued knowledge not for worldly gain but to deepen his understanding of Allah, merging learning with worship. Those who seek knowledge are guided toward Paradise.",
+    "keywords": ["Idris", "learning", "revelation", "knowledge", "worship", "Paradise"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 3,
+    "title": "The Craft of the Needle",
+    "parent": "Idris",
+    "summary": "Tradition holds that Idris was the first to sew clothing with a needle. Unlike a secluded prophet, he engaged in practical work, embodying the principle that one should earn sustenance through one's own hands. Daily labor and faith are intertwined.",
+    "keywords": ["needle", "sewing", "labor", "faith", "craftsmanship", "sustenance"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 4,
+    "title": "The Silent Worshipper",
+    "parent": "Idris",
+    "summary": "Idris was a man of few words, exemplifying disciplined silence in a time of loud idol worship. He filled his quiet with the remembrance of Allah. His stillness illustrates that true silence is a presence of awareness, not mere absence of speech.",
+    "keywords": ["silence", "remembrance", "idol worship", "discipline", "awareness"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 5,
+    "title": "A Prophet Before the Flood",
+    "parent": "Idris",
+    "summary": "Idris lived in a pre-flood era dominated by idolatry. Sent by Allah, he called scattered humanity back to pure worship despite having no community or support. His story highlights the solitary perseverance of early monotheistic guidance before the flood of Nuh.",
+    "keywords": ["pre-flood", "monotheism", "idolatry", "tawhid", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 6,
+    "title": "The High Station",
+    "parent": "Idris",
+    "summary": "The Qur'an describes Idris being raised to a 'high station,' a physical or spiritual elevation. He attained this status through humility, truthfulness, and modest speech, reflecting the principle that Allah lifts those who humble themselves.",
+    "keywords": ["high station", "humility", "divine elevation", "scholars", "truthfulness"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 7,
+    "title": "The Weight of Small Deeds",
+    "parent": "Idris",
+    "summary": "Idris's story lacks dramatic miracles, yet Allah honors him for consistent small deeds. The Prophet taught that the most beloved actions are those performed regularly, no matter how minor. Consistency, not spectacle, is the true currency before Allah.",
+    "keywords": ["consistency", "small deeds", "worship", "honesty", "divine reward"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 8,
+    "title": "A Teacher of the Lost",
+    "parent": "Idris",
+    "summary": "Idris addressed a generation that dismissed the stories of Adam and Nuh. Though only some listened, he persisted with patience, making things easy and giving good tidings. By teaching through quiet clarity, Idris became a compassionate guide for the lost.",
+    "keywords": ["generation", "patience", "warning", "good tidings", "compassion"]
+  },
+  {
+    "module": "prophets",
+    "id": "idris",
+    "lesson": 9,
+    "title": "Mentioned Forever",
+    "parent": "Idris",
+    "summary": "Unlike worldly leaders, Idris left no empire or monuments, only his name, which is eternally mentioned in the Quran. Each recitation of Surah Maryam becomes an act of worship. Worldly achievements fade, but a heart devoted to Allah secures lasting remembrance.",
+    "keywords": ["Surah Maryam", "remembrance", "quiet believers", "afterlife", "righteousness"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 1,
+    "title": "The First Messenger",
+    "parent": "Nuh",
+    "summary": "Nuh is the first messenger sent to a people who fell into idolatry after earlier prophets. Righteous men were honored with statues, which later generations worshipped, showing how shirk starts with small steps. Nuh called them back to monotheism for 950 years.",
+    "keywords": ["Nuh", "idolatry", "shirk", "statues", "worship", "generations", "revelation"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 2,
+    "title": "The Call Begins",
+    "parent": "Nuh",
+    "summary": "Allah sent Nuh to his people with a clear call to pure tawhid. Nuh approached them with love and concern, speaking like a caring father. He urged a return to the same Allah worshipped by their ancestors, framing his mission as a restoration of forgotten heritage.",
+    "keywords": ["tawhid", "love", "forefathers", "restoration", "warning", "heritage"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 3,
+    "title": "Worship, Fear, Obey",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh condensed his divine message into three imperative verbs: worship Allah, fear Him, and obey the messenger. Worship establishes the foundation, fear serves as a guardrail, and obedience translates belief into action. This framework is consistent across all prophets.",
+    "keywords": ["worship", "fear", "obey", "guidance", "message", "prophets"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 4,
+    "title": "A Gift and a Warning",
+    "parent": "Nuh",
+    "summary": "Nuh delivers a message of forgiveness and mercy, emphasizing that Allah's pardon is available before punishment. He warns that the Day of Reckoning is inevitable. The Quran's references to punishment keep the conscience alert regarding lasting consequences.",
+    "keywords": ["forgiveness", "warning", "Judgment Day", "mercy", "punishment", "accountability"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 5,
+    "title": "The Leaders' Rejection",
+    "parent": "Nuh",
+    "summary": "Noah's people rejected his message because it threatened the status of the leaders. The chiefs, who held wealth and power, labeled him in clear error. Their rejection stemmed from fear of losing authority, leading them to dismiss and insult him rather than debate.",
+    "keywords": ["leaders", "rejection", "power", "wealth", "idols", "authority"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 6,
+    "title": "The Mockery of the Poor Followers",
+    "parent": "Nuh",
+    "summary": "The leaders derided Noah's followers as poor and powerless, yet the Quran views this as proof of Noah's truth. Humble people are often the first to accept divine messages. Allah judges by heart and deeds, not status, making the poor believers the righteous in the afterlife.",
+    "keywords": ["humble believers", "poverty", "divine judgment", "righteousness", "wealth"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 7,
+    "title": "The Argument of the Elite",
+    "parent": "Nuh",
+    "summary": "Elite leaders argued that a true messenger would be an angel. This reasoning sets an impossible condition that nullifies the purpose of prophethood, which tests faith through a relatable human. Human messengers face hunger and struggle, making their guidance authentic and eliminating excuses.",
+    "keywords": ["prophethood", "angels", "humanity", "faith", "test", "elite", "logic"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 8,
+    "title": "The 950 Years",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh's mission lasted 950 years. Despite centuries of rejection and the loss of generations, only a few embraced his message. Nuh's unwavering persistence illustrates steadfastness and obedience to divine duty, emphasizing that true success lies in faithful perseverance.",
+    "keywords": ["950 years", "perseverance", "dawah", "rejection", "faith", "obedience"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 9,
+    "title": "The Complaint to Allah",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh pleaded to Allah after centuries of trying to guide his people, expressing deep exhaustion as they rejected his message. He openly admits his efforts have driven them further away. The Quran records this complaint as a model of sincere reliance on Allah.",
+    "keywords": ["complaint", "exhaustion", "perseverance", "truth", "sincere reliance"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 10,
+    "title": "The Final Dua",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh prayed asking God to prevent disbelievers from remaining on earth because their corruption would spread. His plea was driven by concern for future humanity, seeking mercy by ending inherited disbelief. God responded by sending the flood for a fresh start.",
+    "keywords": ["dua", "flood", "disbelievers", "corruption", "prophetic wisdom", "mercy"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 11,
+    "title": "The Ark Begins",
+    "parent": "Nuh",
+    "summary": "Allah commanded Nuh to construct an ark in a barren desert, a task that seemed impossible. Despite the absurdity, Nuh obeyed without hesitation. This exemplifies the core of prophethood—unquestioning obedience to divine command, even without understanding the outcome.",
+    "keywords": ["Ark", "obedience", "prophethood", "flood", "desert", "divine command"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 12,
+    "title": "The Mockery of the Ark",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh tirelessly built the ark while his community ridiculed him, seeing his efforts as foolish. Despite the mockery, Nuh remained steadfast, knowing the flood was imminent. Obedient believers are often scorned by those unaware of divine plans.",
+    "keywords": ["Ark", "Mockery", "Obedience", "Flood", "Prophecy", "Faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 13,
+    "title": "The Command to Load",
+    "parent": "Nuh",
+    "summary": "Noah was commanded to load the ark with pairs of every animal, his faithful family, and a small group of believers, excluding those whose disbelief sealed their fate. The sign of the flood was an overflowing oven. Only a handful boarded the ark, highlighting reliance on sincere devotion.",
+    "keywords": ["ark", "flood", "oven overflow", "pairs of animals", "believers", "sincerity"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 14,
+    "title": "The Family of Nuh",
+    "parent": "Nuh",
+    "summary": "Prophet Nuh pleaded to Allah to save his drowning son. Allah responded that the son is not truly part of Nuh's family, as true kinship is defined by righteousness and faith, not blood ties. Nuh learns this painful lesson as his son perishes.",
+    "keywords": ["son", "ark", "faith", "family of Allah", "disbeliever", "blood ties"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 15,
+    "title": "The Call to the Son",
+    "parent": "Nuh",
+    "summary": "Before the flood, Nuh invited his son to join the ark. The son refused, trusting a mountain for protection instead. He was drowned when the waters rose. No worldly means can shield one from Allah's decree; only divine mercy attained through obedience can save.",
+    "keywords": ["son", "flood", "mountain", "mercy", "obedience", "worldly means"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 16,
+    "title": "The Waves Like Mountains",
+    "parent": "Nuh",
+    "summary": "Towering waves submerged the earth and destroyed the idols and homes of the disbelievers. Nuh and the believers were saved by riding the ark. The narrative emphasizes tawakkul—trust in Allah—as the means that carries believers through hardship.",
+    "keywords": ["flood", "waves like mountains", "ark", "tawakkul", "disbelievers"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 17,
+    "title": "The Drowning of the World",
+    "parent": "Nuh",
+    "summary": "The earth and sky were instructed to swallow water and withhold rain, drowning every person who rejected Nuh. This catastrophe was a divine decree showcasing Allah's power, justice, and mercy, eradicating corruption while preserving the righteous.",
+    "keywords": ["flood", "divine decree", "corruption", "justice", "mercy", "disbelievers"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 18,
+    "title": "The Final Separation",
+    "parent": "Nuh",
+    "summary": "The disbelievers were irrevocably separated from the saved, emphasizing the finality of their destruction. Prophet Nuh witnessed his people's unaltered hearts and demise after centuries of preaching. Confronting evil is essential, yet true guidance rests with Allah.",
+    "keywords": ["disbelievers", "prophet", "faith", "guidance", "evil", "separation"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 19,
+    "title": "The Mountain of Joudi",
+    "parent": "Nuh",
+    "summary": "The ark rested on Mount Joudi in northern Iraq after the flood receded. Noah emerged to a world emptied of humanity except his family and the animals. He observed the restored earth and bowed in gratitude after centuries of preaching and the loss of his son.",
+    "keywords": ["Joudi", "ark", "covenant", "renewal", "gratitude", "dawah"]
+  },
+  {
+    "module": "prophets",
+    "id": "nuh",
+    "lesson": 20,
+    "title": "The Second Father of Humanity",
+    "parent": "Nuh",
+    "summary": "Nuh is the second father of humanity, whose descendants include all peoples today. He exemplifies patience, obedience, and loyalty, even at the cost of losing his son. Nuh is the ultimate model of sabr in Islamic tradition.",
+    "keywords": ["flood", "patience", "obedience", "loyalty", "model of sabr"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 1,
+    "title": "The People of 'Ad",
+    "parent": "Hud",
+    "summary": "After the flood, humanity repopulated the earth. The proud and powerful people of 'Ad were renowned for their massive stature, architectural marvels, and wealth, yet they grew arrogant and worshipped idols. Allah sent Hud to call them back to monotheism.",
+    "keywords": ["Ad", "giants", "architecture", "arrogance", "idolatry", "Hud"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 2,
+    "title": "A Brother From Among Them",
+    "parent": "Hud",
+    "summary": "Hud is portrayed as an insider, a brother among his people, sharing their language and tribe. Allah sends messengers from within communities so they can speak with shared experience. Hud calls his people to worship Allah alone but finds their hearts hardened.",
+    "keywords": ["messenger", "Nuh", "Ibrahim", "patience", "tribe", "tawhid"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 3,
+    "title": "The Call to Gratitude",
+    "parent": "Hud",
+    "summary": "Prophet Hud recalled how Allah made the 'Ad successors after Noah, granting them strength and wealth. He emphasized gratitude, noting that arrogance arises when blessings are forgotten and claimed as one's own. Pride leads to neglect of worship and disbelief.",
+    "keywords": ["gratitude", "arrogance", "remembrance", "blessings", "disbelief"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 4,
+    "title": "The Accusation of Foolishness",
+    "parent": "Hud",
+    "summary": "Powerful figures attacked Hud by labeling him both a fool and a liar, a contradictory accusation to undermine his credibility. Hud resists these attacks, refusing to argue, and reaffirms his role as a messenger. The message matters more than winning the argument.",
+    "keywords": ["foolishness", "liar", "messenger", "prophetic", "truth", "character assassination"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 5,
+    "title": "The Accusation of Madness",
+    "parent": "Hud",
+    "summary": "A group accused Hud of fabricating lies about Allah. Hud responded with measured confidence, invoking Allah as his witness and declaring reliance on the Divine. He challenged his accusers to bring their plots, asserting that their power is nothing compared to Allah's.",
+    "keywords": ["tawakkul", "accusation", "Allah", "trust", "plots", "confidence"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 6,
+    "title": "The Signs They Missed",
+    "parent": "Hud",
+    "summary": "Hud urged his people to seek forgiveness and repent, promising divine mercy in the form of rain and strength. The 'Ad, despite being blessed with abundant rain and fertile land, became fixated on their wealth and ignored the signs.",
+    "keywords": ["repentance", "mercy", "rain", "signs", "wealth", "warning"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 7,
+    "title": "The Refusal of Pride",
+    "parent": "Hud",
+    "summary": "The people of 'Ad rejected Hud not because they found his message false, but because they considered themselves superior and refused to submit. Their arrogance mirrors the sin of Iblis, highlighting that pride of the heart leads to downfall across generations.",
+    "keywords": ["kibr", "arrogance", "Paradise", "Iblis", "pride", "superiority"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 8,
+    "title": "The Punishment Arrives",
+    "parent": "Hud",
+    "summary": "After Hud departed with the believers, a relentless wind sent by Allah destroyed the 'Ad over seven nights and eight days. The fierce wind lifted men and smashed them, turning the mighty 'Ad into hollow palm trunks. The very air they took for granted became their undoing.",
+    "keywords": ["wind", "punishment", "seven nights eight days", "hollow palm trunks", "divine warning"]
+  },
+  {
+    "module": "prophets",
+    "id": "hud",
+    "lesson": 9,
+    "title": "The Ruined Cities",
+    "parent": "Hud",
+    "summary": "The grand cities of the 'Ad, like Iram, were reduced to dust. The Prophet ﷺ warned his companions not to enter their ruins without weeping. The narrative emphasizes the Quranic warning against arrogance and calls for humility.",
+    "keywords": ["Iram", "arrogance", "ruins", "humility", "Prophet Muhammad"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 1,
+    "title": "After 'Ad",
+    "parent": "Salih",
+    "summary": "The Thamud inherited the lands of the 'Ad in northern Arabia, learning their architecture. Though they initially remembered the ruins as a warning, their prosperity revived the same pride. Allah sent Salih, a brother among them, to guide them back to humility.",
+    "keywords": ["Thamud", "Salih", "ruins", "pride", "prophecy", "Arabia"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 2,
+    "title": "The Message of Salih",
+    "parent": "Salih",
+    "summary": "Salih echoed the core tawhid taught by earlier messengers: worship Allah alone. He reminded his people of their blessings—palaces and homes carved from mountains—and urged them not to corrupt the earth. Possessions should inspire gratitude and stewardship.",
+    "keywords": ["Tawhid", "Inheritance", "Corruption", "Dawah", "stewardship"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 3,
+    "title": "The Demand for a Sign",
+    "parent": "Salih",
+    "summary": "The people of Thamud demanded a miraculous sign: a pregnant she-camel emerging from a massive rock. Salih prayed, and Allah split the rock, producing the camel. Despite witnessing the miracle, the Thamud rejected the sign, revealing their hardened hearts.",
+    "keywords": ["sign", "she-camel", "rock", "miracle", "prayer", "rejection"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 4,
+    "title": "The She-Camel's Rights",
+    "parent": "Salih",
+    "summary": "Allah commanded that the she-camel be respected and protected. The people were instructed to share a water source, allowing the camel to drink on alternate days. This arrangement tested their willingness to live harmoniously with a miraculous creature.",
+    "keywords": ["she-camel", "water rights", "test of faith", "divine sign", "coexistence"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 5,
+    "title": "The Nine Wicked Men",
+    "parent": "Salih",
+    "summary": "Nine men acted as chief corruptors in the city, plotting to murder Salih and his family. They conspired in secret, but Allah devised a counter-plan unknown to them. The narrative warns about the futility of malicious intent against divine providence.",
+    "keywords": ["nine men", "corruption", "murder plot", "deception", "divine plan"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 6,
+    "title": "The Slaughter of the Camel",
+    "parent": "Salih",
+    "summary": "The nine men convinced one among them to kill the miraculous she-camel. Their reaction was not horror but a demand for further proof. A disbelieving heart continually seeks new signs after each one is eliminated, never exhausting reasons to reject faith.",
+    "keywords": ["she-camel", "disbelief", "miracle", "signs", "destruction", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 7,
+    "title": "The Warning of Three Days",
+    "parent": "Salih",
+    "summary": "When the she-camel was killed, Salih issued a three-day warning. Over those days, their faces changed color—yellow, then red, then black—signaling impending punishment. Despite the extended warning, the people remained unrepentant, and the punishment arrived.",
+    "keywords": ["three days", "warning", "repentance", "color change", "punishment", "mercy"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 8,
+    "title": "The Cry and the Earthquake",
+    "parent": "Salih",
+    "summary": "On the fourth day, Allah's punishment struck with an earthquake, a blast, and a terrifying cry, reducing palaces to ruins. Salih watched his people's demise and solemnly reminded them he had faithfully delivered the message.",
+    "keywords": ["earthquake", "punishment", "disbelievers", "destruction", "admonition"]
+  },
+  {
+    "module": "prophets",
+    "id": "salih",
+    "lesson": 9,
+    "title": "The Saved Few",
+    "parent": "Salih",
+    "summary": "Prophet Salih and the humble believers were saved by Allah's mercy, not their own strength. Salvation is a divine gift granted to those whose hearts remain soft and grateful, while arrogance leads to ruin. True believers are modest and detached from corrupt power.",
+    "keywords": ["believers", "mercy", "humility", "gratitude", "arrogance", "divine salvation"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 1,
+    "title": "The Search Begins",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim grew up in a society that worshipped idols, with his father a sculptor. His heart rejected these false deities. Guided by divine certainty, he perceived the truth beyond the material world, sparking a personal pilgrimage toward true belief.",
+    "keywords": ["idols", "sculptor", "certainty", "pilgrimage", "belief", "monotheism"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 2,
+    "title": "The Star, the Moon, the Sun",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim observed a star, the moon, and the sun, each time declaring them his Lord until they set. Through this public demonstration, he illustrated that created celestial bodies rise and fall, whereas the true Creator never does. Only the eternal Creator deserves worship.",
+    "keywords": ["star", "moon", "sun", "reasoning", "worship", "monotheism"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 3,
+    "title": "The Argument with Azar",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim faced his father, Azar, a sculptor of idols. He approached Azar with gentle respect, inviting him to abandon idol worship. Azar rejected the plea and threatened to stone him, prompting Ibrahim to respond with a sorrowful yet firm wish for forgiveness.",
+    "keywords": ["Azar", "idols", "gentle persuasion", "threat", "forgiveness", "filial love"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 4,
+    "title": "Against the Idols",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim protested the idols during a festival by smashing every statue except the largest, placing his axe in its hand. When accused, Ibrahim challenged the people to ask the remaining idol if it could speak, exposing the idols' lifelessness.",
+    "keywords": ["idols", "axe", "temple", "festival", "defiance", "lifelessness"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 5,
+    "title": "The Great Fire",
+    "parent": "Ibrahim",
+    "summary": "The people decided to execute Ibrahim by building a massive pyre. God commanded the fire to become cool and safe, rendering it harmless. The crowd witnessed an impossible miracle, seeing their intended violence turned into a testament of divine protection.",
+    "keywords": ["fire", "miracle", "sacrifice", "violence", "faith", "divine protection"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 6,
+    "title": "The Debate with Nimrod",
+    "parent": "Ibrahim",
+    "summary": "The tyrant king Nimrod claimed divine status. Ibrahim challenged his claim by invoking Allah's control over the sun. Nimrod boasted he could give life and death, but Ibrahim countered by demanding the sun be brought from the west, exposing Nimrod's limits.",
+    "keywords": ["Nimrod", "power vs truth", "sun east west", "divine authority", "debate"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 7,
+    "title": "The Migration",
+    "parent": "Ibrahim",
+    "summary": "After the failed debate and surviving the fire, Ibrahim fulfilled his mission and undertook the hijrah, leaving his family and town with only his faith and his nephew Lut. The journey exemplifies the principle that believers must move when a place becomes impossible for faith.",
+    "keywords": ["hijrah", "faith", "Shaam", "migration", "Lut", "refuge"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 8,
+    "title": "In the Blessed Land",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim settled in Shaam, establishing a community and marrying Sarah. When an Egyptian king coveted Sarah, Ibrahim claimed she was his sister. Sarah prayed for protection, resulting in the king's paralysis. The narrative highlights trust in Allah and the protective role of prayer.",
+    "keywords": ["Sarah", "Shaam", "Egyptian king", "prayer", "paralysis", "tawakkul"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 9,
+    "title": "The Long Wait",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim and Sarah longed for a child but faced Sarah's barrenness. Ibrahim persistently prayed for a righteous offspring, and Sarah suggested he marry her servant Hajar. Their faith was rewarded when angels visited Ibrahim's tent with a momentous announcement.",
+    "keywords": ["Sarah", "Hajar", "childlessness", "prayer", "angels", "righteous child"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 10,
+    "title": "The Angels Arrive",
+    "parent": "Ibrahim",
+    "summary": "Three angels disguised as honored guests visited Ibrahim and were offered a feast. They delivered a divine message about Sarah's miraculous pregnancy and the destruction of Lut's people. Sarah laughed in disbelief but was reassured that Allah's decree is wondrous.",
+    "keywords": ["angels", "hospitality", "Sarah", "Isaac", "divine decree", "miraculous birth"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 11,
+    "title": "The Barren Valley",
+    "parent": "Ibrahim",
+    "summary": "Allah commanded Ibrahim to leave his wife Hajar and infant son Ismail in the barren valley of Bakkah. Ibrahim obeyed, setting them down with minimal provisions. Hajar questioned his actions but affirmed the divine command, embodying unwavering certainty.",
+    "keywords": ["Hajar", "Ismail", "Bakkah", "Makkah", "obedience", "yaqeen"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 12,
+    "title": "The Well of Zamzam",
+    "parent": "Ibrahim",
+    "summary": "Hajar searched desperately for water between Safa and Marwa. The miraculous Zamzam well emerged when her infant son Ismail kicked the sand. The water continues to flow for millennia, underscoring the enduring mercy of Allah through this timeless source.",
+    "keywords": ["Hajar", "Zamzam", "Safa", "Marwa", "miracle", "pilgrimage", "Mecca"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 13,
+    "title": "The Vision of Sacrifice",
+    "parent": "Ibrahim",
+    "summary": "After years of waiting for a child, Ibrahim received a divine command in a dream to sacrifice his son. Ibrahim informed Ismail, allowing him to choose. Ismail willingly submitted to the command, demonstrating profound faith.",
+    "keywords": ["Ismail", "dream", "sacrifice", "faith", "obedience", "divine command"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 14,
+    "title": "The Great Sacrifice",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim's willingness to sacrifice his son Ismail was halted by a divine test of devotion. The true sacrifice was Ibrahim's attachment to anything besides Allah. This moment led to the blessing of two nations—Israel through Ishaq and the Arab lineage through Ismail.",
+    "keywords": ["sacrifice", "obedience", "prophecy", "nations", "submission", "devotion"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 15,
+    "title": "The Ransom",
+    "parent": "Ibrahim",
+    "summary": "A ram appeared for Ibrahim to sacrifice instead of his son. Allah declared the event a clear trial, provided the ransom, granted eternal honor with 'Peace upon Ibrahim,' and recorded the reward for good deeds. Obedience is preserved, rewarded, and honored forever.",
+    "keywords": ["ram", "sacrifice", "trial", "ransom", "peace", "believing servants"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 16,
+    "title": "The Kaaba Rises",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim returns to Mecca in his old age and, following a divine command, builds the Kaaba with his son Ismail. Together they lay the foundations of a simple, square stone house dedicated solely to the worship of one God. The Kaaba unites the Muslim Ummah.",
+    "keywords": ["Kaaba", "Mecca", "monotheism", "worship", "Ummah", "foundations"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 17,
+    "title": "The Dua for the Ummah",
+    "parent": "Ibrahim",
+    "summary": "While constructing the Kaaba, Ibrahim and Ismail offered a profound dua asking Allah to send a messenger from among their descendants. The supplication was fulfilled centuries later with Prophet Muhammad ﷺ, emphasizing that every act of worship stems from that ancient prayer.",
+    "keywords": ["dua", "Prophet Muhammad", "Ummah", "Kaaba", "descendants", "supplication"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 18,
+    "title": "The Four Birds",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim asked Allah to show him how the dead are given life to calm his heart. Allah granted a miracle: Ibrahim slaughtered four birds, spread their parts on hills, and called them. The birds reassembled and flew back, strengthening his faith.",
+    "keywords": ["miracle", "four birds", "resurrection", "faith", "heart tranquility"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 19,
+    "title": "The Test of the Station",
+    "parent": "Ibrahim",
+    "summary": "After the Kaaba was built, Allah tested Ibrahim by commanding him to cleanse it and proclaim the pilgrimage of Hajj to all peoples. Standing on Abu Qubays, Ibrahim called out the invitation, which Allah amplified across centuries.",
+    "keywords": ["Kaaba", "purification", "Hajj", "Tawaf", "pilgrimage", "worship"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 20,
+    "title": "The Imam of Mankind",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim endured divine tests—fire, exile, sacrifice, and building—before Allah appointed him as an Imam. Ibrahim asked that the honor extend to his descendants, but Allah stipulated that the covenant excludes wrongdoers, making leadership contingent on obedience.",
+    "keywords": ["Imam", "obedience", "covenant", "descendants", "tests", "lineage"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 21,
+    "title": "The Testament",
+    "parent": "Ibrahim",
+    "summary": "Aware of his impending death, Ibrahim gathered his sons Ismail and Ishaq to deliver his final instruction: to remain Muslims until death. The narrative underscores that this legacy is a duty for Muslim parents today, prioritizing faith over material gifts.",
+    "keywords": ["Ismail", "Ishaq", "Yaqub", "tawhid", "faith", "Muslim parents"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 22,
+    "title": "The Friend of Allah",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim holds the unique Quranic title Khalilullah, meaning the close friend of Allah. He attained this status through unwavering obedience to each divine command, from leaving his father to the willingness to sacrifice his son.",
+    "keywords": ["Khalilullah", "obedience", "friendship", "Allah", "Abu Bakr"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 23,
+    "title": "The Passing of Ibrahim",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim lived an extraordinarily long life, witnessing his sons grow, the establishment of Mecca, and the formation of two great nations. He died peacefully in Hebron. His obedience laid the foundation for the Children of Israel and the Prophet Muhammad ﷺ.",
+    "keywords": ["Hebron", "Kaaba", "Tawhid", "Hajj", "Prophet Muhammad", "foundation"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 24,
+    "title": "The Father of the Prophets",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim, known as Abu al-Anbiya, is the father of the prophets because the major prophetic lineages flow through his two sons. The blessing of this lineage stems from Ibrahim's obedience and righteousness, not merely blood ties.",
+    "keywords": ["prophets", "lineage", "Ishaq", "Ismail", "Muhammad", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "ibrahim",
+    "lesson": 25,
+    "title": "The Legacy",
+    "parent": "Ibrahim",
+    "summary": "Ibrahim's legacy is the pure, uncompromising worship of the One God (hanifiyyah). He was willing to abandon places, sacrifice what he loved, and rebuild despite uncertainty. Believers are commanded to follow Ibrahim's clear path of submission.",
+    "keywords": ["hanifiyyah", "monotheism", "sacrifice", "legacy", "worship", "submission"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 1,
+    "title": "The Nephew of Ibrahim",
+    "parent": "Lut",
+    "summary": "Lut, the nephew of Ibrahim, grew up in Ibrahim's household, witnessing his uncle break idols and survive the fire. He chose to follow Ibrahim's monotheistic message early, accompanying him on the migration. Lut was the first believer of his generation.",
+    "keywords": ["Lut", "nephew", "monotheism", "idols", "migration", "first believer"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 2,
+    "title": "The Cities of Sodom",
+    "parent": "Lut",
+    "summary": "Lut was sent as a prophet to Sodom and Gomorrah, a nation marked by unprecedented corruption. They engaged in same-sex immorality and cultivated a violent, predatory culture. Their combined moral and violent corruption led to divine condemnation.",
+    "keywords": ["Sodom", "Gomorrah", "immorality", "predatory violence", "corruption"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 3,
+    "title": "The Call of Lut",
+    "parent": "Lut",
+    "summary": "Prophet Lut warned his people to worship Allah alone before addressing their specific transgression. His method was first tawhid, then moral purification. When a community loses its connection to its Creator, moral standards erode across generations.",
+    "keywords": ["tawhid", "monotheism", "moral decay", "corruption", "warning"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 4,
+    "title": "The Response",
+    "parent": "Lut",
+    "summary": "The people reacted with the harsh command to expel Lut, mocking the notion of purity and viewing moral virtue as a threat. Their worldview had inverted, treating corruption as culture. Lut responded with sorrowful resignation, declaring his detestation of their deeds.",
+    "keywords": ["expulsion", "purity", "corruption", "moral inversion", "exile"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 5,
+    "title": "The Angels Arrive",
+    "parent": "Lut",
+    "summary": "Allah sent angels to Ibrahim first, then to Lut. They appeared as handsome young men, causing Lut great distress as he recognized the danger from the predatory men of Sodom. He resolved to protect his guests, highlighting his commitment to hospitality.",
+    "keywords": ["angels", "Sodom", "hospitality", "mercy", "predatory men"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 6,
+    "title": "The Mob at the Door",
+    "parent": "Lut",
+    "summary": "Prophet Lut stood alone at his door as a hostile mob threatened his guests. He pleaded for a single righteous man to intervene but found none. In his desperation, the angels revealed themselves and assured him the attackers would not succeed.",
+    "keywords": ["mob", "guests", "angels", "desperation", "righteousness", "protection"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 7,
+    "title": "The Command to Leave",
+    "parent": "Lut",
+    "summary": "The angels commanded Lut to flee with his family at night, warning that none should look back except his wife. Lut obeyed, leaving the city in darkness. The passage emphasizes that faith is not inherited by blood or marriage, as his wife perished with the disbelievers.",
+    "keywords": ["command", "wife", "faith", "disbelief", "Nuh", "salvation"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 8,
+    "title": "The Cities Overturned",
+    "parent": "Lut",
+    "summary": "Allah's punishment on Sodom and Gomorrah involved the heavens being brought down and stones of hard clay raining upon the ruins. The Prophet Muhammad ﷺ warned his companions not to enter the ruins unless they wept, lest they suffer the same fate.",
+    "keywords": ["punishment", "stones", "Dead Sea", "Prophet Muhammad", "Tabuk", "moral boundaries"]
+  },
+  {
+    "module": "prophets",
+    "id": "lut",
+    "lesson": 9,
+    "title": "The Legacy of Lut",
+    "parent": "Lut",
+    "summary": "Lut survived the destruction of his people, remaining steadfast in worship and righteousness. His legacy lies in his unwavering truth and obedience to Allah's command. The path of truth can be lonely, with rewards unseen in this life.",
+    "keywords": ["tawhid", "righteousness", "corruption", "obedience", "protection", "warning"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 1,
+    "title": "The Promised Son",
+    "parent": "Ismail",
+    "summary": "Ismail was born as the answer to Ibrahim's long-standing prayer for a righteous son. The Quran describes his birth with the word halim, highlighting his gentle and patient nature. Ibrahim was commanded to leave Hajar and Ismail in a barren valley that became Makkah.",
+    "keywords": ["Ismail", "Hajar", "prayer", "forbearing", "valley", "Makkah"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 2,
+    "title": "The Valley of Nothing",
+    "parent": "Ismail",
+    "summary": "In the barren valley of Bakkah, Hajar and Ismail struggled until Ismail's foot struck the ground, causing the Zamzam spring to emerge. The water transformed the valley into an oasis, attracting the Jurhum tribe who settled nearby. Hardship became a lasting blessing.",
+    "keywords": ["Bakkah", "Hajar", "Zamzam", "Allah", "Jurhum", "miracle", "oasis"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 3,
+    "title": "Growing in Makkah",
+    "parent": "Ismail",
+    "summary": "Ismail was raised in Makkah, learning Arabic, archery, and desert trades. He became renowned for his honesty, reliability, and hospitality. His mother Hajar taught him about his father Ibrahim, tawhid, and the divine purpose of their exile.",
+    "keywords": ["Makkah", "Arabic", "hospitality", "Ibrahim", "Hajar", "tawhid", "desert trades"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 4,
+    "title": "The Returning Father",
+    "parent": "Ismail",
+    "summary": "Ibrahim returned to Makkah twice, delivering cryptic messages about the household threshold. The first visit revealed Ismail's wife complaining about hardship, prompting a divorce. The second wife showed gratitude, and Ibrahim's message to 'keep the threshold' affirmed his approval.",
+    "keywords": ["threshold", "marriage", "divorce", "hospitality", "paternal guidance", "Makkah"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 5,
+    "title": "The Shared Trial",
+    "parent": "Ismail",
+    "summary": "Ibrahim dreamed that Allah commanded him to sacrifice his son. Ismail, a strong young man, accepted the decree without protest, expressing complete trust in both his father and Allah. Together they submitted, walking hand-in-hand toward the place of sacrifice.",
+    "keywords": ["sacrifice", "obedience", "faith", "dream", "submission", "trust"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 6,
+    "title": "The Ransom",
+    "parent": "Ismail",
+    "summary": "As Ibrahim prepared to sacrifice Ismail, a divine voice intervened and a ram appeared, sparing Ismail. Allah promised peace upon Ibrahim and granted prophetic futures to both sons. This test is commemorated during Hajj and Eid al-Adha.",
+    "keywords": ["sacrifice", "ram", "prophets", "Hajj", "Eid al-Adha", "submission"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 7,
+    "title": "Raising the Kaaba",
+    "parent": "Ismail",
+    "summary": "Ibrahim and Ismail received Allah's command to construct the Kaaba in Bakkah. Together they built the simple structure while offering heartfelt prayers for acceptance, guidance, and a future Muslim nation. Their supplications were fulfilled by Prophet Muhammad ﷺ.",
+    "keywords": ["Kaaba", "Bakkah", "Prophet Muhammad", "Ummah", "prayers", "devotion"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 8,
+    "title": "The Prophet of the Arabs",
+    "parent": "Ismail",
+    "summary": "Ismail guided the early believers in Mecca by calling them to tawhid and establishing traditions of hospitality, honesty, and honor. The Quran emphasizes his promise-keeping and dedication to prayer. He laid the spiritual foundation for the Quraysh and Prophet Muhammad ﷺ.",
+    "keywords": ["prophet", "tawhid", "prayer", "zakah", "Quraysh", "Arab lineage"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 9,
+    "title": "The Ancestor of Muhammad ﷺ",
+    "parent": "Ismail",
+    "summary": "Ismail's descendants multiplied across Arabia, forming tribes like Quraysh and Banu Hashim, culminating in the birth of Prophet Muhammad ﷺ. Muhammad ﷺ acknowledged his noble ancestry but emphasized that his prophethood is paramount.",
+    "keywords": ["Muhammad", "Quraysh", "Banu Hashim", "Kaaba", "Zamzam", "lineage"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 10,
+    "title": "The Father of Hospitality",
+    "parent": "Ismail",
+    "summary": "Ismail established a tradition of welcoming, feeding, and protecting travelers. The Prophet Muhammad ﷺ taught that honoring guests is a sign of belief. Hospitality honors the human being as a bearer of Allah's breath.",
+    "keywords": ["hospitality", "Arab tradition", "Prophet Muhammad", "guest honor", "Islamic virtue"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 11,
+    "title": "The Sacrifice Remembered",
+    "parent": "Ismail",
+    "summary": "The annual Eid al-Adha sacrifice commemorates Ibrahim's willingness to sacrifice Ismail and the divine acceptance of their obedience. True devotion may require relinquishing beloved attachments, placing Allah above all.",
+    "keywords": ["Eid al-Adha", "sacrifice", "Ibrahim", "obedience", "Allah", "devotion"]
+  },
+  {
+    "module": "prophets",
+    "id": "ismail",
+    "lesson": 12,
+    "title": "The Legacy of Ismail",
+    "parent": "Ismail",
+    "summary": "Ismail's life was defined by the trial of sacrifice and his unwavering obedience to Allah. He expressed gratitude through prayer, charity, and hospitality, viewing generosity as worship. His obedience earned him divine honor and a lasting legacy.",
+    "keywords": ["sacrifice", "obedience", "generosity", "hospitality", "prophecy", "descendants"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 1,
+    "title": "The Laughter of Sarah",
+    "parent": "Ishaq",
+    "summary": "The miraculous birth of Ishaq to Ibrahim and Sarah, who were advanced in age, was announced by angels. Sarah's initial laughter reflected disbelief at the promise. Ishaq's name, derived from the root for laughter, symbolizes this moment of wonder and divine mercy.",
+    "keywords": ["Ishaq", "Ibrahim", "Sarah", "angels", "miracle", "laughter"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 2,
+    "title": "The Blessed Son",
+    "parent": "Ishaq",
+    "summary": "Ishaq is portrayed as a blessed son destined for prophethood, a promise announced before his birth. Growing up in Shaam, he learned worship, hospitality, patience, and courage by observing his father Ibrahim's devout example.",
+    "keywords": ["prophecy", "Ibrahim", "Shaam", "righteousness", "hospitality", "tawhid"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 3,
+    "title": "The Way of Ibrahim",
+    "parent": "Ishaq",
+    "summary": "The Qur'an urges believers to follow the way of Ibrahim and praises his descendants Ishaq and Yaqub. Four divine qualities were given to them: righteousness, leadership by example, inspiration to perform good deeds, and worship of Allah.",
+    "keywords": ["Ibrahim", "Yaqub", "righteousness", "leadership", "worship", "zakah"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 4,
+    "title": "The Covenant",
+    "parent": "Ishaq",
+    "summary": "The Quranic covenant Allah made with Abraham's descendants emphasizes Isaac as the pivotal link through which major prophets emerged. Prophets such as Dawud, Sulayman, Musa, and Isa all traced back to Isaac's line. The covenant signifies a divine promise of guidance.",
+    "keywords": ["covenant", "prophets", "lineage", "obedience", "Isa", "guidance"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 5,
+    "title": "The Father of Yaqub",
+    "parent": "Ishaq",
+    "summary": "Ishaq became the father of Yaqub, a prophet who would father the twelve tribes of Israel. Angels announced Yaqub's birth alongside Ishaq's. Ishaq raised Yaqub with the teachings of tawhid and later gathered his sons to urge them to remain Muslims.",
+    "keywords": ["Yaqub", "prophets", "Sarah", "Ibrahim", "tawhid", "twelve tribes"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 6,
+    "title": "The Blessed Land",
+    "parent": "Ishaq",
+    "summary": "A Quranic verse blesses Ibrahim and Ishaq, noting that among their descendants are both the righteous and the unjust. Lineage alone does not guarantee virtue. Ishaq earned his prophetic status through personal obedience, prayer, charity, and worship.",
+    "keywords": ["descendants", "righteousness", "covenant", "obedience", "faith-based"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 7,
+    "title": "The Long Life",
+    "parent": "Ishaq",
+    "summary": "Ishaq lived 180 years, witnessing his father's death, his sons maturing, and the emergence of the twelve tribes. He remained steadfast in worship, never wavering despite the world's changes. His life is a testament that one can age without losing faith.",
+    "keywords": ["long life", "faith", "tawhid", "Israelite tribes", "Shaam", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 8,
+    "title": "The Father of the Children of Israel",
+    "parent": "Ishaq",
+    "summary": "Ishaq's lineage, through Yaqub, formed the Children of Israel. Ishaq raised his children in the way of Allah, teaching prayer and patience. His example emphasizes that parents are responsible for guidance, not the ultimate actions of their children.",
+    "keywords": ["Yaqub", "Children of Israel", "twelve tribes", "tawhid", "corruption", "final messenger"]
+  },
+  {
+    "module": "prophets",
+    "id": "ishaq",
+    "lesson": 9,
+    "title": "The Quiet Prophet",
+    "parent": "Ishaq",
+    "summary": "Ishaq is a quiet prophet in the Quran, praised as righteous and patient. His legacy lies in steadfast faith rather than miraculous deeds. Not all believers must be heroic; many are called to emulate Ishaq's steady, unremarkable yet glorious devotion.",
+    "keywords": ["prophet", "patience", "faithfulness", "quiet", "covenant", "righteousness"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 1,
+    "title": "The Grandson of Ibrahim",
+    "parent": "Yaqub",
+    "summary": "Yaqub, son of Ishaq and grandson of Ibrahim, is the patriarch from whom the Children of Israel descend. He learned Ibrahim's teachings of monotheism, worship, and patience. As an adult, Yaqub received divine instruction to remain steadfast in Islam.",
+    "keywords": ["Yaqub", "Children of Israel", "Shaam", "tawhid", "prophets", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 2,
+    "title": "Twelve Sons",
+    "parent": "Yaqub",
+    "summary": "Yaqub cherished all his sons but felt a special bond with Yusuf, whose prophetic dream signaled a great destiny. This recognition sparked jealousy among Yusuf's ten older brothers, leading them to betray him. Despite the loss, Yaqub maintained his faith.",
+    "keywords": ["Yusuf", "Binyamin", "twelve sons", "jealousy", "dream", "prophecy"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 3,
+    "title": "The Dream of Yusuf",
+    "parent": "Yaqub",
+    "summary": "Young Yusuf shared a vivid dream of eleven stars, the sun, and the moon bowing to him. Yaqub recognized it as a prophetic sign and warned him against revealing it to his brothers. He advised Yusuf to trust in God's plan and keep the prophecy secret.",
+    "keywords": ["Yusuf", "dream", "prophecy", "brothers", "Shaytan", "interpretation"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 4,
+    "title": "The Loss of Yusuf",
+    "parent": "Yaqub",
+    "summary": "The brothers betrayed their father by throwing Yusuf into a well and fabricating a wolf attack. Yaqub discerned the lie but responded with profound, beautiful patience (sabrun jamil). His patient stance defines his life as he endures the long loss of Yusuf.",
+    "keywords": ["patience", "sabrun jamil", "betrayal", "well", "deception", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 5,
+    "title": "Blind with Grief",
+    "parent": "Yaqub",
+    "summary": "Yaqub mourned the loss of Yusuf for years, weeping so intensely that he became blind. His sons mocked his continual remembrance. Yaqub responded by declaring that he only complains to Allah and possesses knowledge from Allah that they do not.",
+    "keywords": ["grief", "blindness", "faith", "sons", "patience", "remembrance"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 6,
+    "title": "The Command to Seek Yusuf",
+    "parent": "Yaqub",
+    "summary": "After years of loss, the blind Yaqub instructed his sons to travel to Egypt during a famine and seek Yusuf. Despite his grief, Yaqub refused to despair, teaching his children that hopelessness is akin to disbelief. The sons journeyed to Egypt.",
+    "keywords": ["brothers", "faith", "despair", "mercy of Allah", "Egypt", "prophetic lesson"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 7,
+    "title": "The Reunion",
+    "parent": "Yaqub",
+    "summary": "Yusuf revealed his identity, forgave his brothers, and sent his shirt to his blind father. From a distance Yaqub sensed Yusuf's presence, and when the shirt was placed over his face, his vision returned. The family traveled to Egypt and prostrated in fulfillment of the dream.",
+    "keywords": ["reunion", "shirt", "sight restored", "prostration", "dream interpretation"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 8,
+    "title": "The Final Testament",
+    "parent": "Yaqub",
+    "summary": "Before his death, Yaqub summoned his sons and asked what they would worship after him. They affirmed their commitment to the God of their forefathers. This highlights the continuity of monotheistic faith and that the greatest legacy is faith passed on.",
+    "keywords": ["Ibrahim", "Ismail", "Ishaq", "Muslims", "Tawhid", "Testament"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 9,
+    "title": "Beautiful Patience",
+    "parent": "Yaqub",
+    "summary": "Yaqub embodies sabrun jamil—beautiful patience—by enduring decades of grief without bitterness. His patience is not stoic silence, but a private reliance on Allah marked by prayer and hope. True patience is tested in moments of profound loss.",
+    "keywords": ["beautiful patience", "sabrun jamil", "faith", "trust", "loss", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 10,
+    "title": "The Scent of Hope",
+    "parent": "Yaqub",
+    "summary": "Yaqub, far from the caravan carrying Yusuf's shirt, sensed the approaching mercy of Allah before any physical evidence arrived. His intuitive hope contrasted with the skepticism of those around him. True believers can feel a foretaste of divine aid.",
+    "keywords": ["hope", "mercy", "faith", "scent", "certainty", "divine aid"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 11,
+    "title": "The Father Who Never Gave Up",
+    "parent": "Yaqub",
+    "summary": "Yaqub's story shows a father's unwavering love despite his sons' betrayal. Even during famine, he continued to guide and comfort his wayward children. When Yusuf returned, Yaqub saw that the hardships were part of Allah's plan.",
+    "keywords": ["fatherhood", "forgiveness", "dream interpretation", "Allah's plan", "famine"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 12,
+    "title": "The Twelve Tribes",
+    "parent": "Yaqub",
+    "summary": "Yaqub's twelve sons formed the twelve tribes of Israel, from which many prophets emerged. The Israelites' blessings stemmed from faith, not lineage, and they lost favor when they corrupted their scriptures. Blessings are earned by adherence to the right path.",
+    "keywords": ["twelve tribes", "Israel", "prophets", "tawhid", "Ismail", "Muhammad"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 13,
+    "title": "The Meeting with Yusuf",
+    "parent": "Yaqub",
+    "summary": "The reunion of Yaqub and Yusuf in Egypt is marked by Yusuf's humble welcome. The childhood dream of eleven stars, the sun, and the moon was fulfilled. Yusuf attributed the realization of the dream and his life's trials to Allah.",
+    "keywords": ["reunion", "dream interpretation", "Allah", "embrace", "divine favor"]
+  },
+  {
+    "module": "prophets",
+    "id": "yaqub",
+    "lesson": 14,
+    "title": "The Legacy of Yaqub",
+    "parent": "Yaqub",
+    "summary": "Yaqub died in Egypt and was buried with honor. His legacy is one of beautiful patience and steadfast trust in God despite profound grief. He fathered twelve sons who became the forefathers of a nation, passing on monotheistic belief.",
+    "keywords": ["beautiful patience", "twelve sons", "tawhid", "prophetic lineage", "reunion"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 1,
+    "title": "The Dream of the Eleven Stars",
+    "parent": "Yusuf",
+    "summary": "Yusuf, the beloved son of Yaqub, recounted a night vision in which eleven stars, the sun, and the moon bowed to him. Yaqub interpreted it as a prophecy and warned him to keep it secret to avoid envy. The narrative illustrates how suffering is woven into a divine plan.",
+    "keywords": ["dream", "eleven stars", "prophecy", "jealousy", "divine wisdom"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 2,
+    "title": "The Brothers' Envy",
+    "parent": "Yusuf",
+    "summary": "The brothers, jealous of their father's affection for Yusuf, plotted to eliminate him. They rationalized murder to become the sole recipients of favor. The narrative highlights the destructive nature of envy, showing how it distorts conscience and moral judgment.",
+    "keywords": ["envy", "Binyamin", "brothers", "jealousy", "moral"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 3,
+    "title": "The Plot",
+    "parent": "Yusuf",
+    "summary": "A group of brothers conspired to cast Yusuf into a well, rationalizing it as merciful. They approached their father with a feigned plea, while Yaqub sensed their true intent. The brothers responded with practiced deceit, readying their defense.",
+    "keywords": ["well", "betrayal", "deception", "cowardice", "family", "plot"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 4,
+    "title": "The Well",
+    "parent": "Yusuf",
+    "summary": "Yusuf was taken by his brothers, stripped of his shirt, and thrown into a well. At that darkest moment, Allah inspired Yusuf with a promise that he would later confront his brothers. This divine revelation provided certainty that his suffering was not the end.",
+    "keywords": ["well", "inspiration", "trial", "mercy", "destiny", "brothers"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 5,
+    "title": "The False Blood",
+    "parent": "Yusuf",
+    "summary": "Jacob's sons returned at night claiming a wolf ate Joseph, presenting a shirt stained with false blood. Jacob noticed the shirt was intact, exposing the deception. He responded not with accusation but with patience, turning to Allah for help.",
+    "keywords": ["false blood", "deception", "patience", "wolf", "faith", "intact shirt"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 6,
+    "title": "Sold into Slavery",
+    "parent": "Yusuf",
+    "summary": "Yusuf's brothers cast him into a well and later sold him to a passing caravan for a few dirhams. He was taken to Egypt and purchased by an Egyptian who foresaw his importance. The narrative highlights betrayal and Yusuf's rise from a sold boy to a respected figure.",
+    "keywords": ["caravan", "slavery", "Egypt", "dream interpretation", "divine plan"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 7,
+    "title": "In the House of the Aziz",
+    "parent": "Yusuf",
+    "summary": "The Aziz purchased Yusuf and treated him well. Yusuf was raised in the palace, receiving education while remaining a slave. His experiences were part of divine decree, preparing him for a greater purpose. His toughest trial came from within the palace.",
+    "keywords": ["Aziz", "Egypt", "slavery", "divine decree", "taqdir", "palace"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 8,
+    "title": "The Temptation",
+    "parent": "Yusuf",
+    "summary": "Yusuf was confronted by his master's wife who attempted to seduce him. He resisted instantly by invoking refuge in Allah, refusing any negotiation. The Quran notes that divine proof was placed before him, safeguarding him. This episode highlights the power of seeking Allah's protection.",
+    "keywords": ["temptation", "master's wife", "refuge in Allah", "test of faith", "divine protection"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 9,
+    "title": "The Tearing of the Shirt",
+    "parent": "Yusuf",
+    "summary": "A woman pursued Yusuf, tearing his shirt from the back, then accused him of assault. A household witness offered a test: the direction of the tear determines truth. The shirt was torn from the back, proving Yusuf's innocence and condemning the woman's deceit.",
+    "keywords": ["chase", "shirt", "accusation", "testimony", "Aziz", "truth"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 10,
+    "title": "The Women of the City",
+    "parent": "Yusuf",
+    "summary": "Gossip spread about the Aziz's wife and Yusuf, prompting her to host a banquet and give each woman a knife. When Yusuf walked before them, the women were so mesmerized they cut their hands. The wife then publicly threatened Yusuf.",
+    "keywords": ["banquet", "knives", "gossip", "dua", "mesmerized", "threat"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 11,
+    "title": "The Dua for Prison",
+    "parent": "Yusuf",
+    "summary": "Trapped by a threatening mistress and the pressure on the Aziz, Yusuf offered a heartfelt dua, not for freedom but for the strength to remain pure even if it meant prison. Allah answered by averting the plot, and prison became part of the divine plan.",
+    "keywords": ["dua", "prison", "purity", "temptation", "divine protection", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 12,
+    "title": "Da'wah in Prison",
+    "parent": "Yusuf",
+    "summary": "Yusuf remained calm and accepting of God's decree, turning his cell into a place of worship. When his fellow prisoners sought dream interpretations, Yusuf seized the moment to deliver dawah, urging them to recognize the oneness of Allah.",
+    "keywords": ["prison", "dawah", "tawhid", "patience", "dream interpretation", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 13,
+    "title": "The Two Dreams",
+    "parent": "Yusuf",
+    "summary": "Yusuf interpreted the dreams of the cupbearer and the baker, predicting the cupbearer's rise and the baker's execution. He asked the cupbearer to mention him to the king, but Satan caused the request to be forgotten, leaving Yusuf in prison for years.",
+    "keywords": ["dreams", "interpretation", "cupbearer", "baker", "prison", "taqdir"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 14,
+    "title": "The King's Dream",
+    "parent": "Yusuf",
+    "summary": "The Egyptian king dreamed of seven fat cows devouring seven thin cows. His advisors could not interpret it. The cupbearer recalled Yusuf's ability and sought him out. Yusuf was summoned to explain the dream, setting the stage for a pivotal change.",
+    "keywords": ["king", "dream", "cows", "grain", "interpretation", "cupbearer"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 15,
+    "title": "The Interpretation",
+    "parent": "Yusuf",
+    "summary": "Yusuf interpreted the dream as seven years of plenty followed by seven years of famine. He advised storing the harvest. Yusuf then requested to be appointed over the nation's storehouses, emphasizing his sense of responsibility and trustworthiness.",
+    "keywords": ["seven years abundance", "seven years famine", "storehouses", "amanah", "taqwa", "trust"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 16,
+    "title": "Exonerated and Risen",
+    "parent": "Yusuf",
+    "summary": "Yusuf demanded an official investigation to clear rumors about his integrity. The women confessed their false accusations and the wife admitted her attempt to seduce him. Cleared publicly, Yusuf's honesty impressed the king, who elevated him to the highest office.",
+    "keywords": ["investigation", "exoneration", "confession", "integrity", "king", "minister"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 17,
+    "title": "The Brothers Arrive",
+    "parent": "Yusuf",
+    "summary": "A famine drove Jacob's family to Egypt for grain. Yusuf recognized his brothers though they did not recognize him. He treated them with hospitality, provided grain, and asked them to bring Benjamin, initiating a plan to reunite the family.",
+    "keywords": ["famine", "Egypt", "brothers", "grain", "Benjamin", "reunion"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 18,
+    "title": "The Silver Cup",
+    "parent": "Yusuf",
+    "summary": "Yusuf devised a scheme to keep his brother Binyamin in Egypt by secretly placing his silver cup in Binyamin's luggage and accusing the caravan of theft. The discovery forces Binyamin to stay as a slave, fulfilling Yusuf's plan without revealing his identity.",
+    "keywords": ["silver cup", "theft accusation", "slave", "brothers", "Binyamin"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 19,
+    "title": "The Grief of Yaqub",
+    "parent": "Yusuf",
+    "summary": "Yaqub mourned the loss of Yusuf and Binyamin. When his sons recounted Binyamin's capture, Yaqub responded with 'sabrun jamil,' turning to Allah in steadfast patience despite overwhelming sorrow and physical blindness.",
+    "keywords": ["grief", "patience", "sabrun jamil", "suffering", "blindness"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 20,
+    "title": "The Shirt of Healing",
+    "parent": "Yusuf",
+    "summary": "Yusuf restored his father Yaqub's sight by sending his own shirt as a divine remedy. Yaqub, still blind in Shaam, sensed Yusuf's presence through a hopeful scent. The narrative intertwines faith, redemption, and the miraculous restoration of sight.",
+    "keywords": ["shirt of healing", "divine plan", "family reunion", "restoration of sight", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 21,
+    "title": "The Reunion",
+    "parent": "Yusuf",
+    "summary": "The caravan reached Shaam where Yaqub's sight was restored. The reunited family traveled to Egypt, where Yusuf greeted them. Yusuf lifted his parents onto a throne, and they prostrated, fulfilling his childhood dream of the eleven stars.",
+    "keywords": ["reunion", "Egypt", "sight restored", "prostration", "dream"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 22,
+    "title": "The Forgiveness",
+    "parent": "Yusuf",
+    "summary": "Yusuf confronted his brothers who had thrown him into a well and sold him. He declared that there would be no blame or punishment, invoking Allah's mercy. His forgiveness stemmed from recognizing his own need for Allah's forgiveness.",
+    "keywords": ["brothers", "forgiveness", "mercy", "well", "slavery"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 23,
+    "title": "The Final Dua",
+    "parent": "Yusuf",
+    "summary": "Having restored his family and forgiven his enemies, Yusuf offered a profound final dua. He acknowledged Allah's gifts and asked solely to die a Muslim and be joined with the righteous, prioritizing eternal faith over worldly blessings.",
+    "keywords": ["final dua", "tawhid", "forgiveness", "righteous", "afterlife"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 24,
+    "title": "The Lessons for Every Generation",
+    "parent": "Yusuf",
+    "summary": "The story of Yusuf reflects every believer's journey through betrayal, false accusations, temptation, and isolation. Despite suffering and unanswered prayers, divine timing ensures the narrative will turn in a way beyond human expectation.",
+    "keywords": ["betrayal", "divine plan", "patience", "forgiveness", "destiny", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "yusuf",
+    "lesson": 25,
+    "title": "The End and the Beginning",
+    "parent": "Yusuf",
+    "summary": "Yusuf's story concludes with a heartfelt reunion and forgiveness. It serves as an enduring lesson for Muslims facing trials, betrayal, and prolonged waiting, illustrating that suffering is purposeful and integrity remains honored.",
+    "keywords": ["forgiveness", "patience", "trial", "reunion", "integrity", "prophetic stories"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 1,
+    "title": "The Rich Man of the Desert",
+    "parent": "Ayyub",
+    "summary": "Ayyub was a prophet renowned for immense wealth and generous spirit, caring for orphans, widows, and travelers. The Quran commends his unwavering patience during a severe trial. Despite losing his health, family, and possessions, Ayyub remained steadfast.",
+    "keywords": ["patience", "generosity", "wealth", "trial", "faith", "steadfast"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 2,
+    "title": "The Trial Begins",
+    "parent": "Ayyub",
+    "summary": "Ayyub lost his wealth, family, health, and social standing, yet remained steadfast in worship. Despite severe illness and ostracism, he did not curse or question God. His patient supplication emphasizes acceptance without complaint.",
+    "keywords": ["patience", "trial", "faith", "adversity", "mercy", "steadfastness"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 3,
+    "title": "The Whisperings of Shame",
+    "parent": "Ayyub",
+    "summary": "People accused Ayyub of divine punishment for hidden sins due to his suffering. The narrative emphasizes that suffering is not a sign of Allah's anger but can be a means of spiritual elevation. Ayyub remained silent, trusting Allah.",
+    "keywords": ["suffering", "faith", "trial", "divine test", "rumors", "trust"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 4,
+    "title": "The Faithful Wife",
+    "parent": "Ayyub",
+    "summary": "Ayyub's devoted wife, known as Rahma, remained by his side through severe trials. She cared for him tirelessly and supported the family by working as a maid. Her unwavering faith and love exemplify the ideal of a loyal companion.",
+    "keywords": ["Rahma", "faithful wife", "patience", "loyalty", "suffering", "devotion"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 5,
+    "title": "The Sleepless Nights",
+    "parent": "Ayyub",
+    "summary": "Ayyub endured an 18-year ordeal of illness, poverty, and isolation. Each night he called to Allah, not with complaint but with affirmation of His mercy. His unwavering trust exemplifies the deepest form of tawakkul.",
+    "keywords": ["tawakkul", "suffering", "prayer", "mercy", "patience", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 6,
+    "title": "The Refusal to Complain",
+    "parent": "Ayyub",
+    "summary": "Ayyub endured the loss of wealth, children, and health without ever complaining. Relatives suggested his illness was punishment, yet Ayyub remained silent. True submission to God eliminates the need to defend oneself or argue with the world.",
+    "keywords": ["patience", "suffering", "faith", "humility", "divine decree", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 7,
+    "title": "The Dua of Relief",
+    "parent": "Ayyub",
+    "summary": "After eighteen years of suffering, Ayyub offered a brief dua acknowledging his adversity and Allah's boundless mercy without demanding specific relief. His prayer consisted of only seven words, emphasizing trust in divine wisdom.",
+    "keywords": ["dua", "adversity", "mercy", "prayer", "trust", "compassion"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 8,
+    "title": "The Command to Strike",
+    "parent": "Ayyub",
+    "summary": "Allah answered Ayyub's suffering not with a miracle, but with a simple command to strike the ground. Two springs emerged, healing his skin and refreshing his body. Divine healing can come through obedience to a humble directive.",
+    "keywords": ["command", "strike the ground", "spring", "healing", "patience", "obedience"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 9,
+    "title": "The Restoration",
+    "parent": "Ayyub",
+    "summary": "After enduring severe trials, Ayyub was healed and restored by Allah. His family, wealth, health, and honor were returned. The restoration is a mercy, not a reward for patience. Trials are temporary; Allah's mercy is freely given.",
+    "keywords": ["restoration", "mercy", "patience", "trials", "worshippers", "blessings"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 10,
+    "title": "The Oath and Its Release",
+    "parent": "Ayyub",
+    "summary": "During his illness, Ayyub rashly swore an oath to strike his wife a hundred times if he recovered. Allah provided a merciful solution, allowing Ayyub to fulfill the oath by striking once with a bundle of a hundred grass stems.",
+    "keywords": ["wife", "oath", "mercy", "divine solution", "gratitude", "bundle of grass"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 11,
+    "title": "The Praise of Allah",
+    "parent": "Ayyub",
+    "summary": "Allah gave Ayyub three titles: patient, excellent servant, and repeatedly turning back to God. His greatness lies in his unwavering faith during an eighteen-year trial. Being called an excellent servant is the highest honor.",
+    "keywords": ["patience", "excellent servant", "turning back", "trial", "faith", "Prophet Muhammad"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 12,
+    "title": "The Lesson of the Trial",
+    "parent": "Ayyub",
+    "summary": "Ayyub's severe trial highlights that trials may come without clear reasons and require trust in the One who ordains them. Ayyub was never alone—Allah saw, heard, and remembered his plight, rewarding him beyond what he lost.",
+    "keywords": ["trial", "patience", "Allah", "suffering", "reward", "believers"]
+  },
+  {
+    "module": "prophets",
+    "id": "ayyub",
+    "lesson": 13,
+    "title": "The Model of Patience",
+    "parent": "Ayyub",
+    "summary": "Ayyub, known as al-sabir al-shakur, is the quintessential example of patience and gratitude. His story highlights unwavering trust in Allah, refusing to question divine wisdom despite prolonged suffering. The lesson calls believers to embody patience and gratitude.",
+    "keywords": ["patience", "gratitude", "sabr", "Islamic tradition", "trials", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 1,
+    "title": "The People of Madyan",
+    "parent": "Shuayb",
+    "summary": "After the fall of 'Ad and Thamud, a prosperous trading community arose in Madyan. The prophet Shu'ayb warned them to worship Allah alone and stop cheating in commerce. Their failure to recognize the moral dimension of dishonest trade brought downfall.",
+    "keywords": ["Madyan", "Shu'ayb", "fraud", "trade", "scales", "punishment"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 2,
+    "title": "The Sin of the Scales",
+    "parent": "Shuayb",
+    "summary": "The people of Madyan took full measures for themselves while short-changing others. Shu'ayb identified this behavior as pure injustice. The passage frames this pattern as a universal form of oppression where the greedy seek advantage but deny fairness.",
+    "keywords": ["Surah Al-Mutaffifin", "injustice", "double standard", "cheating", "merchants"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 3,
+    "title": "The Call of Shuayb",
+    "parent": "Shuayb",
+    "summary": "Shu'ayb began with tawhid before addressing the sin of cheating in measures. He gently appealed to his people, urging them to give full measure and weight in justice. True worship transforms even business transactions.",
+    "keywords": ["tawhid", "fraud", "scales", "justice", "prosperity", "remembrance"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 4,
+    "title": "The Mockery of Prayer",
+    "parent": "Shuayb",
+    "summary": "The people of Madyan mocked Shu'ayb, questioning whether his prayers required them to abandon idol worship or change their business practices. Shu'ayb responded calmly, affirming that faith and livelihood are inseparable for a true Muslim.",
+    "keywords": ["prayer", "idolatry", "commerce", "faith", "reform", "Islam"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 5,
+    "title": "The Threat of Violence",
+    "parent": "Shuayb",
+    "summary": "The people of Madyan threatened to stone Shu'ayb, claiming they spared him only because of his family. Shu'ayb questioned whether his family held more power than Allah, exposing their misplaced fear and shirk.",
+    "keywords": ["justice in trade", "threat of violence", "tawhid", "shirk", "family power"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 6,
+    "title": "The Patience of Shuayb",
+    "parent": "Shuayb",
+    "summary": "Shu'ayb called people to reform their fraudulent practices despite mockery and threats. He never gave up, preaching with patience and reliance on Allah. True dawah is about helping and trusting God, not dominating.",
+    "keywords": ["patience", "dawah", "reform", "trust in Allah", "prophet", "perseverance"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 7,
+    "title": "The Warning",
+    "parent": "Shuayb",
+    "summary": "Shu'ayb delivered a final warning to his people. He emphasized that his duty was complete and that God would replace them if they turned away. Faith is a trust rather than an inherent right.",
+    "keywords": ["final warning", "prophet dignity", "replacement of peoples", "faith as trust", "Madyan"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 8,
+    "title": "The Destruction of Madyan",
+    "parent": "Shuayb",
+    "summary": "The people of Madyan persisted in fraud. An earthquake and a blast struck their city, wiping out the community. Their destruction mirrors that of 'Ad and Thamud, serving as a warning that Allah will not tolerate fraud indefinitely.",
+    "keywords": ["fraud", "earthquake", "blast", "destruction", "punishment"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 9,
+    "title": "The Saved Believers",
+    "parent": "Shuayb",
+    "summary": "Shu'ayb and the humble believers of Madyan were saved by Allah's mercy. The modest, honest followers were contrasted with the fraudulent merchants. While dishonesty may prosper temporarily, only the honest are preserved.",
+    "keywords": ["believers", "mercy", "integrity", "honesty", "punishment"]
+  },
+  {
+    "module": "prophets",
+    "id": "shuayb",
+    "lesson": 10,
+    "title": "The Legacy of Shuayb",
+    "parent": "Shuayb",
+    "summary": "Shu'ayb, known as Khatib al-Anbiya, is celebrated for his eloquent speeches persuading his people toward justice. Honesty in business is a religious duty. The Prophet Muhammad promised that truthful merchants will join the prophets on Judgment Day.",
+    "keywords": ["Khatib al-Anbiya", "honesty", "business ethics", "trustworthy merchant", "justice"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 1,
+    "title": "The Tyrant of Egypt",
+    "parent": "Musa",
+    "summary": "Musa was born during Egypt's darkest era under the tyrannical Pharaoh, who enslaved the Children of Israel. Fearing a prophecy, Pharaoh ordered the mass killing of male infants. Amid this oppression, Allah prepared to send Musa as a deliverer.",
+    "keywords": ["Musa", "Fir'awn", "Egypt", "tyranny", "prophecy", "Children of Israel"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 2,
+    "title": "The Mother's Courage",
+    "parent": "Musa",
+    "summary": "Musa's mother received a divine revelation to place her infant son in a chest and cast it into the Nile. Trusting Allah's promise that he would be returned, she obeyed the terrifying command. The act exemplifies profound faith.",
+    "keywords": ["mother", "revelation", "Nile", "trust", "obedience", "messenger"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 3,
+    "title": "The River's Gift",
+    "parent": "Musa",
+    "summary": "The infant Musa was discovered by Pharaoh's household. Asiya, Pharaoh's wife, persuaded them to spare the child, and he was raised as a son in the royal palace. Pharaoh's own adopted son grew up under the regime that ordered his death.",
+    "keywords": ["Nile", "Pharaoh", "Asiya", "chest", "adoption", "divine plan"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 4,
+    "title": "Returned to His Mother",
+    "parent": "Musa",
+    "summary": "Musa's sister tracked the chest to Pharaoh's palace. The baby refused all wet nurses until his own mother was brought. The palace paid her to nurse her own son, fulfilling the Quranic promise that Allah restores the child and eases grief.",
+    "keywords": ["sister", "wet nurses", "lactating woman", "restoration", "grief"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 5,
+    "title": "Growing in the Palace",
+    "parent": "Musa",
+    "summary": "Musa was raised as a prince in Pharaoh's palace, receiving elite education while witnessing the oppression of his people. Allah granted him divine wisdom beyond court schooling. Musa transformed from a privileged insider to a leader confronting injustice.",
+    "keywords": ["palace", "Israelites", "oppression", "wisdom", "Allah", "guidance"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 6,
+    "title": "The Egyptian Slain",
+    "parent": "Musa",
+    "summary": "Musa witnessed an Egyptian brutally beating an Israelite. He intervened and unintentionally killed the Egyptian with a blow. Recognizing his mistake, Musa turned to Allah in sincere repentance, asking forgiveness. Allah accepted his tawbah.",
+    "keywords": ["Israelite", "Egyptian", "repentance", "forgiveness", "prophet", "tawbah"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 7,
+    "title": "The Flight to Madyan",
+    "parent": "Musa",
+    "summary": "Musa became a fugitive after killing an Egyptian. He fled Egypt that night without belongings, trusting in God's protection as he headed toward Madyan. His reliance on divine guidance marked the start of his true training.",
+    "keywords": ["fugitive", "Madyan", "prophet", "faith", "divine guidance", "protection"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 8,
+    "title": "The Two Daughters",
+    "parent": "Musa",
+    "summary": "Musa arrived in Madyan exhausted and discovered two daughters waiting at a well. He compassionately watered their flocks without asking for anything. Afterwards, he offered a heartfelt dua, asking only for whatever good Allah chooses to send him.",
+    "keywords": ["well", "daughters", "shepherds", "prayer", "dua", "trust"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 9,
+    "title": "The Ten Years",
+    "parent": "Musa",
+    "summary": "Shu'ayb offered Musa marriage to one of his daughters in exchange for eight years of service, extended to ten. Musa spent a decade tending sheep in Madyan, where humble work taught him patience and humility, preparing him for prophethood.",
+    "keywords": ["Shu'ayb", "shepherd", "ten years", "humility", "prophecy", "Pharaoh"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 10,
+    "title": "The Burning Bush",
+    "parent": "Musa",
+    "summary": "After ten years, Musa set out with his family across the Sinai wilderness and noticed a fire on a mountain. The fire spoke, revealing itself as Allah who commanded Musa to worship Him and establish prayer. This encounter appointed Musa as a prophet.",
+    "keywords": ["Burning Bush", "Sinai", "Allah", "prophecy", "Pharaoh", "fire"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 11,
+    "title": "The Two Signs",
+    "parent": "Musa",
+    "summary": "Allah gave Musa two miraculous signs: a staff that turned into a serpent and a hand that glowed white. He then prayed for courage, eloquence, and the support of his brother Harun before confronting Pharaoh, highlighting reliance on divine assistance.",
+    "keywords": ["signs", "staff", "serpent", "white hand", "Harun", "prophethood"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 12,
+    "title": "The Mission to Fir'awn",
+    "parent": "Musa",
+    "summary": "Musa and Harun approached Pharaoh to deliver a divine message calling for the release of the Children of Israel. They introduced themselves respectfully, requested freedom for the enslaved, and offered a sign. The priority was liberation over debate.",
+    "keywords": ["Harun", "dawah", "Children of Israel", "freedom", "prophetic mission"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 13,
+    "title": "The Sorcerers' Duel",
+    "parent": "Musa",
+    "summary": "Pharaoh challenged Musa to a public duel of miracles. Magicians displayed deceptive tricks. Allah reassured Musa, instructing him to throw his staff, which transformed into a serpent that devoured the illusions. The sorcerers proclaimed belief in the Lord of Musa.",
+    "keywords": ["duel", "miracles", "magicians", "serpent", "Allah", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 14,
+    "title": "The Sorcerers' Faith",
+    "parent": "Musa",
+    "summary": "Pharaoh threatened the sorcerers with brutal execution after they embraced the God of Musa. The sorcerers responded with unwavering faith, declaring their return to Allah. Their steadfast declaration highlights the transformative power of true conviction.",
+    "keywords": ["sorcerers", "conversion", "crucifixion", "faith", "Allah", "conviction"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 15,
+    "title": "The Exodus",
+    "parent": "Musa",
+    "summary": "After escalating oppression and divine plagues, Pharaoh repeatedly broke his promise to release the Israelites. Allah commanded Musa to depart Egypt under cover of night, marking the historic Exodus that shaped the Israelite people.",
+    "keywords": ["Exodus", "plagues", "Egypt", "Israelites", "liberation", "night"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 16,
+    "title": "The Splitting of the Sea",
+    "parent": "Musa",
+    "summary": "Pharaoh's army pursued the Israelites to the Red Sea. Moses declared his confidence in God, and God commanded him to strike the sea. The sea split into twelve passages, allowing the Israelites to cross safely while the waters became walls.",
+    "keywords": ["Red Sea", "miracle", "faith", "deliverance", "Egypt", "Israelites"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 17,
+    "title": "The Drowning of Fir'awn",
+    "parent": "Musa",
+    "summary": "Pharaoh pursued the Israelites through the Red Sea and drowned. His last-minute claim of faith was rejected as insincere. His preserved body became a sign for future generations, emphasizing that sincerity cannot be fabricated before Allah.",
+    "keywords": ["Red Sea", "deathbed conversion", "sincerity", "mummified body", "drowning"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 18,
+    "title": "The Forty Nights",
+    "parent": "Musa",
+    "summary": "Musa ascended Mount Tur for forty nights to receive the Torah, leaving Harun in charge. Al-Samiri convinced the people to melt their gold into a golden calf. Musa returned to find his nation had abandoned the covenant.",
+    "keywords": ["Torah", "Mount Tur", "forty nights", "golden calf", "al-Samiri", "Israelites"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 19,
+    "title": "The Golden Calf",
+    "parent": "Musa",
+    "summary": "Musa descended with Allah's tablets to find his people worshipping a golden calf. He reacted with anger and grief, throwing down the tablets. The calf was crafted by al-Samiri, illustrating the human temptation to trust what can be seen over the unseen.",
+    "keywords": ["golden calf", "tablets", "Harun", "al-Samiri", "anger", "unseen faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 20,
+    "title": "The Request to See Allah",
+    "parent": "Musa",
+    "summary": "Musa boldly asked Allah to show him so he could look at his Lord. Allah responded that Musa would see Him if the mountain remained standing. When Allah manifested, the mountain collapsed and Musa fell unconscious. The veil between Creator and creation is a limit of existence.",
+    "keywords": ["request to see Allah", "mountain", "veil", "Day of Judgment", "unconscious"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 21,
+    "title": "The Rock and the Twelve Springs",
+    "parent": "Musa",
+    "summary": "Musa led the Israelites through the desert where they complained of thirst. Allah instructed Musa to strike a rock, producing twelve springs. Later, Allah provided manna and quails. Despite miracles, the people demanded Egyptian vegetables, showing ingratitude.",
+    "keywords": ["twelve springs", "manna", "quails", "gratitude", "desert", "divine provision"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 22,
+    "title": "The Man Who Would Be a Prophet",
+    "parent": "Musa",
+    "summary": "Musa journeyed with the mysterious servant al-Khidr, who performed three puzzling deeds. Al-Khidr later revealed hidden divine reasons: protecting fishermen, preventing future corruption, and preserving a treasure. The story teaches that Allah's wisdom surpasses human understanding.",
+    "keywords": ["al-Khidr", "patience", "divine wisdom", "boat", "boy", "wall"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 23,
+    "title": "The Desire to See Allah",
+    "parent": "Musa",
+    "summary": "Musa asked to see Allah and was told it was impossible in this world, yet his yearning was honored with a glimpse of divine power. Muslim scholars interpret this desire as the highest form of worship. Those who love to meet Allah are loved by Him.",
+    "keywords": ["desire", "worship", "mountain", "love", "believers", "yearning"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 24,
+    "title": "The Journey to the Promised Land",
+    "parent": "Musa",
+    "summary": "Musa led the Children of Israel to Canaan, but the spies reported giants. The people refused entry, mocking Musa and rejecting trust in Allah. Musa prayed for separation from the disobedient, and Allah decreed they would wander for forty years.",
+    "keywords": ["Promised Land", "spies", "giants", "disobedience", "forty years", "wandering"]
+  },
+  {
+    "module": "prophets",
+    "id": "musa",
+    "lesson": 25,
+    "title": "The Legacy of Musa",
+    "parent": "Musa",
+    "summary": "Musa died on the outskirts of the Promised Land. In the night of Isra and Mi'raj, the Prophet ﷺ met Musa in the sixth heaven, where Musa advised him to ask Allah to reduce the daily prayers to five. His legacy is one of humility and patience.",
+    "keywords": ["Isra and Mi'raj", "prayer reduction", "humility", "legacy", "Kalimullah"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 1,
+    "title": "The Brother of Musa",
+    "parent": "Harun",
+    "summary": "Harun, the elder brother of Musa, became a prophet alongside his sibling. Allah granted Musa a helper from his own family. Harun's name means 'mountain,' reflecting his role as a steadfast support for Musa's trembling heart.",
+    "keywords": ["Musa", "brothers", "prophet", "helper", "dua", "support"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 2,
+    "title": "The Gift of Speech",
+    "parent": "Harun",
+    "summary": "Musa requested his brother Aaron to accompany him because of his speech impediment. Allah granted the request. The narrative highlights Moses' humility in acknowledging his limitation and seeking help, illustrating that collaboration leads to a stronger Ummah.",
+    "keywords": ["Aaron", "speech impediment", "burning bush", "humility", "leadership", "community"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 3,
+    "title": "The Partnership",
+    "parent": "Harun",
+    "summary": "Musa and Harun shared a single divine mission as equal partners. Both were messengers with the same authority. The strongest partnerships in the Ummah honor each participant's role and prioritize the collective mission over individual ego.",
+    "keywords": ["partnership", "prophethood", "equality", "Ummah", "collaboration"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 4,
+    "title": "The Stand Before Fir'awn",
+    "parent": "Harun",
+    "summary": "Musa and Harun confronted Pharaoh with gentle speech, aiming to remind him of Allah and invite repentance. The purpose of confronting power is to save, not to condemn, reflecting an Islamic approach of gentleness toward the powerful.",
+    "keywords": ["Fir'awn", "gentle speech", "repentance", "Islamic approach", "powerful"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 5,
+    "title": "The Ministry at the Mountain",
+    "parent": "Harun",
+    "summary": "Musa departed to Mount Tur, leaving Harun to guide the Children of Israel. Al-Samiri incited them to forge a golden calf. Harun warned the crowd and patiently awaited Musa's return, embodying steadfast ministry amid apostasy.",
+    "keywords": ["Mount Tur", "golden calf", "al-Samiri", "faithfulness", "ministry", "Torah"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 6,
+    "title": "The Anger of Musa",
+    "parent": "Harun",
+    "summary": "Musa returned to find his people worshipping a golden calf and directed fierce anger at Harun. Harun calmly explained that the people had overpowered him. Recognizing his brother's plight, Musa released him and prayed for forgiveness.",
+    "keywords": ["golden calf", "anger", "forgiveness", "prayer", "mercy", "humility"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 7,
+    "title": "The Dua of Musa",
+    "parent": "Harun",
+    "summary": "After his anger subsided, Musa turned to Allah with a heartfelt dua asking for forgiveness for himself and his brother. The prayer highlights his humility, rejecting vengeance and seeking collective compassion. It exemplifies the prophetic pattern of returning to God.",
+    "keywords": ["dua", "forgiveness", "mercy", "anger", "prophet", "leadership"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 8,
+    "title": "The Support of the Ummah",
+    "parent": "Harun",
+    "summary": "Harun served as a steadfast support for Musa, holding the people together while Musa communicated with Allah. Harun was a mercy granted by Allah. Every community needs its own Harun—those who sustain the mission from behind.",
+    "keywords": ["mercy", "support", "prophet", "believers", "community", "helper"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 9,
+    "title": "The Death of Harun",
+    "parent": "Harun",
+    "summary": "Harun died before his brother Musa, near Mount Hor. Musa buried him and led the Children of Israel alone. In the night of Isra and Mi'raj, the Prophet ﷺ met Harun in the heavens. His role as a supporter continued beyond death.",
+    "keywords": ["Musa", "Prophet Muhammad", "burial", "Mount Hor", "Isra and Mi'raj", "partnership"]
+  },
+  {
+    "module": "prophets",
+    "id": "harun",
+    "lesson": 10,
+    "title": "The Legacy of Harun",
+    "parent": "Harun",
+    "summary": "Harun's legacy is that of the steadfast brother and supporter of Musa. Honor from Allah does not require being the front-most speaker, but rather faithful, firm support of the mission. He is a model for supportive partners.",
+    "keywords": ["Musa", "Prophet Muhammad", "support", "brotherhood", "steadfastness", "mission"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 1,
+    "title": "The Prophet of Patience",
+    "parent": "Dhul-Kifl",
+    "summary": "Dhul-Kifl is one of the 25 prophets named in the Quran, mentioned briefly yet placed alongside Ismail and Idris as exemplars of patience. The depth of a person's character outweighs the length of their narrative. True merit lies in the quality of one's life.",
+    "keywords": ["patience", "Ismail", "Idris", "mercy", "virtue", "character"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 2,
+    "title": "The Meaning of the Name",
+    "parent": "Dhul-Kifl",
+    "summary": "The name Dhul-Kifl is a title meaning 'the one of the double share' or 'the one who provides.' He earned a doubled reward from Allah through his worship, patience, and the responsibility he assumed for his people's religion, safety, and justice.",
+    "keywords": ["double share", "responsibility", "reward", "promise", "guidance", "worship"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 3,
+    "title": "The Guarantor",
+    "parent": "Dhul-Kifl",
+    "summary": "A dying righteous king asked who would assume his role of just rulership, prayer, and fasting. Dhul-Kifl stepped forward, swearing to guarantee justice and devotion, and fulfilled this oath. His name means 'the guarantor,' and the Qur'an praises him as true to his promise.",
+    "keywords": ["guarantor", "justice", "promise", "oath", "prayer", "fasting"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 4,
+    "title": "The Judgement of the Prophet",
+    "parent": "Dhul-Kifl",
+    "summary": "Dhul-Kifl was a prophet-king of the Children of Israel, serving as an impartial judge feared even by kings. His judgments were guided by divine command. A righteous judge must give each person what is due, knowing decisions will be measured on the Day of Judgment.",
+    "keywords": ["prophet-king", "justice", "impartiality", "David", "Solomon", "Day of Judgment"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 5,
+    "title": "The Fasting King",
+    "parent": "Dhul-Kifl",
+    "summary": "Dhul-Kifl vowed a lifelong covenant to fast by day and pray by night, never breaking his devotion. The Prophet ﷺ affirmed this commitment. Dhul-Kifl's dual role as a political king and a devout worshipper exemplifies a 'double share' of duty.",
+    "keywords": ["fasting", "night prayer", "covenant", "hadith", "king", "Paradise"]
+  },
+  {
+    "module": "prophets",
+    "id": "dhulkifl",
+    "lesson": 6,
+    "title": "The Forgotten Faithful",
+    "parent": "Dhul-Kifl",
+    "summary": "Dhul-Kifl is known not for grand deeds but for steadfast patience and unwavering promise-keeping. His name endures in Surah Al-Anbiya as a model of quiet, faithful servitude. Worldly noise is contrasted with divine appreciation.",
+    "keywords": ["patience", "promise-keeping", "faithfulness", "Surah Al-Anbiya", "quiet servant"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 1,
+    "title": "The Young Shepherd",
+    "parent": "Dawud",
+    "summary": "Dawud, the youngest son, tended sheep while his brothers served as warriors. In the pasture he learned patience, courage, and devotion to Allah. Allah values hearts and deeds over appearance, and Dawud's humble upbringing prepared him to become a prophet and king.",
+    "keywords": ["youngest shepherd", "patience", "courage", "devotion", "heart over appearance"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 2,
+    "title": "The Duel with Jalut",
+    "parent": "Dawud",
+    "summary": "The Israelites faced the Philistine giant Jalut. Young Dawud volunteered, refusing heavy armor and taking only a sling and five stones. With a single stone he struck Jalut's forehead, killing him and turning a shepherd boy into the nation's hero.",
+    "keywords": ["Philistines", "Goliath", "sling", "stone", "battle", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 3,
+    "title": "The Rise to Kingship",
+    "parent": "Dawud",
+    "summary": "After defeating Jalut, Dawud became a celebrated hero. Jealous King Talut plotted against him, forcing Dawud into fugitive life. Trusting Allah, Dawud survived, and after Talut's death he was anointed king, received the Zabur, and ushered in a golden era.",
+    "keywords": ["Talut", "Jalut", "king", "jealousy", "fugitive", "Zabur"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 4,
+    "title": "The Voice That Moved Mountains",
+    "parent": "Dawud",
+    "summary": "Dawud possessed a miraculous voice that caused mountains and birds to join his recitation of the Zabur. His gift was solely for Allah's worship. The Prophet ﷺ highlighted Dawud's devotion through his fasting and prayer practices.",
+    "keywords": ["voice", "mountains", "birds", "Zabur", "worship", "fasting"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 5,
+    "title": "The Fasting of Dawud",
+    "parent": "Dawud",
+    "summary": "The Prophet ﷺ highlighted that the most beloved fasting to Allah is the alternate-day fasting practiced by Dawud. This disciplined rhythm exemplifies a balanced approach to worship. The value of deeds lies in their consistent performance.",
+    "keywords": ["fasting", "alternate-day fasting", "consistency", "moderation", "deeds"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 6,
+    "title": "The Judgement",
+    "parent": "Dawud",
+    "summary": "Two men sought judgment over sheep that destroyed a field. Dawud ruled the owner should take the sheep. His young son Sulayman offered a wiser ruling: the sheep are given temporarily, while the field is replanted. Dawud recognized the superior wisdom of his son.",
+    "keywords": ["judgment", "sheep", "field", "wisdom", "Sulayman", "justice"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 7,
+    "title": "The Psalms",
+    "parent": "Dawud",
+    "summary": "Allah revealed the Zabur to Dawud, a book of profound wisdom, praises, and supplications. The recitation was incredibly beautiful, causing mountains and birds to join him. The revelation emphasizes that true power and kingship come from Allah.",
+    "keywords": ["Zabur", "Psalms", "revelation", "worship", "praise", "mountains"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 8,
+    "title": "The Iron",
+    "parent": "Dawud",
+    "summary": "Allah granted Dawud the ability to soften iron in his hands without fire. He crafted high-quality chainmail armor, teaching his people to protect themselves. This skill became a means of livelihood, demonstrating that a prophet works with his own hands.",
+    "keywords": ["iron", "chainmail", "armor", "craftsmanship", "miracle", "livelihood"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 9,
+    "title": "The Trial",
+    "parent": "Dawud",
+    "summary": "Two angels disguised as men entered Dawud's chamber and presented a case of a rich man demanding a poor man's sheep. Dawud ruled quickly. Realizing he judged hastily without asking for proof, and recognizing the men were angels, Dawud fell into prostration seeking forgiveness.",
+    "keywords": ["trial", "angels", "disguise", "judgment", "repentance", "prostration"]
+  },
+  {
+    "module": "prophets",
+    "id": "dawud",
+    "lesson": 10,
+    "title": "The Legacy",
+    "parent": "Dawud",
+    "summary": "Dawud's life was marked by gratitude, worship, and fasting. He is remembered for his beautiful voice, his just rule, and the wealth he shared with the poor. Before his death, he prepared his son Sulayman to take over the kingdom and the prophetic mission.",
+    "keywords": ["legacy", "gratitude", "fasting", "kingdom", "Sulayman", "generosity"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 1,
+    "title": "The Son of Dawud",
+    "parent": "Sulayman",
+    "summary": "Sulayman inherited prophethood and kingship from Dawud. He was given a unique kingdom, including control over the wind, knowledge of the language of birds, and command over the jinn. He understood that his power was a blessing from Allah.",
+    "keywords": ["inheritance", "kingship", "jinn", "birds", "wind", "blessing"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 2,
+    "title": "The Jinn Under His Rule",
+    "parent": "Sulayman",
+    "summary": "Allah subjected the jinn to Sulayman. They built temples, palaces, and large basins, and dove into the sea for pearls. Sulayman ruled them with strict justice and forced them to obey the commands of Allah, preventing them from mischief.",
+    "keywords": ["jinn", "subjection", "building", "palaces", "diving", "obedience"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 3,
+    "title": "The Hoopoe and the Queen",
+    "parent": "Sulayman",
+    "summary": "A hoopoe bird brought news of the kingdom of Sheba, ruled by Queen Bilqis, whose people worshipped the sun. Sulayman sent a letter inviting her to Islam. He then prepared a plan to bring her throne to his palace as a demonstration of Allah's power.",
+    "keywords": ["hoopoe", "Sheba", "Bilqis", "queen", "sun worship", "letter"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 4,
+    "title": "The Palace of Glass",
+    "parent": "Sulayman",
+    "summary": "When Queen Bilqis arrived, she was shown her own throne, transported miraculously. She was led to a palace with a smooth floor of glass, which she mistook for water. Sulayman explained it was a solid floor, leading her to submit to Islam.",
+    "keywords": ["palace", "glass", "Bilqis", "throne", "miracle", "submission"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 5,
+    "title": "The Trial of the Horses",
+    "parent": "Sulayman",
+    "summary": "Sulayman was presented with magnificent, swift horses. He became so absorbed in inspecting them that he missed his afternoon prayer. Realizing his attachment to worldly beauty delayed his remembrance of Allah, he repented and turned back to his Lord.",
+    "keywords": ["trial", "horses", "prayer", "attachment", "repentance", "priority"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 6,
+    "title": "The Body on the Throne",
+    "parent": "Sulayman",
+    "summary": "Sulayman asked Allah for a kingdom unlike any other. He was tested when an evil jinn temporarily took his form and sat on his throne. Exercising patience and seeking Allah's help, Sulayman regained his throne, attributing his victory to Allah's grace.",
+    "keywords": ["throne", "jinn", "imposter", "patience", "grace", "tawakkul"]
+  },
+  {
+    "module": "prophets",
+    "id": "sulayman",
+    "lesson": 7,
+    "title": "The Legacy",
+    "parent": "Sulayman",
+    "summary": "Sulayman passed away leaning on his staff while watching the jinn work. The jinn did not realize he had died until a termite ate through the staff. This revealed that the jinn do not know the unseen, and the mighty king's life ends by Allah's decree.",
+    "keywords": ["death", "staff", "jinn", "termite", "unseen", "decree"]
+  },
+  {
+    "module": "prophets",
+    "id": "ilyas",
+    "lesson": 1,
+    "title": "The Call to Tawhid",
+    "parent": "Ilyas",
+    "summary": "Ilyas was sent to a people who had abandoned the worship of Allah and instead worshipped a statue named Baal. He courageously confronted them, questioning why they left the best of creators for a silent, lifeless idol. He called them to fear Allah and return to Tawhid.",
+    "keywords": ["Ilyas", "Baal", "Tawhid", "idol worship", "calling", "courage"]
+  },
+  {
+    "module": "prophets",
+    "id": "ilyas",
+    "lesson": 2,
+    "title": "The Flight and Provision",
+    "parent": "Ilyas",
+    "summary": "When the people rejected Ilyas and threatened his life, he fled into the mountains and wilderness. Allah provided for him miraculously, feeding him from a stream and a raven. This period of isolation strengthened his faith and reliance on Allah alone.",
+    "keywords": ["flight", "wilderness", "provision", "raven", "isolation", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "ilyas",
+    "lesson": 3,
+    "title": "The Return and Rejection",
+    "parent": "Ilyas",
+    "summary": "Ilyas eventually returned to his people, calling them once more to abandon Baal. A small remnant believed, but the majority persisted in their arrogance and idolatry. Ilyas warned them of the consequences of their stubbornness.",
+    "keywords": ["return", "rejection", "Baal", "remnant", "arrogance", "warning"]
+  },
+  {
+    "module": "prophets",
+    "id": "alyasa",
+    "lesson": 1,
+    "title": "The Successor",
+    "parent": "Alyasa",
+    "summary": "Alyasa was chosen by Allah to succeed Prophet Ilyas in guiding the Children of Israel. He inherited the mission of calling his people back to the worship of one God and away from the worship of Baal. He was known for his patience and steadfastness.",
+    "keywords": ["Alyasa", "successor", "Ilyas", "guidance", "patience", "Tawhid"]
+  },
+  {
+    "module": "prophets",
+    "id": "alyasa",
+    "lesson": 2,
+    "title": "The Healing Spring",
+    "parent": "Alyasa",
+    "summary": "Tradition holds that Alyasa was granted a miraculous spring whose water could heal the sick. People would travel from far and wide to drink from it and be cured. This miracle was a clear sign of Allah's power working through His prophet.",
+    "keywords": ["healing spring", "miracle", "sick", "cure", "Allah's power", "sign"]
+  },
+  {
+    "module": "prophets",
+    "id": "alyasa",
+    "lesson": 3,
+    "title": "The Legacy",
+    "parent": "Alyasa",
+    "summary": "Alyasa continued the prophetic legacy of Ilyas, guiding a nation that frequently fell into sin. Though the Quran mentions him briefly, he is praised as a righteous man and a prophet. His story reminds us that true success is measured by obedience to Allah.",
+    "keywords": ["legacy", "Ilyas", "righteous", "prophet", "obedience", "guidance"]
+  },
+  {
+    "module": "prophets",
+    "id": "yunus",
+    "lesson": 1,
+    "title": "The Messenger of Nineveh",
+    "parent": "Yunus",
+    "summary": "Yunus was sent to the city of Nineveh, whose people had fallen into severe idolatry. He called them to Allah, warning them of punishment. Despite his years of patient calling, they rejected and mocked him. Frustrated, Yunus left the city without Allah's permission.",
+    "keywords": ["Yunus", "Nineveh", "idolatry", "rejection", "anger", "departure"]
+  },
+  {
+    "module": "prophets",
+    "id": "yunus",
+    "lesson": 2,
+    "title": "The Ship and the Whale",
+    "parent": "Yunus",
+    "summary": "Yunus boarded a ship. A fierce storm threatened to sink it. The sailors drew lots, and the lot fell on Yunus. He was thrown overboard, and a massive whale swallowed him, descending to the dark depths of the ocean.",
+    "keywords": ["ship", "storm", "lots", "overboard", "whale", "ocean"]
+  },
+  {
+    "module": "prophets",
+    "id": "yunus",
+    "lesson": 3,
+    "title": "The Darkness",
+    "parent": "Yunus",
+    "summary": "Yunus found himself in triple darkness: the night, the ocean, and the belly of the whale. He realized his mistake in leaving his people without permission. In complete isolation, he didn't blame anyone, but turned entirely to Allah.",
+    "keywords": ["darkness", "whale", "isolation", "supplication", "fault", "sincerity"]
+  },
+  {
+    "module": "prophets",
+    "id": "yunus",
+    "lesson": 4,
+    "title": "The Dua",
+    "parent": "Yunus",
+    "summary": "From the belly of the whale, Yunus cried out: 'La ilaha illa anta subhanaka inni kuntu minaz-zalimin'. This profound declaration of Tawhid and accountability was heard by Allah. The angels joined him in dhikr, and Allah commanded the whale to release him.",
+    "keywords": ["dua", "supplication", "tawhid", "angels", "release", "dhikr"]
+  },
+  {
+    "module": "prophets",
+    "id": "yunus",
+    "lesson": 5,
+    "title": "The Gourd Plant",
+    "parent": "Yunus",
+    "summary": "Yunus was cast onto the shore, weak and ill. Allah caused a gourd plant to grow over him, providing shade and nourishment. Once healed, Allah commanded him to return to Nineveh, where he found that the people had finally believed.",
+    "keywords": ["gourd", "recovery", "mercy", "Nineveh", "belief", "healing"]
+  },
+  {
+    "module": "prophets",
+    "id": "zakariyya",
+    "lesson": 1,
+    "title": "The Guardian of Maryam",
+    "parent": "Zakariyya",
+    "summary": "Zakariyya was a devout prophet and the guardian of Maryam (Mary) in the temple. He witnessed her receiving miraculous provisions from Allah. Seeing her piety and the wonders surrounding her, his own desire for a righteous child was awakened.",
+    "keywords": ["Zakariyya", "Maryam", "guardian", "temple", "provisions", "piety"]
+  },
+  {
+    "module": "prophets",
+    "id": "zakariyya",
+    "lesson": 2,
+    "title": "The Silent Prayer",
+    "parent": "Zakariyya",
+    "summary": "Zakariyya stood in the mihrab (prayer niche) and called upon his Lord secretly. He expressed his fear that his relatives would not carry on the message and his worry about his wife's barrenness. He prayed for an heir who would please Allah.",
+    "keywords": ["mihrab", "secret prayer", "barrenness", "heir", "fear", "supplication"]
+  },
+  {
+    "module": "prophets",
+    "id": "zakariyya",
+    "lesson": 3,
+    "title": "The Glad Tidings",
+    "parent": "Zakariyya",
+    "summary": "While praying, angels called out to Zakariyya, giving him glad tidings of a son named Yahya. Yahya would be a master of the Scripture, a leader, chaste, and a prophet among the righteous. Zakariyya was astonished, as he and his wife were very old.",
+    "keywords": ["glad tidings", "Yahya", "angels", "chaste", "prophet", "old age"]
+  },
+  {
+    "module": "prophets",
+    "id": "zakariyya",
+    "lesson": 4,
+    "title": "The Sign",
+    "parent": "Zakariyya",
+    "summary": "Zakariyya asked Allah for a sign. He was told that his sign would be that he would not speak to people for three nights, despite being healthy. He emerged from the mihrab and signaled his people to glorify Allah morning and evening.",
+    "keywords": ["sign", "silent", "three nights", "mihrab", "glorify", "Zakariyya"]
+  },
+  {
+    "module": "prophets",
+    "id": "yahya",
+    "lesson": 1,
+    "title": "The Miraculous Birth",
+    "parent": "Yahya",
+    "summary": "Yahya was born to Zakariyya and his elderly, barren wife. It was a miraculous birth, granted directly by Allah in response to Zakariyya's sincere prayer. His name, Yahya, was uniquely given by Allah, not shared by anyone before him.",
+    "keywords": ["miraculous birth", "Zakariyya", "barren", "Yahya", "unique name", "prayer"]
+  },
+  {
+    "module": "prophets",
+    "id": "yahya",
+    "lesson": 2,
+    "title": "The Pure Youth",
+    "parent": "Yahya",
+    "summary": "Allah bestowed wisdom and purity upon Yahya while he was still a child. He was deeply devoted to the Scripture, filled with compassion, and free from arrogance or rebellion. He was dutiful to his parents and never domineering.",
+    "keywords": ["purity", "wisdom", "childhood", "Scripture", "compassion", "dutiful"]
+  },
+  {
+    "module": "prophets",
+    "id": "yahya",
+    "lesson": 3,
+    "title": "The Fearless Truth-Teller",
+    "parent": "Yahya",
+    "summary": "Yahya was known for his absolute courage in speaking the truth, even to the tyrant king of his time. When the king wanted to marry a forbidden relative, Yahya publicly declared it unlawful. The king's rage led to Yahya's martyrdom, making him a symbol of standing firm for justice.",
+    "keywords": ["truth-teller", "tyrant king", "courage", "martyrdom", "justice", "Yahya"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 1,
+    "title": "The Miraculous Birth",
+    "parent": "Isa",
+    "summary": "Maryam (Mary), a devout and pure woman dedicated to the temple, was visited by the Angel Jibril. He gave her the news of a son, Isa. Although she was a virgin, Allah willed it with the word 'Be'. She gave birth to Isa in a remote place under a palm tree.",
+    "keywords": ["Maryam", "Jibril", "virgin birth", "Isa", "palm tree", "miracle"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 2,
+    "title": "The Cradle",
+    "parent": "Isa",
+    "summary": "Maryam returned to her people carrying the infant Isa, fearing accusations. She pointed to the baby. By Allah's command, the infant Isa spoke from the cradle, declaring his servitude to Allah, that he had been given the Scripture, and made a prophet.",
+    "keywords": ["cradle", "baby", "speech", "miracle", "prophethood", "peace"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 3,
+    "title": "The Miracles",
+    "parent": "Isa",
+    "summary": "Allah gave Isa numerous miracles to prove his prophethood. He healed the blind and the leper, and by Allah's permission, brought the dead back to life. He also shaped a bird from clay and breathed into it, and it became a living bird.",
+    "keywords": ["miracles", "healing", "blind", "leper", "resurrection", "clay bird"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 4,
+    "title": "The Table",
+    "parent": "Isa",
+    "summary": "The disciples asked Isa to have a table of food descend from the sky as a sign and a festival. Isa warned them not to ask out of doubt, but they insisted. Isa prayed, and the table descended, providing food and strengthening the believers' faith.",
+    "keywords": ["table", "disciples", "food", "miracle", "festival", "faith"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 5,
+    "title": "The Plot",
+    "parent": "Isa",
+    "summary": "The leaders of the Children of Israel grew jealous and plotted to kill and crucify Isa. However, Allah's plan overrode their plan. Allah raised Isa up to the heavens, and the plotters were deceived. Isa was not killed, nor crucified, but protected by Allah.",
+    "keywords": ["plot", "jealousy", "crucifixion", "protection", "heavens", "Allah's plan"]
+  },
+  {
+    "module": "prophets",
+    "id": "isa",
+    "lesson": 6,
+    "title": "The Second Coming",
+    "parent": "Isa",
+    "summary": "Islam teaches that Isa foretold the coming of Prophet Muhammad ﷺ, referring to him as Ahmad. It is a core belief that Isa will return to earth near the end of times to defeat the Dajjal, restore justice, and spread peace, before eventually passing away.",
+    "keywords": ["second coming", "Muhammad", "Ahmad", "Dajjal", "justice", "peace"]
+  },
+  {
+    "module": "prophets",
+    "id": "muhammad",
+    "lesson": 1,
+    "title": "The Final Messenger",
+    "parent": "Muhammad",
+    "summary": "Muhammad ﷺ is the final prophet and messenger of Allah, sent as a mercy to all of mankind. He received the Quran over 23 years. His life, character, and teachings are the ultimate example for Muslims to follow until the Day of Judgment.",
+    "keywords": ["Muhammad", "final messenger", "mercy", "Quran", "example", "Day of Judgment"]
+  },
+  {
+    "module": "prophets",
+    "id": "muhammad",
+    "lesson": 2,
+    "title": "The Seal of the Prophets",
+    "parent": "Muhammad",
+    "summary": "Muhammad ﷺ is the seal of the prophets, meaning no prophet will come after him. He confirmed the messages of all previous prophets, from Adam to Isa. His message is universal, meant for all nations and all times.",
+    "keywords": ["seal of the prophets", "universal", "previous prophets", "message", "nations"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-01-abu-bakr",
+    "lesson": 1,
+    "title": "The First Believer",
+    "parent": "Abu Bakr",
+    "summary": "Abu Bakr was a close friend of the Prophet ﷺ known for his honesty and noble character. When invited to Islam, he accepted immediately without hesitation. He became the first adult male convert and supported the Prophet ﷺ with all his wealth and effort.",
+    "keywords": ["Abu Bakr", "first convert", "friendship", "wealth", "support", "honesty"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-02-umar",
+    "lesson": 1,
+    "title": "The Lion of Islam",
+    "parent": "Umar",
+    "summary": "Umar was initially a fierce opponent of Islam. He set out to kill the Prophet ﷺ, but learned his sister had accepted Islam. Upon reading Surah Ta-Ha, his heart softened, and he embraced Islam. He became a symbol of strength and justice.",
+    "keywords": ["Umar", "opponent", "Ta-Ha", "embrace", "strength", "justice"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-03-uthman",
+    "lesson": 1,
+    "title": "The Generous One",
+    "parent": "Uthman",
+    "summary": "Uthman was a wealthy and shy merchant who accepted Islam early. He was known for immense generosity, purchasing the well of Raumah for the Muslims. He also compiled the Quran into a single standard text (Mushaf) during his caliphate.",
+    "keywords": ["Uthman", "generous", "well of Raumah", "Mushaf", "compilation", "wealth"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-04-ali",
+    "lesson": 1,
+    "title": "The Young Guardian",
+    "parent": "Ali",
+    "summary": "Ali was raised by the Prophet ﷺ and was the first child to accept Islam. On the night of the Hijrah, Ali courageously slept in the Prophet's bed, willing to sacrifice his life. He was a fierce warrior, a wise judge, and a great scholar.",
+    "keywords": ["Ali", "young guardian", "Hijrah", "sleep", "sacrifice", "warrior", "scholar"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-05-bilal",
+    "lesson": 1,
+    "title": "The Voice of the Ummah",
+    "parent": "Bilal",
+    "summary": "Bilal was an Abyssinian slave brutally tortured for accepting Islam. He endured the pain while repeating 'Ahad' (One). Abu Bakr bought and freed him. Bilal became the first Mu'adhin (caller to prayer) in Islam.",
+    "keywords": ["Bilal", "slave", "torture", "Ahad", "freed", "Mu'adhin"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-06-hamza",
+    "lesson": 1,
+    "title": "The Uncle of the Prophet",
+    "parent": "Hamza",
+    "summary": "Hamza, the Prophet's uncle, was a strong and respected warrior. When Abu Jahl insulted the Prophet ﷺ, Hamza became furious and struck him, accepting Islam. The Muslims gained strength. He was martyred at the Battle of Uhud and is the Sayyid of Martyrs.",
+    "keywords": ["Hamza", "uncle", "warrior", "Abu Jahl", "Uhud", "martyr", "strength"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-07-khalid",
+    "lesson": 1,
+    "title": "The Sword of Allah",
+    "parent": "Khalid",
+    "summary": "Khalid was a brilliant military commander for the Quraysh who fought against the Muslims in the Battle of Uhud. He later accepted Islam. The Prophet ﷺ named him 'Sayfullah' (The Sword of Allah). He led victories against the Byzantine and Persian empires.",
+    "keywords": ["Khalid", "military", "Uhud", "Sayfullah", "Sword of Allah", "victories"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-08-salman",
+    "lesson": 1,
+    "title": "The Seeker of Truth",
+    "parent": "Salman",
+    "summary": "Salman al-Farsi left his wealthy family to search for the true religion, traveling through different lands. He ended up as a slave in Madinah, where he met the Prophet ﷺ and recognized the signs of prophethood. He suggested digging the Trench during the Battle of the Confederates.",
+    "keywords": ["Salman", "Persian", "seeker", "slave", "Madinah", "Trench", "Confederates"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-09-abu-hurayrah",
+    "lesson": 1,
+    "title": "The Memory of the Ummah",
+    "parent": "Abu Hurayrah",
+    "summary": "Abu Hurayrah dedicated his life to staying close to the Prophet ﷺ. He had an extraordinary memory and narrated thousands of hadiths, preserving the Sunnah for the Ummah. The Prophet ﷺ prayed that Allah would make him beloved to the believers.",
+    "keywords": ["Abu Hurayrah", "memory", "hadith", "Sunnah", "narrator", "preservation"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-10-aisha",
+    "lesson": 1,
+    "title": "The Mother of the Believers",
+    "parent": "Aisha",
+    "summary": "Aisha bint Abu Bakr was one of the most beloved wives of the Prophet ﷺ. She became one of the greatest scholars of Islam, narrating over 2,000 hadiths. When accused of a false scandal, Allah revealed verses in the Quran declaring her innocence.",
+    "keywords": ["Aisha", "wife", "scholar", "narrator", "innocence", "Quran", "mother of believers"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-11-fatimah",
+    "lesson": 1,
+    "title": "The Leader of the Women",
+    "parent": "Fatimah",
+    "summary": "Fatimah al-Zahra was the youngest daughter of the Prophet ﷺ and Khadijah. She was deeply beloved by her father and married Ali. She endured many hardships with her father, and the Prophet ﷺ reassured her that she would be the leader of the women of Paradise.",
+    "keywords": ["Fatimah", "daughter", "Paradise", "women", "Ali", "piety", "hardship"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-12-zayd",
+    "lesson": 1,
+    "title": "The Beloved Freedman",
+    "parent": "Zayd",
+    "summary": "Zayd ibn Harithah was captured and sold as a slave to the Prophet ﷺ, who freed and adopted him. Zayd accepted Islam early and was one of the first to pray. He led many military expeditions and was martyred at the Battle of Mu'tah.",
+    "keywords": ["Zayd", "freedman", "adopted", "Mu'tah", "martyr", "first to pray"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-13-sad",
+    "lesson": 1,
+    "title": "The Blessed Archer",
+    "parent": "Sa'd",
+    "summary": "Sa'd ibn Abi Waqqas was one of the first converts to Islam, accepting the faith at 17. He was skilled in archery and led the Muslim army to victory at Qadisiyyah against the Persians. The Prophet ﷺ made a famous dua for him, asking Allah to answer his supplications.",
+    "keywords": ["Sa'd", "archer", "Qadisiyyah", "Persian", "dua", "early convert"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-14-talha",
+    "lesson": 1,
+    "title": "The Living Martyr",
+    "parent": "Talha",
+    "summary": "Talha ibn Ubaydillah was a wealthy companion who protected the Prophet ﷺ during the Battle of Uhud with his own body. He suffered many wounds, including the loss of the use of his hand. The Prophet ﷺ referred to him as 'the living martyr'.",
+    "keywords": ["Talha", "Uhud", "shield", "wounds", "martyr", "protection", "sacrifice"]
+  },
+  {
+    "module": "sahaba",
+    "id": "sahaba-15-zubayr",
+    "lesson": 1,
+    "title": "The Disciple of the Prophet",
+    "parent": "Zubayr",
+    "summary": "Zubayr ibn al-Awwam accepted Islam early and was the Prophet's ﷺ cousin. He was one of the ten companions promised Paradise. He was a fierce warrior who fought in every major battle and was the first to draw his sword in defense of Islam.",
+    "keywords": ["Zubayr", "disciple", "cousin", "Paradise", "warrior", "courage", "loyalty"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-year-of-the-elephant",
+    "lesson": null,
+    "title": "The Year of the Elephant",
+    "parent": "Seerah",
+    "summary": "The Prophet Muhammad ﷺ was born in the Year of the Elephant (570 CE). This was the year Abraha, the Abyssinian governor of Yemen, marched on Makkah with an army including an elephant to destroy the Kaaba. Allah destroyed the army with flocks of birds dropping stones of baked clay.",
+    "keywords": ["Year of the Elephant", "Abraha", "Kaaba", "birds", "Makkah", "birth"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-orphans-childhood",
+    "lesson": null,
+    "title": "The Orphan's Childhood",
+    "parent": "Seerah",
+    "summary": "Muhammad ﷺ was born an orphan, his father passing away before his birth. His mother Aminah passed away when he was six, leaving him in the care of his grandfather Abdul Muttalib, and then his uncle Abu Talib. He grew up with a pure character, known as As-Sadiq (The Truthful) and Al-Amin (The Trustworthy).",
+    "keywords": ["orphan", "Aminah", "Abdul Muttalib", "Abu Talib", "As-Sadiq", "Al-Amin"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-marriage-to-khadijah",
+    "lesson": null,
+    "title": "The Marriage to Khadijah",
+    "parent": "Seerah",
+    "summary": "Khadijah bint Khuwaylid, a successful and noble businesswoman, hired Muhammad ﷺ to trade for her. Impressed by his honesty and character, she proposed marriage. He was 25 and she was 40. Their marriage was one of profound love, support, and mutual respect.",
+    "keywords": ["Khadijah", "marriage", "businesswoman", "honesty", "support", "love"]
+  },
+  {
+    "module": "seerah",
+    "id": "feat-first-revelation",
+    "lesson": null,
+    "title": "The First Revelation",
+    "parent": "Seerah",
+    "summary": "Muhammad ﷺ would retreat to the cave of Hira to reflect. During one of these retreats, the Angel Jibril appeared and commanded him to 'Read'. After the third command, Muhammad ﷺ asked what he should read, and Jibril taught him the first verses of Surah Al-Alaq.",
+    "keywords": ["revelation", "Hira", "Jibril", "Read", "Al-Alaq", "prophethood"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-early-call",
+    "lesson": null,
+    "title": "The Early Call",
+    "parent": "Seerah",
+    "summary": "After the first revelation, the Prophet ﷺ began calling people to Islam secretly for three years. The first to believe were his wife Khadijah, his cousin Ali, his friend Abu Bakr, and his adopted son Zayd. He then received the command to call publicly.",
+    "keywords": ["early call", "secret dawah", "Khadijah", "Ali", "Abu Bakr", "public call"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-persecution-begins",
+    "lesson": null,
+    "title": "The Persecution Begins",
+    "parent": "Seerah",
+    "summary": "As the message of Tawhid spread, the Quraysh leaders felt threatened. They began persecuting the Muslims, especially the poor and enslaved, torturing them to renounce their faith. Bilal, Ammar, and Sumayyah were among those who suffered greatly.",
+    "keywords": ["persecution", "Quraysh", "torture", "Bilal", "Sumayyah", "resilience"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-migration-to-abyssinia",
+    "lesson": null,
+    "title": "The Migration to Abyssinia",
+    "parent": "Seerah",
+    "summary": "Due to severe persecution, the Prophet ﷺ advised some Muslims to migrate to Abyssinia (Ethiopia). The Christian king, Negus, was known for his justice. The Muslims were welcomed, and when the Quraysh tried to demand their return, Negus refused to hand them over.",
+    "keywords": ["Abyssinia", "Ethiopia", "Negus", "migration", "justice", "refuge"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-boycott-of-banu-hashim",
+    "lesson": null,
+    "title": "The Boycott of Banu Hashim",
+    "parent": "Seerah",
+    "summary": "The Quraysh imposed a social and economic boycott on the Prophet's clan, Banu Hashim. They were forced into a valley for three years, facing severe hunger and hardship. The boycott ended when sympathetic Quraysh members tore up the agreement.",
+    "keywords": ["boycott", "Banu Hashim", "hunger", "valley", "hardship", "agreement"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-year-of-sorrow",
+    "lesson": null,
+    "title": "The Year of Sorrow",
+    "parent": "Seerah",
+    "summary": "The Prophet ﷺ faced immense grief when his beloved wife Khadijah passed away, followed shortly by his protective uncle Abu Talib. This year was known as the Year of Sorrow (Am al-Huzn). The Prophet ﷺ faced increased hostility from the Quraysh after their deaths.",
+    "keywords": ["Year of Sorrow", "Khadijah", "Abu Talib", "grief", "hostility", "Am al-Huzn"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-night-journey",
+    "lesson": null,
+    "title": "The Night Journey",
+    "parent": "Seerah",
+    "summary": "The Prophet ﷺ was taken on the Isra and Mi'raj, a miraculous night journey from Makkah to Jerusalem, and then through the heavens. He met previous prophets and received the command for the five daily prayers directly from Allah, bringing comfort after the Year of Sorrow.",
+    "keywords": ["Isra", "Mi'raj", "Jerusalem", "heavens", "five prayers", "night journey"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-pledges-of-aqabah",
+    "lesson": null,
+    "title": "The Pledges of Aqabah",
+    "parent": "Seerah",
+    "summary": "The Prophet ﷺ met with delegations from the tribes of Madinah at Aqabah. They pledged their allegiance to him and invited him to migrate to their city. These pledges laid the foundation for the establishment of the Muslim community in Madinah.",
+    "keywords": ["pledges", "Aqabah", "Madinah", "allegiance", "migration", "community"]
+  },
+  {
+    "module": "seerah",
+    "id": "feat-hijrah",
+    "lesson": null,
+    "title": "The Hijrah",
+    "parent": "Seerah",
+    "summary": "After years of persecution in Makkah, the Prophet ﷺ received permission to migrate to Madinah. He left with Abu Bakr, hiding in the cave of Thawr for three days. They made the journey to Madinah, establishing the first Islamic state and a new era in history.",
+    "keywords": ["Hijrah", "migration", "Madinah", "Abu Bakr", "cave of Thawr", "new state"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-building-of-the-masjid",
+    "lesson": null,
+    "title": "The Building of the Masjid",
+    "parent": "Seerah",
+    "summary": "Upon arriving in Madinah, the first act the Prophet ﷺ performed was building a mosque (Masjid an-Nabawi). It became the center of worship, education, and governance. The Prophet ﷺ participated in the construction, carrying bricks alongside his companions.",
+    "keywords": ["Masjid an-Nabawi", "mosque", "Madinah", "construction", "worship", "governance"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-constitution-of-madinah",
+    "lesson": null,
+    "title": "The Constitution of Madinah",
+    "parent": "Seerah",
+    "summary": "The Prophet ﷺ established a constitution that united the diverse tribes of Madinah, including the Muhajirun, Ansar, and Jewish tribes. It guaranteed freedom of religion and established rules for mutual defense and cooperation, creating a unified society.",
+    "keywords": ["constitution", "Muhajirun", "Ansar", "Jewish tribes", "freedom of religion", "cooperation"]
+  },
+  {
+    "module": "seerah",
+    "id": "feat-badr",
+    "lesson": null,
+    "title": "The Battle of Badr",
+    "parent": "Seerah",
+    "summary": "The Battle of Badr took place in 2 AH, where 313 poorly equipped Muslims faced an army of 1,000 Quraysh. Despite the odds, the Muslims fought with immense faith, and Allah sent angels to strengthen them. The Muslims won a decisive victory, establishing their strength.",
+    "keywords": ["Badr", "battle", "angels", "victory", "Quraysh", "faith", "army"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-battle-of-uhud",
+    "lesson": null,
+    "title": "The Battle of Uhud",
+    "parent": "Seerah",
+    "summary": "In 3 AH, the Quraysh sought revenge at Uhud. The Muslims initially had the upper hand, but some archers disobeyed orders, leaving a flank exposed. The Quraysh counter-attacked, and many Muslims were martyred, including Hamza. The Prophet ﷺ himself was injured.",
+    "keywords": ["Uhud", "Quraysh", "archers", "Hamza", "martyred", "lesson in obedience"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-battle-of-the-trench",
+    "lesson": null,
+    "title": "The Battle of the Trench",
+    "parent": "Seerah",
+    "summary": "In 5 AH, a massive confederacy of tribes attacked Madinah. Acting on Salman al-Farsi's advice, the Muslims dug a deep trench (Khandaq) around the city. The siege lasted weeks, but the enemy was unable to breach the trench and eventually retreated.",
+    "keywords": ["Trench", "Khandaq", "confederacy", "Salman al-Farsi", "siege", "defense"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-treaty-of-hudaybiyyah",
+    "lesson": null,
+    "title": "The Treaty of Hudaybiyyah",
+    "parent": "Seerah",
+    "summary": "The Prophet ﷺ set out for Umrah, but the Quraysh blocked his path at Hudaybiyyah. A treaty was signed, appearing unfavorable to the Muslims but containing terms of peace for 10 years. The Quran called this a clear victory, as it allowed Islam to spread peacefully.",
+    "keywords": ["Hudaybiyyah", "treaty", "Umrah", "Quraysh", "peace", "clear victory"]
+  },
+  {
+    "module": "seerah",
+    "id": "feat-conquest",
+    "lesson": null,
+    "title": "The Conquest of Makkah",
+    "parent": "Seerah",
+    "summary": "In 8 AH, after the Quraysh broke the Treaty of Hudaybiyyah, the Prophet ﷺ marched to Makkah with an army of 10,000 Muslims. The Quraysh surrendered. The Prophet ﷺ entered with humility, cleansed the Kaaba of idols, and forgave his former enemies.",
+    "keywords": ["conquest", "Makkah", "forgiveness", "Kaaba", "idols", "mercy"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-battle-of-hunayn",
+    "lesson": null,
+    "title": "The Battle of Hunayn",
+    "parent": "Seerah",
+    "summary": "After the conquest of Makkah, the Hawazin and Thaqif tribes gathered to attack the Muslims at Hunayn. The Muslims initially faced a setback due to the large number of new converts relying on their numbers. However, the Prophet ﷺ rallied them, and the Muslims won a decisive victory.",
+    "keywords": ["Hunayn", "Hawazin", "Thaqif", "setback", "rally", "victory"]
+  },
+  {
+    "module": "seerah",
+    "id": "feat-farewell",
+    "lesson": null,
+    "title": "The Farewell Sermon",
+    "parent": "Seerah",
+    "summary": "During his final Hajj, the Prophet ﷺ delivered a powerful sermon on the plains of Arafah to over 100,000 Muslims. He proclaimed the sanctity of life and property, abolished racism and usury, and emphasized the rights of women. He revealed the final verse of the religion's completion.",
+    "keywords": ["farewell", "sermon", "Arafah", "Hajj", "racism", "rights", "completion"]
+  },
+  {
+    "module": "seerah",
+    "id": "the-passing-of-the-prophet",
+    "lesson": null,
+    "title": "The Passing of the Prophet",
+    "parent": "Seerah",
+    "summary": "After a brief illness, the Prophet Muhammad ﷺ passed away in Madinah in 11 AH, at the age of 63. His death was a profound loss for the Ummah, but Abu Bakr reminded them that Allah is Ever-Living and never dies. He was buried in the room of Aisha.",
+    "keywords": ["passing", "death", "Madinah", "Abu Bakr", "Ever-Living", "Ummah"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "shahada",
+    "lesson": null,
+    "title": "The Shahada",
+    "parent": "New Muslim",
+    "summary": "The Shahada is the declaration of faith: 'La ilaha illallah, Muhammadur rasulullah' (There is no god but Allah, and Muhammad is His messenger). It is the first and most important pillar of Islam, representing a complete submission to the oneness of God.",
+    "keywords": ["shahada", "faith", "declaration", "tawhid", "pillar", "submission"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "prayer",
+    "lesson": null,
+    "title": "The Five Daily Prayers",
+    "parent": "New Muslim",
+    "summary": "Salah is the second pillar of Islam and the direct connection between a servant and Allah. Muslims are required to pray five times a day: Fajr, Dhuhr, Asr, Maghrib, and Isha. Prayer involves physical movements, specific recitations, and deep focus.",
+    "keywords": ["prayer", "salah", "pillar", "fajr", "dhuhr", "asr", "maghrib", "isha"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "wudu",
+    "lesson": null,
+    "title": "Wudu (Ablution)",
+    "parent": "New Muslim",
+    "summary": "Wudu is the ritual purification required before performing the prayer. It involves washing the hands, rinsing the mouth, cleaning the nose, washing the face, arms, wiping the head, and washing the feet. It is a physical and spiritual act of cleansing that prepares the believer for prayer.",
+    "keywords": ["wudu", "purification", "prayer", "washing", "cleanliness", "ablution"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "fast",
+    "lesson": null,
+    "title": "Fasting in Ramadan",
+    "parent": "New Muslim",
+    "summary": "Fasting (Sawm) during Ramadan is the fourth pillar of Islam. It involves abstaining from food, drink, and marital relations from dawn to sunset. The purpose of fasting is to develop taqwa (God-consciousness), practice self-discipline, and feel empathy for the poor.",
+    "keywords": ["fasting", "ramadan", "sawm", "fajr", "maghrib", "taqwa", "discipline"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "zakat",
+    "lesson": null,
+    "title": "Zakat (Charity)",
+    "parent": "New Muslim",
+    "summary": "Zakat is the third pillar of Islam, an obligatory charity of 2.5% of a Muslim's saved wealth over a certain threshold each year. It purifies wealth, protects society, and helps the poor, the needy, and the debtors. All wealth belongs to Allah.",
+    "keywords": ["zakat", "charity", "wealth", "nisab", "purification", "society", "pillar"]
+  },
+  {
+    "module": "new_muslim",
+    "id": "hajj",
+    "lesson": null,
+    "title": "Hajj (Pilgrimage)",
+    "parent": "New Muslim",
+    "summary": "Hajj is the fifth pillar of Islam, an obligatory pilgrimage to Makkah for those who are physically and financially able at least once in their lifetime. It involves rites such as Tawaf, Sa'i, and standing at Arafah. Hajj demonstrates equality and devotion.",
+    "keywords": ["hajj", "pilgrimage", "makkah", "dhul-hijjah", "tawaf", "arafah", "unity"]
+  }
+]
