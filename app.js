@@ -155,6 +155,7 @@ window.__isPoppingBack = false;
 
 function __getTopLayer(){
   const has = id => { const el = document.getElementById(id); return el && el.classList.contains('show'); };
+  if(has('ai-history-drawer')) return 'ai-history';
   if(has('ai-chat-overlay')) return 'ai';
   if(has('note-modal')) return 'note';
   if(has('q-modal')) return 'qmodal';
@@ -172,6 +173,7 @@ function __getTopLayer(){
 
 function __performBack(){
   const layer = __getTopLayer();
+  if(layer === 'ai-history'){ document.getElementById('ai-history-close').click(); return true; }
   if(layer === 'ai'){ document.getElementById('ai-close-btn').click(); return true; }
   if(layer === 'note'){ closeNoteModal(); return true; }
   if(layer === 'qmodal'){ closeQModal(); return true; }
