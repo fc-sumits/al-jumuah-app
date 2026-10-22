@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 </head>
@@ -186,7 +186,9 @@
 
 <section class="page" data-page="give">
 <div id="give-content"></div>
-                         </section><section class="page" data-page="tools">
+</section>
+
+<section class="page" data-page="tools">
 <div class="cat" data-cat="1">
 <div class="cat-head"><div class="cat-head-left"><span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M4.93 19.07l2.12-2.12M12 22v-3M19.07 19.07l-2.12-2.12M22 12h-3M19.07 4.93l-2.12 2.12"/></svg></span><span class="cat-title">Worship &amp; Prayer</span></div><span class="cat-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 <div class="cat-body"><div class="cat-tools"><div class="tool-pill" data-tool="qibla">Qibla compass</div><div class="tool-pill" data-tool="prayerTracker">Prayer tracker</div><div class="tool-pill" data-tool="fastingTracker">Fasting tracker</div><div class="tool-pill" data-tool="tasbih">Tasbih counter</div><div class="tool-pill" data-tool="tasbihSounds">Tasbih sounds</div><div class="tool-pill" data-tool="customDhikr">Custom dhikr</div></div></div>
@@ -301,6 +303,7 @@
 <button class="nav-item active" data-nav-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></button>
 <button class="nav-item" data-nav-tab="tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><span>Tools</span></button>
 <button class="nav-item" data-nav-tab="bookmarks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Bookmarks</span></button>
+<button class="nav-item" data-nav-tab="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h3a3 3 0 0 1 3 3v2h1a2 2 0 1 1 0 4h-1v2a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-2H4a2 2 0 1 1 0-4h1v-2a3 3 0 0 1 3-3h3V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg><span>AI</span></button>
 <button class="nav-item" data-nav-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg><span>More</span></button>
 </nav>
 </div>
@@ -384,6 +387,7 @@
 .auth-switch{text-align:center;margin-top:14px;font-size:.85rem;color:var(--muted)}
 .auth-switch-btn{background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0 4px;margin-left:4px}
 </style>
+
 <!-- ═══════════════════════════════════════════════════════════════
      AI ASSISTANT (AHKI & SHEIKH) - UI SHELL
      ═══════════════════════════════════════════════════════════════ -->
@@ -410,14 +414,17 @@
       <button class="ai-switch-btn" data-target="sheikh">🕌 Sheikh</button>
     </div>
     
-    <div style="display:flex; gap:8px; align-items:center;">
-  <button class="ai-voice-toggle" id="ai-memory-btn" aria-label="Toggle Memory" style="opacity:0.5;" title="Toggle Chat Memory">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
-  </button>
-  <button class="ai-voice-toggle active" id="ai-voice-btn" aria-label="Toggle Voice">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-  </button>
-</div>
+    <div class="ai-header-actions">
+      <button class="ai-header-btn" id="ai-history-btn" aria-label="History" title="Chat History">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </button>
+      <button class="ai-header-btn" id="ai-new-chat-btn" aria-label="New Chat" title="New Chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <button class="ai-header-btn" id="ai-memory-btn" aria-label="Toggle Memory" title="Toggle Chat Memory" style="opacity:0.5;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+      </button>
+    </div>
   </div>
 
   <!-- Chat Area -->
@@ -439,6 +446,17 @@
     <button class="ai-send-btn" id="ai-send-btn" aria-label="Send">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
+  </div>
+
+  <!-- History Drawer (hidden by default) -->
+  <div class="ai-history-drawer" id="ai-history-drawer">
+    <div class="ai-history-header">
+      <h3>History</h3>
+      <button id="ai-history-close" class="ai-back" style="border:none;">✕</button>
+    </div>
+    <div class="ai-history-list" id="ai-history-list">
+      <!-- Injected by JS -->
+    </div>
   </div>
 
 </div>
