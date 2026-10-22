@@ -335,7 +335,6 @@
     const text = textInput.value.trim(); 
     if (!text) return;
 
-    // Prompt Injection Guardrail (Basic)
     const malicious = ['ignore previous instructions', 'system prompt', 'you are now a', 'forget all rules'];
     if (malicious.some(m => text.toLowerCase().includes(m))) {
       addUserMessage(text);
@@ -355,7 +354,6 @@
     showTypingIndicator(currentAI);
 
     try {
-      // Build context (Fixed Memory Logic)
       const historyToSend = aiMemoryOn ? chatHistory.map(msg => ({
           role: msg.role,
           text: msg.text || (msg.data && (msg.data.detailed_answer || msg.data.tldr)) || "Acknowledged."
@@ -372,29 +370,41 @@
       const data = await response.json();
       removeTypingIndicator();
 
-      // Show exact error for debugging
       if (data.error) { 
         addAIMessage({ type: 'text_only', detailed_answer: "Worker Error: " + data.error }); 
         return; 
       }
 
-      // Handle Tool Calls (Ahki Navigation)
-      if (data.functionCall) {
-        const fn = data.functionCall;
+      // Parse the response
+      let parsedData = null;
+      try {
+        let cleanText = data.reply.trim();
+        if (cleanText.includes('```json')) {
+            cleanText = cleanText.substring(cleanText.indexOf('{'), cleanText.lastIndexOf('}') + 1);
+        }
+        parsedData = JSON.parse(cleanText);
+      } catch(e) {
+        parsedData = { type: 'text_only', detailed_answer: data.reply };
+      }
+
+      // Handle Manual Function Calls (The New Way)
+      if (parsedData.type === 'function') {
+        const fnName = parsedData.function_name;
+        const fnArgs = parsedData.function_args || {};
+        
         try {
           closeAllOverlays();
-          if (fn.name === 'change_theme') { applyTheme(fn.args.theme); addAIMessage({ type: 'text_only', detailed_answer: `Done! Changed theme to ${fn.args.theme}.` }); } 
-          else if (fn.name === 'open_page') { showPage(fn.args.page_name); addAIMessage({ type: 'text_only', detailed_answer: `Opening ${fn.args.page_name}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); } 
-          else if (fn.name === 'open_surah') { showPage('quran'); openSurah(fn.args.surah_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Surah ${fn.args.surah_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
-          else if (fn.name === 'open_verse') { showPage('quran'); openSurahAtVerse(fn.args.surah_number, fn.args.ayah_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Surah ${fn.args.surah_number}, Verse ${fn.args.ayah_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
-          else if (fn.name === 'open_hadith') { showPage('hadith'); openHadithFullscreen(fn.args.collection_id, 1, fn.args.hadith_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Hadith #${fn.args.hadith_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
-          else if (fn.name === 'open_catalog_lesson') {
-            const mod = fn.args.module; const itemId = fn.args.id; const lessonNum = fn.args.lesson || 1;
+          if (fnName === 'change_theme') { applyTheme(fnArgs.theme); addAIMessage({ type: 'text_only', detailed_answer: `Done! Changed theme to ${fnArgs.theme}.` }); } 
+          else if (fnName === 'open_page') { showPage(fnArgs.page_name); addAIMessage({ type: 'text_only', detailed_answer: `Opening ${fnArgs.page_name}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); } 
+          else if (fnName === 'open_surah') { showPage('quran'); openSurah(fnArgs.surah_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Surah ${fnArgs.surah_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
+          else if (fnName === 'open_verse') { showPage('quran'); openSurahAtVerse(fnArgs.surah_number, fnArgs.ayah_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Surah ${fnArgs.surah_number}, Verse ${fnArgs.ayah_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
+          else if (fnName === 'open_hadith') { showPage('hadith'); openHadithFullscreen(fnArgs.collection_id, 1, fnArgs.hadith_number); addAIMessage({ type: 'text_only', detailed_answer: `Opening Hadith #${fnArgs.hadith_number}...` }); setTimeout(() => { overlay.classList.remove('show'); }, 1000); }
+          else if (fnName === 'open_catalog_lesson') {
             addAIMessage({ type: 'text_only', detailed_answer: `I found exactly what you're looking for! Opening it now...` });
-            if (mod === 'prophets') { openLearnOverlay('prophetsStories', 'storybook'); await renderProphets(); prophetState.view = 'reader'; prophetState.prophetId = itemId; prophetState.lessonNum = lessonNum; drawProphetsView(); } 
-            else if (mod === 'sahaba') { openLearnOverlay('sahabaStories', 'companions'); await renderSahaba(); sahabaState.view = 'reader'; sahabaState.sahabaId = itemId; sahabaState.lessonNum = lessonNum; drawSahabaView(); } 
-            else if (mod === 'seerah') { openLearnOverlay('seerahTimeline', 'storybook'); await renderSeerah(); SEERAH_STATE.view = 'reader'; SEERAH_STATE.activeId = itemId; drawSeerah(); } 
-            else if (mod === 'new_muslim') { openLearnOverlay('newMuslim', 'modern'); await renderNewMuslim(); newMuslimState.view = 'reader'; newMuslimState.lessonId = itemId; drawNewMuslimView(); }
+            if (fnArgs.module === 'prophets') { openLearnOverlay('prophetsStories', 'storybook'); await renderProphets(); prophetState.view = 'reader'; prophetState.prophetId = fnArgs.id; prophetState.lessonNum = fnArgs.lesson || 1; drawProphetsView(); } 
+            else if (fnArgs.module === 'sahaba') { openLearnOverlay('sahabaStories', 'companions'); await renderSahaba(); sahabaState.view = 'reader'; sahabaState.sahabaId = fnArgs.id; sahabaState.lessonNum = fnArgs.lesson || 1; drawSahabaView(); } 
+            else if (fnArgs.module === 'seerah') { openLearnOverlay('seerahTimeline', 'storybook'); await renderSeerah(); SEERAH_STATE.view = 'reader'; SEERAH_STATE.activeId = fnArgs.id; drawSeerah(); } 
+            else if (fnArgs.module === 'new_muslim') { openLearnOverlay('newMuslim', 'modern'); await renderNewMuslim(); newMuslimState.view = 'reader'; newMuslimState.lessonId = fnArgs.id; drawNewMuslimView(); }
             setTimeout(() => { overlay.classList.remove('show'); }, 1500);
           }
         } catch (toolErr) { console.error("Tool failed:", toolErr); addAIMessage({ type: 'text_only', detailed_answer: `I found the content, but hit an error opening it.` }); }
@@ -404,24 +414,7 @@
         return;
       }
 
-      // Handle Text/JSON Response
-      let parsedData = null;
-      try {
-        let cleanText = data.reply.trim();
-        
-        if (cleanText.includes('```json')) {
-            cleanText = cleanText.substring(cleanText.indexOf('{'), cleanText.lastIndexOf('}') + 1);
-        }
-        
-        parsedData = JSON.parse(cleanText);
-        
-        if (!parsedData.detailed_answer && !parsedData.tldr && !parsedData.card) {
-            parsedData = { type: 'text_only', detailed_answer: data.reply };
-        }
-      } catch(e) {
-        parsedData = { type: 'text_only', detailed_answer: data.reply };
-      }
-
+      // Handle Text/JSON Response (The Normal Way)
       addAIMessage(parsedData);
       chatHistory.push({ role: 'ai', data: parsedData });
       saveCurrentChat();
