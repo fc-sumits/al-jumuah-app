@@ -114,6 +114,7 @@ const allPages = document.querySelectorAll('.page');
 const navItems = document.querySelectorAll('.nav-item');
 const SESSION = { currentPage: 'home', scroll: {} };
 function showPage(name){
+  if(name === 'ai') return; // AI is an overlay, handled by ai.js
   if(SESSION.currentPage && SESSION.currentPage !== name){
   SESSION.scroll[SESSION.currentPage] = mainEl.scrollTop;
   if(name === 'settings') SESSION.prevPage = SESSION.currentPage;
@@ -154,6 +155,7 @@ window.__isPoppingBack = false;
 
 function __getTopLayer(){
   const has = id => { const el = document.getElementById(id); return el && el.classList.contains('show'); };
+  if(has('ai-chat-overlay')) return 'ai';
   if(has('note-modal')) return 'note';
   if(has('q-modal')) return 'qmodal';
   if(has('fact-overlay')) return 'fact';
@@ -170,6 +172,7 @@ function __getTopLayer(){
 
 function __performBack(){
   const layer = __getTopLayer();
+  if(layer === 'ai'){ document.getElementById('ai-close-btn').click(); return true; }
   if(layer === 'note'){ closeNoteModal(); return true; }
   if(layer === 'qmodal'){ closeQModal(); return true; }
   if(layer === 'fact'){ closeFactOverlay(); return true; }
