@@ -197,7 +197,7 @@
       else addAIMessage(msg.data);
     });
     historyDrawer.classList.remove('show');
-    if (chatHistory.length > 0) chipsContainer.innerHTML = ''; // Hide chips if chat is loaded
+    if (chatHistory.length > 0) chipsContainer.innerHTML = '';
   }
 
   function startNewChat() {
@@ -226,7 +226,6 @@
     `).join('');
   }
 
-  // Expose to window for onclick handlers
   window.loadAIChat = loadChat;
 
   // Add Messages
@@ -278,10 +277,10 @@
 
   // Open Chat
   function openChat() {
-  triggerOrbPulse();
-  if(!window.__isPoppingBack) history.pushState({}, ''); 
-  overlay.classList.add('show');
-  renderHistoryDrawer();
+    triggerOrbPulse();
+    if(!window.__isPoppingBack) history.pushState({}, ''); 
+    overlay.classList.add('show');
+    renderHistoryDrawer();
     
     if (chatHistory.length === 0) {
       const currentAI = overlay.getAttribute('data-ai');
@@ -293,9 +292,9 @@
 
   // Event Listeners
   closeBtn.addEventListener('click', () => { 
-  if(!window.__isPoppingBack){ history.back(); return; } 
-  overlay.classList.remove('show'); 
-});
+    if(!window.__isPoppingBack){ history.back(); return; } 
+    overlay.classList.remove('show'); 
+  });
 
   switcher.addEventListener('click', (e) => {
     const btn = e.target.closest('.ai-switch-btn'); if (!btn) return;
@@ -303,8 +302,7 @@
     switcher.querySelectorAll('.ai-switch-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
     overlay.setAttribute('data-ai', target);
     textInput.placeholder = target === 'ahki' ? 'Ask Ahki...' : 'Ask Sheikh...';
-    
-    startNewChat(); // Reset chat when switching personas
+    startNewChat();
   });
 
   memoryBtn.addEventListener('click', () => {
@@ -315,15 +313,15 @@
   });
 
   historyBtn.addEventListener('click', () => {
-  renderHistoryDrawer();
-  if(!window.__isPoppingBack) history.pushState({}, ''); 
-  historyDrawer.classList.add('show');
-});
+    renderHistoryDrawer();
+    if(!window.__isPoppingBack) history.pushState({}, ''); 
+    historyDrawer.classList.add('show');
+  });
 
-historyCloseBtn.addEventListener('click', () => {
-  if(!window.__isPoppingBack){ history.back(); return; } 
-  historyDrawer.classList.remove('show');
-});
+  historyCloseBtn.addEventListener('click', () => {
+    if(!window.__isPoppingBack){ history.back(); return; } 
+    historyDrawer.classList.remove('show');
+  });
 
   newChatBtn.addEventListener('click', () => {
     if (confirm('Start a new chat? Current chat will be saved to history.')) {
@@ -351,14 +349,18 @@ historyCloseBtn.addEventListener('click', () => {
     
     textInput.value = ''; 
     textInput.style.height = 'auto'; 
-    chipsContainer.innerHTML = ''; // Hide chips after first message
+    chipsContainer.innerHTML = '';
     
     const currentAI = overlay.getAttribute('data-ai');
     showTypingIndicator(currentAI);
 
     try {
-      // Build context
-      const historyToSend = aiMemoryOn ? chatHistory.slice(-6) : [{ role: 'user', text: text }];
+      // Build context (Fixed Memory Logic)
+      const historyToSend = aiMemoryOn ? chatHistory.map(msg => ({
+          role: msg.role,
+          text: msg.text || (msg.data && (msg.data.detailed_answer || msg.data.tldr)) || "Acknowledged."
+      })) : [{ role: 'user', text: text }];
+      
       const candidates = searchCatalog(text);
       
       const response = await fetch(WORKER_URL, { 
@@ -370,8 +372,9 @@ historyCloseBtn.addEventListener('click', () => {
       const data = await response.json();
       removeTypingIndicator();
 
+      // Show exact error for debugging
       if (data.error) { 
-        addAIMessage({ type: 'text_only', detailed_answer: "I'm having trouble connecting right now. Please try again in a moment." }); 
+        addAIMessage({ type: 'text_only', detailed_answer: "Worker Error: " + data.error }); 
         return; 
       }
 
@@ -402,25 +405,22 @@ historyCloseBtn.addEventListener('click', () => {
       }
 
       // Handle Text/JSON Response
-let parsedData = null;
-try {
-  let cleanText = data.reply.trim();
-  
-  // Extract JSON if wrapped in markdown code blocks
-  if (cleanText.includes('```json')) {
-      cleanText = cleanText.substring(cleanText.indexOf('{'), cleanText.lastIndexOf('}') + 1);
-  }
-  
-  parsedData = JSON.parse(cleanText);
-  
-  // Fallback if JSON was parsed but keys are missing
-  if (!parsedData.detailed_answer && !parsedData.tldr && !parsedData.card) {
-      parsedData = { type: 'text_only', detailed_answer: data.reply };
-  }
-} catch(e) {
-  // Fallback if AI didn't return valid JSON at all
-  parsedData = { type: 'text_only', detailed_answer: data.reply };
-}
+      let parsedData = null;
+      try {
+        let cleanText = data.reply.trim();
+        
+        if (cleanText.includes('```json')) {
+            cleanText = cleanText.substring(cleanText.indexOf('{'), cleanText.lastIndexOf('}') + 1);
+        }
+        
+        parsedData = JSON.parse(cleanText);
+        
+        if (!parsedData.detailed_answer && !parsedData.tldr && !parsedData.card) {
+            parsedData = { type: 'text_only', detailed_answer: data.reply };
+        }
+      } catch(e) {
+        parsedData = { type: 'text_only', detailed_answer: data.reply };
+      }
 
       addAIMessage(parsedData);
       chatHistory.push({ role: 'ai', data: parsedData });
