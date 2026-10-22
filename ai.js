@@ -278,9 +278,10 @@
 
   // Open Chat
   function openChat() {
-    triggerOrbPulse();
-    overlay.classList.add('show');
-    renderHistoryDrawer();
+  triggerOrbPulse();
+  if(!window.__isPoppingBack) history.pushState({}, ''); 
+  overlay.classList.add('show');
+  renderHistoryDrawer();
     
     if (chatHistory.length === 0) {
       const currentAI = overlay.getAttribute('data-ai');
@@ -291,7 +292,10 @@
   }
 
   // Event Listeners
-  closeBtn.addEventListener('click', () => { overlay.classList.remove('show'); });
+  closeBtn.addEventListener('click', () => { 
+  if(!window.__isPoppingBack){ history.back(); return; } 
+  overlay.classList.remove('show'); 
+});
 
   switcher.addEventListener('click', (e) => {
     const btn = e.target.closest('.ai-switch-btn'); if (!btn) return;
@@ -311,13 +315,15 @@
   });
 
   historyBtn.addEventListener('click', () => {
-    renderHistoryDrawer();
-    historyDrawer.classList.add('show');
-  });
+  renderHistoryDrawer();
+  if(!window.__isPoppingBack) history.pushState({}, ''); 
+  historyDrawer.classList.add('show');
+});
 
-  historyCloseBtn.addEventListener('click', () => {
-    historyDrawer.classList.remove('show');
-  });
+historyCloseBtn.addEventListener('click', () => {
+  if(!window.__isPoppingBack){ history.back(); return; } 
+  historyDrawer.classList.remove('show');
+});
 
   newChatBtn.addEventListener('click', () => {
     if (confirm('Start a new chat? Current chat will be saved to history.')) {
