@@ -402,15 +402,25 @@ historyCloseBtn.addEventListener('click', () => {
       }
 
       // Handle Text/JSON Response
-      let parsedData = null;
-      try {
-        let cleanText = data.reply.trim();
-        if (cleanText.startsWith('```json')) cleanText = cleanText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
-        parsedData = JSON.parse(cleanText);
-      } catch(e) {
-        // Fallback if AI didn't return valid JSON
-        parsedData = { type: 'text_only', detailed_answer: data.reply };
-      }
+let parsedData = null;
+try {
+  let cleanText = data.reply.trim();
+  
+  // Extract JSON if wrapped in markdown code blocks
+  if (cleanText.includes('```json')) {
+      cleanText = cleanText.substring(cleanText.indexOf('{'), cleanText.lastIndexOf('}') + 1);
+  }
+  
+  parsedData = JSON.parse(cleanText);
+  
+  // Fallback if JSON was parsed but keys are missing
+  if (!parsedData.detailed_answer && !parsedData.tldr && !parsedData.card) {
+      parsedData = { type: 'text_only', detailed_answer: data.reply };
+  }
+} catch(e) {
+  // Fallback if AI didn't return valid JSON at all
+  parsedData = { type: 'text_only', detailed_answer: data.reply };
+}
 
       addAIMessage(parsedData);
       chatHistory.push({ role: 'ai', data: parsedData });
