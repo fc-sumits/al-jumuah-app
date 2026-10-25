@@ -1,1 +1,140 @@
+/* ═══════════════════════════════════════════════════════════════
+   DOWNLOAD MANAGER STYLES
+   ═══════════════════════════════════════════════════════════════ */
 
+.dl-storage-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.dl-storage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+.dl-total-size {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.dl-total-size span {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.dl-total-files {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.dl-storage-bar {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 12px;
+}
+.dl-bar-segment {
+  height: 100%;
+}
+.dl-bar-quran { background: var(--emerald); }
+.dl-bar-v2 { background: var(--gold); }
+.dl-bar-hadith { background: #d97706; }
+.dl-bar-dua { background: #6366f1; }
+
+.dl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.dl-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.dl-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dl-category-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.dl-list {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.dl-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--divider);
+  gap: 14px;
+}
+.dl-item:last-child { border-bottom: none; }
+.dl-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--emerald-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.dl-icon svg { width: 20px; height: 20px; stroke-width: 2; }
+.dl-info { flex: 1; }
+.dl-name { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.dl-meta { font-size: 0.75rem; color: var(--muted); }
+.dl-delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted-2);
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+.dl-delete-btn:hover { color: #d9534f; }
+.dl-delete-btn svg { width: 18px; height: 18px; }
+
+.dl-clear-all {
+  width: 100%;
+  background: rgba(217, 83, 79, 0.1);
+  border: 1px solid rgba(217, 83, 79, 0.3);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dl-clear-all:hover { background: rgba(217, 83, 79, 0.2); }
+.dl-clear-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(217, 83, 79, 0.2); color: #d9534f;
+  display: flex; align-items: center; justify-content: center;
+}
+.dl-clear-text { text-align: left; }
+.dl-clear-title { font-size: 1rem; font-weight: 700; color: #d9534f; margin-bottom: 2px; }
+.dl-clear-sub { font-size: 0.75rem; color: var(--muted); }
