@@ -274,13 +274,47 @@ document.querySelectorAll('.setting-row').forEach(row=>{
       if(navigator.share) navigator.share({ title:"Al-Jumu'ah", text:'Check out this app', url:WEBSITE_URL }).catch(()=>{});
       else navigator.clipboard.writeText(WEBSITE_URL).then(()=>showToast('Link copied'));
     } else if(row.querySelector('.toggle')){ row.querySelector('.toggle').classList.toggle('on'); }
-    else if(row.id === 'clear-cache-row'){ clearAllDownloads(); }
+    else if(row.id === 'clear-downloads-row'){ openDownloadsManager(); }
     else if(row.id === 'settings-loc-row'){ openTool('prayerTimes'); }
     else if(row.id === 'settings-method-row'){ openTool('prayerTimes'); }
+    else if(row.id === 'quran-version-row'){ openQuranVersionModal(); }
     else if(action){ showToast('Coming soon'); }
   });
 });
-document.getElementById('clear-downloads-row').addEventListener('click', updateDownloadsSize);
+// Initialize Quran Version setting display
+updateQuranVersionSetting();
+
+// Helper functions for Quran Version Modal
+window.openQuranVersionModal = function() {
+  const modal = document.getElementById('quran-version-modal');
+  if(modal) {
+    modal.classList.add('show');
+    if(!window.__isPoppingBack) history.pushState({}, '');
+  }
+};
+
+window.closeQuranVersionModal = function() {
+  const modal = document.getElementById('quran-version-modal');
+  if(modal) {
+    if(!window.__isPoppingBack) { history.back(); return; }
+    modal.classList.remove('show');
+  }
+};
+
+window.setQuranVersion = function(version) {
+  localStorage.setItem('quran-version', version);
+  localStorage.setItem('quran-version-chosen', 'true'); // Mark as chosen
+  updateQuranVersionSetting();
+  closeQuranVersionModal();
+  showToast(`Reader set to ${version === 'v1' ? 'Classic' : 'Premium'}`);
+  if(typeof renderLastRead === 'function') renderLastRead();
+};
+
+window.updateQuranVersionSetting = function() {
+  const val = localStorage.getItem('quran-version') || 'v1';
+  const display = document.getElementById('quran-version-value');
+  if(display) display.textContent = val === 'v1' ? 'Classic (V1)' : 'Premium (V2)';
+};
 async function updateDownloadsSize(){
   const el = document.getElementById('downloads-size');
   if(!el) return;
