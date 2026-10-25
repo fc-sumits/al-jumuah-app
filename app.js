@@ -126,13 +126,31 @@ function showPage(name){
   if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
   if(name === 'give') renderGive();
   if(name === 'quran'){
-  // Force return to the Surah list view
-  const listView = document.getElementById('quran-list-view');
-  const readerView = document.getElementById('quran-reader-view');
+// Check if it's the first time opening Quran
+if(!localStorage.getItem('quran-version-chosen')) {
+  openQuranVersionModal();
+}
+
+// Force return to the Surah list view based on version
+const isV2 = localStorage.getItem('quran-version') === 'v2';
+const listView = document.getElementById('quran-list-view');
+const readerView = document.getElementById('quran-reader-view');
+const v2ListView = document.getElementById('quran-v2-list-view');
+const v2ReaderView = document.getElementById('quran-v2-reader-view');
+
+if(isV2) {
+  if(listView) listView.style.display = 'none';
+  if(readerView) readerView.style.display = 'none';
+  if(v2ReaderView) v2ReaderView.style.display = 'none';
+  if(typeof window.openQuranV2 === 'function') window.openQuranV2();
+} else {
+  if(v2ListView) v2ListView.style.display = 'none';
+  if(v2ReaderView) v2ReaderView.style.display = 'none';
   if(listView && readerView) {
     readerView.style.display = 'none';
     listView.style.display = 'block';
   }
+}
   document.body.classList.remove('reader-active');
   renderLastRead();
   SESSION.scroll['quran'] = 0; // Reset scroll memory so the list starts at the top
@@ -442,16 +460,29 @@ async function openSurahAtVerse(surahNum, ayahNum){
   QURAN.surah = surahNum;
   localStorage.setItem('quran-last-surah', surahNum);
   localStorage.setItem('quran-last-ayah', ayahNum);
+
+  if(localStorage.getItem('quran-version') === 'v2') {
+    if(typeof window.openQuranV2 === 'function') window.openQuranV2(surahNum);
+    return;
+  }
+
   document.getElementById('quran-list-view').style.display = 'none';
   document.getElementById('quran-reader-view').style.display = 'block';
   mainEl.scrollTop = 0;
   await loadSurah(surahNum);
   setTimeout(() => { const el = document.getElementById(`q-verse-${ayahNum}`); if(el) el.scrollIntoView({ behavior:'smooth', block:'start' }); }, 400);
 }
+
 function openSurah(n){
   QURAN.surah = n;
   localStorage.setItem('quran-last-surah', n);
   localStorage.setItem('quran-last-ayah', 1);
+
+  if(localStorage.getItem('quran-version') === 'v2') {
+    if(typeof window.openQuranV2 === 'function') window.openQuranV2(n);
+    return;
+  }
+
   document.getElementById('quran-list-view').style.display = 'none';
   document.getElementById('quran-reader-view').style.display = 'block';
   mainEl.scrollTop = 0;
@@ -465,13 +496,18 @@ function setReaderCompactBar(name, meaning){
   document.body.classList.add('reader-active');
 }
 function backToSurahList(){
+  if(localStorage.getItem('quran-version') === 'v2') {
+    if(typeof window.closeQuranV2 === 'function') window.closeQuranV2();
+    return;
+  }
+
   stopQuranAudio();
   document.getElementById('quran-reader-view').style.display = 'none';
   document.getElementById('quran-list-view').style.display = 'block';
   document.body.classList.remove('reader-active');
   mainEl.scrollTop = 0;
   renderLastRead();
-    }
+}
 async function loadSurah(n){
   const container = document.getElementById('quran-content');
   container.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading verses…</div>';
