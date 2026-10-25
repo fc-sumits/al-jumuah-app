@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ai.css">
+<link rel="stylesheet" href="quran-v2.css">
+<link rel="stylesheet" href="downloads.css">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -109,6 +112,7 @@
 </section>
 
 <section class="page" data-page="quran">
+<!-- V1 READER VIEW (Untouched) -->
 <div id="quran-list-view">
 <div class="q-quickbar">
 <div class="q-quickrow">
@@ -166,6 +170,14 @@
 </div>
 <div id="quran-reader-view" style="display:none">
 <div id="quran-content"></div>
+</div>
+
+<!-- V2 PREMIUM READER VIEW (New Shell) -->
+<div id="quran-v2-list-view" style="display:none;">
+  <!-- Injected by quran-v2.js -->
+</div>
+<div id="quran-v2-reader-view" style="display:none;">
+  <!-- Injected by quran-v2.js -->
 </div>
 </section>
 
@@ -260,13 +272,20 @@
 <div class="settings-group-title">Appearance</div>
 <div class="setting-row"><span class="setting-label">Theme</span><div class="segmented" id="theme-seg"><button data-theme-opt="auto">Auto</button><button data-theme-opt="dark">Dark</button><button data-theme-opt="light">Light</button></div></div>
 <div class="setting-row"><span class="setting-label">Text size</span><div class="segmented" id="size-seg"><button data-size="small">S</button><button data-size="medium" class="active">M</button><button data-size="large">L</button></div></div>
-  <div class="setting-row"><span class="setting-label">Notes display</span><div class="segmented" id="notes-seg"><button data-notes="compact" class="active">Compact</button><button data-notes="full">Full</button></div></div>
+<div class="setting-row"><span class="setting-label">Notes display</span><div class="segmented" id="notes-seg"><button data-notes="compact" class="active">Compact</button><button data-notes="full">Full</button></div></div>
 </div>
 <div class="settings-group">
 <div class="settings-group-title">Reading Memory</div>
 <div class="setting-row"><span class="setting-label">Show last read (Quran)</span><div class="toggle on" data-toggle="last-read-show"></div></div>
 <div class="setting-row"><span class="setting-label">Show last hadith</span><div class="toggle on" data-toggle="last-hadith-show"></div></div>
 <div class="setting-row"><span class="setting-label">Show AI Assistant Orb</span><div class="toggle on" data-toggle="ai-orb-show"></div></div>
+</div>
+<div class="settings-group">
+<div class="settings-group-title">Quran Settings</div>
+<div class="setting-row" id="quran-version-row">
+<span class="setting-label">Quran Reader Style</span>
+<span class="setting-value" id="quran-version-value">Version 1</span>
+</div>
 </div>
 <div class="settings-group">
 <div class="settings-group-title">Notifications</div>
@@ -286,8 +305,7 @@
 </div>
 <div class="settings-group">
 <div class="settings-group-title">Storage &amp; Audio</div>
-<div class="setting-row" id="clear-downloads-row"><span class="setting-label">Downloaded audio</span><span class="setting-value" id="downloads-size">0 surahs</span></div>
-<div class="setting-row" id="clear-cache-row"><span class="setting-label">Clear all downloads</span><span class="setting-value">›</span></div>
+<div class="setting-row" id="clear-downloads-row"><span class="setting-label">Manage Downloads</span><span class="setting-value">›</span></div>
 </div>
 <div class="settings-group">
 <div class="settings-group-title">About</div>
@@ -308,6 +326,8 @@
 </nav>
 </div>
 
+<!-- OVERLAYS & MODALS -->
+
 <div class="jumuah-overlay" id="jumuah-overlay" aria-hidden="true">
 <div class="jumuah-topbar">
 <button class="jumuah-back" id="jumuah-back" aria-label="Back">
@@ -323,6 +343,7 @@
 </div>
 <div class="jumuah-content" id="jumuah-content"></div>
 </div>
+
 <div class="learn-overlay" id="learn-overlay" aria-hidden="true">
 <div class="learn-topbar">
 <button class="learn-back" id="learn-back" aria-label="Back">
@@ -366,54 +387,55 @@
 </div>
 </div>
 </div>
-<style>
-.auth-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:99999;padding:16px}
-.auth-overlay.show{display:flex;animation:pageIn .25s ease}
-.auth-modal{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:24px 20px;max-width:400px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:sheetUp .32s cubic-bezier(.2,.8,.4,1)}
-.auth-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:var(--bg);border:1px solid var(--divider);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease}
-.auth-close:hover{border-color:var(--gold);color:var(--gold)}
-.auth-close svg{width:16px;height:16px;stroke-width:2.2}
-.auth-modal-head{text-align:center;margin-bottom:18px}
-.auth-modal-arabic{font-family:var(--font-arabic);font-size:1.4rem;color:var(--gold);margin-bottom:6px;line-height:1.2}
-.auth-modal-title{font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:4px}
-.auth-modal-sub{font-size:.82rem;color:var(--muted)}
-#auth-form{display:flex;flex-direction:column;gap:10px}
-#auth-form input{width:100%;padding:12px 14px;background:var(--bg);color:var(--text);border:1px solid var(--divider);border-radius:10px;font-family:var(--font-body);font-size:.9rem;box-sizing:border-box;transition:border-color .2s ease}
-#auth-form input:focus{outline:none;border-color:var(--gold)}
-.auth-error{color:#d9534f;font-size:.8rem;text-align:center;min-height:1.1em;line-height:1.3}
-.auth-submit{padding:12px;background:var(--gold);color:#0A0F0D;border:none;border-radius:10px;font-family:var(--font-body);font-size:.92rem;font-weight:700;cursor:pointer;margin-top:4px;transition:opacity .2s ease}
-.auth-submit:disabled{opacity:.6;cursor:wait}
-.auth-submit:active{opacity:.85}
-.auth-switch{text-align:center;margin-top:14px;font-size:.85rem;color:var(--muted)}
-.auth-switch-btn{background:transparent;border:none;color:var(--gold);font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0 4px;margin-left:4px}
-</style>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     AI ASSISTANT (AHKI & SHEIKH) - UI SHELL
-     ═══════════════════════════════════════════════════════════════ -->
+<!-- First Time Quran Version Choice Modal -->
+<div class="modal-overlay" id="quran-version-modal" onclick="if(event.target===this) closeQuranVersionModal()">
+<div class="modal-sheet" style="max-width: 400px; padding-bottom: 24px;">
+<div class="modal-head">
+<div class="modal-title">Choose Reader</div>
+<button class="modal-close" onclick="closeQuranVersionModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+</div>
+<div style="padding: 10px;">
+<p style="color: var(--muted); margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5;">Welcome! How would you like to read the Quran? You can change this anytime in Settings.</p>
+<button class="q-btn primary" style="width: 100%; margin-bottom: 12px; justify-content: center; font-size: 1rem; padding: 14px;" onclick="setQuranVersion('v1')">Classic Reader (V1)</button>
+<button class="q-btn primary" style="width: 100%; background: linear-gradient(135deg, #D4AF37, #F4D77B); color: #0A0F0D; justify-content: center; font-size: 1rem; padding: 14px; border: none;" onclick="setQuranVersion('v2')">Premium Reader (V2)</button>
+</div>
+</div>
+</div>
 
-<!-- The Floating Orb -->
+<!-- Download Manager Overlay -->
+<div class="jumuah-overlay" id="download-manager-overlay" aria-hidden="true" style="z-index: 10000;">
+<div class="jumuah-topbar">
+<button class="jumuah-back" id="downloads-back" aria-label="Back">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<div class="jumuah-title-wrap">
+<div class="jumuah-title-sub" style="font-size: 1.1rem; font-weight: 700;">Manage Downloads</div>
+</div>
+<div style="width: 38px;"></div>
+</div>
+<div class="jumuah-content" id="downloads-content" style="padding-top: 10px;">
+<!-- Injected by downloads.js -->
+</div>
+</div>
+
+<!-- AI ORB -->
 <div id="ai-orb" class="ai-orb">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3z"/>
   </svg>
 </div>
 
-<!-- The Full-Screen Chat Overlay -->
+<!-- AI CHAT OVERLAY -->
 <div id="ai-chat-overlay" class="ai-chat-overlay" data-ai="ahki">
-  
-  <!-- Header -->
   <div class="ai-header">
     <button class="ai-back" id="ai-close-btn" aria-label="Close">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    
-    <!-- The AI Switcher -->
     <div class="ai-switcher" id="ai-switcher">
       <button class="ai-switch-btn active" data-target="ahki">🤖 Ahki</button>
       <button class="ai-switch-btn" data-target="sheikh">🕌 Sheikh</button>
     </div>
-    
     <div class="ai-header-actions">
       <button class="ai-header-btn" id="ai-history-btn" aria-label="History" title="Chat History">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -426,15 +448,8 @@
       </button>
     </div>
   </div>
-
-  <!-- Chat Area -->
-  <div class="ai-chat-body" id="ai-chat-body">
-    <!-- Messages will be injected here by JS -->
-  </div>
-
-  <!-- Input Area -->
- <!-- Quick Starters -->
-<div class="ai-quick-chips" id="ai-quick-chips"></div>
+  <div class="ai-chat-body" id="ai-chat-body"></div>
+  <div class="ai-quick-chips" id="ai-quick-chips"></div>
   <div class="ai-input-area">
     <button class="ai-plus-btn" id="ai-plus-btn" aria-label="Attach">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -447,26 +462,21 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
-
-  <!-- History Drawer (hidden by default) -->
   <div class="ai-history-drawer" id="ai-history-drawer">
     <div class="ai-history-header">
       <h3>History</h3>
       <button id="ai-history-close" class="ai-back" style="border:none;">✕</button>
     </div>
-    <div class="ai-history-list" id="ai-history-list">
-      <!-- Injected by JS -->
-    </div>
+    <div class="ai-history-list" id="ai-history-list"></div>
   </div>
-
 </div>
 
-<!-- Link to the new AI CSS -->
-<link rel="stylesheet" href="ai.css">
-<script src="ai.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="app.js"></script>
+<script src="quran-v2.js"></script>
+<script src="downloads.js"></script>
+<script src="ai.js"></script>
 </body>
-  </html>
+                                                                                                                                                                                                                                                                                                             </html>
