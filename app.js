@@ -155,6 +155,10 @@ window.__isPoppingBack = false;
 
 function __getTopLayer(){
   const has = id => { const el = document.getElementById(id); return el && el.classList.contains('show'); };
+  if(has('download-manager-overlay')) return 'downloads';
+  if(has('quran-version-modal')) return 'quran-version-modal';
+  const v2View = document.getElementById('quran-v2-reader-view');
+  if(v2View && v2View.style.display === 'block') return 'quran-v2-reader';
   if(has('ai-history-drawer')) return 'ai-history';
   if(has('ai-chat-overlay')) return 'ai';
   if(has('note-modal')) return 'note';
@@ -173,6 +177,9 @@ function __getTopLayer(){
 
 function __performBack(){
   const layer = __getTopLayer();
+  if(layer === 'downloads'){ closeDownloadsManager(); return true; }
+  if(layer === 'quran-version-modal'){ closeQuranVersionModal(); return true; }
+  if(layer === 'quran-v2-reader'){ closeQuranV2(); return true; }
   if(layer === 'ai-history'){ document.getElementById('ai-history-close').click(); return true; }
   if(layer === 'ai'){ document.getElementById('ai-close-btn').click(); return true; }
   if(layer === 'note'){ closeNoteModal(); return true; }
