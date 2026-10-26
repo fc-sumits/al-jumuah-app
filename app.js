@@ -333,7 +333,7 @@ window.updateQuranVersionSetting = function() {
   const display = document.getElementById('quran-version-value');
   if(display) display.textContent = val === 'v1' ? 'Classic (V1)' : 'Premium (V2)';
 };
-updateQuranVersionSetting();
+window.updateQuranVersionSetting();
 async function updateDownloadsSize(){
   const el = document.getElementById('downloads-size');
   if(!el) return;
