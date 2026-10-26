@@ -380,3 +380,16 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-segmented { display: flex; background: var(--v2-bg); border-radius: 10px; padding: 4px; gap: 4px; }
 .v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
 .v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
+/* Reciter Picker Items */
+.v2-reciter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--v2-border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.v2-reciter-item:hover, .v2-reciter-item.active {
+  background: var(--v2-bg);
+}
