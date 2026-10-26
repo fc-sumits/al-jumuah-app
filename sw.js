@@ -1,8 +1,10 @@
-const CACHE_VERSION = 'aljumuah-v95';
+const CACHE_VERSION = 'aljumuah-v96';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const CONTENT_CACHE = CACHE_VERSION + '-content';
 const IMAGE_CACHE = CACHE_VERSION + '-images';
 const AUDIO_CACHE = 'quran-audio-v1';
+const V2_AUDIO_CACHE = 'quran-v2-audio';
+const WBW_AUDIO_CACHE = 'quran-wbw-audio';
 
 const PRECACHE_URLS = [
   './',
@@ -10,6 +12,12 @@ const PRECACHE_URLS = [
   './style.css',
   './app.js',
   './manifest.json',
+  './quran-v2.js',
+  './quran-v2.css',
+  './downloads.js',
+  './downloads.css',
+  './ai.js',
+  './ai.css',
   './content/taharah-salah.json',
   './content/salah.json',
   './content/jumuah.json',
@@ -97,7 +105,8 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  const keep = [SHELL_CACHE, CONTENT_CACHE, IMAGE_CACHE, AUDIO_CACHE];
+  // Keep all current caches, delete old versions
+  const keep = [SHELL_CACHE, CONTENT_CACHE, IMAGE_CACHE, AUDIO_CACHE, V2_AUDIO_CACHE, WBW_AUDIO_CACHE];
   event.waitUntil(
     caches.keys().then((names) => {
       return Promise.all(
@@ -117,10 +126,19 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  if (url.origin !== self.location.origin && url.origin !== 'https://everyayah.com') {
+  // Allow requests from self, everyayah, quranicaudio, and qurancdn
+  const allowedOrigins = [
+    self.location.origin,
+    'https://everyayah.com',
+    'https://download.quranicaudio.com',
+    'https://audio.qurancdn.com'
+  ];
+  
+  if (!allowedOrigins.includes(url.origin)) {
     return;
   }
 
+  // Content JSON - Network first, fallback to cache
   if (url.pathname.includes('/content/') && url.pathname.endsWith('.json')) {
     event.respondWith(
       caches.open(CONTENT_CACHE).then((cache) =>
@@ -136,6 +154,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Images - Cache first
   if (url.pathname.includes('/images/') || url.pathname.endsWith('.webp') || url.pathname.endsWith('.jpg') || url.pathname.endsWith('.png')) {
     event.respondWith(
       caches.open(IMAGE_CACHE).then((cache) =>
@@ -151,6 +170,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // V1 Audio (everyayah) - Cache only if previously downloaded
   if (url.hostname === 'everyayah.com') {
     event.respondWith(
       caches.open(AUDIO_CACHE).then((cache) =>
@@ -160,6 +180,27 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // V2 Audio (quranicaudio) - Cache only if previously downloaded
+  if (url.hostname === 'download.quranicaudio.com') {
+    event.respondWith(
+      caches.open(V2_AUDIO_CACHE).then((cache) =>
+        cache.match(req).then((cached) => cached || fetch(req))
+      )
+    );
+    return;
+  }
+
+  // Word-by-Word Audio (qurancdn) - Cache only if previously downloaded
+  if (url.hostname === 'audio.qurancdn.com' && url.pathname.includes('/wbw/')) {
+    event.respondWith(
+      caches.open(WBW_AUDIO_CACHE).then((cache) =>
+        cache.match(req).then((cached) => cached || fetch(req))
+      )
+    );
+    return;
+  }
+
+  // App Shell / Navigation - Network first, fallback to cache
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req).catch(() => caches.match('./index.html'))
@@ -167,6 +208,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Everything else (app shell assets) - Cache first, fallback to network
   event.respondWith(
     caches.open(SHELL_CACHE).then((cache) =>
       cache.match(req).then((cached) => cached || fetch(req).then((res) => {
