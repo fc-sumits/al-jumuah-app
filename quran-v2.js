@@ -71,12 +71,12 @@
     if(!container) return;
 
     // If we don't have the surah list yet, fetch it
-    if (!window.QURAN.surahList || window.QURAN.surahList.length === 0) {
-      container.innerHTML = '<div class="q-loading" style="color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading...</div>';
-      try {
-        const res = await fetch('https://api.alquran.cloud/v1/surah');
-        const data = await res.json();
-        window.QURAN.surahList = data.data;
+if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length === 0) {
+  container.innerHTML = '<div class="q-loading" style="color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading...</div>';
+  try {
+    const res = await fetch('https://api.alquran.cloud/v1/surah');
+    const data = await res.json();
+    QURAN.surahList = data.data;
       } catch(e) {
         container.innerHTML = '<div style="text-align:center;padding:40px;">Failed to load Surahs. Check connection.</div>';
         return;
