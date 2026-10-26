@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════
-// QURAN V2 ENGINE (Premium Reader)
+// QURAN V2 ENGINE (Premium Reader — Quran.com API + 16ms Sync)
 // ═══════════════════════════════════════════════════════════════
 
 (function() {
@@ -9,26 +9,17 @@
     currentSurah: null,
     currentAyah: 1,
     audio: null,
-    timings: [],
+    verseTimings: [],
     isPlaying: false,
     playTimeout: null,
     isDownloading: false,
+    rafId: null,
+    currentHighlightMode: 'word', // 'word' or 'ayah'
     
-    // Dynamic Resources
-    translations: [],
-    
-    // Hardcoded reciters to ensure Audio and Timings CDNs both work perfectly
-    reciters: [
-      { id: 'mishaari_raashid_al_3afaasee', name: 'Mishary Alafasy', style: 'Murattal' },
-      { id: 'abdurrahmaan_as-sudays', name: 'Abdurrahman As-Sudais', style: 'Murattal' },
-      { id: 'abdul_basit_murattal', name: 'Abdul Basit (Murattal)', style: 'Murattal' },
-      { id: 'maher_al_muaiqly', name: 'Maher Al Muaiqly', style: 'Murattal' },
-      { id: 'saood_ash-shuraym', name: 'Saud Al-Shuraim', style: 'Murattal' },
-      { id: 'mahmoud_khalil_al-husary', name: 'Mahmoud Al-Husary', style: 'Murattal' },
-      { id: 'hani_ar-rifai', name: 'Hani Ar-Rifai', style: 'Murattal' },
-      { id: 'ahmed_al-ajmi', name: 'Ahmad Al-Ajmy', style: 'Murattal' },
-      { id: 'abdulwadood_haneef', name: 'Abdul Wadood Haneef', style: 'Murattal' }
-    ],
+    // UI State
+    repeatMode: 'off', // 'off', 'ayah', 'surah'
+    playbackRate: 1,
+    showJumpArrow: false,
     
     settings: {
       theme: localStorage.getItem('v2-theme') || 'dark',
@@ -38,10 +29,11 @@
       arabicFont: localStorage.getItem('v2-arabic-font') || 'amiri',
       translationId: localStorage.getItem('v2-translation-id') || '20', // Default: Sahih International
       showTranslation: localStorage.getItem('v2-show-trans') !== 'false',
-      wordByWord: localStorage.getItem('v2-word-by-word') === 'true',
-      reciter: localStorage.getItem('v2-reciter') || 'mishaari_raashid_al_3afaasee',
+      wordByWordAudio: localStorage.getItem('v2-word-by-word') === 'true',
+      reciterId: localStorage.getItem('v2-reciter-id') || '7', // Default: Mishary Alafasy
       autoScroll: localStorage.getItem('v2-auto-scroll') !== 'false',
-      showPlayer: localStorage.getItem('v2-show-player') !== 'false'
+      showPlayer: localStorage.getItem('v2-show-player') !== 'false',
+      highlightMode: localStorage.getItem('v2-highlight-mode') || 'word'
     }
   };
 
@@ -52,19 +44,6 @@
     uthmani: "'KFGQPC Uthmanic HAFS', serif",
     indopak: "'IndoPak Naskh', serif"
   };
-
-  // --- INITIALIZATION ---
-  async function fetchDynamicResources() {
-    if (v2State.translations.length > 0) return;
-    try {
-      const transRes = await fetch('https://api.quran.com/api/v4/resources/translations');
-      const transData = await transRes.json();
-      v2State.translations = transData.translations;
-    } catch (e) {
-      console.warn("Could not load dynamic translations", e);
-      v2State.translations = [{ id: 20, name: 'Sahih International', language_name: 'English' }];
-    }
-  }
 
   // --- EXPOSE GLOBALS FOR APP.JS & INLINE ONCLICK ---
   window.openQuranV2 = function(surahNum, ayahNum) {
@@ -87,9 +66,7 @@
   window.showV2List = function() {
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     document.getElementById('quran-v2-list-view').style.display = 'block';
-    if (v2State.audio) { v2State.audio.pause(); }
-    if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
-    v2State.isPlaying = false;
+    pauseV2Audio();
   };
 
   window.closeQuranV2 = function() {
@@ -97,9 +74,7 @@
     document.getElementById('quran-v2-list-view').style.display = 'none';
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     document.getElementById('quran-list-view').style.display = 'block';
-    if (v2State.audio) { v2State.audio.pause(); }
-    if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
-    v2State.isPlaying = false;
+    pauseV2Audio();
   };
 
   // --- RENDER SURAH LIST ---
@@ -155,7 +130,7 @@
     container.innerHTML = html;
   }
 
-  // --- LOAD SURAH & RENDER READER ---
+  // --- LOAD SURAH & TEXT ---
   async function loadV2Surah(surahNum, jumpToAyah) {
     const listView = document.getElementById('quran-v2-list-view');
     const readerView = document.getElementById('quran-v2-reader-view');
@@ -165,26 +140,23 @@
     readerView.innerHTML = '<div class="q-loading" style="margin-top:50px;color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading Surah...</div>';
 
     try {
-      await fetchDynamicResources();
+      // 1. Fetch Text (with word-by-word data)
+      const textUrl = `https://api.quran.com/api/v4/verses/by_chapter/${surahNum}?words=true&word_fields=text_uthmani&translation_fields=text&translations=${v2State.settings.translationId}`;
+      const textRes = await fetch(textUrl);
+      const textData = await textRes.json();
       
-      const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih,en.transliteration`);
-      const data = await res.json();
-      
-      v2State.surahData = {
-        arabic: data.data[0],
-        english: data.data[1],
-        translit: data.data[2]
-      };
+      v2State.surahData = { verses: textData.verses };
       v2State.currentSurah = surahNum;
       v2State.currentAyah = jumpToAyah || 1;
 
-      v2State.timings = await fetchTimings(v2State.settings.reciter, surahNum);
+      // 2. Fetch Audio & Timings from Quran Foundation
+      await fetchAudioAndTimings(surahNum);
 
       renderV2Reader();
       setupAudioEngine();
 
       if (jumpToAyah) {
-        setTimeout(() => highlightV2Verse(jumpToAyah), 500);
+        setTimeout(() => scrollToVerse(jumpToAyah, 'auto'), 500);
       }
 
     } catch(e) {
@@ -193,11 +165,39 @@
     }
   }
 
+  async function fetchAudioAndTimings(surahNum) {
+    // Check offline cache first
+    const cacheKey = `v2-sync-${v2State.settings.reciterId}-${surahNum}`;
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        v2State.audioUrl = parsed.audioUrl;
+        v2State.verseTimings = parsed.timings;
+        return;
+      } catch(e) {}
+    }
+
+    const audioUrl = `https://api.quran.com/api/v4/chapter_recitations/${v2State.settings.reciterId}/${surahNum}?segments=true`;
+    const res = await fetch(audioUrl);
+    const data = await res.json();
+    
+    if (!data.audio_file) throw new Error("No audio found");
+    
+    v2State.audioUrl = data.audio_file.audio_url;
+    v2State.verseTimings = data.audio_file.verse_timings || [];
+    
+    // Cache for offline use
+    localStorage.setItem(cacheKey, JSON.stringify({
+      audioUrl: v2State.audioUrl,
+      timings: v2State.verseTimings
+    }));
+  }
+
   // --- RENDER READER UI ---
   function renderV2Reader() {
     const readerView = document.getElementById('quran-v2-reader-view');
-    const surah = v2State.surahData.arabic;
-    const paddedNum = String(surah.number).padStart(3, '0');
+    const paddedNum = String(v2State.currentSurah).padStart(3, '0');
     const heroImg = `images/surah-${paddedNum}-hero.webp`;
     
     const fontFam = FONTS[v2State.settings.arabicFont] || FONTS.amiri;
@@ -219,37 +219,36 @@
           </div>
         </div>
         <div class="v2-hero-info">
-          <div class="v2-hero-arabic">${surah.name}</div>
-          <div class="v2-hero-name">${surah.englishName}</div>
-          <div class="v2-hero-meta">
-            <span class="v2-hero-pill">${surah.revelationType}</span>
-            <span class="v2-hero-pill">${surah.numberOfAyahs} Verses</span>
-          </div>
+          <div class="v2-hero-arabic">${v2State.surahData.verses[0]?.text_uthmani ? 'القرآن الكريم' : ''}</div>
+          <div class="v2-hero-name">Surah ${v2State.currentSurah}</div>
         </div>
       </div>
       <div class="v2-verses-container" id="v2-verses-container">
     `;
 
-    surah.ayahs.forEach((ayah, i) => {
-      const en = v2State.surahData.english.ayahs[i];
+    v2State.surahData.verses.forEach(verse => {
+      let arabicHtml = '';
       
-      let arabicHtml = ayah.text;
-      if (v2State.settings.wordByWord) {
-        const words = ayah.text.split(' ');
-        arabicHtml = words.map((w, index) => {
-          const wordAudioUrl = `${surah.number.toString().padStart(3, '0')}_${ayah.numberInSurah.toString().padStart(3, '0')}_${(index+1).toString().padStart(3, '0')}`;
-          return `<span class="v2-word" data-audio="${wordAudioUrl}">${w}</span>`;
+      if (verse.words) {
+        // Build word-by-word spans
+        arabicHtml = verse.words.map((w, idx) => {
+          if (w.char_type_name === 'end') return ''; // Skip end marker
+          const wordId = `word-${verse.verse_key.replace(':', '-')}-${w.position}`;
+          const audioId = `${v2State.currentSurah.toString().padStart(3, '0')}_${verse.verse_number.toString().padStart(3, '0')}_${w.position.toString().padStart(3, '0')}`;
+          return `<span class="v2-word" id="${wordId}" data-audio="${audioId}">${w.text_uthmani}</span>`;
         }).join(' ');
       }
 
+      const translation = verse.translations && verse.translations[0] ? verse.translations[0].text : '';
+
       html += `
-        <div class="v2-verse-card" id="v2-verse-${ayah.numberInSurah}" data-ayah="${ayah.numberInSurah}">
-          <div class="v2-verse-num">${ayah.numberInSurah}</div>
+        <div class="v2-verse-card" id="v2-verse-${verse.verse_number}" data-ayah="${verse.verse_number}" data-key="${verse.verse_key}">
+          <div class="v2-verse-num">${verse.verse_number}</div>
           <div class="v2-arabic-text" style="font-size:${v2State.settings.arabicSize}px; line-height:${lineHeight}; font-family:${fontFam}">${arabicHtml}</div>
-          ${v2State.settings.showTranslation ? `<div class="v2-translation-text" style="font-size:${v2State.settings.transSize}px">${en.text}</div>` : ''}
+          ${v2State.settings.showTranslation ? `<div class="v2-translation-text" style="font-size:${v2State.settings.transSize}px">${translation}</div>` : ''}
           <div class="v2-verse-actions">
-             <button class="v2-action-btn" onclick="window.playV2Ayah(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
-             <button class="v2-action-btn" onclick="window.openTafsir(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
+             <button class="v2-action-btn" onclick="window.playV2Ayah(${verse.verse_number})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
+             <button class="v2-action-btn" onclick="window.openTafsir(${v2State.currentSurah}, ${verse.verse_number})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
           </div>
         </div>
       `;
@@ -257,25 +256,37 @@
 
     html += `</div>`;
 
-    const currentReciter = v2State.reciters.find(r => r.id === v2State.settings.reciter) || v2State.reciters[0] || {name: 'Reciter'};
-    const currentTrans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId.toString()) || {name: 'Sahih International', language_name: 'English'};
+    // Floating Jump Arrow
+    html += `
+      <button id="v2-jump-arrow" class="v2-jump-arrow" onclick="window.jumpToCurrentVerse()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    `;
 
+    // The Player
     html += `
       <div class="v2-player ${v2State.settings.showPlayer ? '' : 'hidden'}" id="v2-player">
         <div class="v2-player-top">
           <div class="v2-reciter-name" onclick="window.openReciterPicker()">
-            <span class="v2-reciter-dot"></span> ${currentReciter.name}
+            <span class="v2-reciter-dot"></span> <span id="v2-player-reciter">Reciter</span>
           </div>
-          <div style="font-size:0.75rem; color:var(--v2-muted)">Surah ${surah.number}</div>
+          <div class="v2-player-tools">
+            <button class="v2-mini-btn" id="v2-speed-btn" onclick="window.cycleV2Speed()">1.0x</button>
+            <button class="v2-mini-btn" id="v2-repeat-btn" onclick="window.cycleV2Repeat()">🔁 Off</button>
+          </div>
         </div>
-        <div class="v2-player-progress">
-          <div class="v2-player-fill" id="v2-player-fill"></div>
+        <div class="v2-player-scrub">
+          <span id="v2-time-current">0:00</span>
+          <input type="range" id="v2-seek-bar" min="0" max="100" value="0" step="0.1">
+          <span id="v2-time-total">0:00</span>
         </div>
         <div class="v2-player-controls">
           <button class="v2-icon-btn" onclick="window.skipV2Ayah(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
+          <button class="v2-icon-btn" onclick="window.seekV2Audio(-5000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/><text x="12" y="16" font-size="8" fill="currentColor" stroke="none" font-weight="bold">5</text></svg></button>
           <button class="v2-play-btn" id="v2-play-btn" onclick="window.toggleV2Play()">
             <svg id="v2-play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
           </button>
+          <button class="v2-icon-btn" onclick="window.seekV2Audio(5000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"/><text x="12" y="16" font-size="8" fill="currentColor" stroke="none" font-weight="bold">5</text></svg></button>
           <button class="v2-icon-btn" onclick="window.skipV2Ayah(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
         </div>
       </div>
@@ -289,31 +300,17 @@
           </div>
           
           <div class="v2-setting-group">
-            <span class="v2-setting-label">Display</span>
+            <span class="v2-setting-label">Highlighting</span>
             <div class="v2-setting-row">
-              <span>Theme</span>
+              <span>Highlight Mode</span>
               <div class="v2-segmented">
-                <button class="v2-seg-btn ${v2State.settings.theme === 'dark' ? 'active' : ''}" onclick="window.setV2Theme('dark')">Dark</button>
-                <button class="v2-seg-btn ${v2State.settings.theme === 'light' ? 'active' : ''}" onclick="window.setV2Theme('light')">Light</button>
+                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'word' ? 'active' : ''}" onclick="window.setV2HighlightMode('word')">Word</button>
+                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'ayah' ? 'active' : ''}" onclick="window.setV2HighlightMode('ayah')">Ayah</button>
               </div>
-            </div>
-            <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
-              <span>Arabic Font</span>
-              <select id="v2-font-select" style="width:100%; padding:8px; border-radius:8px; background:var(--v2-bg); color:var(--v2-text); border:1px solid var(--v2-border);" onchange="window.changeV2Font(this.value)">
-                <option value="amiri" ${v2State.settings.arabicFont === 'amiri' ? 'selected' : ''}>Amiri</option>
-                <option value="scheherazade" ${v2State.settings.arabicFont === 'scheherazade' ? 'selected' : ''}>Scheherazade New</option>
-                <option value="naskh" ${v2State.settings.arabicFont === 'naskh' ? 'selected' : ''}>Noto Naskh Arabic</option>
-                <option value="uthmani" ${v2State.settings.arabicFont === 'uthmani' ? 'selected' : ''}>KFGQPC Uthmani HAFS</option>
-                <option value="indopak" ${v2State.settings.arabicFont === 'indopak' ? 'selected' : ''}>IndoPak Naskh</option>
-              </select>
             </div>
             <div class="v2-setting-row">
               <span>Word-by-Word Audio</span>
-              <div class="v2-toggle ${v2State.settings.wordByWord ? 'on' : ''}" onclick="window.toggleV2Setting('wordByWord')"></div>
-            </div>
-            <div class="v2-setting-row">
-              <span>Translation</span>
-              <div class="v2-toggle ${v2State.settings.showTranslation ? 'on' : ''}" onclick="window.toggleV2Setting('showTranslation')"></div>
+              <div class="v2-toggle ${v2State.settings.wordByWordAudio ? 'on' : ''}" onclick="window.toggleV2Setting('wordByWordAudio')"></div>
             </div>
           </div>
 
@@ -327,145 +324,189 @@
               <span id="v2-lbl-trans">Translation Size (${v2State.settings.transSize}px)</span>
               <input type="range" class="v2-slider" min="12" max="24" value="${v2State.settings.transSize}" oninput="window.changeV2FontSize('transSize', this.value)">
             </div>
-            <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
-              <span id="v2-lbl-line">Line Spacing (${v2State.settings.lineSpacing})</span>
-              <input type="range" class="v2-slider" min="1.4" max="2.4" step="0.1" value="${v2State.settings.lineSpacing}" oninput="window.changeV2FontSize('lineSpacing', this.value)">
-            </div>
           </div>
 
           <div class="v2-setting-group">
             <span class="v2-setting-label">Reciter</span>
             <div class="v2-setting-row" onclick="window.openReciterPicker()" style="cursor:pointer">
-              <span>${currentReciter.name} (${currentReciter.style})</span>
+              <span id="v2-settings-reciter-name">Loading...</span>
               <span style="color:var(--v2-copper)">Change ›</span>
             </div>
-            <span class="v2-setting-label" style="margin-top:12px">Translation</span>
-            <div class="v2-setting-row" onclick="window.openTranslationPicker()" style="cursor:pointer">
-              <span>${currentTrans.name} (${currentTrans.language_name})</span>
-              <span style="color:var(--v2-copper)">Change ›</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Reciter Picker Bottom Sheet -->
-      <div class="v2-settings-overlay" id="v2-reciter-overlay" onclick="if(event.target===this) window.closeReciterPicker()">
-        <div class="v2-settings-sheet">
-          <div class="v2-settings-header">
-            <div class="v2-settings-title">Choose Reciter</div>
-            <button class="v2-settings-close" onclick="window.closeReciterPicker()">✕</button>
-          </div>
-          <div style="max-height: 60vh; overflow-y: auto;">
-            ${v2State.reciters.map(r => `
-              <div class="v2-reciter-item ${v2State.settings.reciter === r.id ? 'active' : ''}" onclick="window.selectReciter('${r.id}')">
-                <div style="display:flex; align-items:center; gap:12px;">
-                  <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">🎙</div>
-                  <div>
-                    <div style="font-weight:700; font-size:0.95rem;">${r.name}</div>
-                    <div style="font-size:0.75rem; color:var(--v2-muted)">${r.style}</div>
-                  </div>
-                </div>
-                ${v2State.settings.reciter === r.id ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-
-      <!-- Translation Picker Bottom Sheet -->
-      <div class="v2-settings-overlay" id="v2-trans-overlay" onclick="if(event.target===this) window.closeTranslationPicker()">
-        <div class="v2-settings-sheet">
-          <div class="v2-settings-header">
-            <div class="v2-settings-title">Choose Translation</div>
-            <button class="v2-settings-close" onclick="window.closeTranslationPicker()">✕</button>
-          </div>
-          <div style="max-height: 60vh; overflow-y: auto;">
-            ${v2State.translations.map(t => `
-              <div class="v2-reciter-item ${v2State.settings.translationId.toString() === t.id.toString() ? 'active' : ''}" onclick="window.selectTranslation('${t.id}')">
-                <div style="display:flex; align-items:center; gap:12px;">
-                  <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">📖</div>
-                  <div>
-                    <div style="font-weight:700; font-size:0.95rem;">${t.name}</div>
-                    <div style="font-size:0.75rem; color:var(--v2-muted)">${t.language_name}</div>
-                  </div>
-                </div>
-                ${v2State.settings.translationId.toString() === t.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
-              </div>
-            `).join('')}
           </div>
         </div>
       </div>
     `;
 
     readerView.innerHTML = html;
+    
+    // Update reciter name text safely
+    setTimeout(async () => {
+      const rec = await getCurrentReciter();
+      document.getElementById('v2-player-reciter').textContent = rec.name;
+      document.getElementById('v2-settings-reciter-name').textContent = rec.name;
+      updatePlayerUI();
+    }, 100);
+
     attachV2Listeners();
-    updateV2PlayIcon(v2State.isPlaying ? 'playing' : 'paused');
   }
 
-  // --- AUDIO ENGINE ---
-  async function fetchTimings(reciter, surahNum) {
-    const paddedSurah = String(surahNum).padStart(3, '0');
-    try {
-      const url = `https://cdn.jsdelivr.net/gh/spa5k/quran_timings_api@main/data/${reciter}/${paddedSurah}.json`;
-      const res = await fetch(url);
-      if(!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      
-      // The API returns an array of objects: [{ ayah: 1, start_time: 0, end_time: 4000 }]
-      if (Array.isArray(data) && data.length > 0) {
-        console.log(`✅ Timings loaded for ${reciter} - Surah ${surahNum}`);
-        return data;
-      }
-      throw new Error('Invalid or empty timings data');
-    } catch(e) {
-      console.warn(`⚠️ Timings failed for ${reciter} - Surah ${surahNum}. Using 5s fallback.`, e);
-      return v2State.surahData.arabic.ayahs.map((a, i) => ({
-        verse: a.numberInSurah,
-        ayah: a.numberInSurah,
-        start_time: i * 5000,
-        end_time: (i + 1) * 5000
-      }));
-    }
-  }
-
+  // --- AUDIO ENGINE & 16MS SYNC ---
   function setupAudioEngine() {
     if (v2State.audio) { v2State.audio.pause(); v2State.audio = null; }
     if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
     v2State.isPlaying = false;
-    
-    const surahNum = v2State.surahData.arabic.number;
-    const reciter = v2State.settings.reciter;
-    const audioUrl = `https://download.quranicaudio.com/quran/${reciter}/${String(surahNum).padStart(3, '0')}.mp3`;
+    stopSyncLoop();
 
-    v2State.audio = new Audio(audioUrl);
+    v2State.audio = new Audio(v2State.audioUrl);
+    v2State.audio.crossOrigin = "anonymous";
+    v2State.audio.playbackRate = v2State.playbackRate;
     
+    v2State.audio.addEventListener('loadedmetadata', () => {
+      updatePlayerUI();
+    });
+
     v2State.audio.addEventListener('timeupdate', () => {
-      if(!v2State.audio) return;
-      const currentMs = v2State.audio.currentTime * 1000;
-      
+      // Fallback for seek bar if RAF is somehow blocked
       const pct = (v2State.audio.currentTime / v2State.audio.duration) * 100;
-      const fill = document.getElementById('v2-player-fill');
-      if(fill) fill.style.width = `${pct}%`;
+      const seekBar = document.getElementById('v2-seek-bar');
+      if (seekBar && document.activeElement !== seekBar) seekBar.value = pct;
+      updateTimeDisplay();
+    });
 
-      const activeTiming = v2State.timings.find(t => currentMs >= t.start_time && currentMs <= t.end_time);
-      
-      if (activeTiming) {
-        const ayahNum = activeTiming.ayah || activeTiming.verse;
-        if (ayahNum !== v2State.currentAyah) {
-          v2State.currentAyah = ayahNum;
-          highlightV2Verse(ayahNum);
-        }
-      }
+    v2State.audio.addEventListener('play', () => {
+      v2State.isPlaying = true;
+      updateV2PlayIcon('playing');
+      startSyncLoop();
+    });
+
+    v2State.audio.addEventListener('pause', () => {
+      v2State.isPlaying = false;
+      updateV2PlayIcon('paused');
+      stopSyncLoop();
     });
 
     v2State.audio.addEventListener('ended', () => {
       v2State.isPlaying = false;
       updateV2PlayIcon('paused');
+      stopSyncLoop();
+      handleRepeat();
     });
+
+    v2State.audio.addEventListener('error', () => {
+      showToast('Audio failed to load. Check connection.');
+      updateV2PlayIcon('paused');
+    });
+    
+    // Seek bar interaction
+    const seekBar = document.getElementById('v2-seek-bar');
+    if(seekBar) {
+      seekBar.addEventListener('input', (e) => {
+        if (v2State.audio && v2State.audio.duration) {
+          v2State.audio.currentTime = (e.target.value / 100) * v2State.audio.duration;
+        }
+      });
+    }
   }
 
-  function attemptV2Play(audio) {
-    if(!audio) return;
+  function startSyncLoop() {
+    stopSyncLoop();
+    function loop() {
+      if (!v2State.audio || !v2State.isPlaying) return;
+      const currentMs = Math.floor(v2State.audio.currentTime * 1000);
+      
+      const activeTiming = v2State.verseTimings.find(t => 
+        currentMs >= t.timestamp_from && currentMs <= t.timestamp_to
+      );
+
+      if (activeTiming) {
+        const ayahNum = parseInt(activeTiming.verse_key.split(':')[1]);
+        if (ayahNum !== v2State.currentAyah) {
+          v2State.currentAyah = ayahNum;
+          highlightVerseCard(ayahNum);
+          updateJumpArrowVisibility();
+        }
+
+        // Word-level highlighting
+        if (v2State.settings.highlightMode === 'word' && activeTiming.segments) {
+          const activeSegment = activeTiming.segments.find(seg => 
+            currentMs >= seg[1] && currentMs <= seg[2]
+          );
+          if (activeSegment) {
+            highlightWord(activeTiming.verse_key, activeSegment[0]);
+          }
+        }
+      }
+      v2State.rafId = requestAnimationFrame(loop);
+    }
+    v2State.rafId = requestAnimationFrame(loop);
+  }
+
+  function stopSyncLoop() {
+    if (v2State.rafId) {
+      cancelAnimationFrame(v2State.rafId);
+      v2State.rafId = null;
+    }
+  }
+
+  function highlightVerseCard(ayahNum) {
+    document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('active'));
+    const el = document.getElementById(`v2-verse-${ayahNum}`);
+    if(el) {
+      el.classList.add('active');
+      localStorage.setItem(`v2-last-ayah-${v2State.currentSurah}`, ayahNum);
+      
+      // Auto-scroll logic
+      if(v2State.settings.autoScroll) {
+        const rect = el.getBoundingClientRect();
+        // Only auto-scroll if the verse is out of view
+        if (rect.top < 60 || rect.bottom > window.innerHeight - 120) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+  }
+
+  function highlightWord(verseKey, wordIndex) {
+    document.querySelectorAll('.v2-word').forEach(w => w.classList.remove('active-word'));
+    const wordId = `word-${verseKey.replace(':', '-')}-${wordIndex}`;
+    const el = document.getElementById(wordId);
+    if(el) el.classList.add('active-word');
+  }
+
+  function updateJumpArrowVisibility() {
+    const el = document.getElementById(`v2-verse-${v2State.currentAyah}`);
+    const arrow = document.getElementById('v2-jump-arrow');
+    if (!el || !arrow) return;
+
+    const rect = el.getBoundingClientRect();
+    // If verse is off-screen (above or below), show arrow
+    if (rect.top < 100 || rect.bottom > window.innerHeight - 150) {
+      arrow.classList.add('show');
+    } else {
+      arrow.classList.remove('show');
+    }
+  }
+
+  window.jumpToCurrentVerse = function() {
+    const el = document.getElementById(`v2-verse-${v2State.currentAyah}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('v2-jump-arrow').classList.remove('show');
+    }
+  };
+
+  // --- PLAYER CONTROLS ---
+  window.toggleV2Play = function() {
+    if(!v2State.audio) return;
+    if(v2State.isPlaying) {
+      v2State.audio.pause();
+    } else {
+      attemptV2Play();
+    }
+  };
+
+  function attemptV2Play() {
+    if(!v2State.audio) return;
     
     updateV2PlayIcon('loading');
     if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
@@ -477,47 +518,46 @@
       }
     }, 15000);
 
-    audio.play().then(() => {
+    v2State.audio.play().then(() => {
       if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
-      v2State.isPlaying = true;
-      updateV2PlayIcon('playing');
     }).catch(e => {
       if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
       if (e.name === 'AbortError') return;
-      
-      v2State.isPlaying = false;
       updateV2PlayIcon('paused');
-      if(typeof showToast === 'function') showToast('Audio unavailable. Check connection.');
+      if(typeof showToast === 'function') showToast('Tap again to play.');
     });
   }
 
-  function playV2Ayah(ayahNum) {
-    if(!v2State.audio) return;
-    const timing = v2State.timings.find(t => t.verse === ayahNum || t.ayah === ayahNum);
-    if (timing) {
-      v2State.audio.currentTime = timing.start_time / 1000;
-      attemptV2Play(v2State.audio);
-    }
-  }
-
-  function toggleV2Play() {
-    if(!v2State.audio) return;
-    if(v2State.isPlaying) {
+  function pauseV2Audio() {
+    if (v2State.audio) {
       v2State.audio.pause();
       v2State.isPlaying = false;
-      if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
       updateV2PlayIcon('paused');
-    } else {
-      attemptV2Play(v2State.audio);
+      stopSyncLoop();
     }
   }
 
-  function skipV2Ayah(dir) {
-    const nextAyah = v2State.currentAyah + dir;
-    if(nextAyah >= 1 && nextAyah <= v2State.surahData.arabic.numberOfAyahs) {
-      playV2Ayah(nextAyah);
+  window.playV2Ayah = function(ayahNum) {
+    if(!v2State.audio || !v2State.verseTimings) return;
+    const timing = v2State.verseTimings.find(t => t.verse_key === `${v2State.currentSurah}:${ayahNum}`);
+    if (timing) {
+      v2State.audio.currentTime = timing.timestamp_from / 1000;
+      attemptV2Play();
     }
-  }
+  };
+
+  window.skipV2Ayah = function(dir) {
+    const nextAyah = v2State.currentAyah + dir;
+    if(nextAyah >= 1 && nextAyah <= v2State.surahData.verses.length) {
+      window.playV2Ayah(nextAyah);
+    }
+  };
+
+  window.seekV2Audio = function(ms) {
+    if(v2State.audio) {
+      v2State.audio.currentTime += (ms / 1000);
+    }
+  };
 
   function updateV2PlayIcon(state) {
     const btn = document.getElementById('v2-play-btn');
@@ -532,18 +572,57 @@
     }
   }
 
-  function highlightV2Verse(ayahNum) {
-    document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('active'));
-    const el = document.getElementById(`v2-verse-${ayahNum}`);
-    if(el) {
-      el.classList.add('active');
-      localStorage.setItem(`v2-last-ayah-${v2State.currentSurah}`, ayahNum);
-      if(v2State.settings.autoScroll) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+  function updatePlayerUI() {
+    updateTimeDisplay();
+    if (document.getElementById('v2-speed-btn')) document.getElementById('v2-speed-btn').textContent = v2State.playbackRate.toFixed(1) + 'x';
+    if (document.getElementById('v2-repeat-btn')) {
+      const labels = { off: '🔁 Off', ayah: '🔂 Ayah', surah: '🔁 Surah' };
+      document.getElementById('v2-repeat-btn').textContent = labels[v2State.repeatMode];
     }
   }
 
+  function updateTimeDisplay() {
+    if (!v2State.audio) return;
+    const cur = document.getElementById('v2-time-current');
+    const tot = document.getElementById('v2-time-total');
+    if (cur) cur.textContent = formatTime(v2State.audio.currentTime);
+    if (tot) tot.textContent = formatTime(v2State.audio.duration || 0);
+  }
+
+  function formatTime(s) {
+    if (!isFinite(s)) return '0:00';
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${String(sec).padStart(2, '0')}`;
+  }
+
+  window.cycleV2Speed = function() {
+    const speeds = [1, 1.25, 1.5, 2];
+    let idx = speeds.indexOf(v2State.playbackRate);
+    idx = (idx + 1) % speeds.length;
+    v2State.playbackRate = speeds[idx];
+    if (v2State.audio) v2State.audio.playbackRate = v2State.playbackRate;
+    updatePlayerUI();
+  };
+
+  window.cycleV2Repeat = function() {
+    const modes = ['off', 'ayah', 'surah'];
+    let idx = modes.indexOf(v2State.repeatMode);
+    idx = (idx + 1) % modes.length;
+    v2State.repeatMode = modes[idx];
+    updatePlayerUI();
+  };
+
+  function handleRepeat() {
+    if (v2State.repeatMode === 'ayah') {
+      window.playV2Ayah(v2State.currentAyah);
+    } else if (v2State.repeatMode === 'surah') {
+      v2State.audio.currentTime = 0;
+      attemptV2Play();
+    }
+  }
+
+  // --- WORD BY WORD LISTENERS ---
   function attachV2Listeners() {
     document.querySelectorAll('.v2-verse-card').forEach(card => {
       card.addEventListener('click', function(e) {
@@ -556,72 +635,20 @@
     document.querySelectorAll('.v2-word').forEach(word => {
       word.addEventListener('click', function(e) {
         e.stopPropagation();
+        if (!v2State.settings.wordByWordAudio) return;
         const audioId = this.getAttribute('data-audio');
         if(audioId) {
           const wordAudio = new Audio(`https://audio.qurancdn.com/wbw/${audioId}.mp3`);
           wordAudio.play().catch(err => console.log('Word audio error', err));
-          this.classList.add('playing');
-          setTimeout(() => this.classList.remove('playing'), 800);
+          this.classList.add('playing-word');
+          setTimeout(() => this.classList.remove('playing-word'), 800);
         }
       });
     });
+
+    // Attach scroll listener for jump arrow
+    window.addEventListener('scroll', updateJumpArrowVisibility, { passive: true });
   }
-
-  // --- DOWNLOAD MANAGER (AUDIO + WBW) ---
-  window.downloadV2Surah = async function() {
-    if (v2State.isDownloading) return;
-    if (!v2State.surahData) return;
-    
-    const surahNum = v2State.surahData.arabic.number;
-    const reciter = v2State.settings.reciter;
-    const audioUrl = `https://download.quranicaudio.com/quran/${reciter}/${String(surahNum).padStart(3, '0')}.mp3`;
-    
-    v2State.isDownloading = true;
-    const btn = document.getElementById('v2-download-btn');
-    if (btn) btn.innerHTML = '<div class="v2-spinner" style="width:18px; height:18px; border-width:2px; border-top-color:#fff;"></div>';
-    
-    try {
-      // 1. Download Main Audio
-      const cacheV2 = await caches.open('quran-v2-audio');
-      const resAudio = await fetch(audioUrl);
-      if (resAudio.ok) await cacheV2.put(audioUrl, resAudio.clone());
-      
-      // 2. Download WbW
-      const cacheWbw = await caches.open('quran-wbw-audio');
-      const ayahs = v2State.surahData.arabic.ayahs;
-      
-      for (const ayah of ayahs) {
-        const words = ayah.text.split(' ');
-        for (let i = 1; i <= words.length; i++) {
-          const wordId = `${surahNum.toString().padStart(3, '0')}_${ayah.numberInSurah.toString().padStart(3, '0')}_${i.toString().padStart(3, '0')}`;
-          const wUrl = `https://audio.qurancdn.com/wbw/${wordId}.mp3`;
-          
-          const exists = await cacheWbw.match(wUrl);
-          if (!exists) {
-            try {
-              const wRes = await fetch(wUrl);
-              if (wRes.ok) await cacheWbw.put(wUrl, wRes.clone());
-            } catch(e) { /* ignore single word fail */ }
-          }
-        }
-      }
-      
-      if (typeof showToast === 'function') showToast('Surah and WbW saved for offline.');
-      if (btn) btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
-      
-    } catch (e) {
-      console.error(e);
-      if (typeof showToast === 'function') showToast('Download failed.');
-      if (btn) btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
-    } finally {
-      v2State.isDownloading = false;
-    }
-  };
-
-  // --- EXPOSE FUNCTIONALITY ---
-  window.toggleV2Play = toggleV2Play;
-  window.playV2Ayah = playV2Ayah;
-  window.skipV2Ayah = skipV2Ayah;
 
   // --- SETTINGS LOGIC ---
   window.toggleV2Settings = function() {
@@ -643,41 +670,38 @@
     }
   };
 
-  window.changeV2Font = function(fontKey) {
-    v2State.settings.arabicFont = fontKey;
-    localStorage.setItem('v2-arabic-font', fontKey);
-    const fontFam = FONTS[fontKey] || FONTS.amiri;
-    document.querySelectorAll('.v2-arabic-text').forEach(el => {
-      el.style.fontFamily = fontFam;
+  window.setV2HighlightMode = function(mode) {
+    v2State.settings.highlightMode = mode;
+    localStorage.setItem('v2-highlight-mode', mode);
+    document.querySelectorAll('.v2-word').forEach(w => w.classList.remove('active-word'));
+    document.querySelectorAll('.v2-seg-btn').forEach(b => {
+      if (b.textContent === 'Word' || b.textContent === 'Ayah') {
+        b.classList.toggle('active', b.textContent.toLowerCase() === mode);
+      }
     });
   };
 
   window.toggleV2Setting = function(key) {
     v2State.settings[key] = !v2State.settings[key];
-    localStorage.setItem(`v2-${key === 'wordByWord' ? 'word-by-word' : key === 'showTranslation' ? 'show-trans' : key}`, v2State.settings[key]);
+    localStorage.setItem(`v2-${key === 'wordByWordAudio' ? 'word-by-word' : key === 'showTranslation' ? 'show-trans' : key}`, v2State.settings[key]);
     
     if(key === 'showTranslation') {
       document.querySelectorAll('.v2-translation-text').forEach(el => {
         el.style.display = v2State.settings.showTranslation ? '' : 'none';
       });
     }
-    if(key === 'wordByWord') {
-      renderV2Reader(); 
-      if (v2State.audio) setupAudioEngine(); 
-    }
     
     const overlay = document.getElementById('v2-settings-overlay');
     if (overlay) {
       overlay.querySelectorAll('.v2-toggle').forEach((t, i) => {
-        if (i === 0 && key === 'wordByWord') t.classList.toggle('on', v2State.settings.wordByWord);
-        if (i === 1 && key === 'showTranslation') t.classList.toggle('on', v2State.settings.showTranslation);
+        if (i === 0 && key === 'wordByWordAudio') t.classList.toggle('on', v2State.settings.wordByWordAudio);
       });
     }
   };
 
   window.changeV2FontSize = function(key, val) {
     v2State.settings[key] = parseFloat(val);
-    const storageKey = key === 'arabicSize' ? 'arabic-size' : key === 'transSize' ? 'trans-size' : 'line-spacing';
+    const storageKey = key === 'arabicSize' ? 'arabic-size' : 'trans-size';
     localStorage.setItem(`v2-${storageKey}`, val);
     
     if (key === 'arabicSize') {
@@ -690,48 +714,129 @@
       const lbl = document.getElementById('v2-lbl-trans');
       if(lbl) lbl.textContent = `Translation Size (${val}px)`;
     }
-    if (key === 'lineSpacing') {
-      document.querySelectorAll('.v2-arabic-text').forEach(el => el.style.lineHeight = val);
-      const lbl = document.getElementById('v2-lbl-line');
-      if(lbl) lbl.textContent = `Line Spacing (${val})`;
+  };
+
+  // --- RECITER PICKER (Dynamic from Quran.com) ---
+  window.openReciterPicker = async function() {
+    let overlay = document.getElementById('v2-reciter-overlay');
+    if(!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'v2-reciter-overlay';
+      overlay.className = 'v2-settings-overlay';
+      overlay.onclick = (e) => { if(e.target === overlay) window.closeReciterPicker(); };
+      document.body.appendChild(overlay);
+    }
+    overlay.classList.add('show');
+    overlay.innerHTML = `
+      <div class="v2-settings-sheet">
+        <div class="v2-settings-header">
+          <div class="v2-settings-title">Choose Reciter</div>
+          <button class="v2-settings-close" onclick="window.closeReciterPicker()">✕</button>
+        </div>
+        <div style="max-height: 60vh; overflow-y: auto;">
+          <div class="q-loading"><div class="q-loading-spinner"></div>Loading reciters...</div>
+        </div>
+      </div>`;
+    
+    try {
+      const res = await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en');
+      const data = await res.json();
+      const list = data.reciters.map(r => `
+        <div class="v2-reciter-item ${v2State.settings.reciterId === r.id.toString() ? 'active' : ''}" onclick="window.selectReciter('${r.id}')">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">🎙</div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem;">${r.name}</div>
+              <div style="font-size:0.75rem; color:var(--v2-muted)">${r.style || 'Murattal'}</div>
+            </div>
+          </div>
+          ${v2State.settings.reciterId === r.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
+        </div>
+      `).join('');
+      overlay.querySelector('div[style*="max-height"]').innerHTML = list;
+    } catch(e) {
+      overlay.querySelector('div[style*="max-height"]').innerHTML = '<div style="padding:20px;text-align:center;">Failed to load reciters.</div>';
     }
   };
 
-  // --- RECITER PICKER ---
-  window.openReciterPicker = function() {
-    const overlay = document.getElementById('v2-reciter-overlay');
-    if(overlay) overlay.classList.add('show');
-  };
   window.closeReciterPicker = function() {
     const overlay = document.getElementById('v2-reciter-overlay');
     if(overlay) overlay.classList.remove('show');
   };
-  window.selectReciter = function(id) {
-    v2State.settings.reciter = id;
-    localStorage.setItem('v2-reciter', id);
+
+  window.selectReciter = async function(id) {
+    v2State.settings.reciterId = id;
+    localStorage.setItem('v2-reciter-id', id);
     window.closeReciterPicker();
     window.toggleV2Settings();
-    renderV2Reader();
-    loadV2Surah(v2State.currentSurah, v2State.currentAyah); // Reload to get new timings
     if(typeof showToast === 'function') showToast('Reciter updated');
+    loadV2Surah(v2State.currentSurah, v2State.currentAyah);
   };
 
-  // --- TRANSLATION PICKER ---
-  window.openTranslationPicker = function() {
-    const overlay = document.getElementById('v2-trans-overlay');
-    if(overlay) overlay.classList.add('show');
+  async function getCurrentReciter() {
+    // Default fallback
+    let name = 'Mishary Alafasy';
+    if (v2State.settings.reciterId === '7') return {name};
+    try {
+      const res = await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en');
+      const data = await res.json();
+      const rec = data.reciters.find(r => r.id.toString() === v2State.settings.reciterId);
+      return rec ? {name: rec.name} : {name};
+    } catch(e) { return {name}; }
+  }
+
+  // --- OFFLINE DOWNLOADER ---
+  window.downloadV2Surah = async function() {
+    if (v2State.isDownloading) return;
+    v2State.isDownloading = true;
+    const btn = document.getElementById('v2-download-btn');
+    if (btn) btn.innerHTML = '<div class="v2-spinner" style="width:18px; height:18px; border-width:2px; border-top-color:#fff;"></div>';
+    
+    try {
+      const cacheV2 = await caches.open('quran-v2-audio');
+      const resAudio = await fetch(v2State.audioUrl);
+      if (resAudio.ok) await cacheV2.put(v2State.audioUrl, resAudio.clone());
+      
+      // Save timings to local storage so offline sync works
+      const cacheKey = `v2-sync-${v2State.settings.reciterId}-${v2State.currentSurah}`;
+      localStorage.setItem(cacheKey, JSON.stringify({
+        audioUrl: v2State.audioUrl,
+        timings: v2State.verseTimings
+      }));
+
+      // Download WbW (if enabled)
+      if (v2State.settings.wordByWordAudio) {
+        const cacheWbw = await caches.open('quran-wbw-audio');
+        for (const verse of v2State.surahData.verses) {
+          for (const w of verse.words) {
+            if (w.char_type_name === 'end') continue;
+            const audioId = `${v2State.currentSurah.toString().padStart(3, '0')}_${verse.verse_number.toString().padStart(3, '0')}_${w.position.toString().padStart(3, '0')}`;
+            const wUrl = `https://audio.qurancdn.com/wbw/${audioId}.mp3`;
+            const exists = await cacheWbw.match(wUrl);
+            if (!exists) {
+              try { const wRes = await fetch(wUrl); if (wRes.ok) await cacheWbw.put(wUrl, wRes.clone()); } catch(e) {}
+            }
+          }
+        }
+      }
+      
+      if (typeof showToast === 'function') showToast('Surah saved for offline sync.');
+      if (btn) btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+    } catch(e) {
+      if (typeof showToast === 'function') showToast('Download failed.');
+      if (btn) btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+    } finally {
+      v2State.isDownloading = false;
+    }
   };
-  window.closeTranslationPicker = function() {
-    const overlay = document.getElementById('v2-trans-overlay');
-    if(overlay) overlay.classList.remove('show');
-  };
-  window.selectTranslation = function(id) {
-    v2State.settings.translationId = id;
-    localStorage.setItem('v2-translation-id', id);
-    window.closeTranslationPicker();
-    window.toggleV2Settings();
-    loadV2Surah(v2State.currentSurah, v2State.currentAyah);
-    if(typeof showToast === 'function') showToast('Translation updated');
-  };
+
+  // --- VISIBILITY CHANGE (Battery saver) ---
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      stopSyncLoop();
+    } else if (v2State.isPlaying) {
+      startSyncLoop();
+    }
+  });
 
 })();
