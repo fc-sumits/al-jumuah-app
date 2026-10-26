@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   QURAN V2 - PREMIUM READER (Night Oasis & Warm Parchment)
+   QURAN V2 - PREMIUM READER (Continuous Flow & Bulletproof)
    ═══════════════════════════════════════════════════════════════ */
 
 #quran-v2-list-view, #quran-v2-reader-view {
@@ -72,10 +72,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   background-position: center;
   z-index: 0;
   opacity: 0.8;
-  transition: transform 0.3s ease;
-}
-.v2-surah-card:hover .v2-surah-bg {
-  transform: scale(1.05);
 }
 .v2-surah-overlay {
   position: absolute;
@@ -140,8 +136,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border-bottom-right-radius: 24px;
   overflow: hidden;
 }
-
-/* Reduced fade — much softer, only affects bottom 35% */
 .v2-hero::after {
   content: '';
   position: absolute;
@@ -152,7 +146,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 #quran-v2-reader-view[data-theme="light"] .v2-hero::after {
   background: linear-gradient(to top, var(--v2-bg) 0%, rgba(253, 251, 247, 0.5) 35%, transparent 70%);
 }
-
 .v2-hero-topbar {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -195,53 +188,58 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border: 1px solid var(--v2-border);
 }
 
-/* Verses */
+/* --- CONTINUOUS TEXT FLOW (NO CARDS) --- */
 .v2-verses-container {
-  padding: 16px;
+  padding: 16px 24px;
 }
-.v2-verse-card {
-  background: var(--v2-card);
-  border-radius: 16px;
-  padding: 20px 16px;
-  margin-bottom: 16px;
-  border: 1px solid var(--v2-border);
-  transition: all 0.3s ease;
+.v2-verse-block {
   position: relative;
-  cursor: pointer;
+  padding: 16px 0 16px 24px; /* Make room for marker */
+  border-bottom: 1px solid var(--v2-border);
+  transition: background 0.3s ease;
 }
-.v2-verse-card.active {
-  border-color: var(--v2-copper);
-  box-shadow: 0 0 20px var(--v2-copper-glow);
-  transform: scale(1.01);
+.v2-verse-block:last-child {
+  border-bottom: none;
 }
-.v2-verse-num {
+.v2-verse-block.active {
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 12px;
+  margin: 0 -12px;
+  padding-left: 36px;
+  padding-right: 12px;
+}
+.v2-verse-marker {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 28px;
-  height: 28px;
+  top: 20px;
+  left: 0;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--v2-bg);
-  border: 1px solid var(--v2-border);
+  border: 1px solid var(--v2-copper);
   color: var(--v2-copper);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
+  transition: all 0.3s;
 }
+.v2-verse-block.active .v2-verse-marker {
+  background: var(--v2-copper);
+  color: var(--v2-bg);
+  box-shadow: 0 0 10px var(--v2-copper-glow);
+}
+
 .v2-arabic-text {
   font-family: var(--font-arabic);
-  font-size: 1.8rem;
-  line-height: 2.2;
   text-align: right;
   direction: rtl;
   color: var(--v2-text);
   margin-bottom: 12px;
-  padding-top: 16px;
 }
 
-/* Word-by-Word Highlighting & Tapping */
+/* Word-by-Word Highlighting */
 .v2-word {
   cursor: pointer;
   transition: color 0.15s, background 0.15s, box-shadow 0.15s;
@@ -260,35 +258,10 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 
 .v2-translation-text {
-  font-size: 1rem;
-  line-height: 1.6;
   color: var(--v2-muted);
+  line-height: 1.6;
+  padding-bottom: 4px;
 }
-
-.v2-verse-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--v2-border);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.v2-verse-card.active .v2-verse-actions, .v2-verse-card.show-actions .v2-verse-actions {
-  opacity: 1;
-}
-.v2-action-btn {
-  background: transparent;
-  border: none;
-  color: var(--v2-copper);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-.v2-action-btn svg { width: 16px; height: 16px; }
 
 /* Floating Jump Arrow */
 .v2-jump-arrow {
@@ -366,9 +339,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   padding: 4px 8px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s;
 }
-.v2-mini-btn:active { transform: scale(0.95); }
 
 .v2-player-scrub {
   display: flex;
@@ -417,24 +388,15 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   box-shadow: 0 4px 15px var(--v2-copper-glow);
 }
 .v2-play-btn svg { width: 24px; height: 24px; }
-
-/* Spinner for Audio Loading */
 .v2-spinner {
-  width: 24px;
-  height: 24px;
-  border: 2.5px solid rgba(0,0,0,0.15);
-  border-top-color: var(--v2-bg);
-  border-radius: 50%;
-  animation: v2Spin 0.8s linear infinite;
+  width: 24px; height: 24px;
+  border: 2.5px solid rgba(0,0,0,0.15); border-top-color: var(--v2-bg);
+  border-radius: 50%; animation: v2Spin 0.8s linear infinite;
 }
-@keyframes v2Spin {
-  to { transform: rotate(360deg); }
-}
-
+@keyframes v2Spin { to { transform: rotate(360deg); } }
 .v2-icon-btn {
   background: transparent; border: none; color: var(--v2-text); cursor: pointer; opacity: 0.7;
 }
-.v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
 .v2-icon-btn svg { width: 20px; height: 20px; }
 
 /* --- SETTINGS HALF-SHEET --- */
@@ -489,4 +451,4 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-reciter-item:hover, .v2-reciter-item.active {
   background: var(--v2-bg);
-}
+   }
