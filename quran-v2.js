@@ -15,8 +15,20 @@
     isDownloading: false,
     
     // Dynamic Resources
-    reciters: [],
     translations: [],
+    
+    // Hardcoded reciters to ensure Audio and Timings CDNs both work perfectly
+    reciters: [
+      { id: 'mishaari_raashid_al_3afaasee', name: 'Mishary Alafasy', style: 'Murattal' },
+      { id: 'abdurrahmaan_as-sudays', name: 'Abdurrahman As-Sudais', style: 'Murattal' },
+      { id: 'abdul_basit_murattal', name: 'Abdul Basit (Murattal)', style: 'Murattal' },
+      { id: 'maher_al_muaiqly', name: 'Maher Al Muaiqly', style: 'Murattal' },
+      { id: 'saood_ash-shuraym', name: 'Saud Al-Shuraim', style: 'Murattal' },
+      { id: 'mahmoud_khalil_al-husary', name: 'Mahmoud Al-Husary', style: 'Murattal' },
+      { id: 'hani_ar-rifai', name: 'Hani Ar-Rifai', style: 'Murattal' },
+      { id: 'ahmed_al-ajmi', name: 'Ahmad Al-Ajmy', style: 'Murattal' },
+      { id: 'abdulwadood_haneef', name: 'Abdul Wadood Haneef', style: 'Murattal' }
+    ],
     
     settings: {
       theme: localStorage.getItem('v2-theme') || 'dark',
@@ -43,38 +55,13 @@
 
   // --- INITIALIZATION ---
   async function fetchDynamicResources() {
-    if (v2State.reciters.length > 0 && v2State.translations.length > 0) return;
+    if (v2State.translations.length > 0) return;
     try {
-      const [recRes, transRes] = await Promise.all([
-        fetch('https://api.quran.com/api/v4/resources/recitations'),
-        fetch('https://api.quran.com/api/v4/resources/translations')
-      ]);
-      const recData = await recRes.json();
+      const transRes = await fetch('https://api.quran.com/api/v4/resources/translations');
       const transData = await transRes.json();
-      
-      // Map reciters to QuranicAudio compatible IDs
-      v2State.reciters = recData.recitations.map(r => ({
-        id: r.reciter_name.toLowerCase().replace(/[^a-z0-9]/g, '_'), // fallback
-        name: r.reciter_name,
-        style: r.style,
-        quranicId: r.id
-      }));
-      
-      // Ensure our known good ones are at the top
-      const known = [
-        { id: 'mishaari_raashid_al_3afaasee', name: 'Mishary Alafasy', style: 'Murattal' },
-        { id: 'abdurrahmaan_as-sudays', name: 'Abdurrahman As-Sudais', style: 'Murattal' },
-        { id: 'abdul_basit_murattal', name: 'Abdul Basit (Murattal)', style: 'Murattal' },
-        { id: 'maher_al_muaiqly', name: 'Maher Al Muaiqly', style: 'Murattal' },
-        { id: 'saood_ash-shuraym', name: 'Saud Al-Shuraim', style: 'Murattal' }
-      ];
-      v2State.reciters = [...known, ...v2State.reciters.filter(r => !known.find(k => k.id === r.id))];
-      
-      // Translations
       v2State.translations = transData.translations;
     } catch (e) {
-      console.warn("Could not load dynamic resources", e);
-      v2State.reciters = [{ id: 'mishaari_raashid_al_3afaasee', name: 'Mishary Alafasy', style: 'Murattal' }];
+      console.warn("Could not load dynamic translations", e);
       v2State.translations = [{ id: 20, name: 'Sahih International', language_name: 'English' }];
     }
   }
@@ -212,7 +199,6 @@
     const surah = v2State.surahData.arabic;
     const paddedNum = String(surah.number).padStart(3, '0');
     const heroImg = `images/surah-${paddedNum}-hero.webp`;
-    const isDownloaded = v2State.isDownloading; // Placeholder for actual check
     
     const fontFam = FONTS[v2State.settings.arabicFont] || FONTS.amiri;
     const lineHeight = v2State.settings.lineSpacing;
@@ -418,15 +404,24 @@
 
   // --- AUDIO ENGINE ---
   async function fetchTimings(reciter, surahNum) {
+    const paddedSurah = String(surahNum).padStart(3, '0');
     try {
-      const res = await fetch(`https://cdn.jsdelivr.net/gh/spa5k/quran_timings_api@main/data/${reciter}/${surahNum}.json`);
-      if(!res.ok) throw new Error('No timings');
+      const url = `https://cdn.jsdelivr.net/gh/spa5k/quran_timings_api@main/data/${reciter}/${paddedSurah}.json`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      return data;
+      
+      // The API returns an array of objects: [{ ayah: 1, start_time: 0, end_time: 4000 }]
+      if (Array.isArray(data) && data.length > 0) {
+        console.log(`✅ Timings loaded for ${reciter} - Surah ${surahNum}`);
+        return data;
+      }
+      throw new Error('Invalid or empty timings data');
     } catch(e) {
-      console.warn('Timings failed, using fallback.');
+      console.warn(`⚠️ Timings failed for ${reciter} - Surah ${surahNum}. Using 5s fallback.`, e);
       return v2State.surahData.arabic.ayahs.map((a, i) => ({
         verse: a.numberInSurah,
+        ayah: a.numberInSurah,
         start_time: i * 5000,
         end_time: (i + 1) * 5000
       }));
@@ -454,10 +449,12 @@
 
       const activeTiming = v2State.timings.find(t => currentMs >= t.start_time && currentMs <= t.end_time);
       
-      if (activeTiming && (activeTiming.verse !== v2State.currentAyah || activeTiming.ayah !== v2State.currentAyah)) {
-        const ayahNum = activeTiming.verse || activeTiming.ayah;
-        v2State.currentAyah = ayahNum;
-        highlightV2Verse(ayahNum);
+      if (activeTiming) {
+        const ayahNum = activeTiming.ayah || activeTiming.verse;
+        if (ayahNum !== v2State.currentAyah) {
+          v2State.currentAyah = ayahNum;
+          highlightV2Verse(ayahNum);
+        }
       }
     });
 
@@ -592,7 +589,6 @@
       // 2. Download WbW
       const cacheWbw = await caches.open('quran-wbw-audio');
       const ayahs = v2State.surahData.arabic.ayahs;
-      let wordCount = 0;
       
       for (const ayah of ayahs) {
         const words = ayah.text.split(' ');
@@ -600,7 +596,6 @@
           const wordId = `${surahNum.toString().padStart(3, '0')}_${ayah.numberInSurah.toString().padStart(3, '0')}_${i.toString().padStart(3, '0')}`;
           const wUrl = `https://audio.qurancdn.com/wbw/${wordId}.mp3`;
           
-          // Check if already cached to avoid re-downloading
           const exists = await cacheWbw.match(wUrl);
           if (!exists) {
             try {
@@ -608,8 +603,6 @@
               if (wRes.ok) await cacheWbw.put(wUrl, wRes.clone());
             } catch(e) { /* ignore single word fail */ }
           }
-          wordCount++;
-          // Optional: Update UI with progress percentage (wordCount / totalWords)
         }
       }
       
@@ -669,7 +662,7 @@
       });
     }
     if(key === 'wordByWord') {
-      renderV2Reader(); // Requires full re-render for spans
+      renderV2Reader(); 
       if (v2State.audio) setupAudioEngine(); 
     }
     
@@ -719,7 +712,7 @@
     window.closeReciterPicker();
     window.toggleV2Settings();
     renderV2Reader();
-    setupAudioEngine();
+    loadV2Surah(v2State.currentSurah, v2State.currentAyah); // Reload to get new timings
     if(typeof showToast === 'function') showToast('Reciter updated');
   };
 
@@ -737,7 +730,6 @@
     localStorage.setItem('v2-translation-id', id);
     window.closeTranslationPicker();
     window.toggleV2Settings();
-    // Re-fetch Surah with new translation
     loadV2Surah(v2State.currentSurah, v2State.currentAyah);
     if(typeof showToast === 'function') showToast('Translation updated');
   };
