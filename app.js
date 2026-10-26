@@ -142,7 +142,7 @@ if(isV2) {
   if(listView) listView.style.display = 'none';
   if(readerView) readerView.style.display = 'none';
   if(v2ReaderView) v2ReaderView.style.display = 'none';
-  if(typeof window.openQuranV2 === 'function') window.openQuranV2();
+  if(typeof window.openQuranV2 === 'function') window.openQuranV2(); // Now it opens the list
 } else {
   if(v2ListView) v2ListView.style.display = 'none';
   if(v2ReaderView) v2ReaderView.style.display = 'none';
