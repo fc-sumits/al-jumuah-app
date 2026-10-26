@@ -3,7 +3,6 @@
 // ═══════════════════════════════════════════════════════════════
 
 (function() {
-  // --- STATE & DEFAULTS ---
   const v2State = {
     surahMeta: null,
     surahData: null,
@@ -16,10 +15,12 @@
     playTimeout: null,
     isDownloading: false,
     rafId: null,
+    lastActiveWord: null,
+    isSeeking: false,
     
-    // UI State
     repeatMode: 'off',
     playbackRate: 1,
+    translations: [],
     
     settings: {
       theme: localStorage.getItem('v2-theme') || 'dark',
@@ -30,7 +31,7 @@
       translationId: localStorage.getItem('v2-translation-id') || '20',
       showTranslation: localStorage.getItem('v2-show-trans') !== 'false',
       wordByWordAudio: localStorage.getItem('v2-word-by-word') === 'true',
-      reciterId: localStorage.getItem('v2-reciter-id') || '7', // Mishary Alafasy
+      reciterId: localStorage.getItem('v2-reciter-id') || '7', 
       autoScroll: localStorage.getItem('v2-auto-scroll') !== 'false',
       showPlayer: localStorage.getItem('v2-show-player') !== 'false',
       highlightMode: localStorage.getItem('v2-highlight-mode') || 'word'
@@ -45,7 +46,6 @@
     indopak: "'IndoPak Naskh', serif"
   };
 
-  // --- EXPOSE GLOBALS ---
   window.openQuranV2 = function(surahNum, ayahNum) {
     document.body.classList.add('v2-active');
     document.getElementById('quran-list-view').style.display = 'none';
@@ -77,7 +77,6 @@
     pauseV2Audio();
   };
 
-  // --- RENDER SURAH LIST ---
   async function renderV2SurahList() {
     const container = document.getElementById('quran-v2-list-view');
     if(!container) return;
@@ -88,10 +87,7 @@
         const res = await fetch('https://api.alquran.cloud/v1/surah');
         const data = await res.json();
         QURAN.surahList = data.data;
-      } catch(e) {
-        container.innerHTML = '<div style="text-align:center;padding:40px;">Failed to load Surahs. Check connection.</div>';
-        return;
-      }
+      } catch(e) { return; }
     }
 
     let html = `
@@ -123,12 +119,10 @@
         </div>
       `;
     });
-
     html += `</div>`;
     container.innerHTML = html;
   }
 
-  // --- LOAD SURAH DATA ---
   async function loadV2Surah(surahNum, jumpToAyah) {
     const listView = document.getElementById('quran-v2-list-view');
     const readerView = document.getElementById('quran-v2-reader-view');
@@ -138,25 +132,17 @@
     readerView.innerHTML = '<div class="q-loading" style="margin-top:50px;color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading Surah...</div>';
 
     try {
-      // 1. Fetch Metadata (for hero header)
-      if (!v2State.surahMeta || v2State.currentSurah !== surahNum) {
-        const metaRes = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}`);
-        const metaData = await metaRes.json();
-        v2State.surahMeta = metaData.data;
-      }
+      const metaRes = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}`);
+      v2State.surahMeta = (await metaRes.json()).data;
 
-      // 2. Fetch Text (Quran.com API for exact word-by-word mapping)
       const textUrl = `https://api.quran.com/api/v4/verses/by_chapter/${surahNum}?words=true&word_fields=text_uthmani&translation_fields=text&translations=${v2State.settings.translationId}`;
-      const textRes = await fetch(textUrl);
-      const textData = await textRes.json();
+      const textData = await (await fetch(textUrl)).json();
       
       v2State.surahData = { verses: textData.verses };
       v2State.currentSurah = surahNum;
       v2State.currentAyah = jumpToAyah || 1;
 
-      // 3. Fetch Audio & Timings
       await fetchAudioAndTimings(surahNum);
-
       renderV2Reader();
       setupAudioEngine();
 
@@ -181,26 +167,20 @@
     }
 
     const audioUrlEndpoint = `https://api.quran.com/api/v4/chapter_recitations/${v2State.settings.reciterId}/${surahNum}?segments=true`;
-    const res = await fetch(audioUrlEndpoint);
-    const data = await res.json();
+    const data = await (await fetch(audioUrlEndpoint)).json();
     
     if (!data.audio_file) throw new Error("No audio found");
     
     v2State.audioUrl = data.audio_file.audio_url;
     v2State.verseTimings = data.audio_file.verse_timings || [];
     
-    localStorage.setItem(cacheKey, JSON.stringify({
-      audioUrl: v2State.audioUrl,
-      timings: v2State.verseTimings
-    }));
+    localStorage.setItem(cacheKey, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
   }
 
-  // --- RENDER READER ---
   function renderV2Reader() {
     const readerView = document.getElementById('quran-v2-reader-view');
     const paddedNum = String(v2State.currentSurah).padStart(3, '0');
     const heroImg = `images/surah-${paddedNum}-hero.webp`;
-    
     const fontFam = FONTS[v2State.settings.arabicFont] || FONTS.amiri;
     const lineHeight = v2State.settings.lineSpacing;
 
@@ -232,15 +212,11 @@
     `;
 
     v2State.surahData.verses.forEach(verse => {
-      let arabicHtml = '';
-      if (verse.words) {
-        arabicHtml = verse.words.map((w) => {
-          // Use the exact position from the API for the ID
-          const wordId = `word-${verse.verse_key.replace(':', '-')}-${w.position}`;
-          const audioId = `${v2State.currentSurah.toString().padStart(3, '0')}_${verse.verse_number.toString().padStart(3, '0')}_${w.position.toString().padStart(3, '0')}`;
-          return `<span class="v2-word" id="${wordId}" data-audio="${audioId}">${w.text_uthmani}</span>`;
-        }).join(' ');
-      }
+      let arabicHtml = verse.words ? verse.words.map((w) => {
+        const wordId = `word-${verse.verse_key.replace(':', '-')}-${w.position}`;
+        const audioId = `${v2State.currentSurah.toString().padStart(3, '0')}_${verse.verse_number.toString().padStart(3, '0')}_${w.position.toString().padStart(3, '0')}`;
+        return `<span class="v2-word" id="${wordId}" data-audio="${audioId}">${w.text_uthmani}</span>`;
+      }).join(' ') : '';
 
       const translation = verse.translations && verse.translations[0] ? verse.translations[0].text : '';
 
@@ -257,17 +233,11 @@
       `;
     });
 
-    html += `</div>`;
-
-    // Jump Arrow
     html += `
+      </div>
       <button id="v2-jump-arrow" class="v2-jump-arrow" onclick="window.jumpToCurrentVerse()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-    `;
-
-    // Player
-    html += `
       <div class="v2-player ${v2State.settings.showPlayer ? '' : 'hidden'}" id="v2-player">
         <div class="v2-player-top">
           <div class="v2-reciter-name" onclick="window.openReciterPicker()">
@@ -292,14 +262,12 @@
         </div>
       </div>
       
-      <!-- SETTINGS DRAWER (Fully Restored) -->
       <div class="v2-settings-overlay" id="v2-settings-overlay" onclick="if(event.target===this) window.toggleV2Settings()">
         <div class="v2-settings-sheet">
           <div class="v2-settings-header">
             <div class="v2-settings-title">Preferences</div>
             <button class="v2-settings-close" onclick="window.toggleV2Settings()">✕</button>
           </div>
-          
           <div class="v2-setting-group">
             <span class="v2-setting-label">Display</span>
             <div class="v2-setting-row">
@@ -328,7 +296,6 @@
               <div class="v2-toggle ${v2State.settings.showTranslation ? 'on' : ''}" onclick="window.toggleV2Setting('showTranslation')"></div>
             </div>
           </div>
-
           <div class="v2-setting-group">
             <span class="v2-setting-label">Highlighting</span>
             <div class="v2-setting-row">
@@ -339,7 +306,6 @@
               </div>
             </div>
           </div>
-
           <div class="v2-setting-group">
             <span class="v2-setting-label">Typography</span>
             <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
@@ -355,7 +321,6 @@
               <input type="range" class="v2-slider" min="1.4" max="2.4" step="0.1" value="${v2State.settings.lineSpacing}" oninput="window.changeV2FontSize('lineSpacing', this.value)">
             </div>
           </div>
-
           <div class="v2-setting-group">
             <span class="v2-setting-label">Reciter</span>
             <div class="v2-setting-row" onclick="window.openReciterPicker()" style="cursor:pointer">
@@ -374,15 +339,13 @@
 
     readerView.innerHTML = html;
     
-    // Load Reciter & Translation names asynchronously
     setTimeout(async () => {
       const rec = await getCurrentReciter();
       if(document.getElementById('v2-player-reciter')) document.getElementById('v2-player-reciter').textContent = rec.name;
       if(document.getElementById('v2-settings-reciter-name')) document.getElementById('v2-settings-reciter-name').textContent = rec.name;
       
       const transRes = await fetch('https://api.quran.com/api/v4/resources/translations');
-      const transData = await transRes.json();
-      v2State.translations = transData.translations;
+      v2State.translations = (await transRes.json()).translations;
       const trans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId.toString()) || {name: 'Sahih International'};
       if(document.getElementById('v2-settings-trans-name')) document.getElementById('v2-settings-trans-name').textContent = trans.name;
 
@@ -392,11 +355,12 @@
     attachV2Listeners();
   }
 
-  // --- AUDIO ENGINE & SYNC ---
+  // --- AUDIO ENGINE ---
   function setupAudioEngine() {
     if (v2State.audio) { v2State.audio.pause(); v2State.audio = null; }
     if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
     v2State.isPlaying = false;
+    v2State.lastActiveWord = null;
     stopSyncLoop();
 
     v2State.audio = new Audio(v2State.audioUrl);
@@ -415,17 +379,23 @@
       seekBar.addEventListener('input', (e) => {
         if (v2State.audio && v2State.audio.duration) v2State.audio.currentTime = (e.target.value / 100) * v2State.audio.duration;
       });
+      seekBar.addEventListener('touchstart', () => { v2State.isSeeking = true; });
+      seekBar.addEventListener('touchend', () => { v2State.isSeeking = false; });
+      seekBar.addEventListener('mousedown', () => { v2State.isSeeking = true; });
+      seekBar.addEventListener('mouseup', () => { v2State.isSeeking = false; });
     }
   }
 
   function startSyncLoop() {
     stopSyncLoop();
+    let lastAyah = 0; // Starts at 0 so first verse always triggers
     function loop() {
       if (!v2State.audio || !v2State.isPlaying) return;
       
       const currentMs = Math.floor(v2State.audio.currentTime * 1000);
+      
       const seekBar = document.getElementById('v2-seek-bar');
-      if (seekBar && document.activeElement !== seekBar && v2State.audio.duration) {
+      if (seekBar && !v2State.isSeeking && v2State.audio.duration) {
         seekBar.value = (v2State.audio.currentTime / v2State.audio.duration) * 100;
       }
 
@@ -435,7 +405,8 @@
 
       if (activeTiming) {
         const ayahNum = parseInt(activeTiming.verse_key.split(':')[1]);
-        if (ayahNum !== v2State.currentAyah) {
+        if (ayahNum !== lastAyah) {
+          lastAyah = ayahNum;
           v2State.currentAyah = ayahNum;
           highlightVerseCard(ayahNum);
           updateJumpArrowVisibility();
@@ -470,10 +441,17 @@
   }
 
   function highlightWord(verseKey, wordIndex) {
-    document.querySelectorAll('.v2-word').forEach(w => w.classList.remove('active-word'));
     const wordId = `word-${verseKey.replace(':', '-')}-${wordIndex}`;
+    if (v2State.lastActiveWord && v2State.lastActiveWord.id === wordId) return;
+    
+    if (v2State.lastActiveWord) {
+      v2State.lastActiveWord.classList.remove('active-word');
+    }
     const el = document.getElementById(wordId);
-    if(el) el.classList.add('active-word');
+    if(el) {
+      el.classList.add('active-word');
+      v2State.lastActiveWord = el;
+    }
   }
 
   function scrollToVerse(ayahNum, behavior) {
@@ -500,7 +478,6 @@
     document.getElementById('v2-jump-arrow').classList.remove('show');
   };
 
-  // --- PLAYER CONTROLS ---
   window.toggleV2Play = function() {
     if(!v2State.audio) return;
     if(v2State.isPlaying) v2State.audio.pause();
@@ -594,34 +571,36 @@
     else if (v2State.repeatMode === 'surah') { v2State.audio.currentTime = 0; attemptV2Play(); }
   }
 
-  // --- LISTENERS ---
+  // --- PERFORMANCE OPTIMIZED LISTENERS (Event Delegation) ---
   function attachV2Listeners() {
-    document.querySelectorAll('.v2-verse-card').forEach(card => {
-      card.addEventListener('click', function(e) {
-        if(e.target.classList.contains('v2-word')) return;
-        document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('show-actions'));
-        this.classList.add('show-actions');
-      });
-    });
+    const container = document.getElementById('v2-verses-container');
+    if (!container) return;
 
-    document.querySelectorAll('.v2-word').forEach(word => {
-      word.addEventListener('click', function(e) {
-        e.stopPropagation();
+    // One listener for the whole container instead of thousands
+    container.addEventListener('click', (e) => {
+      const word = e.target.closest('.v2-word');
+      if (word) {
         if (!v2State.settings.wordByWordAudio) return;
-        const audioId = this.getAttribute('data-audio');
+        const audioId = word.getAttribute('data-audio');
         if(audioId) {
           const wordAudio = new Audio(`https://audio.qurancdn.com/wbw/${audioId}.mp3`);
           wordAudio.play().catch(err => console.log('Word audio error', err));
-          this.classList.add('playing-word');
-          setTimeout(() => this.classList.remove('playing-word'), 800);
+          word.classList.add('playing-word');
+          setTimeout(() => word.classList.remove('playing-word'), 800);
         }
-      });
+        return;
+      }
+
+      const card = e.target.closest('.v2-verse-card');
+      if (card) {
+        document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('show-actions'));
+        card.classList.add('show-actions');
+      }
     });
 
     window.addEventListener('scroll', updateJumpArrowVisibility, { passive: true });
   }
 
-  // --- SETTINGS ---
   window.toggleV2Settings = function() {
     document.getElementById('v2-settings-overlay').classList.toggle('show');
   };
@@ -639,7 +618,7 @@
   window.setV2HighlightMode = function(mode) {
     v2State.settings.highlightMode = mode;
     localStorage.setItem('v2-highlight-mode', mode);
-    document.querySelectorAll('.v2-word').forEach(w => w.classList.remove('active-word'));
+    if (v2State.lastActiveWord) { v2State.lastActiveWord.classList.remove('active-word'); v2State.lastActiveWord = null; }
     document.querySelectorAll('.v2-seg-btn').forEach(b => {
       if (b.textContent === 'Word' || b.textContent === 'Ayah') b.classList.toggle('active', b.textContent.toLowerCase() === mode);
     });
@@ -654,7 +633,6 @@
   window.toggleV2Setting = function(key) {
     v2State.settings[key] = !v2State.settings[key];
     localStorage.setItem(`v2-${key === 'wordByWordAudio' ? 'word-by-word' : key === 'showTranslation' ? 'show-trans' : key}`, v2State.settings[key]);
-    
     if(key === 'showTranslation') document.querySelectorAll('.v2-translation-text').forEach(el => el.style.display = v2State.settings.showTranslation ? '' : 'none');
     
     document.querySelectorAll('.v2-toggle').forEach((t, i) => {
@@ -666,7 +644,6 @@
   window.changeV2FontSize = function(key, val) {
     v2State.settings[key] = parseFloat(val);
     localStorage.setItem(`v2-${key === 'arabicSize' ? 'arabic-size' : key === 'transSize' ? 'trans-size' : 'line-spacing'}`, val);
-    
     if (key === 'arabicSize') {
       document.querySelectorAll('.v2-arabic-text').forEach(el => el.style.fontSize = `${val}px`);
       document.getElementById('v2-lbl-arabic').textContent = `Arabic Size (${val}px)`;
@@ -681,42 +658,28 @@
     }
   };
 
-  // --- RECITER PICKER ---
   window.openReciterPicker = async function() {
     let overlay = document.getElementById('v2-reciter-overlay');
     if(!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'v2-reciter-overlay';
-      overlay.className = 'v2-settings-overlay';
+      overlay = document.createElement('div'); overlay.id = 'v2-reciter-overlay'; overlay.className = 'v2-settings-overlay';
       overlay.onclick = (e) => { if(e.target === overlay) window.closeReciterPicker(); };
       document.body.appendChild(overlay);
     }
     overlay.classList.add('show');
     overlay.innerHTML = `<div class="v2-settings-sheet"><div class="v2-settings-header"><div class="v2-settings-title">Choose Reciter</div><button class="v2-settings-close" onclick="window.closeReciterPicker()">✕</button></div><div style="max-height: 60vh; overflow-y: auto;" id="v2-rec-list"><div class="q-loading"><div class="q-loading-spinner"></div>Loading...</div></div></div>`;
-    
     try {
-      const res = await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en');
-      const data = await res.json();
-      const list = data.reciters.map(r => `
+      const data = await (await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en')).json();
+      document.getElementById('v2-rec-list').innerHTML = data.reciters.map(r => `
         <div class="v2-reciter-item ${v2State.settings.reciterId === r.id.toString() ? 'active' : ''}" onclick="window.selectReciter('${r.id}')">
-          <div style="display:flex; align-items:center; gap:12px;">
-            <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">🎙</div>
-            <div><div style="font-weight:700; font-size:0.95rem;">${r.name}</div><div style="font-size:0.75rem; color:var(--v2-muted)">${r.style || 'Murattal'}</div></div>
-          </div>
+          <div style="display:flex; align-items:center; gap:12px;"><div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">🎙</div><div><div style="font-weight:700; font-size:0.95rem;">${r.name}</div><div style="font-size:0.75rem; color:var(--v2-muted)">${r.style || 'Murattal'}</div></div></div>
           ${v2State.settings.reciterId === r.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
-        </div>
-      `).join('');
-      document.getElementById('v2-rec-list').innerHTML = list;
-    } catch(e) {
-      document.getElementById('v2-rec-list').innerHTML = '<div style="padding:20px;text-align:center;">Failed to load.</div>';
-    }
+        </div>`).join('');
+    } catch(e) { document.getElementById('v2-rec-list').innerHTML = '<div style="padding:20px;text-align:center;">Failed to load.</div>'; }
   };
   window.closeReciterPicker = function() { document.getElementById('v2-reciter-overlay').classList.remove('show'); };
   window.selectReciter = function(id) {
-    v2State.settings.reciterId = id;
-    localStorage.setItem('v2-reciter-id', id);
-    window.closeReciterPicker(); window.toggleV2Settings();
-    showToast('Reciter updated');
+    v2State.settings.reciterId = id; localStorage.setItem('v2-reciter-id', id);
+    window.closeReciterPicker(); window.toggleV2Settings(); showToast('Reciter updated');
     loadV2Surah(v2State.currentSurah, v2State.currentAyah);
   };
 
@@ -724,47 +687,34 @@
     let name = 'Mishary Alafasy';
     if (v2State.settings.reciterId === '7') return {name};
     try {
-      const res = await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en');
-      const data = await res.json();
+      const data = await (await fetch('https://api.quran.com/api/v4/resources/chapter_reciters?language=en')).json();
       const rec = data.reciters.find(r => r.id.toString() === v2State.settings.reciterId);
       return rec ? {name: rec.name} : {name};
     } catch(e) { return {name}; }
   }
 
-  // --- TRANSLATION PICKER ---
   window.openTranslationPicker = function() {
     let overlay = document.getElementById('v2-trans-overlay');
     if(!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'v2-trans-overlay';
-      overlay.className = 'v2-settings-overlay';
+      overlay = document.createElement('div'); overlay.id = 'v2-trans-overlay'; overlay.className = 'v2-settings-overlay';
       overlay.onclick = (e) => { if(e.target === overlay) window.closeTranslationPicker(); };
       document.body.appendChild(overlay);
     }
     overlay.classList.add('show');
     overlay.innerHTML = `<div class="v2-settings-sheet"><div class="v2-settings-header"><div class="v2-settings-title">Choose Translation</div><button class="v2-settings-close" onclick="window.closeTranslationPicker()">✕</button></div><div style="max-height: 60vh; overflow-y: auto;" id="v2-trans-list"></div></div>`;
-    
-    const list = v2State.translations.map(t => `
+    document.getElementById('v2-trans-list').innerHTML = v2State.translations.map(t => `
       <div class="v2-reciter-item ${v2State.settings.translationId.toString() === t.id.toString() ? 'active' : ''}" onclick="window.selectTranslation('${t.id}')">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">📖</div>
-          <div><div style="font-weight:700; font-size:0.95rem;">${t.name}</div><div style="font-size:0.75rem; color:var(--v2-muted)">${t.language_name}</div></div>
-        </div>
+        <div style="display:flex; align-items:center; gap:12px;"><div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">📖</div><div><div style="font-weight:700; font-size:0.95rem;">${t.name}</div><div style="font-size:0.75rem; color:var(--v2-muted)">${t.language_name}</div></div></div>
         ${v2State.settings.translationId.toString() === t.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
-      </div>
-    `).join('');
-    document.getElementById('v2-trans-list').innerHTML = list;
+      </div>`).join('');
   };
   window.closeTranslationPicker = function() { document.getElementById('v2-trans-overlay').classList.remove('show'); };
   window.selectTranslation = function(id) {
-    v2State.settings.translationId = id;
-    localStorage.setItem('v2-translation-id', id);
-    window.closeTranslationPicker(); window.toggleV2Settings();
-    showToast('Translation updated');
+    v2State.settings.translationId = id; localStorage.setItem('v2-translation-id', id);
+    window.closeTranslationPicker(); window.toggleV2Settings(); showToast('Translation updated');
     loadV2Surah(v2State.currentSurah, v2State.currentAyah);
   };
 
-  // --- DOWNLOAD ---
   window.downloadV2Surah = async function() {
     if (v2State.isDownloading) return;
     v2State.isDownloading = true;
@@ -791,7 +741,6 @@
           }
         }
       }
-      
       showToast('Surah saved offline.');
       if (btn) btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
     } catch(e) {
@@ -806,5 +755,4 @@
     if (document.visibilityState === 'hidden') stopSyncLoop();
     else if (v2State.isPlaying) startSyncLoop();
   });
-
 })();
