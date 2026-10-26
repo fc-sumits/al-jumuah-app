@@ -4566,7 +4566,10 @@ function openAuthModal(mode){
   authMode = mode || 'login';
   updateAuthModalUI();
   const el = document.getElementById('auth-overlay');
-  if(el) el.classList.add('show');
+  if(el) {
+    el.style.display = 'flex';
+    el.classList.add('show');
+  }
   document.body.style.overflow = 'hidden';
   const errEl = document.getElementById('auth-error');
   if(errEl) errEl.textContent = '';
@@ -4576,7 +4579,10 @@ function openAuthModal(mode){
 
 function closeAuthModal(){
   const el = document.getElementById('auth-overlay');
-  if(el) el.classList.remove('show');
+  if(el) {
+    el.style.display = 'none';
+    el.classList.remove('show');
+  }
   document.body.style.overflow = '';
   const errEl = document.getElementById('auth-error');
   if(errEl) errEl.textContent = '';
