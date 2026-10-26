@@ -6,7 +6,7 @@
   const CACHE_V1_AUDIO = 'quran-audio-v1';
   const CACHE_V2_AUDIO = 'quran-v2-audio';
   const CACHE_WBW_AUDIO = 'quran-wbw-audio';
-  const CACHE_CONTENT = 'aljumuah-v90-content'; // Current content cache
+  const CACHE_CONTENT = 'aljumuah-v91-content'; // Current content cache
 
   // Format bytes to MB
   function formatBytes(bytes) {
