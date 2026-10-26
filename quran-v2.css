@@ -142,12 +142,19 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border-bottom-right-radius: 24px;
   overflow: hidden;
 }
+
+/* Reduced fade — much softer, only affects bottom 35% */
 .v2-hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--v2-bg) 0%, transparent 100%);
+  background: linear-gradient(to top, var(--v2-bg) 0%, rgba(10, 15, 29, 0.5) 35%, transparent 70%);
+  pointer-events: none;
 }
+#quran-v2-reader-view[data-theme="light"] .v2-hero::after {
+  background: linear-gradient(to top, var(--v2-bg) 0%, rgba(253, 251, 247, 0.5) 35%, transparent 70%);
+}
+
 .v2-hero-topbar {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -227,7 +234,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-arabic-text {
   font-family: var(--font-arabic);
-  font-size: 1.8rem; /* Default size */
+  font-size: 1.8rem;
   line-height: 2.2;
   text-align: right;
   direction: rtl;
@@ -326,6 +333,20 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   box-shadow: 0 4px 15px var(--v2-copper-glow);
 }
 .v2-play-btn svg { width: 24px; height: 24px; }
+
+/* Spinner for Audio Loading */
+.v2-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid rgba(0,0,0,0.15);
+  border-top-color: var(--v2-bg);
+  border-radius: 50%;
+  animation: v2Spin 0.8s linear infinite;
+}
+@keyframes v2Spin {
+  to { transform: rotate(360deg); }
+}
+
 .v2-icon-btn {
   background: transparent; border: none; color: var(--v2-text); cursor: pointer; opacity: 0.7;
 }
