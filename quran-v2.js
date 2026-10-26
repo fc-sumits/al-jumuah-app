@@ -20,9 +20,8 @@
       { id: 'mahmoud_khalil_al-husary', name: 'Mahmoud Al-Husary' },
       { id: 'hani_ar-rifai', name: 'Hani Ar-Rifai' },
       { id: 'ahmed_al-ajmi', name: 'Ahmad Al-Ajmy' },
-      { id: 'abdulwadood_haneef', name: 'Abdul Wadood Haneef' } // Added
+      { id: 'abdulwadood_haneef', name: 'Abdul Wadood Haneef' }
     ],
-    // Settings loaded from LocalStorage
     settings: {
       theme: localStorage.getItem('v2-theme') || 'dark',
       arabicSize: parseInt(localStorage.getItem('v2-arabic-size')) || 28,
@@ -36,17 +35,17 @@
   };
 
   // --- EXPOSE GLOBALS FOR APP.JS ---
-  window.openQuranV2 = function(surahNum = 1) {
+  window.openQuranV2 = function(surahNum) {
     document.body.classList.add('v2-active');
     document.getElementById('quran-list-view').style.display = 'none';
     document.getElementById('quran-reader-view').style.display = 'none';
     document.getElementById('quran-v2-list-view').style.display = 'block';
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     
-    // Apply Theme
     document.getElementById('quran-v2-list-view').setAttribute('data-theme', v2State.settings.theme);
     document.getElementById('quran-v2-reader-view').setAttribute('data-theme', v2State.settings.theme);
 
+    // If no surahNum provided, load the list. Otherwise load the Surah.
     if (surahNum) {
       loadV2Surah(surahNum);
     } else {
@@ -54,15 +53,18 @@
     }
   };
 
+  window.showV2List = function() {
+    document.getElementById('quran-v2-reader-view').style.display = 'none';
+    document.getElementById('quran-v2-list-view').style.display = 'block';
+    if (v2State.audio) { v2State.audio.pause(); v2State.isPlaying = false; }
+  };
+
   window.closeQuranV2 = function() {
     document.body.classList.remove('v2-active');
     document.getElementById('quran-v2-list-view').style.display = 'none';
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     document.getElementById('quran-list-view').style.display = 'block';
-    if (v2State.audio) {
-      v2State.audio.pause();
-      v2State.isPlaying = false;
-    }
+    if (v2State.audio) { v2State.audio.pause(); v2State.isPlaying = false; }
   };
 
   // --- RENDER SURAH LIST ---
@@ -70,13 +72,12 @@
     const container = document.getElementById('quran-v2-list-view');
     if(!container) return;
 
-    // If we don't have the surah list yet, fetch it
-if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length === 0) {
-  container.innerHTML = '<div class="q-loading" style="color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading...</div>';
-  try {
-    const res = await fetch('https://api.alquran.cloud/v1/surah');
-    const data = await res.json();
-    QURAN.surahList = data.data;
+    if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length === 0) {
+      container.innerHTML = '<div class="q-loading" style="color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading...</div>';
+      try {
+        const res = await fetch('https://api.alquran.cloud/v1/surah');
+        const data = await res.json();
+        QURAN.surahList = data.data;
       } catch(e) {
         container.innerHTML = '<div style="text-align:center;padding:40px;">Failed to load Surahs. Check connection.</div>';
         return;
@@ -93,7 +94,6 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
 
     QURAN.surahList.forEach(s => {
       const paddedNum = String(s.number).padStart(3, '0');
-      // Fallback image if user hasn't uploaded it yet
       const bgImg = `images/surah-${paddedNum}-list.webp`;
       
       html += `
@@ -126,7 +126,6 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
     readerView.innerHTML = '<div class="q-loading" style="margin-top:50px;color:var(--v2-copper)"><div class="q-loading-spinner" style="border-top-color:var(--v2-copper)"></div>Loading Surah...</div>';
 
     try {
-      // Fetch Arabic + English + Transliteration
       const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih,en.transliteration`);
       const data = await res.json();
       
@@ -138,8 +137,6 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
       v2State.currentSurah = surahNum;
       v2State.currentAyah = 1;
 
-      // Fetch Timings for Gapless Audio (Using spa5k open-source data)
-      // We use a generic fallback if timings fail to load
       v2State.timings = await fetchTimings(v2State.settings.reciter, surahNum);
 
       renderV2Reader();
@@ -161,7 +158,7 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
     let html = `
       <div class="v2-hero" style="background-image: url('${heroImg}'), linear-gradient(to top, #0A0F1D, #121A2F);">
         <div class="v2-hero-topbar">
-          <button class="icon-btn" onclick="window.closeQuranV2()" style="color:#fff; background:rgba(0,0,0,0.3); border-radius:50%; width:36px; height:36px; border:1px solid rgba(255,255,255,0.2)">
+          <button class="icon-btn" onclick="window.showV2List()" style="color:#fff; background:rgba(0,0,0,0.3); border-radius:50%; width:36px; height:36px; border:1px solid rgba(255,255,255,0.2)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="icon-btn" onclick="toggleV2Settings()" style="color:#fff; background:rgba(0,0,0,0.3); border-radius:50%; width:36px; height:36px; border:1px solid rgba(255,255,255,0.2)">
@@ -177,36 +174,28 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
           </div>
         </div>
       </div>
-
       <div class="v2-verses-container" id="v2-verses-container">
     `;
 
-    // Build verses
     surah.ayahs.forEach((ayah, i) => {
       const en = v2State.surahData.english.ayahs[i];
-      const tr = v2State.surahData.translit.ayahs[i];
       
-      // Word-by-word span rendering
       let arabicHtml = ayah.text;
       if (v2State.settings.wordByWord) {
         const words = ayah.text.split(' ');
         arabicHtml = words.map((w, index) => {
-          // Standard AlQuran Cloud doesn't give word audio natively in this endpoint, 
-          // so we generate the URL based on the standard Quran.com CDN format.
-          // Format: Surah_Ayah_Word
           const wordAudioUrl = `${surah.number.toString().padStart(3, '0')}_${ayah.numberInSurah.toString().padStart(3, '0')}_${(index+1).toString().padStart(3, '0')}`;
           return `<span class="v2-word" data-audio="${wordAudioUrl}">${w}</span>`;
         }).join(' ');
       }
 
       html += `
-        <div class="v2-verse-card" id="v2-verse-${ayah.numberInSurah}" data-ayah="${ayah.numberInSurah}" data-time-start="${ayah.numberInSurah}">
+        <div class="v2-verse-card" id="v2-verse-${ayah.numberInSurah}" data-ayah="${ayah.numberInSurah}">
           <div class="v2-verse-num">${ayah.numberInSurah}</div>
           <div class="v2-arabic-text" style="font-size:${v2State.settings.arabicSize}px">${arabicHtml}</div>
           ${v2State.settings.showTranslation ? `<div class="v2-translation-text" style="font-size:${v2State.settings.transSize}px">${en.text}</div>` : ''}
           <div class="v2-verse-actions">
              <button class="v2-action-btn" onclick="playV2Ayah(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
-             <button class="v2-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> Save</button>
              <button class="v2-action-btn" onclick="openTafsir(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
           </div>
         </div>
@@ -215,12 +204,11 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
 
     html += `</div>`;
 
-    // Floating Player
     const reciterName = v2State.reciters.find(r => r.id === v2State.settings.reciter)?.name || 'Reciter';
     html += `
       <div class="v2-player ${v2State.settings.showPlayer ? '' : 'hidden'}" id="v2-player">
         <div class="v2-player-top">
-          <div class="v2-reciter-name" onclick="toggleV2Settings()">
+          <div class="v2-reciter-name" onclick="openReciterPicker()">
             <span class="v2-reciter-dot"></span> ${reciterName}
           </div>
           <div style="font-size:0.75rem; color:var(--v2-muted)">Surah ${surah.number}</div>
@@ -237,7 +225,7 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
         </div>
       </div>
       
-      <!-- Settings Drawer Placeholder -->
+      <!-- Settings Drawer -->
       <div class="v2-settings-overlay" id="v2-settings-overlay" onclick="if(event.target===this) toggleV2Settings()">
         <div class="v2-settings-sheet">
           <div class="v2-settings-header">
@@ -285,6 +273,31 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
           </div>
         </div>
       </div>
+      
+      <!-- Reciter Picker Bottom Sheet -->
+      <div class="v2-settings-overlay" id="v2-reciter-overlay" onclick="if(event.target===this) closeReciterPicker()">
+        <div class="v2-settings-sheet">
+          <div class="v2-settings-header">
+            <div class="v2-settings-title">Choose Reciter</div>
+            <button class="v2-settings-close" onclick="closeReciterPicker()">✕</button>
+          </div>
+          <div style="max-height: 60vh; overflow-y: auto;">
+            ${v2State.reciters.map(r => `
+              <div class="v2-reciter-item ${v2State.settings.reciter === r.id ? 'active' : ''}" onclick="selectReciter('${r.id}')">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">
+                    🎙
+                  </div>
+                  <div>
+                    <div style="font-weight:700; font-size:0.95rem;">${r.name}</div>
+                  </div>
+                </div>
+                ${v2State.settings.reciter === r.id ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
     `;
 
     readerView.innerHTML = html;
@@ -294,18 +307,14 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
   // --- AUDIO ENGINE ---
   async function fetchTimings(reciter, surahNum) {
     try {
-      // Using a known public dataset for verse-by-verse timings
-      // This dataset maps chapter audio to verse start/end times
       const res = await fetch(`https://cdn.jsdelivr.net/gh/spa5k/quran_timings_api@main/verse_timings/${reciter}/${surahNum}.json`);
       if(!res.ok) throw new Error('No timings');
       const data = await res.json();
-      // Format is usually an array of {ayah: 1, start_time: 0, end_time: 5000}
       return data;
     } catch(e) {
-      console.warn('Could not load timings, falling back to estimated.');
-      // Fallback: generate fake timings based on 5 seconds per verse
+      console.warn('Timings failed, using fallback.');
       return v2State.surahData.arabic.ayahs.map((a, i) => ({
-        ayah: a.numberInSurah,
+        verse: a.numberInSurah,
         start_time: i * 5000,
         end_time: (i + 1) * 5000
       }));
@@ -313,12 +322,7 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
   }
 
   function setupAudioEngine() {
-    if (v2State.audio) {
-      v2State.audio.pause();
-      v2State.audio = null;
-    }
-
-    // Gapless Audio URL (QuranicAudio CDN)
+    if (v2State.audio) { v2State.audio.pause(); v2State.audio = null; }
     const surahNum = v2State.surahData.arabic.number;
     const reciter = v2State.settings.reciter;
     const audioUrl = `https://download.quranicaudio.com/quran/${reciter}/${String(surahNum).padStart(3, '0')}.mp3`;
@@ -329,17 +333,17 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
       if(!v2State.audio) return;
       const currentMs = v2State.audio.currentTime * 1000;
       
-      // Update progress bar
       const pct = (v2State.audio.currentTime / v2State.audio.duration) * 100;
       const fill = document.getElementById('v2-player-fill');
       if(fill) fill.style.width = `${pct}%`;
 
-      // Find active verse based on timings
+      // Fix: spa5k uses 'verse', fallback uses 'verse' now too.
       const activeTiming = v2State.timings.find(t => currentMs >= t.start_time && currentMs <= t.end_time);
       
-      if (activeTiming && activeTiming.ayah !== v2State.currentAyah) {
-        v2State.currentAyah = activeTiming.ayah;
-        highlightV2Verse(activeTiming.ayah);
+      if (activeTiming && (activeTiming.verse !== v2State.currentAyah || activeTiming.ayah !== v2State.currentAyah)) {
+        const ayahNum = activeTiming.verse || activeTiming.ayah;
+        v2State.currentAyah = ayahNum;
+        highlightV2Verse(ayahNum);
       }
     });
 
@@ -351,10 +355,13 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
 
   function playV2Ayah(ayahNum) {
     if(!v2State.audio) return;
-    const timing = v2State.timings.find(t => t.ayah === ayahNum);
+    const timing = v2State.timings.find(t => t.verse === ayahNum || t.ayah === ayahNum);
     if (timing) {
       v2State.audio.currentTime = timing.start_time / 1000;
-      v2State.audio.play();
+      v2State.audio.play().catch(e => {
+        console.error(e);
+        if(typeof showToast === 'function') showToast('Audio stream failed.');
+      });
       v2State.isPlaying = true;
       updateV2PlayIcon();
     }
@@ -364,10 +371,14 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
     if(!v2State.audio) return;
     if(v2State.isPlaying) {
       v2State.audio.pause();
+      v2State.isPlaying = false;
     } else {
-      v2State.audio.play();
+      v2State.audio.play().catch(e => {
+        console.error(e);
+        if(typeof showToast === 'function') showToast('Audio unavailable. Check connection.');
+      });
+      v2State.isPlaying = true;
     }
-    v2State.isPlaying = !v2State.isPlaying;
     updateV2PlayIcon();
   }
 
@@ -399,18 +410,15 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
     }
   }
 
-  // --- UI INTERACTIONS & LISTENERS ---
   function attachV2Listeners() {
-    // Verse tap to show actions
     document.querySelectorAll('.v2-verse-card').forEach(card => {
       card.addEventListener('click', function(e) {
-        if(e.target.classList.contains('v2-word')) return; // Ignore word taps
+        if(e.target.classList.contains('v2-word')) return;
         document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('show-actions'));
         this.classList.add('show-actions');
       });
     });
 
-    // Word-by-word audio
     document.querySelectorAll('.v2-word').forEach(word => {
       word.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -436,7 +444,6 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
     localStorage.setItem('v2-theme', theme);
     document.getElementById('quran-v2-list-view').setAttribute('data-theme', theme);
     document.getElementById('quran-v2-reader-view').setAttribute('data-theme', theme);
-    // Re-render settings to update active button
     const sheet = document.querySelector('.v2-settings-sheet');
     if(sheet) {
       const btns = sheet.querySelectorAll('.v2-seg-btn');
@@ -449,15 +456,13 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
   window.toggleV2Setting = function(key) {
     v2State.settings[key] = !v2State.settings[key];
     localStorage.setItem(`v2-${key === 'wordByWord' ? 'word-by-word' : key === 'showTranslation' ? 'show-trans' : key}`, v2State.settings[key]);
-    // Re-render reader to apply changes
     renderV2Reader();
-    toggleV2Settings(); // Re-open settings after render
+    toggleV2Settings();
   };
 
   window.changeV2FontSize = function(key, val) {
     v2State.settings[key] = parseInt(val);
     localStorage.setItem(`v2-${key === 'arabicSize' ? 'arabic-size' : 'trans-size'}`, val);
-    // Live update without full re-render
     document.querySelectorAll('.v2-arabic-text').forEach(el => {
       if(key === 'arabicSize') el.style.fontSize = `${val}px`;
     });
@@ -465,21 +470,31 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
       if(key === 'transSize') el.style.fontSize = `${val}px`;
     });
   };
-  
+
+  // --- RECITER PICKER ---
   window.openReciterPicker = function() {
-    // Simple fallback prompt (can be replaced with a beautiful bottom sheet later)
-    const options = v2State.reciters.map(r => r.name).join('\n');
-    const choice = prompt(`Enter the exact name of the reciter:\n\n${options}`);
-    if(choice) {
-      const found = v2State.reciters.find(r => r.name.toLowerCase() === choice.toLowerCase());
-      if(found) {
-        v2State.settings.reciter = found.id;
-        localStorage.setItem('v2-reciter', found.id);
-        setupAudioEngine(); // Reload audio engine with new reciter
-        renderV2Reader(); // Re-render to update player name
-        showToast(`Reciter set to ${found.name}`);
-      }
-    }
+    const overlay = document.getElementById('v2-reciter-overlay');
+    if(overlay) overlay.classList.add('show');
   };
+  
+  window.closeReciterPicker = function() {
+    const overlay = document.getElementById('v2-reciter-overlay');
+    if(overlay) overlay.classList.remove('show');
+  };
+
+  window.selectReciter = function(id) {
+    v2State.settings.reciter = id;
+    localStorage.setItem('v2-reciter', id);
+    closeReciterPicker();
+    closeV2Settings();
+    renderV2Reader();
+    setupAudioEngine();
+    if(typeof showToast === 'function') showToast('Reciter updated');
+  };
+
+  function closeV2Settings() {
+    const overlay = document.getElementById('v2-settings-overlay');
+    if(overlay) overlay.classList.remove('show');
+  }
 
 })();
