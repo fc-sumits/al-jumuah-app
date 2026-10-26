@@ -124,7 +124,6 @@
   }
 
   async function loadV2Surah(surahNum, jumpToAyah) {
-    // RACE CONDITION GUARD: Set current immediately
     v2State.currentSurah = surahNum;
     v2State.currentAyah = jumpToAyah || 1;
     
@@ -137,17 +136,17 @@
 
     try {
       const metaRes = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}`);
-      if (v2State.currentSurah !== surahNum) return; // Abort if user tapped another surah
+      if (v2State.currentSurah !== surahNum) return; // Race condition guard
       v2State.surahMeta = (await metaRes.json()).data;
 
       const textUrl = `https://api.quran.com/api/v4/verses/by_chapter/${surahNum}?words=true&word_fields=text_uthmani&translation_fields=text&translations=${v2State.settings.translationId}`;
       const textData = await (await fetch(textUrl)).json();
-      if (v2State.currentSurah !== surahNum) return; // Abort
+      if (v2State.currentSurah !== surahNum) return; 
       
       v2State.surahData = { verses: textData.verses };
 
       await fetchAudioAndTimings(surahNum);
-      if (v2State.currentSurah !== surahNum) return; // Abort
+      if (v2State.currentSurah !== surahNum) return; 
 
       renderV2Reader();
       setupAudioEngine();
@@ -182,7 +181,6 @@
     v2State.audioUrl = data.audio_file.audio_url;
     v2State.verseTimings = data.audio_file.verse_timings || [];
     
-    // GUARD: Try-catch to prevent quota errors from crashing the app
     try {
       localStorage.setItem(cacheKey, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
     } catch(e) {
@@ -357,10 +355,15 @@
       if(document.getElementById('v2-player-reciter')) document.getElementById('v2-player-reciter').textContent = rec.name;
       if(document.getElementById('v2-settings-reciter-name')) document.getElementById('v2-settings-reciter-name').textContent = rec.name;
       
-      const transRes = await fetch('https://api.quran.com/api/v4/resources/translations');
-      v2State.translations = (await transRes.json()).translations;
-      const trans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId.toString()) || {name: 'Sahih International'};
-      if(document.getElementById('v2-settings-trans-name')) document.getElementById('v2-settings-trans-name').textContent = trans.name;
+      try {
+        const transRes = await fetch('https://api.quran.com/api/v4/resources/translations');
+        v2State.translations = (await transRes.json()).translations;
+        const trans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId.toString()) || {name: 'Sahih International'};
+        if(document.getElementById('v2-settings-trans-name')) document.getElementById('v2-settings-trans-name').textContent = trans.name;
+      } catch(e) {
+        console.log('Offline: could not fetch translations list.');
+        if(document.getElementById('v2-settings-trans-name')) document.getElementById('v2-settings-trans-name').textContent = 'Sahih International';
+      }
 
       updatePlayerUI();
     }, 100);
@@ -374,6 +377,11 @@
     v2State.isPlaying = false;
     v2State.lastActiveWord = null;
     stopSyncLoop();
+
+    if (!v2State.audioUrl) {
+      showToast('No audio available for this Surah.');
+      return;
+    }
 
     v2State.audio = new Audio(v2State.audioUrl);
     v2State.audio.crossOrigin = "anonymous";
