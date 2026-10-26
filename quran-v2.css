@@ -1,8 +1,258 @@
-/* --- FIX: Ensure the highlights show up --- */
+/* ═══════════════════════════════════════════════════════════════
+   QURAN V2 - PREMIUM READER (Night Oasis & Warm Parchment)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* --- THEMES --- */
+#quran-v2-list-view, #quran-v2-reader-view {
+  --v2-bg: #0A0F1D;
+  --v2-card: #121A2F;
+  --v2-text: #F5F0E8;
+  --v2-muted: #8A95A5;
+  --v2-copper: #D4AF37;
+  --v2-copper-glow: rgba(212, 175, 55, 0.25);
+  --v2-border: rgba(212, 175, 55, 0.15);
+  --v2-overlay: rgba(10, 15, 29, 0.85);
+  --v2-glass: rgba(18, 26, 47, 0.85);
+}
+
+#quran-v2-list-view[data-theme="light"], #quran-v2-reader-view[data-theme="light"] {
+  --v2-bg: #FDFBF7;
+  --v2-card: #FFFFFF;
+  --v2-text: #1A1A1A;
+  --v2-muted: #6B6B6B;
+  --v2-copper: #C58B2A;
+  --v2-copper-glow: rgba(197, 139, 42, 0.2);
+  --v2-border: rgba(197, 139, 42, 0.2);
+  --v2-overlay: rgba(253, 251, 247, 0.9);
+  --v2-glass: rgba(255, 255, 255, 0.9);
+}
+
+#quran-v2-list-view, #quran-v2-reader-view {
+  background: var(--v2-bg);
+  color: var(--v2-text);
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  z-index: 50;
+  padding-bottom: 100px;
+}
+
+/* Hide main app header/greeting when V2 is active */
+body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav {
+  display: none !important;
+}
+
+/* --- V2 SURAH LIST --- */
+.v2-list-header {
+  padding: 20px 16px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.v2-list-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--v2-copper);
+}
+.v2-surah-card {
+  position: relative;
+  margin: 12px 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 1px solid var(--v2-border);
+}
+.v2-surah-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+.v2-surah-card:hover .v2-surah-bg {
+  transform: scale(1.05);
+}
+.v2-surah-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--v2-bg) 10%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  z-index: 1;
+}
+#quran-v2-list-view[data-theme="light"] .v2-surah-overlay {
+  background: linear-gradient(90deg, rgba(253,251,247,0.95) 10%, rgba(253,251,247,0.6) 60%, transparent 100%);
+}
+.v2-surah-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.v2-surah-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--v2-copper);
+  min-width: 50px;
+  text-align: left;
+}
+.v2-surah-info {
+  flex: 1;
+}
+.v2-surah-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.v2-surah-meaning {
+  font-size: 0.8rem;
+  color: var(--v2-muted);
+}
+.v2-surah-progress {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--v2-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--v2-copper);
+  background: var(--v2-glass);
+}
+
+/* --- V2 READER VIEW --- */
+.v2-hero {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+}
+
+/* Reduced fade — much softer, only affects bottom 35% */
+.v2-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--v2-bg) 0%, rgba(10, 15, 29, 0.5) 35%, transparent 70%);
+  pointer-events: none;
+}
+#quran-v2-reader-view[data-theme="light"] .v2-hero::after {
+  background: linear-gradient(to top, var(--v2-bg) 0%, rgba(253, 251, 247, 0.5) 35%, transparent 70%);
+}
+
+.v2-hero-topbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+.v2-hero-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.v2-hero-arabic {
+  font-family: var(--font-arabic);
+  font-size: 2.2rem;
+  color: var(--v2-copper);
+  line-height: 1.2;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.v2-hero-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.v2-hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.v2-hero-pill {
+  background: var(--v2-glass);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--v2-copper);
+  border: 1px solid var(--v2-border);
+}
+
+/* Verses */
+.v2-verses-container {
+  padding: 16px;
+}
+.v2-verse-card {
+  background: var(--v2-card);
+  border-radius: 16px;
+  padding: 20px 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--v2-border);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+.v2-verse-card.active {
+  border-color: var(--v2-copper);
+  box-shadow: 0 0 20px var(--v2-copper-glow);
+  transform: scale(1.01);
+}
+.v2-verse-num {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--v2-bg);
+  border: 1px solid var(--v2-border);
+  color: var(--v2-copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.v2-arabic-text {
+  font-family: var(--font-arabic);
+  font-size: 1.8rem;
+  line-height: 2.2;
+  text-align: right;
+  direction: rtl;
+  color: var(--v2-text);
+  margin-bottom: 12px;
+  padding-top: 16px;
+}
+
+/* Word-by-Word Highlighting */
 .v2-word {
+  cursor: pointer;
   transition: color 0.15s, background 0.15s, box-shadow 0.15s;
   border-radius: 4px;
   padding: 0 2px;
+}
+.v2-word:active, .v2-word.playing {
+  color: var(--v2-copper);
+  background: var(--v2-copper-glow);
 }
 .v2-word.active-word {
   color: #0A0F1D !important;
@@ -10,16 +260,43 @@
   box-shadow: 0 0 8px var(--v2-copper-glow) !important;
   font-weight: 700;
 }
-.v2-verse-card.active {
-  border-color: var(--v2-copper);
-  box-shadow: 0 0 20px var(--v2-copper-glow);
-  transform: scale(1.01);
+
+.v2-translation-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--v2-muted);
 }
 
-/* --- FIX: Jump Arrow --- */
+/* Verse Actions (Hidden by default, show on active or tap) */
+.v2-verse-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--v2-border);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.v2-verse-card.active .v2-verse-actions, .v2-verse-card.show-actions .v2-verse-actions {
+  opacity: 1;
+}
+.v2-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--v2-copper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.v2-action-btn svg { width: 16px; height: 16px; }
+
+/* Floating Jump Arrow */
 .v2-jump-arrow {
   position: fixed;
-  bottom: calc(105px + env(safe-area-inset-bottom));
+  bottom: calc(115px + env(safe-area-inset-bottom));
   right: 20px;
   width: 40px;
   height: 40px;
@@ -39,17 +316,187 @@
   z-index: 90;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.v2-jump-arrow.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.v2-jump-arrow.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 .v2-jump-arrow svg { width: 20px; height: 20px; }
 
-/* --- Player updates --- */
+/* Floating Audio Player */
+.v2-player {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  background: var(--v2-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--v2-border);
+  border-radius: 20px;
+  padding: 12px 16px 16px;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.v2-player.hidden { display: none; }
+
+.v2-player-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.v2-reciter-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--v2-copper);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.v2-reciter-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--v2-copper); display: inline-block;
+}
+
+/* Player Tools (Speed, Repeat) */
 .v2-player-tools { display: flex; gap: 8px; }
 .v2-mini-btn {
-  background: var(--v2-bg); border: 1px solid var(--v2-border); color: var(--v2-text);
-  font-size: 0.7rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; cursor: pointer;
+  background: var(--v2-bg);
+  border: 1px solid var(--v2-border);
+  color: var(--v2-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.v2-player-scrub { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
-.v2-player-scrub span { font-size: 0.65rem; color: var(--v2-muted); font-variant-numeric: tabular-nums; min-width: 30px; text-align: center; }
-.v2-player-scrub input[type=range] { flex: 1; -webkit-appearance: none; background: transparent; height: 20px; }
-.v2-player-scrub input[type=range]::-webkit-slider-runnable-track { height: 4px; background: var(--v2-border); border-radius: 999px; }
-.v2-player-scrub input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--v2-copper); margin-top: -4px; box-shadow: 0 0 8px var(--v2-copper-glow); }
+.v2-mini-btn:active { transform: scale(0.95); }
+
+/* Player Scrubber (Seek Bar) */
+.v2-player-scrub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
+}
+.v2-player-scrub span {
+  font-size: 0.65rem;
+  color: var(--v2-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 30px;
+  text-align: center;
+}
+.v2-player-scrub input[type=range] {
+  flex: 1;
+  -webkit-appearance: none;
+  background: transparent;
+  height: 20px;
+}
+.v2-player-scrub input[type=range]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--v2-border);
+  border-radius: 999px;
+}
+.v2-player-scrub input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--v2-copper);
+  margin-top: -4px;
+  box-shadow: 0 0 8px var(--v2-copper-glow);
+}
+
+.v2-player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.v2-play-btn {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--v2-copper); color: var(--v2-bg);
+  border: none; display: flex; align-items: center; justify-content: center; cursor: pointer;
+  box-shadow: 0 4px 15px var(--v2-copper-glow);
+}
+.v2-play-btn svg { width: 24px; height: 24px; }
+
+/* Spinner for Audio Loading */
+.v2-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid rgba(0,0,0,0.15);
+  border-top-color: var(--v2-bg);
+  border-radius: 50%;
+  animation: v2Spin 0.8s linear infinite;
+}
+@keyframes v2Spin {
+  to { transform: rotate(360deg); }
+}
+
+.v2-icon-btn {
+  background: transparent; border: none; color: var(--v2-text); cursor: pointer; opacity: 0.7;
+}
+.v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
+.v2-icon-btn svg { width: 20px; height: 20px; }
+
+/* --- SETTINGS HALF-SHEET (No blur on reader) --- */
+.v2-settings-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: transparent; /* No blur */
+  display: none;
+}
+.v2-settings-overlay.show { display: block; }
+.v2-settings-sheet {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--v2-card);
+  border-top-left-radius: 24px; border-top-right-radius: 24px;
+  padding: 20px 20px 40px;
+  max-height: 75vh; overflow-y: auto;
+  transform: translateY(100%); transition: transform 0.3s ease;
+  border-top: 1px solid var(--v2-border);
+  color: var(--v2-text);
+}
+.v2-settings-overlay.show .v2-settings-sheet {
+  transform: translateY(0);
+}
+.v2-settings-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+}
+.v2-settings-title { font-size: 1.2rem; font-weight: 800; color: var(--v2-copper); }
+.v2-settings-close { background: none; border: none; color: var(--v2-text); font-size: 1.5rem; cursor: pointer; }
+
+.v2-setting-group { margin-bottom: 24px; }
+.v2-setting-label { font-size: 0.75rem; font-weight: 800; color: var(--v2-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
+.v2-setting-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--v2-border); }
+.v2-setting-row span { font-size: 0.95rem; font-weight: 600; }
+.v2-slider { width: 100%; accent-color: var(--v2-copper); }
+
+/* Custom Toggle */
+.v2-toggle { width: 44px; height: 24px; border-radius: 999px; background: var(--v2-border); position: relative; cursor: pointer; transition: background 0.3s; }
+.v2-toggle.on { background: var(--v2-copper); }
+.v2-toggle::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: transform 0.3s; }
+.v2-toggle.on::after { transform: translateX(20px); }
+
+/* Segmented Control */
+.v2-segmented { display: flex; background: var(--v2-bg); border-radius: 10px; padding: 4px; gap: 4px; }
+.v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
+
+/* Reciter / Translation Picker Items */
+.v2-reciter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--v2-border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.v2-reciter-item:hover, .v2-reciter-item.active {
+  background: var(--v2-bg);
+  }
