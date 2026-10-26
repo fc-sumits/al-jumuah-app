@@ -11,6 +11,7 @@
     timings: [],
     currentAyah: 1,
     isPlaying: false,
+    playTimeout: null,
     reciters: [
       { id: 'mishaari_raashid_al_3afaasee', name: 'Mishary Alafasy' },
       { id: 'abdurrahmaan_as-sudays', name: 'Abdurrahman As-Sudais' },
@@ -34,7 +35,7 @@
     }
   };
 
-  // --- EXPOSE GLOBALS FOR APP.JS ---
+  // --- EXPOSE GLOBALS FOR APP.JS & INLINE ONCLICK ---
   window.openQuranV2 = function(surahNum) {
     document.body.classList.add('v2-active');
     document.getElementById('quran-list-view').style.display = 'none';
@@ -45,7 +46,6 @@
     document.getElementById('quran-v2-list-view').setAttribute('data-theme', v2State.settings.theme);
     document.getElementById('quran-v2-reader-view').setAttribute('data-theme', v2State.settings.theme);
 
-    // If no surahNum provided, load the list. Otherwise load the Surah.
     if (surahNum) {
       loadV2Surah(surahNum);
     } else {
@@ -56,7 +56,9 @@
   window.showV2List = function() {
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     document.getElementById('quran-v2-list-view').style.display = 'block';
-    if (v2State.audio) { v2State.audio.pause(); v2State.isPlaying = false; }
+    if (v2State.audio) { v2State.audio.pause(); }
+    if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
+    v2State.isPlaying = false;
   };
 
   window.closeQuranV2 = function() {
@@ -64,7 +66,9 @@
     document.getElementById('quran-v2-list-view').style.display = 'none';
     document.getElementById('quran-v2-reader-view').style.display = 'none';
     document.getElementById('quran-list-view').style.display = 'block';
-    if (v2State.audio) { v2State.audio.pause(); v2State.isPlaying = false; }
+    if (v2State.audio) { v2State.audio.pause(); }
+    if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
+    v2State.isPlaying = false;
   };
 
   // --- RENDER SURAH LIST ---
@@ -195,8 +199,8 @@
           <div class="v2-arabic-text" style="font-size:${v2State.settings.arabicSize}px">${arabicHtml}</div>
           ${v2State.settings.showTranslation ? `<div class="v2-translation-text" style="font-size:${v2State.settings.transSize}px">${en.text}</div>` : ''}
           <div class="v2-verse-actions">
-             <button class="v2-action-btn" onclick="playV2Ayah(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
-             <button class="v2-action-btn" onclick="openTafsir(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
+             <button class="v2-action-btn" onclick="window.playV2Ayah(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
+             <button class="v2-action-btn" onclick="window.openTafsir(${ayah.numberInSurah})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
           </div>
         </div>
       `;
@@ -208,7 +212,7 @@
     html += `
       <div class="v2-player ${v2State.settings.showPlayer ? '' : 'hidden'}" id="v2-player">
         <div class="v2-player-top">
-          <div class="v2-reciter-name" onclick="openReciterPicker()">
+          <div class="v2-reciter-name" onclick="window.openReciterPicker()">
             <span class="v2-reciter-dot"></span> ${reciterName}
           </div>
           <div style="font-size:0.75rem; color:var(--v2-muted)">Surah ${surah.number}</div>
@@ -217,20 +221,20 @@
           <div class="v2-player-fill" id="v2-player-fill"></div>
         </div>
         <div class="v2-player-controls">
-          <button class="v2-icon-btn" onclick="skipV2Ayah(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
-          <button class="v2-play-btn" id="v2-play-btn" onclick="toggleV2Play()">
+          <button class="v2-icon-btn" onclick="window.skipV2Ayah(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
+          <button class="v2-play-btn" id="v2-play-btn" onclick="window.toggleV2Play()">
             <svg id="v2-play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
           </button>
-          <button class="v2-icon-btn" onclick="skipV2Ayah(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
+          <button class="v2-icon-btn" onclick="window.skipV2Ayah(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
         </div>
       </div>
       
       <!-- Settings Drawer -->
-      <div class="v2-settings-overlay" id="v2-settings-overlay" onclick="if(event.target===this) toggleV2Settings()">
+      <div class="v2-settings-overlay" id="v2-settings-overlay" onclick="if(event.target===this) window.toggleV2Settings()">
         <div class="v2-settings-sheet">
           <div class="v2-settings-header">
             <div class="v2-settings-title">Preferences</div>
-            <button class="v2-settings-close" onclick="toggleV2Settings()">✕</button>
+            <button class="v2-settings-close" onclick="window.toggleV2Settings()">✕</button>
           </div>
           
           <div class="v2-setting-group">
@@ -238,17 +242,17 @@
             <div class="v2-setting-row">
               <span>Theme</span>
               <div class="v2-segmented">
-                <button class="v2-seg-btn ${v2State.settings.theme === 'dark' ? 'active' : ''}" onclick="setV2Theme('dark')">Dark</button>
-                <button class="v2-seg-btn ${v2State.settings.theme === 'light' ? 'active' : ''}" onclick="setV2Theme('light')">Light</button>
+                <button class="v2-seg-btn ${v2State.settings.theme === 'dark' ? 'active' : ''}" onclick="window.setV2Theme('dark')">Dark</button>
+                <button class="v2-seg-btn ${v2State.settings.theme === 'light' ? 'active' : ''}" onclick="window.setV2Theme('light')">Light</button>
               </div>
             </div>
             <div class="v2-setting-row">
               <span>Word-by-Word Audio</span>
-              <div class="v2-toggle ${v2State.settings.wordByWord ? 'on' : ''}" onclick="toggleV2Setting('wordByWord')"></div>
+              <div class="v2-toggle ${v2State.settings.wordByWord ? 'on' : ''}" onclick="window.toggleV2Setting('wordByWord')"></div>
             </div>
             <div class="v2-setting-row">
               <span>Translation</span>
-              <div class="v2-toggle ${v2State.settings.showTranslation ? 'on' : ''}" onclick="toggleV2Setting('showTranslation')"></div>
+              <div class="v2-toggle ${v2State.settings.showTranslation ? 'on' : ''}" onclick="window.toggleV2Setting('showTranslation')"></div>
             </div>
           </div>
 
@@ -256,17 +260,17 @@
             <span class="v2-setting-label">Typography</span>
             <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
               <span>Arabic Font Size (${v2State.settings.arabicSize}px)</span>
-              <input type="range" class="v2-slider" min="20" max="50" value="${v2State.settings.arabicSize}" onchange="changeV2FontSize('arabicSize', this.value)">
+              <input type="range" class="v2-slider" min="20" max="50" value="${v2State.settings.arabicSize}" onchange="window.changeV2FontSize('arabicSize', this.value)">
             </div>
             <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
               <span>Translation Size (${v2State.settings.transSize}px)</span>
-              <input type="range" class="v2-slider" min="12" max="24" value="${v2State.settings.transSize}" onchange="changeV2FontSize('transSize', this.value)">
+              <input type="range" class="v2-slider" min="12" max="24" value="${v2State.settings.transSize}" onchange="window.changeV2FontSize('transSize', this.value)">
             </div>
           </div>
 
           <div class="v2-setting-group">
             <span class="v2-setting-label">Reciter</span>
-            <div class="v2-setting-row" onclick="openReciterPicker()" style="cursor:pointer">
+            <div class="v2-setting-row" onclick="window.openReciterPicker()" style="cursor:pointer">
               <span>${reciterName}</span>
               <span style="color:var(--v2-copper)">Change ›</span>
             </div>
@@ -275,15 +279,15 @@
       </div>
       
       <!-- Reciter Picker Bottom Sheet -->
-      <div class="v2-settings-overlay" id="v2-reciter-overlay" onclick="if(event.target===this) closeReciterPicker()">
+      <div class="v2-settings-overlay" id="v2-reciter-overlay" onclick="if(event.target===this) window.closeReciterPicker()">
         <div class="v2-settings-sheet">
           <div class="v2-settings-header">
             <div class="v2-settings-title">Choose Reciter</div>
-            <button class="v2-settings-close" onclick="closeReciterPicker()">✕</button>
+            <button class="v2-settings-close" onclick="window.closeReciterPicker()">✕</button>
           </div>
           <div style="max-height: 60vh; overflow-y: auto;">
             ${v2State.reciters.map(r => `
-              <div class="v2-reciter-item ${v2State.settings.reciter === r.id ? 'active' : ''}" onclick="selectReciter('${r.id}')">
+              <div class="v2-reciter-item ${v2State.settings.reciter === r.id ? 'active' : ''}" onclick="window.selectReciter('${r.id}')">
                 <div style="display:flex; align-items:center; gap:12px;">
                   <div style="width:40px; height:40px; border-radius:50%; background:var(--v2-bg); border:1px solid var(--v2-border); display:flex; align-items:center; justify-content:center; color:var(--v2-copper);">
                     🎙
@@ -302,6 +306,7 @@
 
     readerView.innerHTML = html;
     attachV2Listeners();
+    updateV2PlayIcon(v2State.isPlaying ? 'playing' : 'paused');
   }
 
   // --- AUDIO ENGINE ---
@@ -323,6 +328,9 @@
 
   function setupAudioEngine() {
     if (v2State.audio) { v2State.audio.pause(); v2State.audio = null; }
+    if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
+    v2State.isPlaying = false;
+    
     const surahNum = v2State.surahData.arabic.number;
     const reciter = v2State.settings.reciter;
     const audioUrl = `https://download.quranicaudio.com/quran/${reciter}/${String(surahNum).padStart(3, '0')}.mp3`;
@@ -337,7 +345,6 @@
       const fill = document.getElementById('v2-player-fill');
       if(fill) fill.style.width = `${pct}%`;
 
-      // Fix: spa5k uses 'verse', fallback uses 'verse' now too.
       const activeTiming = v2State.timings.find(t => currentMs >= t.start_time && currentMs <= t.end_time);
       
       if (activeTiming && (activeTiming.verse !== v2State.currentAyah || activeTiming.ayah !== v2State.currentAyah)) {
@@ -349,7 +356,34 @@
 
     v2State.audio.addEventListener('ended', () => {
       v2State.isPlaying = false;
-      updateV2PlayIcon();
+      updateV2PlayIcon('paused');
+    });
+  }
+
+  function attemptV2Play(audio) {
+    if(!audio) return;
+    
+    updateV2PlayIcon('loading');
+    if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
+    
+    v2State.playTimeout = setTimeout(() => {
+      if (!v2State.isPlaying) {
+        updateV2PlayIcon('paused');
+        if(typeof showToast === 'function') showToast('Audio slow to load — check connection.');
+      }
+    }, 15000);
+
+    audio.play().then(() => {
+      if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
+      v2State.isPlaying = true;
+      updateV2PlayIcon('playing');
+    }).catch(e => {
+      if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
+      if (e.name === 'AbortError') return;
+      
+      v2State.isPlaying = false;
+      updateV2PlayIcon('paused');
+      if(typeof showToast === 'function') showToast('Audio unavailable. Check connection.');
     });
   }
 
@@ -358,12 +392,7 @@
     const timing = v2State.timings.find(t => t.verse === ayahNum || t.ayah === ayahNum);
     if (timing) {
       v2State.audio.currentTime = timing.start_time / 1000;
-      v2State.audio.play().catch(e => {
-        console.error(e);
-        if(typeof showToast === 'function') showToast('Audio stream failed.');
-      });
-      v2State.isPlaying = true;
-      updateV2PlayIcon();
+      attemptV2Play(v2State.audio);
     }
   }
 
@@ -372,14 +401,11 @@
     if(v2State.isPlaying) {
       v2State.audio.pause();
       v2State.isPlaying = false;
+      if (v2State.playTimeout) clearTimeout(v2State.playTimeout);
+      updateV2PlayIcon('paused');
     } else {
-      v2State.audio.play().catch(e => {
-        console.error(e);
-        if(typeof showToast === 'function') showToast('Audio unavailable. Check connection.');
-      });
-      v2State.isPlaying = true;
+      attemptV2Play(v2State.audio);
     }
-    updateV2PlayIcon();
   }
 
   function skipV2Ayah(dir) {
@@ -389,13 +415,16 @@
     }
   }
 
-  function updateV2PlayIcon() {
-    const icon = document.getElementById('v2-play-icon');
-    if(!icon) return;
-    if(v2State.isPlaying) {
-      icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+  function updateV2PlayIcon(state) {
+    const btn = document.getElementById('v2-play-btn');
+    if(!btn) return;
+    
+    if(state === 'loading') {
+      btn.innerHTML = '<div class="v2-spinner"></div>';
+    } else if(state === 'playing') {
+      btn.innerHTML = '<svg id="v2-play-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
     } else {
-      icon.innerHTML = '<polygon points="6 4 20 12 6 20 6 4"/>';
+      btn.innerHTML = '<svg id="v2-play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>';
     }
   }
 
@@ -433,6 +462,11 @@
     });
   }
 
+  // --- EXPOSE FUNCTIONALITY ---
+  window.toggleV2Play = toggleV2Play;
+  window.playV2Ayah = playV2Ayah;
+  window.skipV2Ayah = skipV2Ayah;
+
   // --- SETTINGS LOGIC ---
   window.toggleV2Settings = function() {
     const overlay = document.getElementById('v2-settings-overlay');
@@ -456,18 +490,44 @@
   window.toggleV2Setting = function(key) {
     v2State.settings[key] = !v2State.settings[key];
     localStorage.setItem(`v2-${key === 'wordByWord' ? 'word-by-word' : key === 'showTranslation' ? 'show-trans' : key}`, v2State.settings[key]);
-    renderV2Reader();
-    toggleV2Settings();
+    
+    // In-place DOM patch for toggles
+    if(key === 'showTranslation') {
+      document.querySelectorAll('.v2-translation-text').forEach(el => {
+        el.style.display = v2State.settings.showTranslation ? '' : 'none';
+      });
+    }
+    if(key === 'wordByWord') {
+      // Requires re-render of text to apply spans safely
+      renderV2Reader();
+      if (v2State.audio) setupAudioEngine(); 
+    }
+    
+    // Update toggle visual state
+    const overlay = document.getElementById('v2-settings-overlay');
+    if (overlay) {
+      overlay.querySelectorAll('.v2-toggle').forEach((t, i) => {
+        if (i === 0 && key === 'wordByWord') t.classList.toggle('on', v2State.settings.wordByWord);
+        if (i === 1 && key === 'showTranslation') t.classList.toggle('on', v2State.settings.showTranslation);
+      });
+    }
   };
 
   window.changeV2FontSize = function(key, val) {
     v2State.settings[key] = parseInt(val);
     localStorage.setItem(`v2-${key === 'arabicSize' ? 'arabic-size' : 'trans-size'}`, val);
+    
     document.querySelectorAll('.v2-arabic-text').forEach(el => {
       if(key === 'arabicSize') el.style.fontSize = `${val}px`;
     });
     document.querySelectorAll('.v2-translation-text').forEach(el => {
       if(key === 'transSize') el.style.fontSize = `${val}px`;
+    });
+    
+    const labels = document.querySelectorAll('.v2-setting-row span');
+    labels.forEach(l => {
+      if (l.textContent.includes('Arabic Font Size')) l.textContent = `Arabic Font Size (${val}px)`;
+      if (l.textContent.includes('Translation Size')) l.textContent = `Translation Size (${val}px)`;
     });
   };
 
@@ -485,16 +545,11 @@
   window.selectReciter = function(id) {
     v2State.settings.reciter = id;
     localStorage.setItem('v2-reciter', id);
-    closeReciterPicker();
-    closeV2Settings();
+    window.closeReciterPicker();
+    window.toggleV2Settings();
     renderV2Reader();
     setupAudioEngine();
     if(typeof showToast === 'function') showToast('Reciter updated');
   };
-
-  function closeV2Settings() {
-    const overlay = document.getElementById('v2-settings-overlay');
-    if(overlay) overlay.classList.remove('show');
-  }
 
 })();
