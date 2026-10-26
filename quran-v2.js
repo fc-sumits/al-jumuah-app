@@ -91,7 +91,7 @@ if (typeof QURAN === 'undefined' || !QURAN.surahList || QURAN.surahList.length =
       <div style="padding: 0 16px 20px;">
     `;
 
-    window.QURAN.surahList.forEach(s => {
+    QURAN.surahList.forEach(s => {
       const paddedNum = String(s.number).padStart(3, '0');
       // Fallback image if user hasn't uploaded it yet
       const bgImg = `images/surah-${paddedNum}-list.webp`;
