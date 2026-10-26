@@ -124,6 +124,10 @@
   }
 
   async function loadV2Surah(surahNum, jumpToAyah) {
+    // RACE CONDITION GUARD: Set current immediately
+    v2State.currentSurah = surahNum;
+    v2State.currentAyah = jumpToAyah || 1;
+    
     const listView = document.getElementById('quran-v2-list-view');
     const readerView = document.getElementById('quran-v2-reader-view');
     
@@ -133,16 +137,18 @@
 
     try {
       const metaRes = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}`);
+      if (v2State.currentSurah !== surahNum) return; // Abort if user tapped another surah
       v2State.surahMeta = (await metaRes.json()).data;
 
       const textUrl = `https://api.quran.com/api/v4/verses/by_chapter/${surahNum}?words=true&word_fields=text_uthmani&translation_fields=text&translations=${v2State.settings.translationId}`;
       const textData = await (await fetch(textUrl)).json();
+      if (v2State.currentSurah !== surahNum) return; // Abort
       
       v2State.surahData = { verses: textData.verses };
-      v2State.currentSurah = surahNum;
-      v2State.currentAyah = jumpToAyah || 1;
 
       await fetchAudioAndTimings(surahNum);
+      if (v2State.currentSurah !== surahNum) return; // Abort
+
       renderV2Reader();
       setupAudioEngine();
 
@@ -150,7 +156,9 @@
 
     } catch(e) {
       console.error(e);
-      readerView.innerHTML = '<div style="text-align:center;padding:40px;">Failed to load this Surah.</div>';
+      if (v2State.currentSurah === surahNum) {
+        readerView.innerHTML = '<div style="text-align:center;padding:40px;">Failed to load this Surah.</div>';
+      }
     }
   }
 
@@ -174,7 +182,12 @@
     v2State.audioUrl = data.audio_file.audio_url;
     v2State.verseTimings = data.audio_file.verse_timings || [];
     
-    localStorage.setItem(cacheKey, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
+    // GUARD: Try-catch to prevent quota errors from crashing the app
+    try {
+      localStorage.setItem(cacheKey, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
+    } catch(e) {
+      console.warn('Storage full, could not cache timings.');
+    }
   }
 
   function renderV2Reader() {
@@ -355,7 +368,6 @@
     attachV2Listeners();
   }
 
-  // --- AUDIO ENGINE ---
   function setupAudioEngine() {
     if (v2State.audio) { v2State.audio.pause(); v2State.audio = null; }
     if (v2State.playTimeout) { clearTimeout(v2State.playTimeout); v2State.playTimeout = null; }
@@ -388,7 +400,7 @@
 
   function startSyncLoop() {
     stopSyncLoop();
-    let lastAyah = 0; // Starts at 0 so first verse always triggers
+    let lastAyah = 0; 
     function loop() {
       if (!v2State.audio || !v2State.isPlaying) return;
       
@@ -571,12 +583,10 @@
     else if (v2State.repeatMode === 'surah') { v2State.audio.currentTime = 0; attemptV2Play(); }
   }
 
-  // --- PERFORMANCE OPTIMIZED LISTENERS (Event Delegation) ---
   function attachV2Listeners() {
     const container = document.getElementById('v2-verses-container');
     if (!container) return;
 
-    // One listener for the whole container instead of thousands
     container.addEventListener('click', (e) => {
       const word = e.target.closest('.v2-word');
       if (word) {
@@ -726,7 +736,9 @@
       const resAudio = await fetch(v2State.audioUrl);
       if (resAudio.ok) await cacheV2.put(v2State.audioUrl, resAudio.clone());
       
-      localStorage.setItem(`v2-sync-${v2State.settings.reciterId}-${v2State.currentSurah}`, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
+      try {
+        localStorage.setItem(`v2-sync-${v2State.settings.reciterId}-${v2State.currentSurah}`, JSON.stringify({ audioUrl: v2State.audioUrl, timings: v2State.verseTimings }));
+      } catch(e) { console.warn('Storage full, offline timings might not work.'); }
 
       if (v2State.settings.wordByWordAudio) {
         const cacheWbw = await caches.open('quran-wbw-audio');
