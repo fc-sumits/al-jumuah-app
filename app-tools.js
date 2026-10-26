@@ -736,7 +736,7 @@ function renderAsmaDetail(){
   if(prev && !prev.disabled) prev.addEventListener('click', () => { currentAsmaIndex--; renderAsmaDetail(); });
   if(next && !next.disabled) next.addEventListener('click', () => { currentAsmaIndex++; renderAsmaDetail(); });
   document.getElementById('as-grid').addEventListener('click', renderAsmaUlHusna);
-        }
+}
 // ═══════════════════════════════════════════════════════════════
 // APP-TOOLS.JS — Islamic Tools & Calculators (Part 2 of 2)
 // ═══════════════════════════════════════════════════════════════
@@ -1725,4 +1725,50 @@ function renderAboutApp(){
           <li>Dhikr, Tasbih, Adhkar, Duas &amp; Durood</li>
           <li>Prayer times, Qibla, Prayer &amp; Fasting trackers</li>
           <li>Prophets, Sahaba, Seerah, New Muslim, Islamic Quiz</li>
-          <li>Ram
+          <li>Ramadan mode, Hijri calendar, Zakat calculators</li>
+          <li>100 Daily Islamic Facts</li>
+          <li>And more…</li>
+        </ul>
+      </div>
+      <div class="tool-section-title">Credits</div>
+      <div class="pg-intro" style="font-size:.78rem;padding:12px">
+        Recitations from everyayah.com · Quran text from alquran.cloud · Hadith from fawazahmed0 hadith-api · Prayer times &amp; Qibla from aladhan.com · Tafsir &amp; word-by-word from quran.com
+      </div>
+      <div class="kh-complete-msg" style="margin-top:14px">
+        <span class="dua">جَزَاكُمُ اللَّهُ خَيْرًا</span>
+        <div class="en">May Allah reward you with good.</div>
+      </div>
+      <div class="tool-hint" style="padding-top:18px">Made with love for the Ummah 🌙</div>
+    </div>`;
+}
+
+// ── TOOLS MAP ─────────────────────────────────────────────────
+const TOOLS = {
+  qibla: {title:'🧭 Qibla Compass', render:renderQibla},
+  prayerTracker: {title:'🕌 Prayer Tracker', render:renderPrayerTracker},
+  fastingTracker: {title:'🌙 Fasting Tracker', render:renderFastingTracker},
+  tasbih: {title:'📿 Tasbih Counter', render:renderTasbih},
+  tasbihSounds: {title:'🔔 Tasbih Sounds', render:renderTasbihSounds},
+  customDhikr: {title:'✍️ Custom Dhikr', render:renderCustomDhikr},
+  prayerTimes: {title:'🕌 Prayer Times', render:renderPrayerTimes},
+  khatmTracker: {title:'📖 Quran Khatm Tracker', render:renderKhatmTracker},
+  tajweed: {title:'📚 Tajweed Basics', render:renderTajweed},
+  arabicAlphabet: {title:'🔤 Arabic Alphabet', render:renderArabicAlphabet},
+  asmaUlHusna: {title:'✨ Asma ul-Husna', render:renderAsmaUlHusna},
+  zakatCalculator: {title:'💰 Zakat Calculator', render:renderZakatCalculator},
+  zakatAlFitr: {title:'🌙 Zakat al-Fitr', render:renderZakatAlFitr},
+  ramadanMode: {title:'🌙 Ramadan Mode', render:renderRamadanMode},
+  hijriCalendar: {title:'🗓 Hijri Calendar', render:renderHijriCalendar},
+  keyIslamicDates: {title:'📅 Key Islamic Dates', render:renderKeyIslamicDates},
+  hijriConverter: {title:'🔄 Hijri Converter', render:renderHijriConverter},
+  islamicMonths: {title:'🌙 Islamic Months', render:renderIslamicMonths},
+  duasByCategory: {title:'🤲 Duas by Category', render:renderDuasByCategory},
+  adhkarLibrary: {title:'📿 Adhkar Library', render:renderAdhkarLibrary},
+  duroodCollection: {title:'☪ Durood Collection', render:renderDuroodCollection},
+  duaOfTheDay: {title:'🤲 Dua of the Day', render:() => renderTodayDedicated('dua')},
+  verseOfTheDay: {title:'📖 Verse of the Day', render:() => renderTodayDedicated('verse')},
+  hadithOfTheDay: {title:'📚 Hadith of the Day', render:() => renderTodayDedicated('hadith')},
+  umrahGuide: {title:'🕋 Umrah Guide', render:renderUmrahGuide},
+  hajjGuide: {title:'🕋 Hajj Guide', render:renderHajjGuide},
+  aboutApp: {title:'ℹ️ About the app', render:renderAboutApp}
+};
