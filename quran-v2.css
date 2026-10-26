@@ -2,7 +2,6 @@
    QURAN V2 - PREMIUM READER (Night Oasis & Warm Parchment)
    ═══════════════════════════════════════════════════════════════ */
 
-/* --- THEMES --- */
 #quran-v2-list-view, #quran-v2-reader-view {
   --v2-bg: #0A0F1D;
   --v2-card: #121A2F;
@@ -37,7 +36,6 @@
   padding-bottom: 100px;
 }
 
-/* Hide main app header/greeting when V2 is active */
 body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav {
   display: none !important;
 }
@@ -243,14 +241,14 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   padding-top: 16px;
 }
 
-/* Word-by-Word Highlighting */
+/* Word-by-Word Highlighting & Tapping */
 .v2-word {
   cursor: pointer;
   transition: color 0.15s, background 0.15s, box-shadow 0.15s;
   border-radius: 4px;
   padding: 0 2px;
 }
-.v2-word:active, .v2-word.playing {
+.v2-word:active, .v2-word.playing-word {
   color: var(--v2-copper);
   background: var(--v2-copper-glow);
 }
@@ -267,7 +265,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   color: var(--v2-muted);
 }
 
-/* Verse Actions (Hidden by default, show on active or tap) */
 .v2-verse-actions {
   display: flex;
   gap: 16px;
@@ -342,7 +339,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   gap: 10px;
 }
 .v2-player.hidden { display: none; }
-
 .v2-player-top {
   display: flex;
   justify-content: space-between;
@@ -360,8 +356,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-reciter-dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--v2-copper); display: inline-block;
 }
-
-/* Player Tools (Speed, Repeat) */
 .v2-player-tools { display: flex; gap: 8px; }
 .v2-mini-btn {
   background: var(--v2-bg);
@@ -376,7 +370,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-mini-btn:active { transform: scale(0.95); }
 
-/* Player Scrubber (Seek Bar) */
 .v2-player-scrub {
   display: flex;
   align-items: center;
@@ -444,10 +437,10 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
 .v2-icon-btn svg { width: 20px; height: 20px; }
 
-/* --- SETTINGS HALF-SHEET (No blur on reader) --- */
+/* --- SETTINGS HALF-SHEET --- */
 .v2-settings-overlay {
   position: fixed; inset: 0; z-index: 200;
-  background: transparent; /* No blur */
+  background: transparent; 
   display: none;
 }
 .v2-settings-overlay.show { display: block; }
@@ -476,18 +469,15 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-setting-row span { font-size: 0.95rem; font-weight: 600; }
 .v2-slider { width: 100%; accent-color: var(--v2-copper); }
 
-/* Custom Toggle */
 .v2-toggle { width: 44px; height: 24px; border-radius: 999px; background: var(--v2-border); position: relative; cursor: pointer; transition: background 0.3s; }
 .v2-toggle.on { background: var(--v2-copper); }
 .v2-toggle::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: transform 0.3s; }
 .v2-toggle.on::after { transform: translateX(20px); }
 
-/* Segmented Control */
 .v2-segmented { display: flex; background: var(--v2-bg); border-radius: 10px; padding: 4px; gap: 4px; }
 .v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
 .v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
 
-/* Reciter / Translation Picker Items */
 .v2-reciter-item {
   display: flex;
   justify-content: space-between;
@@ -499,4 +489,4 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-reciter-item:hover, .v2-reciter-item.active {
   background: var(--v2-bg);
-  }
+}
