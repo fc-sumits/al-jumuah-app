@@ -299,9 +299,7 @@ document.querySelectorAll('.setting-row').forEach(row=>{
     else if(action){ showToast('Coming soon'); }
   });
 });
-// Initialize Quran Version setting display
-updateQuranVersionSetting();
-
+ 
 // Helper functions for Quran Version Modal
 window.openQuranVersionModal = function() {
   const modal = document.getElementById('quran-version-modal');
@@ -402,7 +400,7 @@ async function saveUserBookmarks(){
   try{ await db.collection('users').doc(window.__currentUser.uid).set({ bookmarks: userBookmarks }, { merge: true }); }
   catch(e){ console.log('save bookmarks failed', e); }
 }
-const QURAN = { surah: parseInt(localStorage.getItem('quran-last-surah') || '1'), script: localStorage.getItem('quran-script') || 'quran-uthmani', reciter: localStorage.getItem('quran-reciter') || 'ar.alafasy', mode: localStorage.getItem('quran-mode') || 'synced', data: null, surahList: [], playing: false, audio: null, currentAyah: null, autoScroll: true, downloading: false, downloaded: {} };
+var QURAN = { surah: parseInt(localStorage.getItem('quran-last-surah') || '1'), script: localStorage.getItem('quran-script') || 'quran-uthmani', reciter: localStorage.getItem('quran-reciter') || 'ar.alafasy', mode: localStorage.getItem('quran-mode') || 'synced', data: null, surahList: [], playing: false, audio: null, currentAyah: null, autoScroll: true, downloading: false, downloaded: {} };
 try { QURAN.downloaded = JSON.parse(localStorage.getItem('quran-downloads') || '{}'); } catch(e){ QURAN.downloaded = {}; }
 function isSurahDownloaded(reciter, surahNum){ return !!(QURAN.downloaded[reciter] && QURAN.downloaded[reciter].includes(surahNum)); }
 function markSurahDownloaded(reciter, surahNum){
