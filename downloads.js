@@ -6,8 +6,19 @@
   const CACHE_V1_AUDIO = 'quran-audio-v1';
   const CACHE_V2_AUDIO = 'quran-v2-audio';
   const CACHE_WBW_AUDIO = 'quran-wbw-audio';
-  const CACHE_CONTENT = 'aljumuah-v91-content'; // Current content cache
-
+  
+  // This automatically finds the latest content cache, so you never have to update this file again!
+  let CACHE_CONTENT = 'aljumuah-v81-content'; 
+  if ('caches' in window) {
+    caches.keys().then(names => {
+      const contentCaches = names.filter(n => n.includes('-content') && n.startsWith('aljumuah-'));
+      if (contentCaches.length > 0) {
+        // Sort descending to get the latest version
+        contentCaches.sort().reverse();
+        CACHE_CONTENT = contentCaches[0];
+      }
+    });
+  }
   // Format bytes to MB
   function formatBytes(bytes) {
     if (bytes === 0) return '0 MB';
