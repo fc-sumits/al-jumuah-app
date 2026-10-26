@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════
+ /* ═══════════════════════════════════════════════════════════════
    QURAN V2 - PREMIUM READER (Night Oasis & Warm Parchment)
    ═══════════════════════════════════════════════════════════════ */
 
@@ -340,77 +340,4 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   height: 24px;
   border: 2.5px solid rgba(0,0,0,0.15);
   border-top-color: var(--v2-bg);
-  border-radius: 50%;
-  animation: v2Spin 0.8s linear infinite;
-}
-@keyframes v2Spin {
-  to { transform: rotate(360deg); }
-}
-
-.v2-icon-btn {
-  background: transparent; border: none; color: var(--v2-text); cursor: pointer; opacity: 0.7;
-}
-.v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
-.v2-icon-btn svg { width: 20px; height: 20px; }
-.v2-player-progress {
-  height: 4px; background: var(--v2-border); border-radius: 999px; overflow: hidden;
-}
-.v2-player-fill {
-  height: 100%; background: var(--v2-copper); width: 0%; border-radius: 999px;
-}
-
-/* --- SETTINGS HALF-SHEET (No blur on reader) --- */
-.v2-settings-overlay {
-  position: fixed; inset: 0; z-index: 200;
-  background: transparent; /* No blur */
-  display: none;
-}
-.v2-settings-overlay.show { display: block; }
-.v2-settings-sheet {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: var(--v2-card);
-  border-top-left-radius: 24px; border-top-right-radius: 24px;
-  padding: 20px 20px 40px;
-  max-height: 75vh; overflow-y: auto;
-  transform: translateY(100%); transition: transform 0.3s ease;
-  border-top: 1px solid var(--v2-border);
-  color: var(--v2-text);
-}
-.v2-settings-overlay.show .v2-settings-sheet {
-  transform: translateY(0);
-}
-.v2-settings-header {
-  display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
-}
-.v2-settings-title { font-size: 1.2rem; font-weight: 800; color: var(--v2-copper); }
-.v2-settings-close { background: none; border: none; color: var(--v2-text); font-size: 1.5rem; cursor: pointer; }
-
-.v2-setting-group { margin-bottom: 24px; }
-.v2-setting-label { font-size: 0.75rem; font-weight: 800; color: var(--v2-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
-.v2-setting-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--v2-border); }
-.v2-setting-row span { font-size: 0.95rem; font-weight: 600; }
-.v2-slider { width: 100%; accent-color: var(--v2-copper); }
-
-/* Custom Toggle */
-.v2-toggle { width: 44px; height: 24px; border-radius: 999px; background: var(--v2-border); position: relative; cursor: pointer; transition: background 0.3s; }
-.v2-toggle.on { background: var(--v2-copper); }
-.v2-toggle::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: transform 0.3s; }
-.v2-toggle.on::after { transform: translateX(20px); }
-
-/* Segmented Control */
-.v2-segmented { display: flex; background: var(--v2-bg); border-radius: 10px; padding: 4px; gap: 4px; }
-.v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
-.v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
-/* Reciter Picker Items */
-.v2-reciter-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid var(--v2-border);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.v2-reciter-item:hover, .v2-reciter-item.active {
-  background: var(--v2-bg);
-}
+  border-radius: 50
