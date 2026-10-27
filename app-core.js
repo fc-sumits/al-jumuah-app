@@ -117,10 +117,18 @@ function showPage(name){
   if(name === 'hadith' && window.hadithBrowser) window.hadithBrowser.renderRoot();
   if(name === 'dhikr' && window.dhikrManager) window.dhikrManager.render();
   if(name === 'give') renderGive();
+  
   if(name === 'quran'){
     if(!localStorage.getItem('quran-version-chosen')) {
       openQuranVersionModal();
     }
+    const permVersion = localStorage.getItem('quran-permanent-version') || 'none';
+    if (permVersion !== 'none') {
+      localStorage.setItem('quran-version', permVersion);
+    } else if (!localStorage.getItem('quran-version')) {
+      localStorage.setItem('quran-version', 'v2'); // Default to v2 if none chosen
+    }
+
     const isV2 = localStorage.getItem('quran-version') === 'v2';
     const listView = document.getElementById('quran-list-view');
     const readerView = document.getElementById('quran-reader-view');
@@ -279,7 +287,6 @@ document.querySelectorAll('.setting-row').forEach(row=>{
     else if(row.id === 'clear-downloads-row'){ openDownloadsManager(); }
     else if(row.id === 'settings-loc-row'){ openTool('prayerTimes'); }
     else if(row.id === 'settings-method-row'){ openTool('prayerTimes'); }
-    else if(row.id === 'quran-version-row'){ openQuranVersionModal(); }
     else if(action){ showToast('Coming soon'); }
   });
 });
@@ -328,20 +335,38 @@ window.closeQuranVersionModal = function() {
     modal.classList.remove('show');
   }
 };
+
 window.setQuranVersion = function(version) {
   localStorage.setItem('quran-version', version);
+  localStorage.setItem('quran-permanent-version', version);
   localStorage.setItem('quran-version-chosen', 'true');
   updateQuranVersionSetting();
   closeQuranVersionModal();
-  showToast(`Reader set to ${version === 'v1' ? 'Classic' : 'Premium'}`);
-  if(typeof renderLastRead === 'function') renderLastRead();
+  showToast(`Reader locked to ${version === 'v1' ? 'Classic' : 'Premium'}`);
+  showPage('quran');
 };
+
 window.updateQuranVersionSetting = function() {
-  const val = localStorage.getItem('quran-version') || 'v1';
-  const display = document.getElementById('quran-version-value');
-  if(display) display.textContent = val === 'v1' ? 'Classic (V1)' : 'Premium (V2)';
+  const permVal = localStorage.getItem('quran-permanent-version') || 'none';
+  const seg = document.getElementById('quran-version-seg');
+  if(seg) {
+    seg.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('active', b.dataset.qv === permVal);
+    });
+  }
 };
 window.updateQuranVersionSetting();
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('#quran-version-seg button');
+  if(!btn) return;
+  e.stopPropagation();
+  const val = btn.dataset.qv;
+  localStorage.setItem('quran-permanent-version', val);
+  localStorage.setItem('quran-version', val === 'none' ? 'v2' : val); 
+  updateQuranVersionSetting();
+  showToast(val === 'none' ? 'Reader toggle enabled' : `Locked to ${val === 'v1' ? 'Classic' : 'Premium'}`);
+}, true);
 
 // ── TOAST & SPLASH ────────────────────────────────────────────
 let toastTimer;
@@ -417,7 +442,7 @@ initFirebase();
   const origShowPage = window.showPage;
   window.showPage = function(name){
     if(!window.__isPoppingBack && name !== 'home' && SESSION.currentPage !== name) {
-      history.pushState({}, '');
+      history.pushState({}, '', '#' + name);
     }
     return origShowPage.apply(this, arguments);
   };
