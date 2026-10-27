@@ -54,6 +54,7 @@ async function saveUserBookmarks(){
 let authMode = 'login';
 
 function openAuthModal(mode){
+  if(!window.__isPoppingBack) history.pushState({}, ''); // Fix back button
   authMode = mode || 'login';
   updateAuthModalUI();
   const el = document.getElementById('auth-overlay');
@@ -66,6 +67,7 @@ function openAuthModal(mode){
 }
 
 function closeAuthModal(){
+  if(!window.__isPoppingBack){ history.back(); return; } // Fix back button
   const el = document.getElementById('auth-overlay');
   if(el) { el.style.display = 'none'; el.classList.remove('show'); }
   document.body.style.overflow = '';
@@ -563,3 +565,25 @@ if(window.firebase){
     if(notesPanel && notesPanel.classList.contains('active')){ if(typeof renderBookmarksNotes === 'function') renderBookmarksNotes(); }
   }, true);
 })();
+  
+// BULLETPROOF AUTH TRIGGER (Overrides the "Coming Soon" bug)
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const signinRow = document.querySelector('.setting-row[data-action="signin"]');
+    if (signinRow) {
+      // 1. Remove the data-action so app-core.js ignores it
+      signinRow.removeAttribute('data-action');
+      
+      // 2. Add our own clean click listener
+      signinRow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (window.__currentUser) {
+          if (confirm('Sign out of your account?')) signOutUser();
+        } else {
+          openAuthModal('login');
+        }
+      });
+    }
+  }, 500);
+});
