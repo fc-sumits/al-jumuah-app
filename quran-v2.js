@@ -18,6 +18,7 @@ const v2State = {
   rafId: null,
   lastActiveWord: null,
   isAutoScrollPaused: false, 
+  isFocusMode: false,
   
   // Resource Lists
   reciters: [],
@@ -66,10 +67,10 @@ const FALLBACK_RECITERS = [
   { id: 9, name: 'Maher Al Muaiqly', style: { name: 'Murattal' } },
   { id: 5, name: 'Yasser Al-Dosari', style: { name: 'Murattal' } },
   { id: 8, name: 'Saad Al-Ghamdi', style: { name: 'Murattal' } },
-  { id: 10, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' } },
+  { id: 10, name: 'Saud Al-Shuraim', style: { name: 'Murattal' } },
+  { id: 11, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' } },
   { id: 12, name: 'Ahmed Al-Ajmy', style: { name: 'Murattal' } },
   { id: 4, name: 'Abu Bakr Al-Shatri', style: { name: 'Murattal' } },
-  { id: 11, name: 'Saud Al-Shuraim', style: { name: 'Murattal' } },
   { id: 13, name: 'Hani Ar-Rifai', style: { name: 'Murattal' } },
   { id: 14, name: 'Abdullah Awad Al-Juhany', style: { name: 'Murattal' } },
   { id: 15, name: 'Bandar Baleela', style: { name: 'Murattal' } },
@@ -137,6 +138,8 @@ async function loadV2Surah(surahNum, jumpToAyah) {
   v2State.currentSurah = surahNum;
   v2State.currentAyah = jumpToAyah || 1;
   v2State.isAutoScrollPaused = false; 
+  v2State.isFocusMode = false;
+  document.body.classList.remove('v2-focus-mode');
   
   document.body.classList.add('v2-active'); // Hide nav in reader
   
@@ -232,7 +235,6 @@ async function fetchAudioAndTimings(surahNum, token) {
 
 // --- EXPOSE GLOBALS ---
 window.openQuranV2 = function(surahNum, ayahNum) {
-  // Only hide the bottom nav if we are actually opening a surah, not the list
   if (surahNum) {
     document.body.classList.add('v2-active');
   } else {
@@ -251,7 +253,8 @@ window.openQuranV2 = function(surahNum, ayahNum) {
 };
 
 window.showV2List = function() {
-  document.body.classList.remove('v2-active'); // Show nav on list
+  document.body.classList.remove('v2-active'); 
+  document.body.classList.remove('v2-focus-mode');
   document.getElementById('quran-v2-reader-view').style.display = 'none';
   document.getElementById('quran-v2-list-view').style.display = 'block';
   if (typeof pauseV2Audio === 'function') pauseV2Audio();
@@ -260,6 +263,7 @@ window.showV2List = function() {
 
 window.closeQuranV2 = function() {
   document.body.classList.remove('v2-active');
+  document.body.classList.remove('v2-focus-mode');
   document.getElementById('quran-v2-list-view').style.display = 'none';
   document.getElementById('quran-v2-reader-view').style.display = 'none';
   if(typeof showPage === 'function') showPage('home');
@@ -444,7 +448,6 @@ window.setTransLang = function(lang) {
   renderTranslationList(document.getElementById('v2-trans-search').value);
 };
 
-// Note: renderV2Reader and everything below will be in Part 2
 // --- RENDER READER ---
 function renderV2Reader() {
   const readerView = document.getElementById('quran-v2-reader-view');
@@ -458,6 +461,12 @@ function renderV2Reader() {
   const currentTrans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId) || { name: 'Translation' };
   const currentTafsir = v2State.tafsirs.find(t => t.id.toString() === v2State.settings.tafsirId) || { name: 'Ibn Kathir' };
 
+  // Dynamic Highlight logic
+  const hasWord = v2State.timingMode === 'word';
+  const hasAyah = v2State.timingMode === 'ayah' || v2State.timingMode === 'word';
+  const disabledWord = !hasWord ? 'disabled' : '';
+  const disabledAyah = !hasAyah ? 'disabled' : '';
+
   let html = `
     <div class="v2-hero" style="background-image: url('${heroImg}'), linear-gradient(to top, #0A0F1D, #121A2F);">
       <div class="v2-hero-topbar">
@@ -465,6 +474,9 @@ function renderV2Reader() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div style="display:flex; gap:8px;">
+          <button class="icon-btn" onclick="window.toggleV2FocusMode()" style="color:#fff; background:rgba(0,0,0,0.3); border-radius:50%; width:36px; height:36px; border:1px solid rgba(255,255,255,0.2)" title="Focus Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
           <button class="icon-btn" id="v2-download-btn" onclick="window.downloadV2Surah()" style="color:#fff; background:rgba(0,0,0,0.3); border-radius:50%; width:36px; height:36px; border:1px solid rgba(255,255,255,0.2)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </button>
@@ -616,6 +628,10 @@ function renderV2Reader() {
               <span>Show Player</span>
               <div class="v2-toggle ${v2State.settings.showPlayer ? 'on' : ''}" onclick="window.toggleV2Setting('showPlayer')"></div>
             </div>
+            <div class="v2-setting-row">
+              <span>Focus Mode</span>
+              <div class="v2-toggle ${v2State.isFocusMode ? 'on' : ''}" onclick="window.toggleV2FocusMode()"></div>
+            </div>
           </div>
           
           <div class="v2-setting-group">
@@ -623,8 +639,8 @@ function renderV2Reader() {
             <div class="v2-setting-row">
               <div class="v2-segmented" style="width:100%;">
                 <button class="v2-seg-btn ${v2State.settings.highlightMode === 'off' ? 'active' : ''}" onclick="window.setV2HighlightMode('off')">Off</button>
-                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'ayah' ? 'active' : ''}" onclick="window.setV2HighlightMode('ayah')">Ayah</button>
-                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'word' ? 'active' : ''}" onclick="window.setV2HighlightMode('word')">Word</button>
+                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'ayah' ? 'active' : ''} ${disabledAyah}" onclick="if('${disabledAyah}' === '') window.setV2HighlightMode('ayah')">Ayah</button>
+                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'word' ? 'active' : ''} ${disabledWord}" onclick="if('${disabledWord}' === '') window.setV2HighlightMode('word')">Word</button>
               </div>
             </div>
           </div>
@@ -732,6 +748,7 @@ function renderV2Reader() {
   if (typeof updateJumpArrowVisibility === 'function') updateJumpArrowVisibility();
 }
 
+// Note: Audio engine and everything below will be in Part 2
 // --- AUDIO & 60FPS SYNC ENGINE ---
 function setupAudioEngine() {
   if (window.__v2Audio) { window.__v2Audio.pause(); window.__v2Audio = null; }
@@ -751,7 +768,6 @@ function setupAudioEngine() {
   window.__v2Audio.addEventListener('waiting', () => { v2State.isBuffering = true; stopSyncLoop(); });
   window.__v2Audio.addEventListener('playing', () => { v2State.isBuffering = false; if(v2State.isPlaying) startSyncLoop(); });
   
-  // FIX: Restart loop after seek
   window.__v2Audio.addEventListener('seeked', () => {
     v2State.isSeeking = false;
     if (v2State.isPlaying) startSyncLoop();
@@ -901,6 +917,22 @@ window.jumpToCurrentVerse = function() {
   v2State.isAutoScrollPaused = false; 
   scrollToVerse(v2State.currentAyah, 'smooth');
   document.getElementById('v2-jump-arrow').classList.remove('show');
+};
+
+// --- FOCUS MODE ---
+window.toggleV2FocusMode = function() {
+  v2State.isFocusMode = !v2State.isFocusMode;
+  document.body.classList.toggle('v2-focus-mode', v2State.isFocusMode);
+  
+  // Update the toggle switch in settings if it's open
+  const toggle = document.querySelector('.v2-setting-row .v2-toggle[onclick*="toggleV2FocusMode"]');
+  if (toggle) toggle.classList.toggle('on', v2State.isFocusMode);
+  
+  if (v2State.isFocusMode) {
+    showToast('Focus Mode ON');
+  } else {
+    showToast('Focus Mode OFF');
+  }
 };
 
 // --- PLAYER MINIMIZE / EXPAND ---
@@ -1085,6 +1117,7 @@ window.selectTafsir = function(id) {
   renderV2Reader(); 
 };
 
+// Note: Remaining code (Bookmarks, Settings logic, Event Listeners) will be in Part 3
 // --- BOOKMARK & SHARE ---
 window.bookmarkV2Ayah = function(ayahNum) {
   const key = `${v2State.currentSurah}:${ayahNum}`;
@@ -1201,6 +1234,30 @@ window.changeV2FontSize = function(key, val) {
   if (key === 'lineSpacing') {
     document.querySelectorAll('.v2-arabic-text').forEach(el => el.style.lineHeight = val);
     document.getElementById('v2-lbl-line').textContent = `Line Spacing (${val})`;
+  }
+};
+
+// --- FOCUS MODE (Overridden for floating exit button) ---
+window.toggleV2FocusMode = function() {
+  v2State.isFocusMode = !v2State.isFocusMode;
+  document.body.classList.toggle('v2-focus-mode', v2State.isFocusMode);
+  
+  const toggle = document.querySelector('.v2-setting-row .v2-toggle[onclick*="toggleV2FocusMode"]');
+  if (toggle) toggle.classList.toggle('on', v2State.isFocusMode);
+  
+  let exitBtn = document.getElementById('v2-focus-exit');
+  if (v2State.isFocusMode) {
+    if (!exitBtn) {
+      exitBtn = document.createElement('button');
+      exitBtn.id = 'v2-focus-exit';
+      exitBtn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+      exitBtn.onclick = window.toggleV2FocusMode;
+      document.getElementById('quran-v2-reader-view').appendChild(exitBtn);
+    }
+    showToast('Focus Mode ON');
+  } else {
+    if (exitBtn) exitBtn.remove();
+    showToast('Focus Mode OFF');
   }
 };
 
