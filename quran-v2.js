@@ -197,7 +197,8 @@ async function fetchAudioAndTimings(surahNum, token) {
   } catch(e) {
     console.warn('Storage full, could not cache timings.');
   }
-  }
+}
+
 // --- EXPOSE GLOBALS ---
 window.openQuranV2 = function(surahNum, ayahNum) {
   document.body.classList.add('v2-active');
@@ -651,6 +652,13 @@ function setupAudioEngine() {
   window.__v2Audio.addEventListener('pause', () => { v2State.isPlaying = false; updateV2PlayIcon('paused'); stopSyncLoop(); });
   window.__v2Audio.addEventListener('waiting', () => { v2State.isBuffering = true; stopSyncLoop(); });
   window.__v2Audio.addEventListener('playing', () => { v2State.isBuffering = false; if(v2State.isPlaying) startSyncLoop(); });
+  
+  // CRITICAL FIX: Restart the loop after seeking
+  window.__v2Audio.addEventListener('seeked', () => {
+    v2State.isSeeking = false;
+    if (v2State.isPlaying) startSyncLoop();
+  });
+  
   window.__v2Audio.addEventListener('ended', () => { v2State.isPlaying = false; updateV2PlayIcon('paused'); stopSyncLoop(); handleRepeat(); });
   window.__v2Audio.addEventListener('timeupdate', updateTimeDisplay);
   window.__v2Audio.addEventListener('error', () => { showToast('Audio failed to load.'); });
