@@ -1868,41 +1868,73 @@ function pickRandomFact(){
   return list[Math.floor(Math.random() * list.length)];
 }
 
-(function ensureFactOverlay(){
-  if(document.getElementById('fact-overlay')) return;
-  const el = document.createElement('div');
-  el.id = 'fact-overlay';
-  el.className = 'fact-overlay';
-  el.setAttribute('aria-hidden', 'true');
-  el.innerHTML =
-    '<div class="fact-topbar">' +
-      '<button class="fact-back" id="fact-back" aria-label="Back">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>' +
-      '</button>' +
-      '<div class="fact-topbar-title">Daily Islamic Fact</div>' +
-      '<div class="fact-topbar-spacer"></div>' +
-    '</div>' +
-    '<div class="fact-content" id="fact-content"></div>';
-  document.body.appendChild(el);
-  document.getElementById('fact-back').addEventListener('click', closeFactOverlay);
-})();
-
+// BULLETPROOF FACT OVERLAY (Creates on-demand + injects CSS)
 window.openFactOverlay = function(){
-  const overlay = document.getElementById('fact-overlay');
-  if(!overlay) return;
+  let overlay = document.getElementById('fact-overlay');
+  
+  if (!overlay) {
+    // Inject CSS if missing
+    if (!document.getElementById('fact-css-injected')) {
+      const style = document.createElement('style');
+      style.id = 'fact-css-injected';
+      style.textContent = `
+        .fact-overlay { position: fixed; inset: 0; z-index: 9998; background: linear-gradient(180deg,#0A1418 0%,#0F1E24 50%,#0A1418 100%); display: flex; flex-direction: column; overflow: hidden; transform: translateX(100%); visibility: hidden; transition: transform .34s cubic-bezier(.2,.8,.4,1),visibility .34s; }
+        .fact-overlay.show { transform: translateX(0); visibility: visible; }
+        .fact-topbar { flex-shrink: 0; padding: calc(env(safe-area-inset-top,0) + 14px) 16px 14px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(230,196,106,0.14); }
+        .fact-back { width: 38px; height: 38px; border-radius: 50%; background: rgba(230,196,106,0.08); border: 1.5px solid rgba(230,196,106,0.4); color: #E6C46A; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .fact-back svg { width: 18px; height: 18px; stroke-width: 2.2; }
+        .fact-topbar-title { flex: 1; text-align: center; font-family: var(--font-body); font-size: .95rem; font-weight: 700; color: #EFE7D2; }
+        .fact-topbar-spacer { width: 38px; flex-shrink: 0; }
+        .fact-content { flex: 1; overflow-y: auto; padding: 22px 18px calc(28px + env(safe-area-inset-bottom,0)); display: flex; flex-direction: column; gap: 20px; }
+        .fact-hero { text-align: center; padding: 6px 4px 4px; }
+        .fact-hero-ornament { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; max-width: 240px; margin: 0 auto 16px; }
+        .fact-hero-line { height: 1px; flex: 1; background: linear-gradient(90deg,transparent,rgba(230,196,106,0.55),transparent); }
+        .fact-hero-star { color: #E6C46A; font-size: .85rem; text-shadow: 0 0 12px rgba(230,196,106,0.7); }
+        .fact-category-pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px 7px 12px; background: rgba(230,196,106,0.14); border: 1px solid rgba(230,196,106,0.32); border-radius: 999px; margin-bottom: 16px; }
+        .fact-cat-icon { color: #E6C46A; width: 16px; height: 16px; }
+        .fact-cat-icon svg { width: 100%; height: 100%; }
+        .fact-cat-en { font-family: var(--font-body); font-size: .72rem; font-weight: 800; letter-spacing: .16em; color: #E6C46A; }
+        .fact-hero-ar { font-family: var(--font-arabic); font-size: 2rem; color: #F4D77B; margin-bottom: 6px; }
+        .fact-hero-en { font-family: var(--font-body); font-size: .68rem; font-weight: 700; letter-spacing: .22em; color: #8FA39E; }
+        .fact-card { position: relative; background: #173840; border: 1px solid rgba(230,196,106,0.32); border-radius: 20px; padding: 30px 22px 28px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .fact-card-text { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.78; color: #EFE7D2; text-align: center; }
+        .fact-card-ornament { position: absolute; top: 12px; right: 14px; color: #E6C46A; opacity: 0.55; }
+        .fact-card-ornament-bottom { margin-top: 20px; text-align: center; color: #E6C46A; opacity: 0.55; }
+        .fact-actions { display: flex; gap: 10px; margin-top: 2px; }
+        .fact-action { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 12px; border-radius: 14px; border: 1.5px solid rgba(230,196,106,0.32); background: rgba(230,196,106,0.05); color: #E6C46A; font-family: var(--font-body); font-size: .85rem; font-weight: 800; cursor: pointer; }
+        .fact-action.primary { background: #E6C46A; color: #0A1418; border-color: transparent; }
+        .fact-action svg { width: 16px; height: 16px; }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Create HTML
+    overlay = document.createElement('div');
+    overlay.id = 'fact-overlay';
+    overlay.className = 'fact-overlay';
+    overlay.innerHTML = `
+      <div class="fact-topbar">
+        <button class="fact-back" id="fact-back" aria-label="Back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="fact-topbar-title">Daily Islamic Fact</div>
+        <div class="fact-topbar-spacer"></div>
+      </div>
+      <div class="fact-content" id="fact-content"></div>
+    `;
+    document.body.appendChild(overlay);
+    document.getElementById('fact-back').addEventListener('click', window.closeFactOverlay);
+  }
+
   overlay.classList.add('show');
-  overlay.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  if(!window.__isPoppingBack) history.pushState({}, '');
   renderDailyFact();
 };
 
 window.closeFactOverlay = function(){
   const overlay = document.getElementById('fact-overlay');
   if(!overlay) return;
-  if(!window.__isPoppingBack){ history.back(); return; }
   overlay.classList.remove('show');
-  overlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 };
 
@@ -1911,45 +1943,35 @@ function renderDailyFact(){
   if(!content) return;
   const fact = pickRandomFact();
   if(!fact){
-    content.innerHTML = '<div class="fact-empty">No facts available.</div>';
+    content.innerHTML = '<div style="text-align:center;color:#8FA39E;padding:40px;">No facts available.</div>';
     return;
   }
   currentDailyFact = fact;
   const meta = FACT_CATEGORY_LABELS[fact.cat] || { en:'Fact', ar:'', icon: FACT_ICONS.tawhid };
 
-  content.innerHTML =
-    '<div class="fact-hero">' +
-      '<div class="fact-hero-ornament">' +
-        '<div class="fact-hero-line"></div>' +
-        '<div class="fact-hero-star">✦</div>' +
-        '<div class="fact-hero-line"></div>' +
-      '</div>' +
-      '<div class="fact-category-pill">' +
-        '<span class="fact-cat-icon">' + meta.icon + '</span>' +
-        '<span class="fact-cat-en">' + meta.en + '</span>' +
-      '</div>' +
-      '<div class="fact-hero-ar">' + meta.ar + '</div>' +
-      '<div class="fact-hero-en">Daily Islamic Fact</div>' +
-    '</div>' +
-
-    '<div class="fact-card">' +
-      '<div class="fact-card-glow"></div>' +
-      '<div class="fact-card-ornament">✦</div>' +
-      '<div class="fact-card-text">' + fact.text + '</div>' +
-      '<div class="fact-card-ornament-bottom">─ ✦ ─</div>' +
-    '</div>' +
-
-    '<div class="fact-actions">' +
-      '<button class="fact-action" id="fact-copy" aria-label="Copy">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-        '<span>Copy</span>' +
-      '</button>' +
-      '<button class="fact-action primary" id="fact-share" aria-label="Share">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
-        '<span>Share</span>' +
-      '</button>' +
-    '</div>';
-
+  content.innerHTML = `
+    <div class="fact-hero">
+      <div class="fact-hero-ornament"><div class="fact-hero-line"></div><div class="fact-hero-star">✦</div><div class="fact-hero-line"></div></div>
+      <div class="fact-category-pill"><span class="fact-cat-icon">${meta.icon}</span><span class="fact-cat-en">${meta.en}</span></div>
+      <div class="fact-hero-ar">${meta.ar}</div>
+      <div class="fact-hero-en">Daily Islamic Fact</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-card-ornament">✦</div>
+      <div class="fact-card-text">${fact.text}</div>
+      <div class="fact-card-ornament-bottom">─ ✦ ─</div>
+    </div>
+    <div class="fact-actions">
+      <button class="fact-action" id="fact-copy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span>Copy</span>
+      </button>
+      <button class="fact-action primary" id="fact-share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span>Share</span>
+      </button>
+    </div>
+  `;
   document.getElementById('fact-copy').addEventListener('click', copyDailyFact);
   document.getElementById('fact-share').addEventListener('click', shareDailyFact);
 }
@@ -1972,7 +1994,7 @@ function shareDailyFact(){
   else navigator.clipboard.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Could not copy'));
 }
 
-// Intercept the tool-pill click to open the full screen overlay instead of the q-modal
+// Intercept the tool-pill click to open the full screen overlay
 document.addEventListener('click', (e) => {
   const pill = e.target.closest('.tool-pill[data-tool="dailyFact"]');
   if(!pill) return;
@@ -2012,3 +2034,4 @@ const TOOLS = {
   dailyFact: {title:'💡 Daily Islamic Fact', render:() => { closeQModal(); window.openFactOverlay(); }},
   aboutApp: {title:'ℹ️ About the app', render:renderAboutApp}
 };
+
