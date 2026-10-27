@@ -58,31 +58,34 @@ const FONTS = {
 
 const QURAN_API = 'https://api.quran.com/api/v4';
 
-// Hardcoded fallback for the 22 verified reciters with timestamps
-const FALLBACK_RECITERS = [
-  { id: 7, name: 'Mishary Rashid Alafasy', style: { name: 'Murattal' } },
-  { id: 1, name: 'AbdulBaset AbdulSamad', style: { name: 'Murattal' } },
-  { id: 6, name: 'Mahmoud Khalil Al-Husary', style: { name: 'Murattal' } },
-  { id: 3, name: 'Abdur-Rahman as-Sudais', style: { name: 'Murattal' } },
-  { id: 9, name: 'Maher Al Muaiqly', style: { name: 'Murattal' } },
-  { id: 5, name: 'Yasser Al-Dosari', style: { name: 'Murattal' } },
-  { id: 8, name: 'Saad Al-Ghamdi', style: { name: 'Murattal' } },
-  { id: 10, name: 'Saud Al-Shuraim', style: { name: 'Murattal' } },
-  { id: 11, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' } },
-  { id: 12, name: 'Ahmed Al-Ajmy', style: { name: 'Murattal' } },
-  { id: 4, name: 'Abu Bakr Al-Shatri', style: { name: 'Murattal' } },
-  { id: 13, name: 'Hani Ar-Rifai', style: { name: 'Murattal' } },
-  { id: 14, name: 'Abdullah Awad Al-Juhany', style: { name: 'Murattal' } },
-  { id: 15, name: 'Bandar Baleela', style: { name: 'Murattal' } },
-  { id: 16, name: 'Raad Al-Kurdi', style: { name: 'Murattal' } },
-  { id: 17, name: 'Nasser Al-Qatami', style: { name: 'Murattal' } },
-  { id: 18, name: 'Fares Abbad', style: { name: 'Murattal' } },
-  { id: 19, name: 'Idrees Abkar', style: { name: 'Murattal' } },
-  { id: 20, name: 'Salah Al-Budair', style: { name: 'Murattal' } },
-  { id: 2, name: 'Ali Al-Huthaify', style: { name: 'Murattal' } },
-  { id: 21, name: 'Khalifah Al-Tunaiji', style: { name: 'Murattal' } },
-  { id: 22, name: 'Ahmad Al-Nufais', style: { name: 'Murattal' } }
+// Strictly verified reciter list (No fallbacks, broken ones removed)
+const MASTER_RECITERS = [
+  { id: 7, name: 'Mishary Rashid Alafasy', style: { name: 'Murattal' }, type: 'word' },
+  { id: 1, name: 'AbdulBaset AbdulSamad', style: { name: 'Murattal' }, type: 'word' },
+  { id: 6, name: 'Mahmoud Khalil Al-Husary', style: { name: 'Murattal' }, type: 'word' },
+  { id: 3, name: 'Abdur-Rahman as-Sudais', style: { name: 'Murattal' }, type: 'word' },
+  { id: 9, name: 'Maher Al Muaiqly', style: { name: 'Murattal' }, type: 'word' },
+  { id: 5, name: 'Yasser Al-Dosari', style: { name: 'Murattal' }, type: 'word' },
+  { id: 11, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' }, type: 'word' },
+  { id: 10, name: 'Saud Al-Shuraim', style: { name: 'Murattal' }, type: 'word' },
+  { id: 4, name: 'Abu Bakr Al-Shatri', style: { name: 'Murattal' }, type: 'word' },
+  { id: 12, name: 'Ahmed Al-Ajmy', style: { name: 'Murattal' }, type: 'word' },
+  { id: 2, name: 'Ali Al-Huthaify', style: { name: 'Murattal' }, type: 'word' },
+  { id: 14, name: 'Abdullah Awad Al-Juhany', style: { name: 'Murattal' }, type: 'ayah' },
+  { id: 13, name: 'Hani Ar-Rifai', style: { name: 'Murattal' }, type: 'ayah' },
+  { id: 19, name: 'Idrees Abkar', style: { name: 'Murattal' }, type: 'ayah' },
+  { id: 17, name: 'Nasser Al-Qatami', style: { name: 'Murattal' }, type: 'ayah' },
+  { id: 21, name: 'Khalifah Al-Tunaiji', style: { name: 'Murattal' }, type: 'none' },
+  { id: 22, name: 'Ahmad Al-Nufais', style: { name: 'Murattal' }, type: 'none' },
+  { id: 15, name: 'Bandar Baleela', style: { name: 'Murattal' }, type: 'none' }
 ];
+
+// SVG Badges
+const RECITER_ICONS = {
+  word: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5v14M7 5v14M22 10v4M2 10v4"/></svg>',
+  ayah: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+  none: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+};
 
 // --- TEXT CLEANUP ---
 function cleanHtmlFootnotes(html) {
@@ -107,19 +110,8 @@ async function fetchV2Resources() {
     } catch(e) { v2State.translations = [{ id: 20, name: 'Sahih International', language_name: 'english' }]; }
   }
   
-  if (v2State.reciters.length === 0) {
-    try {
-      const res = await fetch(`${QURAN_API}/resources/chapter_reciters?language=en`);
-      const data = await res.json();
-      if (data.reciters && data.reciters.length > 0) {
-        v2State.reciters = data.reciters;
-      } else {
-        v2State.reciters = FALLBACK_RECITERS;
-      }
-    } catch(e) { 
-      v2State.reciters = FALLBACK_RECITERS; 
-    }
-  }
+  // ALWAYS use the MASTER_RECITERS list. No API fetching for reciters.
+  v2State.reciters = MASTER_RECITERS;
 
   if (v2State.tafsirs.length === 0) {
     try {
@@ -389,15 +381,21 @@ function renderReciterList(query = '') {
     return;
   }
 
-  list.innerHTML = filtered.map(r => `
+  list.innerHTML = filtered.map(r => {
+    const icon = RECITER_ICONS[r.type] || RECITER_ICONS.none;
+    const typeClass = `v2-reciter-badge ${r.type}`;
+    return `
     <div class="v2-resource-item ${v2State.settings.reciterId === r.id.toString() ? 'active' : ''}" onclick="window.selectReciter('${r.id}')">
-      <div class="v2-resource-main">
-        <div class="v2-resource-name">${r.name}</div>
-        <div class="v2-resource-sub">${r.style ? r.style.name : 'Murattal'}</div>
+      <div class="v2-resource-main" style="display:flex; align-items:center; gap:12px;">
+        <div class="${typeClass}" title="${r.type === 'word' ? 'Word-by-Word' : r.type === 'ayah' ? 'Ayah-by-Ayah' : 'No Highlighting'}">${icon}</div>
+        <div>
+          <div class="v2-resource-name">${r.name}</div>
+          <div class="v2-resource-sub">${r.style ? r.style.name : 'Murattal'}</div>
+        </div>
       </div>
       ${v2State.settings.reciterId === r.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
     </div>
-  `).join('');
+  `}).join('');
 }
 
 function renderTranslationList(query = '') {
@@ -448,6 +446,7 @@ window.setTransLang = function(lang) {
   renderTranslationList(document.getElementById('v2-trans-search').value);
 };
 
+// Note: renderV2Reader and everything below will be in Part 2
 // --- RENDER READER ---
 function renderV2Reader() {
   const readerView = document.getElementById('quran-v2-reader-view');
@@ -457,15 +456,19 @@ function renderV2Reader() {
   const fontFam = FONTS[v2State.settings.arabicFont] || FONTS.amiri;
   const lineHeight = v2State.settings.lineSpacing;
   
-  const currentReciter = v2State.reciters.find(r => r.id.toString() === v2State.settings.reciterId) || { name: 'Reciter' };
+  const currentReciter = v2State.reciters.find(r => r.id.toString() === v2State.settings.reciterId) || { name: 'Reciter', type: 'none' };
   const currentTrans = v2State.translations.find(t => t.id.toString() === v2State.settings.translationId) || { name: 'Translation' };
   const currentTafsir = v2State.tafsirs.find(t => t.id.toString() === v2State.settings.tafsirId) || { name: 'Ibn Kathir' };
 
-  // Dynamic Highlight logic
-  const hasWord = v2State.timingMode === 'word';
-  const hasAyah = v2State.timingMode === 'ayah' || v2State.timingMode === 'word';
-  const disabledWord = !hasWord ? 'disabled' : '';
-  const disabledAyah = !hasAyah ? 'disabled' : '';
+  // Build the Highlighting options dynamically based on timingMode
+  let highlightOptionsHtml = `<button class="v2-seg-btn ${v2State.settings.highlightMode === 'off' ? 'active' : ''}" onclick="window.setV2HighlightMode('off')">Off</button>`;
+  
+  if (v2State.timingMode === 'ayah' || v2State.timingMode === 'word') {
+    highlightOptionsHtml += `<button class="v2-seg-btn ${v2State.settings.highlightMode === 'ayah' ? 'active' : ''}" onclick="window.setV2HighlightMode('ayah')">Ayah</button>`;
+  }
+  if (v2State.timingMode === 'word') {
+    highlightOptionsHtml += `<button class="v2-seg-btn ${v2State.settings.highlightMode === 'word' ? 'active' : ''}" onclick="window.setV2HighlightMode('word')">Word</button>`;
+  }
 
   let html = `
     <div class="v2-hero" style="background-image: url('${heroImg}'), linear-gradient(to top, #0A0F1D, #121A2F);">
@@ -638,9 +641,7 @@ function renderV2Reader() {
             <span class="v2-setting-label">Highlighting</span>
             <div class="v2-setting-row">
               <div class="v2-segmented" style="width:100%;">
-                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'off' ? 'active' : ''}" onclick="window.setV2HighlightMode('off')">Off</button>
-                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'ayah' ? 'active' : ''} ${disabledAyah}" onclick="if('${disabledAyah}' === '') window.setV2HighlightMode('ayah')">Ayah</button>
-                <button class="v2-seg-btn ${v2State.settings.highlightMode === 'word' ? 'active' : ''} ${disabledWord}" onclick="if('${disabledWord}' === '') window.setV2HighlightMode('word')">Word</button>
+                ${highlightOptionsHtml}
               </div>
             </div>
           </div>
@@ -748,7 +749,6 @@ function renderV2Reader() {
   if (typeof updateJumpArrowVisibility === 'function') updateJumpArrowVisibility();
 }
 
-// Note: Audio engine and everything below will be in Part 2
 // --- AUDIO & 60FPS SYNC ENGINE ---
 function setupAudioEngine() {
   if (window.__v2Audio) { window.__v2Audio.pause(); window.__v2Audio = null; }
@@ -1063,6 +1063,7 @@ function handleRepeat() {
   else if (mode === 'surah') { window.__v2Audio.currentTime = 0; attemptV2Play(); }
 }
 
+// Note: Remaining code (Tafsir, Bookmarks, Auto-Switch Logic, Event Listeners) will be in Part 3
 // --- TAFSIR LOGIC ---
 window.openV2Tafsir = async function(ayahNum) {
   const modal = document.getElementById('v2-tafsir-modal');
@@ -1117,7 +1118,6 @@ window.selectTafsir = function(id) {
   renderV2Reader(); 
 };
 
-// Note: Remaining code (Bookmarks, Settings logic, Event Listeners) will be in Part 3
 // --- BOOKMARK & SHARE ---
 window.bookmarkV2Ayah = function(ayahNum) {
   const key = `${v2State.currentSurah}:${ayahNum}`;
@@ -1159,9 +1159,32 @@ window.closeReciterPicker = function() { document.getElementById('v2-reciter-ove
 window.openTranslationPicker = function() { document.getElementById('v2-trans-overlay').classList.add('show'); };
 window.closeTranslationPicker = function() { document.getElementById('v2-trans-overlay').classList.remove('show'); };
 
+// DYNAMIC AUTO-SWITCH LOGIC
 window.selectReciter = function(id) {
-  v2State.settings.reciterId = id; localStorage.setItem('v2-reciter-id', id);
-  window.closeReciterPicker(); window.toggleV2Settings(); showToast('Reciter updated');
+  const newReciter = v2State.reciters.find(r => r.id.toString() === id);
+  if (!newReciter) return;
+
+  v2State.settings.reciterId = id; 
+  localStorage.setItem('v2-reciter-id', id);
+
+  // Auto-switch highlight mode based on reciter capability
+  if (newReciter.type === 'ayah') {
+    if (v2State.settings.highlightMode === 'word') {
+      v2State.settings.highlightMode = 'ayah';
+      localStorage.setItem('v2-highlight-mode', 'ayah');
+      showToast('Switched to Ayah highlighting');
+    }
+  } else if (newReciter.type === 'none') {
+    if (v2State.settings.highlightMode !== 'off') {
+      v2State.settings.highlightMode = 'off';
+      localStorage.setItem('v2-highlight-mode', 'off');
+      showToast('Highlighting disabled for this reciter');
+    }
+  }
+
+  window.closeReciterPicker(); 
+  window.toggleV2Settings(); 
+  showToast('Reciter updated');
   loadV2Surah(v2State.currentSurah, v2State.currentAyah);
 };
 
@@ -1237,7 +1260,7 @@ window.changeV2FontSize = function(key, val) {
   }
 };
 
-// --- FOCUS MODE (Overridden for floating exit button) ---
+// --- FOCUS MODE ---
 window.toggleV2FocusMode = function() {
   v2State.isFocusMode = !v2State.isFocusMode;
   document.body.classList.toggle('v2-focus-mode', v2State.isFocusMode);
