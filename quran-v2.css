@@ -490,3 +490,37 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   .v2-verses-container { padding-bottom: 145px; }
   .v2-jump-arrow { bottom: 95px; }
    }
+
+/* --- POLISH FIXES --- */
+
+/* 1. Fix the default white Play button */
+.v2-verse-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--v2-border);
+}
+.v2-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--v2-copper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  padding: 0;
+}
+.v2-action-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* 2. Fix the settings bottom cutoff */
+.v2-sheet-body {
+  padding: 20px 20px calc(40px + env(safe-area-inset-bottom)) 20px;
+}
