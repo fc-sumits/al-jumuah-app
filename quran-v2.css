@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   QURAN V2 - PREMIUM READER (Restored Cards & Scoped Modals)
+   QURAN V2 - PREMIUM READER (CSS Chunk 1: Theme, Lists, Cards)
    ═══════════════════════════════════════════════════════════════ */
 
 #quran-v2-list-view, #quran-v2-reader-view {
@@ -12,7 +12,6 @@
   --v2-copper-soft: rgba(212, 175, 55, 0.16);
   --v2-copper-glow: rgba(212, 175, 55, 0.25);
   --v2-border: rgba(212, 175, 55, 0.15);
-  --v2-overlay: rgba(10, 15, 29, 0.85);
   --v2-glass: rgba(18, 26, 47, 0.85);
 }
 
@@ -26,7 +25,6 @@
   --v2-copper-soft: rgba(197, 139, 42, 0.12);
   --v2-copper-glow: rgba(197, 139, 42, 0.2);
   --v2-border: rgba(197, 139, 42, 0.2);
-  --v2-overlay: rgba(253, 251, 247, 0.9);
   --v2-glass: rgba(255, 255, 255, 0.9);
 }
 
@@ -40,6 +38,7 @@
   padding-bottom: 100px;
 }
 
+/* Immersion: Hide main app header/nav */
 body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav {
   display: none !important;
 }
@@ -68,6 +67,10 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   border: 1px solid var(--v2-border);
+  transition: transform 0.2s ease;
+}
+.v2-surah-card:active {
+  transform: scale(0.98);
 }
 .v2-surah-bg {
   position: absolute;
@@ -126,7 +129,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   background: var(--v2-glass);
 }
 
-/* --- V2 READER VIEW --- */
+/* --- V2 READER HERO HEADER --- */
 .v2-hero {
   position: relative;
   height: 220px;
@@ -197,7 +200,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px 16px 180px; /* Bottom padding ensures text clears the player */
+  padding: 16px 16px 180px; /* Clears the bottom player */
 }
 
 .v2-verse-card {
@@ -205,12 +208,9 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   background: var(--v2-card);
   border: 1px solid var(--v2-border);
   border-radius: 20px;
-  padding: 24px 18px 20px 48px; /* Left padding makes room for the badge */
+  padding: 24px 18px 16px 48px; /* Left padding clears the number badge */
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
-}
-.v2-verse-card:hover {
-  background: var(--v2-card-hover);
 }
 .v2-verse-card.active {
   border-color: var(--v2-copper);
@@ -220,7 +220,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-verse-num {
   position: absolute;
   top: 18px;
-  left: 16px;
+  left: 14px;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -242,7 +242,14 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   margin-bottom: 12px;
 }
 
-/* Word Highlighting */
+.v2-translation-text {
+  border-top: 1px dashed var(--v2-border);
+  padding-top: 12px;
+  color: var(--v2-muted);
+  line-height: 1.6;
+}
+
+/* --- WORD HIGHLIGHTING --- */
 .v2-word {
   display: inline-block;
   cursor: pointer;
@@ -261,15 +268,46 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   font-weight: 700;
 }
 
-.v2-translation-text {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--v2-border);
-  color: var(--v2-muted);
-  line-height: 1.65;
+/* --- HIDDEN VERSE ACTIONS --- */
+.v2-verse-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--v2-border);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
-
-/* Floating Jump Arrow */
+/* Reveal on tap (.show-actions) or when active (.active) */
+.v2-verse-card.active .v2-verse-actions, 
+.v2-verse-card.show-actions .v2-verse-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+.v2-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--v2-copper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  padding: 0;
+}
+.v2-action-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* --- FLOATING JUMP ARROW --- */
 .v2-jump-arrow {
   position: fixed;
   right: 18px;
@@ -295,7 +333,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-jump-arrow svg { width: 20px; height: 20px; }
 
-/* Floating Audio Player */
+/* --- FLOATING AUDIO PLAYER --- */
 .v2-player {
   position: fixed;
   left: 50%;
@@ -342,7 +380,9 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   padding: 4px 8px;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
+.v2-mini-btn:active { transform: scale(0.95); }
 
 .v2-player-scrub {
   display: flex;
@@ -390,6 +430,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border: none; display: flex; align-items: center; justify-content: center; cursor: pointer;
   box-shadow: 0 4px 15px var(--v2-copper-glow);
 }
+.v2-play-btn:active { transform: scale(0.95); }
 .v2-play-btn svg { width: 24px; height: 24px; }
 .v2-spinner {
   width: 24px; height: 24px;
@@ -400,14 +441,15 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-icon-btn {
   background: transparent; border: none; color: var(--v2-text); cursor: pointer; opacity: 0.7;
 }
+.v2-icon-btn:active { transform: scale(0.9); }
 .v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
 .v2-icon-btn svg { width: 20px; height: 20px; }
 
-/* --- MODALS (Scoped Inside Reader View) --- */
+/* --- MODALS (Scoped & Fixed) --- */
 .v2-modal-overlay {
-  position: absolute; /* Absolute inside the reader view */
+  position: fixed; /* Fixes the merging issue */
   inset: 0;
-  z-index: 200;
+  z-index: 9999;
   background: rgba(4, 8, 18, 0.68);
   backdrop-filter: blur(8px);
   display: flex; align-items: flex-end; justify-content: center;
@@ -418,7 +460,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 
 .v2-bottom-sheet {
   width: min(560px, 100%);
-  max-height: 75vh; /* Prevents sheet from taking full screen */
+  max-height: 75vh;
   display: flex; flex-direction: column;
   background: var(--v2-card);
   border: 1px solid var(--v2-border);
@@ -436,11 +478,11 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-settings-title { font-size: 1.2rem; font-weight: 800; color: var(--v2-copper); }
 .v2-settings-close { background: none; border: none; color: var(--v2-text); font-size: 1.5rem; cursor: pointer; }
 
-/* FIX: Settings Scroll Bug */
+/* Scroll Fix & Bottom Safe Area */
 .v2-sheet-body {
-  padding: 20px;
+  padding: 20px 20px calc(40px + env(safe-area-inset-bottom)) 20px;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* Momentum scroll for iOS/Android */
+  -webkit-overflow-scrolling: touch;
   flex: 1;
 }
 
@@ -476,6 +518,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-setting-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--v2-border); }
 .v2-setting-row span { font-size: 0.95rem; font-weight: 600; }
 .v2-slider { width: 100%; accent-color: var(--v2-copper); }
+
 .v2-toggle { width: 44px; height: 24px; border-radius: 999px; background: var(--v2-border); position: relative; cursor: pointer; transition: background 0.3s; }
 .v2-toggle.on { background: var(--v2-copper); }
 .v2-toggle::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: transform 0.3s; }
@@ -488,39 +531,5 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 @media (max-height: 620px) {
   .v2-player { padding: 10px 12px; }
   .v2-verses-container { padding-bottom: 145px; }
-  .v2-jump-arrow { bottom: 95px; }
-   }
-
-/* --- POLISH FIXES --- */
-
-/* 1. Fix the default white Play button */
-.v2-verse-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--v2-border);
-}
-.v2-action-btn {
-  background: transparent;
-  border: none;
-  color: var(--v2-copper);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  font-family: var(--font-body);
-  padding: 0;
-}
-.v2-action-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
-/* 2. Fix the settings bottom cutoff */
-.v2-sheet-body {
-  padding: 20px 20px calc(40px + env(safe-area-inset-bottom)) 20px;
-}
+  .v2-jump-arrow { bottom: calc(95px + env(safe-area-inset-bottom)); }
+     }
