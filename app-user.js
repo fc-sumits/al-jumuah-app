@@ -30,7 +30,6 @@ window.userBookmarks = { verses: [], hadith: [], notes: {} };
 })();
 
 async function loadUserBookmarks(){
-async function loadUserBookmarks(){
   if(!db || !window.__currentUser) return;
   try{
     const doc = await db.collection('users').doc(window.__currentUser.uid).get();
@@ -143,13 +142,19 @@ async function signOutUser(){
   catch(e){ console.log('sign out failed', e); }
 }
 
+// Capture-phase event listener to intercept before app-core.js
 document.addEventListener('click', (e) => {
   const row = e.target.closest('.setting-row[data-action="signin"]');
   if(!row) return;
   e.preventDefault();
   e.stopPropagation();
-  if(window.__currentUser){ if(confirm('Sign out of your account?')) signOutUser(); }
-  else { openAuthModal('login'); }
+  e.stopImmediatePropagation(); // This stops app-core.js from firing!
+  
+  if(window.__currentUser){ 
+    if(confirm('Sign out of your account?')) signOutUser(); 
+  } else { 
+    openAuthModal('login'); 
+  }
 }, true);
 
 if(window.firebase){
@@ -565,25 +570,3 @@ if(window.firebase){
     if(notesPanel && notesPanel.classList.contains('active')){ if(typeof renderBookmarksNotes === 'function') renderBookmarksNotes(); }
   }, true);
 })();
-  
-// BULLETPROOF AUTH TRIGGER (Overrides the "Coming Soon" bug)
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const signinRow = document.querySelector('.setting-row[data-action="signin"]');
-    if (signinRow) {
-      // 1. Remove the data-action so app-core.js ignores it
-      signinRow.removeAttribute('data-action');
-      
-      // 2. Add our own clean click listener
-      signinRow.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (window.__currentUser) {
-          if (confirm('Sign out of your account?')) signOutUser();
-        } else {
-          openAuthModal('login');
-        }
-      });
-    }
-  }, 500);
-});
