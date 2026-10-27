@@ -4,7 +4,7 @@
 // Load order: 7 of 8. Requires app-core.js (for initFirebase/db).
 // ═══════════════════════════════════════════════════════════════
 
-let userBookmarks = { verses: [], hadith: [], notes: {} };
+window.userBookmarks = { verses: [], hadith: [], notes: {} };
 
 async function loadUserBookmarks(){
   if(!db || !window.__currentUser) return;
@@ -12,17 +12,17 @@ async function loadUserBookmarks(){
     const doc = await db.collection('users').doc(window.__currentUser.uid).get();
     if(doc.exists){
       const d = doc.data();
-      userBookmarks = d.bookmarks || { verses: [], hadith: [], notes: {} };
-      userBookmarks.verses = userBookmarks.verses || [];
-      userBookmarks.hadith = userBookmarks.hadith || [];
-      userBookmarks.notes = userBookmarks.notes || {};
+      window.userBookmarks = d.bookmarks || { verses: [], hadith: [], notes: {} };
+      window.userBookmarks.verses = window.userBookmarks.verses || [];
+      window.userBookmarks.hadith = window.userBookmarks.hadith || [];
+      window.userBookmarks.notes = window.userBookmarks.notes || {};
     }
   }catch(e){ console.log('load bookmarks failed', e); }
 }
 
 async function saveUserBookmarks(){
   if(!db || !window.__currentUser) return;
-  try{ await db.collection('users').doc(window.__currentUser.uid).set({ bookmarks: userBookmarks }, { merge: true }); }
+  try{ await db.collection('users').doc(window.__currentUser.uid).set({ bookmarks: window.userBookmarks }, { merge: true }); }
   catch(e){ console.log('save bookmarks failed', e); }
 }
 
@@ -157,13 +157,13 @@ async function renderBookmarksVerses(){
     c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>Sign in to save and sync bookmarks.<br>Tap the star on any verse while reading.</div>';
     return;
   }
-  if(!userBookmarks.verses.length){
+  if(!window.userBookmarks.verses.length){
     c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>No saved verses yet.<br>Star a verse while reading to save it here.</div>';
     return;
   }
   c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading saved verses…</div>';
   try{
-    const keys = userBookmarks.verses.slice();
+    const keys = window.userBookmarks.verses.slice();
     const bySurah = {};
     keys.forEach(k => { const parts = k.split(':'); const s = parts[0], a = parts[1]; if(!bySurah[s]) bySurah[s] = []; bySurah[s].push(parseInt(a)); });
     let html = '';
@@ -195,8 +195,8 @@ async function renderBookmarksVerses(){
       el.addEventListener('click', async (e) => {
         e.stopPropagation();
         const key = el.dataset.bmRemove;
-        const idx = userBookmarks.verses.indexOf(key);
-        if(idx >= 0) userBookmarks.verses.splice(idx, 1);
+        const idx = window.userBookmarks.verses.indexOf(key);
+        if(idx >= 0) window.userBookmarks.verses.splice(idx, 1);
         await saveUserBookmarks();
         showToast('Removed');
         renderBookmarksVerses();
@@ -206,16 +206,16 @@ async function renderBookmarksVerses(){
 }
 
 function isHadithBookmarked(key){
-  if(!userBookmarks.hadith) userBookmarks.hadith = [];
-  return userBookmarks.hadith.some(x => (typeof x === 'string' ? x === key : x.key === key));
+  if(!window.userBookmarks.hadith) window.userBookmarks.hadith = [];
+  return window.userBookmarks.hadith.some(x => (typeof x === 'string' ? x === key : x.key === key));
 }
 
 async function toggleHadithBookmark(key, collectionId, number, text, grade){
   if(!window.__currentUser){ showToast('Sign in to save hadith'); return; }
-  if(!userBookmarks.hadith) userBookmarks.hadith = [];
-  const idx = userBookmarks.hadith.findIndex(x => (typeof x === 'string' ? x === key : x.key === key));
-  if(idx >= 0){ userBookmarks.hadith.splice(idx, 1); showToast('Removed'); }
-  else { userBookmarks.hadith.push({ key, collectionId, number, text, grade }); showToast('Hadith saved'); }
+  if(!window.userBookmarks.hadith) window.userBookmarks.hadith = [];
+  const idx = window.userBookmarks.hadith.findIndex(x => (typeof x === 'string' ? x === key : x.key === key));
+  if(idx >= 0){ window.userBookmarks.hadith.splice(idx, 1); showToast('Removed'); }
+  else { window.userBookmarks.hadith.push({ key, collectionId, number, text, grade }); showToast('Hadith saved'); }
   await saveUserBookmarks();
   document.querySelectorAll('[data-h-bookmark="' + key + '"]').forEach(btn => {
     const active = isHadithBookmarked(key);
@@ -249,12 +249,12 @@ function renderBookmarksHadith(){
     c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/></svg></span>Sign in to save and sync bookmarks.</div>';
     return;
   }
-  if(!userBookmarks.hadith || !userBookmarks.hadith.length){
+  if(!window.userBookmarks.hadith || !window.userBookmarks.hadith.length){
     c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"/><path d="M4 6V4h16v2"/></svg></span>No saved hadith yet.<br>Star a hadith while reading to save it here.</div>';
     return;
   }
   let html = '';
-  userBookmarks.hadith.forEach(item => {
+  window.userBookmarks.hadith.forEach(item => {
     const key = item.key || item;
     const col = HADITH_COLLECTIONS.find(x => x.id === item.collectionId);
     const colName = col ? col.name : 'Hadith';
@@ -266,7 +266,7 @@ function renderBookmarksHadith(){
     el.addEventListener('click', (e) => {
       if(e.target.closest('[data-bm-hremove]')) return;
       const key = el.dataset.bmHadith;
-      const item = userBookmarks.hadith.find(x => (x.key || x) === key);
+      const item = window.userBookmarks.hadith.find(x => (x.key || x) === key);
       if(!item) return;
       const col = HADITH_COLLECTIONS.find(x => x.id === item.collectionId);
       const colName = col ? col.name : 'Hadith';
@@ -278,8 +278,8 @@ function renderBookmarksHadith(){
     el.addEventListener('click', async (e) => {
       e.stopPropagation();
       const key = el.dataset.bmHremove;
-      const idx = userBookmarks.hadith.findIndex(x => (x.key || x) === key);
-      if(idx >= 0) userBookmarks.hadith.splice(idx, 1);
+      const idx = window.userBookmarks.hadith.findIndex(x => (x.key || x) === key);
+      if(idx >= 0) window.userBookmarks.hadith.splice(idx, 1);
       await saveUserBookmarks();
       showToast('Removed');
       renderBookmarksHadith();
@@ -305,7 +305,7 @@ function addNoteIconsToVerses(){
     if(actions.querySelector('.note-ayah')) return;
     const ayahNum = parseInt(verseEl.dataset.ayah);
     const key = QURAN.data.arabic.number + ':' + ayahNum;
-    const hasNote = userBookmarks.notes && userBookmarks.notes[key];
+    const hasNote = window.userBookmarks.notes && window.userBookmarks.notes[key];
     const btn = document.createElement('button');
     btn.className = 'q-act note-ayah' + (hasNote ? ' active' : '');
     btn.dataset.ayah = ayahNum; btn.title = 'Note';
@@ -324,7 +324,7 @@ function refreshNoteIcons(){
   document.querySelectorAll('.q-act.note-ayah').forEach(btn => {
     const ayahNum = parseInt(btn.dataset.ayah);
     const key = QURAN.data.arabic.number + ':' + ayahNum;
-    const hasNote = userBookmarks.notes && userBookmarks.notes[key];
+    const hasNote = window.userBookmarks.notes && window.userBookmarks.notes[key];
     btn.classList.toggle('active', !!hasNote);
   });
 }
@@ -338,11 +338,11 @@ function openNoteModal(source, key, refLabel){
     document.body.appendChild(overlay);
     overlay.addEventListener('click', (e) => { if(e.target === overlay) closeNoteModal(); });
   }
-  if(!userBookmarks.notes) userBookmarks.notes = {};
+  if(!window.userBookmarks.notes) window.userBookmarks.notes = {};
   const input = document.getElementById('note-input');
   const ref = document.getElementById('note-ref');
   const deleteBtn = document.getElementById('note-delete');
-  const existing = userBookmarks.notes[key] || '';
+  const existing = window.userBookmarks.notes[key] || '';
   input.value = existing; ref.textContent = refLabel;
   deleteBtn.style.display = existing ? 'block' : 'none';
   overlay.classList.add('show');
@@ -350,13 +350,13 @@ function openNoteModal(source, key, refLabel){
   document.getElementById('note-close').onclick = closeNoteModal;
   document.getElementById('note-delete').onclick = async () => {
     if(!confirm('Delete this note?')) return;
-    delete userBookmarks.notes[key];
+    delete window.userBookmarks.notes[key];
     await saveUserBookmarks();
     closeNoteModal(); showToast('Note deleted'); refreshNoteIcons();
   };
   document.getElementById('note-save').onclick = async () => {
     const val = input.value.trim();
-    if(val) userBookmarks.notes[key] = val; else delete userBookmarks.notes[key];
+    if(val) window.userBookmarks.notes[key] = val; else delete window.userBookmarks.notes[key];
     await saveUserBookmarks();
     closeNoteModal(); showToast(val ? 'Note saved' : 'Note removed'); refreshNoteIcons();
   };
@@ -368,7 +368,7 @@ async function renderBookmarksNotes(){
   const c = document.querySelector('[data-bm-panel="notes"]');
   if(!c) return;
   if(!window.__currentUser){ c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Sign in to save and sync your notes.</div>'; return; }
-  const notes = userBookmarks.notes || {}; const keys = Object.keys(notes);
+  const notes = window.userBookmarks.notes || {}; const keys = Object.keys(notes);
   if(!keys.length){ c.innerHTML = '<div class="bm-empty"><span class="bm-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>No notes yet.<br>Tap the 📝 icon on a verse while reading to add a note.</div>'; return; }
   const display = getNotesDisplay();
   c.innerHTML = '<div class="q-loading"><div class="q-loading-spinner"></div>Loading notes…</div>';
@@ -399,14 +399,14 @@ async function renderBookmarksNotes(){
       if(e.target.closest('[data-bm-nremove]')) return;
       const key = el.dataset.bmNote; const parts = key.split(':');
       showPage('quran'); openSurahAtVerse(parseInt(parts[0]), parseInt(parts[1]));
-      setTimeout(() => { const noteText = userBookmarks.notes[key] || ''; if(noteText) openNoteModal('quran', key, 'Surah ' + parts[0] + ' · ' + key); }, 800);
+      setTimeout(() => { const noteText = window.userBookmarks.notes[key] || ''; if(noteText) openNoteModal('quran', key, 'Surah ' + parts[0] + ' · ' + key); }, 800);
     });
   });
   c.querySelectorAll('[data-bm-nremove]').forEach(el => {
     el.addEventListener('click', async (e) => {
       e.stopPropagation(); const key = el.dataset.bmNremove;
       if(!confirm('Delete this note?')) return;
-      delete userBookmarks.notes[key]; await saveUserBookmarks();
+      delete window.userBookmarks.notes[key]; await saveUserBookmarks();
       showToast('Note deleted'); refreshNoteIcons(); renderBookmarksNotes();
     });
   });
