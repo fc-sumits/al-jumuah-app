@@ -40,7 +40,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Hide main app header/nav */
+/* Hide main app header/nav ONLY when inside the reader */
 body.v2-active .app-header, 
 body.v2-active .greeting, 
 body.v2-active .bottom-nav {
@@ -59,6 +59,64 @@ body.v2-active .bottom-nav {
   font-weight: 800;
   color: var(--v2-copper);
 }
+
+/* NEW: Reader Toggle */
+.v2-reader-toggle {
+  display: flex;
+  background: var(--v2-card);
+  border: 1px solid var(--v2-border);
+  border-radius: 999px;
+  padding: 3px;
+}
+.v2-reader-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--v2-muted);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.v2-reader-toggle button.active {
+  background: var(--v2-copper);
+  color: #0A0F1D;
+}
+
+/* NEW: Last Read Card */
+.v2-last-read-card {
+  background: linear-gradient(135deg, var(--v2-copper-soft), rgba(212,175,55,0.05));
+  border: 1px solid var(--v2-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 0 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.v2-last-read-card:active { transform: scale(0.98); }
+.v2-last-read-left { display: flex; align-items: center; gap: 12px; }
+.v2-last-read-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--v2-copper); color: #0A0F1D;
+  display: flex; align-items: center; justify-content: center;
+}
+.v2-last-read-label {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--v2-copper); margin-bottom: 2px;
+}
+.v2-last-read-title { font-size: 0.9rem; font-weight: 700; color: var(--v2-text); }
+.v2-last-read-bm {
+  background: transparent; border: 1px solid var(--v2-border);
+  color: var(--v2-copper); width: 36px; height: 36px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+
 .v2-surah-card {
   position: relative;
   margin: 12px 16px;
@@ -554,7 +612,7 @@ body.v2-active .bottom-nav {
 }
 .v2-sheet-search input:focus { outline: none; border-color: var(--v2-copper); }
 
-/* Language Chips */
+/* --- LANGUAGE CHIPS (FIXED GLITCH) --- */
 .v2-language-chips {
   display: flex;
   gap: 8px;
@@ -562,10 +620,13 @@ body.v2-active .bottom-nav {
   padding: 4px 20px 12px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  flex-shrink: 0;
+  min-height: 44px;
 }
 .v2-language-chips::-webkit-scrollbar { display: none; }
 .v2-chip {
   flex: 0 0 auto;
+  white-space: nowrap;
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid var(--v2-border);
