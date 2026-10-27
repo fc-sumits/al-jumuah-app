@@ -3550,3 +3550,17 @@ body.hadith-full-active .greeting{display:none}
   transform: scale(0.95);
   background: var(--gold-soft);
 }
+/* V1 Reader Toggle */
+.v1-reader-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.v1-reader-toggle .segmented {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+}
+.v1-reader-toggle .segmented button {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
