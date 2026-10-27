@@ -667,6 +667,34 @@ body.v2-active .bottom-nav {
 .v2-resource-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
 .v2-resource-sub { font-size: 0.75rem; color: var(--v2-muted); }
 
+/* Reciter SVG Badges */
+.v2-reciter-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.v2-reciter-badge svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+.v2-reciter-badge.word {
+  background: rgba(212, 175, 55, 0.15);
+  color: #D4AF37;
+}
+.v2-reciter-badge.ayah {
+  background: rgba(42, 138, 106, 0.15);
+  color: #2A8A6A;
+}
+.v2-reciter-badge.none {
+  background: rgba(138, 149, 165, 0.15);
+  color: #8A95A5;
+}
+
 /* Setting Controls */
 .v2-setting-group { margin-bottom: 24px; }
 .v2-setting-label { font-size: 0.75rem; font-weight: 800; color: var(--v2-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
@@ -682,13 +710,6 @@ body.v2-active .bottom-nav {
 .v2-segmented { display: flex; background: var(--v2-bg); border-radius: 10px; padding: 4px; gap: 4px; }
 .v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
 .v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
-
-/* Disabled state for Highlight modes (if reciter doesn't support it) */
-.v2-seg-btn.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-  cursor: not-allowed;
-}
 
 /* --- PREMIUM TAFSIR MODAL --- */
 .v2-tafsir-ref-badge {
@@ -790,4 +811,4 @@ body.v2-focus-mode .v2-verses-container {
   .v2-verses-container { padding-bottom: 160px; }
   .v2-jump-arrow { bottom: calc(95px + env(safe-area-inset-bottom)); }
   body.v2-focus-mode .v2-verses-container { padding-bottom: 40px; }
-   }
+     }
