@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   QURAN V2 - PREMIUM READER (Full Complete CSS)
+   QURAN V2 - PREMIUM READER (Part 1: Base, List, Reader, Player)
    ═══════════════════════════════════════════════════════════════ */
 
 /* --- THEMES & VARIABLES --- */
@@ -60,7 +60,7 @@ body.v2-active .bottom-nav {
   color: var(--v2-copper);
 }
 
-/* NEW: Reader Toggle */
+/* Reader Toggle */
 .v2-reader-toggle {
   display: flex;
   background: var(--v2-card);
@@ -85,7 +85,7 @@ body.v2-active .bottom-nav {
   color: #0A0F1D;
 }
 
-/* NEW: Last Read Card */
+/* Last Read Card */
 .v2-last-read-card {
   background: linear-gradient(135deg, var(--v2-copper-soft), rgba(212,175,55,0.05));
   border: 1px solid var(--v2-border);
@@ -200,6 +200,7 @@ body.v2-active .bottom-nav {
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
   overflow: hidden;
+  transition: height 0.3s ease;
 }
 .v2-hero::after {
   content: '';
@@ -259,6 +260,7 @@ body.v2-active .bottom-nav {
   flex-direction: column;
   gap: 16px;
   padding: 16px 16px 220px; /* Clears the bottom player */
+  transition: padding-bottom 0.3s ease;
 }
 
 .v2-verse-card {
@@ -556,6 +558,7 @@ body.v2-active .bottom-nav {
 .v2-icon-btn:hover { opacity: 1; color: var(--v2-copper); }
 .v2-icon-btn svg { width: 20px; height: 20px; }
 
+/* Note: Modals, Settings, Focus Mode, and Translation Chips fix will be in Part 2 */
 /* --- MODALS (Scoped & Fixed) --- */
 .v2-modal-overlay {
   position: fixed;
@@ -612,7 +615,7 @@ body.v2-active .bottom-nav {
 }
 .v2-sheet-search input:focus { outline: none; border-color: var(--v2-copper); }
 
-/* --- LANGUAGE CHIPS (FIXED GLITCH) --- */
+/* --- LANGUAGE CHIPS (GLITCH FIXED) --- */
 .v2-language-chips {
   display: flex;
   gap: 8px;
@@ -680,6 +683,13 @@ body.v2-active .bottom-nav {
 .v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
 .v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
 
+/* Disabled state for Highlight modes (if reciter doesn't support it) */
+.v2-seg-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 /* --- PREMIUM TAFSIR MODAL --- */
 .v2-tafsir-ref-badge {
   display: inline-block;
@@ -728,8 +738,56 @@ body.v2-active .bottom-nav {
   font-weight: 700;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   FOCUS MODE
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hide elements when Focus Mode is active */
+body.v2-focus-mode .v2-hero {
+  display: none !important;
+}
+body.v2-focus-mode .v2-player-wrapper {
+  transform: translateX(-50%) translateY(150%);
+  opacity: 0;
+  pointer-events: none;
+}
+body.v2-focus-mode #v2-jump-arrow {
+  display: none !important;
+}
+body.v2-focus-mode .v2-verses-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* Floating Exit Button for Focus Mode */
+#v2-focus-exit {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--v2-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--v2-border);
+  color: var(--v2-copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+#v2-focus-exit:active {
+  transform: scale(0.9);
+}
+
 @media (max-height: 620px) {
   .v2-player-expanded { padding: 10px 12px; }
   .v2-verses-container { padding-bottom: 160px; }
   .v2-jump-arrow { bottom: calc(95px + env(safe-area-inset-bottom)); }
+  body.v2-focus-mode .v2-verses-container { padding-bottom: 40px; }
    }
