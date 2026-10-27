@@ -1,11 +1,35 @@
 // ═══════════════════════════════════════════════════════════════
 // APP-USER.JS — Auth, Bookmarks, Notes, Cloud Sync
 // ═══════════════════════════════════════════════════════════════
-// Load order: 7 of 8. Requires app-core.js (for initFirebase/db).
-// ═══════════════════════════════════════════════════════════════
 
 window.userBookmarks = { verses: [], hadith: [], notes: {} };
 
+// BULLETPROOF AUTH CSS INJECTION (Bypasses cached style.css)
+(function injectAuthCSS() {
+  const css = `
+    .auth-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(4, 8, 18, 0.7); backdrop-filter: blur(8px); display: none; align-items: flex-end; justify-content: center; }
+    .auth-overlay.show { display: flex; animation: fadeIn 0.25s ease; }
+    .auth-modal { background: var(--card); border: 1px solid var(--card-border); border-bottom: none; border-radius: 22px 22px 0 0; width: 100%; max-width: 600px; padding: 24px 20px calc(30px + env(safe-area-inset-bottom, 0)); position: relative; animation: sheetUp 0.3s cubic-bezier(0.2, 0.8, 0.4, 1); box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3); }
+    .auth-close { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border-radius: 50%; background: var(--bg); border: 1px solid var(--divider); color: var(--muted); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .auth-modal-head { text-align: center; margin-bottom: 24px; margin-top: 10px; }
+    .auth-modal-arabic { font-family: var(--font-arabic); font-size: 1.8rem; color: var(--gold); margin-bottom: 6px; line-height: 1; }
+    .auth-modal-title { font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .auth-modal-sub { font-size: 0.85rem; color: var(--muted); }
+    #auth-form { display: flex; flex-direction: column; gap: 12px; }
+    #auth-form input { width: 100%; padding: 14px 16px; background: var(--bg); border: 1px solid var(--divider); border-radius: var(--radius-sm); color: var(--text); font-family: var(--font-body); font-size: 0.95rem; outline: none; box-sizing: border-box; }
+    #auth-form input:focus { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-soft); }
+    .auth-error { color: #d9534f; font-size: 0.8rem; text-align: center; min-height: 18px; font-weight: 600; }
+    .auth-submit { width: 100%; padding: 15px; background: var(--gold); color: #0A0F0D; border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; font-weight: 800; cursor: pointer; margin-top: 6px; }
+    .auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .auth-switch { text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--muted); }
+    .auth-switch-btn { background: transparent; border: none; color: var(--gold); font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; cursor: pointer; padding: 0 4px; text-decoration: underline; text-underline-offset: 3px; }
+  `;
+  const style = document.createElement('style');
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
+
+async function loadUserBookmarks(){
 async function loadUserBookmarks(){
   if(!db || !window.__currentUser) return;
   try{
