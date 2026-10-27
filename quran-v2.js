@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════
-// QURAN V2 ENGINE (Part 1: State, APIs, Text Cleanup, Cache Gate)
+// QURAN V2 ENGINE (Chunk 1: State, APIs, Text Cleanup, Cache Gate)
 // ═══════════════════════════════════════════════════════════════
 
 const v2State = {
@@ -17,6 +17,7 @@ const v2State = {
   isSeeking: false,
   rafId: null,
   lastActiveWord: null,
+  isAutoScrollPaused: false, // Smart Auto-Scroll state
   
   // Resource Lists
   reciters: [],
@@ -54,7 +55,7 @@ const QURAN_API = 'https://api.quran.com/api/v4';
 function cleanHtmlFootnotes(html) {
   if (!html) return '';
   const doc = new DOMParser().parseFromString(html, 'text/html');
-  // Remove footnotes and scripts/styles
+  // Remove footnotes, scripts, styles, and superscript numbers
   doc.querySelectorAll('sup, [foot_note], script, style').forEach(n => n.remove());
   return doc.body.textContent.replace(/\s+/g, ' ').trim();
 }
@@ -74,6 +75,7 @@ async function fetchV2Resources() {
       v2State.translations = data.translations || [];
     } catch(e) {
       console.error('Failed to load translations', e);
+      // Fallback to ensure the UI doesn't break
       v2State.translations = [{ id: 20, name: 'Sahih International', language_name: 'english' }];
     }
   }
@@ -97,6 +99,7 @@ async function loadV2Surah(surahNum, jumpToAyah) {
   
   v2State.currentSurah = surahNum;
   v2State.currentAyah = jumpToAyah || 1;
+  v2State.isAutoScrollPaused = false; // Reset smart scroll
   
   const listView = document.getElementById('quran-v2-list-view');
   const readerView = document.getElementById('quran-v2-reader-view');
@@ -134,15 +137,15 @@ async function loadV2Surah(surahNum, jumpToAyah) {
     await fetchAudioAndTimings(surahNum, token);
     if (token !== v2State.requestToken) return;
 
-    // 4. Render and Setup Audio (defined in Chunk 2)
+    // 4. Render and Setup Audio
     if (typeof renderV2Reader === 'function') {
       renderV2Reader();
       setupAudioEngine();
     }
 
-    if (jumpToAyah) setTimeout(() => {
-      if (typeof scrollToVerse === 'function') scrollToVerse(jumpToAyah, 'auto');
-    }, 500);
+    if (jumpToAyah && typeof scrollToVerse === 'function') {
+      setTimeout(() => scrollToVerse(jumpToAyah, 'auto'), 500);
+    }
 
   } catch(e) {
     console.error(e);
@@ -179,14 +182,14 @@ async function fetchAudioAndTimings(surahNum, token) {
   
   v2State.audioUrl = data.audio_file.audio_url;
   
-  // CRITICAL FIX: The key is 'timestamps', not 'verse_timings'
+  // CRITICAL: The key is 'timestamps'
   v2State.timings = data.audio_file.timestamps || [];
   
   // Determine if we have word-level segments
   v2State.timingMode = v2State.timings.some(t => t.segments && t.segments.length > 0) ? 'word' : 'ayah';
   if (v2State.timings.length === 0) v2State.timingMode = 'none';
 
-  // Save to cache BEFORE unlocking the play button
+  // Save to cache to ensure instant load next time
   try {
     localStorage.setItem(cacheKey, JSON.stringify({ 
       audioUrl: v2State.audioUrl, 
@@ -196,7 +199,6 @@ async function fetchAudioAndTimings(surahNum, token) {
     console.warn('Storage full, could not cache timings.');
   }
   }
-
 // --- EXPOSE GLOBALS ---
 window.openQuranV2 = function(surahNum, ayahNum) {
   document.body.classList.add('v2-active');
@@ -215,7 +217,7 @@ window.openQuranV2 = function(surahNum, ayahNum) {
 window.showV2List = function() {
   document.getElementById('quran-v2-reader-view').style.display = 'none';
   document.getElementById('quran-v2-list-view').style.display = 'block';
-  pauseV2Audio();
+  if (typeof pauseV2Audio === 'function') pauseV2Audio();
 };
 
 window.closeQuranV2 = function() {
@@ -223,7 +225,7 @@ window.closeQuranV2 = function() {
   document.getElementById('quran-v2-list-view').style.display = 'none';
   document.getElementById('quran-v2-reader-view').style.display = 'none';
   document.getElementById('quran-list-view').style.display = 'block';
-  pauseV2Audio();
+  if (typeof pauseV2Audio === 'function') pauseV2Audio();
 };
 
 // --- RENDER SURAH LIST ---
@@ -330,8 +332,14 @@ function renderV2Reader() {
         <div class="v2-verse-num">${verse.verse_number}</div>
         <div class="v2-arabic-text" dir="rtl" style="font-size:${v2State.settings.arabicSize}px; line-height:${lineHeight}; font-family:${fontFam}">${arabicHtml}</div>
         ${v2State.settings.showTranslation ? `<div class="v2-translation-text" style="font-size:${v2State.settings.transSize}px">${verse.cleanEnglish}</div>` : ''}
+        
+        <!-- Hidden Action Buttons (Reveal on Tap) -->
         <div class="v2-verse-actions">
            <button class="v2-action-btn" onclick="window.playV2Ayah(${verse.verse_number})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Play</button>
+           <button class="v2-action-btn" onclick="window.openTafsir(${v2State.currentSurah}, ${verse.verse_number})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Tafsir</button>
+           <button class="v2-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
+           <button class="v2-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+           <button class="v2-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></button>
         </div>
       </div>
     `;
@@ -368,7 +376,7 @@ function renderV2Reader() {
       </div>
     </div>
     
-    <!-- MODALS (SCOPED INSIDE READER VIEW) -->
+    <!-- MODALS (Scoped Inside Reader View) -->
     <div class="v2-modal-overlay" id="v2-settings-overlay" onclick="if(event.target===this) window.toggleV2Settings()">
       <div class="v2-bottom-sheet">
         <div class="v2-settings-header">
@@ -404,6 +412,7 @@ function renderV2Reader() {
               <div class="v2-toggle ${v2State.settings.showTranslation ? 'on' : ''}" onclick="window.toggleV2Setting('showTranslation')"></div>
             </div>
           </div>
+          
           <div class="v2-setting-group">
             <span class="v2-setting-label">Highlighting</span>
             <div class="v2-setting-row">
@@ -414,6 +423,7 @@ function renderV2Reader() {
               </div>
             </div>
           </div>
+
           <div class="v2-setting-group">
             <span class="v2-setting-label">Typography</span>
             <div class="v2-setting-row" style="flex-direction:column; align-items:flex-start; gap:8px;">
@@ -429,6 +439,7 @@ function renderV2Reader() {
               <input type="range" class="v2-slider" min="1.4" max="2.4" step="0.1" value="${v2State.settings.lineSpacing}" oninput="window.changeV2FontSize('lineSpacing', this.value)">
             </div>
           </div>
+          
           <div class="v2-setting-group">
             <span class="v2-setting-label">Reciter</span>
             <div class="v2-setting-row" onclick="window.openReciterPicker()" style="cursor:pointer">
@@ -476,8 +487,8 @@ function renderV2Reader() {
   
   renderReciterList();
   renderTranslationList();
-  attachV2Listeners();
-  updatePlayerUI();
+  if (typeof attachV2Listeners === 'function') attachV2Listeners();
+  if (typeof updatePlayerUI === 'function') updatePlayerUI();
 }
 
 // --- DYNAMIC PICKERS ---
@@ -520,8 +531,7 @@ function renderTranslationList(query = '') {
       ${v2State.settings.translationId === t.id.toString() ? '<span style="color:var(--v2-copper); font-weight:800;">✓</span>' : ''}
     </div>
   `).join('');
-}
-
+                                                      }
 // --- AUDIO & 60FPS SYNC ENGINE ---
 function setupAudioEngine() {
   if (window.__v2Audio) { window.__v2Audio.pause(); window.__v2Audio = null; }
@@ -614,7 +624,12 @@ function highlightVerseCard(ayahNum) {
   if(el) {
     el.classList.add('active');
     localStorage.setItem(`v2-last-ayah-${v2State.currentSurah}`, ayahNum);
-    if(v2State.settings.autoScroll) scrollToVerse(ayahNum, 'smooth');
+    
+    // Smart Auto-Scroll: Only scroll if the user hasn't dragged the page away
+    if(v2State.settings.autoScroll && !v2State.isAutoScrollPaused) {
+      scrollToVerse(ayahNum, 'smooth');
+    }
+    updateJumpArrowVisibility();
   }
 }
 
@@ -630,7 +645,44 @@ function highlightWordSpan(verseKey, wordIndex) {
   }
 }
 
-// --- CONTROLS & HANDLERS ---
+// --- SMART SCROLL & JUMP ARROW ---
+function scrollToVerse(ayahNum, behavior) {
+  const el = document.getElementById(`v2-verse-${ayahNum}`);
+  if (el) {
+    const readerView = document.getElementById('quran-v2-reader-view');
+    const rect = el.getBoundingClientRect();
+    const readerRect = readerView.getBoundingClientRect();
+    
+    if (behavior === 'auto' || rect.top < readerRect.top + 80 || rect.bottom > readerRect.bottom - 160) {
+      el.scrollIntoView({ behavior: behavior, block: 'center' });
+    }
+  }
+}
+
+function updateJumpArrowVisibility() {
+  const el = document.getElementById(`v2-verse-${v2State.currentAyah}`);
+  const arrow = document.getElementById('v2-jump-arrow');
+  const readerView = document.getElementById('quran-v2-reader-view');
+  if (!el || !arrow || !readerView) return;
+
+  const rect = el.getBoundingClientRect();
+  const readerRect = readerView.getBoundingClientRect();
+
+  // Show arrow if active verse is out of view
+  if (rect.top < readerRect.top + 80 || rect.bottom > readerRect.bottom - 160) {
+    arrow.classList.add('show');
+  } else {
+    arrow.classList.remove('show');
+  }
+}
+
+window.jumpToCurrentVerse = function() {
+  v2State.isAutoScrollPaused = false; // Resume auto-scroll
+  scrollToVerse(v2State.currentAyah, 'smooth');
+  document.getElementById('v2-jump-arrow').classList.remove('show');
+};
+
+// --- PLAYER CONTROLS ---
 window.toggleV2Play = function() {
   if(!window.__v2Audio) return;
   if(v2State.isPlaying) window.__v2Audio.pause();
@@ -724,33 +776,13 @@ function handleRepeat() {
   else if (mode === 'surah') { window.__v2Audio.currentTime = 0; attemptV2Play(); }
 }
 
-function scrollToVerse(ayahNum, behavior) {
-  const el = document.getElementById(`v2-verse-${ayahNum}`);
-  if (el) {
-    const rect = el.getBoundingClientRect();
-    if (behavior === 'auto' || rect.top < 60 || rect.bottom > window.innerHeight - 150) {
-      el.scrollIntoView({ behavior: behavior, block: 'center' });
-    }
-  }
-}
-
-function updateJumpArrowVisibility() {
-  const el = document.getElementById(`v2-verse-${v2State.currentAyah}`);
-  const arrow = document.getElementById('v2-jump-arrow');
-  if (!el || !arrow) return;
-  const rect = el.getBoundingClientRect();
-  if (rect.top < 100 || rect.bottom > window.innerHeight - 150) arrow.classList.add('show');
-  else arrow.classList.remove('show');
-}
-
-window.jumpToCurrentVerse = function() {
-  scrollToVerse(v2State.currentAyah, 'smooth');
-  document.getElementById('v2-jump-arrow').classList.remove('show');
-};
-
+// --- EVENT LISTENERS & UI CONTROLS ---
 function attachV2Listeners() {
   const container = document.getElementById('v2-verses-container');
+  const readerView = document.getElementById('quran-v2-reader-view');
+  
   if (container) {
+    // Reveal hidden actions on tap
     container.addEventListener('click', (e) => {
       const word = e.target.closest('.v2-word');
       if (word && v2State.settings.wordByWordAudio) {
@@ -761,12 +793,38 @@ function attachV2Listeners() {
           word.classList.add('playing-word');
           setTimeout(() => word.classList.remove('playing-word'), 800);
         }
+        return;
+      }
+
+      const card = e.target.closest('.v2-verse-card');
+      if (card && !e.target.closest('.v2-verse-actions')) {
+        document.querySelectorAll('.v2-verse-card').forEach(c => c.classList.remove('show-actions'));
+        card.classList.add('show-actions');
       }
     });
   }
 
-  window.addEventListener('scroll', updateJumpArrowVisibility, { passive: true });
+  // Smart Scroll: Detect user dragging
+  if (readerView) {
+    readerView.addEventListener('touchstart', () => {
+      if (v2State.isPlaying) {
+        v2State.isAutoScrollPaused = true;
+        updateJumpArrowVisibility();
+      }
+    }, { passive: true });
 
+    readerView.addEventListener('wheel', () => {
+      if (v2State.isPlaying) {
+        v2State.isAutoScrollPaused = true;
+        updateJumpArrowVisibility();
+      }
+    }, { passive: true });
+
+    // Update arrow visibility on scroll
+    readerView.addEventListener('scroll', updateJumpArrowVisibility, { passive: true });
+  }
+
+  // Search inputs
   const recSearch = document.getElementById('v2-reciter-search');
   if (recSearch) recSearch.addEventListener('input', (e) => renderReciterList(e.target.value));
 
