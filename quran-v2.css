@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
-   QURAN V2 - PREMIUM READER (CSS Chunk 1: Theme, Lists, Cards)
+   QURAN V2 - PREMIUM READER (Full Complete CSS)
    ═══════════════════════════════════════════════════════════════ */
 
+/* --- THEMES & VARIABLES --- */
 #quran-v2-list-view, #quran-v2-reader-view {
   --v2-bg: #0A0F1D;
   --v2-card: #121A2F;
@@ -36,10 +37,13 @@
   overflow-y: auto;
   z-index: 50;
   padding-bottom: 100px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Immersion: Hide main app header/nav */
-body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav {
+/* Hide main app header/nav */
+body.v2-active .app-header, 
+body.v2-active .greeting, 
+body.v2-active .bottom-nav {
   display: none !important;
 }
 
@@ -69,9 +73,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border: 1px solid var(--v2-border);
   transition: transform 0.2s ease;
 }
-.v2-surah-card:active {
-  transform: scale(0.98);
-}
+.v2-surah-card:active { transform: scale(0.98); }
 .v2-surah-bg {
   position: absolute;
   inset: 0;
@@ -103,9 +105,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   min-width: 50px;
   text-align: left;
 }
-.v2-surah-info {
-  flex: 1;
-}
+.v2-surah-info { flex: 1; }
 .v2-surah-name {
   font-size: 1.1rem;
   font-weight: 700;
@@ -200,7 +200,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px 16px 180px; /* Clears the bottom player */
+  padding: 16px 16px 220px; /* Clears the bottom player */
 }
 
 .v2-verse-card {
@@ -208,7 +208,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   background: var(--v2-card);
   border: 1px solid var(--v2-border);
   border-radius: 20px;
-  padding: 24px 18px 16px 48px; /* Left padding clears the number badge */
+  padding: 24px 18px 16px 48px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
@@ -232,6 +232,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .v2-arabic-text {
@@ -242,7 +243,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   margin-bottom: 12px;
 }
 
-/* Transliteration styling */
 .v2-transliteration-text {
   font-style: italic;
   color: var(--v2-copper);
@@ -251,9 +251,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   margin-bottom: 12px;
   line-height: 1.6;
 }
-.v2-translit-word {
-  margin-right: 4px;
-}
+.v2-translit-word { margin-right: 4px; }
 
 .v2-translation-text {
   border-top: 1px dashed var(--v2-border);
@@ -292,7 +290,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-/* Reveal on tap (.show-actions) or when active (.active) */
 .v2-verse-card.active .v2-verse-actions, 
 .v2-verse-card.show-actions .v2-verse-actions {
   opacity: 1;
@@ -310,7 +307,9 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   font-weight: 700;
   font-family: var(--font-body);
   padding: 0;
+  transition: transform 0.2s;
 }
+.v2-action-btn:active { transform: scale(0.9); }
 .v2-action-btn svg {
   width: 16px;
   height: 16px;
@@ -319,12 +318,19 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-   }
+}
+.v2-action-btn.bookmarked {
+  color: var(--v2-copper);
+  text-shadow: 0 0 8px var(--v2-copper-glow);
+}
+.v2-action-btn.bookmarked svg {
+  fill: currentColor;
+}
+
 /* --- FLOATING JUMP ARROW --- */
 .v2-jump-arrow {
   position: fixed;
   right: 18px;
-  bottom: calc(115px + env(safe-area-inset-bottom));
   z-index: 65;
   width: 44px;
   height: 44px;
@@ -336,7 +342,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, bottom 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 .v2-jump-arrow.show {
@@ -346,14 +352,50 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 .v2-jump-arrow svg { width: 20px; height: 20px; }
 
-/* --- FLOATING AUDIO PLAYER --- */
-.v2-player {
+/* --- PLAYER WRAPPER & STATES --- */
+.v2-player-wrapper {
   position: fixed;
   left: 50%;
   bottom: calc(16px + env(safe-area-inset-bottom));
   transform: translateX(-50%);
   width: min(680px, calc(100% - 24px));
   z-index: 70;
+  transition: all 0.3s ease;
+}
+.v2-player-wrapper.hidden { display: none; }
+
+/* Minimized Player */
+.v2-player-minimized {
+  display: none;
+  background: var(--v2-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--v2-border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.v2-player-minimized.active { display: flex; }
+.v2-min-info {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--v2-copper);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 6px;
+}
+.v2-min-info .v2-reciter-dot { margin-top: 0; }
+
+/* Expanded Player */
+.v2-player-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background: var(--v2-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -361,11 +403,8 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
   border-radius: 22px;
   padding: 14px 16px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
-.v2-player.hidden { display: none; }
+.v2-player-expanded.hidden { display: none; }
 
 .v2-player-top {
   display: flex;
@@ -384,7 +423,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-reciter-dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--v2-copper); display: inline-block;
 }
-.v2-player-tools { display: flex; gap: 8px; }
+.v2-player-tools { display: flex; gap: 8px; align-items: center; }
 .v2-mini-btn {
   background: var(--v2-bg);
   border: 1px solid var(--v2-border);
@@ -478,7 +517,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 
 .v2-bottom-sheet {
   width: min(560px, 100%);
-  max-height: 75vh;
+  max-height: 85vh;
   display: flex; 
   flex-direction: column;
   background: var(--v2-card);
@@ -500,7 +539,6 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-settings-title { font-size: 1.2rem; font-weight: 800; color: var(--v2-copper); }
 .v2-settings-close { background: none; border: none; color: var(--v2-text); font-size: 1.5rem; cursor: pointer; }
 
-/* Scroll Fix & Bottom Safe Area */
 .v2-sheet-body {
   padding: 20px 20px calc(40px + env(safe-area-inset-bottom)) 20px;
   overflow-y: auto;
@@ -581,16 +619,44 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 .v2-seg-btn { flex: 1; padding: 8px; border-radius: 8px; border: none; background: transparent; color: var(--v2-muted); font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
 .v2-seg-btn.active { background: var(--v2-copper); color: var(--v2-bg); }
 
-/* Tafsir Content Styling */
+/* --- PREMIUM TAFSIR MODAL --- */
+.v2-tafsir-ref-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--v2-copper);
+  padding: 5px 12px;
+  background: var(--v2-copper-soft);
+  border-radius: 999px;
+  border: 1px solid var(--v2-copper);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.v2-tafsir-verse-box {
+  font-family: var(--font-arabic);
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: right;
+  direction: rtl;
+  color: var(--v2-text);
+  padding: 16px;
+  background: var(--v2-bg);
+  border-radius: 12px;
+  border: 1px solid var(--v2-border);
+  margin-bottom: 16px;
+}
+.v2-tafsir-divider {
+  height: 1px;
+  background: var(--v2-border);
+  margin-bottom: 16px;
+}
 .v2-tafsir-content {
   font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--v2-text);
 }
-.v2-tafsir-content p {
-  margin-bottom: 12px;
-}
+.v2-tafsir-content p { margin-bottom: 12px; }
 .v2-tafsir-content h1, .v2-tafsir-content h2, .v2-tafsir-content h3 {
   color: var(--v2-copper);
   margin: 16px 0 8px;
@@ -602,7 +668,7 @@ body.v2-active .app-header, body.v2-active .greeting, body.v2-active .bottom-nav
 }
 
 @media (max-height: 620px) {
-  .v2-player { padding: 10px 12px; }
-  .v2-verses-container { padding-bottom: 145px; }
+  .v2-player-expanded { padding: 10px 12px; }
+  .v2-verses-container { padding-bottom: 160px; }
   .v2-jump-arrow { bottom: calc(95px + env(safe-area-inset-bottom)); }
    }
