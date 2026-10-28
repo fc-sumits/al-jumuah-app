@@ -66,7 +66,7 @@ const MASTER_RECITERS = [
   { id: 3, name: 'Abdur-Rahman as-Sudais', style: { name: 'Murattal' }, type: 'word' },
   { id: 9, name: 'Maher Al Muaiqly', style: { name: 'Murattal' }, type: 'word' },
   { id: 5, name: 'Yasser Al-Dosari', style: { name: 'Murattal' }, type: 'word' },
-  { id: 11, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' }, type: 'word' },
+  { id: 11, name: 'Mohamed Siddiq Al-Minshawi', style: { name: 'Murattal' }, type: 'ayah' },
   { id: 10, name: 'Saud Al-Shuraim', style: { name: 'Murattal' }, type: 'word' },
   { id: 4, name: 'Abu Bakr Al-Shatri', style: { name: 'Murattal' }, type: 'word' },
   { id: 12, name: 'Ahmed Al-Ajmy', style: { name: 'Murattal' }, type: 'word' },
